@@ -1,0 +1,111 @@
+/* components/UI/Typography/Typography.module.css */
+.typography {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+/* Variants */
+.h1 {
+  font-size: 6rem;
+  font-weight: 300;
+  letter-spacing: -0.01562em;
+}
+
+.h2 {
+  font-size: 3.75rem;
+  font-weight: 300;
+  letter-spacing: -0.00833em;
+}
+
+.h3 {
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.h4 {
+  font-size: 2.125rem;
+  font-weight: 400;
+  letter-spacing: 0.00735em;
+}
+
+.h5 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.h6 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.0075em;
+}
+
+.subtitle1 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.00938em;
+}
+
+.subtitle2 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.00714em;
+}
+
+.body1 {
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.00938em;
+}
+
+.body2 {
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.01071em;
+}
+
+.caption {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.03333em;
+}
+
+.overline {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.08333em;
+  text-transform: uppercase;
+}
+
+/* Utilities */
+.gutterBottom {
+  margin-bottom: 0.35em;
+}
+
+.noWrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.fadeIn {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.slideIn {
+  animation: slideIn 0.6s ease forwards;
+}
