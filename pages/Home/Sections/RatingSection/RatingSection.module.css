@@ -1,0 +1,54 @@
+.RatingSection {
+    width: 1120px;
+    height: 635px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+    background: #191B1F;
+    overflow: hidden;
+}
+@media (max-width: 1024px) {
+    .servicesGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .title1,
+    .title2 {
+        font-size: 60px;
+    }
+}
+@media (max-width: 768px) {
+    .servicesSection {
+        padding: 60px 0;
+    }
+    
+    .title1,
+    .title2 {
+        font-size: 48px;
+    }
+    
+    .subtitle {
+        font-size: 14px;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+}
+@media (max-width: 576px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .title1,
+    .title2 {
+        font-size: 36px;
+    }
+    
+    .ratingValue {
+        font-size: 40px;
+    }
+}
