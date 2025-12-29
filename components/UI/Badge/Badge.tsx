@@ -1,39 +1,67 @@
 import React from 'react';
 import styles from './Badge.module.css';
 
+type BadgeVariant = 'standard' | 'dot';
+type BadgeColor = 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info' | 'default';
+
 interface BadgeProps {
-  text: string;
-  show?: boolean;
+  count?: number;
+  variant?: BadgeVariant;
+  color?: BadgeColor;
+  max?: number;
+  showZero?: boolean;
+  invisible?: boolean;
+  anchorOrigin?: {
+    vertical: 'top' | 'bottom';
+    horizontal: 'left' | 'right';
+  };
+  children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  width?: string | number;
-  height?: string | number;
 }
 
-const Badge: React.FC<BadgeProps> = ({ 
-  text, 
-  show = true,
+const Badge: React.FC<BadgeProps> = ({
+  count = 0,
+  variant = 'standard',
+  color = 'default',
+  max = 99,
+  showZero = false,
+  invisible = false,
+  anchorOrigin = { vertical: 'top', horizontal: 'right' },
+  children,
   className = '',
-  style = {},
-  width = 'auto',
-  height = 'auto'
+  style,
 }) => {
-  if (!show) {
-    return null;
-  }
+  const isZero = count === 0;
+  const isInvisible = invisible || (isZero && !showZero);
+  const displayCount = count > max ? `${max}+` : count;
 
-  const containerStyle = {
+  const badgeClasses = [
+    styles.badge,
+    styles[`badge-${variant}`],
+    styles[`badge-${color}`],
+    styles[`badge-anchor-${anchorOrigin.vertical}-${anchorOrigin.horizontal}`],
+    isInvisible && styles.invisible,
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const dynamicStyles = {
     ...style,
-    width: typeof width === 'number' ? `${width}px` : width,
-    height: typeof height === 'number' ? `${height}px` : height,
+    ...(variant === 'standard' && { '--badge-count': `'${displayCount}'` } as React.CSSProperties),
   };
 
+  const badgeElement = <span className={badgeClasses} style={dynamicStyles} />;
+
+  if (!children) {
+    return badgeElement;
+  }
+
   return (
-    <div className={`${styles.badge_container} ${className}`} style={containerStyle}>
-      <div className={styles.badge}>
-        <span className={styles.badgeDot}></span>
-        <p className={styles.badgeContent}>{text}</p>
-      </div>
+    <div className={styles.badgeContainer}>
+      {children}
+      {badgeElement}
     </div>
   );
 };
