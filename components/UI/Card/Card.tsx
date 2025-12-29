@@ -83,13 +83,5 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-<<<<<<< HEAD
-Card.Header = CardHeader;
-Card.Content = CardContent;
-Card.Media = CardMedia;
-Card.Actions = CardActions;
-=======
-
->>>>>>> Homepage
 
 export default React.memo(Card);
