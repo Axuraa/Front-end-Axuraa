@@ -1,0 +1,71 @@
+.viewButton {
+  display: flex;
+  height: 56px;
+  padding: 0 32px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid #374151;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(2px);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 204px;
+  gap: 8px;
+}
+
+.viewButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.viewButton:active {
+  transform: translateY(0);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.viewButton:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.3);
+  outline-offset: 2px;
+}
+
+.viewButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+}
+.buttonText {
+  white-space: nowrap; 
+}
+
+.iconWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  background: red; 
+
+}
+
+.viewButton:hover .iconWrapper {
+  transform: translateX(2px);
+}
+
+.buttonIcon {
+  transition: transform 0.3s ease;
+}

@@ -1,6 +1,5 @@
 import React, { CSSProperties } from 'react';
 import styles from './Card.module.css';
-
 // Subcomponents
 const CardHeader: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (
   <div className={`${styles.cardHeader} ${className}`}>
