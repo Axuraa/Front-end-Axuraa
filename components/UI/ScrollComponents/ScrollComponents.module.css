@@ -1,0 +1,62 @@
+
+/* Horizontal Scroll Container */
+.horizontalScroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  user-select: none;
+  flex-wrap: nowrap !important;
+  padding-right: 40px;
+  scroll-padding-right: 40px;
+  cursor: grab;
+  scroll-behavior: smooth;
+}
+
+.horizontalScroll:active {
+  cursor: grabbing;
+}
+
+/* Vertical Scroll Container */
+.verticalScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  user-select: none;
+  flex-wrap: nowrap !important;
+  padding-bottom: 40px;
+  scroll-padding-bottom: 40px;
+  cursor: grab;
+  scroll-behavior: smooth;
+}
+
+.verticalScroll:active {
+  cursor: grabbing;
+}
+
+/* Hide scrollbars */
+.horizontalScroll::-webkit-scrollbar,
+.verticalScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontalScroll,
+.verticalScroll {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollItem {
+  flex-shrink: 0;
+}
+
+/* Disable text selection during drag */
+.horizontalScroll *,
+.verticalScroll * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}

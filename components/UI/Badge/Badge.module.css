@@ -1,0 +1,74 @@
+/* .badge_container {
+  width: 240px;
+  height: 58px;
+  top: 29px;
+  left: 440px;
+  padding-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.badge {
+  width: 240px;
+  height: 26px;
+  border-radius: 9999px;
+  padding: 4px 12px;
+  border: 1px solid #1F2937;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #1F2937;
+  color: #ffffff;
+} */
+ .badge_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-bottom: 0.5rem; /* 8px if base is 16px */
+}
+
+.badge {
+  width: 100%;
+  min-height: 26px;
+  /* border-radius: 9999px; */
+  padding: 4px 12px;
+  /* border: 1px solid var(--color-azure-17, #1F2937); */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* background: var(--color-azure-17, #1F2937); */
+  color: #ffffff;
+  box-sizing: border-box;
+
+
+border-radius: 9999px;
+border: var(--stroke-weight-1, 1px) solid var(--color-azure-17, #1F2937);
+background: var(--color-white-5, rgba(255, 255, 255, 0.05));
+backdrop-filter: blur(2px);
+}
+.badgeContent {
+  text-align: start;
+  color: var(--color-azure-84, #D1D5DB);
+  font-family: var(--font-family-Font-1, Inter);
+  font-size: var(--font-size-12, 12px);
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--font-size-16, 16px);
+  letter-spacing: var(--letter-spacing-0_3, 0.3px);
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--color-spring-green-45, #22C55E);
+  flex-shrink: 0;
+}

@@ -1,0 +1,79 @@
+.contactCard {
+  display: flex;
+  width: 546px;
+  height: 117.3421px;
+  padding: 23.947px;
+  align-items: center;
+  gap: 23.947px;
+  border-radius: 19.158px;
+  border: 1.197px solid rgba(144, 37, 1, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2.3947367668151855px);
+  transition: all 0.3s ease;
+}
+
+.iconContainer {
+  display: flex;
+  width: 67.053px;
+  height: 67.053px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgba(144, 37, 1, 0.10);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the icon container */
+.contactCard:hover .iconContainer {
+  background: #D04A1D;
+}
+
+/* Make icon white on hover */
+.contactCard:hover .iconImage {
+  filter: brightness(0) invert(1);
+}
+
+.iconImage {
+  width: 32px;
+  height: 32px;
+  transition: all 0.3s ease;
+}
+
+.textContainer {
+  display: flex;
+  width: 253px;
+  height: 62.7895px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4.7895px;
+}
+
+.label {
+  color: #9CA3AF;
+  font-family: Inter;
+  font-size: 16.763px;
+  font-weight: 500;
+  line-height: 23.947px;
+  margin: 0;
+}
+
+.value {
+  color: #FFF;
+  font-family: Inter;
+  font-size: 23.947px;
+  font-weight: 700;
+  line-height: 33.526px;
+  margin: 0;
+}
+
+/* Make the card slightly interactive on hover */
+.contactCard:hover {
+  cursor: pointer;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Remove any outline on focus for better aesthetics */
+.contactCard:focus {
+  outline: none;
+}

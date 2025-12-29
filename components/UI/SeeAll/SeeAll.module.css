@@ -1,0 +1,39 @@
+.linkContainer {
+  width: 1080px;
+  height: 28px;
+  /* background: #034bdb; */
+  margin: 0 auto;
+  align-self: stretch;
+  text-align: right;
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.link {
+  color: var(--Primary, #D04A1D);
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #ff6b35;
+}
+
+.arrowIcon {
+  transition: transform 0.2s ease;
+}
+
+.link:hover .arrowIcon {
+  transform: translateX(4px);
+}
