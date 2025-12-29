@@ -1,116 +1,95 @@
-import React, { CSSProperties } from 'react';
+'use client';
+
+/**
+ * ===== Card Component =====
+ * A reusable card component with hover effects and customizable content.
+ * Features:
+ * - Customizable icon, title, description, and link
+ * - Smooth hover animations
+ * - Responsive design
+ */
+
+import React, { useState } from 'react';
 import styles from './Card.module.css';
-// Subcomponents
-const CardHeader: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (
-  <div className={`${styles.cardHeader} ${className}`}>
-    {children}
-  </div>
-);
-
-const CardContent: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (
-  <div className={`${styles.cardContent} ${className}`}>
-    {children}
-  </div>
-);
-
-interface CardMediaProps {
-  image?: string;
-  alt?: string;
-  className?: string;
-  overlay?: boolean;
-  overlayGradient?: string;
-  style?: CSSProperties;
-  children?: React.ReactNode;
-}
-
-const CardMedia: React.FC<CardMediaProps> = ({
-  image,
-  alt = '',
-  className = '',
-  overlay = false,
-  overlayGradient = 'linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7))',
-  style,
-  children,
-}) => {
-  const mediaStyle = {
-    ...style,
-    ...(image && { backgroundImage: `url(${image})` }),
-  };
-
-  return (
-    <div
-      className={`${styles.cardMedia} ${overlay ? styles.mediaWithOverlay : ''} ${className}`}
-      style={{ ...mediaStyle, '--overlay-gradient': overlayGradient } as CSSProperties}
-    >
-      {image && <img src={image} alt={alt} className={styles.cardMediaImage} />}
-      {overlay && <div className={styles.mediaOverlay} />}
-      {children}
-    </div>
-  );
-};
-
-const CardActions: React.FC<{ children: React.ReactNode; className?: string }> = ({ children, className = '' }) => (
-  <div className={`${styles.cardActions} ${className}`}>
-    {children}
-  </div>
-);
 
 interface CardProps {
-  children: React.ReactNode;
-  className?: string;
-  raised?: boolean;
-  hoverEffect?: boolean;
-  border?: 'none' | 'solid' | 'dashed' | 'dotted';
-  borderColor?: string;
-  borderWidth?: number;
-  hoverScale?: number;
-  hoverShadow?: string;
-  style?: CSSProperties;
+  icon?: React.ReactNode;
+  iconSrc?: string;  
+  title: string;
+  description: string;
+  link?: string;
+  borderRadius?: string;
 }
 
-const Card: React.FC<CardProps> & {
-  Header: typeof CardHeader;
-  Content: typeof CardContent;
-  Media: typeof CardMedia;
-  Actions: typeof CardActions;
-} = ({
-  children,
-  className = '',
-  raised = false,
-  hoverEffect = false,
-  border = 'solid',
-  borderColor = '#e0e0e0',
-  borderWidth = 1,
-  hoverScale = 1.02,
-  hoverShadow = '0 8px 24px rgba(0, 0, 0, 0.12)',
-  style,
+const Card: React.FC<CardProps> = ({
+   icon,
+  iconSrc = "/assets/CardIcon.svg",  
+  title,
+  description,
+  link = "Read more >",
+  borderRadius = "0 0 68.087px 0"
 }) => {
-  const cardClasses = [
-    styles.card,
-    raised && styles.raised,
-    hoverEffect && styles.hoverEffect,
-    className,
-  ].filter(Boolean).join(' ');
-
-  const dynamicStyles = {
-    ...style,
-    '--border-style': border,
-    '--border-color': borderColor,
-    '--border-width': `${borderWidth}px`,
-    '--hover-scale': hoverScale,
-    '--hover-shadow': hoverShadow,
-  } as CSSProperties;
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className={cardClasses} style={dynamicStyles}>
-      {children}
+    // Main card container with hover state handling
+    // Uses CSS modules for styling and applies hover class when isHovered is true
+    <div 
+      className={`${styles.card} ${isHovered ? styles.hovered : ''}`}
+      style={{ '--card-border-radius': borderRadius } as React.CSSProperties}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      role="article" // Better accessibility
+      aria-label={title} // Better accessibility
+    >
+      {/* Decorative background layers for visual effect */}
+      <div className={styles.dotsLayer1} aria-hidden="true" />
+      <div className={styles.dotsLayer2} aria-hidden="true" />
+      <div className={styles.dotsLayer3} aria-hidden="true" />
+
+      {/* Main content area of the card */}
+      <div className={styles.content}>
+        {/* Icon section - falls back to default shield icon if none provided */} 
+         
+         <div className={styles.iconWrapper}>
+           {icon || (
+              <img 
+                src={iconSrc || "/assets/CardIcon.svg"} 
+                alt={title || 'Card icon'} 
+                className={styles.cardIcon}
+              />
+           )}
+        </div>
+
+        {/* Card title and description */}
+
+        <h2 className={styles.title}>{title}</h2>
+
+
+         <p className={styles.description}>{description}</p>
+
+        {/* Optional link that appears on hover */}
+        {/* {link && (
+          <a 
+            href="#" 
+            className={`${styles.link} ${isHovered ? styles.visible : ''}`}
+            aria-label={`Learn more about ${title}`}
+          >
+            {link}
+          </a>
+        )} */}
+      </div>
     </div>
   );
 };
 
+<<<<<<< HEAD
 Card.Header = CardHeader;
 Card.Content = CardContent;
 Card.Media = CardMedia;
 Card.Actions = CardActions;
+=======
+
+>>>>>>> Homepage
 
 export default React.memo(Card);

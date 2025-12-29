@@ -1,0 +1,107 @@
+.ContactSection {
+    width: 1120px;
+    height:900px;
+    display: flex;
+    padding: 15.556px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 38.889px;
+    align-self: stretch;
+
+    background: #191B1F;
+    /* background-color: rgb(0, 72, 167); */
+    /* position: relative;
+    overflow: hidden;  */
+}
+
+.heroDots {
+  /* height: 2409.793px; 
+  width: 1588.4px;;
+  background: #040352f6; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.ContactGrid {
+    /* background-color: yellow; */
+    width: 1120px;
+    height: 860.5219px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+}
+
+.Contantinfo{
+
+  width: 548px;
+  height: 791.3344px;
+  /* background-color: rgb(66, 54, 100); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28.842px;
+  flex-shrink: 0;
+}
+
+.contactFormWrapper{
+  /* background: greenyellow; */
+  width: 546px;
+  height: 292.2419px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 23.023px;
+  align-items: flex-start;
+  gap: 34.535px;
+
+}
+
+.socialIconsContainer {
+  display: flex;
+  width: 356px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.Contantform {
+  width: 547.9999px;
+  height: 860.5219px;
+  display: flex;
+  flex-direction: column;
+  /* background: #0844db; */
+  border-radius: 28.842px;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .socialIconsContainer {
+    justify-content: center;
+    gap: 12px;
+  }
+}
+

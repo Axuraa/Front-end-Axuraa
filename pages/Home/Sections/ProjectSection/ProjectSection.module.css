@@ -1,0 +1,57 @@
+.ProjectSection {
+    width: 1120px;
+    height: 782.4084px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    align-self: stretch;
+    background: #191B1F;
+    /* background-color: coral; */
+}
+
+.heroDots {
+  /* height: 2409.793px; 
+  width: 1588.4px;;
+  background: #040352f6; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+.ProjectGrid {
+    /* background-color: yellow; */
+    display: flex;
+    width: 1120px;
+    /* height: 396.4084px; */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start; 
+    row-gap: 22px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    border: 0 solid #E5E7EB;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+}
