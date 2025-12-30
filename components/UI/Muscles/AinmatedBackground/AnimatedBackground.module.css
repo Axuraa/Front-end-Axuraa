@@ -1,0 +1,52 @@
+.animatedBackground {
+  position: absolute; /* Changed to absolute to stay within hero section */
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  z-index: 0; /* Behind content but within hero */
+  overflow: hidden;
+  pointer-events: none;
+  /* background-color: antiquewhite; */
+}
+
+.HexagonContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  top: -50%;
+  /* bottom: 50%; */
+}
+
+/* Hexagon 1 - Top Left (closer to corner) */
+.Hexa_1 {
+  position: absolute;
+  top: 0;
+  right: -70%;
+  transform: rotate(-180deg);
+  transition: transform 1.8s ease-in-out;
+  opacity: 0.3;
+}
+
+/* Hexagon 2 - Top Left (offset from first) */
+.Hexa_2 {
+  position: absolute;
+  top: -70%;
+  left: -10%;
+  transform: rotate(150deg);
+  transition: transform 1.8s ease-in-out;
+  opacity: 0.4;
+}
+
+/* Hover Effects - Smooth rotation changes */
+.animatedBackground:hover .Hexa_1 {
+  transform: rotate(-90deg) scale(1.05);
+  opacity: 0.5;
+}
+
+.animatedBackground:hover .Hexa_2 {
+  transform: rotate(60deg) scale(1.08);
+  opacity: 0.6;
+}
