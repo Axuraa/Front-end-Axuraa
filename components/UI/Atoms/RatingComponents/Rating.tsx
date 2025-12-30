@@ -2,19 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './Rating.module.css';
 
-interface RatingItem {
-  id: number;
-  value: number;
-  label: string;
-  icon: string;
-  showIcon?: boolean;
-}
-
-interface RatingProps {
-  items: RatingItem[];
-  duration?: number;
-  maxValue?: number;
-}
+import { RatingProps } from '@/types/HomePage/ratingTypes';
 
 const Rating: React.FC<RatingProps> = ({ 
   items, 

@@ -12,14 +12,7 @@
 import React, { useState } from 'react';
 import styles from './DirectionCard.module.css';
 
-interface CardProps {
-  icon?: React.ReactNode;
-  iconSrc?: string;  
-  title: string;
-  description: string;
-  link?: string;
-  borderRadius?: string;
-}
+import { CardProps } from '@/types/Generals/cardTypes';
 
 const DirectionCard: React.FC<CardProps> = ({
    icon,

@@ -1,10 +1,8 @@
 import React from 'react';
 import styles from './StatusBadge.module.css';
-interface SectionBadgeProps {
-  text: string;
-  style?: React.CSSProperties;
-  className?: string;
-}
+import { SectionBadgeProps } from '@/types/HomePage/contactTypes';
+
+
 const StatusBadge: React.FC<SectionBadgeProps> = ({ 
   text, 
   style,

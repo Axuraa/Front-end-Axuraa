@@ -1,14 +1,6 @@
 import React from 'react';
 import styles from './Badge.module.css';
-
-interface BadgeProps {
-  text: string;
-  show?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
-  width?: string | number;
-  height?: string | number;
-}
+import { BadgeProps } from '@/types/Generals/badgeTypes';
 
 const Badge: React.FC<BadgeProps> = ({ 
   text, 

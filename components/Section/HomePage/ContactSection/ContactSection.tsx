@@ -12,21 +12,7 @@ import ContactInfoCard from '@/components/UI/Atoms/ContactForm/ContactInfoCard';
 import SocialIcon from '@/components/UI/Atoms/SocialIcon/SocialIcon';
 import ContactForm from '@/components/UI/Atoms/ContactForm/ContactForm';
 
-interface Worker {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  imageUrl: string;
-}
-
-interface ContactSectionProps {
-  badgeText: string;
-  title1: string;
-  title2: string;
-  subtitle: string;
-}
-
+import { ContactSectionProps , Worker } from '@/types/HomePage/contactTypes';
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   badgeText,

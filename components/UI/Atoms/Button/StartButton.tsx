@@ -2,11 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './StartButton.module.css';
 import StartIconButtom from '@/public/assets/StartIconButtom.svg';
-
-interface StartButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  className?: string;
-}
+import { StartButtonProps } from '@/types/Generals/buttonTypes';
 
 const StartButton: React.FC<StartButtonProps> = ({ 
   children, 

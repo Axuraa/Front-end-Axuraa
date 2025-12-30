@@ -1,12 +1,7 @@
 import React, { useRef, useState, ReactNode, CSSProperties, useEffect } from 'react';
 import styles from './ScrollComponents.module.css';
 
-interface ScrollComponentProps {
-  children: ReactNode;
-  className?: string;
-  style?: CSSProperties;
-  height?: string;
-}
+import { ScrollComponentProps } from '@/types/Generals/scrollTypes';
 
 export const HorizontalScroll: React.FC<ScrollComponentProps> = ({ 
   children, 

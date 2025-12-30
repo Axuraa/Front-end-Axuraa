@@ -5,7 +5,7 @@ import Typography from '@/components/UI/Atoms/Typography/Typography';
 import StartButton from '@/components/UI/Atoms/Button/StartButton';
 import ViewButton from '@/components/UI/Atoms/Button/ViewButton';
 import DotsBackground from '@/components/UI/Atoms/DotsBackground/DotsBackground';
-
+import EllipseDecorations from '@/components/UI/EllipseDecorations/EllipseDecorations';
 import Badge from '@/components/UI/Atoms/Badge/Badge';
 import Image from 'next/image';
 
@@ -68,12 +68,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className={styles.container}>
         
         {/* EllipseDecorations */}
-        {/* {showEllipseDecorations && (
+        {showEllipseDecorations && (
         <EllipseDecorations 
             showTopRight={true} 
             showBottomLeft={true} 
         />
-        )} */}
+        )}
         {/* <FloatingIcons  /> */}
 
         <div className={styles.content}>

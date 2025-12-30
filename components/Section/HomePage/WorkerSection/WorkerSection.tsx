@@ -6,21 +6,7 @@ import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 import DevolpercCard from '@/components/UI/Atoms/DevoleperCard/DevolpercCard';
 import { HorizontalScroll } from '@/components/UI/Atoms/ScrollComponents/ScrollComponents';
 
-interface Worker {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  imageUrl: string;
-}
-
-interface WorkerSectionProps {
-  badgeText: string;
-  title1: string;
-  title2: string;
-  subtitle: string;
-  Workers?: Worker[];  // Make Workers optional
-}
+import { WorkerSectionProps } from '@/types/HomePage/workerTypes';
 
 const WorkerSection: React.FC<WorkerSectionProps> = ({
   badgeText,

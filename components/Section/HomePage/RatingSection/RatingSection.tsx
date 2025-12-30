@@ -5,21 +5,7 @@ import Badge from '@/components/UI/Atoms/Badge/Badge';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 import Rating from '@/components/UI/Atoms/RatingComponents/Rating';
 
-interface RatingItem {
-  id: number;
-  value: number;
-  label: string;
-  icon: string;
-  showIcon?: boolean;
-}
-
-interface RatingSectionProps {
-  badgeText: string;
-  title1: string;
-  title2: string;
-  subtitle: string;
-  ratingItems?: RatingItem[];
-}
+import { RatingSectionProps } from '@/types/HomePage/ratingTypes';
 
 const RatingSection: React.FC<RatingSectionProps> = ({ 
   badgeText,

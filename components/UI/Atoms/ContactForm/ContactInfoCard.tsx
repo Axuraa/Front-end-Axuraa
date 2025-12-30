@@ -1,11 +1,9 @@
 import React from 'react';
 import styles from './ContactInfoCard.module.css';
 import Image from 'next/image';
-interface ContactInfoCardProps {
-  icon: string; // Now expects the path to the image
-  label: string;
-  value: string;
-}
+import { ContactInfoCardProps } from '@/types/Generals/cardTypes';
+
+
 const ContactInfoCard: React.FC<ContactInfoCardProps> = ({ 
   icon, 
   label, 

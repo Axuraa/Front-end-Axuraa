@@ -1,12 +1,7 @@
 import React from 'react';
 import styles from './DevolpercCard.module.css';
 
-interface DevolperCardProps {
-  testimonial: string;
-  authorName: string;
-  authorRole: string;
-  avatarSrc: string;
-}
+import { DevolperCardProps } from '@/types/Generals/cardTypes';
 
 const DevolperCard: React.FC<DevolperCardProps> = ({ 
   testimonial = "Codevera delivered beyond our expectations, great working flow and dynamic teams",

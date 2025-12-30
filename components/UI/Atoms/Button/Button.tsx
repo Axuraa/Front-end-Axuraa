@@ -1,23 +1,7 @@
 import React from 'react';
 import styles from './Button.module.css';
-type ButtonVariant = 'contained' | 'outlined' | 'text';
-type ButtonColor = 'primary' | 'secondary' | 'success' | 'error' | 'warning' | 'info';
-type ButtonSize = 'small' | 'medium' | 'large';
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: ButtonVariant;
-  color?: ButtonColor;
-  size?: ButtonSize;
-  fullWidth?: boolean;
-  startIcon?: React.ReactNode;
-  endIcon?: React.ReactNode;
-  loading?: boolean;
-  animation?: string;
-  className?: string;
-  hoverColor?: string;
-  hoverBgColor?: string;
-  hoverShadow?: string;
-  transitionDuration?: string;
-}
+import { ButtonProps } from '@/types/Generals/buttonTypes';
+
 const Button: React.FC<ButtonProps> = ({
   children,
   variant = 'contained',

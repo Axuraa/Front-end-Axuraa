@@ -3,10 +3,7 @@ import Image from 'next/image';
 import styles from './ViewButton.module.css';
 import ViewIconButton from '@/public/assets/ViewIconbutton.svg';
 
-interface ViewButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
-  className?: string;
-}
+import { ViewButtonProps } from '@/types/Generals/buttonTypes';
 
 const ViewButton: React.FC<ViewButtonProps> = ({ 
   children, 
