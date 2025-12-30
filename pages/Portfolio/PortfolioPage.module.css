@@ -1,0 +1,71 @@
+/* Base Layout */
+.portfolioPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    background: #191B1F;
+    position: relative;
+}
+
+
+.container {
+    
+    /* background-color: #46c70ae5; */
+    width: 1120px;
+    height: 1233.2253px;
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .buttonsContainer {
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  
+  .filterButton {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Projects Section */
+.projectsSection {
+   
+    display: flex;
+    width: 1120px;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    margin-top: -350px; /* Pull up to reduce gap */
+    padding-top: 40px; /* Add some top padding */
+    justify-content: center;
+    /* background-color: #0b31db; */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projectsSection {
+    margin-top: 0;
+    padding: 20px 0;
+    width: 100%;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 480px) {
+  .projectsSection {
+    padding: 30px 0;
+  }
+}
