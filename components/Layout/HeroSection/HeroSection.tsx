@@ -63,27 +63,21 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section className={styles.hero}>
       {/* Background Dots */}
-      {showBackgroundDots && (
+      {/* {showBackgroundDots && (
         <div className={styles.heroDots}>
           <DotsBackground side="both" />
         </div>
-      )}
+      )} */}
 
       <div className={styles.container}>
-        {/* Animated Circles */}
-        {showAnimatedCircles && (
-          <>
-            <AnimatedCircles position="topRight" />
-            <AnimatedCircles position="bottomLeft" />
-          </>
-        )}
+        
         {/* EllipseDecorations */}
-        {showEllipseDecorations && (
+        {/* {showEllipseDecorations && (
         <EllipseDecorations 
             showTopRight={true} 
             showBottomLeft={true} 
         />
-        )}
+        )} */}
         {/* <FloatingIcons  /> */}
 
         <div className={styles.content}>
