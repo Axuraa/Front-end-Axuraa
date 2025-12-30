@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
 import styles from './BusinessSsection.module.css';
-import Card from '@/components/UI/Card/Card';
-import Badge  from'@/components/UI/Badge/Badge';
-import DirectionCard from '@/components/UI/Card/DirectionCard';
+import Card from '@/components/UI/Atoms/Card/Card';
+import Badge  from'@/components/UI/Atoms/Badge/Badge';
+import DirectionCard from '@/components/UI/Atoms/Card/DirectionCard';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 
 

@@ -1,9 +1,9 @@
 'use client';
 import React from 'react';
 import styles from './RatingSection.module.css';
-import Badge from '@/components/UI/Badge/Badge';
+import Badge from '@/components/UI/Atoms/Badge/Badge';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
-import Rating from '@/components/UI/RatingComponents/Rating';
+import Rating from '@/components/UI/Atoms/RatingComponents/Rating';
 
 interface RatingItem {
   id: number;

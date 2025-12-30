@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 import styles from './ProjectSection.module.css';
-import Badge from '@/components/UI/Badge/Badge';
+import Badge from '@/components/UI/Atoms/Badge/Badge';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
-import ProjectCard from '@/components/UI/ProjectCard/ProjectCard';
-import SeeAll from '@/components/UI/SeeAll/SeeAll';
+import ProjectCard from '@/components/UI/Atoms/ProjectCard/ProjectCard';
+import SeeAll from '@/components/UI/Atoms/SeeAll/SeeAll';
 
 interface Project {
   id: number;

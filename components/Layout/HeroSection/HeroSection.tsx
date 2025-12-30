@@ -1,17 +1,13 @@
 'use client';
 import React from 'react';
 import styles from './HeroSection.module.css';
-import Typography from '@/components/UI/Typography/Typography';
-import StartButton from '@/components/UI/Button/StartButton';
-import ViewButton from '@/components/UI/Button/ViewButton';
-import DotsBackground from '@/components/UI/DotsBackground/DotsBackground';
-import AnimatedCircles from '@/components/UI/AnimatedCircles/AnimatedCircles';
-import Badge from '@/components/UI/Badge/Badge';
-import Image from 'next/image';
-import StatusBadge from '@/components/UI/StatusBadge/StatusBadge';
-import EllipseDecorations from '@/components/UI/EllipseDecorations/EllipseDecorations'; 
-import FloatingIcons from '@/components/UI/FloatingIcons/FloatingIcons';
+import Typography from '@/components/UI/Atoms/Typography/Typography';
+import StartButton from '@/components/UI/Atoms/Button/StartButton';
+import ViewButton from '@/components/UI/Atoms/Button/ViewButton';
+import DotsBackground from '@/components/UI/Atoms/DotsBackground/DotsBackground';
 
+import Badge from '@/components/UI/Atoms/Badge/Badge';
+import Image from 'next/image';
 
 interface HeroSectionProps {
   // Content

@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 import styles from './WorkerSection.module.css';
-import Badge from '@/components/UI/Badge/Badge';
+import Badge from '@/components/UI/Atoms/Badge/Badge';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
-import DevolpercCard from '@/components/UI/DevoleperCard/DevolpercCard';
-import { HorizontalScroll } from '@/components/UI/ScrollComponents/ScrollComponents';
+import DevolpercCard from '@/components/UI/Atoms/DevoleperCard/DevolpercCard';
+import { HorizontalScroll } from '@/components/UI/Atoms/ScrollComponents/ScrollComponents';
 
 interface Worker {
   id: number;

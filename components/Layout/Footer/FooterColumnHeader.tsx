@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Typography from '@/components/UI/Typography/Typography';
+import Typography from '@/components/UI/Atoms/Typography/Typography';
 
 interface FooterColumnHeaderProps {
   title: string;

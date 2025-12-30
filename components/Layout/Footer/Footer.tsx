@@ -1,7 +1,6 @@
 import React from 'react';
-import { Linkedin, Twitter, Github, Mail, Phone, MapPin } from 'lucide-react';
 import styles from './Footer.module.css';
-import Typography from '@/components/UI/Typography/Typography';
+import Typography from '@/components/UI/Atoms/Typography/Typography';
 import FooterColumnHeader from './FooterColumnHeader';
 
 const Footer = () => {
