@@ -1,9 +1,10 @@
 /* Hero Section */
 .hero {
-  width: 100%;
-  height: 100%;
+  width: 1220px;
+  height: auto; /* Automatically adjust height */
+  min-height: auto; /* Remove fixed minimum height */
   position: relative;
-  min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
