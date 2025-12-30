@@ -2,22 +2,22 @@
 
 import React from 'react';
 import styles from './Homepage.module.css'; 
-// import ServicesSection from './Sections/OurServicesSection/ServicesSection';
-// import StatsSection from './Sections/StatsSection';
-import ContactSection from './Sections/ContactSection/ContactSection';
-import ServicesSection from './Sections/OurServicesSection/ServicesSection';
-import BusinessSsection from './Sections/BusinessSection/BusinessSsection';
-import RatingSection from './Sections/RatingSection/RatingSection';
-import ProjectSection from './Sections/ProjectSection/ProjectSection';
-import WorkerSection from './Sections/WorkerSection/WorkerSection';
+// import ServicesSection from '@/components/Section/HomePage/OurServicesSection/ServicesSection';
+// import StatsSection from '@/components/Section/HomePage/StatsSection';
+import ContactSection from '@/components/Section/HomePage/ContactSection/ContactSection';
+import ServicesSection from '@/components/Section/HomePage/OurServicesSection/ServicesSection';
+import BusinessSsection from '@/components/Section/HomePage/BusinessSection/BusinessSsection';
+import RatingSection from '@/components/Section/HomePage/RatingSection/RatingSection';
+import ProjectSection from '@/components/Section/HomePage/ProjectSection/ProjectSection';
+import WorkerSection from '@/components/Section/HomePage/WorkerSection/WorkerSection';
 
 // Dynamically import components with no SSR
 // const HeroSection = dynamic(() => import('@/Pages/Home/Sections/HeroSection'), { ssr: false });
-// const ServicesSection = dynamic(() => import('./Sections/ServicesSection'), { ssr: false });
-// const AboutSection = dynamic(() => import('./Sections/AboutSection'), { ssr: false });
-// const StatsSection = dynamic(() => import('./Sections/StatsSection'), { ssr: false });
-// const ContactSection = dynamic(() => import('./Sections/ContactSection'), { ssr: false });
-// const Footer = dynamic(() => import('./Sections/Footer'), { ssr: false });
+// const ServicesSection = dynamic(() => import('@/components/Section/HomePage/ServicesSection'), { ssr: false });
+// const AboutSection = dynamic(() => import('@/components/Section/HomePage/AboutSection'), { ssr: false });
+// const StatsSection = dynamic(() => import('@/components/Section/HomePage/StatsSection'), { ssr: false });
+// const ContactSection = dynamic(() => import('@/components/Section/HomePage/ContactSection'), { ssr: false });
+// const Footer = dynamic(() => import('@/components/Section/HomePage/Footer'), { ssr: false });
 
 
 const ratingItems = [
