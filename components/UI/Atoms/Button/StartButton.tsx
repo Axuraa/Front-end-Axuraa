@@ -9,6 +9,7 @@ const StartButton: React.FC<StartButtonProps> = ({
   className = '',
   ...props 
 }) => {
+  
   return (
     <button
       className={`${styles.startButton} ${className}`}
@@ -18,7 +19,7 @@ const StartButton: React.FC<StartButtonProps> = ({
         {children}
         <span className={styles.iconWrapper}>
           <Image 
-            src={StartIconButtom} 
+            src={'/assets/StartIconButtom.svg'} 
             alt="Start" 
             width={20} 
             height={20} 
