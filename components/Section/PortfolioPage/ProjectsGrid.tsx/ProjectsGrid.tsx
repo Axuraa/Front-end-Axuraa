@@ -1,12 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import styles from './ProjectsGrid.module.css';
-<<<<<<< HEAD
-import ProjectCard from '@/components/UI/Atoms/ProjectCard/ProjectCard';
-=======
 import ProjectCard from '@/components/UI/Muscles/ProjectCard/ProjectCard';
 import React from 'react';
->>>>>>> ProfilePage
 
 interface Project {
   id: string;
@@ -37,13 +33,10 @@ const item = {
 };
 
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
-<<<<<<< HEAD
-=======
   if (!projects.length) {
     return <div className={styles.noProjects}>No projects found for this filter.</div>;
   }
 
->>>>>>> ProfilePage
   return (
     <motion.div 
       className={styles.projectsGridContainer}
@@ -72,8 +65,4 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
   );
 };
 
-<<<<<<< HEAD
-export default ProjectsGrid;
-=======
 export default React.memo(ProjectsGrid);
->>>>>>> ProfilePage
