@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './ContactForm.module.css';
 import Image from 'next/image';
-import fullNameIcon from '../../../public/assets/fullname.svg';
-import emailIcon from '../../../public/assets/Email.svg';
-import servicesIcon from '../../../public/assets/services.svg';
-import chooseIcon from '../../../public/assets/chose.svg';
-import sendIcon from '../../../public/assets/sendbuttom.svg';
+import fullNameIcon from '../../../../public/assets/fullname.svg';
+import emailIcon from '../../../../public/assets/Email.svg';
+import servicesIcon from '../../../../public/assets/services.svg';
+import chooseIcon from '../../../../public/assets/chose.svg';
+import sendIcon from '../../../../public/assets/sendbuttom.svg';
 
 const ContactForm: React.FC = () => {
   return (
