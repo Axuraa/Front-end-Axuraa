@@ -8,6 +8,7 @@ import DotsBackground from '@/components/UI/Atoms/DotsBackground/DotsBackground'
 import EllipseDecorations from '@/components/UI/EllipseDecorations/EllipseDecorations';
 import Badge from '@/components/UI/Atoms/Badge/Badge';
 import Image from 'next/image';
+import StatusBadge from '@/components/UI/Atoms/StatusBadge/StatusBadge';
 
 interface HeroSectionProps {
   // Content
@@ -79,7 +80,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         <div className={styles.content}>
           {/* Badge */}
           {showBadge && <Badge text={badgeText} show={true} />}
-          {showStatusBadge && <StatusBadge text="WHO WE ARE"/>}
+          {showStatusBadge && <StatusBadge text="WHO WE ARE"  />}
 
           {/* Title */}
           <Typography 

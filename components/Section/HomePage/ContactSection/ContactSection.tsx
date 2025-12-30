@@ -11,16 +11,7 @@ import { ContactIcon } from 'lucide-react';
 import ContactInfoCard from '@/components/UI/Atoms/ContactForm/ContactInfoCard';
 import SocialIcon from '@/components/UI/Atoms/SocialIcon/SocialIcon';
 import ContactForm from '@/components/UI/Atoms/ContactForm/ContactForm';
-
-
-import StatusBadge from '@/components/UI/Atoms/StatusBadge/StatusBadge';
-import Typography from '@/components/UI/Atoms/Typography/Typography';
-
-import ContactInfoCard from '@/components/UI/Atoms/ContactForm/ContactInfoCard';
-import SocialIcon from '@/components/UI/Atoms/SocialIcon/SocialIcon';
-import ContactForm from '@/components/UI/Atoms/ContactForm/ContactForm';
-
-import { ContactSectionProps  } from '@/types/HomePage/contactTypes';
+import { ContactSectionProps } from '@/types/HomePage/contactTypes';
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   badgeText,

@@ -31,7 +31,7 @@ export default function Home() {
         showPrimaryButton={true}
         showSecondaryButton={true}
         showEllipseDecorations={true}
-        showStatusBadge={true}
+        showStatusBadge={false}
       />
        {/* <div className={styles.filexContainer}>
          <Card
