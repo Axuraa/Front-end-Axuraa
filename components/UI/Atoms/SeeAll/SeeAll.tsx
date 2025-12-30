@@ -3,11 +3,7 @@ import React from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 import styles from './SeeAll.module.css';
 
-interface LinkWithIconProps {
-  href: string;
-  children: React.ReactNode;
-  className?: string;
-}
+import { LinkWithIconProps } from '@/types/Generals/iconsTypes';
 
 const LinkWithIcon: React.FC<LinkWithIconProps> = ({ 
   href = "#", 

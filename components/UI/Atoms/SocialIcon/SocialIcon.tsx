@@ -2,12 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './SocialIcon.module.css';
 
-interface SocialIconProps {
-  icon: string;
-  label?: string;
-  showLabel?: boolean;
-  alt?: string;
-}
+import { SocialIconProps } from '@/types/Generals/iconsTypes';
 
 const SocialIcon: React.FC<SocialIconProps> = ({
   icon,

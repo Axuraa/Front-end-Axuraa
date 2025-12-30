@@ -1,32 +1,16 @@
 'use client';
 import React from 'react';
 import styles from './ContactSection.module.css';
-import Badge from '@/components/UI/Badge/Badge';
-import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
-import DevolpercCard from '@/components/UI/DevoleperCard/DevolpercCard';
-import { HorizontalScroll } from '@/components/UI/ScrollComponents/ScrollComponents'; 
-import StatusBadge from '@/components/UI/StatusBadge/StatusBadge';
-import Typography from '@/components/UI/Typography/Typography';
-import { ContactIcon } from 'lucide-react';
-import ContactInfoCard from '@/components/UI/ContactForm/ContactInfoCard';
-import SocialIcon from '@/components/UI/SocialIcon/SocialIcon';
-import ContactForm from '@/components/UI/ContactForm/ContactForm';
 
-interface Worker {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  imageUrl: string;
-}
 
-interface ContactSectionProps {
-  badgeText: string;
-  title1: string;
-  title2: string;
-  subtitle: string;
-}
+import StatusBadge from '@/components/UI/Atoms/StatusBadge/StatusBadge';
+import Typography from '@/components/UI/Atoms/Typography/Typography';
 
+import ContactInfoCard from '@/components/UI/Atoms/ContactForm/ContactInfoCard';
+import SocialIcon from '@/components/UI/Atoms/SocialIcon/SocialIcon';
+import ContactForm from '@/components/UI/Atoms/ContactForm/ContactForm';
+
+import { ContactSectionProps  } from '@/types/HomePage/contactTypes';
 
 const ContactSection: React.FC<ContactSectionProps> = ({
   badgeText,

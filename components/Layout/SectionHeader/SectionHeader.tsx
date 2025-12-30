@@ -1,12 +1,8 @@
 'use client';
 import React from 'react';
 import styles from './SectionHeader.module.css';
-interface SectionHeaderProps {
-  title1: string;
-  title2: string;
-  subtitle: string;
-  className?: string;
-}
+import { SectionHeaderProps } from '@/types/Generals/sectionHeaderTypes';
+
 const SectionHeader: React.FC<SectionHeaderProps> = ({
   title1,
   title2,

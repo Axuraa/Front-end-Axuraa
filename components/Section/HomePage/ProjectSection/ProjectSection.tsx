@@ -3,27 +3,10 @@ import React from 'react';
 import styles from './ProjectSection.module.css';
 import Badge from '@/components/UI/Atoms/Badge/Badge';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
-import ProjectCard from '@/components/UI/Atoms/ProjectCard/ProjectCard';
+import ProjectCard from '@/components/UI/Muscles/ProjectCard/ProjectCard';
 import SeeAll from '@/components/UI/Atoms/SeeAll/SeeAll';
 
-interface Project {
-  id: number;
-  title: string;
-  category: string;
-  percentage: string;
-  description: string;
-  imageUrl: string;
-}
-
-interface ProjectSectionProps {
-  badgeText: string;
-  title1: string;
-  title2: string;
-  subtitle: string;
-  projects?: Project[];
-  seeAllHref?: string;
-  seeAllText?: string;
-}
+import { ProjectSectionProps } from '@/types/HomePage/projectsTypes';
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({
   badgeText,

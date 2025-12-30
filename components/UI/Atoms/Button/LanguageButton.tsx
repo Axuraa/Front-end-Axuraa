@@ -4,9 +4,7 @@ import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import styles from './LanguageButton.module.css';
 
-interface LanguageButtonProps {
-  className?: string;
-}
+import { LanguageButtonProps } from '@/types/Generals/buttonTypes';
 
 export const LanguageButton = ({ className = '' }: LanguageButtonProps) => {
   const [isOpen, setIsOpen] = useState(false);

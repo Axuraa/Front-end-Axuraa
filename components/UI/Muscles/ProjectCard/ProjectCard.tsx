@@ -4,13 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from './ProjectCart.module.css';
 
-interface ProjectCardProps {
-  title: string;
-  category: string;
-  percentage: string;
-  description: string;
-  imageUrl: string;
-}
+import { ProjectCardProps } from '@/types/Generals/cardTypes';
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   title,

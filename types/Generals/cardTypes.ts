@@ -1,0 +1,46 @@
+/** Card component props interface  from path : 
+ * @/components/UI/Atoms/Card/Card.tsx 
+ * @/components/UI/Atoms/Card/DirectionCard.tsx
+ * */
+
+export interface CardProps {
+  icon?: React.ReactNode;
+  iconSrc?: string;  
+  title: string;
+  description: string;
+  link?: string;
+  borderRadius?: string;
+}
+
+/** ContactInfoCard component props interface from path :
+ * @/components/UI/Atoms/ContactForm/ContactInfoCard.tsx 
+ * */
+
+export interface ContactInfoCardProps {
+  icon: string; // Now expects the path to the image
+  label: string;
+  value: string;
+}
+
+/** ProjectCard component props interface from path :
+ * @/components/UI/Muscles/ProjectCard/ProjectCard.tsx 
+ * */
+
+export interface ProjectCardProps {
+  title: string;
+  category: string;
+  percentage: string;
+  description: string;
+  imageUrl: string;
+}
+
+/** DevolperCard component props interface from path :
+ * @/components/UI/Atoms/DevoleperCard/DevolpercCard.tsx 
+ * */
+
+export interface DevolperCardProps {
+  testimonial: string;
+  authorName: string;
+  authorRole: string;
+  avatarSrc: string;
+}
