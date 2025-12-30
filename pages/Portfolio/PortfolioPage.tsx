@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import ProjectsGrid from '@/components/Section/PortfolioPage/ProjectsGrid.tsx/ProjectsGrid';
 import styles from './PortfolioPage.module.css';
@@ -142,42 +142,48 @@ const projects = [
     imageUrl: '/assets/ProjectImage.png'
   }
 ];
+
+   const filteredProjects = useMemo(() => {
+    if (activeFilter === 'All') return projects;
+    return projects.filter(project => 
+      project.category === activeFilter
+    );
+  }, [activeFilter, projects]);
   return (
     <div className={styles.portfolioPage}>
-               <HeroSection 
-                    title1="Architecting the Future of"
-                    title2="Digital Business."
-                    subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
-                    badgeText="INNOVATION IN PROGRESS"
-                    showBackgroundDots={false}
-                    showAnimatedCircles={false}
-                    showBadge={false}
-                    showTrustedSection={false}
-                    showPrimaryButton={true}
-                    showSecondaryButton={false}
-                    showEllipseDecorations={true}
-                    showStatusBadge={true}
-        /> 
-     
+      <HeroSection 
+        title1="Architecting the Future of"
+        title2="Digital Business."
+        subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
+        badgeText="INNOVATION IN PROGRESS"
+        showBackgroundDots={false}
+        showAnimatedCircles={false}
+        showBadge={false}
+        showTrustedSection={false}
+        showPrimaryButton={true}
+        showSecondaryButton={false}
+        showEllipseDecorations={true}
+        showStatusBadge={true}
+      />
      
       <div className={styles.projectsSection}>
         <ProjectPageButtons
-            activeFilter={activeFilter}
-            onFilterChange={setActiveFilter}
-            filters={projectFilters} 
+          activeFilter={activeFilter}
+          onFilterChange={setActiveFilter}
+          filters={projectFilters} 
         />
         
         <div className={styles.container}>
-          <ProjectsGrid projects={projects} />
+          <ProjectsGrid projects={filteredProjects} />
         </div>
       </div>
-      {/* <ProjectPageButtons
-            activeFilter={activeFilter}
-            onFilterChange={setActiveFilter}
-            filters={projectFilters} 
+{/* 
+       <ProjectPageButtons
+          activeFilter={activeFilter}
+          onFilterChange={setActiveFilter}
+          filters={projectFilters} 
         /> */}
     </div>
   );
 };
-
 export default React.memo(PortfolioPage);
