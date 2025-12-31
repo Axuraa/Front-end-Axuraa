@@ -1,14 +1,13 @@
 .animatedBackground {
-  position: absolute; /* Changed to absolute to stay within hero section */
-  top: -20%;
+  position: absolute;
+  top: 0%;
   left: 0;
   width: 100%;
   height: 100vh;
-
-  z-index: 0; /* Behind content but within hero */
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
-  /* background-color: antiquewhite; */
+  /* background-color: aliceblue; */
 }
 
 .HexagonContainer {
@@ -17,14 +16,13 @@
   height: 100%;
   pointer-events: auto;
   top: -50%;
-  /* bottom: 50%; */
 }
 
 /* Hexagon 1 - Top Left (closer to corner) */
 .Hexa_1 {
   position: absolute;
-  top: 0;
-  right: -70%;
+  top: 20%;
+  right: -71%;
   transform: rotate(-180deg);
   transition: transform 1.8s ease-in-out;
   opacity: 0.3;
@@ -33,7 +31,7 @@
 /* Hexagon 2 - Top Left (offset from first) */
 .Hexa_2 {
   position: absolute;
-  top: -70%;
+  top: 10%;
   left: -10%;
   transform: rotate(150deg);
   transition: transform 1.8s ease-in-out;
@@ -48,5 +46,44 @@
 
 .animatedBackground:hover .Hexa_2 {
   transform: rotate(60deg) scale(1.08);
+  opacity: 0.6;
+}
+
+/* Circle Container */
+.CircleContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  top: 0;
+  right: -70%;
+}
+
+/* Circle 1 - Bottom Left */
+.Circle_1 {
+  position: absolute;
+  top: 30%;
+  left: -60%;
+  transition: transform 1.8s ease-in-out;
+  /* opacity: 0.3; */
+}
+
+/* Circle 2 - Top Right (Double size) */
+.Circle_2 {
+  position: absolute;
+  top: -57%;
+  right: -5%;
+  transition: transform 1.8s ease-in-out;
+  /* opacity: 0.4; */
+}
+
+/* Hover Effects - Vertical movement */
+.animatedBackground:hover .Circle_1 {
+  transform: translateY(-250px) scale(1.5);
+  opacity: 0.5;
+}
+
+.animatedBackground:hover .Circle_2 {
+  transform: translateY(250px) scale(1.5);
   opacity: 0.6;
 }

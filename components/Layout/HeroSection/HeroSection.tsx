@@ -9,6 +9,7 @@ import EllipseDecorations from '@/components/UI/EllipseDecorations/EllipseDecora
 import Badge from '@/components/UI/Atoms/Badge/Badge';
 import Image from 'next/image';
 import StatusBadge from '@/components/UI/Atoms/StatusBadge/StatusBadge';
+import AnimatedBackground from '@/components/UI/Muscles/AinmatedBackground/AnimatedBackground';
 
 interface HeroSectionProps {
   // Content
@@ -69,12 +70,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className={styles.container}>
         
         {/* EllipseDecorations */}
-        {/* {showEllipseDecorations && (
-        <EllipseDecorations 
-            showTopRight={true} 
-            showBottomLeft={true} 
-        />
-        )} */}
+         {showEllipseDecorations && (
+        // <EllipseDecorations 
+        //     showTopRight={true} 
+        //     showBottomLeft={true} 
+        // />
+          <AnimatedBackground type='Hexagon' className={styles.animatedBackground} />
+        )}
         {/* <FloatingIcons  /> */}
 
         <div className={styles.content}>
