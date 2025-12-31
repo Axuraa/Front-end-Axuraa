@@ -1,0 +1,90 @@
+.alphabetContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+}
+
+/* Letter A - Appears: fade out, move, fade in */
+.alphabetContainer .letterA_1 {
+  opacity: 1.0 !important;
+  transition: opacity 1.2s ease;
+}
+
+.alphabetContainer .letterA_2 {
+  opacity: 0 !important;
+  transition: opacity 1.2s ease;
+}
+
+.alphabetContainer:hover .letterA_1 {
+  opacity: 0 !important;
+}
+
+.alphabetContainer:hover .letterA_2 {
+  opacity: 1.0 !important;
+}
+
+/* Letter R - Same appears behavior as A */
+.alphabetContainer .letterR_1 {
+  opacity: 1.0 !important;
+  transition: opacity 1.2s ease;
+}
+
+.alphabetContainer .letterR_2 {
+  opacity: 0 !important;
+  transition: opacity 1.2s ease;
+}
+
+.alphabetContainer:hover .letterR_1 {
+  opacity: 0 !important;
+}
+
+.alphabetContainer:hover .letterR_2 {
+  opacity: 1.0 !important;
+}
+
+/* Letter X - Horizontal movement */
+.letterX {
+  opacity: 1.0;
+  transition: transform 1.0s ease, opacity 1.0s ease;
+}
+
+.alphabetContainer:hover .letterX {
+  transform: translate(var(--translate-x), 0);
+  opacity: 1.0;
+}
+
+/* Letter U - Diagonal movement */
+.letterU {
+  opacity: 1.0;
+  transition: transform 1.0s ease, opacity 1.0s ease;
+
+}
+
+.alphabetContainer:hover .letterU {
+  transform: translate(var(--translate-x), var(--translate-y));
+  opacity: 1.0;
+}
+
+/* Letter Q1 - First Q diagonal movement */
+.letterQ1 {
+  opacity: 1.0;
+  transition: transform 1.0s ease, opacity 1.0s ease;
+
+}
+
+.alphabetContainer:hover .letterQ1 {
+  transform: translate(var(--translate-x), var(--translate-y));
+  opacity: 1.0;
+}
+
+/* Letter Q2 - Second Q diagonal movement */
+.letterQ2 {
+  opacity: 1.0;
+    transition: transform 1.0s ease, opacity 1.0s ease;
+}
+
+.alphabetContainer:hover .letterQ2 {
+  transform: translate(var(--translate-x), var(--translate-y));
+  opacity: 1.0;
+}
