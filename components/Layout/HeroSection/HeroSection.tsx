@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './HeroSection.module.css';
 import Typography from '@/components/UI/Atoms/Typography/Typography';
 import StartButton from '@/components/UI/Atoms/Button/StartButton';
@@ -58,6 +58,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   onPrimaryClick = () => console.log('Primary button clicked'),
   onSecondaryClick = () => console.log('Secondary button clicked'),
 }) => {
+
+   const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
   return (
     <section className={styles.hero}>
       {/* Background Dots */}
@@ -71,18 +76,35 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         
         {/* EllipseDecorations */}
          {showEllipseDecorations && (
-        // <EllipseDecorations 
-        //     showTopRight={true} 
-        //     showBottomLeft={true} 
-        // />
+        <EllipseDecorations 
+            showTopRight={true} 
+            showBottomLeft={true} 
+        />
+          // <AnimatedBackground type='Hexagon' className={styles.animatedBackground} />
+        )}
+
+        {showAnimatedCircles && (
           <AnimatedBackground type='Hexagon' className={styles.animatedBackground} />
         )}
+
         {/* <FloatingIcons  /> */}
 
         <div className={styles.content}>
           {/* Badge */}
-          {showBadge && <Badge text={badgeText} show={true} />}
-          {showStatusBadge && <StatusBadge text="WHO WE ARE"  />}
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '1rem',
+            marginBottom: '1.5rem',
+            opacity: mounted ? 1 : 0,
+            transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'opacity 0.6s ease, transform 0.6s ease',
+            transitionDelay: '0.1s'
+          }}>
+            {showBadge && <Badge text={badgeText} show={true} />}
+            {showStatusBadge && <StatusBadge text="WHO WE ARE" />}
+          </div>
 
           {/* Title */}
           <Typography 
@@ -103,21 +125,41 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               alignItems: 'center'
             }}
           >
-            <span style={{ color: 'white', WebkitTextFillColor: 'white' }}>
+            <span 
+                style={{
+                    color: 'white',
+                    WebkitTextFillColor: 'white',
+                    opacity: mounted ? 1 : 0,
+                    transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'opacity 0.6s ease, transform 0.6s ease',
+                    transitionDelay: '0.1s'
+                 }}>
               {title1}
             </span>
             <span style={{
-              background: 'linear-gradient(90deg, #D04A1D 0%, #D96A2B 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              marginTop: '0.5rem'
+                background: 'linear-gradient(90deg, #D04A1D 0%, #D96A2B 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                marginTop: '0.5rem',
+                opacity: mounted ? 1 : 0,
+                transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+                transition: 'opacity 0.6s ease, transform 0.6s ease',
+                transitionDelay: '0.3s'
             }}>
               {title2}
             </span>
           </Typography>
 
           {/* Subtitle */}
-          <div className={styles.subtitle}>
+          <div 
+            className={styles.subtitle}
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.6s ease, transform 0.6s ease',
+              transitionDelay: '0.5s'
+            }}
+          >
             <Typography 
               variant="body1"
               component="p"
@@ -137,7 +179,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           {/* CTA Buttons */}
-          <div className={styles.ctaButtons}>
+          <div 
+                className={styles.ctaButtons}
+                 style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.6s ease, transform 0.6s ease',
+              transitionDelay: '0.7s'
+            }} >
             {showPrimaryButton && (
               <StartButton onClick={onPrimaryClick}>
                 {primaryButtonText}
@@ -153,7 +202,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Trusted Section */}
         {showTrustedSection && (
-          <div className={styles.trustedSection}>  
+          <div className={styles.trustedSection}
+                style={{
+                    opacity: mounted ? 1 : 0,
+                    transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+                    transition: 'opacity 0.6s ease, transform 0.6s ease',
+                    transitionDelay: '0.9s'
+                  }}
+            >  
             <Typography
               variant="body2"
               component="p"
@@ -172,6 +228,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             >
               {subtitle2}
             </Typography>
+            
             <div className={styles.companiesGrid}>
               <div className={styles.companyLogo}>
                     <Image 

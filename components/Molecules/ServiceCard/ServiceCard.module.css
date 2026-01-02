@@ -1,0 +1,142 @@
+.serviceCard {
+  display: flex;
+  /* width: 100%;
+  max-width: 548px; */
+  padding: 33.551px 32.153px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end; 
+  gap: 18.173px;
+  border-radius: 11.184px;
+  border: 0 solid #E5E7EB;
+  background: #2A2A2A;
+  color: #E6E6E6;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 60px 151px 46px 0 rgba(208, 74, 29, 0.00), 
+              38px 97px 42px 0 rgba(208, 74, 29, 0.01), 
+              22px 54px 35px 0 rgba(208, 74, 29, 0.05), 
+              10px 24px 26px 0 rgba(208, 74, 29, 0.09), 
+              2px 6px 14px 0 rgba(208, 74, 29, 0.10);
+}
+
+
+.cardHeader {
+    /* background: #bfcc07; */
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    align-self: stretch;
+}
+.iconContainer {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+.safeIcon {
+  width: 27.959px;
+  height: 27.959px;
+}
+.title {
+    width: 221px;
+    height: 28px;
+    /* background: #000; */
+    color: #E6E6E6;
+    font-family: Roboto;
+    font-size: 19.571px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 27.959px; /* 142.857% */
+    margin: auto  0;
+}
+.description {
+    /* background-color: #D04A1D; */
+    width: 483.6939px;
+    height: 32px;
+    align-self: stretch;
+    color: #B3B3B3;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.featuresList {
+    /* background: green; */
+    display: flex;
+    padding: 0 140.668px 3.18px 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 12.206px;
+    align-self: stretch;
+    border: 0 solid #E5E7EB;
+}
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #E6E6E6;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15.795px; /* 112.824% */
+}
+.checkIcon {
+  color: #D04A1D;
+  width: 15.5px;
+  height: 15.5px;
+}
+.buttonContainer {
+    /* background: red; */
+    display: flex;
+  /* width: 548px; */
+  padding: 33.551px 32.153px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  /* gap: 18.173px; */
+  border-radius: 11.184px;
+  border: 0 solid #E5E7EB;
+  background: #2A2A2A;
+}
+.learnMoreButton {
+  display: flex;
+  padding: 5.592px 26.798px 4.959px 22.367px;
+  align-items: center;
+  border-radius: 5.592px;
+  border: 0 solid #E5E7EB;
+  background: var(--Primary, #D04A1D);
+  color: #1A1A1A;
+  font-family: Roboto;
+  font-size: 16.776px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22.367px; 
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.learnMoreButton:hover {
+  color: #fff ;
+  /* background-color: #e85d2a;  */
+  box-shadow: 0 2px 8px rgba(208, 74, 29, 0.3); 
+}
+.learnMoreButton svg {
+  transition: transform 0.2s ease-in-out;
+  margin-left: 4px; 
+}
+.learnMoreButton:hover svg {
+  transform: translateX(4px);
+  filter: brightness(0.9); 
+}

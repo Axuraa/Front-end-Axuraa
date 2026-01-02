@@ -1,3 +1,7 @@
+import BusinessSolutions from "@/pages/BusinessSolutions/BusinessSolutions";
+
 export default function BusinessSolutionsPage() {
-    return <div>Business Solutions Page</div>;
+    return (
+        <BusinessSolutions/>
+    )
 }  

@@ -4,18 +4,19 @@ import { Menu, X } from 'lucide-react';
 import { LanguageButton } from '@/components/UI/Atoms/Button/LanguageButton';
 import styles from './Header.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState('Home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Business solutions', href: '#business' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services' },
+    { name: 'Business solutions', href: '/businessSolutions' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -38,18 +39,17 @@ const Header = () => {
           <ul className={styles.navList}>
             {navLinks.map((link) => (
               <li key={link.name} className={styles.navItem}>
-                <a
+                <Link
                   href={link.href}
                   className={`${styles.navLink} ${activeLink === link.name ? styles.active : ''}`}
-                  onClick={(e) => {
-                    e.preventDefault();
+                  onClick={() => {
                     setActiveLink(link.name);
                     setIsMenuOpen(false);
                   }}
                 >
                   {link.name}
                   {activeLink === link.name && <span className={styles.navUnderline} />}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
