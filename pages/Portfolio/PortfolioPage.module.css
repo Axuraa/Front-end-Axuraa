@@ -44,8 +44,8 @@
     align-items: center;
     position: relative;
     z-index: 1;
-    margin-top: -350px; /* Pull up to reduce gap */
-    padding-top: 40px; /* Add some top padding */
+    /* margin-top: -350px; 
+    padding-top: 40px;  */
     justify-content: center;
     /* background-color: #0b31db; */
 }
