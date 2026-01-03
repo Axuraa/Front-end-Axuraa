@@ -1,0 +1,199 @@
+/* components/UI/SpecialCard/SpecialCard.module.css */
+
+.specialCard {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 80px 60px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #d04a1d 50%, #b84328 100%);
+  overflow: hidden;
+  box-shadow: 2px 10px 30px #d04a1d89;
+}
+
+/* Blur circles container */
+.blurContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blurCircle {
+  position: absolute;
+  opacity: 0.4;
+  /* filter: blur(80px); */
+  pointer-events: none;
+}
+
+.blurCircle1 {
+  top: -20%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  /* animation: float1 8s ease-in-out infinite; */
+}
+
+.blurCircle2 {
+  bottom: -30%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  /* animation: float2 10s ease-in-out infinite; */
+}
+
+/* Animations for blur circles */
+/* @keyframes float1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes float2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-50%, 50%) scale(1.15);
+  }
+} */
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  color: white;
+  font-weight: 700 !important;
+  font-size: 3.5rem !important;
+  margin-bottom: 24px !important;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 300 !important;
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+  max-width: 700px;
+  margin: 0 auto 48px !important;
+}
+
+/* Button group */
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+}
+
+.primaryButton {
+  background-color: white;
+  color: #c75437;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.primaryButton:hover {
+  transform: translateY(3%);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+  background-color: #dddddd;
+}
+
+.primaryButton:active {
+  transform: translateY(0);
+}
+
+.secondaryButton {
+  background-color: #903f258c;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.secondaryButton:hover {
+  background-color: #5826158c;
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(3%);
+}
+
+.secondaryButton:active {
+  transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .specialCard {
+    padding: 60px 40px;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 2.5rem !important;
+  }
+
+  .subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 36px !important;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .blurCircle1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .blurCircle2 {
+    width: 350px;
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .specialCard {
+    padding: 40px 24px;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 2rem !important;
+  }
+
+  .subtitle {
+    font-size: 1rem !important;
+  }
+
+  .button {
+    padding: 14px 32px;
+    font-size: 0.95rem;
+  }
+}

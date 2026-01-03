@@ -1,6 +1,6 @@
 /* components/Sections/HistorySection/HistorySection.module.css - FIXED */
 .history_section {
-  width: 80%;
+  width: 100%;
   /* background: linear-gradient(
     180deg,
     #1F2937 0%,
@@ -9,7 +9,7 @@
   ); */
   position: relative;
   overflow: hidden;
-    padding: 2rem 6rem;
+    /* padding: 2rem 6rem; */
     display: flex;
     justify-self: center;
     align-items: center;
@@ -51,7 +51,7 @@
 .container {
   max-width: 100vw;
   margin: 0 auto;
-  padding: 6rem;
+  padding: 4rem 1rem;
   position: relative;
   z-index: 1;
 }
