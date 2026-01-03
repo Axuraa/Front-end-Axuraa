@@ -1,4 +1,4 @@
-/* MainSection.module.css - Alternative Approach */
+/* MainSection.module.css */
 .mainSection {
   width: 100%;
   min-height: 100vh;
@@ -9,70 +9,57 @@
   background: #191B1F;
   position: relative;
   overflow: visible;
-  padding: 120px 20px 80px;
-}
-
-.mainSection > :first-child {
-  width: 100%;
-  /* margin-bottom: 60px; */
-}
-
-/* Rating wrapper spacing */
-.mainSection > :last-child {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 0;  /* Remove padding to let HeroSection control its own spacing */
 }
 
 .heroWrapper {
   width: 100%;
-  max-width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-  /* height: 100vh; */
-
-
+  /* margin-bottom: 60px;  Space between hero and rating */
 }
 
 .ratingWrapper {
   width: 100%;
-  max-width: 90vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  /* margin-bottom: 80px;  Space at bottom */
+  margin-top: -10%;
 }
 
 /* Responsive */
 @media (max-width: 1024px) {
-  
-   .mainSection {
-    padding: 100px 20px 60px;
+  .heroWrapper {
+    margin-bottom: 50px;
   }
   
-  .mainSection > :first-child {
-    margin-bottom: 50px;
+  .ratingWrapper {
+    margin-bottom: 60px;
   }
 }
 
 @media (max-width: 768px) {
-  .mainSection {
-    padding: 80px 15px 50px;
+  .heroWrapper {
+    margin-bottom: 40px;
   }
   
-  .mainSection > :first-child {
-    margin-bottom: 40px;
+  .ratingWrapper {
+    padding: 0 15px;
+    margin-bottom: 50px;
   }
 }
 
 @media (max-width: 576px) {
-.mainSection {
-    padding: 60px 10px 40px;
+  .heroWrapper {
+    margin-bottom: 30px;
   }
   
-  .mainSection > :first-child {
-    margin-bottom: 30px;
+  .ratingWrapper {
+    padding: 0 10px;
+    margin-bottom: 40px;
   }
 }
