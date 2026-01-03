@@ -1,17 +1,16 @@
 /* Hero Section */
 .hero {
-  width: 1220px;
-  height: auto; /* Automatically adjust height */
-  min-height: auto; /* Remove fixed minimum height */
-  position: relative;
-  max-height: 100vh;
+  width: 100%;
+  min-height: auto; /* Change from fixed height */
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 120px 2rem 80px;
-  overflow: hidden;
-  background: #191B1F;
+  justify-content: center;
+  position: relative;
+  padding: 60px 20px; /* Adequate padding */
+  overflow: visible; /* Not hidden */
+  /* background: #191B1F; */
+  /* background-color: #f4f4fff6; */
 }
 
 /* .hero {
@@ -52,17 +51,13 @@
 /* Container */
 .container {
   width: 100%;
-  height: 100%;
-  /* border: 1px solid red; */
-  /* background-color: #191B1F; */
-  position: relative;
-  z-index: 2;
-  max-width: 1400px;
-  margin: 0 auto;
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
-  gap: 100px;
-  overflow: hidden;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
   /* background-color: red; */
 }
 
@@ -72,9 +67,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   gap: 32px;
+  width: 100%;
+  max-width: 900px;
 
+  /* background-color: tomato; */
   /* position: relative; */
   /* z-index: 3; */
 }
@@ -84,7 +81,7 @@
   height: 100%;
   pointer-events: auto;
   /* background-color: rgb(160, 160, 160); */
-  top: 0;
+  /* top: -10%; */
 }
 
 /* Badge */

@@ -11,12 +11,14 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
+
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/services' },
     { name: 'Business solutions', href: '/businessSolutions' },
     { name: 'Portfolio', href: '/portfolio' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
+
   ];
 
   return (

@@ -164,6 +164,7 @@ const projects = [
         showSecondaryButton={false}
         showEllipseDecorations={true}
         showStatusBadge={true}
+        backgroundType="Circle"
       />
      
       <div className={styles.projectsSection}>

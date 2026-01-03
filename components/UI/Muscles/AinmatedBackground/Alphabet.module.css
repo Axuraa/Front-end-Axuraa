@@ -57,7 +57,7 @@
 /* Letter U - Diagonal movement */
 .letterU {
   opacity: 1.0;
-  transition: transform 1.0s ease, opacity 1.0s ease;
+  transition: transform 1.2s ease, opacity 1.0s ease;
 
 }
 

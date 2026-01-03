@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import styles from './Rating.module.css';
@@ -7,7 +9,8 @@ import { RatingProps } from '@/types/HomePage/ratingTypes';
 const Rating: React.FC<RatingProps> = ({ 
   items, 
   duration = 3000,
-  maxValue = 50
+  maxValue = 50,
+  // suffix = ''
 }) => {
   const [counts, setCounts] = useState<number[]>([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -73,7 +76,7 @@ const Rating: React.FC<RatingProps> = ({
           className={`${styles.card} ${isVisible ? styles.cardVisible : ''}`}
           style={{ transitionDelay: `${index * 0.15}s` }}
         >
-          {item.showIcon !== false && (
+          {item?.showIcon && (
             <div className={styles.iconBox}>
               <Image 
                 src={item.icon} 
@@ -86,7 +89,7 @@ const Rating: React.FC<RatingProps> = ({
           )}
           <div className={styles.number}>
             {counts[index] || 0}
-            {item.label.includes('%') ? '%' : '+'}
+            {item.suffix}
           </div>
           <p className={styles.subtitle}>{item.label}</p>
         </div>
