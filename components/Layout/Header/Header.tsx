@@ -27,7 +27,7 @@ const Header = () => {
         {/* Logo */}
         <div className={styles.logo}>
           <Image 
-            src="/assets/logo.png" 
+            src="/assets/logo2.svg" 
             alt="Axuram Logo" 
             className={styles.logoImage}
             width={150}  
