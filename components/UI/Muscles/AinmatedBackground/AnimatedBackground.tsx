@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './AnimatedBackground.module.css';
 import { BackgroundProps } from '@/types/Generals/backgroundTypes';
-import Hexagon from '../../Animations/Hexagon/Hexagon';
-import Circle from '../../Animations/Circles/Circles';
+import Hexagon from '@/components/UI/Atoms/Animations/Hexagon/Hexagon';
+import Circle from '@/components/UI/Atoms/Animations/Circles/Circles';
 import AnimatedAlphabet from './Alphabet';
 
 const AnimatedBackground: React.FC<BackgroundProps> = ({ type, className }) => {

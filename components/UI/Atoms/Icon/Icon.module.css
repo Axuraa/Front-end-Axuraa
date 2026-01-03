@@ -1,0 +1,64 @@
+.iconContainer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Border radius variations */
+.circle {
+  border-radius: 50%;
+}
+
+.rounded {
+  border-radius: 12px;
+}
+
+.squareRounded {
+  border-radius: 8px;
+}
+
+.squareCorners {
+  border-radius: 0;
+}
+
+/* Icon wrapper for React nodes */
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconWrapper svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Image styling */
+.iconImage {
+  display: block;
+  object-fit: contain;
+}
+
+/* Hover effect (optional) */
+.iconContainer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .iconContainer {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .iconContainer {
+    padding: 8px;
+  }
+}
