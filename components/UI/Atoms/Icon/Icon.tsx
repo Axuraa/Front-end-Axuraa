@@ -3,7 +3,13 @@ import Image from 'next/image';
 import { IconTypes } from '@/types/AboutUsPage/Mission&Vision/iconTypes';
 import styles from './Icon.module.css';
 
-const Icon: React.FC<IconTypes> = ({
+interface ExtendedIconTypes extends IconTypes {
+  noPadding?: boolean;
+  noHover?: boolean;
+  animation?:boolean;
+}
+
+const Icon: React.FC<ExtendedIconTypes> = ({
   iconSrc,
   icon,
   backgroundColor = 'transparent',
@@ -14,6 +20,9 @@ const Icon: React.FC<IconTypes> = ({
   width = 24,
   height = 24,
   alt = 'icon',
+  noPadding = false,
+  noHover = false,
+  animation = false,
 }) => {
   // Map background_Radius to CSS class
   const radiusClass = {
@@ -22,6 +31,15 @@ const Icon: React.FC<IconTypes> = ({
     square_rounded: styles.squareRounded,
     square_corners: styles.squareCorners,
   }[background_Radius];
+
+  // Build class names
+  const containerClasses = [
+    styles.iconContainer,
+    radiusClass,
+    noPadding ? styles.noPadding : '',
+    noHover ? styles.noHover : '',
+    className
+  ].filter(Boolean).join(' ');
 
   // Create inline styles for background
   const containerStyle: React.CSSProperties = {
@@ -38,7 +56,7 @@ const Icon: React.FC<IconTypes> = ({
 
   return (
     <div
-      className={`${styles.iconContainer} ${radiusClass} ${className}`}
+      className={containerClasses}
       style={containerStyle}
     >
       {iconSrc ? (
