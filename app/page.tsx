@@ -32,6 +32,7 @@ export default function Home() {
         showSecondaryButton={true}
         showEllipseDecorations={true}
         showStatusBadge={false}
+        backgroundType="Alphabet"
       />
        {/* <div className={styles.filexContainer}>
          <Card

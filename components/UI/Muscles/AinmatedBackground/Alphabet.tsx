@@ -28,7 +28,7 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
       <Letter
         letter="R"
         animationType="appears"
-        position={{ x: 900, y: -20 }}
+        position={{ x: 900, y: -15 }}
         targetPosition={{ x: 900, y: -20 }}
         size={200}
         className={styles.letterR_1}
@@ -46,9 +46,9 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
       <Letter
         letter="X"
         animationType="moveHorizontal"
-        position={{ x: 150, y: 300 }}
+        position={{ x: 300, y: 300 }}
         targetPosition={{ x: 950, y: 300 }}
-        size={120}
+        size={160}
         className={styles.letterX}
       />
 
@@ -56,7 +56,7 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
       <Letter
         letter="U"
         animationType="moveDiagonal"
-        position={{ x: 950, y: 190 }}
+        position={{ x: 1000, y: 190 }}
         targetPosition={{ x: 10, y: -10 }}
         size={100}
         className={styles.letterU}
@@ -66,17 +66,17 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
       <Letter
         letter="Q"
         animationType="moveDiagonal"
-        position={{ x: 900, y: 300 }}
-        targetPosition={{ x: 800, y: -6 }}
-        size={90}
+        position={{ x: 880, y: 300 }}
+        targetPosition={{ x: 780, y: -6 }}
+        size={100}
         className={styles.letterQ1}
       />
       <Letter
         letter="Q"
         animationType="moveDiagonal"
-        position={{ x: 100, y: -10 }}
+        position={{ x: 130, y: -10 }}
         targetPosition={{ x: 780, y: 320 }}
-        size={90}
+        size={100}
         className={styles.letterQ2}
       />
     </div>

@@ -20,7 +20,7 @@ interface HeroSectionProps {
   badgeText?: string;
   primaryButtonText?: string;
   secondaryButtonText?: string;
-  
+  backgroundType: "Hexagon" | "Circle" | "Alphabet" ;
   // Toggle visibility
   showBackgroundDots?: boolean;
   showAnimatedCircles?: boolean;
@@ -57,6 +57,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   // Event handlers
   onPrimaryClick = () => console.log('Primary button clicked'),
   onSecondaryClick = () => console.log('Secondary button clicked'),
+  backgroundType = "Hexagon"
 }) => {
   return (
     <section className={styles.hero}>
@@ -75,7 +76,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         //     showTopRight={true} 
         //     showBottomLeft={true} 
         // />
-          <AnimatedBackground type='Hexagon' className={styles.animatedBackground} />
+          <AnimatedBackground type={backgroundType} className={styles.animatedBackground} />
         )}
         {/* <FloatingIcons  /> */}
 

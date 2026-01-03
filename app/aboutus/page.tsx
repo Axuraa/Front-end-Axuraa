@@ -1,3 +1,8 @@
+import React from "react";
+import AboutUs from "@/pages/AboutUs/AboutUs"
+
 export default function AboutUsPage() {
-    return <div>About Us Page</div>;
+    return (
+        <AboutUs />
+    );
 }

@@ -12,15 +12,15 @@ const AnimatedBackground: React.FC<BackgroundProps> = ({ type, className }) => {
         {type === 'Hexagon' && (
           <div className={styles.HexagonContainer}>
             <Hexagon 
-              width={370} 
-              height={370} 
+              width={420} 
+              height={420} 
               className={styles.Hexa_1} 
               direction='left' 
               position='down'
             />
             <Hexagon 
-              width={370} 
-              height={370} 
+              width={420} 
+              height={420} 
               className={styles.Hexa_2} 
               direction='right' 
               position='up'

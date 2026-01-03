@@ -10,6 +10,7 @@ import BusinessSsection from '@/components/Section/HomePage/BusinessSection/Busi
 import RatingSection from '@/components/Section/HomePage/RatingSection/RatingSection';
 import ProjectSection from '@/components/Section/HomePage/ProjectSection/ProjectSection';
 import WorkerSection from '@/components/Section/HomePage/WorkerSection/WorkerSection';
+import { s } from 'framer-motion/client';
 
 // Dynamically import components with no SSR
 // const HeroSection = dynamic(() => import('@/Pages/Home/Sections/HeroSection'), { ssr: false });
@@ -21,10 +22,10 @@ import WorkerSection from '@/components/Section/HomePage/WorkerSection/WorkerSec
 
 
 const ratingItems = [
-  { id: 1, value: 50, label: 'Projects Completed', icon: '/assets/RatingIcon.svg', showIcon: true },
-  { id: 2, value: 45, label: 'Happy Clients', icon: '/assets/RatingIcon.svg' },
-  { id: 3, value: 30, label: 'Team Members', icon: '/assets/RatingIcon.svg', showIcon: true },
-  { id: 4, value: 95, label: 'Success Rate', icon: '/assets/RatingIcon.svg' }
+  { id: 1, value: 50, label: 'Projects Completed', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
+  { id: 2, value: 45, label: 'Happy Clients', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
+  { id: 3, value: 30, label: 'Team Members', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
+  { id: 4, value: 95, label: 'Success Rate', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const}
 ];
 
 const projects = [

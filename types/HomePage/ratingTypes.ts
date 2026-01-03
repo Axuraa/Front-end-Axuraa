@@ -8,6 +8,7 @@ export interface RatingItem {
   label: string;
   icon: string;
   showIcon?: boolean;
+  suffix: '' | '%' | '+';
 }
 
 /** RatingSection component props interface from path :
@@ -31,4 +32,5 @@ export interface RatingProps {
   items: RatingItem[];
   duration?: number;
   maxValue?: number;
+  // suffix?: '' | '%' | '+';
 }

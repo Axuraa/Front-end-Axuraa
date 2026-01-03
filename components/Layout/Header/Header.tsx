@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 import { LanguageButton } from '@/components/UI/Atoms/Button/LanguageButton';
 import styles from './Header.module.css';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState('Home');
@@ -14,7 +15,7 @@ const Header = () => {
     { name: 'Services', href: '#services' },
     { name: 'Business solutions', href: '#business' },
     { name: 'Portfolio', href: '#portfolio' },
-    { name: 'About Us', href: '#about' },
+    { name: 'About Us', href: '/aboutus' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -38,18 +39,17 @@ const Header = () => {
           <ul className={styles.navList}>
             {navLinks.map((link) => (
               <li key={link.name} className={styles.navItem}>
-                <a
+                <Link
                   href={link.href}
                   className={`${styles.navLink} ${activeLink === link.name ? styles.active : ''}`}
-                  onClick={(e) => {
-                    e.preventDefault();
+                  onClick={() => {
                     setActiveLink(link.name);
                     setIsMenuOpen(false);
                   }}
                 >
                   {link.name}
                   {activeLink === link.name && <span className={styles.navUnderline} />}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
