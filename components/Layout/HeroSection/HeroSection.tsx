@@ -76,17 +76,17 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <div className={styles.container}>
         
         {/* EllipseDecorations */}
-         {showEllipseDecorations && (
+         {/* {showEllipseDecorations && (
 
-        <EllipseDecorations 
-            showTopRight={true} 
-            showBottomLeft={true} 
-        />
+        // <EllipseDecorations 
+        //     showTopRight={true} 
+        //     showBottomLeft={true} 
+        // />
           // <AnimatedBackground type='Hexagon' className={styles.animatedBackground} />
-        )}
+        )} */}
 
         {showAnimatedCircles && (
-          <AnimatedBackground type='Hexagon' className={styles.animatedBackground} />
+          <AnimatedBackground type={backgroundType} className={styles.animatedBackground} />
 
         )}
 

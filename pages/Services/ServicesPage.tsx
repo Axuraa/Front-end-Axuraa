@@ -94,13 +94,13 @@ const ServicesPage = () => {
               subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
               badgeText="INNOVATION IN PROGRESS"
               showBackgroundDots={false}
-              showAnimatedCircles={false}
+              showAnimatedCircles={true}
               showEllipseDecorations={true}
               showBadge={false}
               showTrustedSection={false}
               showPrimaryButton={true}
               showSecondaryButton={false}
-              
+              backgroundType='Circle'
               showStatusBadge={true}
             />
             <div className={styles.servicesContainer}>

@@ -93,7 +93,7 @@ const BusinessSolutions = () => {
               subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
               badgeText="INNOVATION IN PROGRESS"
               showBackgroundDots={false}
-              showAnimatedCircles={false}
+              showAnimatedCircles={true}
               showEllipseDecorations={true}
               showBadge={false}
               showTrustedSection={false}
@@ -101,6 +101,7 @@ const BusinessSolutions = () => {
               showSecondaryButton={false}
               
               showStatusBadge={true}
+              backgroundType='Circle'
             />
             <div className={styles.BusinessContainer}>
                 {services.map((service, index) => (

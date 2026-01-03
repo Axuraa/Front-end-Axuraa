@@ -1,16 +1,14 @@
 /* Hero Section */
 .hero {
   width: 100%;
-  min-height: auto; /* Change from fixed height */
+  min-height: auto; 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  padding: 60px 20px; /* Adequate padding */
-  overflow: visible; /* Not hidden */
-  /* background: #191B1F; */
-  /* background-color: #f4f4fff6; */
+  position: relative; /* ✓ Already set - needed for absolute positioning */
+  padding: 10% 20px;
+  overflow: hidden; /* Change from visible to hidden to contain the animation */
 }
 
 /* .hero {
@@ -279,15 +277,16 @@
 .trustedSection {
     /* background-color: #D04A1D; */
     width: 1120px;
-    height: 764px;
+    height: fit-content;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 32px;
-  padding-top: 60px;
+  padding-top: 10%;
   border-top: 1px solid rgba(31, 41, 55, 0.6);
   animation: fadeIn 1s ease-out 0.6s both;
+  margin-top: 7%;
 }
 
 .companiesGrid {
@@ -305,6 +304,7 @@
   height: 36px;
   max-width: 1000px;
   margin: auto;
+  margin-top: -1%;
 }
 
 .companyLogo {
