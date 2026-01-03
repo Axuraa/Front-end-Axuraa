@@ -1,3 +1,4 @@
+/* Icon.module.css - Updated to work better with parent components */
 .iconContainer {
   display: inline-flex;
   align-items: center;
@@ -5,6 +6,11 @@
   padding: 12px;
   transition: all 0.3s ease;
   box-sizing: border-box;
+}
+
+/* Remove padding when used as a background element */
+.iconContainer.noPadding {
+  padding: 0;
 }
 
 /* Border radius variations */
@@ -44,21 +50,21 @@
   object-fit: contain;
 }
 
-/* Hover effect (optional) */
-.iconContainer:hover {
+/* Hover effect (optional) - only apply when not disabled */
+.iconContainer:not(.noHover):hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .iconContainer {
+  .iconContainer:not(.noPadding) {
     padding: 10px;
   }
 }
 
 @media (max-width: 480px) {
-  .iconContainer {
+  .iconContainer:not(.noPadding) {
     padding: 8px;
   }
 }
