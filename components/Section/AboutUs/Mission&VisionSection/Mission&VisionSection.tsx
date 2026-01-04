@@ -35,6 +35,7 @@ const MissionVisionSection: React.FC = () => {
               height: 24,
               alt: 'Mission icon',
             }}
+            className={styles.animatedCard}
           />
 
           {/* Vision Card */}
@@ -49,6 +50,7 @@ const MissionVisionSection: React.FC = () => {
               height: 24,
               alt: 'Vision icon',
             }}
+            className={styles.animatedCard}
           />
         </div>
       </div>

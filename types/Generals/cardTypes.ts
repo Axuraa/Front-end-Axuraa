@@ -44,3 +44,17 @@ export interface DevolperCardProps {
   authorRole: string;
   avatarSrc: string;
 }
+
+
+/** SpecialCard component props interface from path :
+ * @/components/UI/Muscles/SpecialCard/SpecialCard.tsx 
+ * */
+export interface SpecialCardProps {
+  title?: string;
+  subtitle?: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
+  onPrimaryClick?: () => void;
+  onSecondaryClick?: () => void;
+  className?: string;
+}

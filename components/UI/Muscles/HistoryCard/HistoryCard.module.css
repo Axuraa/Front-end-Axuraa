@@ -1,0 +1,347 @@
+/* components/UI/HistoryCard/HistoryCard.module.css - FIXED */
+.history_card {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  /* min-height: 600px; */
+  min-height: 100%;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* justify-self: flex-end; */
+  /* RESTORED - Background is needed */
+  /* background: linear-gradient(
+    145deg,
+    rgba(31, 41, 55, 0.8) 0%,
+    rgba(17, 24, 39, 0.9) 50%,
+    rgba(31, 41, 55, 0.8) 100%
+  ); */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  padding: 4rem 3rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.history_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 40px rgba(249, 115, 22, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: rgba(249, 115, 22, 0.2);
+}
+
+.history_card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(249, 115, 22, 0.08) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.history_card:hover::before {
+  opacity: 1;
+}
+
+/* Animated Circles Background */
+.circles_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.circle {
+  position: absolute;
+  opacity: 0.04;
+  filter: blur(2px);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.circle_1 {
+  top: -100px;
+  left: -100px;
+  animation: rotate-float-1 25s infinite;
+}
+
+.circle_2 {
+  bottom: -80px;
+  right: -80px;
+  animation: rotate-float-2 30s infinite;
+}
+
+.circle_3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: rotate-float-3 35s infinite;
+  opacity: 0.02;
+}
+
+/* Content - FIXED to vertical layout */
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column; /* Changed from row to column */
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards 0.2s;
+}
+
+/* Icon Container */
+.icon_container {
+  margin-bottom: 3rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.icon_background {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    rgba(249, 115, 22, 0.2) 0%,
+    rgba(234, 88, 12, 0.15) 100%
+  );
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 20px rgba(249, 115, 22, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.history_card:hover .icon_background {
+  background: linear-gradient(
+    135deg,
+    rgba(249, 115, 22, 0.3) 0%,
+    rgba(234, 88, 12, 0.25) 100%
+  );
+  box-shadow: 
+    0 8px 30px rgba(249, 115, 22, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.icon_background::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(
+    135deg,
+    rgba(249, 115, 22, 0.4) 0%,
+    transparent 50%,
+    rgba(249, 115, 22, 0.4) 100%
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.history_card:hover .icon_background::before {
+  opacity: 1;
+}
+
+.icon {
+  position: relative;
+  z-index: 1;
+  filter: brightness(1.2) saturate(1.3);
+  transition: transform 0.3s ease;
+}
+
+.history_card:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Text Content */
+.text_content {
+  max-width: 100%;
+}
+
+.title {
+  color: #F9FAFB;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(
+    135deg,
+    #FFFFFF 0%,
+    #E5E7EB 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.history_card:hover .title {
+  background: linear-gradient(
+    135deg,
+    #F97316 0%,
+    #FFFFFF 50%,
+    #F97316 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: #9CA3AF;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.history_card:hover .subtitle {
+  color: #D1D5DB;
+}
+
+/* Animations */
+@keyframes rotate-float-1 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, 30px) rotate(90deg);
+  }
+  50% {
+    transform: translate(0, 60px) rotate(180deg);
+  }
+  75% {
+    transform: translate(-30px, 30px) rotate(270deg);
+  }
+}
+
+@keyframes rotate-float-2 {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(-40px, -40px) rotate(120deg);
+  }
+  66% {
+    transform: translate(-80px, 0) rotate(240deg);
+  }
+}
+
+@keyframes rotate-float-3 {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .history_card {
+    min-height: 500px;
+    padding: 3rem 2rem;
+    border-radius: 24px;
+  }
+
+  .icon_background {
+    width: 70px;
+    height: 70px;
+    border-radius: 18px;
+  }
+
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .history_card {
+    min-height: 450px;
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .icon_container {
+    margin-bottom: 2rem;
+  }
+
+  .icon_background {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+  }
+
+  .icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 0.875rem;
+  }
+}
