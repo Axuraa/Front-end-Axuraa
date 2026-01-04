@@ -40,6 +40,7 @@ const WhyUs: React.FC = () => {
             className={styles.heading}
             gutterBottom
             // id="why-us-heading"
+            
           >
             Why Axuraa?
           </Typography>
