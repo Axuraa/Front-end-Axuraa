@@ -1,6 +1,5 @@
 import React from 'react';
 import MVCard from '@/components/UI/Muscles/Mission&VisionCards/M&VCard';
-// import Image from 'next/image';
 import styles from './Mission&VisionSection.module.css';
 
 const MissionVisionSection: React.FC = () => {
@@ -18,9 +17,6 @@ const MissionVisionSection: React.FC = () => {
 
   return (
     <section className={styles.section}>
-      {/* Animated Circle Background */}
-      
-
       <div className={styles.container}>
         <div className={styles.cardsGrid}>
           {/* Mission Card */}
@@ -29,11 +25,12 @@ const MissionVisionSection: React.FC = () => {
             description={missionData.description}
             iconProps={{
               iconSrc: missionData.iconSrc,
-              backgroundColor: 'rgba(50, 45, 45, 0.6)',
+              backgroundColor: 'rgba(208, 74, 29, 0.10)',
               background_Radius: 'rounded',
-              width: 24,
-              height: 24,
+              width: 34,
+              height: 34,
               alt: 'Mission icon',
+              // noHover: false, // Enable hover effect
             }}
             className={styles.animatedCard}
           />
@@ -44,11 +41,13 @@ const MissionVisionSection: React.FC = () => {
             description={visionData.description}
             iconProps={{
               iconSrc: visionData.iconSrc,
-              backgroundColor: 'rgba(50, 45, 45, 0.6)',
+              backgroundColor: 'rgba(208, 74, 29, 0.10)',
               background_Radius: 'rounded',
-              width: 24,
-              height: 24,
+              width: 34,
+              height: 34,
               alt: 'Vision icon',
+              // noHover: false, // Enable hover effect
+              // animation: true, // Uncomment to enable pulse animation
             }}
             className={styles.animatedCard}
           />

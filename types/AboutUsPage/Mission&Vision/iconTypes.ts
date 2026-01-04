@@ -9,4 +9,5 @@ export interface IconTypes {
     width?: number;
     height?: number;
     alt?: string;
+    animation?: boolean;
 }

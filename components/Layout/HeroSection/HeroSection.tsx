@@ -119,7 +119,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               fontSize: 'var(--font-size-72, 72px)',
               fontStyle: 'normal',
               fontWeight: 900,
-              lineHeight: 'var(--font-size-72, 72px)',
+              lineHeight: ' 80px',
               letterSpacing: 'var(--letter-spacing--1_8, -1.8px)',
               margin: 0,
               animation: 'fadeInUp 0.8s ease-out',

@@ -6,7 +6,7 @@ import styles from './Icon.module.css';
 interface ExtendedIconTypes extends IconTypes {
   noPadding?: boolean;
   noHover?: boolean;
-  animation?:boolean;
+  animation?: boolean;
 }
 
 const Icon: React.FC<ExtendedIconTypes> = ({
@@ -38,20 +38,17 @@ const Icon: React.FC<ExtendedIconTypes> = ({
     radiusClass,
     noPadding ? styles.noPadding : '',
     noHover ? styles.noHover : '',
+    animation ? styles.animated : '',
     className
   ].filter(Boolean).join(' ');
 
-  // Create inline styles for background
+  // Use CSS custom properties instead of inline styles
   const containerStyle: React.CSSProperties = {
-    backgroundColor,
-    opacity: background_Opacity,
-  };
-
-  // Style for icon color
-  const iconStyle: React.CSSProperties = {
-    color,
-    width: `${width}px`,
-    height: `${height}px`,
+    ['--icon-bg-color' as string]: backgroundColor,
+    ['--icon-opacity' as string]: background_Opacity,
+    ['--icon-color' as string]: color,
+    ['--icon-width' as string]: `${width}px`,
+    ['--icon-height' as string]: `${height}px`,
   };
 
   return (
@@ -68,7 +65,7 @@ const Icon: React.FC<ExtendedIconTypes> = ({
           className={styles.iconImage}
         />
       ) : (
-        <div className={styles.iconWrapper} style={iconStyle}>
+        <div className={styles.iconWrapper}>
           {icon}
         </div>
       )}

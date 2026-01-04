@@ -2,7 +2,7 @@
 import React from 'react';
 import styles from './HistoryJourney.module.css';
 import Typography from '@/components/UI/Atoms/Typography/Typography';
-import Badge from '@/components/UI/Atoms/Badge/Badge';
+import StatusBadge from '@/components/UI/Atoms/StatusBadge/StatusBadge';
 import Step from '@/components/UI/Atoms/Step/Step';
 import { HistoryJourneyProps, HistoryJourneyData } from '@/types/AboutUsPage/History/JourneyTypes';
 
@@ -43,11 +43,10 @@ const HistoryJourney: React.FC<HistoryJourneyProps> = ({ data }) => {
     <section className={styles.history_journey}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Badge 
-            text="OUR HISTORY" 
-            show={true}
-            className={styles.badge}
-          />
+           <StatusBadge 
+    text="OUR HISTORY"
+    className={styles.badge}
+  />
           
           <Typography 
             variant="h2" 

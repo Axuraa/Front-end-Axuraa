@@ -66,10 +66,10 @@
     align-items: start;
     justify-content: center;
 }
-
 .badge {
   margin-bottom: 1.5rem;
-  width: 10%;
+  display: inline-flex;
+  align-self: flex-start;
 }
 
 .title {
