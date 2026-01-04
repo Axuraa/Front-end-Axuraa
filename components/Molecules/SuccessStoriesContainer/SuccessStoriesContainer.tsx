@@ -26,4 +26,4 @@ const SuccessStoriesContainer: React.FC<SuccessStoriesContainerProps> = ({
     </div>
   );
 };
-export default SuccessStoriesContainer;
+export default React.memo(SuccessStoriesContainer);
