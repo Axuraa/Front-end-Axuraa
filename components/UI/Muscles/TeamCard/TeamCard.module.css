@@ -1,0 +1,82 @@
+.card {
+  width: 280px;
+  border-radius: 20px 0 20px 20px;
+  overflow: hidden;
+  border: 1.5px solid #D04A1D;
+  background: #1a1d35;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: #1a1d35;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 0 20px 20px;
+
+  object-fit: cover;
+  transform-origin: center center;
+  transition: transform 0.4s ease;
+}
+
+.nameOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  z-index: 2;
+  transition: background 0.3s ease;
+}
+
+.roleSection {
+  /* height: 0; */
+  overflow: hidden;
+  background: #D04A1D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.8s ease;
+  position: absolute;
+  bottom: -20%;
+  width: 100%;
+  height: 90px;
+  border-radius: 0 0 20px 20px;
+  z-index: 1;
+}
+
+.role {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Hover effects */
+.container:hover .image {
+  transform: scale(1.1);
+}
+
+.container:hover .nameOverlay {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.container:hover .roleSection {
+  /* height: 90px; */
+  opacity: 1;
+}

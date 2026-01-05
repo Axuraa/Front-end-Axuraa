@@ -58,3 +58,13 @@ export interface SpecialCardProps {
   onSecondaryClick?: () => void;
   className?: string;
 }
+
+/** ValueCard component props interface from path :
+ * @/components/UI/Muscles/ValueCard/ValueCard.tsx 
+ * */export interface ValueCardProps {
+  icon: string;
+//   iconSrc?: string;
+  title: string;
+  description: string;
+  iconColor?: string;
+}

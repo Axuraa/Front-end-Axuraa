@@ -18,8 +18,8 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
        <Letter
         letter="A"
         animationType="appears"
-        position={{ x: 900, y: -100 }}
-        targetPosition={{ x: 900, y: -100 }}
+        position={{ x: 900, y: -80 }}
+        targetPosition={{ x: 900, y: -80 }}
         size={200}
         className={styles.letterA_2}
       />
@@ -28,8 +28,8 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
       <Letter
         letter="R"
         animationType="appears"
-        position={{ x: 900, y: -100 }}
-        targetPosition={{ x: 900, y: -100 }}
+        position={{ x: 900, y: -80 }}
+        targetPosition={{ x: 900, y: -80 }}
         size={220}
         className={styles.letterR_1}
       />
