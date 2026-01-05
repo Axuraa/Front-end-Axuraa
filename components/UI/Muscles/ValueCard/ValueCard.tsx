@@ -2,13 +2,7 @@ import React from 'react';
 import styles from './ValueCard.module.css';
 import Image from 'next/image';
 
-export interface ValueCardProps {
-  icon: string;
-//   iconSrc?: string;
-  title: string;
-  description: string;
-  iconColor?: string;
-}
+import { ValueCardProps } from '@/types/Generals/cardTypes';
 
 const ValueCard: React.FC<ValueCardProps> = ({
   icon,
@@ -19,7 +13,7 @@ const ValueCard: React.FC<ValueCardProps> = ({
   return (
     <div className={styles.card}>
       <div className={styles.iconWrapper} style={{ color: iconColor }}>
-        <Image src={icon} alt={title} width={60} height={60} />
+        <Image src={icon} alt={title} width={50} height={50} />
       </div>
       
       <h3 className={styles.title}>{title}</h3>
