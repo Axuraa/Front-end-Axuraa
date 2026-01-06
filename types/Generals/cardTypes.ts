@@ -61,10 +61,22 @@ export interface SpecialCardProps {
 
 /** ValueCard component props interface from path :
  * @/components/UI/Muscles/ValueCard/ValueCard.tsx 
- * */export interface ValueCardProps {
+ * */
+export interface ValueCardProps {
   icon: string;
 //   iconSrc?: string;
   title: string;
   description: string;
   iconColor?: string;
+}
+
+/** SocialMediaCard component props interface from path : 
+ * @/components/UI/Muscles/SocialMediaCard/SocialMediaCard.tsx 
+ * */
+import { FC, SVGProps } from 'react';
+
+export interface SocialMediaCardProps {
+  Icon: FC<SVGProps<SVGSVGElement>>; // Component instead of string
+  label: string;
+  link: string;
 }

@@ -68,7 +68,7 @@
   gap: 32px;
   width: 100%;
   max-width: 900px;
-  z-index: 3;
+  /* z-index: 1; */
 
   /* background-color: tomato; */
   /* position: relative; */
@@ -81,7 +81,7 @@
   pointer-events: auto;
   /* background-color: rgb(160, 160, 160); */
   /* top: -10%; */
-  z-index: 1;
+  z-index: 5;
 }
 
 /* Badge */
@@ -174,6 +174,7 @@
   justify-content: center;
   align-items: flex-start;
   gap: var(--font-size-16, 16px);
+  /* z-index: 10; */
 }
 
 /* .primaryButton {

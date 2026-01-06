@@ -1,4 +1,3 @@
-/* Icon.module.css - Fixed with CSS Variables */
 .iconContainer {
   display: inline-flex;
   align-items: center;
@@ -10,7 +9,6 @@
   opacity: var(--icon-opacity, 1);
 }
 
-/* Remove padding when used as a background element */
 .iconContainer.noPadding {
   padding: 0;
 }
@@ -38,10 +36,9 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: var(--icon-color, currentColor);
   width: var(--icon-width, 24px);
   height: var(--icon-height, 24px);
-  transition: all 0.3s ease;
+  position: relative;
 }
 
 .iconWrapper svg {
@@ -49,6 +46,8 @@
   height: 100%;
   display: block;
   transition: all 0.3s ease;
+  /* Default white color */
+  fill: #fffcfc;
 }
 
 /* Image styling */
@@ -56,7 +55,7 @@
   display: block;
   object-fit: contain;
   transition: all 0.3s ease;
-}
+  }
 
 /* Hover effect - only apply when not disabled */
 .iconContainer:not(.noHover):hover {

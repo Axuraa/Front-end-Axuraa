@@ -19,6 +19,7 @@
   width: 100%;
   max-width: 204px;
   gap: 8px;
+  z-index: 10;
 }
 
 .viewButton:hover {

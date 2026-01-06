@@ -9,6 +9,7 @@ export interface ContactSectionProps {
   title1: string;
   title2: string;
   subtitle: string;
+  showLinks?: boolean;
 }
 
 /** SectionBadge component props interface from path :
