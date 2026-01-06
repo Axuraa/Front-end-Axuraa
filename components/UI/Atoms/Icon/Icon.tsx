@@ -42,7 +42,7 @@ const Icon: React.FC<ExtendedIconTypes> = ({
     className
   ].filter(Boolean).join(' ');
 
-  // Use CSS custom properties instead of inline styles
+  // Use CSS custom properties
   const containerStyle: React.CSSProperties = {
     ['--icon-bg-color' as string]: backgroundColor,
     ['--icon-opacity' as string]: background_Opacity,
@@ -64,11 +64,11 @@ const Icon: React.FC<ExtendedIconTypes> = ({
           height={height}
           className={styles.iconImage}
         />
-      ) : (
+      ) : icon ? (
         <div className={styles.iconWrapper}>
           {icon}
         </div>
-      )}
+      ) : null}
     </div>
   );
 };

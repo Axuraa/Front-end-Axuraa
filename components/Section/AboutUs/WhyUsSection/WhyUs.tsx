@@ -35,14 +35,38 @@ const WhyUs: React.FC = () => {
         {/* Header Section */}
         <div className={styles.header}>
           <Typography
-            variant="h2"
-            component="h2"
-            className={styles.heading}
-            gutterBottom
-            // id="why-us-heading"
-            
-          >
-            Why Axuraa?
+                    variant="h1"
+                    component="h1"
+                    style={{
+                      textAlign: "center",
+                      fontFamily: "Roboto",
+                      fontSize: "var(--font-size-72, 72px)",
+                      fontStyle: "normal",
+                      fontWeight: 600,
+                      lineHeight: " 80px",
+                      letterSpacing: "var(--letter-spacing--1_8, -1.8px)",
+                      margin: "0 0 60px 0",
+                      animation: "fadeInUp 0.8s ease-out",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                    }}
+                    className={styles.title}
+                  >
+                    <span
+                      style={{
+                        background: "linear-gradient(90deg, #D04A1D 0%, #D96A2B 100%)",
+                        WebkitBackgroundClip: "text",
+                        WebkitTextFillColor: "transparent",
+                        marginTop: "0.5rem",
+                        // opacity: mounted ? 1 : 0,
+                        // transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+                        transition: "opacity 0.6s ease, transform 0.6s ease",
+                        transitionDelay: "0.3s",
+                      }}
+                    >
+                     Why Axuraa?
+                    </span>
           </Typography>
           
           <Typography

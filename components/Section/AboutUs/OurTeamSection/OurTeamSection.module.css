@@ -16,11 +16,6 @@
   width: 100%;
 }
 
-.title {
-  color: #ffffff;
-  margin-bottom: 60px;
-  font-weight: 700;
-}
 
 .teamGrid {
   display: flex;
@@ -53,9 +48,12 @@
   }
   
   .teamGrid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 24px;
+    /* margin-bottom: ; */
+    /* margin-top: -32%; */
   }
+  
   
   .title {
     margin-bottom: 32px;

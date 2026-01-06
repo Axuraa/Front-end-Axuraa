@@ -18,7 +18,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, imageUrl }) => {
             className={styles.image}
           />
           <div className={styles.nameOverlay}>
-            <Typography variant="h5" color="#ffffff">
+            <Typography variant="h6" color="#ffffff">
               {name}
             </Typography>
           </div>
@@ -26,7 +26,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, imageUrl }) => {
         
       </div>
       <div className={styles.roleSection}>
-          <Typography variant="h3" color="#ffffff" className={styles.role}>
+          <Typography variant="h4" color="#ffffff" className={styles.role}>
             {role}
           </Typography>
         </div>

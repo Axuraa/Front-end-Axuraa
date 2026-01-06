@@ -46,7 +46,7 @@
   /* background-color: rgb(66, 54, 100); */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 28.842px;
   flex-shrink: 0;

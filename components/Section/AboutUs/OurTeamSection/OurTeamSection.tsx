@@ -30,7 +30,7 @@ const staticTeamMembers: TeamMember[] = [
     phone_number: "+1234567890",
     role_id: "CEO",
     bio: "Visionary leader with 10+ years of experience",
-    image_url: "/assets/member.jpg",
+    image_url: "/assets/bavly.jpg",
 
     status: "active",
     technologies_used: [],
@@ -43,7 +43,7 @@ const staticTeamMembers: TeamMember[] = [
     phone_number: "+1234567891",
     role_id: "CTO",
     bio: "Tech expert passionate about innovation",
-    image_url: "/assets/member.jpg",
+    image_url: "/assets/bavly.jpg",
 
     status: "active",
     technologies_used: [],
@@ -56,7 +56,7 @@ const staticTeamMembers: TeamMember[] = [
     phone_number: "+1234567892",
     role_id: "COO",
     bio: "Operations specialist ensuring smooth workflow",
-    image_url: "/assets/member.jpg",
+    image_url: "/assets/bavly.jpg",
     status: "active",
     technologies_used: [],
     start_at: "2020-03-01",
@@ -68,7 +68,20 @@ const staticTeamMembers: TeamMember[] = [
     phone_number: "+1234567893",
     role_id: "CFO",
     bio: "Financial strategist with proven track record",
-    image_url: "/assets/member.jpg",
+    image_url: "/assets/bavly.jpg",
+
+    status: "active",
+    technologies_used: [],
+    start_at: "2020-04-01",
+  },
+  {
+    _id: "5",
+    name: "Bavly Akramy",
+    email: "bavly4@example.com",
+    phone_number: "+1234567893",
+    role_id: "CFO",
+    bio: "Financial strategist with proven track record",
+    image_url: "/assets/bavly.jpg",
 
     status: "active",
     technologies_used: [],
@@ -83,13 +96,38 @@ const TeamSection: React.FC<TeamSectionProps> = ({
     <section className={styles.teamSection}>
       <div className={styles.container}>
         <Typography
-          variant="h2"
-          component="h2"
+          variant="h1"
+          component="h1"
+          style={{
+            textAlign: "center",
+            fontFamily: "Roboto",
+            fontSize: "var(--font-size-72, 72px)",
+            fontStyle: "normal",
+            fontWeight: 600,
+            lineHeight: " 80px",
+            letterSpacing: "var(--letter-spacing--1_8, -1.8px)",
+            margin: "0 0 60px 0",
+            animation: "fadeInUp 0.8s ease-out",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
           className={styles.title}
-          align="center"
-          gutterBottom
         >
-          Meet Our Team
+          <span
+            style={{
+              background: "linear-gradient(90deg, #D04A1D 0%, #D96A2B 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              marginTop: "0.5rem",
+              // opacity: mounted ? 1 : 0,
+              // transform: mounted ? 'translateY(0)' : 'translateY(20px)',
+              transition: "opacity 0.6s ease, transform 0.6s ease",
+              transitionDelay: "0.3s",
+            }}
+          >
+            Meet Our Team
+          </span>
         </Typography>
 
         <div className={styles.teamGrid}>
