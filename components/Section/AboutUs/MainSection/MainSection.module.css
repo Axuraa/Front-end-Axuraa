@@ -9,7 +9,8 @@
   background: #191B1F;
   position: relative;
   overflow: visible;
-  padding: 0;  /* Remove padding to let HeroSection control its own spacing */
+  padding: 0 ; 
+  margin-top: -10%;
 }
 
 .heroWrapper {
@@ -28,7 +29,7 @@
   align-items: center;
   padding: 0 20px;
   /* margin-bottom: 80px;  Space at bottom */
-  margin-top: -10%;
+  margin-top: -20%;
 }
 
 /* Responsive */

@@ -14,7 +14,7 @@ const MVCard: React.FC<MVCardProps> = ({
 }) => {
   return (
     <div className={`${styles.card} ${animation ? styles.animated : ''} ${className}`}>
-        <div className={styles.circleWrapper}>
+      <div className={styles.circleWrapper}>
         <Image
           src="/assets/circle.svg"
           alt="Decorative circle"
@@ -25,7 +25,7 @@ const MVCard: React.FC<MVCardProps> = ({
         />
       </div>
       <div className={styles.iconWrapper}>
-        <Icon {...iconProps} />
+        <Icon {...iconProps} noHover={true} className="iconContainer" />
       </div>
       
       <Typography

@@ -1,0 +1,97 @@
+/* components/EmailSection/EmailSection.module.css */
+.emailSection {
+  width: 100%;
+  padding: 80px 20px;
+  /* background-color: #0a0a0a; */
+}
+
+.header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cardsGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .emailSection {
+    padding: 60px 20px;
+  }
+
+  .header {
+    margin-bottom: 48px;
+  }
+
+  .cardsGrid {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .emailSection {
+    padding: 50px 16px;
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .emailSection {
+    padding: 40px 16px;
+  }
+
+  .header {
+    margin-bottom: 32px;
+    gap: 12px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .cardsGrid {
+    gap: 16px;
+  }
+}

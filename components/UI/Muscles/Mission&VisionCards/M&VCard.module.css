@@ -51,6 +51,25 @@
   transform: scale(1.5);
 }
 
+/* Target Icon component on hover - FIXED */
+.card:hover :global(.iconContainer) {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: var(--color-primary-solid, #d04a1d) !important;
+}
+
+.card:hover :global(.iconContainer) :global(.iconWrapper) {
+  color: var(--color-white-solid, #FFF);
+}
+
+.card:hover :global(.iconContainer) svg {
+  filter: brightness(0) invert(1);
+}
+
+.card:hover :global(.iconContainer) img {
+  filter: brightness(0) invert(1);
+}
+
 .iconWrapper {
   margin-bottom: 32px;
   display: inline-block;

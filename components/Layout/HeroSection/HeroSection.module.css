@@ -1,37 +1,16 @@
 /* Hero Section */
 .hero {
   width: 100%;
-  min-height: auto;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative; /* ✓ Already set - needed for absolute positioning */
-  padding: 5% 20px;
+  padding: 5% 1.5rem;
   overflow: hidden; /* Change from visible to hidden to contain the animation */
 }
 
-/* .hero {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
-/* .container {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.content {
-  position: relative;
-  z-index: 2;
-} */
 
 .heroDots {
   /* height: 2409.793px; 
@@ -177,63 +156,6 @@
   /* z-index: 10; */
 }
 
-/* .primaryButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 32px;
-  background: #D04A1D;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(208, 74, 29, 0.2);
-}
-
-.primaryButton:hover {
-  background: #b53e17;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(208, 74, 29, 0.3);
-}
-
-.buttonIcon {
-  transition: transform 0.3s ease;
-}
-
-.primaryButton:hover .buttonIcon {
-  transform: translateX(4px);
-}
-
-.secondaryButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 16px 32px;
-  background: #2d3748;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.secondaryButton:hover {
-  background: #1a202c;
-  transform: translateY(-2px);
-}
-
-.playIcon {
-  transition: transform 0.3s ease;
-}
-
-.secondaryButton:hover .playIcon {
-  transform: scale(1.1);
-} */
 
 /* Decorative Shapes */
 .decorativeShapes {

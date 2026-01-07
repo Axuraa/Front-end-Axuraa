@@ -96,34 +96,33 @@ const TeamSection: React.FC<TeamSectionProps> = ({
     <section className={styles.teamSection}>
       <div className={styles.container}>
         <Typography
-          variant="h1"
-          component="h1"
+          variant="h3"
+          component="h3"
           style={{
-            textAlign: "center",
-            fontFamily: "Roboto",
-            fontSize: "var(--font-size-72, 72px)",
-            fontStyle: "normal",
-            fontWeight: 600,
-            lineHeight: " 80px",
-            letterSpacing: "var(--letter-spacing--1_8, -1.8px)",
-            margin: "0 0 60px 0",
-            animation: "fadeInUp 0.8s ease-out",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
+              textAlign: 'center',
+              fontFamily: 'Roboto',
+              fontSize: 'var(--font-size-72, 72px)',
+              fontStyle: 'normal',
+              fontWeight: 900,
+              lineHeight: ' 100px',
+              letterSpacing: 'var(--letter-spacing--1_8, -1.8px)',
+              margin: "0 0 6rem 0",
+              animation: "fadeInUp 0.8s ease-out",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center", // Center content vertically
+              alignItems: "center",
+            }}
           className={styles.title}
         >
           <span
             style={{
-              background: "linear-gradient(90deg, #D04A1D 0%, #D96A2B 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              marginTop: "0.5rem",
-              // opacity: mounted ? 1 : 0,
-              // transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-              transition: "opacity 0.6s ease, transform 0.6s ease",
-              transitionDelay: "0.3s",
+              color: "#FFFFFF",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "4rem",
+              fontWeight: 900,
+              lineHeight: "4.5rem",
+              letterSpacing: "-1.442px",
             }}
           >
             Meet Our Team
