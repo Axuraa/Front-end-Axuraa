@@ -1,7 +1,7 @@
 .successStory {
     display: flex;
     width: 356px;
-    height: 291px;
+    /* height: 291px; */
     padding: 24.978px;
     flex-direction: column;
     justify-content: space-between;
@@ -48,6 +48,7 @@
     font-weight: 600;
     line-height: 17.485px;
     margin: 0 0 12px 0;
+    /* background-color: #D04A1D; */
 }
 
 .description {
@@ -61,14 +62,17 @@
     font-weight: 400;
     line-height: 20.072px;
     margin: 0 0 20px 0;
+    /* background: red; */
 }
 
 .metricsContainer {
     /* background: rgb(174, 0, 255); */
     width: 100%;
+    /* height: 61px; */
     display: flex;
     flex-direction: column;
     gap: 12px;
+    padding-top: 5px;
     margin-top: auto;
 }
 

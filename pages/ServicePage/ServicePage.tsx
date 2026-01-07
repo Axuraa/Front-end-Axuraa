@@ -129,7 +129,9 @@ const successStories = [
       "Mobile responsive",
       "Basic SEO",
       "Contact form",
-      "1 month support"
+      "1 month support",
+      "E-commerce integration",
+      "Analytics dashboard"
     ],
     isPopular: false,
     hasButtonBackground: false,
@@ -145,7 +147,8 @@ const successStories = [
       "Advanced SEO",
       "Contact form",
       "3 months support",
-      "Social media integration"
+      "E-commerce integration",
+      "Analytics dashboard"
     ],
     isPopular: true,
     hasButtonBackground: true,

@@ -7,7 +7,7 @@ interface ServicePackagesCardProps {
   title: string;
   description: string;
   features: string[];
-  price: string;
+  // price: string;
   isPopular?: boolean;
   buttonText?: string;
   hasShadow?: boolean;
@@ -19,7 +19,7 @@ const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
   title,
   description,
   features,
-  price,
+  // price,
   isPopular = false,
   buttonText = 'Get Started',
   hasShadow = true,
@@ -38,6 +38,7 @@ const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
           <li key={index} className={styles.featureItem}>
             <Image 
               src={TrueIcon} 
+              // src='/assets/trueSer.svg'
               alt="Included" 
               width={16} 
               height={16} 
@@ -47,7 +48,7 @@ const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
           </li>
         ))}
       </ul>
-      <div className={styles.price}>{price}</div>
+      {/* <div className={styles.price}>{price}</div> */}
       <button 
         className={`${styles.button} ${
           !hasButtonBackground ? styles.noBackground : ''
