@@ -7,6 +7,7 @@ interface ExtendedIconTypes extends IconTypes {
   noPadding?: boolean;
   noHover?: boolean;
   animation?: boolean;
+  parentHover?: boolean;
 }
 
 const Icon: React.FC<ExtendedIconTypes> = ({
@@ -23,6 +24,7 @@ const Icon: React.FC<ExtendedIconTypes> = ({
   noPadding = false,
   noHover = false,
   animation = false,
+  parentHover = false,
 }) => {
   // Map background_Radius to CSS class
   const radiusClass = {
@@ -39,6 +41,7 @@ const Icon: React.FC<ExtendedIconTypes> = ({
     noPadding ? styles.noPadding : '',
     noHover ? styles.noHover : '',
     animation ? styles.animated : '',
+    parentHover ? styles.parentHover : '',
     className
   ].filter(Boolean).join(' ');
 
@@ -49,6 +52,7 @@ const Icon: React.FC<ExtendedIconTypes> = ({
     ['--icon-color' as string]: color,
     ['--icon-width' as string]: `${width}px`,
     ['--icon-height' as string]: `${height}px`,
+    
   };
 
   return (

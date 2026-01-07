@@ -47,32 +47,33 @@
   display: block;
   transition: all 0.3s ease;
   /* Default white color */
-  fill: #fffcfc;
+  fill: currentColor;
 }
 
 /* Image styling */
 .iconImage {
   display: block;
   object-fit: contain;
+  /* filter: current; */
   transition: all 0.3s ease;
   }
 
 /* Hover effect - only apply when not disabled */
-.iconContainer:not(.noHover):hover {
+.iconContainer:not(.noHover):not(.parentHover):hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   background-color: var(--color-primary-solid, #d04a1d);
 }
 
-.iconContainer:not(.noHover):hover .iconWrapper {
+.iconContainer:not(.noHover):not(.parentHover):hover .iconWrapper {
   color: var(--color-white-solid, #FFF);
 }
 
-.iconContainer:not(.noHover):hover .iconWrapper svg {
+.iconContainer:not(.noHover):not(.parentHover):hover .iconWrapper svg {
   filter: brightness(0) invert(1);
 }
 
-.iconContainer:not(.noHover):hover .iconImage {
+.iconContainer:not(.noHover):not(.parentHover):hover .iconImage {
   filter: brightness(0) invert(1);
 }
 
