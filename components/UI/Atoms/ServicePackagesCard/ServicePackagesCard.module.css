@@ -120,8 +120,8 @@
 
 .popularBadge {
   position: absolute;
-  top: 20px;
-  right: -30px;
+  top: 30px;
+  right: -40px;
   transform: rotate(45deg);
   display: none;
   padding: 2.479px 12.729px 2.354px 9.917px;
@@ -130,7 +130,7 @@
   background: #D04A1D;
   color: #D9D9D9;
   font-family: Roboto;
-  font-size: 9.917px;
+  font-size: 12px;
   font-style: normal;
   font-weight: 600;
   line-height: 14.875px;

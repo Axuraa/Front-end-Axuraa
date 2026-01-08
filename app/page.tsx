@@ -158,7 +158,7 @@ const servicePackages = [
         /> */}
 
 
-        <OurDevelopmentContainer steps={developmentSteps} />
+        {/* <OurDevelopmentContainer steps={developmentSteps} /> */}
 
        {/* <ServicePackagesCard
           title="Starter Package"
@@ -186,7 +186,7 @@ const servicePackages = [
                 /> */}
 
 
-        <ServicePackagesContainer packages={servicePackages} />
+        {/* <ServicePackagesContainer packages={servicePackages} /> */}
 
     </div>
 

@@ -378,7 +378,7 @@ align-self: stretch;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 16px;
   align-self: stretch;
   border: 0 solid #E5E7EB;
   /* background-color: green; */

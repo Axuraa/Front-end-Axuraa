@@ -60,12 +60,12 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             component="h1"
             style={{
               // background: 'linear-gradient(90deg, #20cf10ff 0%, #10bee9ff 100%)',
-              height: "174px",
+              height: "160px",
               width: "548px",
               // padding: '20px', // Added padding for better text visibility
               textAlign: "start",
               fontFamily: "Inter, sans-serif",
-              fontSize: "57.684px",
+              fontSize: "50.684px",
               fontStyle: "normal",
               fontWeight: 900,
               lineHeight: "57.684px",

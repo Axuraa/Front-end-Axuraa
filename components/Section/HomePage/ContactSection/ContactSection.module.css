@@ -35,20 +35,20 @@
     height: 860.5219px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
 }
 
 .Contantinfo{
-
   width: 548px;
   height: 791.3344px;
   /* background-color: rgb(66, 54, 100); */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  gap: 28.842px;
+  justify-content: flex-start;
+  /* margin-top: -30px; */
+  gap: 20px;
   flex-shrink: 0;
 }
 
