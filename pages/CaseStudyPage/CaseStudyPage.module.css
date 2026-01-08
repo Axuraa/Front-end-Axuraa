@@ -80,13 +80,14 @@
 .title {
   /* background-color: red; */
   color: #FFF;
-  width: 453px;
+  /* width: 453px; */
   text-align: center;
   font-family: Roboto;
-  font-size: 32px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 800;
   line-height: 29.171px; /* 91.16% */
+  margin-bottom: 7px;
 }
 
 .subtitle {
@@ -95,7 +96,7 @@
   color: #6B7280;
   text-align: center;
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -105,12 +106,14 @@
 
 .tags {
   display: inline-flex;
+  width: 740px;
   height: 18.475px;
-  padding-right: 301.738px;
+  /* padding-right: 301.738px; */
   align-items: flex-start;
-  gap: 7.779px;
+  gap: 8.779px;
   border: 0 solid #E5E7EB;
-  margin: 16px 0;
+  margin: 25px 0;
+  /* background-color: #BFBFBF; */
 }
 
 .preview {
@@ -251,11 +254,12 @@
   height: 162px;
   border-radius: 20px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  padding: 20px;
+  padding: 5px 10px;
   background-color: #222;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  /* background-color: #902501; */
 }
 
 /* .featureCard:hover {
@@ -283,7 +287,7 @@
 
 .featureDescription {
   width: 152px;
-  height: 59px;
+  height: 59px; 
   color: #FFF;
   font-family: Roboto;
   font-size: 14px;
@@ -308,7 +312,7 @@
 /* Card */
 .card {
   display: flex;
-  height: 218px;
+  /* height: 218px; */
   padding: 16px 26px 16px 28px;
   flex-direction: column;
   align-items: center;
@@ -402,6 +406,7 @@ line-height: normal;
 .testimonial {
   display: flex;
   gap: 0.75rem;
+  /* background-color: #ea580c; */
 }
 
 .ClientTestimonialsTitle{
@@ -425,10 +430,13 @@ line-height: normal;
   display: flex;
   flex-direction: column;
   /* background-color: #902501; */
-  gap: 0.6rem;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  gap: 6px;
 }
 
 .testimonialText {
+  /* background-color: #a80ea8; */
   align-self: stretch;
   color: #BFBFBF;
 
@@ -441,6 +449,7 @@ line-height: normal;
 }
 
 .testimonialAuthor {
+  /* background-color: #1a0591; */
   align-self: stretch;
   color: #BFBFBF;
 
@@ -450,6 +459,7 @@ font-size: 14px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
+
 }
 
 /* Project Details */

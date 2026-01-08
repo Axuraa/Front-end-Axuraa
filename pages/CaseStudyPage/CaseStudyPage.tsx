@@ -68,7 +68,12 @@ const projectDetails = [
     value: caseStudy.client
   },
   { 
-    icon: '/assets/ProjectDetailscard/clock.svg',
+    icon: '/assets/ProjectDetailscard/client.svg',
+    label: 'Project Manager:',
+    value: 'Mortha (Lo, Admin)'
+  },
+  { 
+    icon: '/assets/ProjectDetailscard/time.svg',
     label: 'Timeframe:',
     value: caseStudy.timeframe
   },
@@ -118,18 +123,17 @@ const projectDetails = [
                         variant="outline"
                         style={{ 
                           display: 'flex',
-                          height: '18.475px',
-                          padding: '1.945px 9.816px 1.53px 7.779px',
+                          padding: '2.167px 8.247px 1.464px 10.26px',
                           justifyContent: 'center',
                           alignItems: 'center',
-                          borderRadius: '3.889px',
+                          borderRadius: '10px',
                           border: '0 solid #E5E7EB',
                           backgroundColor: '#D04A1D',
                           color: '#FFF',
                           fontFamily: 'Roboto',
-                          fontSize: '9.724px',
-                          fontWeight: 700,
-                          lineHeight: '14.586px',
+                          fontSize: '12.667px',
+                          fontWeight: 400,
+                          lineHeight: '18.297px',
                           margin: 0
                         }}
                       >
@@ -228,7 +232,7 @@ const projectDetails = [
 
             {/* Testimonials */}
             <div className={styles.card}>
-              <h3 className={styles.ClientTestimonialsTitle}>Client Testimonials</h3>
+              <h3 className={styles.cardTitle}>Client Testimonials</h3>
               <div className={styles.testimonials}>
                 {caseStudy.testimonials.map((testimonial, idx) => (
                   <div key={idx} className={styles.testimonial}>
@@ -253,7 +257,7 @@ const projectDetails = [
 
             {/* Project Details */}
             <div className={styles.ProjectDetailscard}>
-              <h3 className={styles.ProjectDetailsTitle}>Project Details</h3>
+              <h3 className={styles.cardTitle}>Project Details</h3>
               <div className={styles.details}>
                   {projectDetails.map((detail, index) => (
                     <div key={index} className={styles.detailItem}>
