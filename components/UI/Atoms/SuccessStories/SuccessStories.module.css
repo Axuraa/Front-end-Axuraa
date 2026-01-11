@@ -136,25 +136,41 @@
 }
 @media (max-width: 768px) {
     .metricRow {
-        flex-wrap: wrap;
-        gap: 4px;
-        min-height: auto;
+        width: 293.0438px;
+        height: 12px;
+        display: flex;
+        /* background-color: red; */
+        justify-content: space-between;
+        align-items: center;
+align-self: stretch;
+        
     }
     
-    .metricLabel{
-        font-size: 14px;
-        line-height: 1.4;
-    }
     
     .metricLabel {
         width: 100%;
         margin-bottom: 2px;
+        color: #999;
+font-family: Roboto;
+font-size: 16.057px;
+font-style: normal;
+font-weight: 400;
+line-height: 11.24px; /* 70% */
     }
     
     .metricValue {
-        font-size: 14px;
+        /* font-size: 14px;
         min-width: auto;
         margin-left: auto;
+        margin-right: 15px; */
+        /* background-color: antiquewhite; */
+        /* margin: auto auto; */
+        color: var(--Primary, #D04A1D);
+        font-family: Roboto;
+        font-size: 16.057px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 11.24px; /* 70% */
     }
 }
 @media (max-width: 480px) {
