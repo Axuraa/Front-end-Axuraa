@@ -98,18 +98,45 @@ text-transform: capitalize;
     align-self: stretch;
 }
 
-/* Responsive adjustments */
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
+  .servicesSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.45px;
+    padding: 0 16px;
+    width: 100%;
+    max-width: 100%;
+    /* margin-left: -20px; */
+    background: #191B1F;
+    /* background: #1257e0; */
+  }
   .servicesGrid {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 25px;
+    width: 100%;
+    max-width: 343px; /* Match the design width */
+    margin: 0 auto;
+    /* background: #40e60e; */
   }
-  
-  .title {
-    font-size: 2rem;
+  /* First card (Service Card) */
+  .servicesGrid > :first-child {
+   border-radius: 0 42.783px 0 0;
+  /* background: #222429; */
+  /* box-shadow: 1.426px 1.141px 14.261px 0 rgba(0, 0, 0, 0.50); */
   }
-  
-  .subtitle {
-    font-size: 1rem;
+  /* Second card (See All Card) */
+  .servicesGrid > :last-child {
+    border-radius: 0 42.512px 0 0;
+    /* background: #222429; */
+    /* box-shadow: 1.417px 1.134px 14.174px 0 rgba(0, 0, 0, 0.50); */
+    /* background: #D04A1D;  */
+    color: white;
+  }
+  .heroDots {
+    display: none;
   }
 }

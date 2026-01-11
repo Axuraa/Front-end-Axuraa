@@ -12,8 +12,8 @@
 
 .heroDots {
   /* height: 2409.793px; 
-  width: 1588.4px;;
-  background: #040352f6; */
+  width: 1588.4px;; */
+  background: #040352f6;
   position: absolute;
   top: 0;
   left: 0;
@@ -21,6 +21,7 @@
   bottom: 0;
   pointer-events: none;
   z-index: 0;
+  
 }
 
 
@@ -40,18 +41,71 @@
 }
 
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
-  }
-  
-  .title {
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-  }
+/* Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+    .ProjectGrid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 24px;
+    }
+}
+/* Desktop */
+@media (min-width: 901px) {
+    .ProjectGrid {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0;
+    }
+    
+    .ProjectSection {
+        padding: 40px 0;
+    }
+}
+/* Large Desktop */
+@media (min-width: 1200px) {
+    .ProjectGrid {
+        max-width: 1200px;
+    }
+}
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .ProjectSection {
+        display: flex;
+        width: 343px;
+        height: 980.6353px;
+        padding: 12.25px 6.125px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12.25px;
+        border: 0 solid #E5E7EB;
+        background: #191B1F;
+        /* background-color: blue; */
+    }
+    
+
+    .ProjectGrid {
+    background-color: yellow;
+    width: 343px;
+    height: 719.0956;
+    /* height:auto; */
+     display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    align-items: center; */
+    /* margin: 0 auto; */
+    /* margin-left: 400px; */
+   /* align-items: flex-start;
+    gap: 22px;
+    align-self: stretch; */
+    /* width: 1120px; */
+    /* height: 396.4084px; */
+    
+    /* justify-content: space-between; */
+    /* align-items: flex-start; */
+    /* align-content: flex-start;  */
+    
+    /* row-gap: 22px;
+    align-self: stretch;
+    flex-wrap: wrap;
+    border: 0 solid #E5E7EB; */
+}
 }

@@ -140,3 +140,121 @@
   transform: translateX(4px);
   filter: brightness(0.9); 
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .serviceCard {
+    width: 343px;
+    padding: 33.551px 32.153px;
+    gap: 18.173px;
+  }
+
+  .cardHeader {
+    gap: 18px;
+  }
+
+  .iconContainer {
+    width: 26.212px;
+    height: 27.956px;
+  }
+
+  .safeIcon {
+    width: 26.212px;
+    height: 27.956px;
+  }
+
+  .title {
+    width: auto;
+    height: auto;
+    font-size: 19.571px;
+    line-height: 27.959px;
+  }
+
+  .description {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+  }
+
+  .featuresList {
+    padding: 0;
+    gap: 12px;
+  }
+
+  .featureItem {
+    width: 279px;
+    gap: 9.026px;
+  }
+
+  .checkIcon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .featureItem span {
+    font-size: 14px;
+    line-height: 15.795px;
+  }
+
+  .learnMoreButton {
+    padding: 5.592px 26.798px 4.959px 22.367px;
+    font-size: 16.776px;
+    line-height: 22.367px;
+  }
+}
+
+@media (max-width: 480px) {
+  .serviceCard {
+    width: 100%;
+    max-width: 343px;
+    padding: 24px 20px;
+  }
+
+  .cardHeader {
+    gap: 12px;
+  }
+
+  .iconContainer {
+    width: 24px;
+    height: 24px;
+  }
+
+  .safeIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .featuresList {
+    gap: 10px;
+  }
+
+  .featureItem {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .checkIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .featureItem span {
+    font-size: 13px;
+    line-height: 14px;
+  }
+
+  .learnMoreButton {
+    padding: 8px 20px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+}

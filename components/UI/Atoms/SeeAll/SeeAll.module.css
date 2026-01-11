@@ -37,3 +37,30 @@
 .link:hover .arrowIcon {
   transform: translateX(4px);
 }
+
+@media (max-width: 600px) {
+  .linkContainer {
+    width: 343px;
+    height: 16px;
+   
+  }
+  .link {
+   color: var(--Primary, #D04A1D);
+    text-align: right;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+  }
+  .arrowIcon {
+    width: 20px;
+    height: 20px;
+  }
+}

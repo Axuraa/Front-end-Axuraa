@@ -21,44 +21,56 @@
     box-sizing: border-box;
 }
 
-/* Tablet - 2 columns */
-@media (min-width: 768px) {
-    .servicesContainer {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 24px;
-    }
-}
 
-/* Desktop - 3 columns */
-@media (min-width: 1200px) {
-    .servicesContainer {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Large Desktop - 2 columns with max-width cards */
-@media (min-width: 1440px) {
-    .servicesContainer {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 1400px;
-    }
-}
-
-/* Ensure cards take full width of their grid cell */
-.servicesContainer > * {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* Responsive adjustments */
-@media (max-width: 767px) {
+/* Small mobile devices (portrait) */
+@media (max-width: 359px) {
     .servicesPage {
-        padding: 1rem 0.5rem; /* Tighter padding on very small screens */
+        padding: 0.75rem;
     }
     
     .servicesContainer {
-        gap: 16px; /* Smaller gap on mobile */
-        padding: 0.5rem; /* Tighter padding */
+        gap: 0.75rem;
+    }
+}
+/* Larger mobile devices (landscape) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .servicesPage {
+        padding: 1.25rem;
+    }
+    
+    .servicesContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+/* Tablet and larger (768px and up) */
+@media (min-width: 768px) {
+    .servicesPage {
+        padding: 1.5rem;
+    }
+    
+    .servicesContainer {
+        max-width: 1120px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        margin: 0 auto;
+    }
+}
+/* Desktop (1024px and up) */
+@media (min-width: 1024px) {
+    .servicesContainer {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+}
+/* Large desktop (1280px and up) */
+@media (min-width: 1280px) {
+    .servicesPage {
+        padding: 2rem;
+    }
+    
+    .servicesContainer {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.75rem;
     }
 }

@@ -206,3 +206,39 @@ text-underline-position: from-font;
   margin-top: 0.5rem;
   align-self: flex-end;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+    max-width: 342.569px;
+    padding: 0;
+  }
+  .content {
+    padding: 18.64px 18.64px 6.991px;
+  }
+  .imageContainer {
+    height: 200.057px;
+  }
+  .title {
+    font-size: 16.776px;
+    line-height: 22.368px;
+  }
+  .badge {
+    padding: 4.66px 9.32px;
+    font-size: 13.048px;
+    line-height: 18.64px;
+  }
+  .percentage {
+    font-size: 26.096px;
+    line-height: 31.688px;
+  }
+  .description {
+    font-size: 13.018px;
+    line-height: 18.64px;
+  }
+  .readMore {
+    font-size: 13.048px;
+    line-height: 18.64px;
+  }
+}

@@ -84,7 +84,7 @@ line-height: 18.297px; /* 144.444% */
     align-items: center;
     gap: 8px;
     height: auto;
-    background-color: var(--background, #1A1A1A);
+    /* background-color: var(--background, #1A1A1A); */
     border-radius: 8.445px;
   }
   .title {

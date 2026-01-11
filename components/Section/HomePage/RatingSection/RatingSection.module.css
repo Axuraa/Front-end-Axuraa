@@ -9,46 +9,27 @@
     background: #191B1F;
     overflow: hidden;
 }
-@media (max-width: 1024px) {
-    .servicesGrid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    .title1,
-    .title2 {
-        font-size: 60px;
-    }
-}
 @media (max-width: 768px) {
-    .servicesSection {
-        padding: 60px 0;
-    }
-    
-    .title1,
-    .title2 {
-        font-size: 48px;
-    }
-    
-    .subtitle {
-        font-size: 14px;
-        max-width: 100%;
-        padding: 0 20px;
-    }
+  .RatingSection {
+    /* width: 343px;
+    height: 125.6316px;  */
+    display: flex;
+    padding: 12.25px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12.25px;
+    /* align-self: stretch; */
+    border: 0 solid #E5E7EB;
+    /* width: 100%;   */
+    /* height: auto;   */
+    /* background: green; */
+    /* display: flex;
+    width: 74px;
+    height: 76.7369px;
+    flex-direction: column;
+    align-items: center;
+    gap: 5.909px;
+    border: 0 solid #E5E7EB; */
 }
-@media (max-width: 576px) {
-    .servicesGrid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-        padding: 0 20px;
-    }
-    
-    .title1,
-    .title2 {
-        font-size: 36px;
-    }
-    
-    .ratingValue {
-        font-size: 40px;
-    }
 }

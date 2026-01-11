@@ -205,12 +205,118 @@
   text-decoration: underline;
 }  */
 
+/* ===== Mobile Responsive Styles ===== */
+@media (max-width: 768px) {
+  .card {
+    display: flex;
+    width: 164px;
+    height: 191.096px;
+    padding: 16.828px 9.127px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0 0 42.783px 0;
+    background: #222429;
+    box-shadow: 1.426px 1.141px 14.261px 0 rgba(0, 0, 0, 0.50);
+  }
 
+.card:hover {
+  width: 164px; /* Match the base width */
+  height: 191.096px; /* Match the base height */
+  border: 2px solid var(--Primary, #D04A1D);
+  transform: none;
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.6);
+}
 
+  .iconWrapper {
+    width: 75.583px;
+    height: 71.59px;
+    flex-shrink: 0;
+    fill: var(--Primary, #D04A1D);
+  }
 
+  .title {
+    width: 79px;
+    height: 15px;
+    color: #FFF;
+    font-family: Roboto;
+    font-size: 12.835px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.128px;
+  }
 
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
+  .description {
+    width: 145.7461px;
+    height: 36px;
+   align-self: stretch;
+   color: #FFF;
+    font-family: Roboto;
+    font-size: 9.983px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.1px;
+  }
+
+  .link {
+  font-size: 9.983px;
+  margin-top: 12px;
+  margin-left: 0; /* Remove negative margin */
+  height: 24px;
+  text-align: center;
+  width: 100%;
+  transition: opacity 0.2s ease;
+}
+/* Optimize hover/active states for touch devices */
+.card:active {
+  transform: scale(0.98); /* Slight press-in effect */
+  transition: transform 0.1s ease;
+  border: 2px solid var(--Primary, #D04A1D);
+}
+.card:active .cardIcon {
+  transform: scale(0.98);
+}
+/* Keep link visible on mobile */
+.card:active .link {
+  opacity: 1; /* Keep link visible on press */
+  text-decoration: underline;
+}
+/* Adjust dots layers for mobile */
+.dotsLayer1,
+.dotsLayer2,
+.dotsLayer3 {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card {
+    width: 100%;
+    max-width: 220px;
+    height: 260px;
+    padding: 20px 12px;
+  }
+
+  .card:hover {
+    width: 100%;
+    max-width: 240px;
+    height: 280px;
+  }
+
+  .iconWrapper {
+    width: 100px;
+    height: 95px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 14px;
   }
 }

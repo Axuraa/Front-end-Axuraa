@@ -57,3 +57,100 @@
   letter-spacing: 0.778px;
   text-transform: capitalize;
 }
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .header {
+    /* width: 343px;
+    height: 239.1185px; */
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.45px;
+    align-self: stretch;
+    /* background-color: #D04A1D; */
+  }
+  .title1 {
+    width: 245.699px;
+    height: 40px;
+    color: var(--white, #FFF);
+    text-align: center;
+    font-family: Roboto;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 39.138px; /* 130.46% */
+    letter-spacing: -0.978px;
+  }
+  .title2 {
+   display: flex;
+  width: 320.713px;
+  height: 39.138px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 39.138px; /* 111.823% */
+  letter-spacing: -0.978px;
+  background: linear-gradient(90deg, #D04A1D 0%, #999 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    width: 343px;
+    height: 24px;
+    font-size: 10px;
+    letter-spacing: 0.423px;
+    height: auto;
+    padding: 0 12px;
+}
+}
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .title1 {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  .title2 {
+    font-size: 48px;
+    line-height: 1.2;
+    height: auto;
+    padding: 0 24px;
+  }
+  .subtitle {
+    font-size: 14px;
+    letter-spacing: 0.778px;
+    width: 631px;
+    height: 25px;
+    padding: 0;
+  }
+}
+/* Desktop Styles */
+@media (min-width: 1025px) {
+  .title1 {
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -1.8px;
+  }
+   .title2 {
+    width: 590px;
+    height: 72px;
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: -1.8px;
+    padding: 0;
+  }
+  .subtitle {
+    font-size: 14px;
+    letter-spacing: 0.778px;
+    height: 25px; 
+    padding: 0; 
+  }
+}

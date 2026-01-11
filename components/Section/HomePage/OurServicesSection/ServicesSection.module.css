@@ -35,18 +35,118 @@
     align-self: stretch;
 }
 
-/* Responsive adjustments */
+
+/* Mobile Responsive Styles */
+/* @media (max-width: 768px) {
+    .servicesSection {
+        width: 100%;
+        min-height: auto;
+        padding: 16px;
+    }
+    .servicesGrid {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 16px;
+        min-height: auto;
+    }
+    /* If you have specific card components inside servicesGrid, add their responsive styles here */
+    /* .servicesGrid > * {
+        width: 100%;
+        max-width: 343px;
+    }
+} */ 
+/* Tablet Responsive Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .servicesSection {
+        padding: 20px 32px;
+    }
+    .servicesGrid {
+        justify-content: center;
+        gap: 16px;
+    }
+    .servicesGrid > * {
+        flex: 1 1 calc(50% - 16px);
+        max-width: calc(50% - 16px);
+    }
+}
+
+/* Mobile styles */
+/* @media (max-width: 768px) {
+  .desktopView {
+    display: none;
+  }
+  
+  .mobileView {
+    display: flex;
+    width: 100%;
+    max-width: 343px;
+    margin: 0 auto;
+  }
+  
+  .servicesGrid.mobileView {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  
+  .servicesGrid.mobileView > * {
+    width: calc(50% - 8px);
+    max-width: 100%;
+  }
+} */
+
+/* Mobile styles */
 @media (max-width: 768px) {
+    .servicesSection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6.125px;
+        align-self: stretch;
+        padding: 16px;
+        min-height: auto;
+        background-color: green;
+    }
+    .servicesGrid {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        /* align-items: flex-start; */
+        gap: 6.125px;
+        /* align-self: stretch; */
+        min-height: auto;
+        width: 100%;
+        background-color: red;
+    }
+    .desktopView {
+        display: none;
+    }
+    
+    .mobileView {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .mobileView > * {
+        flex: 1 1 calc(50% - 6px);
+        max-width: calc(50% - 6px);
+    }
+}
+/* Tablet and Desktop styles */
+@media (min-width: 769px) {
   .servicesGrid {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
   
-  .title {
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
+  .servicesGrid > * {
+    flex: 1 1 calc(25% - 16px);
+    max-width: calc(25% - 16px);
   }
 }

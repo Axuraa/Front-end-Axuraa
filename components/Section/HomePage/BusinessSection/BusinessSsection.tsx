@@ -52,6 +52,27 @@ const ServicesSection = () => {
             iconSrc="/assets/DirectionIcon.svg"
             borderRadius="0   68.087px 0 0"
            />
+
+           {/* <div className={styles.servicesGrid}>
+                
+                {services.length > 0 && (
+                  <Card
+                    key={0}
+                    title={services[0].title}
+                    description={services[0].description}
+                    iconSrc={services[0].icon}
+                    borderRadius="0 68.087px 0 0"
+                  />
+                )}
+                
+              
+                <DirectionCard
+                  title="See All Services"
+                  description="Explore our full catalog"
+                  iconSrc="/assets/DirectionIcon.svg"
+                  borderRadius="0 68.087px 0 0"
+                />
+              </div> */}
         </div>
     </section>
   );
