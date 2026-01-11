@@ -710,11 +710,11 @@ background: #1E1E1E;
   width: 300px;
   height: 100px;
     display: flex;
-    padding: 0 280px;
+    /* padding: 0 280px; */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
+    gap: 15px;
     align-self: stretch;
     text-align: center;
     /* background-color: rgba(2, 104, 2, 0.979); */
