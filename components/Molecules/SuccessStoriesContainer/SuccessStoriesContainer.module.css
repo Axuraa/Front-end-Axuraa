@@ -27,8 +27,9 @@
         width: 343px;
         display: flex;
         flex-direction: column;
-        min-height: 923.1912px;
+        height: 750px; 
         gap: 16px;
         padding: 0 12px;
+        /* background-color: bisque; */
     }
 }
