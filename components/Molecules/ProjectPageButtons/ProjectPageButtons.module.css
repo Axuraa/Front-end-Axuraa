@@ -84,6 +84,88 @@
   }
 }
 
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .buttonsWrapper {
+    justify-content: center;
+    padding: 12px 0;
+    gap: 12px;
+  }
+  
+  .filterButton {
+    padding: 7px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 901px) {
+  .container {
+    width: 100%;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+  
+  .buttonsWrapper {
+    justify-content: flex-start;
+    padding: 10px 0;
+    gap: 10px;
+  }
+  
+  .filterButton {
+    padding: 6px 15px;
+    font-size: 13.5px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+  
+  .buttonsWrapper {
+    justify-content: flex-start;
+    padding: 8px 0 10px;
+    gap: 8px;
+  }
+  
+  .filterButton {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 767px) and (min-width: 481px) {
+  .container {
+    padding: 0 15px;
+    margin-bottom: 25px;
+  }
+  
+  .buttonsWrapper {
+    justify-content: flex-start;
+    padding: 6px 0 8px;
+    gap: 6px;
+  }
+  
+  .filterButton {
+    padding: 5px 12px;
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filterButton {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 15px;
@@ -98,12 +180,5 @@
   .filterButton {
     padding: 6px 14px;
     font-size: 13px;
-  }
-}
-
-@media (max-width: 480px) {
-  .filterButton {
-    padding: 5px 12px;
-    font-size: 12px;
   }
 }

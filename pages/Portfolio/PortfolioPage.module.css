@@ -70,11 +70,38 @@
     }
 }
 
-/* Tablet Responsive */
-@media (max-width: 1200px) and (min-width: 769px) {
+/* Tablet Responsive - 1024px */
+@media (max-width: 1024px) and (min-width: 961px) {
     .container {
-        /* width: 90%; */
+        width: 90%;
         max-width: 960px;
         height: auto;
+        padding: 0 20px;
+        margin: 0 auto;
+        /* background-color: bisque; */
+    }
+}
+
+/* Tablet Responsive - 768px-960px */
+@media (max-width: 960px) and (min-width: 769px) {
+    .container {
+        width: 90%;
+        max-width: 768px;
+        height: auto;
+        padding: 0 20px;
+    }
+    
+    .portfolioPage {
+        padding: 0 20px;
+    }
+}
+
+/* Small Tablet Responsive - 600px-768px */
+@media (max-width: 768px) and (min-width: 601px) {
+    .container {
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+        padding: 0 15px;
     }
 }

@@ -21,6 +21,61 @@
   margin: 0 auto;
 }
 
+
+/* Desktop to Large Tablet (1200px) */
+@media (max-width: 1200px) and (min-width: 1025px) {
+  .featuresContainer {
+    width: 95%;
+    max-width: 1000px;
+    padding: 36px 24px;
+    gap: 36px;
+  }
+  
+  .cardsGrid {
+    gap: 20px;
+  }
+}
+
+/* Tablet Landscape (1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .featuresContainer {
+    width: 90%;
+    max-width: 900px;
+    padding: 32px 24px;
+    gap: 32px;
+  }
+  
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* Tablet Portrait (768px) */
+@media (max-width: 768px) and (min-width: 641px) {
+  .featuresContainer {
+    width: 100%;
+    max-width: 700px;
+    /* padding: 32px 20px; */
+    gap: 20px;
+    /* background-color: blue; */
+  }
+  
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 16px;
+  }
+}
+
+
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .featuresContainer {

@@ -236,8 +236,9 @@ const ServicePage: React.FC<ServicePageProps> = () => {
                 <h1 className={styles.FeaturesCapabilitiesTitle}>Features & Capabilities</h1>
                 <p className={styles.FeaturesCapabilitiesDescription}>Comprehensive web services designed to design, build, and scale your digital presence from concept to launch.</p>
             </div>
-            
-            <FeaturesContainer features={features}/>
+            <div className={styles.FeaturesCapabilitiesContainer}>
+              <FeaturesContainer features={features}/>
+            </div>
         </div>
         {/* Our Development Process */}
         <div className={styles.OurDevelopmentProcess}>

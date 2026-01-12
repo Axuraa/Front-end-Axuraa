@@ -11,14 +11,28 @@
 }
 
 
-/* For tablet and below */
-@media (max-width: 768px) {
+
+/* Tablet Landscape (1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
   .container {
-    max-width: 100%;
-    padding: 0 16px;
+    width: 90%;
+    max-width: 850px;
+    padding: 0 32px;
+    gap: 32px;
   }
 }
 
+/* Tablet Portrait (768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+  .container {
+    width: 100%;
+    max-width: 700px;
+    padding: 10px 24px;
+    gap: 24px;
+    justify-content: center;
+    /* background-color: blue; */
+  }
+}
 /* For mobile devices */
 @media (max-width: 480px) {
   .container {

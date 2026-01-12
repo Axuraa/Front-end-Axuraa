@@ -9,6 +9,55 @@
     border: 0 solid #E5E7EB;
     /* margin: 0 auto; */
 }
+
+
+
+/* Large Desktop (1200px and above) */
+@media (min-width: 1201px) {
+    .container {
+        max-width: 1120px;
+    }
+}
+
+/* Desktop to Tablet (1024px - 1200px) */
+@media (max-width: 1200px) and (min-width: 1025px) {
+    .container {
+        width: 95%;
+        max-width: 1000px;
+        height: auto;
+        padding: 0 24px;
+       
+    }
+}
+
+/* Tablet Landscape (1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        /* padding: 0 32px; */
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        /* background-color: blue; */
+    }
+}
+
+/* Tablet Portrait (768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+    .container {
+        width: 90%;
+        max-width: 700px;
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 24px;
+    }
+}
+
 /* Responsive adjustments */
 @media (max-width: 1200px) {
     .container {

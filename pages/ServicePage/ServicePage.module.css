@@ -494,6 +494,221 @@ line-height: 13.32px; /* 122.222% */
     height: 9.688px;
 }
 
+
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .contentSection1 {
+    width: 90%;
+    max-width: 900px;
+    padding: 32px 24px;
+    gap: 32px;
+    /* background-color: red; */
+  }
+
+  .contentSection2 {
+    width: 48%;
+    height: 60%;
+    /* background-color: blue; */
+  }
+
+  .contentSection2Description,
+  .serviceContent {
+    width: 100%;
+    /* background-color: #7A4A1A; */
+  }
+
+  .FeaturesCapabilities,
+  .OurDevelopmentProcess,
+  .SuccessStories,
+  .ServicePackages {
+    padding: 32px 24px;
+    /* background-color: #7A4A1A; */
+  }
+
+  .FeaturesCapabilitiesContent,
+  .OurDevelopmentProcessContent,
+  .SuccessStoriesContent,
+  .ServicePackagesContent {
+    width: 90%;
+    max-width: 800px;
+    /* background-color: #D04A1D; */
+    margin: 0 auto;
+  }
+
+
+  .FeaturesCapabilitiesContainer{
+    /* background-color: blue; */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .SuccessStoriesContainer{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #7A4A1A;
+  }
+  .testimonialSection,
+  .ctaSection {
+    width: 90%;
+    max-width: 800px;
+    /* background-color: blue;   */
+  }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+  .contentSection1 {
+    width: 90%;
+    padding: 32px 20px;
+    flex-direction: column;
+    gap: 32px;
+    
+  }
+
+  .contentSection2 {
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    text-align: center;
+  
+  }
+
+  .contentSection2Title {
+    text-align: center;
+  }
+
+  .contentSection2Description {
+    width: 100%;
+    text-align: center;
+  }
+
+  .serviceList {
+    padding: 0;
+    align-items: flex-start;
+  }
+
+  .serviceContent {
+    white-space: normal;
+      
+  }
+
+  .FeaturesCapabilities {
+    height: auto;
+    padding: 40px 20px;
+    
+  }
+
+  .FeaturesCapabilitiesContainer{
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    /* background-color: #D04A1D; */
+  }
+  .FeaturesCapabilitiesContent {
+    width: 90%;
+    
+  }
+
+  .FeaturesCapabilitiesTitle,
+  .FeaturesCapabilitiesDescription {
+    width: 100%;
+    
+  }
+
+  .OurDevelopmentProcess {
+    height: auto;
+    padding: 40px 20px;
+    
+  }
+
+  .OurDevelopmentProcessContent {
+    margin: 0 auto;
+    /* padding: 0; */
+    width: 85%;
+    
+  }
+
+  .OurDevelopmentProcessTitle,
+  .OurDevelopmentProcessDescription {
+    width: 100%;
+    
+  }
+
+  .OurDevelopmentContainer {
+    margin: 0px  auto;
+    width: 30%;
+    gap: 20px;
+    /* background-color: #7A4A1A; */
+  }
+
+  .SuccessStories {
+    margin: 0 auto;
+    height: auto;
+    padding: 40px 20px;
+    
+  }
+
+  .SuccessStoriesContent {
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+    
+  }
+
+  .SuccessStoriesTitle,
+  .SuccessStoriesDescription {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .testimonialSection {
+    width: 90%;
+    margin-left: 0;
+  }
+
+  .testimonialContent {
+    width: 100%;
+    padding: 22.4px 40px;
+  }
+
+  .testimonialText {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .ServicePackages {
+    padding: 40px 20px;
+  }
+
+  .ServicePackagesContent {
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;
+    height: auto;
+    /* background-color: #D04A1D; */
+  }
+
+  .ServicePackagesDescription {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .ctaSection {
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    padding: 29.063px 40px;
+  }
+
+  .ctaText2 {
+    height: auto;
+  }
+}
+
 /* Mobile (480px and below) */
 @media (max-width: 480px ) {
   .contentSection1 {
@@ -759,6 +974,7 @@ width: 329px;
   } 
 
 .testimonialSection {
+  margin: 0 auto;
   width: 343px;
   height: 222.9916px;
   display: flex;
@@ -766,7 +982,7 @@ width: 329px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: -52px;
+  margin-left: -50px;
   gap: 14.933px;
   align-self: stretch;
 }
@@ -939,3 +1155,18 @@ height: 9.688px;
 }
 
 }
+
+/* @media (max-width: 425px) {
+  .testimonialSection {
+  width: 343px;
+  height: 222.9916px;
+  display: flex;
+  padding: 22.4px 68.133px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: -25px;
+  gap: 14.933px;
+  align-self: stretch;
+}
+} */
