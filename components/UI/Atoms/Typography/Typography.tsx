@@ -1,7 +1,6 @@
 import React, { JSX } from 'react';
 import styles from './Typography.module.css';
 import { TypographyVariant, TypographyProps } from '@/types/Generals/typographyTypes';
-
 const Typography: React.FC<TypographyProps> = ({
   variant = 'body1',
   component: Component = 'p',
@@ -11,6 +10,7 @@ const Typography: React.FC<TypographyProps> = ({
   gutterBottom = false,
   noWrap = false,
   animation,
+  stagger,
   children,
   style,
   ...props
@@ -20,6 +20,8 @@ const Typography: React.FC<TypographyProps> = ({
     styles[variant],
     gutterBottom && styles.gutterBottom,
     noWrap && styles.noWrap,
+    animation && styles[animation],
+    stagger && styles[`stagger${stagger}`],
     className,
   ]
     .filter(Boolean)
@@ -29,7 +31,6 @@ const Typography: React.FC<TypographyProps> = ({
     ...style,
     ...(color && { color }),
     ...(align && { textAlign: align }),
-    ...(animation && { animation }),
   };
 
   return (

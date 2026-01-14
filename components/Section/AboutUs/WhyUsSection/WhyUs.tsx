@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./WhyUs.module.css";
 import Card from "@/components/UI/Muscles/ValueCard/ValueCard";
-import Typography from "@/components/UI/Atoms/Typography/Typography";
+import SectionHeader from "@/components/Layout/SectionHeader/SectionHeader";
+import StatusBadge from "@/components/UI/Atoms/StatusBadge/StatusBadge";
 
 const WhyUs: React.FC = () => {
   const values = [
@@ -36,44 +37,15 @@ const WhyUs: React.FC = () => {
       <div className={styles.container}>
         {/* Header Section */}
         <div className={styles.header}>
-          <Typography
-            variant="h3"
-            component="h3"
-            style={{
-              textAlign: "center",
-              fontFamily: "Roboto",
-              fontSize: "var(--font-size-72, 72px)",
-              fontStyle: "normal",
-              fontWeight: 900,
-              lineHeight: " 100px",
-              letterSpacing: "var(--letter-spacing--1_8, -1.8px)",
-              margin: " 0 0 2rem 0",
-              animation: "fadeInUp 0.8s ease-out",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center", // Center content vertically
-              alignItems: "center",
-            }}
-            className={styles.title}
-          >
-            <span
-              style={{
-                color: "#FFFFFF",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "4rem",
-                fontWeight: 900,
-                lineHeight: "4.5rem",
-                letterSpacing: "-1.442px",
-              }}
-            >
-              Why Axuraa?
-            </span>
-          </Typography>
-
-          <Typography variant="body1" component="p" className={styles.subtitle}>
-            Our culture is built on principles that ensure we deliver not just
-            code, but tangible business value.
-          </Typography>
+          <StatusBadge text="AXURAA" className={styles.badge} />
+          <SectionHeader
+            // title1="Why"
+            // title2="Axuraa?"
+            // title1="Our"
+            title2="WhyAxuraa?"
+            subtitle=" Our culture is built on principles that ensure we deliver not just
+            code, but tangible business value."
+          />
         </div>
 
         {/* Cards Grid */}
