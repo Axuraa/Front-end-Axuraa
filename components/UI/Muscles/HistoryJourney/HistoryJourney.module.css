@@ -5,6 +5,7 @@
   background: transparent;
   padding: 0;
   position: relative;
+  margin-left: -8%;
 
 }
 
@@ -16,7 +17,7 @@
     #1E293B 50%,
     #0F172A 100%
   ); */
-  padding: 6rem 2rem;
+  padding-top: 6rem ;
 }
 
 .history_journey.standalone::before {

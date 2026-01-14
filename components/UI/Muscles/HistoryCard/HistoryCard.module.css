@@ -5,20 +5,14 @@
   max-width: 480px;
   /* min-height: 600px; */
   min-height: 100%;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* justify-self: flex-end; */
-  /* RESTORED - Background is needed */
-  /* background: linear-gradient(
-    145deg,
-    rgba(31, 41, 55, 0.8) 0%,
-    rgba(17, 24, 39, 0.9) 50%,
-    rgba(31, 41, 55, 0.8) 100%
-  ); */
-  background: var(--color-azure-1730, rgba(31, 41, 55, 0.30));
+  margin: 2rem;
+  margin-left: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-azure-1730, rgba(31, 41, 55, 0.3));
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 32px;
@@ -26,22 +20,19 @@
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 
-    0 10px 40px rgba(0, 0, 0, 0.5),
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .history_card:hover {
   transform: translateY(-8px);
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.6),
-    0 0 40px rgba(249, 115, 22, 0.15),
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(249, 115, 22, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
   border-color: rgba(249, 115, 22, 0.2);
 }
 
 .history_card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -133,8 +124,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 
-    0 4px 20px rgba(249, 115, 22, 0.25),
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.25),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -144,14 +134,13 @@
     rgba(249, 115, 22, 0.3) 0%,
     rgba(234, 88, 12, 0.25) 100%
   );
-  box-shadow: 
-    0 8px 30px rgba(249, 115, 22, 0.4),
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
 }
 
 .icon_background::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -2px;
   border-radius: 20px;
@@ -162,9 +151,7 @@
     transparent 50%,
     rgba(249, 115, 22, 0.4) 100%
   );
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
@@ -192,16 +179,12 @@
 }
 
 .title {
-  color: #F9FAFB;
+  color: #f9fafb;
   font-weight: 700;
   font-size: 2rem;
   margin-bottom: 0.75rem;
   letter-spacing: -0.02em;
-  background: linear-gradient(
-    135deg,
-    #FFFFFF 0%,
-    #E5E7EB 100%
-  );
+  background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -209,31 +192,27 @@
 }
 
 .history_card:hover .title {
-  background: linear-gradient(
-    135deg,
-    #F97316 0%,
-    #FFFFFF 50%,
-    #F97316 100%
-  );
+  background: linear-gradient(135deg, #f97316 0%, #ffffff 50%, #f97316 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .subtitle {
-  color: #9CA3AF;
+  color: #9ca3af;
   font-size: 1rem;
   line-height: 1.6;
   transition: color 0.3s ease;
 }
 
 .history_card:hover .subtitle {
-  color: #D1D5DB;
+  color: #d1d5db;
 }
 
 /* Animations */
 @keyframes rotate-float-1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) rotate(0deg);
   }
   25% {
@@ -248,7 +227,8 @@
 }
 
 @keyframes rotate-float-2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(0, 0) rotate(0deg);
   }
   33% {
@@ -260,7 +240,8 @@
 }
 
 @keyframes rotate-float-3 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%) rotate(0deg) scale(1);
   }
   50% {
@@ -269,7 +250,8 @@
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {

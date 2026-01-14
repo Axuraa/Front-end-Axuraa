@@ -13,7 +13,8 @@ export interface TypographyProps {
   align?: 'left' | 'center' | 'right' | 'justify';
   gutterBottom?: boolean;
   noWrap?: boolean;
-  animation?: string;
+  animation?: 'fadeIn' | 'slideIn' | 'textUp' | 'autoAnimate' | string;
+  stagger?: 1 | 2 | 3 | 4 | 5;
   children: React.ReactNode;
   style?: React.CSSProperties;
 }

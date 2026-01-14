@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./OurTeamSection.module.css";
-import Typography from "@/components/UI/Atoms/Typography/Typography";
 import TeamCard from "@/components/UI/Muscles/TeamCard/TeamCard";
+import SectionHeader from "@/components/Layout/SectionHeader/SectionHeader";
+import StatusBadge from "@/components/UI/Atoms/StatusBadge/StatusBadge";
 
 // Types matching backend response
 interface TeamMember {
@@ -95,39 +96,15 @@ const TeamSection: React.FC<TeamSectionProps> = ({
   return (
     <section className={styles.teamSection}>
       <div className={styles.container}>
-        <Typography
-          variant="h3"
-          component="h3"
-          style={{
-              textAlign: 'center',
-              fontFamily: 'Roboto',
-              fontSize: 'var(--font-size-72, 72px)',
-              fontStyle: 'normal',
-              fontWeight: 900,
-              lineHeight: ' 100px',
-              letterSpacing: 'var(--letter-spacing--1_8, -1.8px)',
-              margin: "0 0 6rem 0",
-              animation: "fadeInUp 0.8s ease-out",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center", // Center content vertically
-              alignItems: "center",
-            }}
-          className={styles.title}
-        >
-          <span
-            style={{
-              color: "#FFFFFF",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "4rem",
-              fontWeight: 900,
-              lineHeight: "4.5rem",
-              letterSpacing: "-1.442px",
-            }}
-          >
-            Meet Our Team
-          </span>
-        </Typography>
+        <div className={styles.header}>
+          <StatusBadge text="AXURAA" className={styles.badge} />
+
+          <SectionHeader
+            title1="Meet"
+            title2="Our Team"
+            // subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+          />
+        </div>
 
         <div className={styles.teamGrid}>
           {teamMembers.map((member) => (

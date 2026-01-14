@@ -8,84 +8,84 @@
 
 /* Variants - Responsive Font Sizes */
 .h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem); /* 32px - 56px */
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 700;
   letter-spacing: -0.01562em;
   line-height: 1.2;
 }
 
 .h2 {
-  font-size: clamp(1.75rem, 4vw, 2.5rem); /* 28px - 40px */
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   font-weight: 700;
   letter-spacing: -0.00833em;
   line-height: 1.3;
 }
 
 .h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem); /* 24px - 32px */
+  font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 600;
   letter-spacing: 0;
   line-height: 1.4;
 }
 
 .h4 {
-  font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* 20px - 28px */
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   font-weight: 600;
   letter-spacing: 0.00735em;
   line-height: 1.4;
 }
 
 .h5 {
-  font-size: clamp(1.125rem, 2vw, 1.5rem); /* 18px - 24px */
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
   font-weight: 600;
   letter-spacing: 0;
   line-height: 1.5;
 }
 
 .h6 {
-  font-size: clamp(1rem, 1.5vw, 1.25rem); /* 16px - 20px */
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   font-weight: 600;
   letter-spacing: 0.0075em;
   line-height: 1.5;
 }
 
 .subtitle1 {
-  font-size: clamp(0.875rem, 1.5vw, 1rem); /* 14px - 16px */
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
   font-weight: 500;
   letter-spacing: 0.00938em;
   line-height: 1.6;
 }
 
 .subtitle2 {
-  font-size: clamp(0.8125rem, 1.25vw, 0.875rem); /* 13px - 14px */
+  font-size: clamp(0.8125rem, 1.25vw, 0.875rem);
   font-weight: 500;
   letter-spacing: 0.00714em;
   line-height: 1.6;
 }
 
 .body1 {
-  font-size: clamp(0.875rem, 1.25vw, 1rem); /* 14px - 16px */
+  font-size: clamp(0.875rem, 1.25vw, 1rem);
   font-weight: 400;
   letter-spacing: 0.00938em;
   line-height: 1.6;
 }
 
 .body2 {
-  font-size: clamp(0.8125rem, 1.125vw, 0.875rem); /* 13px - 14px */
+  font-size: clamp(0.8125rem, 1.125vw, 0.875rem);
   font-weight: 400;
   letter-spacing: 0.01071em;
   line-height: 1.6;
 }
 
 .caption {
-  font-size: clamp(0.6875rem, 1vw, 0.75rem); /* 11px - 12px */
+  font-size: clamp(0.6875rem, 1vw, 0.75rem);
   font-weight: 400;
   letter-spacing: 0.03333em;
   line-height: 1.5;
 }
 
 .overline {
-  font-size: clamp(0.6875rem, 1vw, 0.75rem); /* 11px - 12px */
+  font-size: clamp(0.6875rem, 1vw, 0.75rem);
   font-weight: 500;
   letter-spacing: 0.08333em;
   text-transform: uppercase;
@@ -126,6 +126,18 @@
   }
 }
 
+/* NEW: Text Up Animation */
+@keyframes textUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .fadeIn {
   animation: fadeIn 0.6s ease forwards;
 }
@@ -134,44 +146,62 @@
   animation: slideIn 0.6s ease forwards;
 }
 
+/* NEW: Text Up Animation Class */
+.textUp {
+  animation: textUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* NEW: Auto-animate on page load */
+.autoAnimate {
+  opacity: 0;
+  animation: textUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Optional: Stagger animations for multiple elements */
+.stagger1 { animation-delay: 0.1s; }
+.stagger2 { animation-delay: 0.2s; }
+.stagger3 { animation-delay: 0.3s; }
+.stagger4 { animation-delay: 0.4s; }
+.stagger5 { animation-delay: 0.5s; }
+
 /* Responsive adjustments for very small screens */
 @media (max-width: 480px) {
   .h1 {
-    font-size: 2rem; /* 32px */
+    font-size: 2rem;
   }
   
   .h2 {
-    font-size: 1.75rem; /* 28px */
+    font-size: 1.75rem;
   }
   
   .h3 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.5rem;
   }
   
   .h4 {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem;
   }
   
   .h5 {
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.125rem;
   }
   
   .h6 {
-    font-size: 1rem; /* 16px */
+    font-size: 1rem;
   }
 }
 
 /* Responsive adjustments for tablets */
 @media (min-width: 325px) and (max-width: 1024px) {
   .h1 {
-    font-size: 2rem; /* 44px */
+    font-size: 2rem;
   }
   
   .h2 {
-    font-size: 1.5rem; /* 36px */
+    font-size: 1.5rem;
   }
   
   .h3 {
-    font-size: 1.125rem; /* 30px */
+    font-size: 1.125rem;
   }
 }

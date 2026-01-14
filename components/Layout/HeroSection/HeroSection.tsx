@@ -12,7 +12,6 @@ import StatusBadge from "@/components/UI/Atoms/StatusBadge/StatusBadge";
 import AnimatedBackground from "@/components/UI/Muscles/AinmatedBackground/AnimatedBackground";
 
 interface HeroSectionProps {
-  // Content
   title1?: string;
   title2?: string;
   subtitle1?: string;
@@ -21,7 +20,6 @@ interface HeroSectionProps {
   primaryButtonText?: string;
   secondaryButtonText?: string;
   backgroundType: "Hexagon" | "Circle" | "Alphabet";
-  // Toggle visibility
   showBackgroundDots?: boolean;
   showAnimatedCircles?: boolean;
   showBadge?: boolean;
@@ -30,13 +28,11 @@ interface HeroSectionProps {
   showPrimaryButton?: boolean;
   showSecondaryButton?: boolean;
   showEllipseDecorations?: boolean;
-  // Event handlers
   onPrimaryClick?: () => void;
   onSecondaryClick?: () => void;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({
-  // Content with defaults
   title1 = "Scalable Software. ",
   title2 = "Intelligent Solutions.",
   subtitle1 = "We transform complex business challenges into streamlined digital experiences.",
@@ -44,8 +40,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   badgeText = "AVAILABLE FOR NEW PROJECTS",
   primaryButtonText = "Start a Project",
   secondaryButtonText = "View Our Work",
-
-  // Toggle visibility with defaults (all true)
   showBackgroundDots = true,
   showAnimatedCircles = true,
   showBadge = true,
@@ -54,35 +48,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   showPrimaryButton = true,
   showSecondaryButton = true,
   showEllipseDecorations = true,
-  // Event handlers
   onPrimaryClick = () => console.log("Primary button clicked"),
   onSecondaryClick = () => console.log("Secondary button clicked"),
   backgroundType = "Hexagon",
 }) => {
   const [mounted, setMounted] = useState(false);
+  
   useEffect(() => {
     setMounted(true);
   }, []);
+
   return (
     <section className={styles.hero}>
-      {/* Background Dots */}
-      {/* {showBackgroundDots && (
-        <div className={styles.heroDots}>
-          <DotsBackground side="both" />
-        </div>
-      )} */}
-
       <div className={styles.container}>
-        {/* EllipseDecorations */}
-        {/* {showEllipseDecorations && (
-
-        // <EllipseDecorations 
-        //     showTopRight={true} 
-        //     showBottomLeft={true} 
-        // />
-          // <AnimatedBackground type='Hexagon' className={styles.animatedBackground} />
-        )} */}
-
         {showAnimatedCircles && (
           <AnimatedBackground
             type={backgroundType}
@@ -90,74 +68,69 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           />
         )}
 
-        {/* <FloatingIcons  /> */}
-
         <div className={styles.content}>
-          {/* Badge */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '1rem',
-            marginBottom: '1.5rem',
-              opacity: mounted ? 1 : 0,
-            transform: mounted ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'opacity 0.6s ease, transform 0.6s ease',
-            transitionDelay: '0.1s'
-          }}>
+          {/* Badge - FIXED: Removed inline transitions that conflict with CSS animations */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "1rem",
+              marginBottom: "1.5rem",
+            }}
+            className={mounted ? styles.fadeInUp : ""}
+          >
             {showBadge && <Badge text={badgeText} show={true} />}
             {showStatusBadge && <StatusBadge text="WHO WE ARE" />}
           </div>
 
-          {/* Title */}
+          {/* Title - FIXED: Removed inline animation, using Typography's built-in animation */}
           <Typography
             variant="h1"
             component="h1"
+            animation={mounted ? "textUp" : undefined}
+            // stagger={1}
             style={{
-    textAlign: 'center',
-    fontFamily: 'Inter, sans-serif',
-    fontSize: 'clamp(32px, 8vw, 57.684px)', // ✅ Responsive font size
-    fontWeight: 900,
-    lineHeight: '1.2', // ✅ Relative line height
-    letterSpacing: '-0.025em', // ✅ Relative letter spacing
-    margin: 0,
-    animation: "fadeInUp 0.8s ease-out",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    width: '100%',
-    padding: '0 20px',
-  }}
+              textAlign: "center",
+              fontFamily: "Inter, sans-serif",
+              fontSize: "clamp(32px, 8vw, 57.684px)",
+              fontWeight: 900,
+              lineHeight: "1.2",
+              letterSpacing: "-0.025em",
+              margin: 0,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              width: "100%",
+              padding: "0 20px",
+            }}
           >
             <span
               style={{
                 color: "#FFFFFF",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "57.684px",
+                fontSize: "clamp(32px, 8vw, 57.684px)",
                 fontWeight: 900,
-                lineHeight: "57.684px",
-                letterSpacing: "-1.442px",
+                lineHeight: "1.2",
+                letterSpacing: "-0.025em",
               }}
             >
               {title1}
             </span>
             <span
               style={{
-                color: "#D04A1D",
                 fontFamily: "Inter, sans-serif",
-                fontSize: "57.684px",
+                fontSize: "clamp(32px, 8vw, 57.684px)",
                 fontWeight: 900,
-                lineHeight: "80px",
-                letterSpacing: "-1.442px",
+                lineHeight: "1.2",
+                letterSpacing: "-0.025em",
                 textAlign: "center",
                 marginTop: "0.5rem",
                 background: "linear-gradient(90deg, #D04A1D 0%, #902501 100%)",
-                backgroundClip: "text", // ✅ Add standard property
+                backgroundClip: "text",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
-                MozBackgroundClip: "text",
-                // MozTextFillColor: "transparent",
                 display: "inline-block",
               }}
             >
@@ -165,42 +138,33 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
           </Typography>
 
-          {/* Subtitle */}
-          <div
-            className={styles.subtitle}
-            style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.6s ease, transform 0.6s ease",
-              transitionDelay: "0.5s",
-            }}
-          >
+          {/* Subtitle - FIXED: Removed inline transitions, using Typography animation */}
+          <div className={styles.subtitle}>
             <Typography
               variant="body1"
               component="p"
+              animation={mounted ? "textUp" : undefined}
+              // stagger={2}
               style={{
-    color: "var(--color-azure-65, #9CA3AF)",
-    textAlign: "center",
-    fontFamily: "var(--font-family-Font-1, Inter)",
-    fontSize: "clamp(16px, 3vw, 20px)", // ✅ Responsive
-    fontWeight: 400,
-    lineHeight: "1.6", // ✅ Relative
-    margin: 0,
-    width: '100%',
-  }}
+                color: "var(--color-azure-65, #9CA3AF)",
+                textAlign: "center",
+                fontFamily: "var(--font-family-Font-1, Inter)",
+                fontSize: "clamp(16px, 3vw, 20px)",
+                fontWeight: 400,
+                lineHeight: "1.6",
+                margin: 0,
+                width: "100%",
+              }}
             >
               {subtitle1}
             </Typography>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA Buttons - FIXED: Removed inline transitions */}
           <div
-            className={styles.ctaButtons}
+            className={`${styles.ctaButtons} ${mounted ? styles.fadeInUp : ""}`}
             style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.6s ease, transform 0.6s ease",
-              transitionDelay: "0.7s",
+              animationDelay: "0.5s",
             }}
           >
             {showPrimaryButton && (
@@ -216,31 +180,28 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
 
-        {/* Trusted Section */}
+        {/* Trusted Section - FIXED: Removed inline transitions */}
         {showTrustedSection && (
           <div
-            className={styles.trustedSection}
+            className={`${styles.trustedSection} ${mounted ? styles.fadeInUp : ""}`}
             style={{
-              opacity: mounted ? 1 : 0,
-              transform: mounted ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.6s ease, transform 0.6s ease",
-              transitionDelay: "0.9s",
+              animationDelay: "0.7s",
             }}
           >
             <Typography
               variant="body2"
               component="p"
-             style={{
-    color: "var(--color-grey-46, #6B7280)",
-    textAlign: "center",
-    fontFamily: "var(--font-family-Font-1, Inter)",
-    fontSize: "clamp(12px, 2vw, 14px)", // ✅ Responsive
-    fontWeight: 600,
-    lineHeight: "1.4",
-    letterSpacing: "0.025em",
-    margin: 0,
-    width: '100%',
-  }}
+              style={{
+                color: "var(--color-grey-46, #6B7280)",
+                textAlign: "center",
+                fontFamily: "var(--font-family-Font-1, Inter)",
+                fontSize: "clamp(12px, 2vw, 14px)",
+                fontWeight: 600,
+                lineHeight: "1.4",
+                letterSpacing: "0.025em",
+                margin: 0,
+                width: "100%",
+              }}
             >
               {subtitle2}
             </Typography>

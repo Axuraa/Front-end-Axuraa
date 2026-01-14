@@ -2,8 +2,8 @@
 
 .specialCard {
   position: relative;
-  width: 100%;
-  max-width: 1000px;
+  width: 80%;
+  /* max-width: 1000px; */
   margin: 0 auto;
   padding: 80px 60px;
   border-radius: 24px;
