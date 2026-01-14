@@ -1,23 +1,16 @@
 /* components/Sections/HistoryJourney/HistoryJourney.module.css - UPDATED */
 .history_journey {
   width: 100%;
-  /* Make background optional - can be overridden by parent */
   background: transparent;
   padding: 0;
   position: relative;
-  margin-left: -8%;
-
+  margin-left: 0; /* Changed from 11% */
 }
 
 /* Only apply background when used standalone (not inside HistorySection) */
 .history_journey.standalone {
-  /* background: linear-gradient(
-    135deg,
-    #0F172A 0%,
-    #1E293B 50%,
-    #0F172A 100%
-  ); */
-  padding-top: 6rem ;
+  padding-top: 6rem;
+  margin-left: 6%; /* Only add margin when standalone */
 }
 
 .history_journey.standalone::before {
@@ -63,10 +56,11 @@
   opacity: 0;
   animation: fadeIn 0.8s ease forwards;
   display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: center;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 }
+
 .badge {
   margin-bottom: 1.5rem;
   display: inline-flex;
@@ -113,7 +107,7 @@
   .title {
     font-size: 2.25rem;
   }
-
+  
   .header {
     margin-bottom: 3rem;
   }
@@ -123,11 +117,11 @@
   .title {
     font-size: 2rem;
   }
-
+  
   .header {
     margin-bottom: 2.5rem;
   }
-
+  
   .timeline {
     margin-top: 2rem;
   }

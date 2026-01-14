@@ -19,7 +19,7 @@ const HistoryCard: React.FC<HistoryCardProps> = ({
       onClick={onClick}
     >
       {/* Animated Background Circles */}
-      <div className={styles.circles_container}>
+      {/* <div className={styles.circles_container}>
         <Image
           src="/assets/circle.svg"
           alt=""
@@ -41,7 +41,7 @@ const HistoryCard: React.FC<HistoryCardProps> = ({
           height={350}
           className={`${styles.circle} ${styles.circle_3}`}
         />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className={styles.content}>
