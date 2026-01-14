@@ -1,84 +1,127 @@
+/* ===== OurTeam Section Styles ===== */
+
 .teamSection {
   width: 100%;
-  /* background-color: #1a1a1a; */
-  padding: 3% 0;
+  padding: 80px 6%;
   min-height: 80vh;
   display: flex;
   align-items: center;
-  margin-top: -5%;
-  margin-bottom: 5%;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
   width: 100%;
 }
+
 .header {
   text-align: center;
-  /* margin-bottom: 60px; */
+  margin-bottom: 60px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   display: flex;
-    justify-self: center;
-    align-items: center;
-    gap: 10px;
-    flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
 }
 
 .badge {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   display: inline-flex;
-  /* align-self: flex-start; */
   justify-self: center; 
   align-items: center;
-  gap: 10%;
- 
+  gap: 8px;
 }
-
-
 
 .teamGrid {
   display: flex;
   gap: 24px;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 /* Responsive adjustments */
-@media (max-width: 1400px) {
+
+/* Large Desktop (1440px and above) - Single row */
+@media (min-width: 1440px) {
+  .teamSection {
+    padding: 80px 6%;
+  }
+
+  .teamGrid {
+    gap: 28px;
+    flex-wrap: nowrap;
+  }
+
+  
+
+  .header {
+    margin-bottom: 70px;
+  }
+}
+
+/* Desktop (1025px - 1439px) - Single row */
+@media (min-width: 1025px) and (max-width: 1439px) {
+  .teamSection {
+    padding: 70px 6%;
+  }
+
+  .teamGrid {
+    gap: 24px;
+    flex-wrap: nowrap;
+  }
+
+  .header {
+    margin-bottom: 60px;
+  }
+}
+
+/* Tablets (769px - 1024px) - Single row with smaller cards */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .teamSection {
+    padding: 60px 6%;
+  }
+
   .teamGrid {
     gap: 20px;
+    flex-wrap: nowrap;
+  }
+
+  .header {
+    margin-bottom: 50px;
   }
 }
 
-@media (max-width: 1024px) {
-  .teamGrid {
-    gap: 16px;
-  }
-  
-  .title {
-    margin-bottom: 40px;
-  }
-}
-
+/* Tablets and Mobile (below 768px) - 2 columns grid */
 @media (max-width: 768px) {
   .teamSection {
-    padding: 60px 0;
+    padding: 60px 6%;
+  }
+
+  .header {
+    margin-bottom: 40px;
   }
   
   .teamGrid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    /* margin-bottom: ; */
-    /* margin-top: -32%; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 400px;
+    margin: 0 auto;
   }
-  
-  
-  .title {
-    margin-bottom: 32px;
+}
+
+/* Small mobile (below 480px) - 2 columns grid, smaller */
+@media (max-width: 480px) {
+  .teamSection {
+    padding: 50px 6%;
+  }
+
+  .teamGrid {
+    gap: 16px;
+    max-width: 100%;
   }
 }

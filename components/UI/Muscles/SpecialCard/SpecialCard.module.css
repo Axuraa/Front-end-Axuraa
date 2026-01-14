@@ -156,6 +156,7 @@
   .specialCard {
     padding: 60px 40px;
     border-radius: 20px;
+    min-width: 280px;
   }
 
   .title {
