@@ -53,39 +53,41 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               marginTop: "5px",
               paddingBlock: "10px",
             }}
+            
           />
           {/* Title */}
           <Typography
             variant="h1"
             component="h1"
-            style={{
-              // background: 'linear-gradient(90deg, #20cf10ff 0%, #10bee9ff 100%)',
-              height: "160px",
-              width: "548px",
-              // padding: '20px', // Added padding for better text visibility
-              textAlign: "start",
-              fontFamily: "Inter, sans-serif",
-              fontSize: "50.684px",
-              fontStyle: "normal",
-              fontWeight: 900,
-              lineHeight: "57.684px",
-              letterSpacing: "-1.442px",
-              margin: 0,
-              animation: "fadeInUp 0.8s ease-out",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "flex-start", // Center content vertically
-              alignItems: "flex-start ",
-            }}
+            // style={{
+            //   // background: 'linear-gradient(90deg, #20cf10ff 0%, #10bee9ff 100%)',
+            //   height: "160px",
+            //   width: "548px",
+            //   // padding: '20px', // Added padding for better text visibility
+            //   textAlign: "start",
+            //   fontFamily: "Inter, sans-serif",
+            //   fontSize: "50.684px",
+            //   fontStyle: "normal",
+            //   fontWeight: 900,
+            //   lineHeight: "57.684px",
+            //   letterSpacing: "-1.442px",
+            //   margin: 0,
+            //   animation: "fadeInUp 0.8s ease-out",
+            //   display: "flex",
+            //   flexDirection: "column",
+            //   justifyContent: "flex-start", // Center content vertically
+            //   alignItems: "flex-start ",
+            // }}
+            className={`${styles.title} ${styles.mainTitle}`}
           >
             <span
               style={{
                 color: "#FFFFFF",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "57.684px",
-                fontWeight: 900,
-                lineHeight: "57.684px",
-                letterSpacing: "-1.442px",
+              //   fontFamily: "Inter, sans-serif",
+              //   fontSize: "57.684px",
+              //   fontWeight: 900,
+              //   lineHeight: "57.684px",
+              //   letterSpacing: "-1.442px",
               }}
             >
               Let's build something
@@ -93,18 +95,20 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             <span
               style={{
                 color: "#D04A1D",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "57.684px",
-                fontWeight: 900,
-                lineHeight: "57.684px",
-                letterSpacing: "-1.442px",
+                // fontFamily: "Inter, sans-serif",
+                // fontSize: "57.684px",
+                // fontWeight: 900,
+                // lineHeight: "57.684px",
+                // letterSpacing: "-1.442px",
                 textAlign: "start",
                 marginTop: "0.5rem",
+                marginBottom: "0.5rem",
                 background: "linear-gradient(90deg, #D04A1D 0%, #902501 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
               }}
             >
+             
               extraordinary.
             </span>
           </Typography>
@@ -113,20 +117,21 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             <Typography
               variant="body1"
               component="p"
-              style={{
-                // background: 'linear-gradient(90deg, #f53f08ff 0%, #e99d10ff 100%)',
-                color: "var(--Gray-Chateau, #9CA3AF)",
-                fontFamily: "Inter, sans-serif",
-                fontSize: "21.632px",
-                fontStyle: "normal",
-                fontWeight: 400,
-                lineHeight: "35.151px",
-                alignSelf: "stretch",
-                height: "106px",
-                width: "548px",
-                margin: 0,
-                textAlign: "start",
-              }}
+              // style={{
+              //   // background: 'linear-gradient(90deg, #f53f08ff 0%, #e99d10ff 100%)',
+              //   color: "var(--Gray-Chateau, #9CA3AF)",
+              //   fontFamily: "Inter, sans-serif",
+              //   fontSize: "21.632px",
+              //   fontStyle: "normal",
+              //   fontWeight: 400,
+              //   lineHeight: "35.151px",
+              //   alignSelf: "stretch",
+              //   height: "106px",
+              //   width: "548px",
+              //   margin: 0,
+              //   textAlign: "start",
+              // }}
+              className={styles.subtitle}
             >
               Have a project in mind? We'd love to hear about it. Fill out the
               form or reach out directly to discuss how Axuraa can help you

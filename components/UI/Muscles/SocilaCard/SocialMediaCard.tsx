@@ -1,6 +1,5 @@
 'use client';
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './SocialMediaCard.module.css';
 import { SocialMediaCardProps } from '@/types/Generals/cardTypes';
 import Icon from '../../Atoms/Icon/Icon';
@@ -10,6 +9,26 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
   label, 
   link,
 }) => {
+  const [iconSize, setIconSize] = useState(52);
+
+  useEffect(() => {
+    const updateIconSize = () => {
+      if (window.innerWidth <= 375) {
+        setIconSize(20);
+      } else if (window.innerWidth <= 480) {
+        setIconSize(28);
+      } else if (window.innerWidth <= 768) {
+        setIconSize(36);
+      } else {
+        setIconSize(52);
+      }
+    };
+
+    updateIconSize();
+    window.addEventListener('resize', updateIconSize);
+    return () => window.removeEventListener('resize', updateIconSize);
+  }, []);
+
   const handleClick = () => {
     window.open(link, '_blank', 'noopener,noreferrer');
   };
@@ -31,9 +50,9 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
       
       <div className={styles.iconCircle}>
         <Icon 
-          icon={<IconComponent width={52} height={52} />}
-          width={52}
-          height={52}
+          icon={<IconComponent width={iconSize} height={iconSize} />}
+          width={iconSize}
+          height={iconSize}
           alt={label}
           noHover={true}
           noPadding={true}

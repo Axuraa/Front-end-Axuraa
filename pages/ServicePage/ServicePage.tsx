@@ -189,6 +189,7 @@ const ServicePage: React.FC<ServicePageProps> = () => {
               showEllipseDecorations={true}
               showStatusBadge={true}
               backgroundType="Circle"
+              height='70vh'
         />
     
         <div className={styles.contentSection1}>

@@ -32,7 +32,7 @@ const ContactForm: React.FC = () => {
         </div>
 
         <div className={styles.formGroup1}>
-          <label>Preferred Contact Method</label>
+          <label className={styles.label}>Preferred Contact Method</label>
           <div className={styles.radio}>
             <label className={styles.radioGroup}>
               <input 
@@ -72,7 +72,7 @@ const ContactForm: React.FC = () => {
         </div>
 
         <div className={styles.formGroup}>
-          <label>Service Interested In</label>
+          <label className={styles.label}>Service Interested In</label>
           <div className={`${styles.inputWithIcon} ${styles.selectWrapper}`}>
             <Image 
               src={servicesIcon} 
@@ -101,7 +101,7 @@ const ContactForm: React.FC = () => {
         </div>
 
         <div className={styles.formGroup2}>
-          <label>Project Details</label>
+          <label className={styles.label}>Project Details</label>
           <textarea
             placeholder="Message"
             className={`${styles.inputField} ${styles.textarea}`}

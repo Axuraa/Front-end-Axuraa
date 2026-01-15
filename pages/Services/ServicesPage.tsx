@@ -102,6 +102,7 @@ const ServicesPage = () => {
               showSecondaryButton={false}
               backgroundType='Circle'
               showStatusBadge={true}
+              height="70vh"
             />
             <div className={styles.servicesContainer}>
                 {services.map((service, index) => (
