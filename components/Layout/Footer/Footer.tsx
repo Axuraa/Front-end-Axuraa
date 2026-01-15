@@ -60,7 +60,49 @@ const socialLinks = [
                   alt="Axuraa Logo" 
                   className={styles.logo}
                 />
-                <Typography 
+                {/* <Typography 
+                variant="h1"
+                sx={{
+                  color: 'var(--white-95, rgba(255, 255, 255, 0.95))',
+                  fontFamily: 'var(--font-family-Font-1, Roboto), sans-serif',
+                  fontSize: {
+                    xs: '14px',    // Mobile (0px and up)
+                    sm: '16px',    // Small devices (600px and up)
+                    md: '18px',    // Medium devices (900px and up)
+                    lg: '20px',    // Large devices (1200px and up)
+                    xl: '22px'     // Extra large devices (1536px and up)
+                  },
+                  fontStyle: 'normal',
+                  fontWeight: 600,
+                  lineHeight: {
+                    xs: '20px',
+                    sm: '22px',
+                    md: '24px',
+                    lg: '26.254px',
+                    xl: '28px'
+                  },
+                  width: {
+                    xs: '60px',
+                    sm: '65px',
+                    md: '71px',
+                    lg: '75px'
+                  },
+                  height: {
+                    xs: '22px',
+                    sm: '24px',
+                    md: '27px',
+                    lg: '28px'
+                  },
+                  margin: 0,
+                  padding: 0,
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis'
+                }}
+              >
+                AXURAA
+              </Typography> */}
+                {/* <Typography 
                     variant="h1"
                     color="rgba(255, 255, 255, 0.95)"
                     style={{
@@ -73,7 +115,8 @@ const socialLinks = [
                     }}
                   >
                     AXURAA
-                </Typography>
+                </Typography> */}
+                <h1 className={styles.brantlogo}>AXURAA</h1>
               </div>
               <p className={styles.description}>
                 LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem

@@ -197,6 +197,7 @@ text-underline-position: from-font;
   line-height: 1.4;
   margin: 0;
   flex: 1;
+  /* background-color: #902501; */
 }
 .readMore {
   color: var(--Primary, #D04A1D);
@@ -213,32 +214,56 @@ text-underline-position: from-font;
     width: 100%;
     max-width: 342.569px;
     padding: 0;
+    /* background-color: rgb(0, 38, 255); */
+    height: 100%; /* Make card take full height of its container */
+    display: flex; /* Use flex to make content stretch */
+    flex-direction: column; /* Stack children vertically */
   }
+  
   .content {
     padding: 18.64px 18.64px 6.991px;
+    flex: 1; /* Make content take up remaining space */
+    display: flex;
+    flex-direction: column;
   }
+  
   .imageContainer {
     height: 200.057px;
+    flex-shrink: 0; /* Prevent image from shrinking */
   }
+  
   .title {
     font-size: 16.776px;
     line-height: 22.368px;
+    margin: 0 0 8px; /* Add some spacing below title */
   }
+  
   .badge {
     padding: 4.66px 9.32px;
     font-size: 13.048px;
     line-height: 18.64px;
+    margin-bottom: 8px; /* Add some spacing below badge */
   }
+  
   .percentage {
     font-size: 26.096px;
     line-height: 31.688px;
+    margin: 8px 0; /* Add some spacing around percentage */
   }
+  
   .description {
     font-size: 13.018px;
     line-height: 18.64px;
+    margin: 0 0 12px; /* Add some spacing below description */
+    flex: 1; /* Allow description to grow and push read more to bottom */
+    min-height: 40px; /* Set a minimum height for the description */
   }
+  
   .readMore {
     font-size: 13.048px;
     line-height: 18.64px;
+    margin-top: auto; /* Push read more to bottom */
+    display: inline-block; /* Make it take only needed width */
+    width: fit-content; /* Fit content width */
   }
 }

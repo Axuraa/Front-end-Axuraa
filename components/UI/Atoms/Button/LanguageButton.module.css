@@ -45,7 +45,7 @@
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   min-width: 200px;
-  max-height: 400px;
+  max-height: 500px;
   overflow-y: auto;
   z-index: 1000;
   animation: fadeInDropdown 0.2s ease-out;
@@ -122,6 +122,26 @@
   flex: 1;
 }
 
+
+/* Mobile Language Button Styles */
+.mobileLanguageItem {
+  display: none;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid rgba(210, 105, 30, 0.1);
+  margin-top: 0.5rem;
+}
+.mobileLanguageButton {
+  width: 100%;
+}
+.mobileLanguageButton :global(.dropdown) {
+  width: 100%;
+}
+.mobileLanguageButton :global(.languageButton) {
+  width: 100%;
+  justify-content: center;
+}
+
 @keyframes fadeInDropdown {
   from {
     opacity: 0;
@@ -133,21 +153,267 @@
   }
 }
 
-/* Mobile responsive */
+/* Show mobile language button in mobile menu */
+@media (max-width: 1024px) {
+  .mobileLanguageItem.visible {
+    display: block;
+  }
+  
+  .desktopLanguageBtn {
+    display: none;
+  }
+}
+/* Adjust mobile menu for language button */
 @media (max-width: 768px) {
+  .nav {
+    padding-bottom: 80px; /* Add space for the language button */
+  }
+  
+  .mobileLanguageItem {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(25, 27, 31, 0.98);
+    padding: 1rem;
+    border-top: 1px solid rgba(210, 105, 30, 0.2);
+    margin: 0;
+    z-index: 1001;
+  }
+}
+/* Adjust for smaller screens */
+@media (max-width: 480px) {
+  .mobileLanguageItem {
+    padding: 0.75rem;
+  }
+  
+  .mobileLanguageButton :global(.languageButton) {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+/* Desktop Large (1440px and above) */
+@media (min-width: 1441px) {
   .languageButton {
-    min-width: 140px;
-    padding: 8px 16px;
-    font-size: 13px;
+    min-width: 180px;
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+  
+  .dropdownMenu {
+    min-width: 220px;
+  }
+  
+  .menuItem {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+}
+/* Laptop (1024px - 1440px) */
+@media (max-width: 1440px) and (min-width: 1025px) {
+  .languageButton {
+    min-width: 170px;
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+/* Tablet Landscape (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .languageButton {
+    min-width: 150px;
+    padding: 9px 16px;
+    font-size: 14px;
+    height: 38px;
   }
   
   .dropdownMenu {
     min-width: 180px;
+    max-height: 350px;
+  }
+  
+  .menuItem {
+    padding: 11px 16px;
+    font-size: 13.5px;
+  }
+  
+  .flag {
+    width: 22px;
+    height: 16px;
+  }
+}
+/* Tablet Portrait (600px - 768px) */
+@media (max-width: 768px) and (min-width: 601px) {
+  .languageButton {
+    min-width: 140px;
+    padding: 8px 16px;
+    font-size: 13px;
+    height: 36px;
+  }
+  
+  .dropdownMenu {
+    min-width: 160px;
     max-height: 300px;
   }
   
   .menuItem {
     padding: 10px 14px;
     font-size: 13px;
+  }
+  
+  .flag {
+    width: 20px;
+    height: 15px;
+  }
+}
+/* Mobile Large (480px - 600px) */
+@media (max-width: 600px) and (min-width: 481px) {
+  .languageButton {
+    min-width: 130px;
+    padding: 8px 14px;
+    font-size: 13px;
+    height: 36px;
+  }
+  
+  .dropdownMenu {
+    min-width: 150px;
+    max-height: 280px;
+  }
+  
+  .menuItem {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+  
+  .flag {
+    width: 18px;
+    height: 14px;
+  }
+}
+/* Mobile Medium (375px - 480px) */
+@media (max-width: 480px) and (min-width: 376px) {
+  .languageButton {
+    min-width: 120px;
+    padding: 7px 12px;
+    font-size: 12px;
+    height: 34px;
+    gap: 6px;
+  }
+  
+  .dropdownMenu {
+    min-width: 140px;
+    max-height: 250px;
+  }
+  
+  .menuItem {
+    padding: 8px 12px;
+    font-size: 12.5px;
+    gap: 8px;
+  }
+  
+  .chevron {
+    width: 14px;
+    height: 14px;
+  }
+}
+/* Mobile Small (320px - 375px) */
+@media (max-width: 375px) {
+  .languageButton {
+    min-width: 110px;
+    padding: 6px 10px;
+    font-size: 12px;
+    height: 32px;
+    gap: 4px;
+  }
+  
+  .dropdownMenu {
+    min-width: 130px;
+    max-height: 220px;
+    right: 0;
+    left: auto;
+  }
+  
+  .menuItem {
+    padding: 7px 10px;
+    font-size: 12px;
+    gap: 6px;
+  }
+  
+  .flag {
+    width: 16px;
+    height: 12px;
+  }
+  
+  .chevron {
+    width: 12px;
+    height: 12px;
+  }
+}
+/* Very Small Devices (below 320px) */
+@media (max-width: 319px) {
+  .languageButton {
+    min-width: 100px;
+    padding: 5px 8px;
+    font-size: 11px;
+    height: 30px;
+  }
+  
+  .dropdownMenu {
+    min-width: 120px;
+    max-height: 200px;
+  }
+  
+  .menuItem {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+  
+  .flag {
+    width: 14px;
+    height: 10px;
+  }
+}
+/* Landscape Mode for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .dropdownMenu {
+    max-height: 180px;
+  }
+  
+  .menuItem {
+    padding: 6px 12px;
+  }
+}
+/* High DPI Displays */
+@media 
+  (-webkit-min-device-pixel-ratio: 2), 
+  (min-resolution: 192dpi) {
+  .languageButton {
+    border-width: 0.5px;
+  }
+}
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .dropdownMenu {
+    background: #2a2a2a;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menuItem {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-bottom-color: #3a3a3a;
+  }
+  
+  .menuItem:hover {
+    background: #333;
+    color: #ff6b4d;
+  }
+  
+  .menuItem.active {
+    background: #3a1a10;
+    color: #ff6b4d;
+  }
+  
+  .dropdownMenu::-webkit-scrollbar-track {
+    background: #1f1f1f;
   }
 }
