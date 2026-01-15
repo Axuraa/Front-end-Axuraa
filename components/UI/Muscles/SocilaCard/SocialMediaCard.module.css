@@ -1,6 +1,8 @@
 .card {
-  width: 200px;
-  height: 220px;
+  width: 100%;
+  min-width: 120px;
+  max-width: 180px;
+  height: 200px;
   border-radius: 19.843px;
   background: var(--color-grey-15, #252525);
   display: flex;
@@ -13,6 +15,7 @@
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.2);
+  margin: 2%;
 }
 
 .card:hover {
@@ -51,4 +54,63 @@
 .card:hover .label {
   transform: scale(1.05);
   text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Tablet - reduce card size */
+@media (max-width: 768px) {
+  .card {
+    min-width: 80px;
+    max-width: 140px;
+    height: 150px;
+    gap: 10px;
+  }
+  
+  .iconCircle {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .label {
+    font-size: 15px;
+  }
+}
+
+/* Mobile - smaller cards to fit in one row */
+@media (max-width: 480px) {
+  .card {
+    min-width: 40px;
+    max-width: 70px;
+    height: 80px;
+    gap: 6px;
+    border-radius: 12px;
+  }
+  
+  .iconCircle {
+    width: 70px;
+    height: 40px;
+  }
+  
+  .label {
+    font-size: 11px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 375px) {
+  .card {
+    min-width: 30px;
+    max-width: 57px;
+    height: 80px;
+    gap: 4px;
+    border-radius: 10px;
+  }
+  
+  .iconCircle {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .label {
+    font-size: 10px;
+  }
 }

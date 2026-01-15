@@ -20,6 +20,7 @@ interface HeroSectionProps {
   primaryButtonText?: string;
   secondaryButtonText?: string;
   backgroundType: "Hexagon" | "Circle" | "Alphabet";
+  height?: string; // NEW: Add height prop
   showBackgroundDots?: boolean;
   showAnimatedCircles?: boolean;
   showBadge?: boolean;
@@ -40,6 +41,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   badgeText = "AVAILABLE FOR NEW PROJECTS",
   primaryButtonText = "Start a Project",
   secondaryButtonText = "View Our Work",
+  height = "100vh", // NEW: Default height
   showBackgroundDots = true,
   showAnimatedCircles = true,
   showBadge = true,
@@ -59,7 +61,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   }, []);
 
   return (
-    <section className={styles.hero}>
+    <section 
+      className={styles.hero}
+      style={{ height }} // NEW: Apply dynamic height
+    >
       <div className={styles.container}>
         {showAnimatedCircles && (
           <AnimatedBackground
@@ -69,7 +74,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         )}
 
         <div className={styles.content}>
-          {/* Badge - FIXED: Removed inline transitions that conflict with CSS animations */}
+          {/* Badge */}
           <div
             style={{
               display: "flex",
@@ -84,12 +89,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {showStatusBadge && <StatusBadge text="WHO WE ARE" />}
           </div>
 
-          {/* Title - FIXED: Removed inline animation, using Typography's built-in animation */}
+          {/* Title */}
           <Typography
             variant="h1"
             component="h1"
             animation={mounted ? "textUp" : undefined}
-            // stagger={1}
             style={{
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
@@ -138,13 +142,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </span>
           </Typography>
 
-          {/* Subtitle - FIXED: Removed inline transitions, using Typography animation */}
+          {/* Subtitle */}
           <div className={styles.subtitle}>
             <Typography
               variant="body1"
               component="p"
               animation={mounted ? "textUp" : undefined}
-              // stagger={2}
               style={{
                 color: "var(--color-azure-65, #9CA3AF)",
                 textAlign: "center",
@@ -160,7 +163,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </Typography>
           </div>
 
-          {/* CTA Buttons - FIXED: Removed inline transitions */}
+          {/* CTA Buttons */}
           <div
             className={`${styles.ctaButtons} ${mounted ? styles.fadeInUp : ""}`}
             style={{
@@ -180,7 +183,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
         </div>
 
-        {/* Trusted Section - FIXED: Removed inline transitions */}
+        {/* Trusted Section */}
         {showTrustedSection && (
           <div
             className={`${styles.trustedSection} ${mounted ? styles.fadeInUp : ""}`}

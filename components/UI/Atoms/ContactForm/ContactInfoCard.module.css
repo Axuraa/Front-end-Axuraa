@@ -10,6 +10,7 @@
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(2.3947367668151855px);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .iconContainer {
@@ -76,4 +77,75 @@
 /* Remove any outline on focus for better aesthetics */
 .contactCard:focus {
   outline: none;
+}
+
+@media (max-width: 1024px) {
+  .contactCard {
+    width: 400px;
+    padding: 16px;
+    gap: 16px;
+    min-height: auto;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contactCard {
+    padding: 20px;
+    min-height: 100px;
+    align-self: center;
+  }
+  
+  .iconContainer {
+    width: 56px;
+    height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+  }
+  
+  .iconImage {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .label {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .value {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactCard {
+    padding: 16px;
+    gap: 16px;
+    min-height: auto;
+    max-width: 300px;
+  }
+  
+  .iconContainer {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+  
+  .iconImage {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .label {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  
+  .value {
+    font-size: 16px;
+    line-height: 22px;
+  }
 }

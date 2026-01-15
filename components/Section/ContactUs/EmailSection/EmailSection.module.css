@@ -3,6 +3,10 @@
   width: 100%;
   padding: 80px 20px;
   /* background-color: #0a0a0a; */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -18,6 +22,8 @@
   font-size: 2.5rem;
   line-height: 1.2;
   margin: 0;
+  text-align: center;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
@@ -53,6 +59,10 @@
 @media (max-width: 768px) {
   .emailSection {
     padding: 50px 16px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
   }
 
   .header {

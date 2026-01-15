@@ -297,10 +297,11 @@
 @media (max-width: 768px) {
   .hero {
     padding: 100px 1.5rem 60px;
-    min-height: auto;
+    min-height: 100vh;
   }
 
   .container {
+    padding-top: 10%;
     gap: 60px;
   }
 

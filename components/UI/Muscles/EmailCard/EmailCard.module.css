@@ -77,6 +77,13 @@
   line-height: var(--font-size-24, 24px);
 }
 
+@media (max-width: 1440px) {
+  .emailCard {
+    max-width: 400px;
+  }
+
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .emailCard {
@@ -103,6 +110,7 @@
 @media (max-width: 480px) {
   .emailCard {
     padding: 16px 20px;
+    max-width: 300px;
   }
 
   .leftSection {
