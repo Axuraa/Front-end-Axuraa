@@ -207,7 +207,34 @@ text-underline-position: from-font;
   margin-top: 0.5rem;
   align-self: flex-end;
 }
-
+/* Tablet and Desktop (1024px and up) */
+@media (min-width: 1024px) {
+  .card {
+     /* width: 356.552px; */
+    width: 32%;
+    /* height: 100%; */
+    /* background-color: aquamarine; */
+  }
+  .content {
+    padding: 24px;
+    /* background-color: #2A0B00; */
+  }
+  .imageContainer {
+    height: 240px;
+  }
+  .title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .percentage {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .card {
@@ -215,7 +242,7 @@ text-underline-position: from-font;
     max-width: 342.569px;
     padding: 0;
     /* background-color: rgb(0, 38, 255); */
-    height: 100%; /* Make card take full height of its container */
+    height: auto; 
     display: flex; /* Use flex to make content stretch */
     flex-direction: column; /* Stack children vertically */
   }

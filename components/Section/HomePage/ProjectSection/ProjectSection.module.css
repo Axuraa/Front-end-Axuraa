@@ -24,7 +24,6 @@
   
 }
 
-
 .ProjectGrid {
     /* background-color: yellow; */
     display: flex;
@@ -40,72 +39,78 @@
     border: 0 solid #E5E7EB;
 }
 
-
-/* Tablet */
-@media (min-width: 601px) and (max-width: 900px) {
-    .ProjectGrid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 24px;
-    }
-}
-/* Desktop */
-@media (min-width: 901px) {
-    .ProjectGrid {
-        grid-template-columns: repeat(3, 1fr);
-        padding: 0;
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+    .ProjectSection {
+        width: 100%;
+        /* background-color: antiquewhite; */
+        padding: 40px 30px;
+        gap: 18px;
+        height: auto;
     }
     
-    .ProjectSection {
-        padding: 40px 0;
-    }
-}
-/* Large Desktop */
-@media (min-width: 1200px) {
     .ProjectGrid {
-        max-width: 1200px;
-    }
-}
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .ProjectSection {
-        display: flex;
-        width: 343px;
-        height: 980.6353px;
-        padding: 12.25px 6.125px;
-        flex-direction: column;
+        margin: 0 auto;
+        width: 90%;
+        height: auto;
+        /* background-color: brown; */
+        column-gap: 18px;
+        row-gap: 20px;
         justify-content: center;
-        align-items: center;
-        gap: 12.25px;
-        border: 0 solid #E5E7EB;
-        background: #191B1F;
+    }
+}
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .ProjectSection {
+        width: 100%;
         /* background-color: blue; */
+        padding: 30px 20px;
+        height: auto;
+        gap: 16px;
+        margin: 0  auto;
     }
     
-
     .ProjectGrid {
-    background-color: yellow;
-    width: 343px;
-    height: 719.0956;
-    /* height:auto; */
-     display: flex;
-    flex-direction: column;
-    /* justify-content: center;
-    align-items: center; */
-    /* margin: 0 auto; */
-    /* margin-left: 400px; */
-   /* align-items: flex-start;
-    gap: 22px;
-    align-self: stretch; */
-    /* width: 1120px; */
-    /* height: 396.4084px; */
-    
-    /* justify-content: space-between; */
-    /* align-items: flex-start; */
-    /* align-content: flex-start;  */
-    
-    /* row-gap: 22px;
-    align-self: stretch;
-    flex-wrap: wrap;
-    border: 0 solid #E5E7EB; */
+        height: auto;
+        width: 90%;
+        margin: 0 auto;
+        /* background-color: #16e621; */
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+    }
 }
+
+/* Mobile - 425px */
+@media (max-width: 425px) {
+    .ProjectSection {
+        height: auto;
+        padding: 24px 16px;
+        gap: 14px;
+        /* background-color: blue; */
+        margin: 0 auto;
+    }
+    
+    .ProjectGrid {
+        padding: 10px;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 343px;
+        gap: 22px;
+        /* background-color: red; */
+
+    }
+}
+
+/* Mobile - 375px */
+@media (max-width: 375px) {
+    .ProjectSection {
+        padding: 20px 12px;
+        gap: 12px;
+    }
+    
+    .ProjectGrid {
+        gap: 16px;
+    }
 }
