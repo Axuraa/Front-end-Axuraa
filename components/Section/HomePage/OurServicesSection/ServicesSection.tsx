@@ -59,10 +59,6 @@ const ServicesSection = () => {
             borderRadius="0  0 68.087px  0"
            />
         </div>
-
-
-
-      
     </section>
   );
 };

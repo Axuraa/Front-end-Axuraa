@@ -9,27 +9,37 @@
     background: #191B1F;
     overflow: hidden;
 }
-@media (max-width: 768px) {
-  .RatingSection {
-    /* width: 343px;
-    height: 125.6316px;  */
-    display: flex;
-    padding: 12.25px 0;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12.25px;
-    /* align-self: stretch; */
-    border: 0 solid #E5E7EB;
-    /* width: 100%;   */
-    /* height: auto;   */
-    /* background: green; */
-    /* display: flex;
-    width: 74px;
-    height: 76.7369px;
-    flex-direction: column;
-    align-items: center;
-    gap: 5.909px;
-    border: 0 solid #E5E7EB; */
+/* Tablet - 1024px */
+@media (max-width: 1024px) {
+    .RatingSection {
+        padding: 40px 30px;
+        gap: 18px;
+    }
 }
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+    .RatingSection {
+        padding: 30px 20px;
+        min-height: auto;
+        gap: 16px;
+    }
+}
+
+/* Mobile - 425px */
+@media (max-width: 425px) {
+    .RatingSection {
+        padding: 24px 16px;
+        gap: 14px;
+        background-color: rgb(50, 224, 7)(51, 255, 0);
+  
+    }
+}
+
+/* Mobile - 375px */
+@media (max-width: 375px) {
+    .RatingSection {
+        padding: 20px 12px;
+        gap: 12px;
+    }
 }

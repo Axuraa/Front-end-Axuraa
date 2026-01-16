@@ -31,7 +31,7 @@
 .WorkerGrid {
     /* background-color: yellow; */
     display: flex;
-    width: 1120px;
+    width: 1119px;
     height: 700.1111px;
     padding: 40px 0;
     flex-direction: row;
@@ -47,19 +47,82 @@
 
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
-  }
-  
-  .title {
-    font-size: 2rem;
-  }
-  
-  .subtitle {
-    font-size: 1rem;
-  }
+/* Tablet - Large (1024px - 1119px) */
+@media (max-width: 1119px) {
+    .WorkerSection {
+        padding: 0 30px;
+    }
+    
+    .WorkerGrid {
+        column-gap: 15px;
+    }
 }
 
+/* Tablet - Medium (768px - 1023px) */
+@media (max-width: 1023px) {
+    .WorkerSection {
+        padding: 0 20px;
+        min-height: auto;
+    }
+    
+    .WorkerGrid {
+      
+      /* background-color: rgb(128, 0, 0); */
+        flex-wrap: wrap;
+        padding: 30px 0;
+        min-height: auto;
+        gap: 20px;
+    }
+}
+
+/* Tablet - Small (640px - 767px) */
+@media (max-width: 767px) {
+    .WorkerSection {
+        padding: 0 16px;
+        gap: 16px;
+    }
+    
+    .WorkerGrid {
+        flex-direction: column;
+        padding: 24px 0;
+        gap: 16px;
+    }
+}
+
+/* Mobile - Large (480px - 639px) */
+@media (max-width: 639px) {
+    .WorkerSection {
+        padding: 0 12px;
+    }
+    
+    .WorkerGrid {
+        padding: 20px 0;
+    }
+}
+
+/* Mobile - Small (below 480px) */
+@media (max-width: 479px) {
+    .WorkerSection {
+        padding: 0 10px;
+        gap: 12px;
+
+    }
+    
+    .WorkerGrid {
+      margin:0 auto;
+      /* background-color: blue; */
+        padding: 15px 0;
+        /* gap: 12px; */
+    }
+}
+
+/* Mobile - Extra Small (below 375px) */
+@media (max-width: 374px) {
+    .WorkerSection {
+        padding: 0 8px;
+    }
+    
+    .WorkerGrid {
+        padding: 12px 0;
+    }
+}
