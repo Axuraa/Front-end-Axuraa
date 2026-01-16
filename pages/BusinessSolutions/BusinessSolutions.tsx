@@ -99,7 +99,7 @@ const BusinessSolutions = () => {
               showTrustedSection={false}
               showPrimaryButton={true}
               showSecondaryButton={false}
-              height='70vh'
+              height='75vh'
               showStatusBadge={true}
               backgroundType='Circle'
             />

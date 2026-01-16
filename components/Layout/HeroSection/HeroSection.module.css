@@ -1,21 +1,17 @@
 /* Hero Section */
 .hero {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative; /* ✓ Already set - needed for absolute positioning */
+  position: relative;
   padding: 5% 1.5rem;
-  overflow: hidden; /* Change from visible to hidden to contain the animation */
+  overflow: hidden;
 }
 
-
 .heroDots {
-  /* height: 2409.793px; 
-  width: 1588.4px;;
-  background: #040352f6; */
   position: absolute;
   top: 0;
   left: 0;
@@ -35,65 +31,57 @@
   gap: 40px;
   position: relative;
   z-index: 2;
-  /* background-color: red; */
 }
 
 /* Content */
 .content {
-  /* background: green; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 32px;
   width: 100%;
   max-width: 900px;
-  /* z-index: 1; */
-
-  /* background-color: tomato; */
-  /* position: relative; */
-  /* z-index: 3; */
 }
+
 .animatedBackground {
   position: relative;
   width: 100%;
   height: 100%;
   pointer-events: auto;
-  /* background-color: rgb(160, 160, 160); */
-  /* top: -10%; */
   z-index: 5;
 }
 
 /* Badge */
 .badge_container {
-  width: 240px;
-  height: 58px;
-  top: 29px;
-  left: 440px;
+  width: auto;
+  height: auto;
   padding-bottom: 32px;
-  /* background: rebeccapurple; */
 }
+
 .badge {
-  width: 240px;
-  height: 26px;
+  width: auto;
+  min-width: 240px;
+  height: auto;
   border-radius: 9999px;
-  padding: 4px 12px;
+  padding: 6px 16px;
   border-color: #1f2937;
   display: flex;
   align-items: center;
   gap: 8px;
   background: #2d3748;
   color: #ffffff;
+  transition: all 0.3s ease;
 }
+
 .badgeContant {
   text-align: start;
-  /* background: red; */
   color: var(--color-azure-84, #d1d5db);
   font-family: var(--font-family-Font-1, Inter);
-  font-size: var(--font-size-12, 12px);
+  font-size: 12px;
   font-style: normal;
-  font-weight: var(--font-weight-600, 600);
-  line-height: var(--font-size-16, 16px);
-  letter-spacing: var(--letter-spacing-0_3, 0.3px);
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0.3px;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
@@ -102,12 +90,13 @@
   text-overflow: ellipsis;
   width: 100%;
 }
+
 .badgeDot {
   width: 8px;
   height: 8px;
   border-radius: 9999px;
   background: var(--color-spring-green-45, #22c55e);
-  background: color/spring green/45;
+  flex-shrink: 0;
 }
 
 @keyframes pulse {
@@ -132,30 +121,28 @@
   margin-top: -3%;
   letter-spacing: -0.02em;
   animation: fadeInUp 0.8s ease-out;
-
 }
 
 /* Subtitle */
 .subtitle {
   width: 654px;
-  height: 84px;
-  /* background: yellow; */
-  text-align: start;
+  max-width: 100%;
+  height: auto;
+  text-align: center;
   margin-bottom: -2%;
 }
 
 /* CTA Buttons */
 .ctaButtons {
   display: flex;
-  width: 1072px;
-  height: 56px;
-  /* background-color: #e5e7eb; */
+  width: 100%;
+  max-width: 1072px;
+  height: auto;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--font-size-16, 16px);
   z-index: 10;
 }
-
 
 /* Decorative Shapes */
 .decorativeShapes {
@@ -202,10 +189,9 @@
 
 /* Trusted Section */
 .trustedSection {
-  /* background-color: #D04A1D; */
-  width: 1120px;
+  width: 100%;
+  max-width: 1120px;
   height: fit-content;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -225,11 +211,10 @@
   align-self: stretch;
   flex-wrap: wrap;
   opacity: var(--opacity-70, 0.7);
-  /* background: #e70707; */
   background-blend-mode: saturation;
-  width: 1024px;
-  height: 36px;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1024px;
+  height: auto;
   margin: auto;
   margin-top: -1%;
 }
@@ -268,32 +253,186 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .title {
-    font-size: 4.5rem;
-  }
+.fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
 
-  .companiesGrid {
-    gap: 32px;
+/* Responsive Design */
+
+/* Large Desktop and above (1200px+) */
+@media (min-width: 1200px) {
+  .hero {
+    padding: 5% 2rem;
+  }
+  
+  .container {
+    max-width: 1200px;
   }
 }
 
-@media (max-width: 992px) {
+/* Desktop to Large Tablet (1024px - 1199px) */
+@media (max-width: 1199px) {
+  .hero {
+    padding: 4% 1.5rem;
+  }
+  
+  .container {
+    max-width: 1000px;
+    gap: 36px;
+  }
+  
+  .content {
+    gap: 28px;
+  }
+  
+  .trustedSection {
+    max-width: 960px;
+    gap: 28px;
+  }
+  
+  .companiesGrid {
+    max-width: 900px;
+    gap: 0 48px;
+  }
+}
+
+/* Large Tablet (1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    margin-top: 5%;
+    padding: 4% 1.5rem;
+    min-height: 90vh;
+  }
+
+  .container {
+    max-width: 900px;
+    gap: 32px;
+  }
+
+  .content {
+    gap: 24px;
+    max-width: 800px;
+  }
+
   .title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
+    margin-top: -2%;
   }
 
   .subtitle {
-    font-size: 1.125rem;
+    width: 90%;
+    margin-bottom: -1%;
+  }
+
+  .ctaButtons {
+    max-width: 900px;
+    gap: 14px;
+  }
+
+  .badge {
+    min-width: 220px;
+    padding: 5px 14px;
+  }
+
+  .badgeContant {
+    font-size: 11.5px;
+    line-height: 15px;
+  }
+
+  .badgeDot {
+    width: 7.5px;
+    height: 7.5px;
+  }
+
+  .trustedSection {
+    max-width: 900px;
+    gap: 28px;
+    padding-top: 3%;
+    margin-top: 5%;
   }
 
   .companiesGrid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
+    max-width: 800px;
+    gap: 0 40px;
+  }
+
+  .companyLogo {
+    height: 22px;
+  }
+
+  .shapeTopRight,
+  .shapeBottomLeft {
+    width: 350px;
+    height: 350px;
   }
 }
 
+/* Tablet (768px - 1023px) */
+@media (max-width: 992px) {
+  .hero {
+    padding: 80px 1.5rem 60px;
+    min-height: 85vh;
+  }
+
+  .container {
+    max-width: 700px;
+    gap: 28px;
+  }
+
+  .content {
+    gap: 20px;
+    max-width: 650px;
+  }
+
+  .title {
+    font-size: 3.5rem;
+    margin-top: -1%;
+  }
+
+  .subtitle {
+    width: 95%;
+    font-size: 1.125rem;
+  }
+
+  .ctaButtons {
+    max-width: 700px;
+    gap: 12px;
+  }
+
+  .badge {
+    min-width: 200px;
+    padding: 5px 13px;
+  }
+
+  .badgeContant {
+    font-size: 11px;
+    line-height: 14px;
+  }
+
+  .badgeDot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .trustedSection {
+    max-width: 700px;
+    gap: 24px;
+    padding-top: 3%;
+    margin-top: 4%;
+  }
+
+  .companiesGrid {
+    max-width: 650px;
+    gap: 0 32px;
+  }
+
+  .companyLogo {
+    height: 20px;
+  }
+}
+
+/* Small Tablet to Large Mobile (768px) */
 @media (max-width: 768px) {
   .hero {
     padding: 100px 1.5rem 60px;
@@ -303,31 +442,51 @@
   .container {
     padding-top: 10%;
     gap: 60px;
+    max-width: 100%;
+  }
+
+  .content {
+    gap: 24px;
+    max-width: 100%;
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-top: 0;
   }
 
   .subtitle {
+    width: 100%;
     font-size: 1rem;
+    margin-bottom: 0;
   }
 
   .ctaButtons {
     flex-direction: column;
     width: 100%;
+    max-width: 400px;
     gap: 12px;
+    height: auto;
   }
 
-  .primaryButton,
-  .secondaryButton {
+  .trustedSection {
     width: 100%;
-    justify-content: center;
+    max-width: 100%;
+    gap: 24px;
+    padding-top: 6%;
+    margin-top: 8%;
   }
 
   .companiesGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    width: 100%;
+    max-width: 100%;
+    gap: 20px 24px;
+    height: auto;
+    margin-top: 0;
+  }
+
+  .companyLogo {
+    height: 20px;
   }
 
   .shapeTopRight,
@@ -337,17 +496,158 @@
   }
 }
 
+/* Mobile (480px - 767px) */
+@media (max-width: 600px) {
+  .hero {
+    padding: 80px 1rem 40px;
+  }
+
+  .container {
+    gap: 40px;
+    padding-top: 5%;
+  }
+
+  .content {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 0.938rem;
+  }
+
+  .ctaButtons {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .badge {
+    min-width: 180px;
+    padding: 4px 11px;
+  }
+
+  .badgeContant {
+    font-size: 10px;
+    line-height: 13px;
+    letter-spacing: 0.2px;
+  }
+
+  .badgeDot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .trustedSection {
+    gap: 20px;
+    padding-top: 8%;
+  }
+
+  .companiesGrid {
+    gap: 16px 20px;
+  }
+
+  .companyLogo {
+    height: 18px;
+  }
+}
+
+/* Small Mobile (480px and below) */
 @media (max-width: 480px) {
+  .hero {
+    padding: 60px 1rem 30px;
+  }
+
+  .container {
+    gap: 32px;
+  }
+
+  .content {
+    gap: 16px;
+  }
+
   .title {
     font-size: 2rem;
   }
 
+  .subtitle {
+    font-size: 0.875rem;
+  }
+
   .badge {
-    font-size: 10px;
-    padding: 6px 16px;
+    min-width: 170px;
+    padding: 4px 10px;
+  }
+
+  .badgeContant {
+    font-size: 9px;
+    line-height: 12px;
+    letter-spacing: 0.15px;
+  }
+
+  .badgeDot {
+    width: 5.5px;
+    height: 5.5px;
+  }
+
+  .ctaButtons {
+    gap: 8px;
+  }
+
+  .trustedSection {
+    gap: 16px;
+    padding-top: 10%;
   }
 
   .companiesGrid {
-    grid-template-columns: 1fr;
+    gap: 12px 16px;
+    flex-direction: column;
+  }
+
+  .companyLogo {
+    height: 16px;
+  }
+
+  .shapeTopRight,
+  .shapeBottomLeft {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .hero {
+    padding: 50px 0.75rem 20px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.813rem;
+  }
+
+  .badge {
+    min-width: 160px;
+    padding: 3px 9px;
+  }
+
+  .badgeContant {
+    font-size: 8.5px;
+    line-height: 11px;
+    letter-spacing: 0.1px;
+  }
+
+  .badgeDot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .companyLogo {
+    height: 14px;
   }
 }

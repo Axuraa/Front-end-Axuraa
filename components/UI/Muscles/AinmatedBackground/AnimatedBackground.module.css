@@ -6,6 +6,7 @@
   height: 100%;
   pointer-events: none; /* Change to none so it doesn't block interactions */
   z-index: 1; 
+  /* background-color: aliceblue; */
 }
 
 .HexagonContainer {
@@ -84,4 +85,27 @@
 .animatedBackground:hover .Circle_2 {
   transform: translateY(150%) scale(1.5);
   opacity: 0.6;
+}
+
+@media (max-width : 1024px) {
+  .Hexa_1{
+    right: -75%;
+  }
+  .Hexa_2{
+    left: -25%;
+    top: 5%;
+  }
+}
+@media (max-width: 768px) {
+  /* .animatedBackground{
+    width: ;
+  } */
+  .Hexa_1{
+    right: -80%;
+  }
+  .Hexa_2{
+    left: -30%;
+    top: 10%;
+  }
+
 }

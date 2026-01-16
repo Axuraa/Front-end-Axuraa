@@ -152,11 +152,17 @@
 }
 
 /* Responsive design */
+@media (max-width: 1440px) and (min-width: 1024px) {
+  .specialCard {
+    padding: 60px 40px;
+    min-width: 90%;
+  }
+}
 @media (max-width: 768px) {
   .specialCard {
     padding: 60px 40px;
     border-radius: 20px;
-    min-width: 280px;
+    max-width: 400px;
   }
 
   .title {

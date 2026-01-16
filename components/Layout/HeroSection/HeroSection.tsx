@@ -164,7 +164,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           </div>
 
           {/* CTA Buttons */}
-          <div
+          {showPrimaryButton || showSecondaryButton? (
+            <div
             className={`${styles.ctaButtons} ${mounted ? styles.fadeInUp : ""}`}
             style={{
               animationDelay: "0.5s",
@@ -181,6 +182,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               </ViewButton>
             )}
           </div>
+          ) : null}
         </div>
 
         {/* Trusted Section */}

@@ -111,7 +111,7 @@ const Contact = () => {
         showPrimaryButton={false}
         showSecondaryButton={false}
         showBadge={false}
-        height="60vh"
+        height="70vh"
       />
       <SocialMediaSection platforms={socialPlatforms} />
       <EmailSection

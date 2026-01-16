@@ -22,13 +22,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({
 }) => {
   return (
     <section className={styles.ContactSection}>
-      {/* <Badge text={badgeText} show={true} />
-      <SectionHeader
-        title1={title1}
-        title2={title2}
-        subtitle={subtitle}
-      /> */}
       <div className={styles.ContactGrid}>
+        {/* Contact Info - Title and Subtitle only */}
         <div className={styles.Contantinfo}>
           <StatusBadge
             text="Contact Us"
@@ -53,41 +48,17 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               marginTop: "5px",
               paddingBlock: "10px",
             }}
-            
           />
+          
           {/* Title */}
           <Typography
             variant="h1"
             component="h1"
-            // style={{
-            //   // background: 'linear-gradient(90deg, #20cf10ff 0%, #10bee9ff 100%)',
-            //   height: "160px",
-            //   width: "548px",
-            //   // padding: '20px', // Added padding for better text visibility
-            //   textAlign: "start",
-            //   fontFamily: "Inter, sans-serif",
-            //   fontSize: "50.684px",
-            //   fontStyle: "normal",
-            //   fontWeight: 900,
-            //   lineHeight: "57.684px",
-            //   letterSpacing: "-1.442px",
-            //   margin: 0,
-            //   animation: "fadeInUp 0.8s ease-out",
-            //   display: "flex",
-            //   flexDirection: "column",
-            //   justifyContent: "flex-start", // Center content vertically
-            //   alignItems: "flex-start ",
-            // }}
             className={`${styles.title} ${styles.mainTitle}`}
           >
             <span
               style={{
                 color: "#FFFFFF",
-              //   fontFamily: "Inter, sans-serif",
-              //   fontSize: "57.684px",
-              //   fontWeight: 900,
-              //   lineHeight: "57.684px",
-              //   letterSpacing: "-1.442px",
               }}
             >
               Let's build something
@@ -95,11 +66,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             <span
               style={{
                 color: "#D04A1D",
-                // fontFamily: "Inter, sans-serif",
-                // fontSize: "57.684px",
-                // fontWeight: 900,
-                // lineHeight: "57.684px",
-                // letterSpacing: "-1.442px",
                 textAlign: "start",
                 marginTop: "0.5rem",
                 marginBottom: "0.5rem",
@@ -108,29 +74,15 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 WebkitTextFillColor: "transparent",
               }}
             >
-             
               extraordinary.
             </span>
           </Typography>
+          
           {/* Subtitle */}
           <div className={styles.subtitle}>
             <Typography
               variant="body1"
               component="p"
-              // style={{
-              //   // background: 'linear-gradient(90deg, #f53f08ff 0%, #e99d10ff 100%)',
-              //   color: "var(--Gray-Chateau, #9CA3AF)",
-              //   fontFamily: "Inter, sans-serif",
-              //   fontSize: "21.632px",
-              //   fontStyle: "normal",
-              //   fontWeight: 400,
-              //   lineHeight: "35.151px",
-              //   alignSelf: "stretch",
-              //   height: "106px",
-              //   width: "548px",
-              //   margin: 0,
-              //   textAlign: "start",
-              // }}
               className={styles.subtitle}
             >
               Have a project in mind? We'd love to hear about it. Fill out the
@@ -138,39 +90,45 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               achieve your goals.
             </Typography>
           </div>
-          <div className={styles.contactFormWrapper}>
-            <ContactInfoCard
-              icon="/assets/PhoneIcon.svg"
-              label="Phone"
-              value="+1 (555) 123-4567"
-            />
-            <ContactInfoCard
-              icon="/assets/EmailIcon.svg" // Make sure you have this icon in your public/assets folder
-              label="Email"
-              value="contact@company.com"
-            />
-          </div>
-          {showLinks && (
-            <div className={styles.socialIconsContainer}>
-              {[
-                { id: 1, icon: "/assets/Vector.svg", label: "Instagram" },
-                { id: 2, icon: "/assets/Vector.svg", label: "Facebook" },
-                { id: 3, icon: "/assets/Vector.svg", label: "Twitter" },
-                { id: 4, icon: "/assets/Vector.svg", label: "LinkedIn" },
-              ].map((social) => (
-                <SocialIcon
-                  key={social.id}
-                  icon={social.icon}
-                  showLabel={true}
-                  alt={social.label}
-                />
-              ))}
-            </div>
-          )}
         </div>
+
+        {/* Contact Form */}
         <div className={styles.Contantform}>
           <ContactForm />
         </div>
+
+        {/* Contact Info Cards - Separated */}
+        <div className={styles.contactFormWrapper}>
+          <ContactInfoCard
+            icon="/assets/PhoneIcon.svg"
+            label="Phone"
+            value="+1 (555) 123-4567"
+          />
+          <ContactInfoCard
+            icon="/assets/EmailIcon.svg"
+            label="Email"
+            value="contact@company.com"
+          />
+        </div>
+
+        {/* Social Icons */}
+        {showLinks && (
+          <div className={styles.socialIconsContainer}>
+            {[
+              { id: 1, icon: "/assets/Vector.svg", label: "Instagram" },
+              { id: 2, icon: "/assets/Vector.svg", label: "Facebook" },
+              { id: 3, icon: "/assets/Vector.svg", label: "Twitter" },
+              { id: 4, icon: "/assets/Vector.svg", label: "LinkedIn" },
+            ].map((social) => (
+              <SocialIcon
+                key={social.id}
+                icon={social.icon}
+                showLabel={true}
+                alt={social.label}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

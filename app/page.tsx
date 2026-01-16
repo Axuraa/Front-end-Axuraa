@@ -122,6 +122,7 @@ const servicePackages = [
         showEllipseDecorations={true}
         showStatusBadge={false}
         backgroundType="Hexagon"
+        height="100vh"
       />
        {/* <div className={styles.filexContainer}>
          <Card

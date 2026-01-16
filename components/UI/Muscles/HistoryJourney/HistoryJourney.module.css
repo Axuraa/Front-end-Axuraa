@@ -114,6 +114,13 @@
 }
 
 @media (max-width: 768px) {
+  .history_journey {
+    /* padding-top: 4rem; */
+    max-width: 400px;
+    justify-self: center;
+    align-self: center;
+  }
+  
   .title {
     font-size: 2rem;
   }

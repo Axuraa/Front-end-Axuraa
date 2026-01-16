@@ -160,47 +160,54 @@
 .stagger4 { animation-delay: 0.4s; }
 .stagger5 { animation-delay: 0.5s; }
 
-/* Mobile specific adjustments (≤480px) */
-@media (max-width: 480px) {
+/* Responsive Breakpoints */
+
+/* Large Desktop (1200px+) - Uses base styles */
+@media (min-width: 1200px) {
   .h1 {
-    font-size: clamp(1.75rem, 6vw, 2.25rem);
-    line-height: 1.2;
+    font-size: clamp(3rem, 4vw, 4rem);
   }
   
   .h2 {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-    line-height: 1.25;
+    font-size: clamp(2.5rem, 3.5vw, 3rem);
   }
   
   .h3 {
-    font-size: clamp(1.375rem, 4.5vw, 1.75rem);
-    line-height: 1.3;
-  }
-  
-  .h4 {
-    font-size: clamp(1.25rem, 4vw, 1.5rem);
-    line-height: 1.35;
-  }
-  
-  .h5 {
-    font-size: clamp(1.125rem, 3.5vw, 1.375rem);
-    line-height: 1.4;
-  }
-  
-  .h6 {
-    font-size: clamp(1rem, 3vw, 1.25rem);
-    line-height: 1.5;
-  }
-
-  .body1, .body2 {
-    font-size: 0.938rem;
+    font-size: clamp(2rem, 3vw, 2.5rem);
   }
 }
 
-/* Tablet adjustments (481px - 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
+/* Large Tablet / Small Desktop (1024px - 1199px) */
+@media (max-width: 1199px) {
   .h1 {
-    font-size: clamp(2.25rem, 5vw, 3rem);
+    font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  }
+  
+  .h2 {
+    font-size: clamp(2.25rem, 4vw, 2.75rem);
+  }
+  
+  .h3 {
+    font-size: clamp(2rem, 3.5vw, 2.5rem);
+  }
+
+  .h4 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .body1 {
+    font-size: clamp(0.938rem, 1.5vw, 1.063rem);
+  }
+
+  .body2 {
+    font-size: clamp(0.875rem, 1.25vw, 0.938rem);
+  }
+}
+
+/* Large Tablet (769px - 1024px) */
+@media (max-width: 1024px) {
+  .h1 {
+    font-size: clamp(2.25rem, 4.5vw, 3rem);
   }
   
   .h2 {
@@ -210,23 +217,211 @@
   .h3 {
     font-size: clamp(1.75rem, 3.5vw, 2.25rem);
   }
-  
+
   .h4 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-size: clamp(1.375rem, 3vw, 1.75rem);
+  }
+
+  .h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  }
+
+  .h6 {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+  }
+
+  .body1 {
+    font-size: clamp(0.938rem, 1.5vw, 1rem);
+  }
+
+  .body2 {
+    font-size: clamp(0.875rem, 1.25vw, 0.938rem);
   }
 }
 
-/* Large tablet / Small desktop (769px - 1024px) */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Tablet (769px - 992px) */
+@media (max-width: 992px) {
   .h1 {
-    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 4.5vw, 2.75rem);
   }
   
   .h2 {
-    font-size: clamp(2.25rem, 3.5vw, 2.75rem);
+    font-size: clamp(1.875rem, 4vw, 2.375rem);
   }
   
   .h3 {
-    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-size: clamp(1.625rem, 3.5vw, 2rem);
+  }
+
+  .h4 {
+    font-size: clamp(1.375rem, 3vw, 1.625rem);
+  }
+}
+
+/* Small Tablet to Large Mobile (768px) */
+@media (max-width: 768px) {
+  .h1 {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    line-height: 1.2;
+  }
+  
+  .h2 {
+    font-size: clamp(1.25rem, 4.5vw, 2rem);
+    line-height: 1.25;
+  }
+  
+  .h3 {
+    font-size: clamp(1.15rem, 4vw, 1.75rem);
+    line-height: 1.3;
+  }
+  
+  .h4 {
+    font-size: clamp(1.15rem, 3.5vw, 1.5rem);
+    line-height: 1.35;
+  }
+  
+  .h5 {
+    font-size: clamp(1rem, 3vw, 1.375rem);
+    line-height: 1.4;
+  }
+  
+  .h6 {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.5;
+  }
+
+  .body1 {
+    font-size: clamp(0.875rem, 2vw, 0.938rem);
+  }
+  
+  .body2 {
+    font-size: clamp(0.813rem, 1.75vw, 0.875rem);
+  }
+
+  .subtitle1 {
+    font-size: clamp(0.875rem, 1.75vw, 1rem);
+  }
+
+  .subtitle2 {
+    font-size: clamp(0.813rem, 1.5vw, 0.938rem);
+  }
+}
+
+/* Mobile (481px - 600px) */
+@media (max-width: 600px) {
+  .h1 {
+    font-size: clamp(1.625rem, 5vw, 2rem);
+  }
+  
+  .h2 {
+    font-size: clamp(1.5rem, 4.5vw, 1.875rem);
+  }
+  
+  .h3 {
+    font-size: clamp(1.25rem, 4vw, 1.625rem);
+  }
+  
+  .h4 {
+    font-size: clamp(1.125rem, 3.5vw, 1.375rem);
+  }
+
+  .body1 {
+    font-size: 0.875rem;
+  }
+  
+  .body2 {
+    font-size: 0.813rem;
+  }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .h1 {
+    font-size: clamp(1.5rem, 5.5vw, 1.875rem);
+    line-height: 1.2;
+  }
+  
+  .h2 {
+    font-size: clamp(1.375rem, 5vw, 1.75rem);
+    line-height: 1.25;
+  }
+  
+  .h3 {
+    font-size: clamp(1.25rem, 4.5vw, 1.5rem);
+    line-height: 1.3;
+  }
+  
+  .h4 {
+    font-size: clamp(1.125rem, 4vw, 1.375rem);
+    line-height: 1.35;
+  }
+  
+  .h5 {
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
+    line-height: 1.4;
+  }
+  
+  .h6 {
+    font-size: clamp(0.938rem, 3vw, 1.125rem);
+    line-height: 1.5;
+  }
+
+  .body1 {
+    font-size: 0.875rem;
+  }
+  
+  .body2 {
+    font-size: 0.813rem;
+  }
+
+  .caption {
+    font-size: 0.75rem;
+  }
+
+  .overline {
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra Small Mobile (360px and below) */
+@media (max-width: 360px) {
+  .h1 {
+    font-size: clamp(1.375rem, 6vw, 1.75rem);
+  }
+  
+  .h2 {
+    font-size: clamp(1.25rem, 5.5vw, 1.625rem);
+  }
+  
+  .h3 {
+    font-size: clamp(1.125rem, 5vw, 1.375rem);
+  }
+  
+  .h4 {
+    font-size: clamp(1rem, 4.5vw, 1.25rem);
+  }
+  
+  .h5 {
+    font-size: clamp(0.938rem, 4vw, 1.125rem);
+  }
+  
+  .h6 {
+    font-size: clamp(0.875rem, 3.5vw, 1rem);
+  }
+
+  .body1 {
+    font-size: 0.813rem;
+  }
+  
+  .body2 {
+    font-size: 0.75rem;
+  }
+
+  .caption {
+    font-size: 0.688rem;
+  }
+
+  .overline {
+    font-size: 0.688rem;
   }
 }

@@ -99,7 +99,7 @@
 @media (max-width: 375px) {
   .card {
     min-width: 30px;
-    max-width: 57px;
+    max-width: 3.8rem;
     height: 80px;
     gap: 4px;
     border-radius: 10px;

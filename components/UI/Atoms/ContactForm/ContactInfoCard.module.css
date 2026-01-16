@@ -92,7 +92,7 @@
 @media (max-width: 768px) {
   .contactCard {
     padding: 20px;
-    min-height: 100px;
+    min-height: 5rem;
     align-self: center;
   }
   
@@ -121,9 +121,9 @@
 
 @media (max-width: 480px) {
   .contactCard {
-    padding: 16px;
+    padding: 0.5rem 1rem;
     gap: 16px;
-    min-height: auto;
+    min-height: 5rem;
     max-width: 300px;
   }
   

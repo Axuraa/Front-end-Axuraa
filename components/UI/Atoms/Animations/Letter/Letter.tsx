@@ -1,19 +1,23 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './Letter.module.css';
-import { LetterProps } from '@/types/Generals/backgroundTypes';
 import A from '@/public/assets/letters/A.svg';
 import R from '@/public/assets/letters/R.svg';
 import X from '@/public/assets/letters/X.svg';
 import U from '@/public/assets/letters/U.svg';
 import Q from '@/public/assets/letters/Q.svg';
 
+interface LetterProps {
+  letter: 'A' | 'R' | 'X' | 'U' | 'Q';
+  animationType: 'appears' | 'moveHorizontal' | 'moveDiagonal';
+  cssVarPrefix: string; // e.g., "letter-a1"
+  className?: string;
+}
+
 const Letter: React.FC<LetterProps> = ({ 
   letter, 
   animationType, 
-  position, 
-  targetPosition,
-  size = 80,
+  cssVarPrefix,
   className 
 }) => {
   const getAnimationClass = () => {
@@ -38,20 +42,16 @@ const Letter: React.FC<LetterProps> = ({
     }
   };
 
-  // Calculate the translation distance for movement animations
-  const translateX = targetPosition ? targetPosition.x - position.x : 0;
-  const translateY = targetPosition ? targetPosition.y - position.y : 0;
-
   return (
     <div
       className={`${styles.letterContainer} ${getAnimationClass()} ${className || ''}`}
       style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-        width: `${size}px`,
-        height: `${size}px`,
-        '--translate-x': `${translateX}px`,
-        '--translate-y': `${translateY}px`,
+        left: `var(--${cssVarPrefix}-x)`,
+        top: `var(--${cssVarPrefix}-y)`,
+        width: `var(--${cssVarPrefix}-size)`,
+        height: `var(--${cssVarPrefix}-size)`,
+        '--translate-x': `calc(var(--${cssVarPrefix}-target-x, var(--${cssVarPrefix}-x)) - var(--${cssVarPrefix}-x))`,
+        '--translate-y': `calc(var(--${cssVarPrefix}-target-y, var(--${cssVarPrefix}-y)) - var(--${cssVarPrefix}-y))`,
       } as React.CSSProperties}
     >
       <Image

@@ -61,6 +61,9 @@ const EmailCard: React.FC<EmailCardProps> = ({
           className={styles.description}
           color="var(--white-75, var(--color-white-75, rgba(255, 255, 255, 0.75)))"
           align="right"
+          style={{
+            textAlign:'right'
+          }}
         >
           {description}
         </Typography>

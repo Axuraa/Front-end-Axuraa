@@ -165,7 +165,7 @@ const projects = [
         showEllipseDecorations={true}
         showStatusBadge={true}
         backgroundType="Circle"
-        height="70vh"
+        height="75vh"
       />
      
       <div className={styles.projectsSection}>
