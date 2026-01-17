@@ -534,6 +534,8 @@ line-height: 13.32px; /* 122.222% */
   /* background: linear-gradient(0deg, #191B1F 0%, #191B1F 100%), #000; */
 }
 
+
+
   .FeaturesCapabilitiesContent,
   .OurDevelopmentProcessContent,
   .SuccessStoriesContent,
@@ -569,17 +571,21 @@ line-height: 13.32px; /* 122.222% */
 @media (max-width: 768px) and (min-width: 481px) {
   .contentSection1 {
     width: 90%;
+    height: auto;
     padding: 32px 20px;
-    flex-direction: column;
+    flex-direction: row;
     gap: 32px;
+    /* background-color: red; */
     
   }
 
   .contentSection2 {
+    margin-top: -30px;
     width: 100%;
     max-width: 600px;
     align-items: center;
     text-align: center;
+    /* background-color: blueviolet; */
   
   }
 
@@ -590,10 +596,14 @@ line-height: 13.32px; /* 122.222% */
   .contentSection2Description {
     width: 100%;
     text-align: center;
+    margin-top: -20px;
+    /* background-color: #2A2A2A; */
   }
 
   .serviceList {
+    /* background-color: #0bac18; */
     padding: 0;
+    margin-top: -10px;
     align-items: flex-start;
   }
 
@@ -662,6 +672,7 @@ line-height: 13.32px; /* 122.222% */
     margin: 0 auto;
     padding: 0;
     width: 90%;
+    /* background-color: red; */
     
   }
 

@@ -165,7 +165,7 @@ a.secondary {
 
 /* Define your CSS variables if needed */
 :root {
-  --background: #1F2937;
+  --background: #191B1F;
   --foreground: #fff;
   --text-primary: #000;
 }
@@ -174,6 +174,8 @@ a.secondary {
 @media (max-width: 768px) {
   .pageContainer {
     padding: 0 1rem;
+        background-color: #191B1F;
+
   }
 }
 
@@ -182,6 +184,8 @@ a.secondary {
   padding: 2rem;
   min-height: 100vh;
   background: #191B1F;
+      background-color: #191B1F;
+
 }
 
 .projectsGrid {

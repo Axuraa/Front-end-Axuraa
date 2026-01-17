@@ -141,11 +141,77 @@
 .isPopular .popularBadge {
   display: flex;
 }
-
+/* Responsive breakpoints */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card {
+    padding: 15px;
+    width: 31.5%;
+    /* background-color: green; */
+  }
+  .title {
+    font-size: 18px;
+  }
+  .description {
+    font-size: 14px;
+  }
+  .featureItem {
+    font-size: 14px;
+  }
+  .button {
+    padding: 12px 0;
+    font-size: 15px;
+  }
+  .popularBadge {
+  position: absolute;
+  top: 5px;
+  right: -60px;
+  transform: rotate(45deg);
+  display: none;
+  padding: 0 0 0 25px ;
+  /* padding: 5px 40px; */
+  justify-content: center;
+  align-items: center;
+  background: #D04A1D;
+  color: #D9D9D9;
+  font-family: Roboto;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14.875px;
+  width: 180px;
+   height: 15px;
+  /* margin-left: -20px; */
+  text-align: start;
+}
+/* Popular badge adjustments for tablet */
+  /* .popularBadge {
+    top: 15px;
+    right: -50px;
+    width: 180px;
+    height: 28px;
+    font-size: 11px;
+    padding: 0 15px;
+  } */
+}
+/* Desktop (1024px and up) */
+@media (width: 1024px) {
+  .card {
+    padding: 20px;
+    width: 300px;
+    /* background-color: green; */
+  }
+  .title {
+    font-size: 19.833px;
+  }
+  .description {
+    font-size: 14px;
+  }
+}
 /* Responsive adjustments */
 @media (max-width: 400px) {
   .card {
-    width: 100%;
+    /* background-color: green; */
+    width: 90%;
     padding: 20px;
   }
   

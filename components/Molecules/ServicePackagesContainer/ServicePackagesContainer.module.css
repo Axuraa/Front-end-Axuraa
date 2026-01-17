@@ -17,6 +17,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    /* background-color: violet; */
   }
 }
 @media (max-width: 1200px) {
@@ -25,10 +26,11 @@
     gap: 20px;
   }
 }
-@media (max-width: 768px) {
+@media (width: 768px) {
   .container {
-    flex-direction: column;
+    /* background-color: red; */
+    flex-direction: row;
     align-items: center;
-    gap: 27.606px;
+    gap: 15px;
   }
 }

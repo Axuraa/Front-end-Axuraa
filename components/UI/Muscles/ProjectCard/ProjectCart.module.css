@@ -208,10 +208,10 @@ text-underline-position: from-font;
   align-self: flex-end;
 }
 /* Tablet and Desktop (1024px and up) */
-@media (min-width: 1024px) {
+@media (width: 1024px) {
   .card {
      /* width: 356.552px; */
-    width: 32%;
+    /* width: 32%; */
     /* height: 100%; */
     /* background-color: aquamarine; */
   }

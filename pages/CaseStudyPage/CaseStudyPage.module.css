@@ -27,6 +27,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 16px;
+  /* background-color: red; */
 }
 
 .breadcrumbLink {
@@ -536,13 +537,35 @@ line-height: normal;
 /* Mobile First - Base styles above are for mobile */
 
 /* Tablet - 768px */
-@media (max-width: 768px) {
+@media (width: 768px) {
   .container {
-    margin-top: 60px;
+    height: auto;
+    /* margin-top: 70px; */
+    /* background-color: aqua; */
+    padding-top: 20px;
+    /* background-color: #0e52db; */
   }
+  .breadcrumbContent {
+  display: flex;
+  /* padding-top:90px;  */
+  align-items: center;
+  margin-left: 15px;
+  /* margin-top: 70px; */
+  /* gap: 8px; */
+  color: #888;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  /* background-color: rgb(26, 49, 177); */
+}
 
   .main {
+    /* margin-top: 20px; */
     padding: 0 2rem 4rem;
+    /* background-color: #BFBFBF; */
+    /* margin-top: 20px; */
   }
 
   .grid {
@@ -608,6 +631,8 @@ line-height: normal;
 
   .card, .ProjectDetailscard {
     max-width: 100%;
+     border-radius: 10px;
+  border: 0 solid #E5E7EB;
   }
 }
 
@@ -618,6 +643,22 @@ line-height: normal;
     margin-left: -20px;
     /* background-color: #1461fc; */
   }
+  .breadcrumbContent {
+  display: flex;
+  /* padding-top:90px;  */
+  align-items: center;
+  padding-left: 10%;
+  /* margin-left: 300px; */
+  /* margin-top: 70px; */
+  /* gap: 8px; */
+  color: #888;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  /* background-color: rgb(26, 49, 177); */
+}
   .main {
     max-width: 1280px;
     margin: 0 auto;
@@ -632,18 +673,23 @@ line-height: normal;
     /* background-color: blue; */
   }
   .hero {
+    /* background-color: green; */
     align-items: flex-start;
     margin-bottom: 2rem;
+    text-align: center;
   }
   .title {
+    margin: 0 auto;
     font-size: 36px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 12px;
+    /* background-color: #6B7280; */
   }
   .subtitle {
+
     width: 100%;
     max-width: 600px;
-    text-align: left;
+    text-align: center;
     margin: 0 0 1.5rem;
   }
   .tags {
@@ -794,14 +840,16 @@ line-height: normal;
     /* display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: center;
-    background-color: red; */
+      align-items: center;*/
+    /* background-color: red;  */
   }
   
   .card, .ProjectDetailscard {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
     padding: 16px;
+     border-radius: 10px;
+  border: 0 solid #E5E7EB;
     /* background-color: aquamarine; */
 
   }

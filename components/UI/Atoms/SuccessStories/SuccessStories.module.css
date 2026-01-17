@@ -137,21 +137,40 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (width: 768px) {
     .successStory{
-        /* width: 343px;
-        height: 291px; */
+     width: 32%;
+      /*  height: 291px; */
+      height: auto;
         display: flex;
          flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         border-radius: 7.493px;
         /* justify-content: center; */
-        /* background-color: #D04A1D; */
+        /* background-color: #0660e7; */
         padding: 20px  10px;
     }
+    
+.description {
+    /* width: 306.0438px; */
+    width: 100%;
+    /* height: auto; */
+    /* height: 61px; */
+    align-self: stretch;
+    color: #FFF;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20.072px;
+    margin: 0 0 20px 0;
+    /* background: red; */
+}
+
     .metricRow {
-        width: 293.0438px;
+        /* width: 293.0438px; */
+        width: 100%;
         height: 12px;
         display: flex;
         /* padding: 0 10px; */
@@ -171,6 +190,7 @@
         font-weight: 400;
         line-height: 11.24px;
         /* 70% */
+        /* background-color: green; */
     }
 
     .metricValue {
@@ -186,6 +206,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: 11.24px;
+        /* background-color: blue; */
         /* 70% */
     }
 }
