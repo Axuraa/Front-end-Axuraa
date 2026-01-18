@@ -16,6 +16,7 @@
   .container {
     padding: 5% 5%;
     gap: 48px;
+    margin-top: -4%;
   }
 }
 
@@ -23,7 +24,7 @@
   .container {
     padding: 40px 20px;
     gap: 40px;
-    margin-top: -10%;
+    margin-top: -4%;
   }
 }
 

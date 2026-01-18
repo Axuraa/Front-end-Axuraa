@@ -1,11 +1,15 @@
 import React from 'react';
 import styles from './Alphabet.module.css';
 import Letter from '@/components/UI/Atoms/Animations/Letter/Letter';
-import { AlphabetProps } from '@/types/Generals/backgroundTypes';
 
-const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
+interface AlphabetProps {
+  className?: string;
+  isHovered?: boolean;
+}
+
+const Alphabet: React.FC<AlphabetProps> = ({ className, isHovered = false }) => {
   return (
-    <div className={`${styles.alphabetContainer} ${className || ''}`}>
+    <div className={`${styles.alphabetContainer} ${isHovered ? styles.hovered : ''} ${className || ''}`}>
       {/* A - Appears: starts at position 1, on hover moves to position 2 with fade effect */}
       <Letter
         letter="A"
@@ -19,7 +23,7 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
         cssVarPrefix="letter-a2"
         className={styles.letterA_2}
       />
-
+      
       {/* R - Same as A (appears behavior) */}
       <Letter
         letter="R"
@@ -33,7 +37,7 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
         cssVarPrefix="letter-r2"
         className={styles.letterR_2}
       />
-
+      
       {/* X - Moves horizontal from position 1 to position 2 */}
       <Letter
         letter="X"
@@ -41,7 +45,7 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
         cssVarPrefix="letter-x"
         className={styles.letterX}
       />
-
+      
       {/* U - Moves diagonally from position 1 to position 2 */}
       <Letter
         letter="U"
@@ -49,7 +53,7 @@ const Alphabet: React.FC<AlphabetProps> = ({ className }) => {
         cssVarPrefix="letter-u"
         className={styles.letterU}
       />
-
+      
       {/* Q - Called twice, both move diagonally */}
       <Letter
         letter="Q"
