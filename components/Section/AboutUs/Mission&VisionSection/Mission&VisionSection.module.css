@@ -53,8 +53,9 @@
 /* Cards Grid */
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: 10%;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 6%;
+  margin: 0 6%;
   align-items: stretch;
 }
 
@@ -131,10 +132,15 @@
     height: 250px;
     top: -50px;
     right: -50px;
+    
   }
 
   .cardsGrid {
     gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   /* Disable circle scaling on mobile for performance */

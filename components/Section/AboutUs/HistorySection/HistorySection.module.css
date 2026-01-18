@@ -3,11 +3,12 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  padding: 4rem 12%; /* Match the parent container's 6% horizontal padding */
+  padding: 4rem 16%; /* Match the parent container's 6% horizontal padding */
   display: flex;
   justify-self: center;
   align-items: center;
   justify-content: center;
+  /* margin: 0 11%; */
 }
 
 /* Decorative background elements */
@@ -40,7 +41,7 @@
 .content_wrapper {
   display: grid;
   grid-template-columns: 1fr 480px;
-  gap: 3rem;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -109,7 +110,8 @@
 
   .content_wrapper {
     grid-template-columns: 1fr 420px;
-    gap: 2.5rem;
+    gap: 0rem;
+    margin: 0 6%;
   }
 
   .card_container {

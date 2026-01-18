@@ -14,7 +14,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 40%;
   height: 100%;
   pointer-events: none;
 }
@@ -148,6 +148,7 @@
   .card {
     padding: 28px 20px;
     border-radius: 16px;
+    min-width: 270px;
   }
   
   .iconWrapper {
