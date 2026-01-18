@@ -2,53 +2,52 @@
   position: relative;
   width: 100%;
   height: 100%;
-  
+
   /* Default desktop positions */
-  --letter-a1-x: 2px;
-  --letter-a1-y: 130px;
-  --letter-a1-size: 180px;
-  
-  --letter-a2-x: 900px;
-  --letter-a2-y: -80px;
+  --letter-a1-x: 100px;
+  --letter-a1-y: 340px;
+  --letter-a1-size: 200px;
+
+  --letter-a2-x: 1200px;
+  --letter-a2-y: 130px;
   --letter-a2-size: 200px;
-  
-  --letter-r1-x: 900px;
-  --letter-r1-y: -80px;
+
+  --letter-r1-x: 1200px;
+  --letter-r1-y: 150px;
   --letter-r1-size: 220px;
-  
-  --letter-r2-x: 10px;
-  --letter-r2-y: 280px;
+
+  --letter-r2-x: 110px;
+  --letter-r2-y: 490px;
   --letter-r2-size: 220px;
-  
+
   --letter-x-x: 300px;
-  --letter-x-y: 380px;
-  --letter-x-target-x: 950px;
-  --letter-x-target-y: 380px;
+  --letter-x-y: 560px;
+  --letter-x-target-x: 1050px;
+  --letter-x-target-y: 560px;
   --letter-x-size: 180px;
-  
-  --letter-u-x: 1050px;
-  --letter-u-y: 210px;
-  --letter-u-target-x: 10px;
-  --letter-u-target-y: -30px;
+
+  --letter-u-x: 1300px;
+  --letter-u-y: 420px;
+  --letter-u-target-x: 180px;
+  --letter-u-target-y: 180px;
   --letter-u-size: 120px;
-  
-  --letter-q1-x: 880px;
-  --letter-q1-y: 380px;
-  --letter-q1-target-x: 780px;
-  --letter-q1-target-y: -26px;
+
+  --letter-q1-x: 1100px;
+  --letter-q1-y: 590px;
+  --letter-q1-target-x: 680px;
+  --letter-q1-target-y: 157px;
   --letter-q1-size: 120px;
-  
-  --letter-q2-x: 130px;
-  --letter-q2-y: -30px;
+
+  --letter-q2-x: 230px;
+  --letter-q2-y: 180px;
   --letter-q2-target-x: 780px;
-  --letter-q2-target-y: 290px;
+  --letter-q2-target-y: 600px;
   --letter-q2-size: 120px;
 }
 
-
 /* Letter A - Appears: fade out, move, fade in */
 .alphabetContainer .letterA_1 {
-  opacity: 1.0 !important;
+  opacity: 1 !important;
   transition: opacity 1.2s ease;
 }
 
@@ -57,17 +56,19 @@
   transition: opacity 1.2s ease;
 }
 
+.alphabetContainer.hovered .letterA_1,
 .alphabetContainer:hover .letterA_1 {
   opacity: 0 !important;
 }
 
+.alphabetContainer.hovered .letterA_2,
 .alphabetContainer:hover .letterA_2 {
-  opacity: 1.0 !important;
+  opacity: 1 !important;
 }
 
 /* Letter R - Same appears behavior as A */
 .alphabetContainer .letterR_1 {
-  opacity: 1.0 !important;
+  opacity: 1 !important;
   transition: opacity 1.2s ease;
 }
 
@@ -76,189 +77,333 @@
   transition: opacity 1.2s ease;
 }
 
+.alphabetContainer.hovered .letterR_1,
 .alphabetContainer:hover .letterR_1 {
   opacity: 0 !important;
 }
 
+.alphabetContainer.hovered .letterR_2,
 .alphabetContainer:hover .letterR_2 {
-  opacity: 1.0 !important;
+  opacity: 1 !important;
 }
 
 /* Letter X - Horizontal movement */
 .letterX {
-  opacity: 1.0;
-  transition: transform 1.0s ease, opacity 1.0s ease;
+  opacity: 1;
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
 }
 
+.alphabetContainer.hovered .letterX,
 .alphabetContainer:hover .letterX {
   transform: translate(var(--translate-x), 0);
-  opacity: 1.0;
+  opacity: 1;
 }
 
 /* Letter U - Diagonal movement */
 .letterU {
-  opacity: 1.0;
-  transition: transform 1.2s ease, opacity 1.0s ease;
-
+  opacity: 1;
+  transition:
+    transform 1.2s ease,
+    opacity 1s ease;
 }
 
+.alphabetContainer.hovered .letterU,
 .alphabetContainer:hover .letterU {
   transform: translate(var(--translate-x), var(--translate-y));
-  opacity: 1.0;
+  opacity: 1;
 }
 
 /* Letter Q1 - First Q diagonal movement */
 .letterQ1 {
-  opacity: 1.0;
-  transition: transform 1.0s ease, opacity 1.0s ease;
-
+  opacity: 1;
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
 }
 
+.alphabetContainer.hovered .letterQ1,
 .alphabetContainer:hover .letterQ1 {
   transform: translate(var(--translate-x), var(--translate-y));
-  opacity: 1.0;
+  opacity: 1;
 }
 
 /* Letter Q2 - Second Q diagonal movement */
 .letterQ2 {
-  opacity: 1.0;
-    transition: transform 1.0s ease, opacity 1.0s ease;
+  opacity: 1;
+  transition:
+    transform 1s ease,
+    opacity 1s ease;
 }
 
+.alphabetContainer.hovered .letterQ2,
 .alphabetContainer:hover .letterQ2 {
   transform: translate(var(--translate-x), var(--translate-y));
-  opacity: 1.0;
+  opacity: 1;
+}
+
+@media (max-width: 1440px) {
+  .alphabetContainer {
+    --letter-a1-x: 10px;
+    --letter-a1-y: 340px;
+    --letter-a1-size: 200px;
+
+    --letter-a2-x: 1000px;
+    --letter-a2-y: 130px;
+    --letter-a2-size: 200px;
+
+    --letter-r1-x: 1000px;
+    --letter-r1-y: 150px;
+    --letter-r1-size: 220px;
+
+    --letter-r2-x: 0px;
+    --letter-r2-y: 490px;
+    --letter-r2-size: 220px;
+
+    --letter-x-x: 200px;
+    --letter-x-y: 510px;
+    --letter-x-target-x: 1050px;
+    --letter-x-target-y: 510px;
+    --letter-x-size: 180px;
+
+    --letter-u-x: 1100px;
+    --letter-u-y: 420px;
+    --letter-u-target-x: 80px;
+    --letter-u-target-y: 130px;
+    --letter-u-size: 120px;
+
+    --letter-q1-x: 950px;
+    --letter-q1-y: 590px;
+    --letter-q1-target-x: 530px;
+    --letter-q1-target-y: 157px;
+    --letter-q1-size: 120px;
+
+    --letter-q2-x: 80px;
+    --letter-q2-y: 180px;
+    --letter-q2-target-x: 630px;
+    --letter-q2-target-y: 600px;
+    --letter-q2-size: 120px;
+  }
 }
 
 @media (max-width: 1024px) {
   .alphabetContainer {
-    --letter-a1-x: 5px;
-    --letter-a1-y: 110px;
+    --letter-a1-x: -50px;
+    --letter-a1-y: 300px;
     --letter-a1-size: 150px;
-    
+
     --letter-a2-x: 750px;
-    --letter-a2-y: -70px;
-    --letter-a2-size: 170px;
-    
+    --letter-a2-y: 80px;
+    --letter-a2-size: 150px;
+
     --letter-r1-x: 750px;
-    --letter-r1-y: -36px;
-    --letter-r1-size: 165px;
-    
-    --letter-r2-x: 8px;
-    --letter-r2-y: 240px;
-    --letter-r2-size: 185px;
-    
-    --letter-x-x: 250px;
-    --letter-x-y: 300px;
-    --letter-x-target-x: 800px;
-    --letter-x-target-y: 300px;
-    --letter-x-size: 140px;
-    
-    --letter-u-x: 880px;
-    --letter-u-y: 180px;
-    --letter-u-target-x: 8px;
-    --letter-u-target-y: -25px;
-    --letter-u-size: 100px;
-    
-    --letter-q1-x: 740px;
-    --letter-q1-y: 320px;
-    --letter-q1-target-x: 650px;
-    --letter-q1-target-y: -22px;
-    --letter-q1-size: 100px;
-    
-    --letter-q2-x: 110px;
-    --letter-q2-y: -25px;
-    --letter-q2-target-x: 650px;
-    --letter-q2-target-y: 240px;
-    --letter-q2-size: 100px;
+    --letter-r1-y: 80px;
+    --letter-r1-size: 170px;
+
+    --letter-r2-x: -50px;
+    --letter-r2-y: 350px;
+    --letter-r2-size: 160px;
+
+    --letter-x-x: 50px;
+    --letter-x-y: 480px;
+    --letter-x-target-x: 700px;
+    --letter-x-target-y: 480px;
+    --letter-x-size: 130px;
+
+    --letter-u-x: 810px;
+    --letter-u-y: 320px;
+    --letter-u-target-x: 60px;
+    --letter-u-target-y: 130px;
+    --letter-u-size: 90px;
+
+    --letter-q1-x: 730px;
+    --letter-q1-y: 460px;
+    --letter-q1-target-x: 540px;
+    --letter-q1-target-y: 137px;
+    --letter-q1-size: 80px;
+
+    --letter-q2-x: 10px;
+    --letter-q2-y: 110px;
+    --letter-q2-target-x: 500px;
+    --letter-q2-target-y: 500px;
+    --letter-q2-size: 80px;
   }
 }
 
 @media (max-width: 768px) {
   .alphabetContainer {
-    --letter-a1-x: 5px;
-    --letter-a1-y: 100px;
-    --letter-a1-size: 140px;
-    
-    --letter-a2-x: 600px;
-    --letter-a2-y: -60px;
-    --letter-a2-size: 160px;
-    
-    --letter-r1-x: 600px;
-    --letter-r1-y: -60px;
-    --letter-r1-size: 170px;
-    
-    --letter-r2-x: 8px;
-    --letter-r2-y: 220px;
-    --letter-r2-size: 170px;
-    
-    --letter-x-x: 200px;
-    --letter-x-y: 300px;
-    --letter-x-target-x: 650px;
-    --letter-x-target-y: 300px;
-    --letter-x-size: 140px;
-    
-    --letter-u-x: 700px;
-    --letter-u-y: 160px;
-    --letter-u-target-x: 8px;
-    --letter-u-target-y: -20px;
-    --letter-u-size: 100px;
-    
-    --letter-q1-x: 600px;
-    --letter-q1-y: 300px;
-    --letter-q1-target-x: 520px;
-    --letter-q1-target-y: -20px;
-    --letter-q1-size: 100px;
-    
-    --letter-q2-x: 100px;
-    --letter-q2-y: -20px;
-    --letter-q2-target-x: 520px;
-    --letter-q2-target-y: 220px;
-    --letter-q2-size: 100px;
+    --letter-a1-x: -50px;
+    --letter-a1-y: 200px;
+    --letter-a1-size: 110px;
+
+    --letter-a2-x: 550px;
+    --letter-a2-y: 60px;
+    --letter-a2-size: 110px;
+
+    --letter-r1-x: 550px;
+    --letter-r1-y: 50px;
+    --letter-r1-size: 130px;
+
+    --letter-r2-x: -50px;
+    --letter-r2-y: 210px;
+    --letter-r2-size: 130px;
+
+    --letter-x-x: 60px;
+    --letter-x-y: 340px;
+    --letter-x-target-x: 500px;
+    --letter-x-target-y: 340px;
+    --letter-x-size: 100px;
+
+    --letter-u-x: 570px;
+    --letter-u-y: 190px;
+    --letter-u-target-x: 40px;
+    --letter-u-target-y: 100px;
+    --letter-u-size: 70px;
+
+    --letter-q1-x: 500px;
+    --letter-q1-y: 320px;
+    --letter-q1-target-x: 370px;
+    --letter-q1-target-y: 70px;
+    --letter-q1-size: 70px;
+
+    --letter-q2-x: 40px;
+    --letter-q2-y: 100px;
+    --letter-q2-target-x: 340px;
+    --letter-q2-target-y: 340px;
+    --letter-q2-size: 70px;
   }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
   .alphabetContainer {
-    --letter-a1-x: 2px;
-    --letter-a1-y: 60px;
-    --letter-a1-size: 100px;
-    
-    --letter-a2-x: 280px;
-    --letter-a2-y: -40px;
-    --letter-a2-size: 110px;
-    
-    --letter-r1-x: 280px;
-    --letter-r1-y: -40px;
-    --letter-r1-size: 120px;
-    
-    --letter-r2-x: 5px;
-    --letter-r2-y: 150px;
-    --letter-r2-size: 120px;
-    
-    --letter-x-x: 100px;
-    --letter-x-y: 200px;
-    --letter-x-target-x: 300px;
-    --letter-x-target-y: 200px;
+    --letter-a1-x: -50px;
+    --letter-a1-y: 180px;
+    --letter-a1-size: 90px;
+
+    --letter-a2-x: 265px;
+    --letter-a2-y: 40px;
+    --letter-a2-size: 100px;
+
+    --letter-r1-x: 265px;
+    --letter-r1-y: 40px;
+    --letter-r1-size: 110px;
+
+    --letter-r2-x: -50px;
+    --letter-r2-y: 190px;
+    --letter-r2-size: 110px;
+
+    --letter-x-x: 10px;
+    --letter-x-y: 310px;
+    --letter-x-target-x: 280px;
+    --letter-x-target-y: 310px;
     --letter-x-size: 100px;
-    
+
     --letter-u-x: 320px;
-    --letter-u-y: 110px;
-    --letter-u-target-x: 5px;
-    --letter-u-target-y: -15px;
-    --letter-u-size: 70px;
-    
-    --letter-q1-x: 290px;
-    --letter-q1-y: 200px;
-    --letter-q1-target-x: 240px;
-    --letter-q1-target-y: -15px;
-    --letter-q1-size: 70px;
-    
+    --letter-u-y: 200px;
+    --letter-u-target-x: 25px;
+    --letter-u-target-y: 50px;
+    --letter-u-size: 60px;
+
+    --letter-q1-x: 270px;
+    --letter-q1-y: 300px;
+    --letter-q1-target-x: 200px;
+    --letter-q1-target-y: 60px;
+    --letter-q1-size: 60px;
+
     --letter-q2-x: 60px;
-    --letter-q2-y: -15px;
-    --letter-q2-target-x: 240px;
-    --letter-q2-target-y: 150px;
-    --letter-q2-size: 70px;
+    --letter-q2-y: 50px;
+    --letter-q2-target-x: 100px;
+    --letter-q2-target-y: 340px;
+    --letter-q2-size: 60px;
+  }
+}
+
+@media (max-width: 380px) {
+  .alphabetContainer {
+    --letter-a1-x: -50px;
+    --letter-a1-y: 170px;
+    --letter-a1-size: 100px;
+
+    --letter-a2-x: 225px;
+    --letter-a2-y: 40px;
+    --letter-a2-size: 100px;
+
+    --letter-r1-x: 225px;
+    --letter-r1-y: 40px;
+    --letter-r1-size: 110px;
+
+    --letter-r2-x: -50px;
+    --letter-r2-y: 170px;
+    --letter-r2-size: 110px;
+
+    --letter-x-x: 10px;
+    --letter-x-y: 310px;
+    --letter-x-target-x: 240px;
+    --letter-x-target-y: 310px;
+    --letter-x-size: 100px;
+
+    --letter-u-x: 270px;
+    --letter-u-y: 200px;
+    --letter-u-target-x: 25px;
+    --letter-u-target-y: 80px;
+    --letter-u-size: 60px;
+
+    --letter-q1-x: 200px;
+    --letter-q1-y: 300px;
+    --letter-q1-target-x: 180px;
+    --letter-q1-target-y: 60px;
+    --letter-q1-size: 60px;
+
+    --letter-q2-x: 60px;
+    --letter-q2-y: 50px;
+    --letter-q2-target-x: 100px;
+    --letter-q2-target-y: 320px;
+    --letter-q2-size: 60px;
+  }
+}
+
+@media (max-width: 325px) {
+  .alphabetContainer {
+    --letter-a1-x: -40px;
+    --letter-a1-y: 190px;
+    --letter-a1-size: 90px;
+
+    --letter-a2-x: 190px;
+    --letter-a2-y: 40px;
+    --letter-a2-size: 90px;
+
+    --letter-r1-x: 190px;
+    --letter-r1-y: 40px;
+    --letter-r1-size: 100px;
+
+    --letter-r2-x: -40px;
+    --letter-r2-y: 190px;
+    --letter-r2-size: 100px;
+
+    --letter-x-x: 10px;
+    --letter-x-y: 310px;
+    --letter-x-target-x: 200px;
+    --letter-x-target-y: 310px;
+    --letter-x-size: 90px;
+
+    --letter-u-x: 240px;
+    --letter-u-y: 190px;
+    --letter-u-target-x: 25px;
+    --letter-u-target-y: 80px;
+    --letter-u-size: 55px;
+
+    --letter-q1-x: 200px;
+    --letter-q1-y: 300px;
+    --letter-q1-target-x: 130px;
+    --letter-q1-target-y: 60px;
+    --letter-q1-size: 55px;
+
+    --letter-q2-x: 60px;
+    --letter-q2-y: 50px;
+    --letter-q2-target-x: 60px;
+    --letter-q2-target-y: 320px;
+    --letter-q2-size: 55px;
   }
 }

@@ -1,12 +1,9 @@
 .animatedBackground {
   position: absolute;
-  top: -5%;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* Change to none so it doesn't block interactions */
-  z-index: 1; 
-  /* background-color: aliceblue; */
+  pointer-events: none;
 }
 
 .HexagonContainer {
@@ -14,16 +11,15 @@
   width: 100%;
   height: 100%;
   pointer-events: auto;
-  top: -25%;
+  top: -15%;
 }
 
 /* Hexagon 1 - Top Left (closer to corner) */
 .Hexa_1 {
   position: absolute;
-  /* top: 10%; */
-  right: -71%;
+  right: -61%;
   transform: rotate(-180deg);
-  transition: transform 2s ease-in-out;
+  transition: transform 2s ease-in-out, opacity 2s ease-in-out;
   opacity: 0.6;
 }
 
@@ -31,19 +27,19 @@
 .Hexa_2 {
   position: absolute;
   top: 10%;
-  left: -10%;
+  /* left: -10%; */
   transform: rotate(150deg);
-  transition: transform 2s ease-in-out;
+  transition: transform 2s ease-in-out, opacity 2s ease-in-out;
   opacity: 0.7;
 }
 
 /* Hover Effects - Smooth rotation changes */
-.animatedBackground:hover .Hexa_1 {
+.animatedBackground.hovered .Hexa_1 {
   transform: rotate(90deg) scale(1.05);
   opacity: 0.5;
 }
 
-.animatedBackground:hover .Hexa_2 {
+.animatedBackground.hovered .Hexa_2 {
   transform: rotate(-80deg) scale(1.08);
   opacity: 0.6;
 }
@@ -62,50 +58,110 @@
 .Circle_1 {
   position: absolute;
   top: 70%;
-  left: -70%;
-  transition: transform 2.5s ease-in-out;
-  /* opacity: 0.3; */
+  left: -60%;
+  transition: transform 2.5s ease-in-out, opacity 2.5s ease-in-out;
 }
 
 /* Circle 2 - Top Right (Double size) */
 .Circle_2 {
   position: absolute;
-  top: -80%;
-  right: -5%;
-  transition: transform 2.5s ease-in-out;
-  /* opacity: 0.4; */
+  top: -60%;
+  right: -3%;
+  transition: transform 2.5s ease-in-out, opacity 2.5s ease-in-out;
 }
 
 /* Hover Effects - Vertical movement */
-.animatedBackground:hover .Circle_1 {
+.animatedBackground.hovered .Circle_1 {
   transform: translateY(-150%) scale(1.5);
   opacity: 0.5;
 }
 
-.animatedBackground:hover .Circle_2 {
+.animatedBackground.hovered .Circle_2 {
   transform: translateY(150%) scale(1.5);
   opacity: 0.6;
 }
 
-@media (max-width : 1024px) {
-  .Hexa_1{
+@media (max-width: 1024px) {
+  .Hexa_1 {
+    top: -20%;
     right: -75%;
   }
-  .Hexa_2{
+  .Hexa_2 {
     left: -25%;
-    top: 5%;
+    top: -6%;
+  }
+  .Circle_1{
+    left: -70%;
+  }
+
+  .animatedBackground.hovered .Circle_1 {
+    transform: translateY(-200%) scale(1.5);
+  }
+
+  .animatedBackground.hovered .Circle_2 {
+    transform: translateY(200%) scale(1.5);
   }
 }
+
 @media (max-width: 768px) {
-  /* .animatedBackground{
-    width: ;
-  } */
-  .Hexa_1{
-    right: -80%;
+  .Hexa_1 {
+    right: -70%;
   }
-  .Hexa_2{
+  .Hexa_2 {
+    left: -30%;
+    top: -20%;
+  }
+  .Circle_1{
+    left: -70%;
+    top: 50%;
+  }
+  .Circle_2{
+    right: -3%;
+    top: -70%;
+  }
+  .animatedBackground.hovered .Circle_1 {
+    transform: translateY(-180%) scale(1.5);
+  }
+
+  .animatedBackground.hovered .Circle_2 {
+    transform: translateY(180%) scale(1.5);
+  }
+}
+
+@media (max-width: 426px) {
+  .Hexa_1 {
+    right: -70%;
+    top: 1%;
+  }
+  .Hexa_2 {
     left: -30%;
     top: 10%;
   }
 
+  .Circle_1{
+    left: -80%;
+    top: 70%;
+  }
+  .Circle_2{
+    /* right: 3%; */
+    top: -30%;
+  }
+  .animatedBackground.hovered .Circle_1 {
+    transform: translateY(-280%) scale(1.5);
+  }
+
+  .animatedBackground.hovered .Circle_2 {
+    transform: translateY(280%) scale(1.5);
+  }
+}
+
+@media (max-width: 376px) {
+  .Hexa_1 {
+    right: -70%;
+    top: 1%;
+  }
+  .Hexa_2 {
+    left: -46%;
+    top: 10%;
+  }
 }

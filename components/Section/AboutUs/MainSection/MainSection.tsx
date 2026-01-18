@@ -27,7 +27,7 @@ const MainSection = () => {
                     showPrimaryButton={false}
                     showSecondaryButton={false}
                     showBadge={false}
-                    height="75vh"
+                    height="100vh"
                 />
             </div>
             <div className={styles.ratingWrapper}>

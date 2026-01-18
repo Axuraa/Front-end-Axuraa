@@ -9,6 +9,7 @@
   position: relative;
   padding: 5% 1.5rem;
   overflow: hidden;
+  /* background-color: #d04a1d; */
 }
 
 .heroDots {
@@ -41,14 +42,20 @@
   gap: 32px;
   width: 100%;
   max-width: 900px;
+  /* background-color: #22c55e; */
 }
 
 .animatedBackground {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 100%;
   pointer-events: auto;
-  z-index: 5;
+  z-index: 1;
+  pointer-events: none;
+  inset: 0;
+  margin-left: 10%;
+  /* background-color: aliceblue; */
+
 }
 
 /* Badge */
@@ -258,6 +265,28 @@
   opacity: 0;
 }
 
+.titleWrapper {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.titleWrapper h1 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  width: 100%;
+}
+
+.titleWrapper span {
+  display: block;
+  text-align: center;
+}
+
+
 /* Responsive Design */
 
 /* Large Desktop and above (1200px+) */
@@ -269,6 +298,7 @@
   .container {
     max-width: 1200px;
   }
+
 }
 
 /* Desktop to Large Tablet (1024px - 1199px) */
@@ -313,6 +343,7 @@
   .content {
     gap: 24px;
     max-width: 800px;
+    margin-top: -8%;
   }
 
   .title {
@@ -323,6 +354,10 @@
   .subtitle {
     width: 90%;
     margin-bottom: -1%;
+  }
+
+   .titleWrapper {
+    max-width: 800px;
   }
 
   .ctaButtons {
@@ -349,7 +384,7 @@
     max-width: 900px;
     gap: 28px;
     padding-top: 3%;
-    margin-top: 5%;
+    margin-top: -1%;
   }
 
   .companiesGrid {
@@ -446,25 +481,40 @@
   }
 
   .content {
-    gap: 24px;
+    gap: 1rem;
     max-width: 100%;
+    margin-top: -17%;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
   }
 
   .title {
     font-size: 2rem;
-    margin-top: 0;
+    margin-top: -1%;
+    display: block;
   }
 
   .subtitle {
     width: 100%;
     font-size: 1rem;
     margin-bottom: 0;
+    margin-top: -1%;
+  }
+
+  .titleWrapper {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .titleWrapper h1 {
+    gap: 0.25rem !important;
   }
 
   .ctaButtons {
     flex-direction: column;
     width: 100%;
-    max-width: 400px;
+    max-width: 200px;
     gap: 12px;
     height: auto;
   }
@@ -472,9 +522,9 @@
   .trustedSection {
     width: 100%;
     max-width: 100%;
-    gap: 24px;
-    padding-top: 6%;
-    margin-top: 8%;
+    gap: 1rem;
+    padding-top: 2%;
+    margin-top: -6%;
   }
 
   .companiesGrid {
@@ -520,12 +570,12 @@
   }
 
   .ctaButtons {
-    max-width: 100%;
+    max-width: 200px;
     gap: 10px;
   }
 
   .badge {
-    min-width: 180px;
+    max-width: 1rem;
     padding: 4px 11px;
   }
 
@@ -566,6 +616,7 @@
 
   .content {
     gap: 16px;
+    margin-top: -25%;
   }
 
   .title {
@@ -574,6 +625,10 @@
 
   .subtitle {
     font-size: 0.875rem;
+  }
+
+  .titleWrapper {
+    padding: 0 0.5rem;
   }
 
   .badge {
@@ -603,7 +658,7 @@
 
   .companiesGrid {
     gap: 12px 16px;
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .companyLogo {
