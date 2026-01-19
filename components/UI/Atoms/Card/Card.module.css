@@ -210,10 +210,10 @@
   .card {
     display: flex;
     width: 164px;
-    height: 191.096px;
-    padding: 16.828px 9.127px;
+    height: 199.096px;
+    /* padding: 16.828px 9.127px; */
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border-radius: 0 0 42.783px 0;
     background: #222429;
@@ -221,11 +221,13 @@
   }
 
 .card:hover {
-  width: 164px; /* Match the base width */
-  height: 191.096px; /* Match the base height */
+  width: 180px; /* Match the base width */
+  height: 200px; /* Match the base height */
   border: 2px solid var(--Primary, #D04A1D);
-  transform: none;
+  transform: translateY(-5px) scale(1.02);
+  border-radius: 0 0 45px 0;
   box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease-in-out; 
 }
 
   .iconWrapper {
@@ -298,13 +300,27 @@
     width: 100%;
     max-width: 220px;
     height: 260px;
-    padding: 20px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #D04A1D; */
+    /* padding: 20px 12px; */
+    /* padding-left: 0%; */
+    border-radius: 0 0 45px 0;
   }
 
   .card:hover {
-    width: 100%;
+    /* width: 100%;
     max-width: 240px;
-    height: 280px;
+    height: 280px; */
+    width: 400px; /* Match the base width */
+    height: 270px; /* Match the base height */
+    border: 3px solid var(--Primary, #D04A1D);
+    transform: translateY(-5px) scale(1.02);
+    border-radius: 0 0 45px 0;
+    box-shadow: 3px 3px 18px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease-in-out; 
   }
 
   .iconWrapper {
@@ -317,6 +333,16 @@
   }
 
   .description {
+    width: 100%;
+    text-align: start;
     font-size: 14px;
+    /* background-color: blue; */
+    height: auto;
+    box-sizing: border-box;
+    /* padding: 12px; */
+    color: #fff;
+    border-radius: 8px;
+    line-height: 1.5;
+    margin: 10px 0;
   }
 }

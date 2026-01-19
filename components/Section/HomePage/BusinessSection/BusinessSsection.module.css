@@ -98,6 +98,14 @@ text-transform: capitalize;
     align-self: stretch;
 }
 
+/* Card Border Radius for Responsive Views */
+@media (max-width: 1024px) {
+  .servicesGrid :global(.card),
+  .servicesGrid :global(.directionCard) {
+    border-radius: 0 45px 0 0 !important;
+  }
+}
+
 /* Tablet - 1024px */
 @media (max-width: 1024px) {
     .servicesSection {
@@ -121,6 +129,13 @@ text-transform: capitalize;
 }
 
 /* Tablet - 768px */
+@media (max-width: 768px) {
+  .servicesGrid :global(.card),
+  .servicesGrid :global(.directionCard) {
+    border-radius: 0 45px 0 0 !important;
+  }
+}
+
 @media (max-width: 768px) {
     .servicesSection {
         padding: 30px 0px;
@@ -153,6 +168,13 @@ text-transform: capitalize;
 
 /* Mobile - 425px */
 @media (max-width: 425px) {
+  .servicesGrid :global(.card),
+  .servicesGrid :global(.directionCard) {
+    border-radius: 0 45px 0 0 !important;
+  }
+}
+
+@media (max-width: 425px) {
     .servicesSection {
         padding: 24px 16px;
         height: auto;
@@ -170,15 +192,6 @@ text-transform: capitalize;
         padding: 0 10px;
     }
     
-    /* .servicesGrid {
-      background-color: red;
-      height: auto;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 14px;
-    } */
-
     .servicesGrid {
     display: grid;
     height: auto;
@@ -201,6 +214,13 @@ text-transform: capitalize;
 }
 
 /* Mobile - 375px */
+@media (max-width: 375px) {
+  .servicesGrid :global(.card),
+  .servicesGrid :global(.directionCard) {
+    border-radius: 0 45px 0 0 !important;
+  }
+}
+
 @media (max-width: 375px) {
     .servicesSection {
         padding: 20px 12px;
