@@ -6,17 +6,13 @@ export interface BackgroundProps {
 
 // Hexagon Props Interface  the animation at home page
 export interface HexagonProps {
-  width: number;
-  height: number;
   direction: "left" | "right";
   position: "up" | "down";
   className?: string;
 }
 
-// Cicle Props Interface
+// Circle Props Interface
 export interface CircleProps {
-  width: number;
-  height: number;
   direction: "left" | "right";
   position: "up" | "down";
   className?: string;

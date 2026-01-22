@@ -2,7 +2,7 @@
 .history_card {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 30rem;
   min-height: 100%;
   margin-left: 0; /* Changed from -18% */
   display: flex;
@@ -11,21 +11,21 @@
   justify-content: center;
 
   background: var(--color-azure-1730, rgba(31, 41, 55, 0.3));
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 32px;
+  backdrop-filter: blur(0.625rem);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.05);
+  border-radius: 2rem;
   padding: 4rem 3rem;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0.625rem 2.5rem rgba(0, 0, 0, 0.5),
+    inset 0 0.0625rem 0 rgba(255, 255, 255, 0.05);
 }
 
 .history_card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(249, 115, 22, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-0.5rem);
+  box-shadow: 0 1.25rem 3.75rem rgba(0, 0, 0, 0.6), 0 0 2.5rem rgba(249, 115, 22, 0.15),
+    inset 0 0.0625rem 0 rgba(255, 255, 255, 0.08);
   border-color: rgba(249, 115, 22, 0.2);
 }
 
@@ -64,19 +64,19 @@
 .circle {
   position: absolute;
   opacity: 0.04;
-  filter: blur(2px);
+  filter: blur(0.125rem);
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .circle_1 {
-  top: -100px;
-  left: -100px;
+  top: -6.25rem;
+  left: -6.25rem;
   animation: rotate-float-1 25s infinite;
 }
 
 .circle_2 {
-  bottom: -80px;
-  right: -80px;
+  bottom: -5rem;
+  right: -5rem;
   animation: rotate-float-2 30s infinite;
 }
 
@@ -110,20 +110,20 @@
 
 .icon_background {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   background: linear-gradient(
     135deg,
     rgba(249, 115, 22, 0.2) 0%,
     rgba(234, 88, 12, 0.15) 100%
   );
-  border-radius: 20px;
+  border-radius: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0.25rem 1.25rem rgba(249, 115, 22, 0.25),
+    inset 0 0.0625rem 0 rgba(255, 255, 255, 0.1);
 }
 
 .history_card:hover .icon_background {
@@ -132,17 +132,17 @@
     rgba(249, 115, 22, 0.3) 0%,
     rgba(234, 88, 12, 0.25) 100%
   );
-  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0.5rem 1.875rem rgba(249, 115, 22, 0.4),
+    inset 0 0.0625rem 0 rgba(255, 255, 255, 0.15);
   transform: scale(1.05);
 }
 
 .icon_background::before {
   content: "";
   position: absolute;
-  inset: -2px;
-  border-radius: 20px;
-  padding: 2px;
+  inset: -0.125rem;
+  border-radius: 1.25rem;
+  padding: 0.125rem;
   background: linear-gradient(
     135deg,
     rgba(249, 115, 22, 0.4) 0%,
@@ -214,13 +214,13 @@
     transform: translate(0, 0) rotate(0deg);
   }
   25% {
-    transform: translate(30px, 30px) rotate(90deg);
+    transform: translate(1.875rem, 1.875rem) rotate(90deg);
   }
   50% {
-    transform: translate(0, 60px) rotate(180deg);
+    transform: translate(0, 3.75rem) rotate(180deg);
   }
   75% {
-    transform: translate(-30px, 30px) rotate(270deg);
+    transform: translate(-1.875rem, 1.875rem) rotate(270deg);
   }
 }
 
@@ -230,10 +230,10 @@
     transform: translate(0, 0) rotate(0deg);
   }
   33% {
-    transform: translate(-40px, -40px) rotate(120deg);
+    transform: translate(-2.5rem, -2.5rem) rotate(120deg);
   }
   66% {
-    transform: translate(-80px, 0) rotate(240deg);
+    transform: translate(-5rem, 0) rotate(240deg);
   }
 }
 
@@ -253,14 +253,14 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-0.625rem);
   }
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(1.875rem);
   }
   to {
     opacity: 1;
@@ -269,15 +269,15 @@
 }
 
 /* Responsive */
-@media (max-width: 1200px) {
+@media (max-width: 75rem) {
   .history_card {
-    max-width: 420px;
+    max-width: 26.25rem;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   .history_card {
-    max-width: 380px;
+    max-width: 23.75rem;
     padding: 3.5rem 2.5rem;
   }
   
@@ -286,24 +286,24 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .history_card {
-    min-height: 500px;
+    min-height: 31.25rem;
     padding: 3rem 2rem;
-    border-radius: 24px;
-    max-width: 400px;
+    border-radius: 1.5rem;
+    max-width: 25rem;
     margin-left: 0;
   }
 
   .icon_background {
-    width: 70px;
-    height: 70px;
-    border-radius: 18px;
+    width: 4.375rem;
+    height: 4.375rem;
+    border-radius: 1.125rem;
   }
 
   .icon {
-    width: 35px;
-    height: 35px;
+    width: 2.1875rem;
+    height: 2.1875rem;
   }
 
   .title {
@@ -315,11 +315,11 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .history_card {
-    min-height: 450px;
+    min-height: 28.125rem;
     padding: 2.5rem 1.5rem;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     margin: 0;
   }
 
@@ -328,14 +328,14 @@
   }
 
   .icon_background {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 1rem;
   }
 
   .icon {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
   }
 
   .title {

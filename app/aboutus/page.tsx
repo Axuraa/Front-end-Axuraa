@@ -1,5 +1,5 @@
 import React from "react";
-import AboutUs from "@/pages/AboutUs/AboutUs"
+import AboutUs from "@/components/pages/AboutUs/AboutUs"
 
 export default function AboutUsPage() {
     return (

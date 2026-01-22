@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import React from 'react';
 
 const CaseStudyPage = dynamic(
-  () => import('@/pages/CaseStudyPage/CaseStudyPage'),
+  () => import('@/components/pages/CaseStudyPage/CaseStudyPage'),
   { 
     ssr: false,
     loading: () => <div>Loading...</div>

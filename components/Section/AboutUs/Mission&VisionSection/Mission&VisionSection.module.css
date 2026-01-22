@@ -8,7 +8,7 @@
   overflow: hidden;
   background: #191b1f;
   margin-top: -13%;
-  border-top: #383839 solid 1px;
+  border-top: #383839 solid 0.0625rem;
   width: 100%;
   display: flex;
     flex-direction: row;
@@ -19,7 +19,7 @@
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 80rem;
   margin: 0 auto;
   /* padding: 0 40px; */
   position: relative;
@@ -29,10 +29,10 @@
 /* Animated Circle Background */
 .circleWrapper {
   position: absolute;
-  top: -100px;
-  right: -100px;
-  width: 400px;
-  height: 400px;
+  top: -6.25rem;
+  right: -6.25rem;
+  width: 25rem;
+  height: 25rem;
   pointer-events: none;
   z-index: 1;
 }
@@ -42,7 +42,7 @@
   height: 100%;
   opacity: 0.15;
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: blur(1px);
+  filter: blur(0.0625rem);
 }
 
 /* Scale circle on section hover */
@@ -53,7 +53,7 @@
 /* Cards Grid */
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
   gap: 6%;
   margin: 0 6%;
   align-items: stretch;
@@ -74,7 +74,7 @@
 } */
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   /* .section {
     padding: 60px 0 100px;
   } */
@@ -84,59 +84,59 @@
   } */
 
   .circleWrapper {
-    width: 350px;
-    height: 350px;
-    top: -80px;
-    right: -80px;
+    width: 21.875rem;
+    height: 21.875rem;
+    top: -5rem;
+    right: -5rem;
   }
 
   .cardsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-    gap: 28px;
+    grid-template-columns: repeat(auto-fit, minmax(21.25rem, 1fr));
+    gap: 1.75rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .section {
-    padding: 50px 0 80px;
+    padding: 3.125rem 0 5rem;
   }
 
   .container {
-    padding: 0 24px;
+    padding: 0 1.5rem;
   }
 
   .circleWrapper {
-    width: 300px;
-    height: 300px;
-    top: -60px;
-    right: -60px;
+    width: 18.75rem;
+    height: 18.75rem;
+    top: -3.75rem;
+    right: -3.75rem;
   }
 
   .cardsGrid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 1.5rem;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .section {
-    padding: 40px 0 60px;
+    padding: 2.5rem 0 3.75rem;
   }
 
   .container {
-    padding: 0 20px;
+    padding: 0 1.25rem;
   }
 
   .circleWrapper {
-    width: 250px;
-    height: 250px;
-    top: -50px;
-    right: -50px;
+    width: 15.625rem;
+    height: 15.625rem;
+    top: -3.125rem;
+    right: -3.125rem;
     
   }
 
   .cardsGrid {
-    gap: 20px;
+    gap: 1.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -153,7 +153,7 @@
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(1.25rem);
   }
   100% {
     opacity: 1;
