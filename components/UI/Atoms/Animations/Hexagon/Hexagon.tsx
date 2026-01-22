@@ -3,12 +3,9 @@ import HexagonSVG from "@/public/assets/shap_1.svg";
 import styles from "./Hexagon.module.css";
 import { HexagonProps } from "@/types/Generals/backgroundTypes";
 
-const Hexagon: React.FC<HexagonProps> = ({ width, height, direction, position, className }) => {
+const Hexagon: React.FC<HexagonProps> = ({ direction, position, className }) => {
   return (
-    <div
-      className={`${styles.hexagonContainer} ${className || ''}`}
-      style={{ width, height }}
-    >
+    <div className={`${styles.hexagonContainer} ${className || ''}`}>
       <Image
         src={HexagonSVG}
         alt="hexagon"

@@ -2,7 +2,7 @@
 
 .teamSection {
   width: 100%;
-  padding: 80px 6%;
+  padding: 5rem 6%;
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -16,14 +16,14 @@
 
 .header {
   text-align: center;
-  margin-bottom: 60px;
-  max-width: 900px;
+  margin-bottom: 3.75rem;
+  max-width: 56.25rem;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   flex-direction: column;
 }
 
@@ -32,12 +32,12 @@
   display: inline-flex;
   justify-self: center; 
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .teamGrid {
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
   justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
@@ -46,83 +46,81 @@
 /* Responsive adjustments */
 
 /* Large Desktop (1440px and above) - Single row */
-@media (min-width: 1440px) {
+@media (min-width: 90rem) {
   .teamSection {
-    padding: 80px 6%;
+    padding: 5rem 6%;
   }
 
   .teamGrid {
-    gap: 28px;
+    gap: 1.75rem;
     flex-wrap: nowrap;
   }
 
-  
-
   .header {
-    margin-bottom: 70px;
+    margin-bottom: 4.375rem;
   }
 }
 
 /* Desktop (1025px - 1439px) - Single row */
-@media (min-width: 1025px) and (max-width: 1439px) {
+@media (min-width: 64.0625rem) and (max-width: 89.9375rem) {
   .teamSection {
-    padding: 70px 6%;
+    padding: 4.375rem 6%;
   }
 
   .teamGrid {
-    gap: 24px;
+    gap: 1.5rem;
     flex-wrap: nowrap;
   }
 
   .header {
-    margin-bottom: 60px;
+    margin-bottom: 3.75rem;
   }
 }
 
 /* Tablets (769px - 1024px) - Single row with smaller cards */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 48.0625rem) and (max-width: 64rem) {
   .teamSection {
-    padding: 60px 6%;
+    padding: 0.5rem 6%;
   }
 
   .teamGrid {
-    gap: 20px;
+    gap: 1.25rem;
     flex-wrap: nowrap;
   }
 
   .header {
-    margin-bottom: 50px;
+    margin-bottom: 0;
   }
 }
 
 /* Tablets and Mobile (below 768px) - 2 columns grid */
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .teamSection {
-    padding: 60px 6%;
+    padding: 3.75rem 6%;
   }
 
   .header {
-    margin-bottom: 40px;
+    margin-bottom: 2.5rem;
   }
   
   .teamGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 400px;
+    gap: 1.25rem;
+    max-width: 25rem;
     margin: 0 auto;
   }
   .teamGrid > *:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
-    max-width: 180px; /* Adjust based on your TeamCard width */
+    max-width: 11.25rem; /* Adjust based on your TeamCard width */
   }
 }
 
 /* Small mobile (below 480px) - 2 columns grid, smaller */
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .teamSection {
-    padding: 50px 6%;
+    padding: 0.25rem 6%;
     justify-self: center;
     align-self: center;
     /* margin-left: 5%;
@@ -130,21 +128,32 @@
   }
 
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 0rem;
     /* margin-left: -5%; */
     /* margin-right: -5%; */
     max-width: 100%;
     text-align: center;
   }
+  .badge{
+    margin-bottom: 0rem;
+    display: inline-flex;
+    justify-self: center; 
+    align-items: center;
+    /* gap: 0.5rem; */
+  }
 
   .teamGrid {
-    gap: 16px;
+    gap: 1.25rem;
     max-width: 100%;
-    margin-left: 6%;
+    /* margin-left: 6%; */
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    justify-content: center;
   }
   .teamGrid > *:last-child:nth-child(odd) {
     grid-column: 1 / -1;
     justify-self: center;
-    max-width: 160px; /* Adjust for smaller screens */
+    max-width: 10rem; /* Adjust for smaller screens */
   }
 }

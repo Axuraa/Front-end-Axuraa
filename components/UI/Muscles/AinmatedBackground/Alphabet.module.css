@@ -4,45 +4,45 @@
   height: 100%;
 
   /* Default desktop positions */
-  --letter-a1-x: 100px;
-  --letter-a1-y: 340px;
-  --letter-a1-size: 200px;
+  --letter-a1-x: 6.25rem;
+  --letter-a1-y: 21.25rem;
+  --letter-a1-size: 12.5rem;
 
-  --letter-a2-x: 1200px;
-  --letter-a2-y: 130px;
-  --letter-a2-size: 200px;
+  --letter-a2-x: 75rem;
+  --letter-a2-y: 8.125rem;
+  --letter-a2-size: 12.5rem;
 
-  --letter-r1-x: 1200px;
-  --letter-r1-y: 150px;
-  --letter-r1-size: 220px;
+  --letter-r1-x: 75rem;
+  --letter-r1-y: 9.375rem;
+  --letter-r1-size: 13.75rem;
 
-  --letter-r2-x: 110px;
-  --letter-r2-y: 490px;
-  --letter-r2-size: 220px;
+  --letter-r2-x: 6.875rem;
+  --letter-r2-y: 30.625rem;
+  --letter-r2-size: 13.75rem;
 
-  --letter-x-x: 300px;
-  --letter-x-y: 560px;
-  --letter-x-target-x: 1050px;
-  --letter-x-target-y: 560px;
-  --letter-x-size: 180px;
+  --letter-x-x: 18.75rem;
+  --letter-x-y: 35rem;
+  --letter-x-target-x: 65.625rem;
+  --letter-x-target-y: 35rem;
+  --letter-x-size: 11.25rem;
 
-  --letter-u-x: 1300px;
-  --letter-u-y: 420px;
-  --letter-u-target-x: 180px;
-  --letter-u-target-y: 180px;
-  --letter-u-size: 120px;
+  --letter-u-x: 81.25rem;
+  --letter-u-y: 26.25rem;
+  --letter-u-target-x: 11.25rem;
+  --letter-u-target-y: 11.25rem;
+  --letter-u-size: 7.5rem;
 
-  --letter-q1-x: 1100px;
-  --letter-q1-y: 590px;
-  --letter-q1-target-x: 680px;
-  --letter-q1-target-y: 157px;
-  --letter-q1-size: 120px;
+  --letter-q1-x: 68.75rem;
+  --letter-q1-y: 36.875rem;
+  --letter-q1-target-x: 42.5rem;
+  --letter-q1-target-y: 9.8125rem;
+  --letter-q1-size: 7.5rem;
 
-  --letter-q2-x: 230px;
-  --letter-q2-y: 180px;
-  --letter-q2-target-x: 780px;
-  --letter-q2-target-y: 600px;
-  --letter-q2-size: 120px;
+  --letter-q2-x: 14.375rem;
+  --letter-q2-y: 11.25rem;
+  --letter-q2-target-x: 48.75rem;
+  --letter-q2-target-y: 37.5rem;
+  --letter-q2-size: 7.5rem;
 }
 
 /* Letter A - Appears: fade out, move, fade in */
@@ -143,267 +143,267 @@
   opacity: 1;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 90rem) {
   .alphabetContainer {
-    --letter-a1-x: 10px;
-    --letter-a1-y: 340px;
-    --letter-a1-size: 200px;
+    --letter-a1-x: 0.625rem;
+    --letter-a1-y: 21.25rem;
+    --letter-a1-size: 12.5rem;
 
-    --letter-a2-x: 1000px;
-    --letter-a2-y: 130px;
-    --letter-a2-size: 200px;
+    --letter-a2-x: 62.5rem;
+    --letter-a2-y: 8.125rem;
+    --letter-a2-size: 12.5rem;
 
-    --letter-r1-x: 1000px;
-    --letter-r1-y: 150px;
-    --letter-r1-size: 220px;
+    --letter-r1-x: 62.5rem;
+    --letter-r1-y: 9.375rem;
+    --letter-r1-size: 13.75rem;
 
-    --letter-r2-x: 0px;
-    --letter-r2-y: 490px;
-    --letter-r2-size: 220px;
+    --letter-r2-x: 0rem;
+    --letter-r2-y: 30.625rem;
+    --letter-r2-size: 13.75rem;
 
-    --letter-x-x: 200px;
-    --letter-x-y: 510px;
-    --letter-x-target-x: 1050px;
-    --letter-x-target-y: 510px;
-    --letter-x-size: 180px;
+    --letter-x-x: 12.5rem;
+    --letter-x-y: 31.875rem;
+    --letter-x-target-x: 65.625rem;
+    --letter-x-target-y: 31.875rem;
+    --letter-x-size: 11.25rem;
 
-    --letter-u-x: 1100px;
-    --letter-u-y: 420px;
-    --letter-u-target-x: 80px;
-    --letter-u-target-y: 130px;
-    --letter-u-size: 120px;
+    --letter-u-x: 68.75rem;
+    --letter-u-y: 26.25rem;
+    --letter-u-target-x: 5rem;
+    --letter-u-target-y: 8.125rem;
+    --letter-u-size: 7.5rem;
 
-    --letter-q1-x: 950px;
-    --letter-q1-y: 590px;
-    --letter-q1-target-x: 530px;
-    --letter-q1-target-y: 157px;
-    --letter-q1-size: 120px;
+    --letter-q1-x: 59.375rem;
+    --letter-q1-y: 36.875rem;
+    --letter-q1-target-x: 33.125rem;
+    --letter-q1-target-y: 9.8125rem;
+    --letter-q1-size: 7.5rem;
 
-    --letter-q2-x: 80px;
-    --letter-q2-y: 180px;
-    --letter-q2-target-x: 630px;
-    --letter-q2-target-y: 600px;
-    --letter-q2-size: 120px;
+    --letter-q2-x: 5rem;
+    --letter-q2-y: 11.25rem;
+    --letter-q2-target-x: 39.375rem;
+    --letter-q2-target-y: 37.5rem;
+    --letter-q2-size: 7.5rem;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   .alphabetContainer {
-    --letter-a1-x: -50px;
-    --letter-a1-y: 300px;
-    --letter-a1-size: 150px;
+    --letter-a1-x: -3.125rem;
+    --letter-a1-y: 18.75rem;
+    --letter-a1-size: 9.375rem;
 
-    --letter-a2-x: 750px;
-    --letter-a2-y: 80px;
-    --letter-a2-size: 150px;
+    --letter-a2-x: 46.875rem;
+    --letter-a2-y: 5rem;
+    --letter-a2-size: 9.375rem;
 
-    --letter-r1-x: 750px;
-    --letter-r1-y: 80px;
-    --letter-r1-size: 170px;
+    --letter-r1-x: 46.875rem;
+    --letter-r1-y: 5rem;
+    --letter-r1-size: 10.625rem;
 
-    --letter-r2-x: -50px;
-    --letter-r2-y: 350px;
-    --letter-r2-size: 160px;
+    --letter-r2-x: -3.125rem;
+    --letter-r2-y: 21.875rem;
+    --letter-r2-size: 10rem;
 
-    --letter-x-x: 50px;
-    --letter-x-y: 480px;
-    --letter-x-target-x: 700px;
-    --letter-x-target-y: 480px;
-    --letter-x-size: 130px;
+    --letter-x-x: 3.125rem;
+    --letter-x-y: 30rem;
+    --letter-x-target-x: 43.75rem;
+    --letter-x-target-y: 30rem;
+    --letter-x-size: 8.125rem;
 
-    --letter-u-x: 810px;
-    --letter-u-y: 320px;
-    --letter-u-target-x: 60px;
-    --letter-u-target-y: 130px;
-    --letter-u-size: 90px;
+    --letter-u-x: 50.625rem;
+    --letter-u-y: 20rem;
+    --letter-u-target-x: 3.75rem;
+    --letter-u-target-y: 8.125rem;
+    --letter-u-size: 5.625rem;
 
-    --letter-q1-x: 730px;
-    --letter-q1-y: 460px;
-    --letter-q1-target-x: 540px;
-    --letter-q1-target-y: 137px;
-    --letter-q1-size: 80px;
+    --letter-q1-x: 45.625rem;
+    --letter-q1-y: 28.75rem;
+    --letter-q1-target-x: 33.75rem;
+    --letter-q1-target-y: 8.5625rem;
+    --letter-q1-size: 5rem;
 
-    --letter-q2-x: 10px;
-    --letter-q2-y: 110px;
-    --letter-q2-target-x: 500px;
-    --letter-q2-target-y: 500px;
-    --letter-q2-size: 80px;
+    --letter-q2-x: 0.625rem;
+    --letter-q2-y: 6.875rem;
+    --letter-q2-target-x: 31.25rem;
+    --letter-q2-target-y: 31.25rem;
+    --letter-q2-size: 5rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .alphabetContainer {
-    --letter-a1-x: -50px;
-    --letter-a1-y: 200px;
-    --letter-a1-size: 110px;
+    --letter-a1-x: -3.125rem;
+    --letter-a1-y: 12.5rem;
+    --letter-a1-size: 6.875rem;
 
-    --letter-a2-x: 550px;
-    --letter-a2-y: 60px;
-    --letter-a2-size: 110px;
+    --letter-a2-x: 34.375rem;
+    --letter-a2-y: 3.75rem;
+    --letter-a2-size: 6.875rem;
 
-    --letter-r1-x: 550px;
-    --letter-r1-y: 50px;
-    --letter-r1-size: 130px;
+    --letter-r1-x: 34.375rem;
+    --letter-r1-y: 3.125rem;
+    --letter-r1-size: 8.125rem;
 
-    --letter-r2-x: -50px;
-    --letter-r2-y: 210px;
-    --letter-r2-size: 130px;
+    --letter-r2-x: -3.125rem;
+    --letter-r2-y: 13.125rem;
+    --letter-r2-size: 8.125rem;
 
-    --letter-x-x: 60px;
-    --letter-x-y: 340px;
-    --letter-x-target-x: 500px;
-    --letter-x-target-y: 340px;
-    --letter-x-size: 100px;
+    --letter-x-x: 3.75rem;
+    --letter-x-y: 21.25rem;
+    --letter-x-target-x: 31.25rem;
+    --letter-x-target-y: 21.25rem;
+    --letter-x-size: 6.25rem;
 
-    --letter-u-x: 570px;
-    --letter-u-y: 190px;
-    --letter-u-target-x: 40px;
-    --letter-u-target-y: 100px;
-    --letter-u-size: 70px;
+    --letter-u-x: 35.625rem;
+    --letter-u-y: 11.875rem;
+    --letter-u-target-x: 2.5rem;
+    --letter-u-target-y: 6.25rem;
+    --letter-u-size: 4.375rem;
 
-    --letter-q1-x: 500px;
-    --letter-q1-y: 320px;
-    --letter-q1-target-x: 370px;
-    --letter-q1-target-y: 70px;
-    --letter-q1-size: 70px;
+    --letter-q1-x: 31.25rem;
+    --letter-q1-y: 20rem;
+    --letter-q1-target-x: 23.125rem;
+    --letter-q1-target-y: 4.375rem;
+    --letter-q1-size: 4.375rem;
 
-    --letter-q2-x: 40px;
-    --letter-q2-y: 100px;
-    --letter-q2-target-x: 340px;
-    --letter-q2-target-y: 340px;
-    --letter-q2-size: 70px;
+    --letter-q2-x: 2.5rem;
+    --letter-q2-y: 6.25rem;
+    --letter-q2-target-x: 21.25rem;
+    --letter-q2-target-y: 21.25rem;
+    --letter-q2-size: 4.375rem;
   }
 }
 
 /* Mobile */
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
   .alphabetContainer {
-    --letter-a1-x: -50px;
-    --letter-a1-y: 180px;
-    --letter-a1-size: 90px;
+    --letter-a1-x: -3.125rem;
+    --letter-a1-y: 11.25rem;
+    --letter-a1-size: 5.625rem;
 
-    --letter-a2-x: 265px;
-    --letter-a2-y: 40px;
-    --letter-a2-size: 100px;
+    --letter-a2-x: 16.5625rem;
+    --letter-a2-y: 2.5rem;
+    --letter-a2-size: 6.25rem;
 
-    --letter-r1-x: 265px;
-    --letter-r1-y: 40px;
-    --letter-r1-size: 110px;
+    --letter-r1-x: 16.5625rem;
+    --letter-r1-y: 2.5rem;
+    --letter-r1-size: 6.875rem;
 
-    --letter-r2-x: -50px;
-    --letter-r2-y: 190px;
-    --letter-r2-size: 110px;
+    --letter-r2-x: -3.125rem;
+    --letter-r2-y: 11.875rem;
+    --letter-r2-size: 6.875rem;
 
-    --letter-x-x: 10px;
-    --letter-x-y: 310px;
-    --letter-x-target-x: 280px;
-    --letter-x-target-y: 310px;
-    --letter-x-size: 100px;
+    --letter-x-x: 0.625rem;
+    --letter-x-y: 19.375rem;
+    --letter-x-target-x: 17.5rem;
+    --letter-x-target-y: 19.375rem;
+    --letter-x-size: 6.25rem;
 
-    --letter-u-x: 320px;
-    --letter-u-y: 200px;
-    --letter-u-target-x: 25px;
-    --letter-u-target-y: 50px;
-    --letter-u-size: 60px;
+    --letter-u-x: 20rem;
+    --letter-u-y: 12.5rem;
+    --letter-u-target-x: 1.5625rem;
+    --letter-u-target-y: 3.125rem;
+    --letter-u-size: 3.75rem;
 
-    --letter-q1-x: 270px;
-    --letter-q1-y: 300px;
-    --letter-q1-target-x: 200px;
-    --letter-q1-target-y: 60px;
-    --letter-q1-size: 60px;
+    --letter-q1-x: 16.875rem;
+    --letter-q1-y: 18.75rem;
+    --letter-q1-target-x: 12.5rem;
+    --letter-q1-target-y: 3.75rem;
+    --letter-q1-size: 3.75rem;
 
-    --letter-q2-x: 60px;
-    --letter-q2-y: 50px;
-    --letter-q2-target-x: 100px;
-    --letter-q2-target-y: 340px;
-    --letter-q2-size: 60px;
+    --letter-q2-x: 3.75rem;
+    --letter-q2-y: 3.125rem;
+    --letter-q2-target-x: 6.25rem;
+    --letter-q2-target-y: 21.25rem;
+    --letter-q2-size: 3.75rem;
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 23.75rem) {
   .alphabetContainer {
-    --letter-a1-x: -50px;
-    --letter-a1-y: 170px;
-    --letter-a1-size: 100px;
+    --letter-a1-x: -3.125rem;
+    --letter-a1-y: 10.625rem;
+    --letter-a1-size: 6.25rem;
 
-    --letter-a2-x: 225px;
-    --letter-a2-y: 40px;
-    --letter-a2-size: 100px;
+    --letter-a2-x: 14.0625rem;
+    --letter-a2-y: 2.5rem;
+    --letter-a2-size: 6.25rem;
 
-    --letter-r1-x: 225px;
-    --letter-r1-y: 40px;
-    --letter-r1-size: 110px;
+    --letter-r1-x: 14.0625rem;
+    --letter-r1-y: 2.5rem;
+    --letter-r1-size: 6.875rem;
 
-    --letter-r2-x: -50px;
-    --letter-r2-y: 170px;
-    --letter-r2-size: 110px;
+    --letter-r2-x: -3.125rem;
+    --letter-r2-y: 10.625rem;
+    --letter-r2-size: 6.875rem;
 
-    --letter-x-x: 10px;
-    --letter-x-y: 310px;
-    --letter-x-target-x: 240px;
-    --letter-x-target-y: 310px;
-    --letter-x-size: 100px;
+    --letter-x-x: 0.625rem;
+    --letter-x-y: 19.375rem;
+    --letter-x-target-x: 15rem;
+    --letter-x-target-y: 19.375rem;
+    --letter-x-size: 6.25rem;
 
-    --letter-u-x: 270px;
-    --letter-u-y: 200px;
-    --letter-u-target-x: 25px;
-    --letter-u-target-y: 80px;
-    --letter-u-size: 60px;
+    --letter-u-x: 16.875rem;
+    --letter-u-y: 12.5rem;
+    --letter-u-target-x: 1.5625rem;
+    --letter-u-target-y: 5rem;
+    --letter-u-size: 3.75rem;
 
-    --letter-q1-x: 200px;
-    --letter-q1-y: 300px;
-    --letter-q1-target-x: 180px;
-    --letter-q1-target-y: 60px;
-    --letter-q1-size: 60px;
+    --letter-q1-x: 12.5rem;
+    --letter-q1-y: 18.75rem;
+    --letter-q1-target-x: 11.25rem;
+    --letter-q1-target-y: 3.75rem;
+    --letter-q1-size: 3.75rem;
 
-    --letter-q2-x: 60px;
-    --letter-q2-y: 50px;
-    --letter-q2-target-x: 100px;
-    --letter-q2-target-y: 320px;
-    --letter-q2-size: 60px;
+    --letter-q2-x: 3.75rem;
+    --letter-q2-y: 3.125rem;
+    --letter-q2-target-x: 6.25rem;
+    --letter-q2-target-y: 20rem;
+    --letter-q2-size: 3.75rem;
   }
 }
 
-@media (max-width: 325px) {
+@media (max-width: 20.3125rem) {
   .alphabetContainer {
-    --letter-a1-x: -40px;
-    --letter-a1-y: 190px;
-    --letter-a1-size: 90px;
+    --letter-a1-x: -2.5rem;
+    --letter-a1-y: 11.875rem;
+    --letter-a1-size: 5.625rem;
 
-    --letter-a2-x: 190px;
-    --letter-a2-y: 40px;
-    --letter-a2-size: 90px;
+    --letter-a2-x: 11.875rem;
+    --letter-a2-y: 2.5rem;
+    --letter-a2-size: 5.625rem;
 
-    --letter-r1-x: 190px;
-    --letter-r1-y: 40px;
-    --letter-r1-size: 100px;
+    --letter-r1-x: 11.875rem;
+    --letter-r1-y: 2.5rem;
+    --letter-r1-size: 6.25rem;
 
-    --letter-r2-x: -40px;
-    --letter-r2-y: 190px;
-    --letter-r2-size: 100px;
+    --letter-r2-x: -2.5rem;
+    --letter-r2-y: 11.875rem;
+    --letter-r2-size: 6.25rem;
 
-    --letter-x-x: 10px;
-    --letter-x-y: 310px;
-    --letter-x-target-x: 200px;
-    --letter-x-target-y: 310px;
-    --letter-x-size: 90px;
+    --letter-x-x: 0.625rem;
+    --letter-x-y: 19.375rem;
+    --letter-x-target-x: 12.5rem;
+    --letter-x-target-y: 19.375rem;
+    --letter-x-size: 5.625rem;
 
-    --letter-u-x: 240px;
-    --letter-u-y: 190px;
-    --letter-u-target-x: 25px;
-    --letter-u-target-y: 80px;
-    --letter-u-size: 55px;
+    --letter-u-x: 15rem;
+    --letter-u-y: 11.875rem;
+    --letter-u-target-x: 1.5625rem;
+    --letter-u-target-y: 5rem;
+    --letter-u-size: 3.4375rem;
 
-    --letter-q1-x: 200px;
-    --letter-q1-y: 300px;
-    --letter-q1-target-x: 130px;
-    --letter-q1-target-y: 60px;
-    --letter-q1-size: 55px;
+    --letter-q1-x: 12.5rem;
+    --letter-q1-y: 18.75rem;
+    --letter-q1-target-x: 8.125rem;
+    --letter-q1-target-y: 3.75rem;
+    --letter-q1-size: 3.4375rem;
 
-    --letter-q2-x: 60px;
-    --letter-q2-y: 50px;
-    --letter-q2-target-x: 60px;
-    --letter-q2-target-y: 320px;
-    --letter-q2-size: 55px;
+    --letter-q2-x: 3.75rem;
+    --letter-q2-y: 3.125rem;
+    --letter-q2-target-x: 3.75rem;
+    --letter-q2-target-y: 20rem;
+    --letter-q2-size: 3.4375rem;
   }
 }

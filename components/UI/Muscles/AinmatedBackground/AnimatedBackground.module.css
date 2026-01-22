@@ -14,11 +14,18 @@
   top: -15%;
 }
 
+.Hexa_1,
+.Hexa_2 {
+  width: clamp(12rem, 30vw, 28rem);
+  aspect-ratio: 1 / 1;
+}
+
 /* Hexagon 1 - Top Left (closer to corner) */
 .Hexa_1 {
   position: absolute;
-  right: -61%;
-  transform: rotate(-180deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(30%, -90%) rotate(-180deg);
   transition: transform 2s ease-in-out, opacity 2s ease-in-out;
   opacity: 0.6;
 }
@@ -26,21 +33,21 @@
 /* Hexagon 2 - Top Left (offset from first) */
 .Hexa_2 {
   position: absolute;
-  top: 10%;
-  /* left: -10%; */
-  transform: rotate(150deg);
+  top: 50%;
+  left: 50%;
+  transform: translate(-160%, -90%) rotate(-180deg);
   transition: transform 2s ease-in-out, opacity 2s ease-in-out;
   opacity: 0.7;
 }
 
 /* Hover Effects - Smooth rotation changes */
 .animatedBackground.hovered .Hexa_1 {
-  transform: rotate(90deg) scale(1.05);
+  transform: translate(30%, -90%) rotate(90deg) scale(1.05);
   opacity: 0.5;
 }
 
 .animatedBackground.hovered .Hexa_2 {
-  transform: rotate(-80deg) scale(1.08);
+  transform: translate(-160%, -90%) rotate(-80deg) scale(1.08);
   opacity: 0.6;
 }
 
@@ -81,7 +88,7 @@
   opacity: 0.6;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) {
   .Hexa_1 {
     top: -20%;
     right: -75%;
@@ -93,17 +100,15 @@
   .Circle_1{
     left: -70%;
   }
-
   .animatedBackground.hovered .Circle_1 {
     transform: translateY(-200%) scale(1.5);
   }
-
   .animatedBackground.hovered .Circle_2 {
     transform: translateY(200%) scale(1.5);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .Hexa_1 {
     right: -70%;
   }
@@ -122,13 +127,12 @@
   .animatedBackground.hovered .Circle_1 {
     transform: translateY(-180%) scale(1.5);
   }
-
   .animatedBackground.hovered .Circle_2 {
     transform: translateY(180%) scale(1.5);
   }
 }
 
-@media (max-width: 426px) {
+@media (max-width: 26.625rem) {
   .Hexa_1 {
     right: -70%;
     top: 1%;
@@ -137,7 +141,6 @@
     left: -30%;
     top: 10%;
   }
-
   .Circle_1{
     left: -80%;
     top: 70%;
@@ -149,13 +152,12 @@
   .animatedBackground.hovered .Circle_1 {
     transform: translateY(-280%) scale(1.5);
   }
-
   .animatedBackground.hovered .Circle_2 {
     transform: translateY(280%) scale(1.5);
   }
 }
 
-@media (max-width: 376px) {
+@media (max-width: 23.5rem) {
   .Hexa_1 {
     right: -70%;
     top: 1%;

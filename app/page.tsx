@@ -5,7 +5,7 @@ import OurDevelopmentContainer from '@/components/Molecules/OurDevelopmentContai
 import ServicePackagesContainer from '@/components/Molecules/ServicePackagesContainer/ServicePackagesContainer';
 import OurDevelopmentProcess from '@/components/UI/Atoms/OurDevelopmentProcess/OurDevelopmentProcess';
 import ServicePackagesCard from '@/components/UI/Atoms/ServicePackagesCard/ServicePackagesCard';
-import Homepage from '@/pages/Home/Homepage';
+import Homepage from '@/components/pages/Home/Homepage';
 
 
 export default function Home() {
