@@ -106,12 +106,12 @@
     .servicesGrid {
         height: auto;
         margin: 0 auto;
-        width: 90%;
-        padding-left: 1.875rem;      /* 30px */
+        width: 100%;
+        padding-left: 0.99rem;      /* 30px */
         /* background-color: blueviolet; */
         gap: 1.125rem;               /* 18px */
         justify-content: center;
-        /* margin-left: 30px; */
+        margin-left: 3px;
     }
 }
 
@@ -126,12 +126,14 @@
     }
     
     .servicesGrid {
-      /* margin: 0 auto; */
+      margin: 0 auto;
         height: auto;
         flex-direction: row;
         align-items: center;
+        justify-content: center;
         gap: 1rem;                   /* 16px */
         /* background-color: aqua; */
+        /* margin-right: 30px; */
     }
 }
 
