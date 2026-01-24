@@ -5,20 +5,22 @@ import { LanguageButton } from '@/components/UI/Atoms/Button/LanguageButton';
 import styles from './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLocale } from "next-intl";
+
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState('Home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const locale = useLocale();
+
 
   const navLinks = [
-
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'Business solutions', href: '/businessSolutions' },
-    { name: 'Portfolio', href: '/portfolio' },
-    { name: 'About Us', href: '/aboutus' },
-    { name: 'Contact', href: '/contact' },
-
+      { name: "Home", href: `/${locale}` },
+      { name: "Services", href: `/${locale}/services` },
+      { name: "Business solutions", href: `/${locale}/businessSolutions` },
+      { name: "Portfolio", href: `/${locale}/portfolio` },
+      { name: "About Us", href: `/${locale}/aboutus` },
+      { name: "Contact", href: `/${locale}/contact` },
   ];
 
   return (

@@ -1,11 +1,9 @@
 // import Card from '@/components/UI/Card/Card';
 import styles from './page.module.css';
 import HeroSection from '@/components/Layout/HeroSection/HeroSection';
-import OurDevelopmentContainer from '@/components/Molecules/OurDevelopmentContainer.tsx/OurDevelopmentContainer';
-import ServicePackagesContainer from '@/components/Molecules/ServicePackagesContainer/ServicePackagesContainer';
-import OurDevelopmentProcess from '@/components/UI/Atoms/OurDevelopmentProcess/OurDevelopmentProcess';
-import ServicePackagesCard from '@/components/UI/Atoms/ServicePackagesCard/ServicePackagesCard';
 import Homepage from '@/components/pages/Home/Homepage';
+// import {useLoca}
+
 
 
 export default function Home() {
