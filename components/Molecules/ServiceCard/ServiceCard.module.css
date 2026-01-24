@@ -254,6 +254,7 @@
     width: 343px;
     padding: 33.551px 32.153px;
     gap: 18.173px;
+    /* background-color: red; */
   }
 
   .cardHeader {
@@ -313,7 +314,7 @@
 @media (max-width: 480px) {
   .serviceCard {
     width: 100%;
-    max-width: 343px;
+    /* max-width: 343px; */
     padding: 24px 20px;
   }
 
