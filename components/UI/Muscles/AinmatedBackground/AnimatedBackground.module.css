@@ -4,6 +4,7 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+  /* background-color: aliceblue; */
 }
 
 .HexagonContainer {
@@ -26,7 +27,9 @@
   top: 50%;
   left: 50%;
   transform: translate(30%, -90%) rotate(-180deg);
-  transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+  transition:
+    transform 2s ease-in-out,
+    opacity 2s ease-in-out;
   opacity: 0.6;
 }
 
@@ -36,7 +39,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-160%, -90%) rotate(-180deg);
-  transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+  transition:
+    transform 2s ease-in-out,
+    opacity 2s ease-in-out;
   opacity: 0.7;
 }
 
@@ -66,7 +71,9 @@
   position: absolute;
   top: 70%;
   left: -60%;
-  transition: transform 2.5s ease-in-out, opacity 2.5s ease-in-out;
+  transition:
+    transform 2.5s ease-in-out,
+    opacity 2.5s ease-in-out;
 }
 
 /* Circle 2 - Top Right (Double size) */
@@ -74,7 +81,9 @@
   position: absolute;
   top: -60%;
   right: -3%;
-  transition: transform 2.5s ease-in-out, opacity 2.5s ease-in-out;
+  transition:
+    transform 2.5s ease-in-out,
+    opacity 2.5s ease-in-out;
 }
 
 /* Hover Effects - Vertical movement */
@@ -90,14 +99,26 @@
 
 @media (max-width: 64rem) {
   .Hexa_1 {
-    top: -20%;
-    right: -75%;
+    top: 50%;
+    left: 50%;
+    transform: translate(60%, -120%) rotate(-180deg);
   }
   .Hexa_2 {
-    left: -25%;
-    top: -6%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-170%, -90%) rotate(-180deg);
   }
-  .Circle_1{
+
+  .animatedBackground.hovered .Hexa_1 {
+    transform: translate(60%, -120%) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+
+  .animatedBackground.hovered .Hexa_2 {
+    transform: translate(-170%, -90%) rotate(-80deg) scale(1.08);
+    opacity: 0.6;
+  }
+  .Circle_1 {
     left: -70%;
   }
   .animatedBackground.hovered .Circle_1 {
@@ -109,18 +130,11 @@
 }
 
 @media (max-width: 48rem) {
-  .Hexa_1 {
-    right: -70%;
-  }
-  .Hexa_2 {
-    left: -30%;
-    top: -20%;
-  }
-  .Circle_1{
+  .Circle_1 {
     left: -70%;
     top: 50%;
   }
-  .Circle_2{
+  .Circle_2 {
     right: -3%;
     top: -70%;
   }
@@ -134,18 +148,30 @@
 
 @media (max-width: 26.625rem) {
   .Hexa_1 {
-    right: -70%;
-    top: 1%;
+    top: 50%;
+    left: 50%;
+    transform: translate(35%, -125%) rotate(-180deg);
   }
   .Hexa_2 {
-    left: -30%;
-    top: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-150%, -90%) rotate(-180deg);
   }
-  .Circle_1{
+
+  .animatedBackground.hovered .Hexa_1 {
+    transform: translate(35%, -125%) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+
+  .animatedBackground.hovered .Hexa_2 {
+    transform: translate(-150%, -90%) rotate(-80deg) scale(1.08);
+    opacity: 0.6;
+  }
+  .Circle_1 {
     left: -80%;
     top: 70%;
   }
-  .Circle_2{
+  .Circle_2 {
     /* right: 3%; */
     top: -30%;
   }
@@ -158,12 +184,12 @@
 }
 
 @media (max-width: 23.5rem) {
-  .Hexa_1 {
+  /* .Hexa_1 {
     right: -70%;
     top: 1%;
   }
   .Hexa_2 {
     left: -46%;
     top: 10%;
-  }
+  } */
 }

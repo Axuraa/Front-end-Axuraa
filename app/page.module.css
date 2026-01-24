@@ -138,20 +138,19 @@ a.secondary {
     --button-secondary-hover: #1a1a1a;
     --button-secondary-border: #1a1a1a;
   }
-} */ 
-
+} */
 
 /* page.module.css */
 .pageContainer {
   width: 100%;
   min-height: 100vh;
-  background: #191B1F;
+  background: #191b1f;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -1%;
+  /* margin-top: -1%; */
 }
-.filexContainer{
+.filexContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -165,7 +164,7 @@ a.secondary {
 
 /* Define your CSS variables if needed */
 :root {
-  --background: #191B1F;
+  --background: #191b1f;
   --foreground: #fff;
   --text-primary: #000;
 }
@@ -174,8 +173,7 @@ a.secondary {
 @media (max-width: 768px) {
   .pageContainer {
     padding: 0 1rem;
-        background-color: #191B1F;
-
+    background-color: #191b1f;
   }
 }
 
@@ -183,9 +181,8 @@ a.secondary {
 .pageContainer {
   padding: 2rem;
   min-height: 100vh;
-  background: #191B1F;
-      background-color: #191B1F;
-
+  background: #191b1f;
+  background-color: #191b1f;
 }
 
 .projectsGrid {

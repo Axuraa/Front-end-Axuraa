@@ -10,6 +10,7 @@
   padding: 5% 1.5rem;
   overflow: hidden;
   /* background-color: #d04a1d; */
+  margin-top: 3%;
 }
 
 .heroDots {
@@ -42,6 +43,7 @@
   gap: 2rem;
   width: 100%;
   max-width: 56.25rem;
+  margin-top: -1%;
   /* background-color: #22c55e; */
 }
 
@@ -54,6 +56,7 @@
   pointer-events: none;
   inset: 0;
   margin-left: 10%;
+  /* margin-top: -5%; */
   /* background-color: aliceblue; */
 }
 
@@ -334,7 +337,7 @@
 
   .container {
     max-width: 56.25rem;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .content {
@@ -480,7 +483,7 @@
   .content {
     gap: 1rem;
     max-width: 100%;
-    margin-top: -17%;
+    margin-top: -20%;
   }
 
   .title {
