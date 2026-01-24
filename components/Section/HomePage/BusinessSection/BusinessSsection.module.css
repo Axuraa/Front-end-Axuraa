@@ -123,7 +123,7 @@ text-transform: capitalize;
         margin: 0  auto;
         justify-content: center;
         gap: 18px;
-        padding-left: 50px;
+        padding-left: 20px;
         /* background-color: blueviolet; */
     }
 }
@@ -156,13 +156,13 @@ text-transform: capitalize;
     
     .servicesGrid {
         width: 100%;
-        /* margin: 0  auto; */
+        margin: 0  auto;
         /* background-color: #D04A1D; */
         flex-direction: row;
         align-items: center;
         gap: 16px;
-       
-        padding-left:30px ;
+        /* background-color: red; */
+        padding-left:10px ;
     }
 }
 
@@ -203,7 +203,7 @@ text-transform: capitalize;
     margin: 0 auto;
     padding: 0 8px;
     box-sizing: border-box;
-    padding-left: 40px;
+    padding-left: 35px;
     /* background-color: red; */
     margin-left: 30.5%;
 }
