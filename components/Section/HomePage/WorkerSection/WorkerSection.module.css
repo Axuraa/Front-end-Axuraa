@@ -120,6 +120,7 @@
 @media (max-width: 374px) {
     .WorkerSection {
         padding: 0 8px;
+        /* background-color: beige; */
     }
     
     .WorkerGrid {

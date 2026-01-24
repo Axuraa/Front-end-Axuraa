@@ -17,7 +17,7 @@
     display: grid;
     grid-template-columns: 1fr; /* 1 column on mobile */
     gap: 24px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     box-sizing: border-box;
 }
 
@@ -31,7 +31,7 @@
         width: 100%;
         max-width: 1000px;
         padding: 0 24px;
-        margin: 0 auto;
+        /* margin: 0 auto; */
         gap: 24px;
     }
     
