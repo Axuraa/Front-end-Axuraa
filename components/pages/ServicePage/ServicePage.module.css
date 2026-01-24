@@ -185,6 +185,7 @@ justify-content: center;
 }
 
 .OurDevelopmentProcessDescription{
+  text-align: center;
   width: 962px;
   height: 14px;
   color: #FFF;
@@ -547,6 +548,28 @@ line-height: 13.32px; /* 122.222% */
   }
 
 
+  .OurDevelopmentProcessTitle{
+    display: flex;
+    width: 23.3125rem;
+    /* width: 100%;
+    height: 35px; */
+    height: auto;
+    flex-direction: column;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 16.8px; /* 52.5% */
+    /* background-color: green; */
+}
+
+.OurDevelopmentProcessDescription,.SuccessStoriesDescription{
+  text-align: center;
+}
+
   .FeaturesCapabilitiesContainer{
     /* background-color: blue; */
     width: 100%;
@@ -558,6 +581,7 @@ line-height: 13.32px; /* 122.222% */
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
     /* background-color: #7A4A1A; */
   }
   .testimonialSection,
@@ -936,13 +960,16 @@ width: 329px;
     gap: 20px;
   /* background-color: rgb(187, 119, 30);  */
   /* background-color: red; */
-background: #1E1E1E;
+/* background: #1E1E1E; */
 }
 
 .SuccessStoriesContent{
   margin-left: -90px;
-  width: 300px;
-  height: 100px;
+  /* margin: 0 auto; */
+  /* width: 100%;
+  height: auto; */
+    width: 18.75rem;
+  height: 6.25rem;
     display: flex;
     /* padding: 0 280px; */
     flex-direction: column;
@@ -951,13 +978,14 @@ background: #1E1E1E;
     gap: 15px;
     align-self: stretch;
     text-align: center;
+    padding-bottom: 5px;
     /* background-color: rgba(2, 104, 2, 0.979); */
 }
 .SuccessStoriesTitle{
   margin-top: -30px;
   display: flex;
-  /* width: 231px; */
-  height: 26px;
+    width: 14.4375rem;
+  height: 1.625rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
