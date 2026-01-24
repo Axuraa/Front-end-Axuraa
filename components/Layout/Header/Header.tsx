@@ -24,7 +24,6 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        {/* Logo */}
         <div className={styles.logo}>
           <Image
             src="/assets/logo2.svg"
@@ -60,7 +59,6 @@ const Header = () => {
         {/* Language Button */}
         <LanguageButton />
 
-        {/* Mobile Menu Toggle */}
         <button
           className={styles.menuToggle}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
