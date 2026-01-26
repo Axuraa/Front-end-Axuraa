@@ -9,6 +9,7 @@
     justify-content: flex-start;
     gap: 3.75rem; /* 60px / 16 = 3.75rem */
     box-sizing: border-box;
+    margin-top: -5%;
 }
 
 /* Responsive adjustments */

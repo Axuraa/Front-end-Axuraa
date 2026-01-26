@@ -65,7 +65,7 @@
 
 .Circle_1,
 .Circle_2 {
-  width: clamp(15rem, 30vw, 27rem);
+  width: clamp(14rem, 30vw, 25rem);
   aspect-ratio: 1 / 1;
 }
 
@@ -76,7 +76,7 @@
   position: absolute;
   top: 50%;
   left:50%;
-  transform: translate(70%, -25%);
+  transform: translate(70%, -15%);
   transition:
     transform 2.5s ease-in-out,
     opacity 2.5s ease-in-out;
@@ -87,7 +87,7 @@
   position: absolute;
   top: 50%;
   left:50%;
-  transform: translate(-160%, 1%);
+  transform: translate(-160%, -5%);
   transition:
     transform 2.5s ease-in-out,
     opacity 2.5s ease-in-out;
