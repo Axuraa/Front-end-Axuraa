@@ -54,6 +54,7 @@
     }
     
     .WorkerGrid {
+        /* background-color: blue; */
         column-gap: 15px;
     }
 }

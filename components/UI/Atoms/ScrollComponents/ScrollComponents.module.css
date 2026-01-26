@@ -164,9 +164,12 @@
 /* Tablet Landscape: 992px - 1199px */
 @media (min-width: 992px) and (max-width: 1199px) {
   .horizontalScroll {
-    gap: 18px;
-    padding-right: 36px;
-    scroll-padding-right: 36px;
+    /* width: 100%; */
+    /* background-color: red; */
+    margin: 0 auto;
+    gap: 17px;
+    /* padding-right: 36px; */
+    /* scroll-padding-right: 36px; */
   }
 
   .verticalScroll {

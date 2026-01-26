@@ -300,6 +300,7 @@ const socialLinks = [
                 lineHeight: '37.5px',
                 margin: 0
               }}
+              className={styles.bottomContentTitle}
             >
               © {currentYear} AXURAA. All rights reserved.
             </Typography>
