@@ -149,11 +149,11 @@
     --letter-a1-y: 21.25rem;
     --letter-a1-size: 12.5rem;
 
-    --letter-a2-x: 62.5rem;
+    --letter-a2-x: 57.5rem;
     --letter-a2-y: 8.125rem;
     --letter-a2-size: 12.5rem;
 
-    --letter-r1-x: 62.5rem;
+    --letter-r1-x: 57.5rem;
     --letter-r1-y: 9.375rem;
     --letter-r1-size: 13.75rem;
 
@@ -163,17 +163,17 @@
 
     --letter-x-x: 12.5rem;
     --letter-x-y: 31.875rem;
-    --letter-x-target-x: 65.625rem;
+    --letter-x-target-x: 60.625rem;
     --letter-x-target-y: 31.875rem;
     --letter-x-size: 11.25rem;
 
-    --letter-u-x: 68.75rem;
+    --letter-u-x: 63.75rem;
     --letter-u-y: 26.25rem;
     --letter-u-target-x: 5rem;
     --letter-u-target-y: 8.125rem;
     --letter-u-size: 7.5rem;
 
-    --letter-q1-x: 59.375rem;
+    --letter-q1-x: 54.375rem;
     --letter-q1-y: 36.875rem;
     --letter-q1-target-x: 33.125rem;
     --letter-q1-target-y: 9.8125rem;
@@ -193,11 +193,11 @@
     --letter-a1-y: 18.75rem;
     --letter-a1-size: 9.375rem;
 
-    --letter-a2-x: 46.875rem;
+    --letter-a2-x: 42.875rem;
     --letter-a2-y: 5rem;
     --letter-a2-size: 9.375rem;
 
-    --letter-r1-x: 46.875rem;
+    --letter-r1-x: 42.875rem;
     --letter-r1-y: 5rem;
     --letter-r1-size: 10.625rem;
 
@@ -211,13 +211,13 @@
     --letter-x-target-y: 30rem;
     --letter-x-size: 8.125rem;
 
-    --letter-u-x: 50.625rem;
+    --letter-u-x: 46.625rem;
     --letter-u-y: 20rem;
-    --letter-u-target-x: 3.75rem;
+    --letter-u-target-x: 0.75rem;
     --letter-u-target-y: 8.125rem;
     --letter-u-size: 5.625rem;
 
-    --letter-q1-x: 45.625rem;
+    --letter-q1-x: 41.625rem;
     --letter-q1-y: 28.75rem;
     --letter-q1-target-x: 33.75rem;
     --letter-q1-target-y: 8.5625rem;
@@ -231,46 +231,90 @@
   }
 }
 
+@media (max-width: 62rem) {
+  .alphabetContainer {
+    --letter-a1-x: -3.125rem;
+    --letter-a1-y: 28.75rem;
+    --letter-a1-size: 9.375rem;
+
+    --letter-a2-x: 32.875rem;
+    --letter-a2-y: 15rem;
+    --letter-a2-size: 9.375rem;
+
+    --letter-r1-x: 32.875rem;
+    --letter-r1-y: 15rem;
+    --letter-r1-size: 10.625rem;
+
+    --letter-r2-x: -3.125rem;
+    --letter-r2-y: 41.875rem;
+    --letter-r2-size: 10rem;
+
+    --letter-x-x: 3.125rem;
+    --letter-x-y: 50rem;
+    --letter-x-target-x: 33.75rem;
+    --letter-x-target-y: 30rem;
+    --letter-x-size: 8.125rem;
+
+    --letter-u-x: 37.625rem;
+    --letter-u-y: 33rem;
+    --letter-u-target-x: 0.75rem;
+    --letter-u-target-y: 18.125rem;
+    --letter-u-size: 5.625rem;
+
+    --letter-q1-x: 31.625rem;
+    --letter-q1-y: 50.75rem;
+    --letter-q1-target-x: 23.75rem;
+    --letter-q1-target-y: 18.5625rem;
+    --letter-q1-size: 5rem;
+
+    --letter-q2-x: 0.625rem;
+    --letter-q2-y: 16.875rem;
+    --letter-q2-target-x: 21.25rem;
+    --letter-q2-target-y: 51.25rem;
+    --letter-q2-size: 5rem;
+  }
+}
+
 @media (max-width: 48rem) {
   .alphabetContainer {
     --letter-a1-x: -3.125rem;
-    --letter-a1-y: 12.5rem;
+    --letter-a1-y: 18.5rem;
     --letter-a1-size: 6.875rem;
 
-    --letter-a2-x: 34.375rem;
-    --letter-a2-y: 3.75rem;
+    --letter-a2-x: 30.375rem;
+    --letter-a2-y: 9.75rem;
     --letter-a2-size: 6.875rem;
 
-    --letter-r1-x: 34.375rem;
-    --letter-r1-y: 3.125rem;
+    --letter-r1-x: 30.375rem;
+    --letter-r1-y: 9.125rem;
     --letter-r1-size: 8.125rem;
 
     --letter-r2-x: -3.125rem;
-    --letter-r2-y: 13.125rem;
+    --letter-r2-y: 18.125rem;
     --letter-r2-size: 8.125rem;
 
     --letter-x-x: 3.75rem;
-    --letter-x-y: 21.25rem;
+    --letter-x-y: 31.25rem;
     --letter-x-target-x: 31.25rem;
-    --letter-x-target-y: 21.25rem;
+    --letter-x-target-y: 31.25rem;
     --letter-x-size: 6.25rem;
 
-    --letter-u-x: 35.625rem;
-    --letter-u-y: 11.875rem;
+    --letter-u-x: 33.625rem;
+    --letter-u-y: 22.875rem;
     --letter-u-target-x: 2.5rem;
-    --letter-u-target-y: 6.25rem;
+    --letter-u-target-y: 12.25rem;
     --letter-u-size: 4.375rem;
 
     --letter-q1-x: 31.25rem;
-    --letter-q1-y: 20rem;
+    --letter-q1-y: 33rem;
     --letter-q1-target-x: 23.125rem;
-    --letter-q1-target-y: 4.375rem;
+    --letter-q1-target-y: 14.375rem;
     --letter-q1-size: 4.375rem;
 
     --letter-q2-x: 2.5rem;
-    --letter-q2-y: 6.25rem;
+    --letter-q2-y: 12.25rem;
     --letter-q2-target-x: 21.25rem;
-    --letter-q2-target-y: 21.25rem;
+    --letter-q2-target-y: 31.25rem;
     --letter-q2-size: 4.375rem;
   }
 }
@@ -279,131 +323,131 @@
 @media (max-width: 30rem) {
   .alphabetContainer {
     --letter-a1-x: -3.125rem;
-    --letter-a1-y: 11.25rem;
+    --letter-a1-y: 16.25rem;
     --letter-a1-size: 5.625rem;
 
     --letter-a2-x: 16.5625rem;
-    --letter-a2-y: 2.5rem;
+    --letter-a2-y: 7.5rem;
     --letter-a2-size: 6.25rem;
 
     --letter-r1-x: 16.5625rem;
-    --letter-r1-y: 2.5rem;
+    --letter-r1-y: 7.5rem;
     --letter-r1-size: 6.875rem;
 
     --letter-r2-x: -3.125rem;
-    --letter-r2-y: 11.875rem;
+    --letter-r2-y: 16.875rem;
     --letter-r2-size: 6.875rem;
 
     --letter-x-x: 0.625rem;
-    --letter-x-y: 19.375rem;
+    --letter-x-y: 24.375rem;
     --letter-x-target-x: 17.5rem;
-    --letter-x-target-y: 19.375rem;
+    --letter-x-target-y: 24.375rem;
     --letter-x-size: 6.25rem;
 
     --letter-u-x: 20rem;
-    --letter-u-y: 12.5rem;
+    --letter-u-y: 17.5rem;
     --letter-u-target-x: 1.5625rem;
-    --letter-u-target-y: 3.125rem;
+    --letter-u-target-y: 8.125rem;
     --letter-u-size: 3.75rem;
 
     --letter-q1-x: 16.875rem;
-    --letter-q1-y: 18.75rem;
+    --letter-q1-y: 25.75rem;
     --letter-q1-target-x: 12.5rem;
-    --letter-q1-target-y: 3.75rem;
+    --letter-q1-target-y: 8.75rem;
     --letter-q1-size: 3.75rem;
 
     --letter-q2-x: 3.75rem;
-    --letter-q2-y: 3.125rem;
+    --letter-q2-y: 8.125rem;
     --letter-q2-target-x: 6.25rem;
-    --letter-q2-target-y: 21.25rem;
+    --letter-q2-target-y: 26.25rem;
     --letter-q2-size: 3.75rem;
   }
 }
 
 @media (max-width: 23.75rem) {
-  .alphabetContainer {
+ .alphabetContainer {
     --letter-a1-x: -3.125rem;
-    --letter-a1-y: 10.625rem;
-    --letter-a1-size: 6.25rem;
+    --letter-a1-y: 16.25rem;
+    --letter-a1-size: 5.625rem;
 
-    --letter-a2-x: 14.0625rem;
-    --letter-a2-y: 2.5rem;
+    --letter-a2-x: 12.5625rem;
+    --letter-a2-y: 7.5rem;
     --letter-a2-size: 6.25rem;
 
-    --letter-r1-x: 14.0625rem;
-    --letter-r1-y: 2.5rem;
+    --letter-r1-x: 12.5625rem;
+    --letter-r1-y: 7.5rem;
     --letter-r1-size: 6.875rem;
 
     --letter-r2-x: -3.125rem;
-    --letter-r2-y: 10.625rem;
+    --letter-r2-y: 16.875rem;
     --letter-r2-size: 6.875rem;
 
     --letter-x-x: 0.625rem;
-    --letter-x-y: 19.375rem;
-    --letter-x-target-x: 15rem;
-    --letter-x-target-y: 19.375rem;
+    --letter-x-y: 26.375rem;
+    --letter-x-target-x: 13.5rem;
+    --letter-x-target-y: 26.375rem;
     --letter-x-size: 6.25rem;
 
-    --letter-u-x: 16.875rem;
-    --letter-u-y: 12.5rem;
+    --letter-u-x: 16rem;
+    --letter-u-y: 17.5rem;
     --letter-u-target-x: 1.5625rem;
-    --letter-u-target-y: 5rem;
+    --letter-u-target-y: 8.125rem;
     --letter-u-size: 3.75rem;
 
-    --letter-q1-x: 12.5rem;
-    --letter-q1-y: 18.75rem;
-    --letter-q1-target-x: 11.25rem;
-    --letter-q1-target-y: 3.75rem;
+    --letter-q1-x: 13.875rem;
+    --letter-q1-y: 25.75rem;
+    --letter-q1-target-x: 10.5rem;
+    --letter-q1-target-y: 8.75rem;
     --letter-q1-size: 3.75rem;
 
     --letter-q2-x: 3.75rem;
-    --letter-q2-y: 3.125rem;
+    --letter-q2-y: 8.125rem;
     --letter-q2-target-x: 6.25rem;
-    --letter-q2-target-y: 20rem;
+    --letter-q2-target-y: 28.25rem;
     --letter-q2-size: 3.75rem;
   }
 }
 
 @media (max-width: 20.3125rem) {
   .alphabetContainer {
-    --letter-a1-x: -2.5rem;
-    --letter-a1-y: 11.875rem;
+    --letter-a1-x: -2.125rem;
+    --letter-a1-y: 18.25rem;
     --letter-a1-size: 5.625rem;
 
-    --letter-a2-x: 11.875rem;
-    --letter-a2-y: 2.5rem;
-    --letter-a2-size: 5.625rem;
+    --letter-a2-x: 10.5625rem;
+    --letter-a2-y: 5.5rem;
+    --letter-a2-size: 6.25rem;
 
-    --letter-r1-x: 11.875rem;
-    --letter-r1-y: 2.5rem;
-    --letter-r1-size: 6.25rem;
+    --letter-r1-x: 10.5625rem;
+    --letter-r1-y: 5.5rem;
+    --letter-r1-size: 6.875rem;
 
-    --letter-r2-x: -2.5rem;
-    --letter-r2-y: 11.875rem;
-    --letter-r2-size: 6.25rem;
+    --letter-r2-x: -2.125rem;
+    --letter-r2-y: 18.875rem;
+    --letter-r2-size: 6.875rem;
 
     --letter-x-x: 0.625rem;
-    --letter-x-y: 19.375rem;
-    --letter-x-target-x: 12.5rem;
-    --letter-x-target-y: 19.375rem;
-    --letter-x-size: 5.625rem;
+    --letter-x-y: 30.375rem;
+    --letter-x-target-x: 12rem;
+    --letter-x-target-y: 30.375rem;
+    --letter-x-size: 6.25rem;
 
-    --letter-u-x: 15rem;
-    --letter-u-y: 11.875rem;
-    --letter-u-target-x: 1.5625rem;
-    --letter-u-target-y: 5rem;
-    --letter-u-size: 3.4375rem;
+    --letter-u-x: 14.125rem;
+    --letter-u-y: 17.5rem;
+    --letter-u-target-x: 0.5625rem;
+    --letter-u-target-y: 8.125rem;
+    --letter-u-size: 3.75rem;
 
-    --letter-q1-x: 12.5rem;
-    --letter-q1-y: 18.75rem;
-    --letter-q1-target-x: 8.125rem;
-    --letter-q1-target-y: 3.75rem;
-    --letter-q1-size: 3.4375rem;
+    --letter-q1-x: 11.875rem;
+    --letter-q1-y: 29.75rem;
+    --letter-q1-target-x: 6.5rem;
+    --letter-q1-target-y: 9.75rem;
+    --letter-q1-size: 3.75rem;
 
-    --letter-q2-x: 3.75rem;
-    --letter-q2-y: 3.125rem;
-    --letter-q2-target-x: 3.75rem;
-    --letter-q2-target-y: 20rem;
-    --letter-q2-size: 3.4375rem;
+    --letter-q2-x: 3rem;
+    --letter-q2-y: 7.125rem;
+    --letter-q2-target-x: 6.25rem;
+    --letter-q2-target-y: 30.25rem;
+    --letter-q2-size: 3.75rem;
   }
 }

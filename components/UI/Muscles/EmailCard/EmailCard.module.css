@@ -1,26 +1,27 @@
 /* components/EmailCard/EmailCard.module.css */
 .emailCard {
   display: flex;
-  width: 548px;
-  padding: 24px 24px 52px 24px;
+   width: 100%;
+  max-width: 34.25rem;
+  padding: 1.5rem 1.5rem 3.25rem 1.5rem; /* 24px 24px 52px 24px */
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--item-spacing-s, 16px);
-  border-radius: 16px;
+  gap: var(--item-spacing-s, 1rem); /* 16px / 16 = 1rem */
+  border-radius: 1rem; /* 16px / 16 = 1rem */
   background: var(--color-grey-15, #252525);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.2); /* 0 2px 8px */
 }
 
 .emailCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  transform: translateY(-0.125rem); /* -2px / 16 = -0.125rem */
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.3); /* 0 4px 16px */
 }
 
 /* Target the Icon component's container directly */
 .emailCard:hover :global(.iconContainer) {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.125rem); /* -2px / 16 = -0.125rem */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15); /* 0 4px 12px */
   background-color: var(--color-primary-solid, #d04a1d) !important;
 }
 
@@ -37,25 +38,25 @@
 .leftSection {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem; /* 16px / 16 = 1rem */
   flex: 1;
 }
 
 .textContainer {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem; /* 4px / 16 = 0.25rem */
 }
 
 .title {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1rem; /* 16px / 16 = 1rem */
   line-height: 1.4;
 }
 
 .email {
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px / 16 = 0.875rem */
   line-height: 1.4;
 }
 
@@ -72,31 +73,38 @@
   color: var(--white-75, var(--color-white-75, rgba(255, 255, 255, 0.75)));
   text-align: right !important;
   font-family: var(--font-family-Font-2, "Segoe UI Symbol");
-  font-size: var(--font-size-16, 16px);
+  font-size: var(--font-size-16, 1rem); /* 16px / 16 = 1rem */
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
-  line-height: var(--font-size-24, 24px);
+  line-height: var(--font-size-24, 1.5rem); /* 24px / 16 = 1.5rem */
   width: 100%;
   display: block;
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) { /* 1024px / 16 = 64rem */
   .emailCard {
-    max-width: 400px;
+    max-width: 25rem; /* 400px / 16 = 25rem */
   }
-
 }
 
+@media (max-width: 62rem) { /* 1024px / 16 = 64rem */
+  .emailCard {
+    max-width: 22rem; /* 400px / 16 = 25rem */
+    gap: 1.5rem;
+    justify-self: center;
+    height: 10rem;
+  }
+}
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 48rem) { /* 768px / 16 = 48rem */
   .emailCard {
-    width: 340px;
+    width: 21.25rem; /* 340px / 16 = 21.25rem */
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px 24px;
-    gap: 16px;
+    padding: 1.25rem 1.5rem; /* 20px 24px */
+    gap: 1rem; /* 16px / 16 = 1rem */
   }
 
   .leftSection {
@@ -114,26 +122,26 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) { /* 480px / 16 = 30rem */
   .emailCard {
-    padding: 16px 1rem;
-    max-width: 280px;
+    padding: 1rem; /* 16px / 16 = 1rem */
+   max-width: 100%; /* 280px / 16 = 17.5rem */
+   
   }
 
   .leftSection {
-    gap: 12px;
+    gap: 0.75rem; /* 12px / 16 = 0.75rem */
   }
 
   .title {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* 14.4px / 16 = 0.9rem */
   }
 
   .email {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* 12.8px / 16 = 0.8rem */
   }
 
   .description {
-    font-size: 0.8rem;
-    /* text-align: right; */
+    font-size: 0.8rem; /* 12.8px / 16 = 0.8rem */
   }
 }

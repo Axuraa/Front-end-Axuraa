@@ -1,22 +1,22 @@
 .contactCard {
   display: flex;
-  width: 546px;
-  height: 117.3421px;
-  padding: 23.947px;
+  width: 34.125rem; /* 546px / 16 = 34.125rem */
+  height: 7.3339rem; /* 117.3421px / 16 = 7.3339rem */
+  padding: 1.4967rem; /* 23.947px / 16 = 1.4967rem */
   align-items: center;
-  gap: 23.947px;
-  border-radius: 19.158px;
-  border: 1.197px solid rgba(144, 37, 1, 0.25);
+  gap: 1.4967rem; /* 23.947px / 16 = 1.4967rem */
+  border-radius: 1.1974rem; /* 19.158px / 16 = 1.1974rem */
+  border: 0.0748rem solid rgba(144, 37, 1, 0.25); /* 1.197px / 16 = 0.0748rem */
   background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(2.3947367668151855px);
+  backdrop-filter: blur(0.1497rem); /* 2.3947367668151855px / 16 = 0.1497rem */
   transition: all 0.3s ease;
   overflow: hidden;
 }
 
 .iconContainer {
   display: flex;
-  width: 67.053px;
-  height: 67.053px;
+  width: 4.1908rem; /* 67.053px / 16 = 4.1908rem */
+  height: 4.1908rem;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -35,43 +35,43 @@
 }
 
 .iconImage {
-  width: 32px;
-  height: 32px;
+  width: 2rem; /* 32px / 16 = 2rem */
+  height: 2rem;
   transition: all 0.3s ease;
 }
 
 .textContainer {
   display: flex;
-  width: 253px;
-  height: 62.7895px;
+  width: 15.8125rem; /* 253px / 16 = 15.8125rem */
+  height: 3.9243rem; /* 62.7895px / 16 = 3.9243rem */
   flex-direction: column;
   align-items: flex-start;
-  gap: 4.7895px;
+  gap: 0.2993rem; /* 4.7895px / 16 = 0.2993rem */
 }
 
 .label {
   color: #9CA3AF;
   font-family: Inter;
-  font-size: 16.763px;
+  font-size: 1.0477rem; /* 16.763px / 16 = 1.0477rem */
   font-weight: 500;
-  line-height: 23.947px;
+  line-height: 1.4967rem; /* 23.947px / 16 = 1.4967rem */
   margin: 0;
 }
 
 .value {
   color: #FFF;
   font-family: Inter;
-  font-size: 23.947px;
+  font-size: 1.4967rem; /* 23.947px / 16 = 1.4967rem */
   font-weight: 700;
-  line-height: 33.526px;
+  line-height: 2.0954rem; /* 33.526px / 16 = 2.0954rem */
   margin: 0;
 }
 
 /* Make the card slightly interactive on hover */
 .contactCard:hover {
   cursor: pointer;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-0.125rem); /* -2px / 16 = -0.125rem */
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1); /* 0 4px 12px */
 }
 
 /* Remove any outline on focus for better aesthetics */
@@ -79,73 +79,80 @@
   outline: none;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64rem) { /* 1024px / 16 = 64rem */
   .contactCard {
-    width: 400px;
-    padding: 16px;
-    gap: 16px;
+    width: 25rem; /* 400px / 16 = 25rem */
+    padding: 1rem; /* 16px / 16 = 1rem */
+    gap: 1rem;
     min-height: auto;
   }
 }
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 62rem) { /* 1024px / 16 = 64rem */
   .contactCard {
-    padding: 20px;
+    width: 35rem; /* 400px / 16 = 25rem */
+    padding: 1rem; /* 16px / 16 = 1rem */
+    gap: 1rem;
+    min-height: auto;
+  }
+}
+/* Responsive adjustments */
+@media (max-width: 48rem) { /* 768px / 16 = 48rem */
+  .contactCard {
+    padding: 1.25rem; /* 20px / 16 = 1.25rem */
     min-height: 5rem;
     align-self: center;
   }
   
   .iconContainer {
-    width: 56px;
-    height: 56px;
-    min-width: 56px;
-    min-height: 56px;
+    width: 3.5rem; /* 56px / 16 = 3.5rem */
+    height: 3.5rem;
+    min-width: 3.5rem;
+    min-height: 3.5rem;
   }
   
   .iconImage {
-    width: 28px;
-    height: 28px;
+    width: 1.75rem; /* 28px / 16 = 1.75rem */
+    height: 1.75rem;
   }
   
   .label {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 0.875rem; /* 14px / 16 = 0.875rem */
+    line-height: 1.25rem; /* 20px / 16 = 1.25rem */
   }
   
   .value {
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 1.125rem; /* 18px / 16 = 1.125rem */
+    line-height: 1.625rem; /* 26px / 16 = 1.625rem */
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) { /* 480px / 16 = 30rem */
   .contactCard {
-    padding: 0.5rem 1rem;
-    gap: 16px;
+    padding: 0.5rem 1rem; /* 8px 16px */
+    gap: 1rem; /* 16px / 16 = 1rem */
     min-height: 5rem;
-    max-width: 300px;
+    max-width: 18.75rem; /* 300px / 16 = 18.75rem */
   }
   
   .iconContainer {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    min-height: 48px;
+    width: 3rem; /* 48px / 16 = 3rem */
+    height: 3rem;
+    min-width: 3rem;
+    min-height: 3rem;
   }
   
   .iconImage {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem; /* 24px / 16 = 1.5rem */
+    height: 1.5rem;
   }
   
   .label {
-    font-size: 12px;
-    line-height: 18px;
+    font-size: 0.75rem; /* 12px / 16 = 0.75rem */
+    line-height: 1.125rem; /* 18px / 16 = 1.125rem */
   }
   
   .value {
-    font-size: 16px;
-    line-height: 22px;
+    font-size: 1rem; /* 16px / 16 = 1rem */
+    line-height: 1.375rem; /* 22px / 16 = 1.375rem */
   }
 }

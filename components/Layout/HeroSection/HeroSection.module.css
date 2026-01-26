@@ -30,7 +30,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
   position: relative;
   z-index: 2;
 }
@@ -43,8 +43,9 @@
   gap: 2rem;
   width: 100%;
   max-width: 56.25rem;
-  margin-top: -1%;
+  /* margin-top: -1%; */
   /* background-color: #22c55e; */
+  pointer-events: none;
 }
 
 .animatedBackground {
@@ -407,7 +408,8 @@
 @media (max-width: 62rem) {
   .hero {
     padding: 5rem 1.5rem 3.75rem;
-    min-height: 85vh;
+    max-height: 35vh;
+    margin-top: -20%;
   }
 
   .container {
@@ -416,7 +418,7 @@
   }
 
   .content {
-    gap: 1.25rem;
+    gap: 3.25rem;
     max-width: 40.625rem;
   }
 
@@ -452,9 +454,9 @@
 
   .trustedSection {
     max-width: 43.75rem;
-    gap: 1.5rem;
-    padding-top: 3%;
-    margin-top: 4%;
+    gap: 3.5rem;
+    padding-top: 10%;
+    margin-top: 7%;
   }
 
   .companiesGrid {
@@ -471,7 +473,8 @@
 @media (max-width: 48rem) {
   .hero {
     padding: 6.25rem 1.5rem 3.75rem;
-    min-height: 100vh;
+    max-height: 80vh;
+    margin-top: -5%;
   }
 
   .container {
@@ -481,7 +484,7 @@
   }
 
   .content {
-    gap: 1rem;
+    gap: 4rem;
     max-width: 100%;
     margin-top: -20%;
   }
@@ -519,7 +522,7 @@
   .trustedSection {
     width: 100%;
     max-width: 100%;
-    gap: 1rem;
+    gap: 2rem;
     padding-top: 2%;
     margin-top: -6%;
   }
@@ -545,10 +548,13 @@
 @media (max-width: 37.5rem) {
   .hero {
     padding: 5rem 1rem 2.5rem;
+    max-height: 50vh;
   }
   .container {
     gap: 2.5rem;
-    padding-top: 5%;
+    /* padding-top: 5%; */
+    margin-top: -15%;
+padding-bottom: 5%;
   }
   .content {
     gap: 1.25rem;
@@ -579,6 +585,7 @@
   .trustedSection {
     gap: 1.25rem;
     padding-top: 8%;
+    margin-top: 5%;
   }
   .companiesGrid {
     gap: 1rem 1.25rem;
@@ -590,12 +597,13 @@
 @media (max-width: 30rem) {
   .hero {
     padding: 3.75rem 1rem 1.875rem;
+    max-height: 40vh;
   }
   .container {
     gap: 2rem;
   }
   .content {
-    gap: 1rem;
+    gap: 2.5rem;
     margin-top: -25%;
   }
   .title {
@@ -624,8 +632,9 @@
     gap: 0.5rem;
   }
   .trustedSection {
-    gap: 1rem;
-    padding-top: 10%;
+    gap: 2rem;
+    padding-top: 15%;
+    margin-top: 8%;
   }
   .companiesGrid {
     gap: 0.75rem 1rem;
