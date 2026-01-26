@@ -146,7 +146,7 @@
 @media (max-width: 90rem) {
   .alphabetContainer {
     --letter-a1-x: 0.625rem;
-    --letter-a1-y: 21.25rem;
+    --letter-a1-y: 31.25rem;
     --letter-a1-size: 12.5rem;
 
     --letter-a2-x: 57.5rem;
@@ -162,19 +162,19 @@
     --letter-r2-size: 13.75rem;
 
     --letter-x-x: 12.5rem;
-    --letter-x-y: 31.875rem;
+    --letter-x-y: 41.875rem;
     --letter-x-target-x: 60.625rem;
-    --letter-x-target-y: 31.875rem;
+    --letter-x-target-y: 41.5292rem;
     --letter-x-size: 11.25rem;
 
     --letter-u-x: 63.75rem;
-    --letter-u-y: 26.25rem;
+    --letter-u-y: 30.25rem;
     --letter-u-target-x: 5rem;
     --letter-u-target-y: 8.125rem;
     --letter-u-size: 7.5rem;
 
     --letter-q1-x: 54.375rem;
-    --letter-q1-y: 36.875rem;
+    --letter-q1-y: 46.875rem;
     --letter-q1-target-x: 33.125rem;
     --letter-q1-target-y: 9.8125rem;
     --letter-q1-size: 7.5rem;
@@ -190,7 +190,7 @@
 @media (max-width: 64rem) {
   .alphabetContainer {
     --letter-a1-x: -3.125rem;
-    --letter-a1-y: 18.75rem;
+    --letter-a1-y: 20.75rem;
     --letter-a1-size: 9.375rem;
 
     --letter-a2-x: 42.875rem;
@@ -206,9 +206,9 @@
     --letter-r2-size: 10rem;
 
     --letter-x-x: 3.125rem;
-    --letter-x-y: 30rem;
+    --letter-x-y: 36rem;
     --letter-x-target-x: 43.75rem;
-    --letter-x-target-y: 30rem;
+    --letter-x-target-y: 36rem;
     --letter-x-size: 8.125rem;
 
     --letter-u-x: 46.625rem;
@@ -218,12 +218,12 @@
     --letter-u-size: 5.625rem;
 
     --letter-q1-x: 41.625rem;
-    --letter-q1-y: 28.75rem;
+    --letter-q1-y: 34.75rem;
     --letter-q1-target-x: 33.75rem;
     --letter-q1-target-y: 8.5625rem;
     --letter-q1-size: 5rem;
 
-    --letter-q2-x: 0.625rem;
+    --letter-q2-x: 5.625rem;
     --letter-q2-y: 6.875rem;
     --letter-q2-target-x: 31.25rem;
     --letter-q2-target-y: 31.25rem;
