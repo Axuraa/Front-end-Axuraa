@@ -1,14 +1,16 @@
 
 /* Horizontal Scroll Container */
 .horizontalScroll {
+  width: 100%;
+  /* background-color: red; */
   display: flex;
-  gap: 20px;
+  gap: 5px;
   overflow-x: auto;
   overflow-y: hidden;
   user-select: none;
   flex-wrap: nowrap !important;
-  padding-right: 40px;
-  scroll-padding-right: 40px;
+  padding-right: 20px;
+  scroll-padding-right: 10px;
   cursor: grab;
   scroll-behavior: smooth;
 }

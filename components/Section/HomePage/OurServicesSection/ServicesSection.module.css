@@ -1,5 +1,5 @@
 .servicesSection {
-    width: 70rem;              /* 1120px */
+ width: 1200px;
     height: 39.7rem;           /* 635px ≈ 39.6875 */
     display: flex;
     flex-direction: column;
@@ -7,6 +7,7 @@
     gap: 1.25rem;              /* 20px */
     align-self: stretch;
     background: #191B1F;
+    margin: 0 auto;
     /* background-color: rgb(241, 138, 11); */
 }
 
