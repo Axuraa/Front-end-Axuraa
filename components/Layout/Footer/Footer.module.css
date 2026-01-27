@@ -380,6 +380,35 @@
     justify-content: center;
   }
 
+.footerColumn{
+  /* background-color: rgb(5, 233, 35); */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+}
+
+.contactLink ,.contactText{
+  /* background-color: blue; */
+  /* text-align: center; */
+  font-size: 15px;
+}
+.columnTitle{
+  /* background-color: rgb(4, 96, 201); */
+}
+
+.columnTitle2{
+  margin-top: 40px;
+  /* background-color: rgb(236, 79, 6); */
+}
+
+.contactItem{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: red; */
+}
+
   .description {
     display: block;
     width: 100%;
@@ -407,9 +436,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* gap: 16px; */
-  margin-left: -80px;
-  /* background: #49d408; */
+  gap: 16px;
+  /* margin-left: -80px; */
+  /* background: #0b08d4; */
   /* margin-top: -25px; */
   
 }

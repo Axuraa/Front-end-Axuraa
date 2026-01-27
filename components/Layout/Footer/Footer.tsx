@@ -184,7 +184,7 @@ const socialLinks = [
 
             {/* Contact Column */}
             <div className={styles.footerColumn}>
-              <div className={styles.columnTitle}>
+              <div className={styles.columnTitle  + " " + styles.columnTitle2}>
                 <FooterColumnHeader title="Contact" />
               </div>
               {/* <ul className={styles.contactList}>
