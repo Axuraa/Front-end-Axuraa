@@ -3,7 +3,7 @@
   max-width: 70rem; /* 1120px / 16 = 70rem */
   min-height: 56.25rem; /* 900px / 16 = 56.25rem */
   display: flex;
-  margin: 0 auto;
+  margin: 25px auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
