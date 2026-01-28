@@ -20,6 +20,6 @@ export const ENDPOINTS = {
         delete:`${API_BASE}/contact-requests`, // DELETE
     },
     AboutUs:{
-
+        history:`${API_BASE}/site/about/history`
     }
 }
