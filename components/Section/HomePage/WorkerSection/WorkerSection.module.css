@@ -62,7 +62,7 @@
 }
 
 /* Tablet - Medium (768px - 1023px) */
-@media (width: 1024px) {
+@media (max-width: 1024px) {
     .WorkerSection {
         width:828px;
         padding: 0 20px;
@@ -81,7 +81,7 @@
 }
 
 /* Tablet - Small (640px - 767px) */
-@media (width: 768px) {
+@media (max-width: 768px) {
     .WorkerSection {
         width: 750px;
         padding: 0 16px;
@@ -108,7 +108,7 @@
 }
 
 /* Mobile - Small (below 480px) */
-@media (width: 425px) {
+@media (max-width: 440px) {
     .WorkerSection {
         width: 425px;
         padding: 0 10px;
@@ -125,7 +125,7 @@
 }
 
 /* Mobile - Extra Small (below 375px) */
-@media (width: 375px) {
+@media (max-width: 375px) {
     .WorkerSection {
         width: 450px;
         padding: 0 15px;
