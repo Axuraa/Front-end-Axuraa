@@ -33,6 +33,7 @@
     justify-content: space-between;
     align-items: flex-start;
     align-self: stretch;
+    margin: 0 auto;
 }
 
 /* Mobile Responsive Styles */

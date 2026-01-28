@@ -96,6 +96,7 @@ text-transform: capitalize;
     justify-content: space-between;
     align-items: flex-start;
     align-self: stretch;
+    margin: 0 auto;
 }
 
 /* Card Border Radius for Responsive Views */
