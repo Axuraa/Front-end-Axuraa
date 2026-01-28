@@ -385,15 +385,15 @@
   .footerColumn:not(:first-child) {
     text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
 .footerColumn{
   /* background-color: rgb(5, 233, 35); */
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* justify-content: start; */
 }
 
 .contactLink ,.contactText{
@@ -406,7 +406,7 @@
 }
 
 .columnTitle2{
-  padding-top: 55px;
+  /* padding-top: 55px; */
   /* margin-top: 50px; */
   /* background-color: rgb(236, 79, 6); */
 }
