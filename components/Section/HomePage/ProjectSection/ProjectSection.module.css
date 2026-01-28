@@ -37,6 +37,7 @@
     align-self: stretch;
     flex-wrap: wrap;
     border: 0 solid #E5E7EB;
+    margin: 0 auto;
 }
 
 /* Tablet - 1024px */
@@ -83,7 +84,7 @@
 }
 
 /* Mobile - 425px */
-@media (max-width: 425px) {
+@media (max-width: 440px) {
     .ProjectSection {
         height: auto;
         padding: 24px 16px;

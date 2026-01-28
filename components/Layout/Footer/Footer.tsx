@@ -289,7 +289,7 @@ const socialLinks = [
       <div className={styles.footerBottom}>
         <div className={styles.container}>
           <div className={styles.bottomContent}>
-            <Typography 
+            {/* <Typography 
               variant="body1"
               style={{
                 color: 'var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)))',
@@ -303,9 +303,10 @@ const socialLinks = [
               className={styles.bottomContentTitle}
             >
               © {currentYear} AXURAA. All rights reserved.
-            </Typography>
+            </Typography> */}
+            <p className={styles.bottomContentTitle}>  © {currentYear} AXURAA. All rights reserved. </p>
             <div className={styles.legalLinks}>
-              <Typography 
+              {/* <Typography 
                 component="a" 
                 // href="#" 
                 className={styles.legalLink}
@@ -321,14 +322,14 @@ const socialLinks = [
                 }}
               >
                 Privacy Policy
-              </Typography>
-              <Typography 
+              </Typography> */}              
+              {/* <Typography 
                 component="span" 
                 className={styles.separator}
                 style={{
                   color: 'var(--white-35, var(--color-white-35, rgba(255, 255, 255, 0.35)))',
                   fontFamily: 'var(--font-family-Font-1, Roboto), sans-serif',
-                  fontSize: '30px',
+                  fontSize: '26.25px',
                   fontStyle: 'normal',
                   fontWeight: 'var(--font-weight-400, 400)',
                   lineHeight: '45px',
@@ -336,8 +337,8 @@ const socialLinks = [
                 }}
               >
                 |
-              </Typography>
-              <Typography 
+              </Typography> */}
+              {/* <Typography 
                 component="a" 
                 // href="#terms" 
                 className={styles.legalLink}
@@ -353,7 +354,11 @@ const socialLinks = [
                 }}
               >
                 Terms of Service
-              </Typography>
+              </Typography> */}
+
+              <p className={styles.legalLink}> Privacy Policy </p>
+              <p className={styles.separator}> | </p>
+              <p className={styles.legalLink}> Terms of Service </p>
             </div>
           </div>
         </div>

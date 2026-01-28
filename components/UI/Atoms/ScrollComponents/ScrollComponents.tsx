@@ -143,7 +143,7 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
         style={{
           display: 'flex',
           gap: '22px',
-          minWidth: 'max-content'
+          // minWidth: 'max-content'
         }}
       >
         {items.map((child, index) => (

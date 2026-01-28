@@ -45,7 +45,7 @@
   }
   
   .link {
-    margin-right: 30px ;
+    margin-right: 150px ;
     /* background-color: blue; */
     font-size: clamp(16px, 2vw, 20px);
   }

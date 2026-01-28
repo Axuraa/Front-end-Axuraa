@@ -96,6 +96,7 @@ text-transform: capitalize;
     justify-content: space-between;
     align-items: flex-start;
     align-self: stretch;
+    margin: 0 auto;
 }
 
 /* Card Border Radius for Responsive Views */
@@ -174,9 +175,9 @@ text-transform: capitalize;
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 440px) {
     .servicesSection {
-      width: 100%;
+         width: 100%;
         padding: 24px 16px;
         height: auto;
     }
@@ -203,9 +204,9 @@ text-transform: capitalize;
     margin: 0 auto;
     padding: 0 8px;
     box-sizing: border-box;
-    padding-left: 35px;
+    padding-left: 45px;
     /* background-color: red; */
-    margin-left: 30.5%;
+    margin-left: 31.5%;
 }
 /* Adjust card styles for the grid */
 .servicesGrid > * {
@@ -224,7 +225,12 @@ text-transform: capitalize;
 
 @media (max-width: 375px) {
     .servicesSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         padding: 20px 12px;
+        /* background-color: blue; */
     }
     
     .title1,
@@ -234,6 +240,11 @@ text-transform: capitalize;
     }
     
     .servicesGrid {
-        gap: 12px;
+      
+        /* gap: 12px; */
+        margin:  0 auto;
+        margin-left: 31.5%;
+        /* padding-left: 0; */
+        /* background-color: red; */
     }
 }

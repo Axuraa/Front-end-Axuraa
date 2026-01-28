@@ -610,6 +610,7 @@
 
 @media (max-width: 48rem) { /* 480px / 16 = 30rem */
   .contactForm {
+    /* width: 24rem; */
     padding: 1.5rem 1rem; /* 24px 16px */
   }
   
