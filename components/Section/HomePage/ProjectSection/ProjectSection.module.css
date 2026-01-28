@@ -37,6 +37,7 @@
     align-self: stretch;
     flex-wrap: wrap;
     border: 0 solid #E5E7EB;
+    margin: 0 auto;
 }
 
 /* Tablet - 1024px */
