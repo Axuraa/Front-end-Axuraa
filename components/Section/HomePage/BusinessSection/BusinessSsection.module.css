@@ -174,7 +174,7 @@ text-transform: capitalize;
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 440px) {
     .servicesSection {
          width: 100%;
         padding: 24px 16px;

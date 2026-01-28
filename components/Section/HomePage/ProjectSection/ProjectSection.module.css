@@ -83,7 +83,7 @@
 }
 
 /* Mobile - 425px */
-@media (max-width: 425px) {
+@media (max-width: 440px) {
     .ProjectSection {
         height: auto;
         padding: 24px 16px;

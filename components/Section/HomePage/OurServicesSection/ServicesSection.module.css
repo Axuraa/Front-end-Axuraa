@@ -139,7 +139,7 @@
 }
 
 /* Mobile - 425px */
-@media (max-width: 425px) {
+@media (max-width: 440px) {
     .servicesSection {
         width: 100%;
         padding: 1.5rem 1rem;        /* 24px 16px */
