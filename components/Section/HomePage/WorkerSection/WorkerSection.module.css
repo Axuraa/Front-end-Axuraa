@@ -110,7 +110,7 @@
 /* Mobile - Small (below 480px) */
 @media (width: 425px) {
     .WorkerSection {
-        /* width: 425px; */
+        width: 425px;
         padding: 0 10px;
         gap: 12px;
 
@@ -127,7 +127,7 @@
 /* Mobile - Extra Small (below 375px) */
 @media (width: 375px) {
     .WorkerSection {
-        /* width: 450px; */
+        width: 450px;
         padding: 0 15px;
         /* background-color: rgb(250, 250, 14); */
     }
