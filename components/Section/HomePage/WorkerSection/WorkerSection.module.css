@@ -62,10 +62,12 @@
 }
 
 /* Tablet - Medium (768px - 1023px) */
-@media (max-width: 1023px) {
+@media (width: 1024px) {
     .WorkerSection {
+        width: 1075px;
         padding: 0 20px;
         min-height: auto;
+        margin: 0 auto;
     }
     
     .WorkerGrid {
@@ -79,14 +81,16 @@
 }
 
 /* Tablet - Small (640px - 767px) */
-@media (max-width: 767px) {
+@media (width: 768px) {
     .WorkerSection {
+        width: 750px;
         padding: 0 16px;
         gap: 16px;
+        /* background-color: red; */
     }
     
     .WorkerGrid {
-        flex-direction: column;
+        /* flex-direction: column; */
         padding: 24px 0;
         gap: 16px;
     }
@@ -104,8 +108,9 @@
 }
 
 /* Mobile - Small (below 480px) */
-@media (max-width: 479px) {
+@media (width: 425px) {
     .WorkerSection {
+        /* width: 425px; */
         padding: 0 10px;
         gap: 12px;
 
@@ -120,10 +125,11 @@
 }
 
 /* Mobile - Extra Small (below 375px) */
-@media (max-width: 374px) {
+@media (width: 375px) {
     .WorkerSection {
-        padding: 0 8px;
-        /* background-color: beige; */
+        /* width: 450px; */
+        padding: 0 15px;
+        /* background-color: rgb(250, 250, 14); */
     }
     
     .WorkerGrid {

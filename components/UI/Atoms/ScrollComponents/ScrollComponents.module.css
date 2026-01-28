@@ -66,7 +66,7 @@
 /* Base Styles - Desktop */
 
 /* Horizontal Scroll Container */
-.horizontalScroll {
+/* .horizontalScroll {
   display: flex;
   gap: 20px;
   overflow-x: auto;
@@ -78,14 +78,14 @@
   cursor: grab;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-}
+} */
 
 .horizontalScroll:active {
   cursor: grabbing;
 }
 
 /* Vertical Scroll Container */
-.verticalScroll {
+/* .verticalScroll {
   display: flex;
   flex-direction: column;
   gap: 22px;
@@ -98,14 +98,14 @@
   cursor: grab;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-}
+} */
 
-.verticalScroll:active {
+/* .verticalScroll:active {
   cursor: grabbing;
-}
+} */
 
 /* Hide scrollbars */
-.horizontalScroll::-webkit-scrollbar,
+/* .horizontalScroll::-webkit-scrollbar,
 .verticalScroll::-webkit-scrollbar {
   display: none;
 }
@@ -114,7 +114,7 @@
 .verticalScroll {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
+} */
 
 .scrollItem {
   flex-shrink: 0;
@@ -150,7 +150,9 @@
 
 /* Desktop: 1200px - 1439px */
 @media (min-width: 1200px) and (max-width: 1439px) {
+ 
   .horizontalScroll {
+     /* min-width: 100%; */
     gap: 20px;
     padding-right: 40px;
     scroll-padding-right: 40px;
