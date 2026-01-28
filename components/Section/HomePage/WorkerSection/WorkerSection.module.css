@@ -64,7 +64,7 @@
 /* Tablet - Medium (768px - 1023px) */
 @media (width: 1024px) {
     .WorkerSection {
-        width: 1075px;
+        width:828px;
         padding: 0 20px;
         min-height: auto;
         margin: 0 auto;
@@ -133,6 +133,7 @@
     }
     
     .WorkerGrid {
+        /* background-color: green; */
         padding: 12px 0;
     }
 }
