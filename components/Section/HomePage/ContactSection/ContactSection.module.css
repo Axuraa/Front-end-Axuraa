@@ -144,7 +144,8 @@
   }
 
   .ContactGrid {
-    max-width: 62.5rem; /* 1000px / 16 = 62.5rem */
+    max-width: 60rem; /* 1000px / 16 = 62.5rem */
+    /* background-color: rgb(214, 17, 17); */
   }
 
   .Contantinfo {

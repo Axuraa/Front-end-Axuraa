@@ -176,7 +176,7 @@ text-transform: capitalize;
 
 @media (max-width: 425px) {
     .servicesSection {
-      width: 100%;
+         width: 100%;
         padding: 24px 16px;
         height: auto;
     }
@@ -203,9 +203,9 @@ text-transform: capitalize;
     margin: 0 auto;
     padding: 0 8px;
     box-sizing: border-box;
-    padding-left: 35px;
+    padding-left: 45px;
     /* background-color: red; */
-    margin-left: 30.5%;
+    margin-left: 31.5%;
 }
 /* Adjust card styles for the grid */
 .servicesGrid > * {
@@ -242,7 +242,7 @@ text-transform: capitalize;
       
         /* gap: 12px; */
         margin:  0 auto;
-        margin-left: 32%;
+        margin-left: 31.5%;
         /* padding-left: 0; */
         /* background-color: red; */
     }
