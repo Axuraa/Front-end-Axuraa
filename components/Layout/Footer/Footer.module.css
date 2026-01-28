@@ -331,7 +331,7 @@
   
 }
 
-.legalLink {
+.legalLink ,.bottomContentTitle {
   background-color: #161920;
   color: var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)));
   font-family: var(--font-family-Font-1, Roboto), sans-serif;
@@ -406,7 +406,8 @@
 }
 
 .columnTitle2{
-  margin-top: 45px;
+  padding-top: 55px;
+  /* margin-top: 50px; */
   /* background-color: rgb(236, 79, 6); */
 }
 
@@ -490,7 +491,7 @@
   /* background-color: rgb(25, 125, 212); */
 }
 
-.legalLink {
+.legalLink ,.bottomContentTitle {
   background-color: #161920;
   color: var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)));
   font-family: var(--font-family-Font-1, Roboto), sans-serif;
@@ -762,7 +763,7 @@
   /* background-color: rgb(25, 125, 212); */
 }
 
-.legalLink {
+.legalLink ,.bottomContentTitle {
   background-color: #161920;
   color: var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)));
   font-family: var(--font-family-Font-1, Roboto), sans-serif;
