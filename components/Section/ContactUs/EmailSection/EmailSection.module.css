@@ -72,7 +72,7 @@
   }
 
   .cardsGrid {
-    min-width: 40rem; /* 640px / 16 = 40rem */
+    /* min-width: 40rem;  */
     align-items: center;
     justify-content: center;
     /* margin-left: -3%; */
@@ -135,6 +135,6 @@
     max-width: 30rem; /* 480px / 16 = 30rem */
     align-items: center;
     justify-content: center;
-    margin-left: -32%;
+    /* margin-left: -32%; */
   }
 }
