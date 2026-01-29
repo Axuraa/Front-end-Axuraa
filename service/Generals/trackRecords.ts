@@ -25,7 +25,7 @@ export interface TrackRecordData {
  */
 export const getTrackRecords = async (): Promise<TrackRecordsResponse> => {
   try {
-    const response = await fetch(ENDPOINTS.AboutUs.trackRecords, {
+    const response = await fetch(ENDPOINTS.General.trackRecords, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
