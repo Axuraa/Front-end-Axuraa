@@ -1,0 +1,326 @@
+.ContactSection {
+  width: 100%;
+  max-width: 70rem; /* 1120px / 16 = 70rem */
+  min-height: 56.25rem; /* 900px / 16 = 56.25rem */
+  display: flex;
+  margin: 25px auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4306rem; /* 38.889px / 16 = 2.4306rem */
+  background: #191b1f;
+}
+
+.heroDots {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ContactGrid {
+  width: 100%;
+  max-width: 70rem; /* 1120px / 16 = 70rem */
+  min-height: 53.7826rem; /* 860.5219px / 16 = 53.7826rem */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem; /* 24px / 16 = 1.5rem */
+}
+
+.title {
+  color: var(--Gray-Chateau, #ffffff);
+  font-family: Inter, sans-serif;
+  font-size: 1.352rem; /* 21.632px / 16 = 1.352rem */
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.1037rem; /* 33.659px / 16 = 2.1037rem */
+  margin: 0;
+  line-height: 2.1969rem; /* 35.151px / 16 = 2.1969rem */
+  text-align: start;
+  align-self: stretch;
+  height: fit-content;
+  width: 6.625rem; /* 106px / 16 = 6.625rem */
+}
+
+.subtitle {
+  margin-top: 5%;
+  color: var(--Gray-Chateau, #8a8a8a);
+}
+
+.Contantinfo {
+  width: 100%;
+  max-width: 34.25rem; /* 548px / 16 = 34.25rem */
+  min-height: 49.4584rem; /* 791.3344px / 16 = 49.4584rem */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.25rem; /* 20px / 16 = 1.25rem */
+  flex-shrink: 0;
+}
+
+.contactFormWrapper {
+  width: 100%;
+  max-width: 34.125rem; /* 546px / 16 = 34.125rem */
+  min-height: 18.2651rem; /* 292.2419px / 16 = 18.2651rem */
+  display: flex;
+  flex-direction: column;
+  padding-top: 1.4389rem; /* 23.023px / 16 = 1.4389rem */
+  align-items: flex-start;
+  gap: 2.1584rem; /* 34.535px / 16 = 2.1584rem */
+}
+
+.socialIconsContainer {
+  display: flex;
+  width: 100%;
+  max-width: 22.25rem; /* 356px / 16 = 22.25rem */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1.25rem; /* 20px / 16 = 1.25rem */
+}
+
+.Contantform {
+  width: 100%;
+  max-width: 34.25rem; /* 547.9999px / 16 = 34.25rem */
+  min-height: 53.7826rem; /* 860.5219px / 16 = 53.7826rem */
+  display: flex;
+  flex-direction: column;
+  border-radius: 1.8026rem; /* 28.842px / 16 = 1.8026rem */
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.mainTitle {
+  height: 10rem; /* 160px / 16 = 10rem */
+  width: 34.25rem; /* 548px / 16 = 34.25rem */
+  text-align: start;
+  font-family: Inter, sans-serif;
+  font-size: 3.1678rem; /* 50.684px / 16 = 3.1678rem */
+  font-style: normal;
+  font-weight: 900;
+  line-height: 3.6053rem; /* 57.684px / 16 = 3.6053rem */
+  letter-spacing: -0.0901rem; /* -1.442px / 16 = -0.0901rem */
+  margin: 0;
+  animation: fadeInUp 0.8s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* Large screens (1440px and above) - Keep centered */
+@media (min-width: 90rem) { /* 1440px / 16 = 90rem */
+  .ContactSection {
+    max-width: 70rem; /* 1120px / 16 = 70rem */
+    position: relative;
+  }
+
+  .ContactGrid {
+    max-width: 70rem; /* 1120px / 16 = 70rem */
+  }
+  
+  .contactFormWrapper {
+    position: absolute;
+    top: 50%;
+  }
+  .socialIconsContainer{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-156%, 450%);
+  }
+}
+
+/* Medium-Large screens (1024px to 1439px) - Keep centered, adjust if needed */
+@media (min-width: 64rem) and (max-width: 89.9375rem) { /* 1024px to 1439px */
+  .ContactSection {
+    max-width: 62.5rem; /* 1000px / 16 = 62.5rem */
+    position: relative;
+  }
+
+  .ContactGrid {
+    max-width: 60rem; /* 1000px / 16 = 62.5rem */
+    /* background-color: rgb(214, 17, 17); */
+  }
+
+  .Contantinfo {
+    max-width: 21.875rem; /* 350px / 16 = 21.875rem */
+  }
+
+  .Contantform {
+    max-width: 30rem; /* 480px / 16 = 30rem */
+  }
+  
+  .contactFormWrapper {
+    position: absolute;
+    top: 50%;
+  }
+   .socialIconsContainer{
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-140%, 440%);
+  }
+}
+
+/* Tablet screens (768px to 1023px) - Switch to column layout */
+@media (max-width: 62rem) { /* 1023px / 16 = 63.9375rem */
+  .ContactSection {
+    min-height: auto;
+  }
+
+  .ContactGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem; /* 40px / 16 = 2.5rem */
+    min-height: auto;
+  }
+
+  .Contantinfo {
+    width: 100%;
+    max-width: 31.25rem; /* 500px / 16 = 31.25rem */
+    min-height: auto;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .Contantinfo > * {
+    align-items: center;
+  }
+
+  .mainTitle {
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .mainTitle span {
+    text-align: center;
+  }
+
+  .subtitle{
+    margin-top: -3%;
+  }
+
+  .Contantform {
+    width: 80%;
+    max-width: 37.5rem; /* 600px / 16 = 37.5rem */
+    min-height: auto;
+  }
+
+  /* Separate contactFormWrapper - place below form */
+  .contactFormWrapper {
+    width: 100%;
+    max-width: 37.5rem; /* 600px / 16 = 37.5rem */
+    align-items: center;
+    align-self: center;
+    order: 2; /* Place after form */
+  }
+
+  .socialIconsContainer {
+    justify-content: center;
+    max-width: 100%;
+    gap: 1.25rem; /* 20px / 16 = 1.25rem */
+    /* margin-top: -6%; */
+  }
+}
+
+/* Mobile screens (below 768px) */
+@media (max-width: 48rem) { /* 768px / 16 = 48rem */
+  .ContactSection {
+    gap: 1.875rem; /* 30px / 16 = 1.875rem */
+    text-align: center;
+    position: relative;
+  }
+
+  .ContactGrid {
+    gap: 2rem; /* 32px / 16 = 2rem */
+    flex-direction: column;
+  }
+
+  .Contantinfo {
+    max-width: 100%;
+    text-align: center;
+    align-content: center;
+  }
+
+  .title {
+    font-size: 1rem; /* 24px / 16 = 1.5rem */
+    line-height: 1;
+    margin: 0;
+    text-align: center;
+    letter-spacing: -0.03125rem; /* -0.5px / 16 = -0.03125rem */
+  }
+
+  .subtitle {
+    margin-top: 1%;
+    max-width: 80%;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .mainTitle {
+    font-size: 2rem; /* 40px / 16 = 2.5rem */
+    line-height: 1.2;
+    height: auto;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  
+
+  .mainTitle span {
+    text-align: center;
+  }
+
+  .Contantform {
+    max-width: 40rem;
+    order: 1; /* Form appears first */
+    /* justify-self: center;
+    align-self: center  */
+  }
+
+  /* Contact wrapper appears AFTER the form */
+  .contactFormWrapper {
+    max-width: 100%;
+    padding-top: 1rem; /* 16px / 16 = 1rem */
+    gap: 1.5rem; /* 24px / 16 = 1.5rem */
+    order: 2;
+    margin-top: 1.25rem; /* 20px / 16 = 1.25rem */
+  }
+
+  .socialIconsContainer {
+    flex-wrap: wrap;
+    gap: 1rem; /* 16px / 16 = 1rem */
+    max-width: 100%;
+    justify-content: center;
+    order: 3; /* Social icons appear last */
+  }
+}
+
+/* Extra small screens (below 480px) */
+@media (max-width: 29.9375rem) { /* 479px / 16 = 29.9375rem */
+  .ContactSection {
+    text-align: center;
+  }
+  .ContactGrid{
+    max-width: 26rem;
+  }
+  .socialIconsContainer {
+    gap: 0.75rem; /* 12px / 16 = 0.75rem */
+  }
+
+  .title{
+    font-size: 25px;
+  }
+  .contactFormWrapper {
+    max-width: 25rem; /* 400px / 16 = 25rem */
+  }
+}

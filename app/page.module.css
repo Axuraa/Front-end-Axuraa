@@ -1,5 +1,5 @@
-.page {
-  --background: #fafafa;
+/* .page {
+  --background: #757070;
   --foreground: #fff;
 
   --text-primary: #000;
@@ -94,7 +94,7 @@ a.secondary {
 }
 
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
     border-color: transparent;
@@ -138,4 +138,58 @@ a.secondary {
     --button-secondary-hover: #1a1a1a;
     --button-secondary-border: #1a1a1a;
   }
+} */
+
+/* page.module.css */
+.pageContainer {
+  width: 100%;
+  min-height: 100vh;
+  background: #191b1f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: -1%; */
+}
+.filexContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  height: 90vh;
+  /* background: #dfd1d1; */
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+/* Define your CSS variables if needed */
+:root {
+  --background: #191b1f;
+  --foreground: #fff;
+  --text-primary: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 0 1rem;
+    background-color: #191b1f;
+  }
+}
+
+/* app/page.module.css */
+.pageContainer {
+  padding: 2rem;
+  min-height: 100vh;
+  background: #191b1f;
+  background-color: #191b1f;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }

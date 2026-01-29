@@ -1,0 +1,96 @@
+/* SocialIcon.module.css */
+.socialIconWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8.436px;
+  width: 71px;
+  height: 71.707px;
+  padding: 12.654px;
+  flex-shrink: 0;
+  border-radius: 44.087px;
+  background: #2E2625;
+  transition: all 0.3s ease;
+}
+
+.socialIcon {
+  width: 35px;
+  height: 34.913px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+    background: #2E2625;
+    border-radius: 50%;
+
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.square {
+  border-radius: 12px;
+}
+
+.iconCircle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconCircle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Label styles */
+.label {
+  color: #FFF;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.socialIconWrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background: #D04A1D;
+}
+
+.socialIconWrapper:hover .iconCircle {
+  background: #D04A1D;
+}
+
+.socialIconWrapper:hover .iconCircle img {
+  filter: brightness(0) invert(1);
+}
+
+.socialIconWrapper:hover .label {
+  opacity: 1;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .socialIconWrapper {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+  }
+  
+  .label {
+    font-size: 14px;
+  }
+}
