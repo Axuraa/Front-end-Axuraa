@@ -24,7 +24,7 @@ export interface ContactRequest {
 
 export interface ContactResponse {
   success: boolean;
-  data?: any;
+  data?: FormData;
   message?: string;
   error?: string;
 }
