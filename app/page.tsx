@@ -1,7 +1,10 @@
+"use client";
+
 // import Card from '@/components/UI/Card/Card';
 import styles from './page.module.css';
 import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import Homepage from '@/components/pages/Home/Homepage';
+import { getTrackRecords } from '@/service/Generals/trackRecords';
 // import {useLoca}
 
 
@@ -186,7 +189,22 @@ const servicePackages = [
 
 
         {/* <ServicePackagesContainer packages={servicePackages} /> */}
+        
+        {/* test for get TrackRecords */}
+        {/* <button
+          onClick={async () => {
+            try {
+              const res = await getTrackRecords(); // res is HistoryResponse
+              console.log(res);
+            } catch (err) {
+              console.error('Failed to fetch history:', err);
+            }
+          }}
+        >
+          click
+        </button> */}
 
+        
     </div>
 
   );
