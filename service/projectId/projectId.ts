@@ -18,10 +18,13 @@ export const getProjectById = async (
     console.log('Response status:', response.status, response.ok);
 
     const json = (await response.json()) as any;
-    console.log('Project API Response JSON:', json);
+    console.log('=== PROJECT BY ID API DEBUG ===');
+    console.log('Raw response JSON:', JSON.stringify(json, null, 2));
     console.log('Response data structure:', {
       hasData: !!json?.data,
       dataType: typeof json?.data,
+      dataKeys: json?.data ? Object.keys(json.data) : 'no data',
+      fullJson: json
     });
 
     if (!response.ok) {
@@ -34,6 +37,8 @@ export const getProjectById = async (
     // API returns the project object directly in data (not data.project)
     const project = json?.data as ProjectItem | undefined;
     console.log('Extracted project:', project);
+    console.log('Project title:', project?.title);
+    console.log('Project exists:', !!project);
 
     return {
       success: true,

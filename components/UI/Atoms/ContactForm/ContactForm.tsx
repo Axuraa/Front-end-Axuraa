@@ -12,7 +12,7 @@ import chooseIcon from "../../../../public/assets/chose.svg";
 import sendIcon from "../../../../public/assets/sendbuttom.svg";
 
 const ContactForm = () => {
-  // Service options with proper backend values
+  // Service options with proper backend values matching existing API data
   const serviceOptions = [
     { value: "ERP", label: "ERP" },
     { value: "E_commerce", label: "E-commerce" },

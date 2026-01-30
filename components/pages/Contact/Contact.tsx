@@ -1,10 +1,12 @@
 "use client";
+import React, { useEffect, useState } from "react";
 import styles from "./Contact.module.css";
 import HeroSection from "@/components/Layout/HeroSection/HeroSection";
 import SocialMediaSection from "@/components/Section/ContactUs/SocialMediaSection/SocialMediaSection";
 import { SocialMediaPlatform } from "@/types/Generals/socialTypes";
 import ContactSection from "@/components/Section/HomePage/ContactSection/ContactSection";
 import EmailSection from "@/components/Section/ContactUs/EmailSection/EmailSection";
+import { getContactInformation, ContactEmail, SocialLink } from "@/service/Contact/contactinformation";
 
 // Define SVG components directly
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -52,51 +54,81 @@ const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const Contact = () => {
-  const socialPlatforms: SocialMediaPlatform[] = [
-    {
-      name: "Facebook",
-      link: "https://facebook.com/yourpage",
-      icon: FacebookIcon,
-    },
-    {
-      name: "Twitter",
-      link: "https://twitter.com/yourhandle",
-      icon: TwitterIcon,
-    },
-    {
-      name: "Instagram",
-      link: "https://instagram.com/yourhandle",
-      icon: InstagramIcon,
-    },
-    {
-      name: "LinkedIn",
-      link: "https://linkedin.com/company/yourcompany",
-      icon: LinkedInIcon,
-    },
-  ];
+  const [contactData, setContactData] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  const contactsData = [
-    {
-      name: "General inquiries",
-      email: "info@axuraa.com",
-      description: "For general inquiries And information about our services",
-      icon: "info",
-    },
-    {
-      name: "technical support",
-      email: "support@axuraa.com",
-      description: "For technical help and solution Problems",
-      icon: "support",
-    },
+  useEffect(() => {
+    const fetchContactData = async () => {
+      try {
+        setLoading(true);
+        const result = await getContactInformation();
+        
+        if (result.success && result.data) {
+          console.log('Contact data loaded:', result.data);
+          setContactData(result.data);
+        } else {
+          console.error('Contact API error:', result.error);
+          setError(result.error || 'Failed to load contact information');
+        }
+      } catch (err) {
+        console.error('Contact fetch error:', err);
+        setError('An unexpected error occurred while loading contact information');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContactData();
+  }, []);
+
+  // Transform API data to component format
+  const getSocialPlatforms = (): SocialMediaPlatform[] => {
+    if (!contactData?.socialLinks) return [];
     
-    {
-      name: "Sales",
-      email: "sales@axuraa.com",
-      description: "To request quotes and projects New",
-      icon: "sales",
-    },
-   
-  ];
+    const iconMap: { [key: string]: React.ComponentType<React.SVGProps<SVGSVGElement>> } = {
+      'Facebook': FacebookIcon,
+      'Twitter': TwitterIcon,
+      'Instagram': InstagramIcon,
+      'LinkedIn': LinkedInIcon,
+    };
+
+    return contactData.socialLinks.map((link: SocialLink) => ({
+      name: link.name,
+      link: link.url,
+      icon: iconMap[link.name] || FacebookIcon, // Default to Facebook if no icon found
+    }));
+  };
+
+  const getContactsData = () => {
+    if (!contactData?.emails) return [];
+    
+    return contactData.emails.map((email: ContactEmail) => ({
+      name: email.name,
+      email: email.email,
+      description: email.description,
+      icon: email.icon,
+    }));
+  };
+
+  if (loading) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.loading}>Loading Contact page...</div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className={styles.container}>
+        <div className={styles.error}>{error}</div>
+      </div>
+    );
+  }
+
+  const socialPlatforms = getSocialPlatforms();
+  const contactsData = getContactsData();
 
   return (
     <div className={styles.container}>
@@ -115,7 +147,7 @@ const Contact = () => {
       />
       <SocialMediaSection platforms={socialPlatforms} />
       <EmailSection
-        title="Contact via email"
+        title={contactData?.title || "Contact via email"}
         subtitle="Choose the appropriate section for your inquiry"
         contacts={contactsData}
       />

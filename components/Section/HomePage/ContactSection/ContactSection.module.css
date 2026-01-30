@@ -297,11 +297,24 @@
   }
 
   .socialIconsContainer {
+    display: flex;
     flex-wrap: wrap;
     gap: 1rem; /* 16px / 16 = 1rem */
     max-width: 100%;
     justify-content: center;
     order: 3; /* Social icons appear last */
+  }
+
+  .socialLink {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .socialLink:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
   }
 }
 

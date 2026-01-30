@@ -11,6 +11,11 @@ interface CaseStudyPageProps {
   projectId: string;
 }
 
+interface Testimonial {
+  text: string;
+  author: string;
+}
+
 const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
   const [project, setProject] = useState<ProjectItem | null>(null);
   const [loading, setLoading] = useState(true);
@@ -89,7 +94,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
       metric: result.description.en,
       value: result.value
     })) || [],
-    testimonials: [],
+    testimonials: (project as any).testimonials || [],
     features: project.features?.map(feature => ({
       icon: <Package className={styles.featureIcon} />,
       title: feature.title.en,
@@ -269,7 +274,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>Client Testimonials</h3>
               <div className={styles.testimonials}>
-                {caseStudy.testimonials.map((testimonial, idx) => (
+                {caseStudy.testimonials.map((testimonial: Testimonial, idx: number) => (
                   <div key={idx} className={styles.testimonial}>
                     <div className={styles.testimonialAvatar}>
                           <Image
