@@ -1,93 +1,128 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ArrowLeft, ExternalLink, Zap, Star, CreditCard, BarChart3, User, Brain, Shield, Package } from 'lucide-react';
 import styles from './CaseStudyPage.module.css';
 import ProjectButton from '@/components/UI/Atoms/ProjectButton/ProjectButton';
 import Image from 'next/image';
-const CaseStudyPage = () => {
-  const caseStudy = {
-    title: "Custom E-commerce Platform",
-    subtitle: "Built To Scale Enterprise Growth & Performance",
-    tags: ["Node.js App", "E-commerce", "SaaS", "Cloud", "UI/UX", "Multi-platform"],
-    client: "Global Retail Inc.",
-    projectManager: "Martha (UX, Admin)",
-    timeframe: "6 Months",
-    team: "5 dedicated professionals",
-    location: "Los Angeles, CA",
-    results: [
-      { metric: "Growth in online sales for enterprise clients", value: "+25%" },
-      { metric: "More efficient order fulfillment processes", value: "+25%" }
-    ],
-    testimonials: [
-      {
-        text: "This platform revolutionized our online presence and significantly boosted customer engagement.",
-        author: "Marketing Director, Global Retail Inc."
-      },
-      {
-        text: "The team's expertise and dedication delivered a product that exceeded our expectations.",
-        author: "CEO, E-commerce Solutions LLC"
+import { getProjectById } from '@/service/projectId/projectId';
+import { ProjectItem } from '@/service/Projects/projects';
+
+interface CaseStudyPageProps {
+  projectId: string;
+}
+
+const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
+  const [project, setProject] = useState<ProjectItem | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchProject = async () => {
+      try {
+        console.log('Fetching project with ID:', projectId);
+        setLoading(true);
+        
+        // For testing, if it's the test ID, show a mock project
+        if (projectId === 'test-project-id') {
+          console.log('Using test project data');
+          setProject({
+            _id: 'test-project-id',
+            title: { en: 'Test Project', ar: 'مشروع تجريبي' },
+            subTitle: { en: 'Test Subtitle', ar: 'عنوان فرعي تجريبي' },
+            overview: { en: 'This is a test project for debugging', ar: 'هذا مشروع تجريبي للتصحيح' },
+            technology_stack: ['React', 'Node.js', 'TypeScript'],
+            case_study_results: [],
+            team_members: [],
+            client_id: { _id: '1', name: 'Test Client', image_url: '' },
+            features: [],
+            services: [],
+            status: 'Completed',
+            location: 'Test Location',
+            start_work: new Date().toISOString(),
+            project_manager: 'Test Manager'
+          });
+          setLoading(false);
+          return;
+        }
+        
+        const result = await getProjectById(projectId);
+        console.log('Project API result:', result);
+        
+        if (result.success && result.data) {
+          console.log('Project data loaded:', result.data);
+          setProject(result.data);
+        } else {
+          console.log('Project API error:', result.error);
+          setError(result.error || 'Failed to load project');
+        }
+      } catch (err) {
+        console.log('Project fetch error:', err);
+        setError('An unexpected error occurred');
+      } finally {
+        setLoading(false);
       }
-    ],
-    features: [
-      {
-        icon: <Package className={styles.featureIcon} />,
-        title: "Advanced Inventory Management",
-        description: "Real-time tracking and automated stock control"
-      },
-      {
-        icon: <CreditCard className={styles.featureIcon} />,
-        title: "Secure Payment Gateways",
-        description: "Multiple payment options with enterprise-grade security"
-      },
-      {
-        icon: <BarChart3 className={styles.featureIcon} />,
-        title: "Powerful Analytics",
-        description: "Deep insights into sales performance and customer behavior"
-      },
-      {
-        icon: <User className={styles.featureIcon} />,
-        title: "Personalized Dashboards",
-        description: "Custom user experiences tailored to individual preferences"
-      },
-      {
-        icon: <Brain className={styles.featureIcon} />,
-        title: "AI Recommendation Engine",
-        description: "Smart product suggestions to boost conversions"
-      },
-      {
-        icon: <Shield className={styles.featureIcon} />,
-        title: "Fraud Detection",
-        description: "ML-powered security to protect your business"
-      }
-    ]
-  };
-const projectDetails = [
-  { 
-    icon: '/assets/ProjectDetailscard/client.svg',
-    label: 'Client:',
-    value: caseStudy.client
-  },
-  { 
-    icon: '/assets/ProjectDetailscard/client.svg',
-    label: 'Project Manager:',
-    value: 'Mortha (Lo, Admin)'
-  },
-  { 
-    icon: '/assets/ProjectDetailscard/time.svg',
-    label: 'Timeframe:',
-    value: caseStudy.timeframe
-  },
-  { 
-    icon: '/assets/ProjectDetailscard/team.svg',
-    label: 'Team:',
-    value: caseStudy.team
-  },
-  { 
-    icon: '/assets/ProjectDetailscard/location.svg',
-    label: 'Location:',
-    value: caseStudy.location
+    };
+
+    if (projectId) {
+      fetchProject();
+    }
+  }, [projectId]);
+
+  if (loading) {
+    return <div className={styles.loading}>Loading project details...</div>;
   }
-];
+
+  if (error || !project) {
+    return <div className={styles.error}>{error || 'Project not found'}</div>;
+  }
+
+  const caseStudy = {
+    title: project.title.en,
+    subtitle: project.subTitle?.en || '',
+    tags: project.technology_stack || [],
+    client: project.client_id?.name || 'Client',
+    projectManager: project.project_manager || 'Project Manager',
+    timeframe: project.start_work ? new Date(project.start_work).toLocaleDateString() : 'Timeframe',
+    team: `${project.team_members?.length || 0} team members`,
+    location: project.location || 'Location',
+    results: project.case_study_results?.map(result => ({
+      metric: result.description.en,
+      value: result.value
+    })) || [],
+    testimonials: [],
+    features: project.features?.map(feature => ({
+      icon: <Package className={styles.featureIcon} />,
+      title: feature.title.en,
+      description: feature.description.en
+    })) || []
+  };
+  const projectDetails = [
+    { 
+      icon: '/assets/ProjectDetailscard/client.svg',
+      label: 'Client:',
+      value: caseStudy.client
+    },
+    { 
+      icon: '/assets/ProjectDetailscard/client.svg',
+      label: 'Project Manager:',
+      value: caseStudy.projectManager
+    },
+    { 
+      icon: '/assets/ProjectDetailscard/time.svg',
+      label: 'Timeframe:',
+      value: caseStudy.timeframe
+    },
+    { 
+      icon: '/assets/ProjectDetailscard/team.svg',
+      label: 'Team:',
+      value: caseStudy.team
+    },
+    { 
+      icon: '/assets/ProjectDetailscard/location.svg',
+      label: 'Location:',
+      value: caseStudy.location
+    }
+  ];
   return (
     <div className={styles.container}>
      {/* Breadcrumb */}

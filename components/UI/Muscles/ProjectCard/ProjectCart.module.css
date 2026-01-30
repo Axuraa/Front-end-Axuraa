@@ -115,8 +115,8 @@ text-underline-position: from-font;
 
 .card {
   display: flex;
-  width: 356.971px;
-  height: 208.223px;
+  /* width: 356.971px;
+  height: 208.223px; */
   flex-shrink: 0;
   /* padding: 1rem; */
   flex-direction: column;

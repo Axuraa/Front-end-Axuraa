@@ -52,6 +52,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
             className={styles.gridItem}
           >
             <ProjectCard 
+              id={project.id}
               title={project.title}
               category={project.category}
               percentage={project.percentage}

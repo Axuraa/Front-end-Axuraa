@@ -21,7 +21,8 @@ const ViewButton: React.FC<ViewButtonProps> = ({
             alt="View" 
             width={20} 
             height={20} 
-            className={styles.buttonIcon} 
+            className={styles.buttonIcon}
+            style={{ width: 'auto', height: 'auto' }}
           />
         </span>
         <span className={styles.buttonText}>

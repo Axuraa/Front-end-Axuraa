@@ -5,7 +5,12 @@ export const ENDPOINTS = {
 
     },
     Services: {
-
+        getAll: `${API_BASE}/services`, // GET
+        getById: (id: string) => `${API_BASE}/services/${id}`, // GET
+    },
+    Projects: {
+        getAll: `${API_BASE}/projects`, // GET
+        getById: (id: string) => `${API_BASE}/projects/${id}`, // GET
     },
     BusinessSolutions: {
 

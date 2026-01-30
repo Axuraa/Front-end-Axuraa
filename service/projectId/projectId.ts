@@ -1,0 +1,56 @@
+import { ENDPOINTS } from '../api/APIs';
+import { ProjectItem, ProjectApiResult } from '../Projects/projects';
+
+export const getProjectById = async (
+  id: string,
+  lang: 'en' | 'ar' = 'en'
+): Promise<ProjectApiResult> => {
+  try {
+    const url = `${ENDPOINTS.Projects.getById(id)}?lang=${lang}`;
+    console.log('=== PROJECT BY ID API DEBUG ===');
+    console.log('Fetching project by ID from:', url);
+    console.log('Project ID:', id);
+
+    const response = await fetch(url, {
+      method: 'GET',
+    });
+
+    console.log('Response status:', response.status, response.ok);
+
+    const json = (await response.json()) as any;
+    console.log('Project API Response JSON:', json);
+    console.log('Response data structure:', {
+      hasData: !!json?.data,
+      dataType: typeof json?.data,
+    });
+
+    if (!response.ok) {
+      return {
+        success: false,
+        error: json?.message || `Failed to load project: ${response.status}`,
+      };
+    }
+
+    // API returns the project object directly in data (not data.project)
+    const project = json?.data as ProjectItem | undefined;
+    console.log('Extracted project:', project);
+
+    return {
+      success: true,
+      data: project,
+    };
+  } catch (error) {
+    console.log('=== PROJECT BY ID API ERROR ===');
+    console.log('Error type:', typeof error);
+    console.log('Error message:', error instanceof Error ? error.message : error);
+    console.log('Full error:', error);
+
+    return {
+      success: false,
+      error:
+        error instanceof Error
+          ? error.message
+          : 'An unexpected error occurred while loading the project',
+    };
+  }
+};

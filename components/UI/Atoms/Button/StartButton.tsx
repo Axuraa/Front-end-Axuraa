@@ -23,7 +23,8 @@ const StartButton: React.FC<StartButtonProps> = ({
             alt="Start" 
             width={20} 
             height={20} 
-            className={styles.buttonIcon} 
+            className={styles.buttonIcon}
+            style={{ width: 'auto', height: 'auto' }}
           />
         </span>
       </span>

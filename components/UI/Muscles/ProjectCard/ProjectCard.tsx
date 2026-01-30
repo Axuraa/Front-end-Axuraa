@@ -7,6 +7,7 @@ import styles from './ProjectCart.module.css';
 import { ProjectCardProps } from '@/types/Generals/cardTypes';
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
+  id,
   title,
   category,
   percentage,
@@ -35,7 +36,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <p className={styles.description}>{description}</p>
         </div>
         
-        <a href="#" className={styles.readMore}>
+        <a href={`/en/case-study/${id}`} className={styles.readMore}>
           Read More
           <span>→</span>
         </a>

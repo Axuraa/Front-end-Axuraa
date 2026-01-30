@@ -1,5 +1,6 @@
+'use client';
 // pages/ServicePage/ServicePage.tsx
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ServicePage.module.css';
 import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import TechnologiesUsed from '@/components/Molecules/TechnologiesUsed/TechnologiesUsed';
@@ -8,8 +9,10 @@ import OurDevelopmentContainer from '@/components/Molecules/OurDevelopmentContai
 import SuccessStoriesContainer from '@/components/Molecules/SuccessStoriesContainer/SuccessStoriesContainer';
 import Image from 'next/image';
 import ServicePackagesContainer from '@/components/Molecules/ServicePackagesContainer/ServicePackagesContainer';
+import { getServiceById, ServiceItem } from '@/service/serviceId/serviceId';
+
 interface ServicePageProps {
-  // Add any props if needed
+  serviceId: string;
 }
 
 const features = [
@@ -88,7 +91,7 @@ const successStories = [
   {
     title: "E-Commerce Platform",
     description: "Revolutionized online shopping with a 3x increase in conversion rates and 200% revenue growth through a seamless, mobile-first design.",
-    iconUrl: "/icons/ecommerce-icon.svg", // Update with your actual icon path
+    iconUrl: "/assets/Frame.svg", // Using existing icon
     metrics: [
       { label: "Revenue Growth", value: "200%", valueColor: "#D04A1D" },
       { label: "Page Load", value: "1.2s", valueColor: "#D04A1D" }
@@ -97,7 +100,7 @@ const successStories = [
   {
     title: "Healthcare Portal",
     description: "Streamlined patient management with 99.9% uptime, reducing administrative workload by 40% and improving patient satisfaction scores.",
-    iconUrl: "/icons/healthcare-icon.svg", // Update with your actual icon path
+    iconUrl: "/assets/Frame.svg", // Using existing icon
     metrics: [
       { label: "Efficiency", value: "150%", valueColor: "#D04A1D" },
       { label: "Uptime", value: "99.9%", valueColor: "#D04A1D" }
@@ -106,7 +109,7 @@ const successStories = [
   {
     title: "SaaS Application",
     description: "Scaled to handle 1M+ monthly active users with 99.99% reliability and 85% user retention rate.",
-    iconUrl: "/icons/saas-icon.svg", // Update with your actual icon path
+    iconUrl: "/assets/Frame.svg", // Using existing icon
     metrics: [
       { label: "Active Users", value: "1M+", valueColor: "#D04A1D" },
       { label: "Retention", value: "85%", valueColor: "#D04A1D" }
@@ -172,13 +175,51 @@ const successStories = [
     ,hasShadow: false
   }
 ];
-const ServicePage: React.FC<ServicePageProps> = () => {
+const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
+  const [service, setService] = useState<ServiceItem | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchService = async () => {
+      try {
+        console.log('Fetching service with ID:', serviceId);
+        setLoading(true);
+        const result = await getServiceById(serviceId);
+        console.log('API result:', result);
+        if (result.success && result.data) {
+          console.log('Service data loaded:', result.data);
+          setService(result.data);
+        } else {
+          console.log('API error:', result.error);
+          setError(result.error || 'Failed to load service');
+        }
+      } catch (err) {
+        console.log('Fetch error:', err);
+        setError('An unexpected error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (serviceId) {
+      fetchService();
+    }
+  }, [serviceId]);
+
+  if (loading) {
+    return <div className={styles.loading}>Loading service...</div>;
+  }
+
+  if (error || !service) {
+    return <div className={styles.error}>{error || 'Service not found'}</div>;
+  }
   return (
     <div className={styles.servicePage}>
       <HeroSection 
-              title1="Architecting the Future of"
-              title2="Digital Business."
-              subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
+              title1={service.title?.en || "Service"}
+              title2={service.title?.ar || "خدمة"}
+              subtitle1={service.description?.en || "Service description"}
               badgeText="INNOVATION IN PROGRESS"
               showBackgroundDots={false}
               showAnimatedCircles={true}
