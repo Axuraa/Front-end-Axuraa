@@ -6,6 +6,20 @@ export const getProjectById = async (
   lang: 'en' | 'ar' = 'en'
 ): Promise<ProjectApiResult> => {
   try {
+    // Check if ID is a valid MongoDB ObjectId format (24-character hex string)
+    const isValidObjectId = /^[0-9a-fA-F]{24}$/.test(id);
+    
+    if (!isValidObjectId) {
+      console.log('=== PROJECT BY ID API DEBUG ===');
+      console.log('Invalid ObjectId format:', id);
+      console.log('Expected 24-character hex string, got:', typeof id, id);
+      
+      return {
+        success: false,
+        error: `Invalid project ID format: "${id}". Expected MongoDB ObjectId format (24-character hex string).`,
+      };
+    }
+
     const url = `${ENDPOINTS.Projects.getById(id)}?lang=${lang}`;
     console.log('=== PROJECT BY ID API DEBUG ===');
     console.log('Fetching project by ID from:', url);
@@ -22,6 +36,7 @@ export const getProjectById = async (
     console.log('Raw response JSON:', JSON.stringify(json, null, 2));
     console.log('Response data structure:', {
       hasData: !!json?.data,
+      hasProject: !!json?.data?.project,
       dataType: typeof json?.data,
       dataKeys: json?.data ? Object.keys(json.data) : 'no data',
       fullJson: json
@@ -34,7 +49,7 @@ export const getProjectById = async (
       };
     }
 
-    // API returns the project object directly in data (not data.project)
+    // API returns the project object directly under data
     const project = json?.data as ProjectItem | undefined;
     console.log('Extracted project:', project);
     console.log('Project title:', project?.title);

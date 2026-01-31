@@ -9,7 +9,7 @@ import OurDevelopmentContainer from '@/components/Molecules/OurDevelopmentContai
 import SuccessStoriesContainer from '@/components/Molecules/SuccessStoriesContainer/SuccessStoriesContainer';
 import Image from 'next/image';
 import ServicePackagesContainer from '@/components/Molecules/ServicePackagesContainer/ServicePackagesContainer';
-import { getServiceById, ServiceItem } from '@/service/serviceId/serviceId';
+import { getServiceById, ServiceItem, Technology, ServiceFeature, ServiceProject } from '@/service/serviceId/serviceId';
 
 interface ServicePageProps {
   serviceId: string;
@@ -236,50 +236,55 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
         <div className={styles.contentSection1}>
             <div className={styles.contentSection2}>
                 <h1 className={styles.contentSection2Title}>What We Do</h1>
-                <p className={styles.contentSection2Description}>Our web development experts build exceptional digital experiences for your brand. We combine strategic design, cutting-edge development technologies, and proven methodologies to deliver high-performance, scalable web solutions that drive business growth.</p>
+                <p className={styles.contentSection2Description}>
+                    {service.what_we_do?.description?.en || 'Our web development experts build exceptional digital experiences for your brand. We combine strategic design, cutting-edge development technologies, and proven methodologies to deliver high-performance, scalable web solutions that drive business growth.'}
+                </p>
                <ul className={styles.serviceList}>
-                    <li className={styles.serviceItem}>
-                        <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
-                        </svg>
-                        <span className={styles.serviceContent}>Custom web application and platform development</span>
-                    </li>
-                    <li className={styles.serviceItem}>
-                        <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
-                        </svg>
-                        <span className={styles.serviceContent}>E-commerce solutions and online store development</span>
-                    </li>
-                    <li className={styles.serviceItem}>
-                        <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
-                        </svg>
-                        <span className={styles.serviceContent}>Progressive Web Apps (PWA) for mobile experiences</span>
-                    </li>
-                    <li className={styles.serviceItem}>
-                        <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
-                        </svg>
-                        <span className={styles.serviceContent}>API development and integration services</span>
-                    </li>
-                    <li className={styles.serviceItem}>
-                        <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
-                        </svg>
-                        <span className={styles.serviceContent}>Website maintenance and support</span>
-                    </li>
+                    {service.what_we_do?.units?.map((unit, index) => (
+                        <li key={index} className={styles.serviceItem}>
+                            <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
+                            </svg>
+                            <span className={styles.serviceContent}>{unit.en}</span>
+                        </li>
+                    )) || (
+                        // Fallback to hardcoded items if no units data
+                        <>
+                            <li className={styles.serviceItem}>
+                                <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
+                                </svg>
+                                <span className={styles.serviceContent}>Custom web application and platform development</span>
+                            </li>
+                            <li className={styles.serviceItem}>
+                                <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
+                                </svg>
+                                <span className={styles.serviceContent}>E-commerce solutions and online store development</span>
+                            </li>
+                        </>
+                    )}
                </ul>
             </div>
-            <TechnologiesUsed technologies={technologies}/>
+            <TechnologiesUsed technologies={service.technologies_used?.map((tech: Technology) => tech.name) || technologies}/>
         </div>
         {/* FeaturesCapabilities */}
         <div className={styles.FeaturesCapabilities}>
             <div className={styles.FeaturesCapabilitiesContent}>
                 <h1 className={styles.FeaturesCapabilitiesTitle}>Features & Capabilities</h1>
-                <p className={styles.FeaturesCapabilitiesDescription}>Comprehensive web services designed to design, build, and scale your digital presence from concept to launch.</p>
+                <p className={styles.FeaturesCapabilitiesDescription}>
+                    {service.description_features?.en || 'Comprehensive web services designed to design, build, and scale your digital presence from concept to launch.'}
+                </p>
             </div>
             <div className={styles.FeaturesCapabilitiesContainer}>
-              <FeaturesContainer features={features}/>
+              <FeaturesContainer features={
+                service.features?.map((feature: ServiceFeature) => ({
+                  id: feature._id,
+                  title: feature.title.en,
+                  description: feature.description.en,
+                  iconUrl: feature.icon || "/assets/Frame.svg"
+                })) || features
+              }/>
             </div>
         </div>
         {/* Our Development Process */}
@@ -296,10 +301,23 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
         <div className={styles.SuccessStories}>
             <div className={styles.SuccessStoriesContent}>
                 <h1 className={styles.SuccessStoriesTitle}>Success Stories</h1>
-                <p className={styles.SuccessStoriesDescription}>Real results from our web development services across various industries, demonstrating measurable improvements in digital performance.</p>
+                <p className={styles.SuccessStoriesDescription}>
+                    {service.description_stories?.en || 'Real results from our web development services across various industries, demonstrating measurable improvements in digital performance.'}
+                </p>
             </div>
             <div className={styles.SuccessStoriesContainer}>
-                <SuccessStoriesContainer stories={successStories}/>
+                <SuccessStoriesContainer stories={
+                    service.projects?.map((project: ServiceProject) => ({
+                        title: project.projects_id.title.en,
+                        description: project.projects_id.overview.en,
+                        iconUrl: "/assets/Frame.svg",
+                        metrics: project.projects_id.case_study_results?.slice(0, 2).map(result => ({
+                            label: result.description.en,
+                            value: result.value,
+                            valueColor: "#D04A1D"
+                        })) || []
+                    })) || successStories
+                }/>
             </div>
             <div className={styles.testimonialSection}>
                 <div className={styles.testimonialContent}>

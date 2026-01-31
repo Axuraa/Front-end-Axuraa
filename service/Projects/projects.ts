@@ -34,6 +34,19 @@ export interface ProjectService {
   };
 }
 
+export interface Testimonial {
+  _id: string;
+  client_id: {
+    _id: string;
+    name: string;
+    company_name?: string;
+    description?: string;
+    image_url?: string;
+  };
+  project_id: string;
+  message: LocalizedField;
+}
+
 export interface ProjectItem {
   _id: string;
   title: LocalizedField;
@@ -49,6 +62,7 @@ export interface ProjectItem {
   status: string;
   location: string;
   start_work: string;
+  testimonials?: Testimonial[];
 }
 
 export interface ProjectsApiResult {

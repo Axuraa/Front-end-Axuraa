@@ -10,6 +10,41 @@ export interface ServiceUnit {
   ar: string;
 }
 
+export interface Technology {
+  _id?: string;
+  name: string;
+  icon?: string;
+}
+
+export interface ServiceFeature {
+  _id: string;
+  title: LocalizedField;
+  description: LocalizedField;
+  icon?: string;
+}
+
+export interface ServiceProject {
+  _id: string;
+  services_id: string;
+  projects_id: {
+    _id: string;
+    title: LocalizedField;
+    main_image_url?: string;
+    client_id: string;
+    project_manager: string;
+    overview: LocalizedField;
+    case_study_results: Array<{
+      description: LocalizedField;
+      value: string;
+    }>;
+    status: string;
+    subTitle?: LocalizedField;
+    location?: string;
+    start_work?: string;
+  };
+  priority: number;
+}
+
 export interface ServiceItem {
   _id: string;
   icon?: string;
@@ -20,6 +55,9 @@ export interface ServiceItem {
     description?: LocalizedField;
     units?: ServiceUnit[];
   };
+  technologies_used?: Technology[];
+  features?: ServiceFeature[];
+  projects?: ServiceProject[];
   description_features?: LocalizedField;
   description_stories?: LocalizedField;
   type?: string;

@@ -28,33 +28,6 @@ const ratingItems = [
   { id: 4, value: 95, label: 'Success Rate', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const}
 ];
 
-const projects = [
-    {
-      id: 1,
-      title: "E-commerce Platform",
-      category: "Web Development",
-      percentage: "+45%",
-      description: "Boosted online sales with a modern e-commerce solution.",
-      imageUrl: "/assets/ProjectImage.png"
-    },
-    {
-      id: 2,
-      title: "Cybersecurity Suite",
-      category: "Security",
-      percentage: "+60%",
-      description: "Enhanced security infrastructure for enterprise clients.",
-      imageUrl: "/assets/ProjectImage.png"
-    },
-    {
-      id: 3,
-      title: "Mobile Banking App",
-      category: "Finance",
-      percentage: "+75%",
-      description: "Revolutionary banking experience on mobile devices.",
-      imageUrl: "/assets/ProjectImage.png"
-    }
-  ];
-
 const workers = [
   {
     id: 1,
@@ -156,7 +129,6 @@ const Homepage = () => {
          subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
          seeAllHref="#projects"
          seeAllText="View All Projects"
-        projects={projects}
        />
 
         <WorkerSection

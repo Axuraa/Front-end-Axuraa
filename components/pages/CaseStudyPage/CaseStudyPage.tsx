@@ -5,13 +5,13 @@ import styles from './CaseStudyPage.module.css';
 import ProjectButton from '@/components/UI/Atoms/ProjectButton/ProjectButton';
 import Image from 'next/image';
 import { getProjectById } from '@/service/projectId/projectId';
-import { ProjectItem } from '@/service/Projects/projects';
+import { ProjectItem, Testimonial } from '@/service/Projects/projects';
 
 interface CaseStudyPageProps {
   projectId: string;
 }
 
-interface Testimonial {
+interface TestimonialDisplay {
   text: string;
   author: string;
 }
@@ -94,9 +94,12 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
       metric: result.description.en,
       value: result.value
     })) || [],
-    testimonials: (project as any).testimonials || [],
+    testimonials: project.testimonials?.map((testimonial: Testimonial) => ({
+      text: typeof testimonial.message === 'string' ? testimonial.message : testimonial.message?.en || '',
+      author: testimonial.client_id?.name || 'Anonymous'
+    })) || [],
     features: project.features?.map(feature => ({
-      icon: <Package className={styles.featureIcon} />,
+      icon: feature.icon || <Package className={styles.featureIcon} />,
       title: feature.title.en,
       description: feature.description.en
     })) || []
@@ -225,13 +228,17 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                 {caseStudy.features.map((feature, idx) => (
                   <div key={idx} className={styles.featureCard}>
                       <div className={styles.featureIcon}>
-                        <Image
-                          src="/assets/box.png"
-                          alt="Overview"
-                          width={30}
-                          height={30}
-                          className={styles.overviewIcon}
-                        />
+                        {typeof feature.icon === 'string' ? (
+                          <Image
+                            src={feature.icon || "/assets/box.png"}
+                            alt="Feature icon"
+                            width={30}
+                            height={30}
+                            className={styles.overviewIcon}
+                          />
+                        ) : (
+                          feature.icon || <Package className={styles.featureIcon} />
+                        )}
                       </div>
                     <h3 className={styles.featureTitle}>{feature.title}</h3>
                     <p className={styles.featureDescription}>{feature.description}</p>
@@ -274,7 +281,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
             <div className={styles.card}>
               <h3 className={styles.cardTitle}>Client Testimonials</h3>
               <div className={styles.testimonials}>
-                {caseStudy.testimonials.map((testimonial: Testimonial, idx: number) => (
+                {caseStudy.testimonials.map((testimonial: TestimonialDisplay, idx: number) => (
                   <div key={idx} className={styles.testimonial}>
                     <div className={styles.testimonialAvatar}>
                           <Image

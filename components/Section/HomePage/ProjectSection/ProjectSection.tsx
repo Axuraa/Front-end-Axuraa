@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ProjectSection.module.css';
 import Badge from '@/components/UI/Atoms/Badge/Badge';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
@@ -7,6 +7,7 @@ import ProjectCard from '@/components/UI/Muscles/ProjectCard/ProjectCard';
 import SeeAll from '@/components/UI/Atoms/SeeAll/SeeAll';
 
 import { ProjectSectionProps } from '@/types/HomePage/projectsTypes';
+import { getAllProjects } from '@/service/Projects/projects';
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({
   badgeText,
@@ -17,6 +18,40 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
   seeAllHref = "#",
   seeAllText = "See All case studies"
 }) => {
+  const [apiProjects, setApiProjects] = useState(projects);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        setLoading(true);
+        const result = await getAllProjects('en');
+        
+        if (result.success && result.data) {
+          // Transform API data to match Project interface
+          const transformedProjects = result.data.slice(0, 3).map(project => ({
+            id: project._id,
+            title: project.title?.en || 'Untitled Project',
+            category: project.technology_stack?.[0] || 'General',
+            percentage: '+50%',
+            description: project.overview?.en || 'Project description',
+            imageUrl: '/assets/ProjectImage.png'
+          }));
+          
+          setApiProjects(transformedProjects);
+          console.log('Loaded projects from API:', transformedProjects);
+        }
+      } catch (error) {
+        console.error('Failed to fetch projects:', error);
+        // Keep using mock data if API fails
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   return (
     <section className={styles.ProjectSection}>
       <Badge text={badgeText} show={true} />
@@ -29,9 +64,10 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
         {seeAllText}
       </SeeAll>
       <div className={styles.ProjectGrid}>
-         {projects?.map((project) => ( 
+         {apiProjects?.map((project) => ( 
           <ProjectCard
             key={project.id}
+            id={project.id}
             title={project.title}
             category={project.category}
             percentage={project.percentage}
