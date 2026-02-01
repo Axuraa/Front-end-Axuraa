@@ -15,7 +15,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
   title2,
   subtitle,
   projects = [],
-  seeAllHref = "#",
+  seeAllHref = "/en/portfolio",
   seeAllText = "See All case studies"
 }) => {
   const [apiProjects, setApiProjects] = useState(projects);

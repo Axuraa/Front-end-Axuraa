@@ -5,40 +5,54 @@ import ProjectsGrid from '@/components/Section/PortfolioPage/ProjectsGrid.tsx/Pr
 import styles from './PortfolioPage.module.css';
 import ProjectPageButtons from '@/components/Molecules/ProjectPageButtons/ProjectPageButtons';
 import { getAllProjects, ProjectItem } from '@/service/Projects/projects';
+import { getAllServices, ServiceItem } from '@/service/Services/services';
 
 const PortfolioPage = () => {
   const [activeFilter, setActiveFilter] = useState('All');
   const [projects, setProjects] = useState<ProjectItem[]>([]);
+  const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Fetch projects from API
+  // Fetch projects and services from APIs
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchData = async () => {
       try {
-        console.log('Starting to fetch projects...');
+        console.log('Starting to fetch projects and services...');
         setLoading(true);
-        const result = await getAllProjects('en');
-        console.log('API result received:', result);
         
-        if (result.success && result.data) {
-          console.log('Projects loaded successfully:', result.data);
-          console.log('Number of projects:', result.data.length);
-          setProjects(result.data);
+        // Fetch both projects and services in parallel
+        const [projectsResult, servicesResult] = await Promise.all([
+          getAllProjects('en'),
+          getAllServices('en')
+        ]);
+        
+        // Handle projects
+        if (projectsResult.success && projectsResult.data) {
+          console.log('Projects loaded successfully:', projectsResult.data);
+          setProjects(projectsResult.data);
         } else {
-          console.log('Projects API error:', result.error);
-          console.log('Full result object:', result);
-          setError(result.error || 'Failed to load projects');
+          console.log('Projects API error:', projectsResult.error);
+          setError(projectsResult.error || 'Failed to load projects');
         }
+        
+        // Handle services
+        if (servicesResult.success && servicesResult.data) {
+          console.log('Services loaded successfully:', servicesResult.data);
+          setServices(servicesResult.data);
+        } else {
+          console.log('Services API error:', servicesResult.error);
+        }
+        
       } catch (err) {
-        console.log('Projects fetch error:', err);
+        console.log('Fetch error:', err);
         setError('An unexpected error occurred');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchProjects();
+    fetchData();
   }, []);
 
   // Extract unique categories from projects for dynamic filters
@@ -56,12 +70,19 @@ const PortfolioPage = () => {
     return Array.from(categories);
   }, [projects]);
 
-  // Use dynamic filters if available, otherwise fallback to static ones
+  // Create filters from services and project categories
   const filters = useMemo(() => {
-    return projectCategories.length > 0 ? 
-      ['All', ...projectCategories] : 
+    const serviceTitles = services.map(service => service.title.en);
+    const allFilters = ['All', ...serviceTitles];
+    
+    // Remove duplicates while preserving order
+    const uniqueFilters = Array.from(new Set(allFilters));
+    
+    return uniqueFilters.length > 1 ? uniqueFilters : 
       ["All", "ERP Systems", "Desktop App", "UI/UX Design", "Custom Software", "LMS", "Booking Systems", "HR Systems", "Mobile App", "E-commerce", "POS", "CRM", "SaaS", "AI & ML", "Web Platforms"];
-  }, [projectCategories]);
+  }, [services]);
+
+  // console.log( "the projectCategories is :" +  projectCategories)
 
   // Filter projects based on active filter
   const filteredProjects = useMemo(() => {

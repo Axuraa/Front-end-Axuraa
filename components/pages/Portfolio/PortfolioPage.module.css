@@ -35,12 +35,13 @@
 .container {
     
     /* background-color: #46c70ae5; */
-    width: 1120px;
+    /* width: 1120px; */
     height: 1233.2253px;
     display: flex;
     margin-top: 30px;
     justify-content: center;
     align-items: center;
+    /* background-color: antiquewhite;  */
 }
 
 
