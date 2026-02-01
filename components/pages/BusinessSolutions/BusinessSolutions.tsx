@@ -106,13 +106,12 @@ const BusinessSolutions = () => {
             <div className={styles.BusinessContainer}>
                 {services.map((service, index) => (
                     <ServiceCard
-                        key={index}
-                        title={service.title}
-                        description={service.description}
-                        features={service.features}
-                        buttonText={service.buttonText}
-                        onButtonClick={() => console.log(`Clicked ${service.title}`)}
-                    />
+                      key={index}
+                      title={service.title}
+                      description={service.description}
+                      features={service.features}
+                      buttonText={service.buttonText}
+                      onButtonClick={() => console.log(`Clicked ${service.title}`)} id={''}                    />
                     ))}
             </div>
     </div>
