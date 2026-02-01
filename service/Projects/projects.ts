@@ -53,6 +53,8 @@ export interface ProjectItem {
   subTitle: LocalizedField;
   project_manager: string;
   overview: LocalizedField;
+  main_image_url?: string;
+  second_image_url?: string;
   technology_stack: string[];
   case_study_results: CaseStudyResult[];
   team_members: TeamMember[];

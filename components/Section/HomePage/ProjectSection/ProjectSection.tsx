@@ -32,11 +32,13 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
           const transformedProjects = result.data.slice(0, 3).map(project => ({
             id: project._id,
             title: project.title?.en || 'Untitled Project',
-            category: project.technology_stack?.[0] || 'General',
-            percentage: '+50%',
-            description: project.overview?.en || 'Project description',
-            imageUrl: '/assets/ProjectImage.png'
+            category: project.services?.[0]?.services_id?.title?.en || project.technology_stack?.[0] || 'General',
+            percentage: project.case_study_results?.[0]?.value || '+50%',
+            description: project.case_study_results?.[0]?.description?.en || 'Project description',
+            imageUrl: project.main_image_url || '/assets/ProjectImage.png'
           }));
+
+          
           
           setApiProjects(transformedProjects);
           console.log('Loaded projects from API:', transformedProjects);

@@ -203,7 +203,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                 <h2 className={styles.sectionTitle}>OVERVIEW</h2>
               </div>
               <p className={styles.sectionText}>
-                This custom e-commerce platform delivers an intuitive user experience while integrating advanced functionalities to meet complex business requirements. We've created a solution that not only powers your online sales but transforms how you engage with customers and manage your operations.
+                {project.overview?.en || 'This custom e-commerce platform delivers an intuitive user experience while integrating advanced functionalities to meet complex business requirements. We\'ve created a solution that not only powers your online sales but transforms how you engage with customers and manage your operations.'}
               </p>
             </section>
 
@@ -230,14 +230,14 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                       <div className={styles.featureIcon}>
                         {typeof feature.icon === 'string' ? (
                           <Image
-                            src={feature.icon || "/assets/box.png"}
+                            src={ feature.icon || "/assets/box.png" }
                             alt="Feature icon"
                             width={30}
                             height={30}
                             className={styles.overviewIcon}
                           />
                         ) : (
-                          feature.icon || <Package className={styles.featureIcon} />
+                           feature.icon || <Package className={styles.featureIcon} />
                         )}
                       </div>
                     <h3 className={styles.featureTitle}>{feature.title}</h3>

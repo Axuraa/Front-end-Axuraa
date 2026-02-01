@@ -4,6 +4,7 @@
 
   margin-top: 60px;
 
+  /* height: auto; */
   /* width: 1440px; */
 
   /* height: 2343px; */
@@ -15,6 +16,7 @@
   /* background-color: #9066da; */
 
   background-color: #191B1F;
+  /* background-color: red; */
 
 }
 
@@ -606,7 +608,8 @@
 
   width: 357px;
 
-  height: 965.434px;
+  /* height: 965.434px; */
+  height: auto;
 
   flex-direction: column;
 

@@ -93,12 +93,12 @@ const PortfolioPage = () => {
     const transformed = filteredProjects.map((project: ProjectItem) => {
       console.log('Project _id:', project._id);
       return {
-        id: project._id,
-        title: project.title.en,
-        description: project.overview.en,
-        category: project.technology_stack[0] || 'Web Development',
-        percentage: '95%',
-        imageUrl: '/assets/ProjectImage.png'
+         id: project._id,
+            title: project.title?.en || 'Untitled Project',
+            category: project.services?.[0]?.services_id?.title?.en || project.technology_stack?.[0] || 'General',
+            percentage: project.case_study_results?.[0]?.value || '+50%',
+            description: project.case_study_results?.[0]?.description?.en || 'Project description',
+            imageUrl: project.main_image_url || '/assets/ProjectImage.png'
       };
     });
     console.log('Transformed projects:', transformed);
