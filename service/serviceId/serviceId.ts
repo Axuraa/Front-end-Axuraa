@@ -96,10 +96,20 @@ export const getServiceById = async (
     const service = json?.data ?? null;
     console.log('Extracted service:', service);
 
-    return {
-      success: true,
-      data: service,
-    };
+    // Filter for services with type "service" and is_active true
+    if (service && service.type === 'service' && service.is_active === true) {
+      return {
+        success: true,
+        data: service,
+      };
+    } else {
+      return {
+        success: false,
+        error: service?.type !== 'service' 
+          ? 'Service not found or invalid type' 
+          : 'Service is not active',
+      };
+    }
   } catch (error) {
     console.log('API call error:', error);
     return {

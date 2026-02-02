@@ -9,7 +9,8 @@ import OurDevelopmentContainer from '@/components/Molecules/OurDevelopmentContai
 import SuccessStoriesContainer from '@/components/Molecules/SuccessStoriesContainer/SuccessStoriesContainer';
 import Image from 'next/image';
 import ServicePackagesContainer from '@/components/Molecules/ServicePackagesContainer/ServicePackagesContainer';
-import { getServiceById, ServiceItem, Technology, ServiceFeature, ServiceProject } from '@/service/serviceId/serviceId';
+import { getAllServices, ServiceItem } from '@/service/Services/services';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 interface ServicePageProps {
   serviceId: string;
@@ -176,6 +177,7 @@ const successStories = [
   }
 ];
 const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
+  const { locale } = useClientTranslation('servicePage');
   const [service, setService] = useState<ServiceItem | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -185,14 +187,25 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
       try {
         console.log('Fetching service with ID:', serviceId);
         setLoading(true);
-        const result = await getServiceById(serviceId);
+        const result = await getAllServices(locale as 'en' | 'ar');
         console.log('API result:', result);
+        
         if (result.success && result.data) {
-          console.log('Service data loaded:', result.data);
-          setService(result.data);
+          // Filter for services with type "service" and is_active true, then find by ID
+          const filteredServices = result.data.filter(
+            (service) => service.type === 'service' && service.is_active === true
+          );
+          const foundService = filteredServices.find(s => s._id === serviceId);
+          
+          if (foundService) {
+            console.log('Service data loaded:', foundService);
+            setService(foundService);
+          } else {
+            setError('Service not found or not active');
+          }
         } else {
           console.log('API error:', result.error);
-          setError(result.error || 'Failed to load service');
+          setError(result.error || 'Failed to load services');
         }
       } catch (err) {
         console.log('Fetch error:', err);
@@ -205,7 +218,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
     if (serviceId) {
       fetchService();
     }
-  }, [serviceId]);
+  }, [serviceId, locale]);
 
   if (loading) {
     return <div className={styles.loading}>Loading service...</div>;
@@ -266,7 +279,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
                     )}
                </ul>
             </div>
-            <TechnologiesUsed technologies={service.technologies_used?.map((tech: Technology) => tech.name) || technologies}/>
+            <TechnologiesUsed technologies={technologies}/>
         </div>
         {/* FeaturesCapabilities */}
         <div className={styles.FeaturesCapabilities}>
@@ -277,14 +290,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
                 </p>
             </div>
             <div className={styles.FeaturesCapabilitiesContainer}>
-              <FeaturesContainer features={
-                service.features?.map((feature: ServiceFeature) => ({
-                  id: feature._id,
-                  title: feature.title.en,
-                  description: feature.description.en,
-                  iconUrl: feature.icon || "/assets/Frame.svg"
-                })) || features
-              }/>
+              <FeaturesContainer features={features}/>
             </div>
         </div>
         {/* Our Development Process */}
@@ -306,18 +312,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
                 </p>
             </div>
             <div className={styles.SuccessStoriesContainer}>
-                <SuccessStoriesContainer stories={
-                    service.projects?.map((project: ServiceProject) => ({
-                        title: project.projects_id.title.en,
-                        description: project.projects_id.overview.en,
-                        iconUrl: "/assets/Frame.svg",
-                        metrics: project.projects_id.case_study_results?.slice(0, 2).map(result => ({
-                            label: result.description.en,
-                            value: result.value,
-                            valueColor: "#D04A1D"
-                        })) || []
-                    })) || successStories
-                }/>
+                <SuccessStoriesContainer stories={successStories}/>
             </div>
             <div className={styles.testimonialSection}>
                 <div className={styles.testimonialContent}>
@@ -382,4 +377,4 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
   );
 };
 
-export default ServicePage;
+export default React.memo( ServicePage ) ;

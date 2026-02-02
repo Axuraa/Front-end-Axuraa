@@ -8,6 +8,7 @@ import Badge from "@/components/UI/Atoms/Badge/Badge";
 import Image from "next/image";
 import StatusBadge from "@/components/UI/Atoms/StatusBadge/StatusBadge";
 import AnimatedBackground from "@/components/UI/Muscles/AinmatedBackground/AnimatedBackground";
+import { getHomePartners, PartnerItem } from "@/service/partners/partners";
 
 interface HeroSectionProps {
   title1?: string;
@@ -54,10 +55,57 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   const [mounted, setMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  
+  const [partners, setPartners] = useState<PartnerItem[]>([]);
+  const [partnersLoading, setPartnersLoading] = useState(true);
+
+  // Default fallback companies
+  const defaultCompanies = [
+    { src: "/assets/SkyTecIcon.svg", alt: "SkyTech", name: "SkyTech", width: 120 },
+    { src: "/assets/ChicnBlockIcon.svg", alt: "ChainBlock", name: "ChainBlock", width: 120 },
+    { src: "/assets/NexusPointIcon.svg", alt: "NexusPoint", name: "NexusPoint", width: 120 },
+    { src: "/assets/AplexIcon.svg", alt: "Apex", name: "Apex", width: 80 },
+    { src: "/assets/VelocityIcon.svg", alt: "Velocity", name: "Velocity", width: 100 },
+  ];
+
   useEffect(() => {
     setMounted(true);
+
+    // Fetch partners data
+    const fetchPartners = async () => {
+      try {
+        const result = await getHomePartners();
+        if (result.success && result.data) {
+          setPartners(result.data.partners);
+        }
+      } catch (error) {
+        console.error('Error fetching partners:', error);
+      } finally {
+        setPartnersLoading(false);
+      }
+    };
+
+    fetchPartners();
   }, []);
+
+  // Merge API data with fallback icons
+  const getCompaniesWithFallback = () => {
+    if (partners.length === 0) return defaultCompanies;
+
+    return partners.map((partner) => {
+      const fallback = defaultCompanies.find(
+        (company) => company.name.toLowerCase() === partner.name.toLowerCase()
+      );
+
+      return {
+        src: fallback ? fallback.src : `/assets/${partner.icon}`,
+        alt: partner.name,
+        name: partner.name,
+        width: fallback ? fallback.width : 100,
+      };
+    });
+  };
+
+  const companiesToShow = getCompaniesWithFallback();
 
   return (
     <section 
@@ -176,13 +224,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </Typography>
 
             <div className={styles.companiesGrid}>
-              {[
-                { src: "/assets/SkyTecIcon.svg", alt: "SkyTech", name: "SkyTech", width: 120 },
-                { src: "/assets/ChicnBlockIcon.svg", alt: "ChainBlock", name: "ChainBlock", width: 120 },
-                { src: "/assets/NexusPointIcon.svg", alt: "NexusPoint", name: "NexusPoint", width: 120 },
-                { src: "/assets/AplexIcon.svg", alt: "Apex", name: "Apex", width: 80 },
-                { src: "/assets/VelocityIcon.svg", alt: "Velocity", name: "Velocity", width: 100 },
-              ].map((company) => (
+              {companiesToShow.map((company) => (
                 <div key={company.name} className={styles.companyLogo}>
                   <Image
                     src={company.src}

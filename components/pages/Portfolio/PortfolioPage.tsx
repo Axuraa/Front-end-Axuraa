@@ -6,8 +6,10 @@ import styles from './PortfolioPage.module.css';
 import ProjectPageButtons from '@/components/Molecules/ProjectPageButtons/ProjectPageButtons';
 import { getAllProjects, ProjectItem } from '@/service/Projects/projects';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 const PortfolioPage = () => {
+  const { t, locale } = useClientTranslation('portfolio');
   const [activeFilter, setActiveFilter] = useState('All');
   const [projects, setProjects] = useState<ProjectItem[]>([]);
   const [services, setServices] = useState<ServiceItem[]>([]);
@@ -18,13 +20,13 @@ const PortfolioPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log('Starting to fetch projects and services...');
+        console.log(`Starting to fetch projects and services in ${locale}...`);
         setLoading(true);
         
-        // Fetch both projects and services in parallel
+        // Fetch both projects and services in parallel with current locale
         const [projectsResult, servicesResult] = await Promise.all([
-          getAllProjects('en'),
-          getAllServices('en')
+          getAllProjects(locale as 'en' | 'ar'),
+          getAllServices(locale as 'en' | 'ar')
         ]);
         
         // Handle projects
@@ -53,7 +55,7 @@ const PortfolioPage = () => {
     };
 
     fetchData();
-  }, []);
+  }, [locale]);
 
   // Extract unique categories from projects for dynamic filters
   const projectCategories = useMemo(() => {
@@ -72,7 +74,7 @@ const PortfolioPage = () => {
 
   // Create filters from services and project categories
   const filters = useMemo(() => {
-    const serviceTitles = services.map(service => service.title.en);
+    const serviceTitles = services.map(service => service.title[locale as keyof typeof service.title]);
     const allFilters = ['All', ...serviceTitles];
     
     // Remove duplicates while preserving order
@@ -80,7 +82,7 @@ const PortfolioPage = () => {
     
     return uniqueFilters.length > 1 ? uniqueFilters : 
       ["All", "ERP Systems", "Desktop App", "UI/UX Design", "Custom Software", "LMS", "Booking Systems", "HR Systems", "Mobile App", "E-commerce", "POS", "CRM", "SaaS", "AI & ML", "Web Platforms"];
-  }, [services]);
+  }, [services, locale]);
 
   // console.log( "the projectCategories is :" +  projectCategories)
 
@@ -114,17 +116,17 @@ const PortfolioPage = () => {
     const transformed = filteredProjects.map((project: ProjectItem) => {
       console.log('Project _id:', project._id);
       return {
-         id: project._id,
-            title: project.title?.en || 'Untitled Project',
-            category: project.services?.[0]?.services_id?.title?.en || project.technology_stack?.[0] || 'General',
-            percentage: project.case_study_results?.[0]?.value || '+50%',
-            description: project.case_study_results?.[0]?.description?.en || 'Project description',
-            imageUrl: project.main_image_url || '/assets/ProjectImage.png'
+        id: project._id,
+        title: project.title?.[locale as 'en' | 'ar'] || 'Untitled Project',
+        category: project.services?.[0]?.services_id?.title?.[locale as 'en' | 'ar'] || project.technology_stack?.[0] || 'General',
+        percentage: project.case_study_results?.[0]?.value || '+50%',
+        description: project.case_study_results?.[0]?.description?.[locale as 'en' | 'ar'] || 'Project description',
+        imageUrl: project.main_image_url || '/assets/ProjectImage.png'
       };
     });
     console.log('Transformed projects:', transformed);
     return transformed;
-  }, [filteredProjects]);
+  }, [filteredProjects, locale]);
 
   // Loading and error states
   if (loading) {

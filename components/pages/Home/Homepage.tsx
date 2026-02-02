@@ -132,7 +132,7 @@ const Homepage = () => {
        />
 
         <WorkerSection
-          badgeText="Our Team"
+          badgeText="Our Client"
           title1="Meet Our"
           title2="Expert Team"
           subtitle="Dedicated professionals delivering exceptional results"

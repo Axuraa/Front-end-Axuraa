@@ -152,9 +152,11 @@
 }
 
 .description {
+  display: flex;
+  
   /* background: rgb(239, 11, 182); */
-  width: 231.95px;
-  height: 57px;
+  /* width: 231.95px;
+  height: 57px; */
   color: #FFF;
   font-family: 'Roboto', sans-serif;
   font-size: 15.887px;
@@ -163,9 +165,12 @@
   line-height: normal;
   letter-spacing: -0.159px;
   text-align: start;
-  align-self: stretch;
+  /* align-self: stretch; */
   /* margin-bottom: 10px; */
   margin-top: 10px;
+
+
+  
 }
 
 /* Link styles */

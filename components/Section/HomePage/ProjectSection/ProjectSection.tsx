@@ -8,6 +8,7 @@ import SeeAll from '@/components/UI/Atoms/SeeAll/SeeAll';
 
 import { ProjectSectionProps } from '@/types/HomePage/projectsTypes';
 import { getAllProjects } from '@/service/Projects/projects';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 const ProjectSection: React.FC<ProjectSectionProps> = ({
   badgeText,
@@ -15,17 +16,20 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
   title2,
   subtitle,
   projects = [],
-  seeAllHref = "/en/portfolio",
   seeAllText = "See All case studies"
 }) => {
+  const { locale } = useClientTranslation('projects');
   const [apiProjects, setApiProjects] = useState(projects);
   const [loading, setLoading] = useState(false);
+
+  // Dynamic portfolio href based on locale
+  const portfolioHref = `/${locale}/portfolio`;
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
         setLoading(true);
-        const result = await getAllProjects('en');
+        const result = await getAllProjects(locale as 'en' | 'ar');
         
         if (result.success && result.data) {
           // Transform API data to match Project interface
@@ -52,7 +56,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
     };
 
     fetchProjects();
-  }, []);
+  }, [locale]);
 
   return (
     <section className={styles.ProjectSection}>
@@ -62,7 +66,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
         title2={title2}
         subtitle={subtitle}
       />
-      <SeeAll href={seeAllHref}>
+      <SeeAll href={portfolioHref}>
         {seeAllText}
       </SeeAll>
       <div className={styles.ProjectGrid}>

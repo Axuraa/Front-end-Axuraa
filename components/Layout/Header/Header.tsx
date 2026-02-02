@@ -6,15 +6,24 @@ import styles from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import useClientTranslation from "@/hooks/useClientTranslation";
 
 const Header = () => {
+  const { t, locale } = useClientTranslation('navlink');
   const [activeLink, setActiveLink] = useState("Home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [currentLocale, setCurrentLocale] = useState('en');
 
   const pathname = usePathname();
-  // Extract locale from pathname (e.g., "/en/about" -> "en")
-  const locale = pathname.split('/')[1] || 'en'; // default to 'en' if no locale found
+
+  // Set locale based on pathname, but only on client side
+  useEffect(() => {
+    if (pathname) {
+      const extractedLocale = pathname.split('/')[1] || 'en';
+      setCurrentLocale(extractedLocale);
+    }
+  }, [pathname]);
 
   useEffect(() => {
     const checkIfMobile = () => {
@@ -28,12 +37,12 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: `/` },
-    { name: "Services", href: `/${locale}/services` },
-    { name: "Business solutions", href: `/${locale}/businessSolutions` },
-    { name: "Portfolio", href: `/${locale}/portfolio` },
-    { name: "About Us", href: `/${locale}/aboutus` },
-    { name: "Contact", href: `/${locale}/contact` },
+    { key: "home", href: `/` },
+    { key: "services", href: `/${currentLocale}/services` },
+    { key: "businessSolutions", href: `/${currentLocale}/businessSolutions` },
+    { key: "portfolio", href: `/${currentLocale}/portfolio` },
+    { key: "aboutUs", href: `/${currentLocale}/aboutus` },
+    { key: "contact", href: `/${currentLocale}/contact` },
   ];
 
   return (
@@ -53,17 +62,17 @@ const Header = () => {
         <nav className={`${styles.nav} ${isMenuOpen ? styles.navOpen : ""}`}>
           <ul className={styles.navList}>
             {navLinks.map((link) => (
-              <li key={link.name} className={styles.navItem}>
+              <li key={link.key} className={styles.navItem}>
                 <Link
                   href={link.href}
-                  className={`${styles.navLink} ${activeLink === link.name ? styles.active : ""}`}
+                  className={`${styles.navLink} ${activeLink === t(link.key) ? styles.active : ""}`}
                   onClick={() => {
-                    setActiveLink(link.name);
+                    setActiveLink(t(link.key));
                     setIsMenuOpen(false);
                   }}
                 >
-                  {link.name}
-                  {activeLink === link.name && (
+                  {t(link.key)}
+                  {activeLink === t(link.key) && (
                     <span className={styles.navUnderline} />
                   )}
                 </Link>
