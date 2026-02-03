@@ -162,7 +162,7 @@ const PortfolioPage = () => {
           onFilterChange={setActiveFilter}
           filters={filters} 
         />
-        
+         
         <div className={styles.container}>
           <ProjectsGrid projects={transformedProjects} />
         </div>

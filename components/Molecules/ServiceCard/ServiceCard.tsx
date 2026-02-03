@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ServiceCard.module.css';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface ServiceCardProps {
   id: string;
@@ -23,12 +23,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   onButtonClick
 }) => {
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleButtonClick = () => {
     if (onButtonClick) {
       onButtonClick();
     } else {
-      router.push(`/en/service/${id}`);
+      // Extract locale from current pathname
+      const locale = pathname?.split('/')[1] || 'en';
+      router.push(`/${locale}/service/${id}`);
     }
   };
 

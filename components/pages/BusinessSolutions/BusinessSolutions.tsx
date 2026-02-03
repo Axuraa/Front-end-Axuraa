@@ -81,7 +81,6 @@ const BusinessSolutions = () => {
                       description={service.description}
                       features={service.features}
                       buttonText={service.buttonText}
-                      onButtonClick={() => console.log(`Clicked ${service.title}`)}
                       id={service.id}
                     />
                 ))}

@@ -651,6 +651,7 @@ background-color: #222;
   letter-spacing: 0.02em;
   line-height: 1.4;
   text-align: center;
+  /* background-color: #d1d5db; */
 }
 
 
@@ -675,14 +676,14 @@ background-color: #222;
 }
 
 .resultValue {
-  color: #f97316;
-  text-shadow: 0 4px 18px rgba(208, 74, 29, 0.9);
-  font-family: Roboto;
-  font-size: 26px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 1.1;
-  min-width: 90px;
+  color: #D04A1D;
+text-shadow: 0 4px 20px #902501;
+font-family: Roboto;
+font-size: 27px;
+font-style: normal;
+font-weight: 800;
+line-height: 19.402px; /* 71.86% */
+  /* background-color: #d1d5db; */
 }
 
 
@@ -712,14 +713,16 @@ background-color: #222;
   padding: 10px 16px;
   gap: 8px;
   border-radius: 6px;
-  border: 0;
-  background: #f97316;
+  /* border-radius: 4.844px; */
+border: 0 solid #E5E7EB;
+background: var(--Primary, #D04A1D);
   color: #fff;
   font-family: Roboto;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.1s ease;
+  
 }
 
 .button:hover {

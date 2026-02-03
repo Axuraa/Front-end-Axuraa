@@ -3,20 +3,7 @@ import styles from "./OurTeamSection.module.css";
 import TeamCard from "@/components/UI/Muscles/TeamCard/TeamCard";
 import SectionHeader from "@/components/Layout/SectionHeader/SectionHeader";
 import StatusBadge from "@/components/UI/Atoms/StatusBadge/StatusBadge";
-
-// Types matching backend response
-interface TeamMember {
-  _id: string;
-  name: string;
-  email: string;
-  phone_number: string;
-  role_id: string;
-  bio: string;
-  image_url: string;
-  status: string;
-  technologies_used: string[];
-  start_at: string;
-}
+import { TeamMember } from "@/service/TeamMembers/TeamMembers";
 
 interface TeamSectionProps {
   teamMembers?: TeamMember[];
@@ -29,64 +16,120 @@ const staticTeamMembers: TeamMember[] = [
     name: "Bavly Akramy",
     email: "bavly@example.com",
     phone_number: "+1234567890",
-    role_id: "CEO",
+    role_id: {
+      _id: "1",
+      title: "CEO",
+      level: 3,
+      description: "Chief Executive Officer",
+      createdAt: "2020-01-01",
+      updatedAt: "2020-01-01",
+      __v: 0
+    },
     bio: "Visionary leader with 10+ years of experience",
     image_url: "/assets/bavly.jpg",
-
     status: "active",
     technologies_used: [],
     start_at: "2020-01-01",
+    createdAt: "2020-01-01",
+    updatedAt: "2020-01-01",
+    __v: 0,
+    id: "1"
   },
   {
     _id: "2",
     name: "Bavly Akramy",
     email: "bavly2@example.com",
     phone_number: "+1234567891",
-    role_id: "CTO",
+    role_id: {
+      _id: "2",
+      title: "CTO",
+      level: 2,
+      description: "Chief Technology Officer",
+      createdAt: "2020-01-01",
+      updatedAt: "2020-01-01",
+      __v: 0
+    },
     bio: "Tech expert passionate about innovation",
     image_url: "/assets/bavly.jpg",
-
     status: "active",
     technologies_used: [],
     start_at: "2020-02-01",
+    createdAt: "2020-01-01",
+    updatedAt: "2020-01-01",
+    __v: 0,
+    id: "2"
   },
   {
     _id: "3",
     name: "Bavly Akramy",
     email: "bavly3@example.com",
     phone_number: "+1234567892",
-    role_id: "COO",
+    role_id: {
+      _id: "3",
+      title: "COO",
+      level: 2,
+      description: "Chief Operating Officer",
+      createdAt: "2020-01-01",
+      updatedAt: "2020-01-01",
+      __v: 0
+    },
     bio: "Operations specialist ensuring smooth workflow",
     image_url: "/assets/bavly.jpg",
     status: "active",
     technologies_used: [],
     start_at: "2020-03-01",
+    createdAt: "2020-01-01",
+    updatedAt: "2020-01-01",
+    __v: 0,
+    id: "3"
   },
   {
     _id: "4",
     name: "Bavly Akramy",
     email: "bavly4@example.com",
     phone_number: "+1234567893",
-    role_id: "CFO",
+    role_id: {
+      _id: "4",
+      title: "CFO",
+      level: 2,
+      description: "Chief Financial Officer",
+      createdAt: "2020-01-01",
+      updatedAt: "2020-01-01",
+      __v: 0
+    },
     bio: "Financial strategist with proven track record",
     image_url: "/assets/bavly.jpg",
-
     status: "active",
     technologies_used: [],
     start_at: "2020-04-01",
+    createdAt: "2020-01-01",
+    updatedAt: "2020-01-01",
+    __v: 0,
+    id: "4"
   },
   {
     _id: "5",
     name: "Bavly Akramy",
-    email: "bavly4@example.com",
-    phone_number: "+1234567893",
-    role_id: "CFO",
+    email: "bavly5@example.com",
+    phone_number: "+1234567894",
+    role_id: {
+      _id: "5",
+      title: "CFO",
+      level: 2,
+      description: "Chief Financial Officer",
+      createdAt: "2020-01-01",
+      updatedAt: "2020-01-01",
+      __v: 0
+    },
     bio: "Financial strategist with proven track record",
     image_url: "/assets/bavly.jpg",
-
     status: "active",
     technologies_used: [],
     start_at: "2020-04-01",
+    createdAt: "2020-01-01",
+    updatedAt: "2020-01-01",
+    __v: 0,
+    id: "5"
   },
 ];
 
@@ -111,7 +154,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
             <TeamCard
               key={member._id}
               name={member.name}
-              role={member.role_id}
+              role={member.role_id.title}
               imageUrl={member.image_url}
             />
           ))}

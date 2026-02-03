@@ -72,10 +72,10 @@ export const getHomePartnersWithLocale = async (locale?: string): Promise<ApiRes
     console.error('Error fetching partners:', error);
     return {
       success: false,
-      error: 'Failed to fetch partners'
+      error: error instanceof Error ? error.message : 'Failed to fetch partners'
     };
   }
 };
 
-// Export types for use in components
-export type { PartnerItem, PartnersResponse, ApiResponse };
+
+// export type { PartnersResponse, ApiResponse };

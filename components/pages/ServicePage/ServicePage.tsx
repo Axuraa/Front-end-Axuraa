@@ -191,9 +191,9 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
         console.log('API result:', result);
         
         if (result.success && result.data) {
-          // Filter for services with type "service" and is_active true, then find by ID
+          // Filter for services with type "service" OR "solution" and is_active true, then find by ID
           const filteredServices = result.data.filter(
-            (service) => service.type === 'service' && service.is_active === true
+            (service) => (service.type === 'service' || service.type === 'solution') && service.is_active === true
           );
           const foundService = filteredServices.find(s => s._id === serviceId);
           

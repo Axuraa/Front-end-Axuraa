@@ -28,6 +28,10 @@ export const ENDPOINTS = {
     },
     General: {
         contactInformation: `${API_BASE}/site/contact`, // GET
-        trackRecords: `${API_BASE}/site/home/track-record`, // GET
+        trackRecords: `${API_BASE}/site/track-records` // GET
+    },
+    TeamMembers: {
+        getAll: `${API_BASE}/team-members`, // GET
+        getById: (id: string) => `${API_BASE}/team-members/${id}`, // GET
     }
 }
