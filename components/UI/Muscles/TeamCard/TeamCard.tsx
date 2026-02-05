@@ -5,7 +5,7 @@ import Typography from "@/components/UI/Atoms/Typography/Typography";
 import { TeamCardProps } from "@/types/AboutUsPage/Team/TeamCard";
 import Image from "next/image";
 
-const TeamCard: React.FC<TeamCardProps> = ({ name, role, imageUrl }) => {
+const TeamCard: React.FC<TeamCardProps> = ({ name, role, imageUrl, description }) => {
   const [imageError, setImageError] = useState(false);
   
   // Default fallback image - using existing bavly.jpg as placeholder
@@ -56,7 +56,8 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, imageUrl }) => {
             {role}
           </Typography>
         </div>
-    </div>
+      </div>
+    
   );
 };
 

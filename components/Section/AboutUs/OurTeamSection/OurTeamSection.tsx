@@ -1,15 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./OurTeamSection.module.css";
 import TeamCard from "@/components/UI/Muscles/TeamCard/TeamCard";
 import SectionHeader from "@/components/Layout/SectionHeader/SectionHeader";
 import StatusBadge from "@/components/UI/Atoms/StatusBadge/StatusBadge";
 import { TeamMember } from "@/service/TeamMembers/TeamMembers";
+import { getActiveTeamMembers } from "@/service/TeamMembers/TeamMembers";
 
 interface TeamSectionProps {
   teamMembers?: TeamMember[];
 }
 
-// Static data for now
+// Fallback static data
 const staticTeamMembers: TeamMember[] = [
   {
     _id: "1",
@@ -18,18 +19,19 @@ const staticTeamMembers: TeamMember[] = [
     phone_number: "+1234567890",
     role_id: {
       _id: "1",
-      title: "CEO",
+      title: "CEO & Founder",
       level: 3,
-      description: "Chief Executive Officer",
+      description: "Chief Executive Officer & Founder",
       createdAt: "2020-01-01",
       updatedAt: "2020-01-01",
       __v: 0
     },
-    bio: "Visionary leader with 10+ years of experience",
+    bio: "Founder and visionary leader with 10+ years of experience",
     image_url: "/assets/bavly.jpg",
     status: "active",
     technologies_used: [],
     start_at: "2020-01-01",
+    is_displayed_in_website: true,
     createdAt: "2020-01-01",
     updatedAt: "2020-01-01",
     __v: 0,
@@ -37,8 +39,8 @@ const staticTeamMembers: TeamMember[] = [
   },
   {
     _id: "2",
-    name: "Bavly Akramy",
-    email: "bavly2@example.com",
+    name: "John Doe",
+    email: "john@example.com",
     phone_number: "+1234567891",
     role_id: {
       _id: "2",
@@ -54,6 +56,7 @@ const staticTeamMembers: TeamMember[] = [
     status: "active",
     technologies_used: [],
     start_at: "2020-02-01",
+    is_displayed_in_website: false,
     createdAt: "2020-01-01",
     updatedAt: "2020-01-01",
     __v: 0,
@@ -61,8 +64,8 @@ const staticTeamMembers: TeamMember[] = [
   },
   {
     _id: "3",
-    name: "Bavly Akramy",
-    email: "bavly3@example.com",
+    name: "Jane Smith",
+    email: "jane@example.com",
     phone_number: "+1234567892",
     role_id: {
       _id: "3",
@@ -78,64 +81,62 @@ const staticTeamMembers: TeamMember[] = [
     status: "active",
     technologies_used: [],
     start_at: "2020-03-01",
+    is_displayed_in_website: true,
     createdAt: "2020-01-01",
     updatedAt: "2020-01-01",
     __v: 0,
     id: "3"
-  },
-  {
-    _id: "4",
-    name: "Bavly Akramy",
-    email: "bavly4@example.com",
-    phone_number: "+1234567893",
-    role_id: {
-      _id: "4",
-      title: "CFO",
-      level: 2,
-      description: "Chief Financial Officer",
-      createdAt: "2020-01-01",
-      updatedAt: "2020-01-01",
-      __v: 0
-    },
-    bio: "Financial strategist with proven track record",
-    image_url: "/assets/bavly.jpg",
-    status: "active",
-    technologies_used: [],
-    start_at: "2020-04-01",
-    createdAt: "2020-01-01",
-    updatedAt: "2020-01-01",
-    __v: 0,
-    id: "4"
-  },
-  {
-    _id: "5",
-    name: "Bavly Akramy",
-    email: "bavly5@example.com",
-    phone_number: "+1234567894",
-    role_id: {
-      _id: "5",
-      title: "CFO",
-      level: 2,
-      description: "Chief Financial Officer",
-      createdAt: "2020-01-01",
-      updatedAt: "2020-01-01",
-      __v: 0
-    },
-    bio: "Financial strategist with proven track record",
-    image_url: "/assets/bavly.jpg",
-    status: "active",
-    technologies_used: [],
-    start_at: "2020-04-01",
-    createdAt: "2020-01-01",
-    updatedAt: "2020-01-01",
-    __v: 0,
-    id: "5"
-  },
+  }
 ];
 
 const TeamSection: React.FC<TeamSectionProps> = ({
   teamMembers = staticTeamMembers,
 }) => {
+  const [displayedTeamMembers, setDisplayedTeamMembers] = useState<TeamMember[]>(teamMembers);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchTeamMembers = async () => {
+      try {
+        setLoading(true);
+        const result = await getActiveTeamMembers();
+        
+        if (result.success && result.data) {
+          console.log('Team members data loaded:', result.data);
+          // Filter only members that should be displayed on website
+          const displayedMembers = result.data.filter(member => member.is_displayed_in_website);
+          
+          // Highlight founder - update role title to include "Founder"
+          const membersWithFounderHighlight = displayedMembers.map(member => {
+            if (member.role_id.title.toLowerCase().includes('ceo') || member.bio.toLowerCase().includes('founder')) {
+              return {
+                ...member,
+                role_id: {
+                  ...member.role_id,
+                  title: member.role_id.title.includes('Founder') ? member.role_id.title : `${member.role_id.title} & Founder`
+                }
+              };
+            }
+            return member;
+          });
+          
+          setDisplayedTeamMembers(membersWithFounderHighlight);
+          console.log('Filtered team members for website display:', membersWithFounderHighlight);
+        } else {
+          console.error('Team members API error:', result.error);
+          setDisplayedTeamMembers(teamMembers);
+        }
+      } catch (error) {
+        console.error('Error fetching team members:', error);
+        setDisplayedTeamMembers(teamMembers);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTeamMembers();
+  }, [teamMembers]);
+
   return (
     <section className={styles.teamSection}>
       <div className={styles.container}>
@@ -150,17 +151,19 @@ const TeamSection: React.FC<TeamSectionProps> = ({
         </div>
 
         <div className={styles.teamGrid}>
-          {teamMembers.map((member) => (
+          {displayedTeamMembers.map((member) => (
             <TeamCard
               key={member._id}
               name={member.name}
-              role={member.role_id.title}
+              role={member.role_id.description || member.role_id.title}
               imageUrl={member.image_url}
+              description={member.bio}
             />
           ))}
         </div>
       </div>
     </section>
+    
   );
 };
 

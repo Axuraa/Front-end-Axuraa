@@ -3,7 +3,7 @@
 export interface PartnerItem {
   id: number;
   name: string;
-  icon: string;
+  icon: string; // Changed back to 'icon' to match actual backend response
   website: string;
 }
 

@@ -26,6 +26,7 @@ export interface TeamMember {
   status: string;
   technologies_used: string[];
   start_at: string;
+  is_displayed_in_website: boolean;
   createdAt: string;
   updatedAt: string;
   __v: number;
