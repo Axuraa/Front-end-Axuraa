@@ -67,7 +67,7 @@
         gap: 1rem;               /* 16px */
     }
     .servicesGrid > * {
-        flex: 1 1 calc(50% - 1rem);  /* 16px */
+        /* flex: 1 1 calc(50% - 1rem);  16px */
         max-width: calc(50% - 1rem);
     }
 }
