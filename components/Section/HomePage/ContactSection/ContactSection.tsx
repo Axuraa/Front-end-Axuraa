@@ -87,28 +87,45 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     fetchContactData();
   }, []);
 
-  // Transform API data to social icons format
+  // Transform API data to social icons format with branding mapping
   const getSocialIcons = () => {
+    // Map common social media names to their respective local icons
+    const iconMapping: Record<string, string> = {
+      facebook: "/assets/FacebookIcon.svg",
+      instagram: "/assets/InstagramIcon.svg",
+      linkedin: "/assets/linkeninicon.svg",
+      tiktok: "/assets/list/icons8-tiktok.svg",
+      twitter: "/assets/Xicon.svg",
+      x: "/assets/Xicon.svg",
+      youtube: "/assets/YouTubeIcon.svg",
+      github: "/assets/githupicon.svg",
+    };
+
     if (!contactData?.socialLinks) {
-      // Fallback to default social icons if no API data
+      // Fallback if no API data
       return [
-        { id: 1, icon: "/assets/Vector.svg", label: "Instagram" },
+        { id: 1, icon: "/assets/InstagramIcon.svg", label: "Instagram", url: "#" },
       ];
     }
 
-    // Use icon URLs directly from API, with fallback to local assets if API doesn't provide icons
-    return contactData.socialLinks.map((link: SocialLink, index: number) => ({
-      id: index + 1,
-      icon: link.icon || "/assets/Vector.svg", // Use API icon URL or fallback to Vector
-      label: link.name.charAt(0).toUpperCase() + link.name.slice(1), // Capitalize first letter
-      url: link.url, // Include the URL for linking
-    }));
+    return contactData.socialLinks.map((link: SocialLink, index: number) => {
+      const nameLower = link.name.toLowerCase();
+      // Use mapped icon if available, otherwise use API icon or fallback to default
+      const iconPath = iconMapping[nameLower] || link.icon || "/assets/Vector.svg";
+      
+      return {
+        id: index + 1,
+        icon: iconPath,
+        label: link.name.charAt(0).toUpperCase() + link.name.slice(1),
+        url: link.url,
+      };
+    });
   };
 
   const socialIcons = getSocialIcons();
 
   return (
-    <section className={styles.ContactSection}>
+    <section id="contact-section" className={styles.ContactSection}>
       <div className={styles.ContactGrid}>
         {/* Contact Info - Title and Subtitle only */}
         <div className={styles.Contantinfo}>
@@ -190,16 +207,24 @@ const ContactSection: React.FC<ContactSectionProps> = ({
             icon="/assets/PhoneIcon.svg"
             label="Phone"
             value={contactData?.phone || "+1 (555) 123-4567"}
+            onClick={() => {
+              const phoneNumber = contactData?.phone || "+1 (555) 123-4567";
+              window.location.href = `tel:${phoneNumber}`;
+            }}
           />
           <ContactInfoCard
             icon="/assets/EmailIcon.svg"
             label="Email"
             value={contactData?.emails?.[0]?.email || "contact@company.com"}
+            onClick={() => {
+              const emailAddress = contactData?.emails?.[0]?.email || "contact@company.com";
+              window.open(`mailto:${emailAddress}`, '_blank');
+            }}
           />
         </div>
 
         {/* Social Icons - Using API data */}
-        {showLinks && (
+        {showLinks && ( 
           <div className={styles.socialIconsContainer}>
             {socialIcons.map((social: any) => (
               <a 

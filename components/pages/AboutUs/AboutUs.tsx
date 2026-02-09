@@ -54,30 +54,24 @@ const AboutUs = () => {
         fetchData();
     }, []);
 
-    if (loading) {
-        return (
-            <div className={styles.container}>
-                <div className={styles.loading}>Loading About Us page...</div>
-            </div>
-        );
-    }
-
-    if (error) {
-        return (
-            <div className={styles.container}>
-                <div className={styles.error}>{error}</div>
-            </div>
-        );
-    }
-
     return (
         <div className={styles.container}>
-            <MainSection />
-            <MissionVisionSection />
-            <HistorySection journeyData={historyData || undefined} />
-            <WhyUs />
-            <OurTeamSection teamMembers={teamMembers || undefined} />
-            <SpecialCard />
+             <MainSection />
+            {loading ? (
+                <div className={styles.sectionLoading}>
+                    <div className={styles.loadingSpinner}></div>
+                    <p>Loading About Us page...</p>
+                </div>
+            ) : (
+                <>
+                   
+                    <MissionVisionSection />
+                    <HistorySection journeyData={historyData || undefined} />
+                    <WhyUs />
+                    <OurTeamSection teamMembers={teamMembers || undefined} />
+                    <SpecialCard />
+                </>
+            )}
         </div>
     );
 };

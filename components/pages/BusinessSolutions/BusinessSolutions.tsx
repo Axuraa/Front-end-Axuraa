@@ -37,14 +37,6 @@ const BusinessSolutions = () => {
     fetchServices();
   }, [locale]);
 
-  if (loading) {
-    return <div className={styles.loading}>Loading solutions...</div>;
-  }
-
-  if (error) {
-    return <div className={styles.error}>{error}</div>;
-  }
-
   // Transform API data to ServiceCard format
   const transformedServices = services.map((service) => ({
     id: service._id,
@@ -58,9 +50,9 @@ const BusinessSolutions = () => {
   return (
     <div className={styles.BusinessPage}>
       <HeroSection 
-              title1="Architecting the Future of"
+              title1="Architecting Future of"
               title2="Digital Business."
-              subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
+              subtitle1="At Axuraa, we don't just write code. We build digital infrastructure that powers world's most ambitious companies."
               badgeText="INNOVATION IN PROGRESS"
               showBackgroundDots={false}
               showAnimatedCircles={true}
@@ -73,17 +65,28 @@ const BusinessSolutions = () => {
               showStatusBadge={true}
               backgroundType='Circle'
             />
+
+            {/* BusinessContainer with loading state */}
             <div className={styles.BusinessContainer}>
-                {transformedServices.map((service) => (
-                    <ServiceCard
-                      key={service.id}
-                      title={service.title}
-                      description={service.description}
-                      features={service.features}
-                      buttonText={service.buttonText}
-                      id={service.id}
-                    />
-                ))}
+              {loading ? (
+                <div className={styles.sectionLoading}>
+                  <div className={styles.loadingSpinner}></div>
+                  <p>Loading solutions...</p>
+                </div>
+              ) : error ? (
+                <div className={styles.sectionError}>{error}</div>
+              ) : (
+                transformedServices.map((service) => (
+                  <ServiceCard
+                    key={service.id}
+                    title={service.title}
+                    description={service.description}
+                    features={service.features}
+                    buttonText={service.buttonText}
+                    id={service.id}
+                  />
+                ))
+              )}
             </div>
     </div>
   );

@@ -111,27 +111,27 @@ const Contact = () => {
     }));
   };
 
-  if (loading) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.loading}>Loading Contact page...</div>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div className={styles.container}>
+  //       <div className={styles.loading}>Loading Contact page...</div>
+  //     </div>
+  //   );
+  // }
 
-  if (error) {
-    return (
-      <div className={styles.container}>
-        <div className={styles.error}>{error}</div>
-      </div>
-    );
-  }
+  // if (error) {
+  //   return (
+  //     <div className={styles.container}>
+  //       <div className={styles.error}>{error}</div>
+  //     </div>
+  //   );
+  // }
 
   const socialPlatforms = getSocialPlatforms();
   const contactsData = getContactsData();
 
   return (
-    <div className={styles.container}>
+    <div id="contact-section" className={styles.container}>
       <HeroSection
         badgeText="WHO WE ARE"
         title1="Architecting the Future of"
@@ -145,20 +145,28 @@ const Contact = () => {
         showBadge={false}
         height="80vh"
       />
-      <SocialMediaSection platforms={socialPlatforms} />
-      <EmailSection
-        title={contactData?.title || "Contact via email"}
-        subtitle="Choose the appropriate section for your inquiry"
-        contacts={contactsData}
-      />
-
-      <ContactSection
-        badgeText="Our Team"
-        title1="How we help "
-        title2="Businesses Grow?"
-        subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
-        showLinks={false}
-      />
+      {loading ? (
+        <div className={styles.sectionLoading}>
+          <div className={styles.loadingSpinner}></div>
+          <p>Loading contact page...</p>
+        </div>
+      ) : (
+        <>
+          <SocialMediaSection platforms={socialPlatforms} />
+          <EmailSection
+            title={contactData?.title || "Contact via email"}
+            subtitle="Choose the appropriate section for your inquiry"
+            contacts={contactsData}
+          />
+          <ContactSection
+            badgeText="Our Team"
+            title1="How we help "
+            title2="Businesses Grow?"
+            subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+            showLinks={false}
+          />
+        </>
+      )}
     </div>
   );
 };

@@ -20,13 +20,7 @@ import { s } from 'framer-motion/client';
 // const ContactSection = dynamic(() => import('@/components/Section/HomePage/ContactSection'), { ssr: false });
 // const Footer = dynamic(() => import('@/components/Section/HomePage/Footer'), { ssr: false });
 
-
-const ratingItems = [
-  { id: 1, value: 50, label: 'Projects Completed', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
-  { id: 2, value: 45, label: 'Happy Clients', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
-  { id: 3, value: 30, label: 'Team Members', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
-  { id: 4, value: 95, label: 'Success Rate', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const}
-];
+// Rating items are now fetched from API with caching and managed inside the RatingSection component
 
 const workers = [
   {
@@ -120,7 +114,6 @@ const Homepage = () => {
         title1="How we help "
         title2="Businesses Grow?"
         subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
-        ratingItems={ratingItems}
       />
       <ProjectSection
          badgeText="Our Services"

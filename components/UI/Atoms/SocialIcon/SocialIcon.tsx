@@ -17,25 +17,16 @@ const SocialIcon: React.FC<SocialIconProps> = ({
     <div className={styles.socialIconWrapper}>
       <div className={styles.socialIcon}>
         <div className={styles.iconCircle}>
-          {isExternalUrl ? (
-            // Use regular img tag for external URLs
-            <img 
-              src={icon} 
-              alt={alt}
-              width={35}
-              height={34.913}
-              className={styles.iconImage}
-            />
-          ) : (
-            // Use Next.js Image component for local assets
-            <Image 
-              src={icon} 
-              alt={alt}
-              width={35}
-              height={34.913}
-              className={styles.iconImage}
-            />
-          )}
+           {/* Render as a masked div to allow coloring */}
+           <div 
+             className={styles.iconImage}
+             style={{
+               maskImage: `url(${icon})`,
+               WebkitMaskImage: `url(${icon})`,
+             }}
+             role="img"
+             aria-label={alt}
+           />
         </div>
       </div>
       {showLabel && label && (

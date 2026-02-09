@@ -34,7 +34,7 @@ export interface ContactInformationResponse {
 }
 
 /**
- * Get contact information from the API
+ * Get contact information from API
  */
 export const getContactInformation = async (): Promise<ContactInformationResponse> => {
   try {
@@ -76,6 +76,7 @@ export const getContactInformation = async (): Promise<ContactInformationRespons
   } catch (error) {
     console.error('=== CONTACT INFORMATION API ERROR ===');
     console.error('Error fetching contact information:', error);
+    console.error('Endpoint:', ENDPOINTS.General.contactInformation);
     
     return {
       success: false,

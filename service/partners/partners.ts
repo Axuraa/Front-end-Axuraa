@@ -3,7 +3,8 @@
 export interface PartnerItem {
   id: number;
   name: string;
-  icon: string; // Changed back to 'icon' to match actual backend response
+  icon: string; // Current backend field
+  logo?: string; // Documented alternative
   website: string;
 }
 
@@ -24,7 +25,7 @@ export interface ApiResponse<T> {
  */
 export const getHomePartners = async (): Promise<ApiResponse<PartnersResponse>> => {
   try {
-    const response = await fetch('/api/v1/site/home/partners');
+    const response = await fetch('https://back-end-axuraa.fly.dev/api/v1/site/home/partners');
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -53,8 +54,8 @@ export const getHomePartners = async (): Promise<ApiResponse<PartnersResponse>> 
 export const getHomePartnersWithLocale = async (locale?: string): Promise<ApiResponse<PartnersResponse>> => {
   try {
     const url = locale 
-      ? `/api/v1/site/home/partners?locale=${locale}`
-      : '/api/v1/site/home/partners';
+      ? `https://back-end-axuraa.fly.dev/api/v1/site/home/partners?locale=${locale}`
+      : 'https://back-end-axuraa.fly.dev/api/v1/site/home/partners';
     
     const response = await fetch(url);
     

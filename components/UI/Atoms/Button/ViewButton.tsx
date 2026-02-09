@@ -7,14 +7,22 @@ import { ViewButtonProps } from '@/types/Generals/buttonTypes';
 const ViewButton: React.FC<ViewButtonProps> = ({ 
   children, 
   className = '',
+  onClick,
   ...props 
 }) => {
   return (
     <button
       className={`${styles.viewButton} ${className}`}
+      onClick={(e) => {
+        console.log('ViewButton clicked!');
+        if (onClick) onClick(e);
+      }}
       {...props}
     >
       <span className={styles.buttonContent}>
+        <span className={styles.buttonText}>
+          {children}
+        </span>
         <span className={styles.iconWrapper}>
           <Image 
             src={ViewIconButton} 
@@ -24,9 +32,6 @@ const ViewButton: React.FC<ViewButtonProps> = ({
             className={styles.buttonIcon}
             style={{ width: 'auto', height: 'auto' }}
           />
-        </span>
-        <span className={styles.buttonText}>
-          {children}
         </span>
       </span>
     </button>

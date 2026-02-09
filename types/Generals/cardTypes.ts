@@ -20,6 +20,7 @@ export interface ContactInfoCardProps {
   icon: string; // Now expects the path to the image
   label: string;
   value: string;
+  onClick?: () => void; // Added onClick handler
 }
 
 /** ProjectCard component props interface from path :

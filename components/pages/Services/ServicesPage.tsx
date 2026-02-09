@@ -21,12 +21,14 @@ const ServicesPage: React.FC = () => {
         setError(null);
 
         const result = await getAllServices(currentLang);
+        const filteredServices = result.data?.filter((service: ServiceItem) => service.type === "service" && service.is_active) || [];
 
         if (!result.success) {
           throw new Error(result.error || 'Failed to load services');
         }
         console.log('SERVICES RESULT', result);
-        setServices(result.data || []);
+        
+        setServices(filteredServices);
 
       } catch (err: any) {
         setError(err.message ?? 'Failed to load services');
@@ -84,7 +86,7 @@ const ServicesPage: React.FC = () => {
                     description={description}
                     features={features}
                     buttonText={
-                      currentLang === 'ar' ? 'عرض التفاصيل' : 'Learn More'
+                    currentLang === 'ar' ? 'عرض التفاصيل' : 'Learn More'
                     }
                   />
                 );

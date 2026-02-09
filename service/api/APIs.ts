@@ -33,5 +33,8 @@ export const ENDPOINTS = {
     TeamMembers: {
         getAll: `${API_BASE}/team-members`, // GET
         getById: (id: string) => `${API_BASE}/team-members/${id}`, // GET
+    },
+    Clients: {
+        getAll: `${API_BASE}/clients` // GET
     }
 }

@@ -7,10 +7,11 @@ import { ContactInfoCardProps } from '@/types/Generals/cardTypes';
 const ContactInfoCard: React.FC<ContactInfoCardProps> = ({ 
   icon, 
   label, 
-  value 
+  value,
+  onClick
 }) => {
   return (
-    <div className={styles.contactCard}>
+    <div className={styles.contactCard} onClick={onClick}>
       <div className={styles.iconContainer}>
         <Image 
           src={icon} 

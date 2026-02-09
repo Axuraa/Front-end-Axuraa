@@ -129,13 +129,13 @@ const PortfolioPage = () => {
   }, [filteredProjects, locale]);
 
   // Loading and error states
-  if (loading) {
-    return <div className={styles.loading}>Loading projects...</div>;
-  }
+  // if (loading) {
+  //   return <div className={styles.loading}>Loading projects...</div>;
+  // }
 
-  if (error) {
-    return <div className={styles.error}>{error}</div>;
-  }
+  // if (error) {
+  //   return <div className={styles.error}>{error}</div>;
+  // }
 
   return (
     <div className={styles.portfolioPage}>
@@ -164,15 +164,18 @@ const PortfolioPage = () => {
         />
          
         <div className={styles.container}>
-          <ProjectsGrid projects={transformedProjects} />
+          {loading ? (
+            <div className={styles.sectionLoading}>
+              <div className={styles.loadingSpinner}></div>
+              <p>Loading projects...</p>
+            </div>
+          ) : error ? (
+            <div className={styles.sectionError}>{error}</div>
+          ) : (
+            <ProjectsGrid projects={transformedProjects} />
+          )}
         </div>
       </div>
-{/* 
-       <ProjectPageButtons
-          activeFilter={activeFilter}
-          onFilterChange={setActiveFilter}
-          filters={projectFilters} 
-        /> */}
     </div>
   );
 };

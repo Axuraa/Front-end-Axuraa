@@ -234,6 +234,14 @@
   align-items: center;
   justify-content: center;
   height: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.companyLogo:hover {
+  transform: translateY(-2px);
+  opacity: 1 !important;
 }
 
 .companyLogo img {
@@ -554,7 +562,7 @@
     gap: 2.5rem;
     /* padding-top: 5%; */
     margin-top: -15%;
-padding-bottom: 5%;
+    padding-bottom: 5%;
   }
   .content {
     gap: 1.25rem;

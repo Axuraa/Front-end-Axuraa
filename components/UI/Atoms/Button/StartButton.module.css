@@ -26,6 +26,7 @@
   transform: translateY(-2px);
   box-shadow: 0 25px 30px -5px rgba(209, 90, 26, 0.40), 
               0 10px 15px -6px rgba(208, 74, 29, 0.40);
+              
 }
 
 .startButton:active {

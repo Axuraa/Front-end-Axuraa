@@ -73,37 +73,31 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
     }
   }, [projectId]);
 
-  if (loading) {
-    return <div className={styles.loading}>Loading project details...</div>;
-  }
-
-  if (error || !project) {
-    return <div className={styles.error}>{error || 'Project not found'}</div>;
-  }
-
   const caseStudy = {
-    title: project.title.en,
-    subtitle: project.subTitle?.en || '',
-    tags: project.technology_stack || [],
-    client: project.client_id?.name || 'Client',
-    projectManager: project.project_manager || 'Project Manager',
-    timeframe: project.start_work ? new Date(project.start_work).toLocaleDateString() : 'Timeframe',
-    team: `${project.team_members?.length || 0} team members`,
-    location: project.location || 'Location',
-    results: project.case_study_results?.map(result => ({
+    title: project?.title.en,
+    subtitle: project?.subTitle?.en || '',
+    tags:  project?.technology_stack || [],
+    client: project?.client_id?.name || 'Client',
+    projectManager: project?.project_manager || 'Project Manager',
+    timeframe: project?.start_work ? new Date(project.start_work).toLocaleDateString() : 'Timeframe',
+    team: `${project?.team_members?.length || 0} team members`,
+    location: project?.location || 'Location',
+    results: project?.case_study_results?.map(result => ({
       metric: result.description.en,
       value: result.value
     })) || [],
-    testimonials: project.testimonials?.map((testimonial: Testimonial) => ({
+    testimonials: project?.testimonials?.map((testimonial: Testimonial) => ({
       text: typeof testimonial.message === 'string' ? testimonial.message : testimonial.message?.en || '',
       author: testimonial.client_id?.name || 'Anonymous'
     })) || [],
-    features: project.features?.map(feature => ({
+    features: project?.features?.map(feature => ({
       icon: feature.icon || <Package className={styles.featureIcon} />,
       title: feature.title.en,
       description: feature.description.en
     })) || []
   };
+  console.log(caseStudy.tags)
+  
   const projectDetails = [
     { 
       icon: '/assets/ProjectDetailscard/client.svg',
@@ -150,16 +144,17 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
           <div>
             {/* Hero Section */}
             <section className={styles.hero}>
-              <h1 className={styles.title}>{caseStudy.title}</h1>
-              <p className={styles.subtitle}>{caseStudy.subtitle}</p>
-              
-              {/* <div className={styles.tags}>
-                {caseStudy.tags.map((tag, idx) => (
-                  <span key={idx} className={styles.tag}>{tag}</span>
-                ))}
-              </div> */}
-
-              <div className={styles.tags}>
+              {loading ? (
+                <div className={styles.sectionLoading}>
+                  <div className={styles.loadingSpinner}></div>
+                  <p>Loading project details...</p>
+                </div>
+              ) : (
+                <>
+                  <h1 className={styles.title}>{caseStudy.title}</h1>
+                  <p className={styles.subtitle}>{caseStudy.subtitle}</p>
+                  
+                  <div className={styles.tags}>
                     {caseStudy.tags.map((tag, idx) => (
                       <ProjectButton 
                         key={idx} 
@@ -183,68 +178,88 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                       {tag}
                     </ProjectButton>
                     ))}
-              </div>
-              <div className={styles.preview}>
-              </div>
+                  </div>
+                  <div className={styles.preview}>
+                  </div>
+                </>
+              )}
             </section>
 
             {/* Overview Section */}
             <section className={styles.section}>
-              <div className={styles.sectionHeader}>
-                <div className={styles.overviewIconContainer}>
-                  <Image
-                    src="/assets/OverviewIcon.png"
-                    alt="Overview"
-                    width={30}
-                    height={30}
-                    className={styles.overviewIcon}
-                  />
+              {loading ? (
+                <div className={styles.sectionLoading}>
+                  <div className={styles.loadingSpinner}></div>
+                  <p>Loading overview...</p>
                 </div>
-                <h2 className={styles.sectionTitle}>OVERVIEW</h2>
-              </div>
-              <p className={styles.sectionText}>
-                {project.overview?.en || 'This custom e-commerce platform delivers an intuitive user experience while integrating advanced functionalities to meet complex business requirements. We\'ve created a solution that not only powers your online sales but transforms how you engage with customers and manage your operations.'}
-              </p>
+              ) : (
+                <>
+                  <div className={styles.sectionHeader}>
+                    <div className={styles.overviewIconContainer}>
+                      <Image
+                        src="/assets/OverviewIcon.png"
+                        alt="Overview"
+                        width={30}
+                        height={30}
+                        className={styles.overviewIcon}
+                      />
+                    </div>
+                    <h2 className={styles.sectionTitle}>OVERVIEW</h2>
+                  </div>
+                  <p className={styles.sectionText}>
+                    {project?.overview?.en || 'This custom e-commerce platform delivers an intuitive user experience while integrating advanced functionalities to meet complex business requirements. We\'ve created a solution that not only powers your online sales but transforms how you engage with customers and manage your operations.'}
+                  </p>
+                </>
+              )}
             </section>
 
             {/* Key Features */}
             <section className={styles.section2}>
-              <div className={styles.sectionHeader2}>
-                <div className={styles.overviewIconContainer}>
-                  <Image
-                    src="/assets/Sparkling.png"
-                    alt="Overview"
-                    width={30}
-                    height={30}
-                    className={styles.overviewIcon}
-                  />
+              {loading ? (
+                <div className={styles.sectionLoading}>
+                  <div className={styles.loadingSpinner}></div>
+                  <p>Loading features...</p>
                 </div>
-                <h2 className={styles.sectionTitle2}>Key Features</h2>
-              </div>
-              <p className={styles.sectionText2}>
-                A comprehensive suite of features designed to optimize the e-commerce experience for merchants and customers alike.
-              </p>
-              <div className={styles.featuresGrid}>
-                {caseStudy.features.map((feature, idx) => (
-                  <div key={idx} className={styles.featureCard}>
-                      <div className={styles.featureIcon}>
-                        {typeof feature.icon === 'string' ? (
-                          <Image
-                            src={ feature.icon || "/assets/box.png" }
-                            alt="Feature icon"
-                            width={30}
-                            height={30}
-                            className={styles.overviewIcon}
-                          />
-                        ) : (
-                           feature.icon || <Package className={styles.featureIcon} />
-                        )}
-                      </div>
-                    <h3 className={styles.featureTitle}>{feature.title}</h3>
-                    <p className={styles.featureDescription}>{feature.description}</p>
+              ) : (
+                <>
+                  <div className={styles.sectionHeader2}>
+                    <div className={styles.overviewIconContainer}>
+                      <Image
+                        src="/assets/Sparkling.png"
+                        alt="Overview"
+                        width={30}
+                        height={30}
+                        className={styles.overviewIcon}
+                      />
+                    </div>
+                    <h2 className={styles.sectionTitle2}>Key Features</h2>
                   </div>
-                ))}
-              </div>
+                  <p className={styles.sectionText2}>
+                    A comprehensive suite of features designed to optimize the e-commerce experience for merchants and customers alike.
+                  </p>
+                  <div className={styles.featuresGrid}>
+                    {caseStudy.features.map((feature, idx) => (
+                      <div key={idx} className={styles.featureCard}>
+                        <div className={styles.featureIcon}>
+                          {typeof feature.icon === 'string' ? (
+                            <Image
+                              src={ feature.icon || "/assets/box.png" }
+                              alt="Feature icon"
+                              width={30}
+                              height={30}
+                              className={styles.overviewIcon}
+                            />
+                          ) : (
+                             feature.icon || <Package className={styles.featureIcon} />
+                          )}
+                        </div>
+                        <h3 className={styles.featureTitle}>{feature.title}</h3>
+                        <p className={styles.featureDescription}>{feature.description}</p>
+                      </div>
+                    ))}
+                  </div>
+                </>
+              )}
             </section>
           </div>
 
@@ -328,4 +343,4 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
   );
 };
 
-export default CaseStudyPage;
+export default React.memo(CaseStudyPage);

@@ -56,6 +56,7 @@ export interface ProjectItem {
   main_image_url?: string;
   second_image_url?: string;
   technology_stack: string[];
+  technologies_used?: string[];
   case_study_results: CaseStudyResult[];
   team_members: TeamMember[];
   client_id: Client;

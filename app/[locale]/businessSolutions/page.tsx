@@ -1,15 +1,8 @@
 "use client"
-import dynamic from 'next/dynamic';
-import { appWithTranslation } from 'next-i18next';
+import BusinessSolutions from "@/components/pages/BusinessSolutions/BusinessSolutions";
 
-
-const BusinessSolutions = dynamic(
-  () => import("@/components/pages/BusinessSolutions/BusinessSolutions"),
-  { ssr: false }
-);
-
-function BusinessSolutionsPage() {
-  return <BusinessSolutions />;
+export default function BusinessSolutionsPage() {
+    return(
+        <BusinessSolutions />
+    )
 }
-
-export default appWithTranslation(BusinessSolutionsPage);

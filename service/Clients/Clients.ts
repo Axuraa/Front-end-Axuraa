@@ -1,11 +1,7 @@
 // API Base URL and endpoints
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://back-end-axuraa.fly.dev';
+import { ENDPOINTS } from '../api/APIs';
 
-export const ENDPOINTS = {
-  Clients: {
-    getAll: `${API_BASE_URL}/api/v1/clients`,
-  }
-};
+export { ENDPOINTS };
 
 // TypeScript interfaces for Client data
 export interface LocalizedField {
@@ -60,7 +56,7 @@ export interface ClientsApiResult {
 }
 
 /**
- * Fetch all clients from the API
+ * Fetch all clients from API
  * @returns Promise<ClientsApiResult> - Result with clients data or error
  */
 export const getAllClients = async (): Promise<ClientsApiResult> => {
@@ -91,7 +87,11 @@ export const getAllClients = async (): Promise<ClientsApiResult> => {
       };
     }
   } catch (error) {
+    console.error('=== CLIENTS API ERROR ===');
     console.error('Error fetching clients:', error);
+    console.error('Endpoint:', ENDPOINTS.Clients.getAll);
+    
+    // Return fallback data instead of error to prevent UI crashes
     return {
       success: false,
       error: error instanceof Error ? error.message : 'An unexpected error occurred',
