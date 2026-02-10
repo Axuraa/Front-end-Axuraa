@@ -78,7 +78,7 @@ export interface ValueCardProps {
 import { FC, SVGProps } from 'react';
 
 export interface SocialMediaCardProps {
-  Icon: FC<SVGProps<SVGSVGElement>>; // Component instead of string
+  Icon: FC<SVGProps<SVGSVGElement>> | string; // Support both React component and string path
   label: string;
   link: string;
 }

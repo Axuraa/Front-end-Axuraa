@@ -11,6 +11,12 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
 }) => {
   const [iconSize, setIconSize] = useState(52);
 
+  console.log('=== SocialMediaCard DEBUG ===');
+  console.log('IconComponent:', IconComponent);
+  console.log('typeof IconComponent:', typeof IconComponent);
+  console.log('label:', label);
+  console.log('link:', link);
+
   useEffect(() => {
     const updateIconSize = () => {
       if (window.innerWidth <= 375) {
@@ -49,14 +55,22 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
       </svg>
       
       <div className={styles.iconCircle}>
-        <Icon 
-          icon={<IconComponent width={iconSize} height={iconSize} />}
-          width={iconSize}
-          height={iconSize}
-          alt={label}
-          noHover={true}
-          noPadding={true}
-        />
+        {typeof IconComponent === 'string' ? (
+          <img 
+            src={IconComponent}
+            alt={label}
+            width={iconSize}
+            height={iconSize}
+            style={{
+              width: `${iconSize}px`,
+              height: `${iconSize}px`,
+              objectFit: 'contain',
+              filter: 'brightness(0) invert(1)', // Make icon white
+            }}
+          />
+        ) : (
+          <IconComponent width={iconSize} height={iconSize} />
+        )}
       </div>
       <span className={styles.label}>{label}</span>
     </div>

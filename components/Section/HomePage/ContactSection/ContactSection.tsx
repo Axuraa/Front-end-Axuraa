@@ -91,20 +91,18 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   const getSocialIcons = () => {
     // Map common social media names to their respective local icons
     const iconMapping: Record<string, string> = {
-      facebook: "/assets/FacebookIcon.svg",
-      instagram: "/assets/InstagramIcon.svg",
-      linkedin: "/assets/linkeninicon.svg",
-      tiktok: "/assets/list/icons8-tiktok.svg",
-      twitter: "/assets/Xicon.svg",
-      x: "/assets/Xicon.svg",
-      youtube: "/assets/YouTubeIcon.svg",
-      github: "/assets/githupicon.svg",
+      facebook: "/assets/SocialMedia/facebook.svg",
+      instagram: "/assets/SocialMedia/Instagram.svg",
+      linkedin: "/assets/SocialMedia/linkedin.svg",
+      tiktok: "/assets/SocialMedia/Tiktok.svg",
+      twitter: "/assets/SocialMedia/twitter.svg",
+      x: "/assets/SocialMedia/twitter.svg",
     };
 
     if (!contactData?.socialLinks) {
       // Fallback if no API data
       return [
-        { id: 1, icon: "/assets/InstagramIcon.svg", label: "Instagram", url: "#" },
+        { id: 1, icon: "/assets/SocialMedia/Instagram.svg", label: "Instagram", url: "#" },
       ];
     }
 

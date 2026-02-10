@@ -24,6 +24,8 @@
 
 .card:hover .iconCircle {
   transform: scale(1.1);
+  background-color: #902501;
+  color: #D04A1D;
 }
 
 /* Apply gradient to SVG on card hover */

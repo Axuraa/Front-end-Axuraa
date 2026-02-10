@@ -76,14 +76,11 @@
   transform: scale(1.05);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background: #d04a1d;
+  color: #fff;
 }
 
-.socialIconWrapper:hover .iconCircle {
-  background: #d04a1d;
-}
-
-.socialIconWrapper:hover .iconCircle img {
-  filter: brightness(0) invert(1);
+.socialIconWrapper:hover .iconImage {
+  background-color: #ffffff;
 }
 
 .socialIconWrapper:hover .label {

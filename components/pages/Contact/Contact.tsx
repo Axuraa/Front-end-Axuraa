@@ -84,20 +84,69 @@ const Contact = () => {
 
   // Transform API data to component format
   const getSocialPlatforms = (): SocialMediaPlatform[] => {
-    if (!contactData?.socialLinks) return [];
+    console.log('=== getSocialPlatforms DEBUG ===');
+    console.log('contactData:', contactData);
+    console.log('socialLinks:', contactData?.socialLinks);
     
-    const iconMap: { [key: string]: React.ComponentType<React.SVGProps<SVGSVGElement>> } = {
-      'Facebook': FacebookIcon,
-      'Twitter': TwitterIcon,
-      'Instagram': InstagramIcon,
-      'LinkedIn': LinkedInIcon,
+    // Fallback data if API fails or returns empty
+    const fallbackPlatforms = [
+      {
+        name: 'Facebook',
+        link: '#',
+        icon: "/assets/SocialMedia/facebook.svg"
+      },
+      {
+        name: 'Instagram',
+        link: '#',
+        icon: "/assets/SocialMedia/Instagram.svg"
+      },
+      {
+        name: 'LinkedIn',
+        link: '#',
+        icon: "/assets/SocialMedia/linkedin.svg"
+      },
+      {
+        name: 'TikTok',
+        link: '#',
+        icon: "/assets/SocialMedia/Tiktok.svg"
+      }
+    ];
+    
+    if (!contactData?.socialLinks || contactData.socialLinks.length === 0) {
+      console.log('Using fallback social platforms');
+      return fallbackPlatforms;
+    }
+    
+    // Map social media names to their respective local icons
+    const iconMapping: { [key: string]: string } = {
+      'facebook': "/assets/SocialMedia/facebook.svg",
+      'Facebook': "/assets/SocialMedia/facebook.svg",
+      'instagram': "/assets/SocialMedia/Instagram.svg",
+      'Instagram': "/assets/SocialMedia/Instagram.svg",
+      'linkedin': "/assets/SocialMedia/linkedin.svg",
+      'LinkedIn': "/assets/SocialMedia/linkedin.svg",
+      'tiktok': "/assets/SocialMedia/Tiktok.svg",
+      'TikTok': "/assets/SocialMedia/Tiktok.svg",
+      'twitter': "/assets/SocialMedia/twitter.svg",
+      'Twitter': "/assets/SocialMedia/twitter.svg",
+      'x': "/assets/SocialMedia/twitter.svg",
+      'X': "/assets/SocialMedia/twitter.svg",
     };
 
-    return contactData.socialLinks.map((link: SocialLink) => ({
-      name: link.name,
-      link: link.url,
-      icon: iconMap[link.name] || FacebookIcon, // Default to Facebook if no icon found
-    }));
+    const platforms = contactData.socialLinks.map((link: SocialLink) => {
+      console.log('Processing social link:', link);
+      const mappedIcon = iconMapping[link.name] || "/assets/SocialMedia/facebook.svg";
+      console.log('Mapped icon for', link.name, ':', mappedIcon);
+      
+      return {
+        name: link.name,
+        link: link.url,
+        icon: mappedIcon,
+      };
+    });
+    
+    console.log('Final platforms:', platforms);
+    return platforms;
   };
 
   const getContactsData = () => {
