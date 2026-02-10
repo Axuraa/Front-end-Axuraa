@@ -144,7 +144,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
           <StatusBadge text="AXURAA" className={styles.badge} />
 
           <SectionHeader
-            title1="Meet"
+            // title1="Meet"
             title2="Our Team"
             // subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
           />

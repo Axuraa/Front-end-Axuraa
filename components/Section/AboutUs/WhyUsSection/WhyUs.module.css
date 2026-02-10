@@ -16,7 +16,7 @@
 /* Header Section */
 .header {
   text-align: center;
-  margin-bottom: 3.75rem;
+  margin-bottom: 1.75rem;
   max-width: 56.25rem;
   margin-left: auto;
   margin-right: auto;
@@ -27,7 +27,7 @@
   flex-direction: column;
 }
 .badge {
-  margin-bottom: 0.6rem;
+  margin-bottom: 1.6rem;
   display: inline-flex;
   justify-self: center; 
   align-items: center;
@@ -75,8 +75,9 @@
     width: 80%;
   }
   .header {
-    margin-bottom: 5rem;
+    margin-bottom: 0.7rem;
   }
+  
 }
 /* Desktop (1025px - 1439px) - Single row */
 @media (min-width: 64.0625rem) and (max-width: 89.9375rem) {
@@ -89,7 +90,10 @@
     width: 80%;
   }
   .header {
-    margin-bottom: 3.75rem;
+    margin-bottom: 0.75rem;
+  }
+  .badge{
+    margin-bottom: 0.75rem;
   }
 }
 /* Tablets (769px - 1024px) - Single row with smaller gap */
@@ -98,7 +102,7 @@
     padding: 4.375rem 6%;
   }
   .header {
-    margin-bottom: 3.125rem;
+    margin-bottom: 0.125rem;
     text-align: center;
   }
   .heading {
@@ -113,6 +117,9 @@
     gap: 1.75rem;
     width: 100%;
   }
+  .badge{
+    margin-bottom: 1rem;
+  }
 }
 /* Tablets (641px - 768px) - 2 columns */
 @media (min-width: 40.0625rem) and (max-width: 48rem) {
@@ -120,7 +127,7 @@
     padding: 3.75rem 6%;
   }
   .header {
-    margin-bottom: 2.5rem;
+    margin-bottom: 0.25rem;
   }
   .heading {
     font-size: 2.25rem;
@@ -129,6 +136,9 @@
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.75rem;
+  }
+  .badge{
+    margin-bottom: -2%;
   }
 }
 /* Mobile devices (below 640px) - 1 column */
@@ -144,7 +154,7 @@
     line-height: 1.2;
   }
   .badge {
-    margin-bottom: 0rem;
+    margin-bottom: -8%;
   }
   .subtitle {
     font-size: 1rem;

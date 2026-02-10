@@ -11,9 +11,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 }) => {
   return (
     <div className={`${styles.header} ${className}`}>
-      <h2 className={styles.title1}>{title1}</h2>
-      <h2 className={styles.title2}>{title2}</h2>
-      <p className={styles.subtitle}>{subtitle}</p>
+      {title1 && <h1 className={styles.title1}>{title1}</h1>}
+      {title2 && <h2 className={styles.title2}>{title2}</h2>}
+      {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
     </div>
   );
 };

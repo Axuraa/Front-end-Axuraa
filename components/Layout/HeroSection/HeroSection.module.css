@@ -45,7 +45,7 @@
   max-width: 56.25rem;
   /* margin-top: -1%; */
   /* background-color: #22c55e; */
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 .animatedBackground {
@@ -54,7 +54,7 @@
   height: 100%;
   pointer-events: auto;
   z-index: 1;
-  pointer-events: none;
+  /* pointer-events: none; */
   inset: 0;
   margin-left: 10%;
   /* margin-top: -5%; */
@@ -152,6 +152,7 @@
   align-items: center;
   gap: var(--font-size-16, 1rem);
   z-index: 10;
+  /* background-color: #2d3748; */
 }
 
 /* Decorative Shapes */
@@ -604,7 +605,7 @@
 } /* Small Mobile (480px and below) */
 @media (max-width: 30rem) {
   .hero {
-    padding: 3.75rem 1rem 1.875rem;
+    padding: 5.75rem 1rem 1.875rem;
     max-height: 40vh;
   }
   .container {
@@ -622,6 +623,7 @@
   }
   .titleWrapper {
     padding: 0 0.5rem;
+    /* font-size: 1rem; */
   }
   .badge {
     min-width: 10.625rem;
