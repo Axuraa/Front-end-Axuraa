@@ -85,13 +85,13 @@
 
 @media (max-width: 480px) {
   .startButton {
-    height: 28px;
+    height: 2.5rem;
     padding: 0 24px;
-    font-size: 0.5rem;
+    font-size: 0.875rem;
   }
   
   .iconWrapper {
-    width: 18px;
-    height: 18px;
+    width: 2rem;
+    height: 2rem;
   }
 }
