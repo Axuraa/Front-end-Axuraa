@@ -208,6 +208,7 @@ const Contact = () => {
             contacts={contactsData}
           />
           <ContactSection
+          //  id="contact-section"
             badgeText="Our Team"
             title1="How we help "
             title2="Businesses Grow?"

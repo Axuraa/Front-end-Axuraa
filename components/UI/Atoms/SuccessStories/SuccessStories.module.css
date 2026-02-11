@@ -48,7 +48,7 @@
     font-size: 21.41px;
     font-style: normal;
     font-weight: 600;
-    line-height: 17.485px;
+    line-height: 25px;
     margin: 0 0 12px 0;
     /* background-color: #D04A1D; */
 }
@@ -56,7 +56,12 @@
 .description {
     width: 306.0438px;
     height: auto;
-    /* height: 61px; */
+    /* Show 4 lines of description */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
     align-self: stretch;
     color: #FFF;
     font-family: Roboto, sans-serif;

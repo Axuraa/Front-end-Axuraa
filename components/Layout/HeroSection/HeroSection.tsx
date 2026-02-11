@@ -77,7 +77,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   primaryButtonText = "Start a Project",
   secondaryButtonText = "View Our Work",
   primaryHref = "#contact-section",
-  secondaryHref = "/portfolio",
+  secondaryHref = "/en/portfolio",
   height = "100vh",
   showBackgroundDots = true,
   showAnimatedCircles = true,
@@ -109,14 +109,40 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     // Fetch fresh partners data
     const fetchPartners = async () => {
       try {
+        console.log('Fetching partners from API...');
         const result = await getHomePartners();
+        console.log('Partners API result:', result);
+        
         if (result.success && result.data) {
           const freshPartners = result.data.partners;
+          console.log('Partners loaded successfully:', freshPartners);
           setPartners(freshPartners);
           setCachedPartners(freshPartners);
+        } else {
+          console.log('Partners API returned error:', result.error);
+          // Use fallback data if API fails
+          const fallbackPartners = [
+            { id: 1, name: "SkyTech", icon: "skytech.svg", website: "#" },
+            { id: 2, name: "ChainBlock", icon: "chainblock.svg", website: "#" },
+            { id: 3, name: "NexusPoint", icon: "nexuspoint.svg", website: "#" },
+            { id: 4, name: "Apex", icon: "apex.svg", website: "#" },
+            { id: 5, name: "Velocity", icon: "velocity.svg", website: "#" }
+          ];
+          setPartners(fallbackPartners);
+          setCachedPartners(fallbackPartners);
         }
       } catch (error) {
         console.error('Error fetching partners:', error);
+        // Use fallback data on error
+        const fallbackPartners = [
+          { id: 1, name: "SkyTech", icon: "skytech.svg", website: "#" },
+          { id: 2, name: "ChainBlock", icon: "chainblock.svg", website: "#" },
+          { id: 3, name: "NexusPoint", icon: "nexuspoint.svg", website: "#" },
+          { id: 4, name: "Apex", icon: "apex.svg", website: "#" },
+          { id: 5, name: "Velocity", icon: "velocity.svg", website: "#" }
+        ];
+        setPartners(fallbackPartners);
+        setCachedPartners(fallbackPartners);
       } finally {
         setPartnersLoading(false);
       }

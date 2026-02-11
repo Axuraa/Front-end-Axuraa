@@ -42,7 +42,7 @@ const SuccessStoryCard: React.FC<SuccessStoryCardProps> = ({
       
       {metrics && metrics.length > 0 && (
         <div className={styles.metricsContainer}>
-          {metrics.map((metric, index) => (
+          {metrics.slice(0, 4).map((metric, index) => (
             <div key={index} className={styles.metricRow}>
               <span className={styles.metricLabel}>{metric.label}</span>
               <span 

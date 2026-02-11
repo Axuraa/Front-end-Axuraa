@@ -1,5 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { ArrowLeft, ExternalLink, Zap, Star, CreditCard, BarChart3, User, Brain, Shield, Package } from 'lucide-react';
 import styles from './CaseStudyPage.module.css';
 import ProjectButton from '@/components/UI/Atoms/ProjectButton/ProjectButton';
@@ -20,6 +21,12 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
   const [project, setProject] = useState<ProjectItem | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
+  const handleContactNavigation = () => {
+    // Navigate to Contact page and scroll to ContactSection
+    router.push('/contact/contact/#contact-section');
+  };
 
   useEffect(() => {
     const fetchProject = async () => {
@@ -130,9 +137,9 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
      {/* Breadcrumb */}
       <div className={styles.breadcrumb}>
         <div className={styles.breadcrumbContent}>
-          <a href="#" className={styles.breadcrumbLink}>Home</a>
+          <a href="/" className={styles.breadcrumbLink}>Home</a>
           <span className={styles.breadcrumbDivider}>&gt;</span>
-          <a href="#" className={styles.breadcrumbLink}>Portfolio</a>
+          <a href="/en/portfolio" className={styles.breadcrumbLink}>Portfolio</a>
           <span className={styles.breadcrumbDivider}>&gt;</span>
           <span className={styles.currentPage}>Custom E-commerce Platform</span>
         </div>
@@ -276,7 +283,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                   </div>
                 ))}
               </div>
-              <button className={styles.button}>
+              <button className={styles.button} onClick={handleContactNavigation}>
                 Show prototype <ExternalLink className={styles.buttonIcon} />
               </button>
             </div>
@@ -287,7 +294,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
               <p className={styles.freeProjectText}>
                 Get a comprehensive evaluation of your project goals and digital strategy with our complimentary assessment.
               </p>
-              <button className={styles.button}>
+              <button className={styles.button} onClick={handleContactNavigation}>
                 Schedule Free Assessment <ExternalLink className={styles.buttonIcon} />
               </button>
             </div>
