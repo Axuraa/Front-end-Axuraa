@@ -1034,9 +1034,9 @@ line-height: 13.32px; /* 122.222% */
 
 }
 
-
-
-
+.SuccessStories{
+  padding: 4rem 3rem;
+}
 
 
 
@@ -1356,6 +1356,8 @@ line-height: 15.742px; /* 144.444% */
 
 }
 
+
+
 }
 
 
@@ -1498,7 +1500,7 @@ line-height: 15.742px; /* 144.444% */
 
     height: auto;
 
-    padding: 40px 20px;
+    padding: 0 20px 40px 20px;
 
     
 
@@ -1890,7 +1892,7 @@ line-height: 15.742px; /* 144.444% */
 
       width: 343px;
 
-      height: 100px;
+      /* height: 100px; */
 
       align-self: stretch;
 
@@ -1982,9 +1984,9 @@ flex: 1 0 0;
 
     /* width: 343px; */
 
-    height: 1241.9968px;
+    max-height: 1241.9968px;
 
-    padding: 40px 0;
+    padding-top: 40px;
 
     flex-direction: column;
 
@@ -2078,7 +2080,7 @@ line-height: normal;
 
   /* width: 343px; */
 
-  padding: 20px 0;
+  padding-bottom: 20px;
 
   height: 800px;
 
@@ -2298,7 +2300,7 @@ width: 329px;
 
     text-align: center;
 
-    line-height: 16.8px; /* 52.5% */
+    line-height: 1.6rem; /* 52.5% */
 
     /* background-color: rgb(6, 98, 173); */
 
