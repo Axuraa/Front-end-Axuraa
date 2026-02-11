@@ -16,6 +16,7 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
   const [items, setItems] = useState<ReactNode[]>([]);
   const [isScrolling, setIsScrolling] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false); 
   const scrollInterval = useRef<NodeJS.Timeout | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -43,7 +44,8 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
 
     // Auto-scroll to next card every 3 seconds
     scrollInterval.current = setInterval(() => {
-      if (isDragging.current) return;
+      // UPDATED: Check both dragging and hover state
+      if (isDragging.current || isHovered) return;
 
       setCurrentIndex(prev => {
         const nextIndex = (prev + 1) % (items.length / 3);
@@ -57,7 +59,7 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
         clearInterval(scrollInterval.current);
       }
     };
-  }, [items.length]);
+  }, [items.length, isHovered]); // UPDATED: Added isHovered to dependencies
 
   const handleMouseDown = (e: React.MouseEvent) => {
     const scroller = scrollRef.current;
@@ -122,6 +124,15 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
     setCurrentIndex(newIndex);
   };
 
+  //Handle card hover
+  const handleCardMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleCardMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   // Update card refs
   const setCardRef = (el: HTMLDivElement | null, index: number) => {
     cardRefs.current[index] = el;
@@ -151,6 +162,8 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
             key={index} 
             ref={el => setCardRef(el, index)}
             className={styles.scrollItem}
+            onMouseEnter={handleCardMouseEnter}
+            onMouseLeave={handleCardMouseLeave}
           >
             {child}
           </div>
