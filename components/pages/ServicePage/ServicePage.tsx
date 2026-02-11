@@ -9,173 +9,13 @@ import OurDevelopmentContainer from '@/components/Molecules/OurDevelopmentContai
 import SuccessStoriesContainer from '@/components/Molecules/SuccessStoriesContainer/SuccessStoriesContainer';
 import Image from 'next/image';
 import ServicePackagesContainer from '@/components/Molecules/ServicePackagesContainer/ServicePackagesContainer';
-import { getAllServices, ServiceItem } from '@/service/Services/services';
+import { getServiceById, ServiceItem } from '@/service/serviceId/serviceId';
 import useClientTranslation from '@/hooks/useClientTranslation';
 
 interface ServicePageProps {
   serviceId: string;
 }
 
-const features = [
-  {
-    id: 1,
-    title: "Responsive Design",
-    description: "Fully responsive websites that look great on all devices, from desktops to smartphones.",
-    iconUrl: "/assets/Frame.svg" 
-  },
-  {
-    id: 2,
-    title: "E-Commerce Solutions",
-    description: "Secure and scalable online stores with integrated payment gateways and inventory management.",
-    iconUrl: "/assets/Frame.svg" 
-  },
-  {
-    id: 3,
-    title: "Web Applications",
-    description: "Custom web applications tailored to your specific business needs and requirements.",
-    iconUrl: "/assets/Frame.svg" 
-  },
-  {
-    id: 4,
-    title: "SEO Optimization",
-    description: "Search engine optimized websites to help you rank higher in search results.",
-    iconUrl: "/assets/Frame.svg" 
-  },
-  {
-    id: 5,
-    title: "Performance Tuning",
-    description: "Optimized websites with fast loading times and smooth user experiences.",
-    iconUrl: "/assets/Frame.svg" 
-  },
-  {
-    id: 6,
-    title: "Ongoing Support",
-    description: "Dedicated support and maintenance to keep your website running smoothly.",
-    iconUrl: "/assets/Frame.svg" 
-  }
-];
-
-const developmentProcess = [
-  {
-    id: 1,
-    title: "Discovery",
-    description: "We analyze your requirements and create a detailed project plan.",
-    icon: "1" // Replace with your icon component or path
-  },
-  {
-    id: 2,
-    title: "Design",
-    description: "Our designers create wireframes and UI/UX designs for your approval.",
-    icon: "2" // Replace with your icon component or path
-  },
-  {
-    id: 3,
-    title: "Development",
-    description: "Our developers bring the design to life with clean, efficient code.",
-    icon: "3" // Replace with your icon component or path
-  },
-  {
-    id: 4,
-    title: "Testing",
-    description: "We thoroughly test all features to ensure quality and performance.",
-    icon: "4" // Replace with your icon component or path
-  },
-  {
-    id: 5,
-    title: "Launch & Support",
-    description: "We deploy your project and provide ongoing support and maintenance.",
-    icon: "5" // Replace with your icon component or path
-  }
-];
-
-const successStories = [
-  {
-    title: "E-Commerce Platform",
-    description: "Revolutionized online shopping with a 3x increase in conversion rates and 200% revenue growth through a seamless, mobile-first design.",
-    iconUrl: "/assets/Frame.svg", // Using existing icon
-    metrics: [
-      { label: "Revenue Growth", value: "200%", valueColor: "#D04A1D" },
-      { label: "Page Load", value: "1.2s", valueColor: "#D04A1D" }
-    ]
-  },
-  {
-    title: "Healthcare Portal",
-    description: "Streamlined patient management with 99.9% uptime, reducing administrative workload by 40% and improving patient satisfaction scores.",
-    iconUrl: "/assets/Frame.svg", // Using existing icon
-    metrics: [
-      { label: "Efficiency", value: "150%", valueColor: "#D04A1D" },
-      { label: "Uptime", value: "99.9%", valueColor: "#D04A1D" }
-    ]
-  },
-  {
-    title: "SaaS Application",
-    description: "Scaled to handle 1M+ monthly active users with 99.99% reliability and 85% user retention rate.",
-    iconUrl: "/assets/Frame.svg", // Using existing icon
-    metrics: [
-      { label: "Active Users", value: "1M+", valueColor: "#D04A1D" },
-      { label: "Retention", value: "85%", valueColor: "#D04A1D" }
-    ]
-  }
-];
-
- const technologies = [
-    'React', 'Node.js', 'Django', 'Python', 'PHP', 'Laravel', 'Figma',
-    'JavaScript', 'AWS'
-  ];
-
-  const servicePackages = [
-  {
-    title: "Starter Package",
-    description: "Perfect for small businesses",
-    price: "$99/month",
-    features: [
-      "5 pages website",
-      "Mobile responsive",
-      "Basic SEO",
-      "Contact form",
-      "1 month support",
-      "E-commerce integration",
-      "Analytics dashboard"
-    ],
-    isPopular: false,
-    hasButtonBackground: false,
-    hasShadow: false
-  },
-  {
-    title: "Professional Package",
-    description: "Ideal for growing businesses",
-    price: "$199/month",
-    features: [
-      "10 pages website",
-      "Mobile responsive",
-      "Advanced SEO",
-      "Contact form",
-      "3 months support",
-      "E-commerce integration",
-      "Analytics dashboard"
-    ],
-    isPopular: true,
-    hasButtonBackground: true,
-     hasShadow: true
-  },
-  {
-    title: "Enterprise Package",
-    description: "For large scale businesses",
-    price: "$399/month",
-    features: [
-      "Unlimited pages",
-      "Mobile responsive",
-      "Premium SEO",
-      "Advanced forms",
-      "6 months support",
-      "E-commerce integration",
-      "Analytics dashboard"
-    ],
-    isPopular: false,
-    hasButtonBackground: false
-    ,hasShadow: false
-  }
-];
 const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
   const { locale } = useClientTranslation('servicePage');
   const [service, setService] = useState<ServiceItem | null>(null);
@@ -187,25 +27,15 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
       try {
         console.log('Fetching service with ID:', serviceId);
         setLoading(true);
-        const result = await getAllServices(locale as 'en' | 'ar');
+        const result = await getServiceById(serviceId, locale as 'en' | 'ar');
         console.log('API result:', result);
         
         if (result.success && result.data) {
-          // Filter for services with type "service" OR "solution" and is_active true, then find by ID
-          const filteredServices = result.data.filter(
-            (service) => (service.type === 'service' || service.type === 'solution') && service.is_active === true
-          );
-          const foundService = filteredServices.find(s => s._id === serviceId);
-          
-          if (foundService) {
-            console.log('Service data loaded:', foundService);
-            setService(foundService);
-          } else {
-            setError('Service not found or not active');
-          }
+          console.log('Service data loaded:', result.data);
+          setService(result.data);
         } else {
           console.log('API error:', result.error);
-          setError(result.error || 'Failed to load services');
+          setError(result.error || 'Failed to load service');
         }
       } catch (err) {
         console.log('Fetch error:', err);
@@ -219,6 +49,114 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
       fetchService();
     }
   }, [serviceId, locale]);
+
+  // Transform backend data to component format
+  const features = service?.features?.map((feature, index) => ({
+    id: index + 1,
+    title: feature.title[locale as keyof typeof feature.title] || feature.title.en,
+    description: feature.description[locale as keyof typeof feature.description] || feature.description.en,
+    iconUrl: feature.icon || "/assets/Frame.svg"
+  })) || [];
+
+  const developmentProcess = [
+    {
+      id: 1,
+      title: "Discovery",
+      description: "We analyze your requirements and create a detailed project plan.",
+      icon: "1"
+    },
+    {
+      id: 2,
+      title: "Design",
+      description: "Our designers create wireframes and UI/UX designs for your approval.",
+      icon: "2"
+    },
+    {
+      id: 3,
+      title: "Development",
+      description: "Our developers bring the design to life with clean, efficient code.",
+      icon: "3"
+    },
+    {
+      id: 4,
+      title: "Testing",
+      description: "We thoroughly test all features to ensure quality and performance.",
+      icon: "4"
+    },
+    {
+      id: 5,
+      title: "Launch & Support",
+      description: "We deploy your project and provide ongoing support and maintenance.",
+      icon: "5"
+    }
+  ];
+
+  const successStories = service?.projects?.map((project) => ({
+    title: project.projects_id.title[locale as keyof typeof project.projects_id.title] || project.projects_id.title.en,
+    description: project.projects_id.overview[locale as keyof typeof project.projects_id.overview] || project.projects_id.overview.en,
+    iconUrl: project.projects_id.main_image_url || "/assets/Frame.svg",
+    metrics: project.projects_id.case_study_results?.map(result => ({
+      label: result.description[locale as keyof typeof result.description] || result.description.en,
+      value: result.value,
+      valueColor: "#D04A1D"
+    })) || []
+  })) || [];
+
+  const technologies = service?.technologies_used?.map(tech => tech.name) || [];
+
+  const servicePackages = [
+    {
+      title: "Starter Package",
+      description: "Perfect for small businesses",
+      price: "$99/month",
+      features: [
+        "5 pages website",
+        "Mobile responsive",
+        "Basic SEO",
+        "Contact form",
+        "1 month support",
+        "E-commerce integration",
+        "Analytics dashboard"
+      ],
+      isPopular: false,
+      hasButtonBackground: false,
+      hasShadow: false
+    },
+    {
+      title: "Professional Package",
+      description: "Ideal for growing businesses",
+      price: "$199/month",
+      features: [
+        "10 pages website",
+        "Mobile responsive",
+        "Advanced SEO",
+        "Contact form",
+        "3 months support",
+        "E-commerce integration",
+        "Analytics dashboard"
+      ],
+      isPopular: true,
+      hasButtonBackground: true,
+      hasShadow: true
+    },
+    {
+      title: "Enterprise Package",
+      description: "For large scale businesses",
+      price: "$399/month",
+      features: [
+        "Unlimited pages",
+        "Mobile responsive",
+        "Premium SEO",
+        "Advanced forms",
+        "6 months support",
+        "E-commerce integration",
+        "Analytics dashboard"
+      ],
+      isPopular: false,
+      hasButtonBackground: false,
+      hasShadow: false
+    }
+  ];
 
   if (error || !service) {
     return <div className={styles.error}>{error || 'Service not found'}</div>;
