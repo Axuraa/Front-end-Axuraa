@@ -495,7 +495,7 @@
   .content {
     gap: 4rem;
     max-width: 100%;
-    margin-top: -20%;
+    /* margin-top: -20%; */
   }
 
   .title {
@@ -613,7 +613,7 @@
   }
   .content {
     gap: 2.5rem;
-    margin-top: -25%;
+    /* margin-top: -25%; */
   }
   .title {
     font-size: 2rem;

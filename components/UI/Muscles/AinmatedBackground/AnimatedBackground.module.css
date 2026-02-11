@@ -188,12 +188,12 @@
   .Hexa_1 {
     top: 50%;
     left: 50%;
-    transform: translate(40%, -160%) rotate(-180deg);
+    transform: translate(40%, -100%) rotate(-180deg);
   }
   .Hexa_2 {
     top: 50%;
     left: 50%;
-    transform: translate(-150%, -80%) rotate(-180deg);
+    transform: translate(-150%, -40%) rotate(-180deg);
   }
 
   .animatedBackground.hovered .Hexa_1 {
@@ -202,7 +202,7 @@
   }
 
   .animatedBackground.hovered .Hexa_2 {
-    transform: translate(-150%, -80%) rotate(-80deg) scale(1.08);
+    transform: translate(-150%, -40%) rotate(-80deg) scale(1.08);
     opacity: 0.6;
   }
   .Circle_1 {
@@ -232,7 +232,7 @@
   .Hexa_2 {
     top: 50%;
     left: 50%;
-    transform: translate(-127%, -80%) rotate(-180deg);
+    transform: translate(-127%, -40%) rotate(-180deg);
   }
 
   .animatedBackground.hovered .Hexa_1 {
@@ -241,7 +241,7 @@
   }
 
   .animatedBackground.hovered .Hexa_2 {
-    transform: translate(-127%, -80%) rotate(-80deg) scale(1.08);
+    transform: translate(-127%, -40%) rotate(-80deg) scale(1.08);
     opacity: 0.6;
   }
   .Circle_1 {
