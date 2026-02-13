@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './SocialMediaCard.module.css';
 import { SocialMediaCardProps } from '@/types/Generals/cardTypes';
-import Icon from '../../Atoms/Icon/Icon';
 
 const SocialMediaCard: React.FC<SocialMediaCardProps> = ({ 
   Icon: IconComponent, 
@@ -11,25 +10,18 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
 }) => {
   const [iconSize, setIconSize] = useState(52);
 
-  console.log('=== SocialMediaCard DEBUG ===');
-  console.log('IconComponent:', IconComponent);
-  console.log('typeof IconComponent:', typeof IconComponent);
-  console.log('label:', label);
-  console.log('link:', link);
-
   useEffect(() => {
     const updateIconSize = () => {
       if (window.innerWidth <= 375) {
-        setIconSize(20);
+        setIconSize(32);
       } else if (window.innerWidth <= 480) {
-        setIconSize(28);
+        setIconSize(40);
       } else if (window.innerWidth <= 768) {
-        setIconSize(36);
-      } else {
         setIconSize(52);
+      } else {
+        setIconSize(60);
       }
     };
-
     updateIconSize();
     window.addEventListener('resize', updateIconSize);
     return () => window.removeEventListener('resize', updateIconSize);
@@ -40,40 +32,30 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
   };
 
   return (
-    <div 
-      className={styles.card} 
-      onClick={handleClick}
-    >
-      {/* Hidden SVG with gradient definition */}
+    <>
+      {/* SVG gradient definition - hidden but accessible */}
       <svg width="0" height="0" style={{ position: 'absolute' }}>
         <defs>
-          <linearGradient id="socialIconGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stopColor="#902501" />
-            <stop offset="100%" stopColor="#D04A1D" />
+          <linearGradient id="socialIconGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style={{ stopColor: '#D04A1D', stopOpacity: 1 }} />
+            <stop offset="100%" style={{ stopColor: '#902501', stopOpacity: 1 }} />
           </linearGradient>
         </defs>
       </svg>
-      
-      <div className={styles.iconCircle}>
-        {typeof IconComponent === 'string' ? (
-          <img 
-            src={IconComponent}
-            alt={label}
-            width={iconSize}
+
+      <div 
+        className={styles.card} 
+        onClick={handleClick}
+      >
+        <div className={styles.iconCircle}>
+          <IconComponent 
+            width={iconSize} 
             height={iconSize}
-            style={{
-              width: `${iconSize}px`,
-              height: `${iconSize}px`,
-              objectFit: 'contain',
-              filter: 'brightness(0) invert(1)', // Make icon white
-            }}
           />
-        ) : (
-          <IconComponent width={iconSize} height={iconSize} />
-        )}
+        </div>
+        <span className={styles.label}>{label}</span>
       </div>
-      <span className={styles.label}>{label}</span>
-    </div>
+    </>
   );
 };
 
