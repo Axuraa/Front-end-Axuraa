@@ -299,7 +299,11 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
                         <h1 className={styles.ctaText1}>Free Project Consultation</h1>
                         <p className={styles.ctaText2}>Get a comprehensive evaluation of your project goals and digital strategy with our complimentary assessment. No obligations, just expert insights.</p>
                     </div>
-                    <button className={styles.ctaButton}>
+                    <button 
+                    className={styles.ctaButton} 
+                    onClick={() => window.location.href = '/#contact-section'}
+                    style={{ cursor: 'pointer' }}
+                  >
                         Schedule Free Assessment
                         <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
                             <g clipPath="url(#clip0_899_488)">
