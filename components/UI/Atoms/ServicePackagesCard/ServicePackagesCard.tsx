@@ -31,7 +31,7 @@ const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
 
   const handleButtonClick = () => {
     // Navigate to Contact page and scroll to ContactSection
-    router.push('/contact/contact/#contact-section');
+    router.push('/#contact-section');
   };
 
   return (

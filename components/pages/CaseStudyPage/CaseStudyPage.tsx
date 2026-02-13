@@ -117,7 +117,8 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
 
   const handleConcactNavigation = () => {
     // Navigate to Contact page
-    window.location.href = '/en/contact/';
+    // window.location.href = '/en/contact/';
+       window.location.href = '/#contact-section';
   };
 
   console.log(caseStudy.tags)
