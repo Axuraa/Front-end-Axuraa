@@ -330,6 +330,8 @@
   height: 30px;
 
   object-fit: contain;
+  /* background-color: yellow; */
+  
 
 }
 
@@ -541,12 +543,10 @@
 
 
 .featureIcon {
-
   width: 30px;
-
   height: 30px;
-
-  /* background-color: #374151; */
+  /* color:#902501;
+  background-color: yellow; */
 
 }
 
@@ -940,8 +940,6 @@ background: #222;
   /* background-color: #374151; */
 
 }
-
-
 
 .detailItem {
 

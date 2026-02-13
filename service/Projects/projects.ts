@@ -14,7 +14,18 @@ export interface TeamMember {
 export interface Client {
   _id: string;
   name: string;
-  image_url: string;
+  company_name?: string;
+  email?: string;
+  phone_number?: string;
+  country?: string;
+  description?: string;
+  social_media?: string[];
+  image_url?: string;
+  project_count?: number;
+  createdAt?: string;
+  updatedAt?: string;
+  __v?: number;
+  id?: string;
 }
 
 export interface ProjectFeature {
@@ -29,9 +40,13 @@ export interface CaseStudyResult {
 }
 
 export interface ProjectService {
+  _id: string;
   services_id: {
+    _id: string;
     title: LocalizedField;
+    id: string;
   };
+  projects_id: string;
 }
 
 export interface Testimonial {
@@ -42,6 +57,7 @@ export interface Testimonial {
     company_name?: string;
     description?: string;
     image_url?: string;
+    id?: string;
   };
   project_id: string;
   message: LocalizedField;
@@ -65,7 +81,13 @@ export interface ProjectItem {
   status: string;
   location: string;
   start_work: string;
+  end_work?: string;
+  url_deployment?: string;
   testimonials?: Testimonial[];
+  createdAt?: string;
+  updatedAt?: string;
+  __v?: number;
+  id?: string;
 }
 
 export interface ProjectsApiResult {

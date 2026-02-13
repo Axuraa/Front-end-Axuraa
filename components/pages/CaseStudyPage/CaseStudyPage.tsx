@@ -23,11 +23,6 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  const handleContactNavigation = () => {
-    // Navigate to Contact page and scroll to ContactSection
-    router.push('/contact/contact/#contact-section');
-  };
-
   useEffect(() => {
     const fetchProject = async () => {
       try {
@@ -83,12 +78,13 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
   const caseStudy = {
     title: project?.title.en,
     subtitle: project?.subTitle?.en || '',
-    tags:  project?.technology_stack || [],
+    tags: project?.services?.map(service => service.services_id.title.en) || [],
     client: project?.client_id?.name || 'Client',
     projectManager: project?.project_manager || 'Project Manager',
     timeframe: project?.start_work ? new Date(project.start_work).toLocaleDateString() : 'Timeframe',
     team: `${project?.team_members?.length || 0} team members`,
     location: project?.location || 'Location',
+    url_deployment: project?.url_deployment || null,
     results: project?.case_study_results?.map(result => ({
       metric: result.description.en,
       value: result.value
@@ -103,6 +99,27 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
       description: feature.description.en
     })) || []
   };
+
+  const handleContactNavigation = () => {
+    // Navigate to Contact page
+    router.push('en/contact');
+  };
+
+  const handlePrototypeNavigation = () => {
+    // Navigate to the deployed project URL
+    if (caseStudy.url_deployment) {
+      window.open(caseStudy.url_deployment, '_blank');
+    } else {
+      // Fallback to contact page if no deployment URL
+      // router.push('/en/contact');
+    }
+  };
+
+  const handleConcactNavigation = () => {
+    // Navigate to Contact page
+    window.location.href = '/en/contact/';
+  };
+
   console.log(caseStudy.tags)
   
   const projectDetails = [
@@ -250,10 +267,11 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                         <div className={styles.featureIcon}>
                           {typeof feature.icon === 'string' ? (
                             <Image
-                              src={ feature.icon || "/assets/box.png" }
+                              src={ feature.icon || "/assets/box copy.png" }
                               alt="Feature icon"
                               width={30}
                               height={30}
+                              
                               className={styles.overviewIcon}
                             />
                           ) : (
@@ -283,7 +301,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                   </div>
                 ))}
               </div>
-              <button className={styles.button} onClick={handleContactNavigation}>
+              <button className={styles.button} onClick={handlePrototypeNavigation}>
                 Show prototype <ExternalLink className={styles.buttonIcon} />
               </button>
             </div>
@@ -294,7 +312,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
               <p className={styles.freeProjectText}>
                 Get a comprehensive evaluation of your project goals and digital strategy with our complimentary assessment.
               </p>
-              <button className={styles.button} onClick={handleContactNavigation}>
+              <button className={styles.button} onClick={handleConcactNavigation}>
                 Schedule Free Assessment <ExternalLink className={styles.buttonIcon} />
               </button>
             </div>

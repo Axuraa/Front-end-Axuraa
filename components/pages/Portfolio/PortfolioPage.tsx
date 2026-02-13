@@ -74,7 +74,9 @@ const PortfolioPage = () => {
 
   // Create filters from services and project categories
   const filters = useMemo(() => {
-    const serviceTitles = services.map(service => service.title[locale as keyof typeof service.title]);
+    const serviceTitles = services
+      .map(service => service.title[locale as keyof typeof service.title])
+      .filter(title => title && title.trim() !== ''); // Filter out undefined/empty titles
     const allFilters = ['All', ...serviceTitles];
     
     // Remove duplicates while preserving order
