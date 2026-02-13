@@ -95,19 +95,26 @@ export const getServiceById = async (
 
     const service = json?.data ?? null;
     console.log('Extracted service:', service);
+    console.log('Service properties:', {
+      hasType: service?.hasOwnProperty('type'),
+      hasIsActive: service?.hasOwnProperty('is_active'),
+      type: service?.type,
+      is_active: service?.is_active,
+      serviceId: service?._id
+    });
 
-    // Filter for services with type "service" and is_active true
-    if (service && service.type === 'service' && service.is_active === true) {
+    // Temporarily disable validation to debug
+    if (service) {
+      console.log('Service found, returning success');
       return {
         success: true,
         data: service,
       };
     } else {
+      console.log('No service data found');
       return {
         success: false,
-        error: service?.type !== 'service' 
-          ? 'Service not found or invalid type' 
-          : 'Service is not active',
+        error: 'Service not found',
       };
     }
   } catch (error) {
