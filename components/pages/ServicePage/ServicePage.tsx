@@ -92,6 +92,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
   ];
 
   const successStories = service?.projects?.map((project) => ({
+    id: project.projects_id._id,
     title: project.projects_id.title[locale as keyof typeof project.projects_id.title] || project.projects_id.title.en,
     description: project.projects_id.overview[locale as keyof typeof project.projects_id.overview] || project.projects_id.overview.en,
     iconUrl: project.projects_id.main_image_url || "/assets/Frame.svg",
