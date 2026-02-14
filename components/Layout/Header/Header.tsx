@@ -82,14 +82,14 @@ const Header = () => {
               className={`${styles.mobileLanguageItem} ${isMenuOpen ? styles.visible : ""}`}
             >
               <div className={styles.mobileLanguageButton}>
-                <LanguageButton />
+                {/* <LanguageButton /> */}
               </div>
             </li>
           </ul>
         </nav>
 
         <div className={styles.desktopLanguageBtn}>
-          <LanguageButton />
+          {/* <LanguageButton /> */}
         </div>
 
         <button
