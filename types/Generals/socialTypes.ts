@@ -5,13 +5,12 @@ import { FC, SVGProps} from 'react';
 export interface SocialMediaPlatform {
   name: string;
   link: string;
-  icon: FC<SVGProps<SVGSVGElement>>; // Change from string to React component
+  icon: FC<SVGProps<SVGSVGElement>> | string; // Support both React component and string path
 }
 export interface SocialMediaSectionProps {
   title?: string;
   subtitle?: string;
   platforms: SocialMediaPlatform[];
-  // iconMapping: Record<string, ComponentType<{ className?: string }>>; // Added this required prop
   className?: string;
 }
 

@@ -1,15 +1,23 @@
-import type { NextConfig } from "next";
-const { i18n } = require('./next-18i.config');
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  reactCompiler: true,
-  // CSS modules are enabled by default in Next.js with Turbopack
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 };
-
-// module.exports = {
-//   i18n,
-//   reactStrictMode: true,
-// };
-
 
 export default nextConfig;

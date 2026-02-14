@@ -14,6 +14,8 @@ interface SuccessStoryCardProps {
   description: string;
   metrics?: Metric[];
   className?: string;
+  onClick?: () => void;
+  style?: React.CSSProperties;
 }
 
 const SuccessStoryCard: React.FC<SuccessStoryCardProps> = ({
@@ -21,10 +23,16 @@ const SuccessStoryCard: React.FC<SuccessStoryCardProps> = ({
   title,
   description,
   metrics,
-  className = ''
+  className = '',
+  onClick,
+  style
 }) => {
   return (
-    <div className={`${styles.successStory} ${className}`}>
+    <div 
+      className={`${styles.successStory} ${className}`}
+      onClick={onClick}
+      style={style}
+    >
       <div className={styles.iconContainer}>
         {iconUrl ? (
           <Image
@@ -42,7 +50,7 @@ const SuccessStoryCard: React.FC<SuccessStoryCardProps> = ({
       
       {metrics && metrics.length > 0 && (
         <div className={styles.metricsContainer}>
-          {metrics.map((metric, index) => (
+          {metrics.slice(0, 4).map((metric, index) => (
             <div key={index} className={styles.metricRow}>
               <span className={styles.metricLabel}>{metric.label}</span>
               <span 

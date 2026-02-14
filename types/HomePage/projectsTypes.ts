@@ -2,7 +2,7 @@
  * @/components/HomePage/Projects/ProjectSection.tsx 
  */
 export interface Project {
-  id: number;
+  id: string;
   title: string;
   category: string;
   percentage: string;

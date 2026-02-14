@@ -6,11 +6,16 @@ import { StartButtonProps } from '@/types/Generals/buttonTypes';
 const StartButton: React.FC<StartButtonProps> = ({ 
   children, 
   className = '',
+  onClick,
   ...props 
 }) => {
   return (
     <button
       className={`${styles.startButton} ${className}`}
+      onClick={(e) => {
+        console.log('StartButton clicked!');
+        if (onClick) onClick(e);
+      }}
       {...props}
     >
       <span className={styles.buttonContent}>
@@ -23,7 +28,8 @@ const StartButton: React.FC<StartButtonProps> = ({
             alt="Start" 
             width={20} 
             height={20} 
-            className={styles.buttonIcon} 
+            className={styles.buttonIcon}
+            style={{ width: 'auto', height: 'auto' }}
           />
         </span>
       </span>

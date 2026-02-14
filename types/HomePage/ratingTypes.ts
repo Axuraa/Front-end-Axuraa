@@ -32,5 +32,5 @@ export interface RatingProps {
   items: RatingItem[];
   duration?: number;
   maxValue?: number;
-  // suffix?: '' | '%' | '+';
+  suffix?: '' | '%' | '+';
 }

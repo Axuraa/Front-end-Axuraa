@@ -1,9 +1,6 @@
 "use client"
-import dynamic from 'next/dynamic';
 
-const Contact = dynamic(() => import("@/components/pages/Contact/Contact"), {
-  ssr: false,
-});
+import Contact from "@/components/pages/Contact/Contact";
 
 export default function ContactUsPage() {
   return <Contact />;

@@ -3,6 +3,7 @@ import SuccessStoryCard from '@/components/UI/Atoms/SuccessStories/SuccessStorie
 import styles from './SuccessStoriesContainer.module.css';
 interface SuccessStoriesContainerProps {
   stories: Array<{
+    id: string;
     title: string;
     description: string;
     iconUrl?: string;
@@ -21,7 +22,12 @@ const SuccessStoriesContainer: React.FC<SuccessStoriesContainerProps> = ({
   return (
     <div className={`${styles.container} ${className}`}>
       {stories.map((story, index) => (
-        <SuccessStoryCard key={index} {...story} />
+        <SuccessStoryCard 
+          key={index} 
+          {...story} 
+          onClick={() => window.location.href = `/en/case-study/${story.id}`}
+          style={{ cursor: 'pointer' }}
+        />
       ))}
     </div>
   );

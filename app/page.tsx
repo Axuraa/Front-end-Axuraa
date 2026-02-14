@@ -4,7 +4,9 @@
 import styles from './page.module.css';
 import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import Homepage from '@/components/pages/Home/Homepage';
+import { getContactInformation } from '@/service/Generals/contactInformation';
 import { getTrackRecords } from '@/service/Generals/trackRecords';
+import { getPartners } from '@/service/HomePage/partners';
 // import {useLoca}
 
 
@@ -24,92 +26,92 @@ export default function Home() {
 
 
   const developmentSteps = [
-  {
-    id: 1,
-    icon: <span>1</span>,
-    title: "Discovery & Strategy",
-    description: "Comprehensive analysis of your business goals, target audience, and technical requirements to create a detailed project roadmap"
-  },
-  {
-    id: 2,
-    icon: <span>2</span>,
-    title: "UI/UX Design",
-    description: "Creating intuitive and engaging user interfaces that align with your brand identity and user needs"
-  },
-  {
-    id: 3,
-    icon: <span>3</span>,
-    title: "Development",
-    description: "Building robust and scalable solutions using the latest technologies and best practices"
-  },
-  {
-    id: 4,
-    icon: <span>4</span>,
-    title: "Testing & QA",
-    description: "Rigorous testing to ensure functionality, performance, and security across all devices and platforms"
-  },
-  {
-    id: 5,
-    icon: <span>5</span>,
-    title: "Deployment & Support",
-    description: "Seamless deployment to your live environment, followed by ongoing maintenance and support to ensure your website remains up-to-date and effective."
-  }
-];
+    {
+      id: 1,
+      icon: <span>1</span>,
+      title: "Discovery & Strategy",
+      description: "Comprehensive analysis of your business goals, target audience, and technical requirements to create a detailed project roadmap"
+    },
+    {
+      id: 2,
+      icon: <span>2</span>,
+      title: "UI/UX Design",
+      description: "Creating intuitive and engaging user interfaces that align with your brand identity and user needs"
+    },
+    {
+      id: 3,
+      icon: <span>3</span>,
+      title: "Development",
+      description: "Building robust and scalable solutions using the latest technologies and best practices"
+    },
+    {
+      id: 4,
+      icon: <span>4</span>,
+      title: "Testing & QA",
+      description: "Rigorous testing to ensure functionality, performance, and security across all devices and platforms"
+    },
+    {
+      id: 5,
+      icon: <span>5</span>,
+      title: "Deployment & Support",
+      description: "Seamless deployment to your live environment, followed by ongoing maintenance and support to ensure your website remains up-to-date and effective."
+    }
+  ];
 
-const servicePackages = [
-  {
-    title: "Starter Package",
-    description: "Perfect for small businesses",
-    price: "$99/month",
-    features: [
-      "5 pages website",
-      "Mobile responsive",
-      "Basic SEO",
-      "Contact form",
-      "1 month support"
-    ],
-    isPopular: false,
-    hasButtonBackground: false,
-    hasShadow: false
-  },
-  {
-    title: "Professional Package",
-    description: "Ideal for growing businesses",
-    price: "$199/month",
-    features: [
-      "10 pages website",
-      "Mobile responsive",
-      "Advanced SEO",
-      "Contact form",
-      "3 months support",
-      "Social media integration"
-    ],
-    isPopular: true,
-    hasButtonBackground: true,
-     hasShadow: true
-  },
-  {
-    title: "Enterprise Package",
-    description: "For large scale businesses",
-    price: "$399/month",
-    features: [
-      "Unlimited pages",
-      "Mobile responsive",
-      "Premium SEO",
-      "Advanced forms",
-      "6 months support",
-      "E-commerce integration",
-      "Analytics dashboard"
-    ],
-    isPopular: false,
-    hasButtonBackground: false
-    ,hasShadow: false
-  }
-];
+  const servicePackages = [
+    {
+      title: "Starter Package",
+      description: "Perfect for small businesses",
+      price: "$99/month",
+      features: [
+        "5 pages website",
+        "Mobile responsive",
+        "Basic SEO",
+        "Contact form",
+        "1 month support"
+      ],
+      isPopular: false,
+      hasButtonBackground: false,
+      hasShadow: false
+    },
+    {
+      title: "Professional Package",
+      description: "Ideal for growing businesses",
+      price: "$199/month",
+      features: [
+        "10 pages website",
+        "Mobile responsive",
+        "Advanced SEO",
+        "Contact form",
+        "3 months support",
+        "Social media integration"
+      ],
+      isPopular: true,
+      hasButtonBackground: true,
+      hasShadow: true
+    },
+    {
+      title: "Enterprise Package",
+      description: "For large scale businesses",
+      price: "$399/month",
+      features: [
+        "Unlimited pages",
+        "Mobile responsive",
+        "Premium SEO",
+        "Advanced forms",
+        "6 months support",
+        "E-commerce integration",
+        "Analytics dashboard"
+      ],
+      isPopular: false,
+      hasButtonBackground: false
+      , hasShadow: false
+    }
+  ];
   return (
-   <div className={styles.pageContainer}>
+    <div className={styles.pageContainer}>
       {/* Example 1: Show everything (default) */}
-      <HeroSection 
+      <HeroSection
         title1="Welcome to Axuraa"
         title2="Building Digital Excellence"
         subtitle1="Transforming ideas into powerful digital experiences."
@@ -125,7 +127,7 @@ const servicePackages = [
         backgroundType="Hexagon"
         height="100vh"
       />
-       {/* <div className={styles.filexContainer}>
+      {/* <div className={styles.filexContainer}>
          <Card
             title="Cybersecurity"
             description="Lorems Lorems Lorems Lorems Lorems Lorems Lorems Lorems Lorems Lorems Lorems "
@@ -149,10 +151,10 @@ const servicePackages = [
         />
        </div> */}
 
-       <Homepage/>
+      <Homepage />
 
 
-        {/* <OurDevelopmentProcess
+      {/* <OurDevelopmentProcess
           icon={<span>1</span>} // Replace with your actual icon component
           title="Discovery & Strategy"
           description="Comprehensive analysis of your business goals, target audience, and technical requirements to create a detailed project roadmap"
@@ -160,9 +162,9 @@ const servicePackages = [
         /> */}
 
 
-        {/* <OurDevelopmentContainer steps={developmentSteps} /> */}
+      {/* <OurDevelopmentContainer steps={developmentSteps} /> */}
 
-       {/* <ServicePackagesCard
+      {/* <ServicePackagesCard
           title="Starter Package"
           description="Perfect for small businesses"
           features={["5 pages website", "Mobile responsive", "Basic SEO"]}
@@ -175,7 +177,7 @@ const servicePackages = [
         /> */}
 
 
-        {/* <ServicePackagesCard
+      {/* <ServicePackagesCard
                   title="Starter Package"
                   description="Perfect for small to medium businesses looking for a professional, responsive online presence."
                   features={["5 pages website", "Mobile responsive", "Basic SEO"]}
@@ -188,10 +190,10 @@ const servicePackages = [
                 /> */}
 
 
-        {/* <ServicePackagesContainer packages={servicePackages} /> */}
-        
-        {/* test for get TrackRecords */}
-        {/* <button
+      {/* <ServicePackagesContainer packages={servicePackages} /> */}
+
+      {/* test for get TrackRecords */}
+      {/* <button
           onClick={async () => {
             try {
               const res = await getTrackRecords(); // res is HistoryResponse
@@ -204,7 +206,41 @@ const servicePackages = [
           click
         </button> */}
 
-        
+      {/* test for get ContactInformation
+      ممكن يحصل مشكله في ال interfaces  
+      انا عملت في نفس الفيل واستخدمتهم 
+      */}
+      {/* <button
+        onClick={async () => {
+          try {
+            const res = await getContactInformation(); // res is HistoryResponse
+            console.log(res);
+          } catch (err) {
+            console.error('Failed to fetch history:', err);
+          }
+        }}
+      >
+        click
+      </button> */}
+
+
+
+
+      {/* test for get getPartners */}
+      {/* <button
+        onClick={async () => {
+          try {
+            const res = await getPartners(); // res is HistoryResponse
+            console.log(res);
+          } catch (err) {
+            console.error('Failed to fetch history:', err);
+          }
+        }}
+      >
+        click
+      </button> */}
+
+
     </div>
 
   );

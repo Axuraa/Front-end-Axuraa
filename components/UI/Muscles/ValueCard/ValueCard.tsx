@@ -13,7 +13,7 @@ const ValueCard: React.FC<ValueCardProps> = ({
   return (
     <div className={styles.card}>
       <div className={styles.iconWrapper} style={{ color: iconColor }}>
-        <Image src={icon} alt={title} width={50} height={50} />
+        <Image src={icon} alt={title} width={50} height={50} style={{ width: 'auto', height: 'auto' }} />
       </div>
       
       <h3 className={styles.title}>{title}</h3>

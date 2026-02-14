@@ -116,7 +116,7 @@ text-underline-position: from-font;
 .card {
   display: flex;
   width: 356.971px;
-  height: 208.223px;
+  /* height: 208.223px; */
   flex-shrink: 0;
   /* padding: 1rem; */
   flex-direction: column;
@@ -173,6 +173,7 @@ text-underline-position: from-font;
   align-items: center;
   gap: 0.5rem;
   margin: 0.5rem 0;
+  justify-content: flex-start;
 }
 
 
@@ -281,9 +282,9 @@ text-underline-position: from-font;
   .description {
     font-size: 13.018px;
     line-height: 18.64px;
-    margin: 0 0 12px; /* Add some spacing below description */
+    /* margin: 0 0 12px; Add some spacing below description */
     flex: 1; /* Allow description to grow and push read more to bottom */
-    min-height: 40px; /* Set a minimum height for the description */
+    /* min-height: 40px; Set a minimum height for the description */
   }
   
   .readMore {

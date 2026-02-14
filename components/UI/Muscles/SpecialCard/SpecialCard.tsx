@@ -59,13 +59,13 @@ const SpecialCard: React.FC<SpecialCardProps> = ({
         <div className={styles.buttonGroup}>
           <button
             className={`${styles.button} ${styles.primaryButton}`}
-            onClick={onPrimaryClick}
+            onClick={() => window.location.href = '/en/contact'}
           >
             {primaryButtonText}
           </button>
           <button
             className={`${styles.button} ${styles.secondaryButton}`}
-            onClick={onSecondaryClick}
+            onClick={() => window.location.href = '/en/portfolio'}
           >
             {secondaryButtonText}
           </button>

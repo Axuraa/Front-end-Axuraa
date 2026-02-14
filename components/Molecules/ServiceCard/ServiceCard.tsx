@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './ServiceCard.module.css';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface ServiceCardProps {
+  id: string;
   title: string;
   description: string;
   features: string[];
@@ -12,13 +14,27 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ 
+  id,
   title, 
   description, 
   features,
   iconUrl = '/assets/safeicon.svg',
   buttonText = 'Learn More',
-  onButtonClick = () => {}
+  onButtonClick
 }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleButtonClick = () => {
+    if (onButtonClick) {
+      onButtonClick();
+    } else {
+      // Extract locale from current pathname
+      const locale = pathname?.split('/')[1] || 'en';
+      router.push(`/${locale}/service/${id}`);
+    }
+  };
+
   return (
     <div className={styles.serviceCard}>
       <div className={styles.cardHeader}>
@@ -53,7 +69,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       
       <button 
         className={styles.learnMoreButton}
-        onClick={onButtonClick}
+        onClick={handleButtonClick}
       >
         {buttonText}
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

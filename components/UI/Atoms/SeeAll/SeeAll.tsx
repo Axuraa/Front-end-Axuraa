@@ -6,7 +6,7 @@ import styles from './SeeAll.module.css';
 import { LinkWithIconProps } from '@/types/Generals/iconsTypes';
 
 const LinkWithIcon: React.FC<LinkWithIconProps> = ({ 
-  href = "#", 
+  href = "/en/portfolio", 
   children, 
   className = '' 
 }) => {

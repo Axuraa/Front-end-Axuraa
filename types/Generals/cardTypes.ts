@@ -20,6 +20,7 @@ export interface ContactInfoCardProps {
   icon: string; // Now expects the path to the image
   label: string;
   value: string;
+  onClick?: () => void; // Added onClick handler
 }
 
 /** ProjectCard component props interface from path :
@@ -27,6 +28,7 @@ export interface ContactInfoCardProps {
  * */
 
 export interface ProjectCardProps {
+  id: string;
   title: string;
   category: string;
   percentage: string;
@@ -76,7 +78,7 @@ export interface ValueCardProps {
 import { FC, SVGProps } from 'react';
 
 export interface SocialMediaCardProps {
-  Icon: FC<SVGProps<SVGSVGElement>>; // Component instead of string
+  Icon: FC<SVGProps<SVGSVGElement>> | string; // Support both React component and string path
   label: string;
   link: string;
 }

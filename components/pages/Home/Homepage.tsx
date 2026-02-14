@@ -20,40 +20,7 @@ import { s } from 'framer-motion/client';
 // const ContactSection = dynamic(() => import('@/components/Section/HomePage/ContactSection'), { ssr: false });
 // const Footer = dynamic(() => import('@/components/Section/HomePage/Footer'), { ssr: false });
 
-
-const ratingItems = [
-  { id: 1, value: 50, label: 'Projects Completed', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
-  { id: 2, value: 45, label: 'Happy Clients', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
-  { id: 3, value: 30, label: 'Team Members', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const},
-  { id: 4, value: 95, label: 'Success Rate', icon: '/assets/RatingIcon.svg', showIcon: true , suffix: '+' as const}
-];
-
-const projects = [
-    {
-      id: 1,
-      title: "E-commerce Platform",
-      category: "Web Development",
-      percentage: "+45%",
-      description: "Boosted online sales with a modern e-commerce solution.",
-      imageUrl: "/assets/ProjectImage.png"
-    },
-    {
-      id: 2,
-      title: "Cybersecurity Suite",
-      category: "Security",
-      percentage: "+60%",
-      description: "Enhanced security infrastructure for enterprise clients.",
-      imageUrl: "/assets/ProjectImage.png"
-    },
-    {
-      id: 3,
-      title: "Mobile Banking App",
-      category: "Finance",
-      percentage: "+75%",
-      description: "Revolutionary banking experience on mobile devices.",
-      imageUrl: "/assets/ProjectImage.png"
-    }
-  ];
+// Rating items are now fetched from API with caching and managed inside the RatingSection component
 
 const workers = [
   {
@@ -147,7 +114,6 @@ const Homepage = () => {
         title1="How we help "
         title2="Businesses Grow?"
         subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
-        ratingItems={ratingItems}
       />
       <ProjectSection
          badgeText="Our Services"
@@ -156,11 +122,10 @@ const Homepage = () => {
          subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
          seeAllHref="#projects"
          seeAllText="View All Projects"
-        projects={projects}
        />
 
         <WorkerSection
-          badgeText="Our Team"
+          badgeText="Our Client"
           title1="Meet Our"
           title2="Expert Team"
           subtitle="Dedicated professionals delivering exceptional results"

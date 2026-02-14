@@ -3,7 +3,7 @@
 .teamSection {
   width: 100%;
   padding: 5rem 6%;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -28,7 +28,7 @@
 }
 
 .badge {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   display: inline-flex;
   justify-self: center; 
   align-items: center;
@@ -56,9 +56,6 @@
     flex-wrap: nowrap;
   }
 
-  .header {
-    margin-bottom: 4.375rem;
-  }
 }
 
 /* Desktop (1025px - 1439px) - Single row */
@@ -72,9 +69,6 @@
     flex-wrap: nowrap;
   }
 
-  .header {
-    margin-bottom: 3.75rem;
-  }
 }
 
 /* Tablets (769px - 1024px) - Single row with smaller cards */
@@ -88,9 +82,9 @@
     flex-wrap: nowrap;
   }
 
-  .header {
-    margin-bottom: 0;
-  }
+  /* .header {
+    margin-bottom: -5%;
+  } */
 }
 
 /* Tablets and Mobile (below 768px) - 2 columns grid */
@@ -115,6 +109,12 @@
     justify-self: center;
     max-width: 11.25rem; /* Adjust based on your TeamCard width */
   }
+  .badge{
+    margin-bottom: -8%;
+  }
+  .header{
+    margin-bottom: -2%;
+  }
 }
 
 /* Small mobile (below 480px) - 2 columns grid, smaller */
@@ -135,7 +135,7 @@
     text-align: center;
   }
   .badge{
-    margin-bottom: 0rem;
+    /* margin-bottom: 0rem; */
     display: inline-flex;
     justify-self: center; 
     align-items: center;

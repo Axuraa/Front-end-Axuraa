@@ -8,6 +8,8 @@ import Badge from "@/components/UI/Atoms/Badge/Badge";
 import Image from "next/image";
 import StatusBadge from "@/components/UI/Atoms/StatusBadge/StatusBadge";
 import AnimatedBackground from "@/components/UI/Muscles/AinmatedBackground/AnimatedBackground";
+import { useRouter } from "next/navigation";
+import { getHomePartners, PartnerItem } from "@/service/partners/partners";
 
 interface HeroSectionProps {
   title1?: string;
@@ -17,6 +19,8 @@ interface HeroSectionProps {
   badgeText?: string;
   primaryButtonText?: string;
   secondaryButtonText?: string;
+  primaryHref?: string;
+  secondaryHref?: string;
   backgroundType: "Hexagon" | "Circle" | "Alphabet";
   height?: string;
   showBackgroundDots?: boolean;
@@ -31,6 +35,39 @@ interface HeroSectionProps {
   onSecondaryClick?: () => void;
 }
 
+// Cache key for partners
+const PARTNERS_CACHE_KEY = 'partners_items_cache';
+const PARTNERS_CACHE_TIMESTAMP_KEY = 'partners_items_cache_timestamp';
+const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+
+// Function to get cached partners
+const getCachedPartners = (): PartnerItem[] | null => {
+  if (typeof window === 'undefined') return null;
+  try {
+    const cachedData = localStorage.getItem(PARTNERS_CACHE_KEY);
+    const cachedTimestamp = localStorage.getItem(PARTNERS_CACHE_TIMESTAMP_KEY);
+    if (cachedData && cachedTimestamp) {
+      if (Date.now() - parseInt(cachedTimestamp) < CACHE_DURATION) {
+        return JSON.parse(cachedData);
+      }
+    }
+  } catch (error) {
+    console.error('Error reading partners cache:', error);
+  }
+  return null;
+};
+
+// Function to set cached partners
+const setCachedPartners = (items: PartnerItem[]): void => {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(PARTNERS_CACHE_KEY, JSON.stringify(items));
+    localStorage.setItem(PARTNERS_CACHE_TIMESTAMP_KEY, Date.now().toString());
+  } catch (error) {
+    console.error('Error setting partners cache:', error);
+  }
+};
+
 const HeroSection: React.FC<HeroSectionProps> = ({
   title1 = "Scalable Software. ",
   title2 = "Intelligent Solutions.",
@@ -39,6 +76,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   badgeText = "AVAILABLE FOR NEW PROJECTS",
   primaryButtonText = "Start a Project",
   secondaryButtonText = "View Our Work",
+  primaryHref = "#contact-section",
+  secondaryHref = "/en/portfolio",
   height = "100vh",
   showBackgroundDots = true,
   showAnimatedCircles = true,
@@ -48,16 +87,99 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   showPrimaryButton = true,
   showSecondaryButton = true,
   showEllipseDecorations = true,
-  onPrimaryClick = () => console.log("Primary button clicked"),
-  onSecondaryClick = () => console.log("Secondary button clicked"),
+  onPrimaryClick,
+  onSecondaryClick,
   backgroundType = "Hexagon",
 }) => {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  
+  const [partners, setPartners] = useState<PartnerItem[]>([]);
+  const [partnersLoading, setPartnersLoading] = useState(true);
+
   useEffect(() => {
     setMounted(true);
+
+    // Initial load from cache
+    const cached = getCachedPartners();
+    if (cached) {
+      setPartners(cached);
+    }
+
+    // Fetch fresh partners data
+    const fetchPartners = async () => {
+      try {
+        console.log('Fetching partners from API...');
+        const result = await getHomePartners();
+        console.log('Partners API result:', result);
+        
+        if (result.success && result.data) {
+          const freshPartners = result.data.partners;
+          console.log('Partners loaded successfully:', freshPartners);
+          setPartners(freshPartners);
+          setCachedPartners(freshPartners);
+        } else {
+          console.log('Partners API returned error:', result.error);
+          // Use fallback data if API fails
+          const fallbackPartners = [
+            { id: 1, name: "SkyTech", icon: "skytech.svg", website: "#" },
+            { id: 2, name: "ChainBlock", icon: "chainblock.svg", website: "#" },
+            { id: 3, name: "NexusPoint", icon: "nexuspoint.svg", website: "#" },
+            { id: 4, name: "Apex", icon: "apex.svg", website: "#" },
+            { id: 5, name: "Velocity", icon: "velocity.svg", website: "#" }
+          ];
+          setPartners(fallbackPartners);
+          setCachedPartners(fallbackPartners);
+        }
+      } catch (error) {
+        console.error('Error fetching partners:', error);
+        // Use fallback data on error
+        const fallbackPartners = [
+          { id: 1, name: "SkyTech", icon: "skytech.svg", website: "#" },
+          { id: 2, name: "ChainBlock", icon: "chainblock.svg", website: "#" },
+          { id: 3, name: "NexusPoint", icon: "nexuspoint.svg", website: "#" },
+          { id: 4, name: "Apex", icon: "apex.svg", website: "#" },
+          { id: 5, name: "Velocity", icon: "velocity.svg", website: "#" }
+        ];
+        setPartners(fallbackPartners);
+        setCachedPartners(fallbackPartners);
+      } finally {
+        setPartnersLoading(false);
+      }
+    };
+
+    fetchPartners();
   }, []);
+
+  // Icon mapping to handle discrepancies between API names and local asset filenames
+  const iconMapping: Record<string, string> = {
+    'skytech.svg': '/assets/SkyTecIcon.svg',
+    'chainblock.svg': '/assets/ChicnBlockIcon.svg',
+    'nexuspoint.svg': '/assets/NexusPointIcon.svg',
+    'apex.svg': '/assets/AplexIcon.svg',
+    'velocity.svg': '/assets/VelocityIcon.svg',
+  };
+
+  // Use API data for Trusted Section
+  const companiesToShow = partners.map((partner) => {
+    const rawIcon = partner.icon || partner.logo || "";
+    const apiIcon = rawIcon.toLowerCase();
+    let iconSrc = iconMapping[apiIcon];
+
+    if (!iconSrc) {
+      iconSrc = rawIcon.startsWith('http') 
+        ? rawIcon 
+        : `/assets/${rawIcon}`;
+    }
+
+    return {
+      src: iconSrc,
+      alt: partner.name,
+      name: partner.name,
+      width: 100, // Default width
+      href: partner.website.startsWith('http') ? partner.website : `https://${partner.website}`
+    };
+  });
 
   return (
     <section 
@@ -143,21 +265,48 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               style={{ animationDelay: "0.5s" }}
             >
               {showPrimaryButton && (
-                <StartButton onClick={onPrimaryClick}>
+                <StartButton onClick={() => {
+                  if (onPrimaryClick) {
+                    onPrimaryClick();
+                  } else if (primaryHref.startsWith('#')) {
+                    const element = document.getElementById(primaryHref.substring(1));
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      router.push(`/${primaryHref}`);
+                    }
+                  } else {
+                    router.push(primaryHref);
+                  }
+                }}>
                   {primaryButtonText}
                 </StartButton>
               )}
               {showSecondaryButton && (
-                <ViewButton onClick={onSecondaryClick}>
+                <ViewButton onClick={() => {
+                  if (onSecondaryClick) {
+                    onSecondaryClick();
+                  } else if (secondaryHref.startsWith('#')) {
+                    const element = document.getElementById(secondaryHref.substring(1));
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                      router.push(`/${secondaryHref}`);
+                    }
+                  } else {
+                    router.push(secondaryHref);
+                  }
+                }}>
                   {secondaryButtonText}
                 </ViewButton>
               )}
+
             </div>
           )}
         </div>
 
         {/* Trusted Section */}
-        {showTrustedSection && (
+        {showTrustedSection && companiesToShow.length > 0 && (
           <div
             className={`${styles.trustedSection} ${mounted ? styles.fadeInUp : ""}`}
             style={{ animationDelay: "0.7s" }}
@@ -176,14 +325,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </Typography>
 
             <div className={styles.companiesGrid}>
-              {[
-                { src: "/assets/SkyTecIcon.svg", alt: "SkyTech", name: "SkyTech", width: 120 },
-                { src: "/assets/ChicnBlockIcon.svg", alt: "ChainBlock", name: "ChainBlock", width: 120 },
-                { src: "/assets/NexusPointIcon.svg", alt: "NexusPoint", name: "NexusPoint", width: 120 },
-                { src: "/assets/AplexIcon.svg", alt: "Apex", name: "Apex", width: 80 },
-                { src: "/assets/VelocityIcon.svg", alt: "Velocity", name: "Velocity", width: 100 },
-              ].map((company) => (
-                <div key={company.name} className={styles.companyLogo}>
+              {companiesToShow.map((company) => (
+                <a 
+                  key={company.name} 
+                  href={company.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.companyLogo}
+                >
                   <Image
                     src={company.src}
                     alt={company.alt}
@@ -201,7 +350,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   >
                     {company.name}
                   </Typography>
-                </div>
+                </a>
               ))}
             </div>
           </div>

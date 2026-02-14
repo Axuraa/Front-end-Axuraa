@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import styles from './ServicePackagesCard.module.css';
 import Image from 'next/image';
 import TrueIcon from '@/public/assets/trueicon.svg';
@@ -26,6 +27,13 @@ const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
   showPopularBadge = true,
   hasButtonBackground = true,
 }) => {
+  const router = useRouter();
+
+  const handleButtonClick = () => {
+    // Navigate to Contact page and scroll to ContactSection
+    router.push('/#contact-section');
+  };
+
   return (
     <div className={`${styles.card} ${hasShadow ? styles.withShadow : ''} ${isPopular ? styles.isPopular : ''}`}>
       {isPopular && showPopularBadge && (
@@ -53,6 +61,7 @@ const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
         className={`${styles.button} ${
           !hasButtonBackground ? styles.noBackground : ''
         }`}
+        onClick={handleButtonClick}
       >
         {buttonText}
       </button>

@@ -23,6 +23,11 @@ const Card: React.FC<CardProps> = ({
   borderRadius = "0 0 68.087px 0"
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
 
   return (
     // Main card container with hover state handling
@@ -47,9 +52,10 @@ const Card: React.FC<CardProps> = ({
          <div className={styles.iconWrapper}>
            {icon || (
               <img 
-                src={iconSrc || "/assets/CardIcon.svg"} 
+                src={imageError ? "/assets/CardIcon.svg" : (iconSrc || "/assets/CardIcon.svg")} 
                 alt={title || 'Card icon'} 
                 className={styles.cardIcon}
+                onError={handleImageError}
               />
            )}
         </div>

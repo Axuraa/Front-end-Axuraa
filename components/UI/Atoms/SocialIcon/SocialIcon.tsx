@@ -10,17 +10,23 @@ const SocialIcon: React.FC<SocialIconProps> = ({
   showLabel = false,
   alt = 'Social icon'
 }) => {
+  // Check if the icon URL is external (starts with http)
+  const isExternalUrl = icon.startsWith('http');
+  
   return (
     <div className={styles.socialIconWrapper}>
       <div className={styles.socialIcon}>
         <div className={styles.iconCircle}>
-          <Image 
-            src={icon} 
-            alt={alt}
-            width={35}
-            height={34.913}
-            className={styles.iconImage}
-          />
+           {/* Render as a masked div to allow coloring */}
+           <div 
+             className={styles.iconImage}
+             style={{
+               maskImage: `url(${icon})`,
+               WebkitMaskImage: `url(${icon})`,
+             }}
+             role="img"
+             aria-label={alt}
+           />
         </div>
       </div>
       {showLabel && label && (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './DevolpercCard.module.css';
 
 import { DevolperCardProps } from '@/types/Generals/cardTypes';
@@ -9,6 +9,19 @@ const DevolperCard: React.FC<DevolperCardProps> = ({
   authorRole = "UI/UX designer",
   avatarSrc = "/assets/ProfileCard.svg"
 }) => {
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    setImageError(true);
+  };
+
+  const getAvatarSrc = () => {
+    if (imageError || !avatarSrc || avatarSrc === null) {
+      return "/assets/ProfileCard.svg";
+    }
+    return avatarSrc;
+  };
+
   return (
     <div className={styles.card}>
       <div className={styles.testimonialText}>
@@ -17,11 +30,12 @@ const DevolperCard: React.FC<DevolperCardProps> = ({
       
       <div className={styles.authorContainer}>
         <img 
-          src={avatarSrc} 
+          src={getAvatarSrc()} 
           alt={authorName} 
           width="50" 
           height="50"
           className={styles.avatar}
+          onError={handleImageError}
         />
         <div className={styles.authorInfo}>
           <p className={styles.authorName}>{authorName}</p>

@@ -24,7 +24,11 @@ const EmailCard: React.FC<EmailCardProps> = ({
   };
 
   return (
-    <div className={`${styles.emailCard} ${className}`}>
+    <div 
+      className={`${styles.emailCard} ${className}`}
+      onClick={() => window.location.href = `mailto:${email}`}
+      style={{ cursor: 'pointer' }}
+    >
       <div className={styles.leftSection}>
         <Icon
           iconSrc={getIconPath(icon)}

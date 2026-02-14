@@ -45,6 +45,20 @@
   flex: 1;
 }
 
+/* RTL (Right-to-Left) Support for Arabic */
+.languageButton.rtl {
+  direction: rtl;
+}
+
+.languageButton.rtl .flag {
+  order: 2;
+}
+
+.languageButton.rtl .languageName {
+  order: 1;
+  text-align: right;
+}
+
 /* Desktop Large (1440px and above) */
 @media (min-width: 1441px) {
   .languageButton {
