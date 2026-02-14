@@ -2,7 +2,7 @@
 .whyUsSection {
   width: 100%;
   background: #1a1b1f;
-  padding: 5rem 6%; /* Match the parent container's 6% horizontal padding */
+  padding: 2rem 6%; /* Match the parent container's 6% horizontal padding */
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
   flex-direction: column;
 }
 .badge {
-  margin-bottom: 1.6rem;
+  /* margin-bottom: 1.6rem; */
   display: inline-flex;
   justify-self: center; 
   align-items: center;
@@ -67,17 +67,14 @@
 /* Large Desktop (1440px and above) - Single row */
 @media (min-width: 90rem) {
   .whyUsSection {
-    padding: 5rem 6%;
+    padding: 2rem 6%;
   }
   .cardsGrid {
     grid-template-columns: repeat(4, 1fr);
     gap: 2.25rem;
     width: 80%;
   }
-  .header {
-    margin-bottom: 0.7rem;
-  }
-  
+ 
 }
 /* Desktop (1025px - 1439px) - Single row */
 @media (min-width: 64.0625rem) and (max-width: 89.9375rem) {
@@ -89,18 +86,14 @@
     gap: 2rem;
     width: 80%;
   }
-  .header {
-    margin-bottom: 0.75rem;
-  }
+ 
   .badge{
     margin-bottom: 0.75rem;
   }
 }
 /* Tablets (769px - 1024px) - Single row with smaller gap */
 @media (min-width: 48.0625rem) and (max-width: 64rem) {
-  .whyUsSection {
-    padding: 4.375rem 6%;
-  }
+ 
   .header {
     margin-bottom: 0.125rem;
     text-align: center;

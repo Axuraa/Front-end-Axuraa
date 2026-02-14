@@ -3,7 +3,7 @@
 .teamSection {
   width: 100%;
   padding: 5rem 6%;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -28,7 +28,7 @@
 }
 
 .badge {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   display: inline-flex;
   justify-self: center; 
   align-items: center;
@@ -56,9 +56,6 @@
     flex-wrap: nowrap;
   }
 
-  .header {
-    margin-bottom: 0;
-  }
 }
 
 /* Desktop (1025px - 1439px) - Single row */
@@ -85,9 +82,9 @@
     flex-wrap: nowrap;
   }
 
-  .header {
+  /* .header {
     margin-bottom: -5%;
-  }
+  } */
 }
 
 /* Tablets and Mobile (below 768px) - 2 columns grid */
