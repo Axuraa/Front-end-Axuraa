@@ -102,7 +102,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
     max-width: 25rem;
-    margin: 0 auto;
+    margin: 35px auto;
   }
   .teamGrid > *:last-child:nth-child(odd) {
     grid-column: 1 / -1;
@@ -110,7 +110,7 @@
     max-width: 11.25rem; /* Adjust based on your TeamCard width */
   }
   .badge{
-    margin-bottom: -8%;
+    /* margin-bottom: -8%; */
   }
   .header{
     margin-bottom: -2%;
