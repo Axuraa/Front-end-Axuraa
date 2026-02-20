@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X } from 'lucide-react';
 import styles from './ChatBot.module.css';
+import { askChatBot } from '../../../../service/ChatBot/ChatBot';
 
 interface Message {
   id: string;
@@ -23,6 +24,7 @@ const ChatBot: React.FC = () => {
   ]);
   const [inputText, setInputText] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messageDividerRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -32,11 +34,37 @@ const ChatBot: React.FC = () => {
     scrollToBottom();
   }, [messages]);
 
+  useEffect(() => {
+    const divider = messageDividerRef.current;
+    if (!divider) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      if (messageDividerRef.current) {
+        messageDividerRef.current.scrollLeft += e.deltaY;
+      }
+    };
+
+    divider.addEventListener('wheel', handleWheel, { passive: false });
+    
+    return () => {
+      divider.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
+
   const toggleChat = () => {
     setIsOpen(!isOpen);
   };
 
-  const sendMessage = () => {
+  const handleDividerClick = (text: string) => {
+    setInputText(text);
+    // Auto-send the message
+    setTimeout(() => {
+      sendMessage();
+    }, 100);
+  };
+
+  const sendMessage = async () => {
     if (inputText.trim()) {
       const newMessage: Message = {
         id: Date.now().toString(),
@@ -45,19 +73,34 @@ const ChatBot: React.FC = () => {
         timestamp: new Date()
       };
       
-      setMessages([...messages, newMessage]);
+      setMessages(prev => [...prev, newMessage]);
       setInputText('');
       
-      // Simulate bot response
-      setTimeout(() => {
-        const botResponse: Message = {
+      try {
+        // Call the API to get bot response
+        const botResponse = await askChatBot(inputText, 'en');
+        
+        const botMessage: Message = {
           id: (Date.now() + 1).toString(),
-          text: 'Thanks for your message! I\'ll help you with that.',
+          text: botResponse.answer,
           sender: 'bot',
           timestamp: new Date()
         };
-        setMessages(prev => [...prev, botResponse]);
-      }, 1000);
+        
+        setMessages(prev => [...prev, botMessage]);
+      } catch (error) {
+        console.error('Error getting bot response:', error);
+        
+        // Fallback response
+        const fallbackMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          text: 'Sorry, I encountered an error. Please try again.',
+          sender: 'bot',
+          timestamp: new Date()
+        };
+        
+        setMessages(prev => [...prev, fallbackMessage]);
+      }
     }
   };
 
@@ -81,7 +124,7 @@ const ChatBot: React.FC = () => {
             width: '100%', 
             height: '100%', 
             objectFit: 'cover',
-            borderRadius: '1234.568px'
+            borderRadius: '1234.568px',
           }}
         />
       </button>
@@ -138,8 +181,7 @@ const ChatBot: React.FC = () => {
                   borderRadius: '50%',
                   marginBottom: '0px',
                   justifyContent: 'end',
-                  alignItems: 'end',
-                  marginRight:'10px'
+                  alignItems: 'end'
                 }}
               />
             )}
@@ -156,17 +198,26 @@ const ChatBot: React.FC = () => {
         <div ref={messagesEndRef} />
       </div>
 
-      {/* <div className={styles.messageDivider}>
+      <div ref={messageDividerRef} className={styles.messageDivider}>
         {[
-          { text: 'Chat Assistant', key: 'assistant' },
-          { text: 'Active Now', key: 'status' },
-          { text: '•', key: 'separator1' },
-          { text: 'Typing...', key: 'typing' },
-          { text: '•', key: 'separator2' }
+          { text: 'who are Axuraa', key: '1' },
+          { text: 'what services do you offer', key: '2' },
+          { text: 'how can I contact you', key: '3' },
+          { text: 'what is your pricing', key: '4' },
+          { text: 'do you have portfolio', key: '5' },
+          { text: 'how long does it take', key: '6' },
+          { text: 'what technologies do you use', key: '7' },
+          { text: 'can you help with my project', key: '8' }
         ].map(item => (
-          <span key={item.key}>{item.text}</span>
+          <button 
+            key={item.key} 
+            className={styles.dividerButton}
+            onClick={() => handleDividerClick(item.text)}
+          >
+            {item.text}
+          </button>
         ))}
-      </div> */}
+      </div>
 
       <div className={styles.inputContainer}>
         <div className={styles.inputWrapper}>
@@ -202,4 +253,4 @@ const ChatBot: React.FC = () => {
   );
 };
 
-export default ChatBot;
+export default React.memo(ChatBot);

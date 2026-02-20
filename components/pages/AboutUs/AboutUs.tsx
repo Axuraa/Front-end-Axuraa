@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import styles from './AboutUs.module.css';
-
 import MainSection from "@/components/Section/AboutUs/MainSection/MainSection";
 import MissionVisionSection from "@/components/Section/AboutUs/Mission&VisionSection/Mission&VisionSection";
 import HistorySection from "@/components/Section/AboutUs/HistorySection/HistorySection";
