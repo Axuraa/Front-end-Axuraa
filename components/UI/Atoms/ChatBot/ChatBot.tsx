@@ -199,24 +199,24 @@ const ChatBot: React.FC = () => {
       </div>
 
       <div ref={messageDividerRef} className={styles.messageDivider}>
-        {[
-          { text: 'who are Axuraa', key: '1' },
-          { text: 'what services do you offer', key: '2' },
-          { text: 'how can I contact you', key: '3' },
-          { text: 'what is your pricing', key: '4' },
-          { text: 'do you have portfolio', key: '5' },
-          { text: 'how long does it take', key: '6' },
-          { text: 'what technologies do you use', key: '7' },
-          { text: 'can you help with my project', key: '8' }
-        ].map(item => (
-          <button 
-            key={item.key} 
-            className={styles.dividerButton}
-            onClick={() => handleDividerClick(item.text)}
-          >
-            {item.text}
-          </button>
-        ))}
+        <div className={styles.dividerGrid}>
+          {[
+            { text: 'who are Axuraa', key: '1' },
+            { text: 'what services do you offer', key: '2' },
+            { text: 'how can I contact you', key: '3' },
+            { text: 'what is your pricing', key: '4' },
+            { text: 'do you have portfolio', key: '5' },
+            { text: 'how long does it take', key: '6' },
+          ].map(item => (
+            <button 
+              key={item.key} 
+              className={styles.dividerButton}
+              onClick={() => handleDividerClick(item.text)}
+            >
+              {item.text}
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className={styles.inputContainer}>
