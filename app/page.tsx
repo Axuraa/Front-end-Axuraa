@@ -2,6 +2,7 @@
 import styles from './page.module.css';
 import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import Homepage from '@/pages/Home/Homepage';
+import OurDevelopmentProcess from '@/components/UI/Atoms/OurDevelopmentProcess/OurDevelopmentProcess';
 
 
 export default function Home() {
@@ -59,6 +60,8 @@ export default function Home() {
        </div> */}
 
        <Homepage/>
+
+
 
     </div>
   );
