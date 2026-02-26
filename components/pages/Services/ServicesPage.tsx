@@ -5,14 +5,15 @@ import styles from './ServicesPage.module.css';
 import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import ServiceCard from '@/components/Molecules/ServiceCard/ServiceCard';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 const ServicesPage: React.FC = () => {
+  const { t, locale } = useClientTranslation('servicesPage');
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const params = useParams() as { locale?: string };
-  const currentLang: 'en' | 'ar' = params.locale === 'ar' ? 'ar' : 'en';
+  const currentLang: 'en' | 'ar' = locale === 'ar' ? 'ar' : 'en';
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -43,10 +44,10 @@ const ServicesPage: React.FC = () => {
   return (
     <div className={styles.servicesPage}>
       <HeroSection
-        title1="Architecting the Future of"
-        title2="Digital Business."
-        subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
-        badgeText="INNOVATION IN PROGRESS"
+        title1={t('hero.title1', 'Architecting the Future of')}
+        title2={t('hero.title2', 'Digital Business.')}
+        subtitle1={t('hero.subtitle1', "At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies.")}
+        badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
         showBackgroundDots={false}
         showAnimatedCircles={true}
         showEllipseDecorations={true}
@@ -60,7 +61,7 @@ const ServicesPage: React.FC = () => {
       />
 
       <div className={styles.servicesContainer}>
-        {loading && <p>Loading services...</p>}
+        {loading && <p>{t('loading', 'Loading services...')}</p>}
 
         {error && !loading && <p>{error}</p>}
 
@@ -74,7 +75,7 @@ const ServicesPage: React.FC = () => {
 
                 const features = service.what_we_do?.units
                   ? service.what_we_do.units
-                      .map((u) => u[currentLang])
+                      .map((u: any) => u[currentLang])
                       .filter(Boolean)
                   : [];
 

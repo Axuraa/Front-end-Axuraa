@@ -7,7 +7,7 @@ import { getAllServices, ServiceItem } from '@/service/Services/services';
 import useClientTranslation from '@/hooks/useClientTranslation';
 
 const BusinessSolutions = () => {
-  const { locale } = useClientTranslation('businessSolutions');
+  const { t, locale } = useClientTranslation('businessSolutions');
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -40,20 +40,20 @@ const BusinessSolutions = () => {
   // Transform API data to ServiceCard format
   const transformedServices = services.map((service) => ({
     id: service._id,
-    title: service.title[locale as 'en' | 'ar'] || service.title.en,
-    description: service.description[locale as 'en' | 'ar'] || service.description.en,
-    features: service.what_we_do?.units?.map((unit) => unit[locale as 'en' | 'ar'] || unit.en) || [],
-    buttonText: "Learn More",
+    title: service.title?.[locale as 'en' | 'ar'] || service.title?.en || '',
+    description: service.description?.[locale as 'en' | 'ar'] || service.description?.en || '',
+    features: service.what_we_do?.units?.map((unit: any) => unit[locale as 'en' | 'ar'] || unit.en) || [],
+    buttonText: locale === 'ar' ? "تعرف على المزيد" : "Learn More",
     iconUrl: service.icon || "/assets/Frame.svg"
   }));
 
   return (
     <div className={styles.BusinessPage}>
       <HeroSection 
-              title1="Architecting Future of"
-              title2="Digital Business."
-              subtitle1="At Axuraa, we don't just write code. We build digital infrastructure that powers world's most ambitious companies."
-              badgeText="INNOVATION IN PROGRESS"
+              title1={t('hero.title1', 'Architecting Future of')}
+              title2={t('hero.title2', 'Digital Business.')}
+              subtitle1={t('hero.subtitle1', "At Axuraa, we don't just write code. We build digital infrastructure that powers world's most ambitious companies.")}
+              badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
               showBackgroundDots={false}
               showAnimatedCircles={true}
               showEllipseDecorations={true}
@@ -71,7 +71,7 @@ const BusinessSolutions = () => {
               {loading ? (
                 <div className={styles.sectionLoading}>
                   <div className={styles.loadingSpinner}></div>
-                  <p>Loading solutions...</p>
+                  <p>{t('loading', 'Loading solutions...')}</p>
                 </div>
               ) : error ? (
                 <div className={styles.sectionError}>{error}</div>

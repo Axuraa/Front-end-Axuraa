@@ -27,10 +27,29 @@
   "footer": {
     "description": "We are a leading project management agency dedicated to delivering exceptional results for our clients.",
     "quickLinks": "Quick Links",
-    "services": "Services",
-    "contact": "Contact",
+    "services": {
+      "title": "Services",
+      "ecommerce": "Custom E-commerce",
+      "erp": "ERP Systems Integration",
+      "cloud": "Cloud Solutions",
+      "bi": "Business Intelligence",
+      "mobile": "Mobile Development",
+      "ai": "AI & Machine Learning"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "portfolio": "Portfolio",
+      "case-studies": "Case Studies",
+      "careers": "Careers",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact"
+    },
     "followUs": "Follow Us",
-    "allRightsReserved": "All rights reserved",
+    "rights": "All rights reserved",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },

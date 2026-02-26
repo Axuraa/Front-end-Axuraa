@@ -35,10 +35,10 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
           // Transform API data to match Project interface
           const transformedProjects = result.data.slice(0, 3).map(project => ({
             id: project._id,
-            title: project.title?.en || 'Untitled Project',
-            category: project.services?.[0]?.services_id?.title?.en || project.technology_stack?.[0] || 'General',
+            title: project.title?.[locale as 'en' | 'ar'] || 'Untitled Project',
+            category: project.services?.[0]?.services_id?.title?.[locale as 'en' | 'ar'] || project.technology_stack?.[0] || 'General',
             percentage: project.case_study_results?.[0]?.value || '+50%',
-            description: project.case_study_results?.[0]?.description?.en || 'Project description',
+            description: project.case_study_results?.[0]?.description?.[locale as 'en' | 'ar'] || 'Project description',
             imageUrl: project.main_image_url || '/assets/ProjectImage.png'
           }));
 

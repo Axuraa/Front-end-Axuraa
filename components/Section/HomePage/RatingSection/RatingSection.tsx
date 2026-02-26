@@ -4,6 +4,7 @@ import styles from './RatingSection.module.css';
 import Badge from '@/components/UI/Atoms/Badge/Badge';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 import Rating from '@/components/UI/Atoms/RatingComponents/Rating';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 import { RatingSectionProps, RatingItem } from '@/types/HomePage/ratingTypes';
 import { getHomeTrackRecord, TrackRecordItem } from '@/service/TrackRecord/trackrecord';
@@ -70,6 +71,7 @@ const RatingSection: React.FC<RatingSectionProps> = ({
   subtitle,
   ratingItems = []
 }) => {
+  const { locale } = useClientTranslation('common');
   const [apiRatingItems, setApiRatingItems] = useState<RatingItem[]>(ratingItems);
   const [loading, setLoading] = useState(false);
 
@@ -87,12 +89,12 @@ const RatingSection: React.FC<RatingSectionProps> = ({
         }
         
         // Fetch fresh data from API
-        const result = await getHomeTrackRecord('en');
+        const result = await getHomeTrackRecord(locale as 'en' | 'ar');
         console.log('API Result:', result);
         
         if (result.success && result.data && result.data.records) {
           // Transform API data to match RatingItem interface
-          const transformedItems: RatingItem[] = result.data.records.map((record: TrackRecordItem) => {
+          const transformedItems: RatingItem[] = result.data.records.map((record: any) => {
             const iconPath = '/assets/RatingIcon.svg'; 
             
             let suffix: '' | '%' | '+' = '';
@@ -106,10 +108,15 @@ const RatingSection: React.FC<RatingSectionProps> = ({
               }
             }
 
+            // Handle localized label if it's an object
+            const displayLabel = typeof record.label === 'object' 
+              ? record.label[locale] || record.label['en'] 
+              : record.label;
+
             return {
               id: record.id,
               value: record.value,
-              label: record.label,
+              label: displayLabel,
               icon: iconPath,
               showIcon: true, 
               suffix: suffix
@@ -150,7 +157,7 @@ const RatingSection: React.FC<RatingSectionProps> = ({
     };
 
     fetchTrackRecord();
-  }, []);
+  }, [locale]);
 
   return (
     <section id="rating-section" className={styles.RatingSection}>

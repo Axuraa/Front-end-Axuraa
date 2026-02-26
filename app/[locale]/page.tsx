@@ -1,7 +1,33 @@
+"use client";
+
+import styles from './page.module.css';
+import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import Homepage from '@/components/pages/Home/Homepage';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
-const LocalePage = () => {
-  return <Homepage />;
-};
+export default function Home() {
+  const { t } = useClientTranslation('home');
 
-export default LocalePage;
+  return (
+    <div className={styles.pageContainer}>
+      <HeroSection
+        title1={t('hero.title1', 'Welcome to Axuraa')}
+        title2={t('hero.title2', 'Building Digital Excellence')}
+        subtitle1={t('hero.subtitle1', 'Transforming ideas into powerful digital experiences.')}
+        badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
+        showBackgroundDots={true}
+        showAnimatedCircles={true}
+        showBadge={true}
+        showTrustedSection={true}
+        showPrimaryButton={true}
+        showSecondaryButton={true}
+        showEllipseDecorations={true}
+        showStatusBadge={false}
+        backgroundType="Hexagon"
+        height="100vh"
+      />
+      
+      <Homepage />
+    </div>
+  );
+}

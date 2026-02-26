@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import styles from './ProjectsGrid.module.css';
 import ProjectCard from '@/components/UI/Muscles/ProjectCard/ProjectCard';
 import React from 'react';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 interface Project {
   id: string;
@@ -33,8 +34,12 @@ const item = {
 };
 
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
+  const { locale } = useClientTranslation('projects');
+
   if (!projects.length) {
-    return <div className={styles.noProjects}>No projects found for this filter.</div>;
+    return <div className={styles.noProjects}>
+      {locale === 'ar' ? 'لم يتم العثور على مشاريع لهذا الفلتر.' : 'No projects found for this filter.'}
+    </div>;
   }
 
   return (

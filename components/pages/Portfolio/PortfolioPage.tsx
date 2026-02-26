@@ -10,11 +10,17 @@ import useClientTranslation from '@/hooks/useClientTranslation';
 
 const PortfolioPage = () => {
   const { t, locale } = useClientTranslation('portfolio');
-  const [activeFilter, setActiveFilter] = useState('All');
+  const allLabel = locale === 'ar' ? 'الكل' : 'All';
+  const [activeFilter, setActiveFilter] = useState(allLabel);
   const [projects, setProjects] = useState<ProjectItem[]>([]);
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  
+  // Update active filter when locale changes to match the localized "All" label
+  useEffect(() => {
+    setActiveFilter(allLabel);
+  }, [locale, allLabel]);
 
   // Fetch projects and services from APIs
   useEffect(() => {
@@ -75,22 +81,22 @@ const PortfolioPage = () => {
   // Create filters from services and project categories
   const filters = useMemo(() => {
     const serviceTitles = services
-      .map(service => service.title[locale as keyof typeof service.title])
+      .map(service => service.title?.[locale as keyof typeof service.title] || service.title?.en || '')
       .filter(title => title && title.trim() !== ''); // Filter out undefined/empty titles
-    const allFilters = ['All', ...serviceTitles];
+    const allFilters = [allLabel, ...serviceTitles];
     
     // Remove duplicates while preserving order
     const uniqueFilters = Array.from(new Set(allFilters));
     
     return uniqueFilters.length > 1 ? uniqueFilters : 
-      ["All", "ERP Systems", "Desktop App", "UI/UX Design", "Custom Software", "LMS", "Booking Systems", "HR Systems", "Mobile App", "E-commerce", "POS", "CRM", "SaaS", "AI & ML", "Web Platforms"];
+      [allLabel, "ERP Systems", "Desktop App", "UI/UX Design", "Custom Software", "LMS", "Booking Systems", "HR Systems", "Mobile App", "E-commerce", "POS", "CRM", "SaaS", "AI & ML", "Web Platforms"];
   }, [services, locale]);
 
   // console.log( "the projectCategories is :" +  projectCategories)
 
   // Filter projects based on active filter
   const filteredProjects = useMemo(() => {
-    if (activeFilter === 'All') return projects;
+    if (activeFilter === allLabel) return projects;
     
     return projects.filter((project: ProjectItem) => {
       // Check if filter matches technology stack
@@ -142,10 +148,10 @@ const PortfolioPage = () => {
   return (
     <div className={styles.portfolioPage}>
       <HeroSection 
-        title1="Architecting the Future of"
-        title2="Digital Business."
-        subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
-        badgeText="INNOVATION IN PROGRESS"
+        title1={t('hero.title1', 'Architecting the Future of')}
+        title2={t('hero.title2', 'Digital Business.')}
+        subtitle1={t('hero.subtitle1', "At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies.")}
+        badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
         showBackgroundDots={false}
         showAnimatedCircles={true}
         showBadge={false}

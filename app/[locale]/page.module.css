@@ -1,0 +1,12 @@
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.mainSection {
+  flex: 1;
+  width: 100%;
+}

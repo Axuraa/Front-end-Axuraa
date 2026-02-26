@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import styles from "./layout.module.css";
 import Header from "@/components/Layout/Header/Header";
 import Footer from "@/components/Layout/Footer/Footer";
@@ -20,12 +20,9 @@ export const metadata: Metadata = {
   title: "Axuraa",
   description: "project management agency",
   keywords: ["Axuraa", "project management agency", "Axuraa Agency"],
-  // favicon: "/assets/favicon.ico",
-
-  
 };
-export const dynamic = "force-dynamic";
 
+export const dynamic = "force-dynamic";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -34,14 +31,18 @@ export const viewport: Viewport = {
   minimumScale: 1,
 }
 
-
-export default function RootLayout({
+export default async function LocaleLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const dir = locale === 'ar' ? 'rtl' : 'ltr';
+
   return (
-    <html lang="en" className={styles.html}>
+    <html lang={locale} dir={dir} className={styles.html}>
       <body className={`${geistSans.variable} ${geistMono.variable} ${styles.body}`} >
         <div className={styles.wrapper}>
           <Header />
