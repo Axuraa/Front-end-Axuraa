@@ -1312,13 +1312,11 @@ line-height: normal;
 
   .title {
 
-    margin: 0 auto;
+    margin: 12px auto;
 
     font-size: 36px;
 
     text-align: center;
-
-    margin-bottom: 12px;
 
     /* background-color: #6B7280; */
 

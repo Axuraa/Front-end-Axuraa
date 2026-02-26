@@ -205,7 +205,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               flexDirection: "column",
               alignItems: "center",
               gap: "1rem",
-              marginBottom: "1.5rem",
             }}
             className={mounted ? styles.fadeInUp : ""}
           >

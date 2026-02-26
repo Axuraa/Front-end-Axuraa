@@ -2,7 +2,7 @@
 
 .teamSection {
   width: 100%;
-  padding: 5rem 6%;
+  padding: 5rem;
   min-height: 60vh;
   display: flex;
   align-items: center;
@@ -90,7 +90,7 @@
 /* Tablets and Mobile (below 768px) - 2 columns grid */
 @media (max-width: 48rem) {
   .teamSection {
-    padding: 3.75rem 6%;
+    padding: 3.75rem;
   }
 
   .header {
@@ -109,12 +109,12 @@
     justify-self: center;
     max-width: 11.25rem; /* Adjust based on your TeamCard width */
   }
-  .badge{
+  /* .badge{ */
     /* margin-bottom: -8%; */
-  }
-  .header{
-    margin-bottom: -2%;
-  }
+  /* } */
+  /* .header{ */
+    /* margin-bottom: 0; */
+  /* } */
 }
 
 /* Small mobile (below 480px) - 2 columns grid, smaller */

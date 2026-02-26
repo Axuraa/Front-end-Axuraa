@@ -570,6 +570,7 @@
   
   .label {
     font-size: 0.875rem; /* 14px / 16 = 0.875rem */
+    text-align: left;
   }
   
   .inputField,
