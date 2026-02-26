@@ -23,6 +23,7 @@ const ChatBot: React.FC = () => {
     }
   ]);
   const [inputText, setInputText] = useState('');
+  const [showDivider, setShowDivider] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const messageDividerRef = useRef<HTMLDivElement>(null);
 
@@ -56,12 +57,39 @@ const ChatBot: React.FC = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleDividerClick = (text: string) => {
-    setInputText(text);
-    // Auto-send the message
-    setTimeout(() => {
-      sendMessage();
-    }, 100);
+  const handleDividerClick = async (text: string) => {
+    setShowDivider(false); // Hide divider after click
+    
+    // Create and send message directly
+    const newMessage: Message = {
+      id: Date.now().toString(),
+      text: text,
+      sender: 'user',
+      timestamp: new Date()
+    };
+    
+    setMessages(prev => [...prev, newMessage]);
+    
+    // Call API for bot response
+    try {
+      const response = await askChatBot(text, 'en');
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: response.answer,
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Error sending message:', error);
+      const errorMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: 'Sorry, I encountered an error. Please try again.',
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    }
   };
 
   const sendMessage = async () => {
@@ -164,7 +192,7 @@ const ChatBot: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.messagesContainer}>
+      <div className={`${styles.messagesContainer} ${!showDivider ? styles.messagesContainerExpanded : ''}`}>
         {messages.map((message) => (
           <div 
             key={message.id} 
@@ -181,7 +209,8 @@ const ChatBot: React.FC = () => {
                   borderRadius: '50%',
                   marginBottom: '0px',
                   justifyContent: 'end',
-                  alignItems: 'end'
+                  alignItems: 'end',
+                  marginRight:'10px'
                 }}
               />
             )}
@@ -198,26 +227,28 @@ const ChatBot: React.FC = () => {
         <div ref={messagesEndRef} />
       </div>
 
-      <div ref={messageDividerRef} className={styles.messageDivider}>
-        <div className={styles.dividerGrid}>
-          {[
-            { text: 'who are Axuraa', key: '1' },
+      {showDivider && (
+        <div ref={messageDividerRef} className={styles.messageDivider}>
+          <div className={styles.dividerGrid}>
+            {[
+            { text: 'who are Axuraa oofofofoof', key: '1' },
             { text: 'what services do you offer', key: '2' },
             { text: 'how can I contact you', key: '3' },
             { text: 'what is your pricing', key: '4' },
             { text: 'do you have portfolio', key: '5' },
             { text: 'how long does it take', key: '6' },
-          ].map(item => (
-            <button 
-              key={item.key} 
-              className={styles.dividerButton}
-              onClick={() => handleDividerClick(item.text)}
-            >
-              {item.text}
-            </button>
-          ))}
+            ].map(item => (
+              <button 
+                key={item.key} 
+                className={styles.dividerButton}
+                onClick={() => handleDividerClick(item.text)}
+              >
+                {item.text}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <div className={styles.inputContainer}>
         <div className={styles.inputWrapper}>

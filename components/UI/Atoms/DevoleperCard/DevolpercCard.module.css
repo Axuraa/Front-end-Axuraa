@@ -2,6 +2,9 @@
     display: flex;
     width: 262px;
     height: 364px;
+    flex: 0 0 auto;
+    flex-basis: 262px;
+    flex-shrink: 0;
     padding: 71px 20px 40px 12px;
     flex-direction: column;
     justify-content: space-between;
