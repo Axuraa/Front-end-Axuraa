@@ -142,14 +142,15 @@ text-underline-position: from-font;
 .content {
   display: flex;
   width: 100%;
+  height: 200px;
   flex-direction: column;
+  justify-content: space-between;
   gap: 0.75rem;
-    padding: 1rem;
-
+  padding: 1rem;
 }
 /* Keep the rest of your styles but remove fixed heights */
 .title {
-  color: #FFF;
+  color: #fff;
   font-family: Roboto;
   font-size: 17.461px;
   font-weight: 700;
@@ -162,8 +163,8 @@ text-underline-position: from-font;
   align-items: center;
   border-radius: 19.401px;
   border: 1.94px solid #902501;
-  background: linear-gradient(90deg, #902501 0%, #2A0B00 100%);
-  box-shadow: -2.079px 4.158px 10.395px 0 rgba(0, 0, 0, 0.50);
+  background: linear-gradient(90deg, #902501 0%, #2a0b00 100%);
+  box-shadow: -2.079px 4.158px 10.395px 0 rgba(0, 0, 0, 0.5);
   color: #fff;
   font-size: 12px;
   width: fit-content;
@@ -176,9 +177,8 @@ text-underline-position: from-font;
   justify-content: flex-start;
 }
 
-
 .percentage {
-  color: var(--Primary, #D04A1D);
+  color: var(--Primary, #d04a1d);
   font-size: 1.5rem;
   font-weight: 800;
   line-height: 1.2;
@@ -186,14 +186,14 @@ text-underline-position: from-font;
     0 0 8px rgba(208, 74, 29, 0.7),
     0 0 16px rgba(208, 74, 29, 0.5),
     0 0 24px rgba(208, 74, 29, 0.3); */
-    text-shadow:  0 4.158px 20.79px #902501;
+  text-shadow: 0 4.158px 20.79px #902501;
   position: relative;
   display: inline-block;
   z-index: 1;
 }
 
 .description {
-  color: #FFF;
+  color: #fff;
   font-size: 0.9rem;
   line-height: 1.4;
   margin: 0;
@@ -201,7 +201,7 @@ text-underline-position: from-font;
   /* background-color: #902501; */
 }
 .readMore {
-  color: var(--Primary, #D04A1D);
+  color: var(--Primary, #d04a1d);
   text-align: right;
   font-size: 0.9rem;
   text-decoration: underline;
@@ -211,7 +211,7 @@ text-underline-position: from-font;
 /* Tablet and Desktop (1024px and up) */
 @media (width: 1024px) {
   .card {
-     /* width: 356.552px; */
+    /* width: 356.552px; */
     /* width: 32%; */
     /* height: 100%; */
     /* background-color: aquamarine; */
@@ -243,42 +243,42 @@ text-underline-position: from-font;
     max-width: 342.569px;
     padding: 0;
     /* background-color: rgb(0, 38, 255); */
-    height: auto; 
+    height: auto;
     display: flex; /* Use flex to make content stretch */
     flex-direction: column; /* Stack children vertically */
   }
-  
+
   .content {
     padding: 18.64px 18.64px 6.991px;
     flex: 1; /* Make content take up remaining space */
     display: flex;
     flex-direction: column;
   }
-  
+
   .imageContainer {
     height: 200.057px;
     flex-shrink: 0; /* Prevent image from shrinking */
   }
-  
+
   .title {
     font-size: 16.776px;
     line-height: 22.368px;
     margin: 0 0 8px; /* Add some spacing below title */
   }
-  
+
   .badge {
     padding: 4.66px 9.32px;
     font-size: 13.048px;
     line-height: 18.64px;
     margin-bottom: 8px; /* Add some spacing below badge */
   }
-  
+
   .percentage {
     font-size: 26.096px;
     line-height: 31.688px;
     margin: 8px 0; /* Add some spacing around percentage */
   }
-  
+
   .description {
     font-size: 13.018px;
     line-height: 18.64px;
@@ -286,7 +286,7 @@ text-underline-position: from-font;
     flex: 1; /* Allow description to grow and push read more to bottom */
     /* min-height: 40px; Set a minimum height for the description */
   }
-  
+
   .readMore {
     font-size: 13.048px;
     line-height: 18.64px;

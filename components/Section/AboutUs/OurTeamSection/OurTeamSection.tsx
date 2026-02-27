@@ -146,7 +146,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({
           <SectionHeader
             // title1="Meet"
             title2="Our Team"
-            // subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+            subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
           />
         </div>
 

@@ -93,7 +93,7 @@
     max-width: 22rem; /* 400px / 16 = 25rem */
     gap: 1.5rem;
     justify-self: center;
-    height: 10rem;
+    /* height: 10rem; */
   }
 }
 
