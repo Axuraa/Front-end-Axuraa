@@ -94,12 +94,7 @@
     gap: 3px !important;
   }
   
-  .dividerButton.dividerButton {
-    font-size: 9px !important;
-    padding: 2px 1px !important;
-  }
-  
-  .messageContent.messageContent {
+   .messageContent.messageContent {
     max-width: 160px !important;
     padding: 5px 10px !important;
   }
@@ -386,7 +381,7 @@
   border: none;
   color: #FFFFFF;
   cursor: pointer;
-  padding: 4px;
+  padding: 5px;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -396,8 +391,8 @@
 }
 
 .closeIcon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   color: #FFFFFF;
 }
 
@@ -733,13 +728,13 @@
     width: 90%;
     height: 70vh;
     right: 5%;
-    bottom: 10px;
+    bottom: 30px;
   }
 
   .chatToggle {
     width: 50px;
     height: 50px;
-    right: 10px;
-    bottom: 10px;
+    right: 20px;
+    bottom: 20px;
   }
 }

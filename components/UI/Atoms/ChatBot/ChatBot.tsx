@@ -102,6 +102,7 @@ const ChatBot: React.FC = () => {
       };
       
       setMessages(prev => [...prev, newMessage]);
+      setShowDivider(false);
       setInputText('');
       
       try {
