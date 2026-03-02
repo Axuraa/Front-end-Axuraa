@@ -272,11 +272,10 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                               alt="Feature icon"
                               width={30}
                               height={30}
-                              
                               className={styles.overviewIcon}
                             />
                           ) : (
-                             feature.icon || <Package className={styles.featureIcon} />
+                            feature.icon
                           )}
                         </div>
                         <h3 className={styles.featureTitle}>{feature.title}</h3>

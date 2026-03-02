@@ -2,6 +2,7 @@
 /* Horizontal Scroll Container */
 .horizontalScroll {
   width: 100%;
+  height: auto;
   /* background-color: red; */
   display: flex;
   gap: 5px;

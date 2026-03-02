@@ -10,7 +10,7 @@ import useClientTranslation from "@/hooks/useClientTranslation";
 
 const Header = () => {
   const { t, locale } = useClientTranslation('navlink');
-  const [activeLink, setActiveLink] = useState("Home");
+  // const [activeLink, setActiveLink] = useState("Home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [currentLocale, setCurrentLocale] = useState('en');
@@ -41,7 +41,7 @@ const Header = () => {
     { key: "services", href: `/${currentLocale}/services` },
     { key: "businessSolutions", href: `/${currentLocale}/businessSolutions` },
     { key: "portfolio", href: `/${currentLocale}/portfolio` },
-    { key: "aboutUs", href: `/${currentLocale}/aboutus` },
+    { key: "aboutus", href: `/${currentLocale}/aboutus` },
     { key: "contact", href: `/${currentLocale}/contact` },
   ];
 
@@ -65,16 +65,16 @@ const Header = () => {
               <li key={link.key} className={styles.navItem}>
                 <Link
                   href={link.href}
-                  className={`${styles.navLink} ${activeLink === t(link.key) ? styles.active : ""}`}
+                  className={`${styles.navLink} ${t(pathname.split("/")[2] || "home") === t(link.key) ? styles.active : ""}`}
                   onClick={() => {
-                    setActiveLink(t(link.key));
+                    // setActiveLink(t(link.key));
                     setIsMenuOpen(false);
                   }}
                 >
                   {t(link.key)}
-                  {activeLink === t(link.key) && (
+                  {/* {activeLink === t(link.key) && (
                     <span className={styles.navUnderline} />
-                  )}
+                  )} */}
                 </Link>
               </li>
             ))}
