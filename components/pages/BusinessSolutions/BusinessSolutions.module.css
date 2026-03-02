@@ -11,8 +11,8 @@
 
 .BusinessContainer {
     /* background-color: red; */
-    /* width: 100%; */
-    max-width: 1120px;
+    width: 100%;
+    max-width: 1200px;
     min-height: 100vh; /* Changed from fixed height */
     display: grid;
     grid-template-columns: 1fr; /* 1 column on mobile */
@@ -117,7 +117,7 @@
 @media (min-width: 768px) {
     .BusinessContainer {
         grid-template-columns: repeat(2, 1fr);
-        padding: 24px;
+        /* padding: 0 2rem; */
     }
 }
 
@@ -125,6 +125,7 @@
 @media (min-width: 1200px) {
     .BusinessContainer {
         grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
     }
 }
 
