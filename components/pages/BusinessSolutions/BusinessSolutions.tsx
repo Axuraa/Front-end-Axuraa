@@ -5,12 +5,15 @@ import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import ServiceCard from '@/components/Molecules/ServiceCard/ServiceCard';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
 import useClientTranslation from '@/hooks/useClientTranslation';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const BusinessSolutions = () => {
   const { t, locale } = useClientTranslation('businessSolutions');
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -43,7 +46,7 @@ const BusinessSolutions = () => {
     title: service.title?.[locale as 'en' | 'ar'] || service.title?.en || '',
     description: service.description?.[locale as 'en' | 'ar'] || service.description?.en || '',
     features: service.what_we_do?.units?.map((unit: any) => unit[locale as 'en' | 'ar'] || unit.en) || [],
-    buttonText: locale === 'ar' ? "تعرف على المزيد" : "Learn More",
+    buttonText: t('learnMore', locale === 'ar' ? "تعرف على المزيد" : "Learn More"),
     iconUrl: service.icon || "/assets/Frame.svg"
   }));
 
@@ -76,16 +79,61 @@ const BusinessSolutions = () => {
               ) : error ? (
                 <div className={styles.sectionError}>{error}</div>
               ) : (
-                transformedServices.map((service) => (
-                  <ServiceCard
-                    key={service.id}
-                    title={service.title}
-                    description={service.description}
-                    features={service.features}
-                    buttonText={service.buttonText}
-                    id={service.id}
-                  />
-                ))
+                <div className={styles.sliderSection}>
+                  <div className={styles.sliderContainer}>
+                    <div className={styles.navigationButtons}>
+                      <button 
+                        className={styles.navButton} 
+                        onClick={() => setCurrentIndex(prev => prev > 0 ? prev - 1 : transformedServices.length - 1)}
+                        aria-label="Previous service"
+                      >
+                        <ChevronLeft size={24} />
+                      </button>
+                      <button 
+                        className={styles.navButton} 
+                        onClick={() => setCurrentIndex(prev => prev < transformedServices.length - 1 ? prev + 1 : 0)}
+                        aria-label="Next service"
+                      >
+                        <ChevronRight size={24} />
+                      </button>
+                    </div>
+
+                    <div className={styles.sliderContent}>
+                      <AnimatePresence mode="wait">
+                        {transformedServices.length > 0 && (
+                          <motion.div
+                            key={currentIndex}
+                            initial={{ opacity: 0, x: 20 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.3 }}
+                            className={styles.slideWrapper}
+                          >
+                            <ServiceCard
+                              id={transformedServices[currentIndex].id}
+                              title={transformedServices[currentIndex].title}
+                              description={transformedServices[currentIndex].description}
+                              features={transformedServices[currentIndex].features}
+                              buttonText={transformedServices[currentIndex].buttonText}
+                              iconUrl={transformedServices[currentIndex].iconUrl}
+                            />
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+
+                    <div className={styles.pagingContainer}>
+                      {transformedServices.map((_, idx) => (
+                        <button
+                          key={idx}
+                          className={`${styles.pagingDot} ${idx === currentIndex ? styles.activeDot : ''}`}
+                          onClick={() => setCurrentIndex(idx)}
+                          aria-label={`Go to slide ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
     </div>

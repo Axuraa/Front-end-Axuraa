@@ -57,5 +57,11 @@
     "title": "Axuraa - Project Management Agency",
     "description": "Leading project management agency delivering exceptional results for businesses worldwide.",
     "keywords": "project management, agency, business solutions, consulting"
+  },
+  "cta": {
+    "title": "Ready to Innovate?",
+    "subtitle": "Join the list of forward-thinking companies that trust Axuraa to deliver excellence.",
+    "primaryButton": "Contact Us",
+    "secondaryButton": "View Case Studies"
   }
 }

@@ -10,9 +10,12 @@ import OurTeamSection from '@/components/Section/AboutUs/OurTeamSection/OurTeamS
 import { getHistory } from '@/service/ApoutUs/history';
 import { getActiveTeamMembers, TeamMember } from '@/service/TeamMembers/TeamMembers';
 import { HistoryJourneyData } from '@/types/AboutUsPage/History/JourneyTypes';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 const AboutUs = () => {
+    const { t, locale } = useClientTranslation('about');
     const [historyData, setHistoryData] = useState<HistoryJourneyData | null>(null);
+    const [cardData, setCardData] = useState<any>(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [teamMembers, setTeamMembers] = useState<TeamMember[] | null>(null);
@@ -23,17 +26,27 @@ const AboutUs = () => {
                 setLoading(true);
                 
                 // Fetch history data
-                const historyResult = await getHistory();
+                const historyResult = await getHistory(locale);
                 if (historyResult.success && historyResult.data) {
-                    console.log('History data loaded:', historyResult.data);
-                    setHistoryData(historyResult.data);
+                    const rawData = historyResult.data as any;
+                    console.log('History raw data received:', rawData);
+                    
+                    // The API might return both journey and card data
+                    if (rawData.journey && rawData.card) {
+                        setHistoryData(rawData.journey);
+                        setCardData(rawData.card);
+                    } else if (rawData.timeline) {
+                        setHistoryData(rawData);
+                    } else if (rawData.title && !rawData.timeline) {
+                        setCardData(rawData);
+                    }
                 } else {
                     console.error('History API error:', historyResult.error);
                     setError(historyResult.error || 'Failed to load history data');
                 }
 
                 // Fetch team members data
-                const teamResult = await getActiveTeamMembers();
+                const teamResult = await getActiveTeamMembers(locale);
                 if (teamResult.success && teamResult.data) {
                     console.log('Team members data loaded:', teamResult.data);
                     setTeamMembers(teamResult.data);
@@ -51,7 +64,7 @@ const AboutUs = () => {
         };
 
         fetchData();
-    }, []);
+    }, [locale]);
 
     return (
         <div className={styles.container}>
@@ -59,13 +72,16 @@ const AboutUs = () => {
             {loading ? (
                 <div className={styles.sectionLoading}>
                     <div className={styles.loadingSpinner}></div>
-                    <p>Loading About Us page...</p>
+                    <p>{t('common.loading', 'Loading About Us page...')}</p>
                 </div>
             ) : (
                 <>
                    
                     <MissionVisionSection />
-                    <HistorySection journeyData={historyData || undefined} />
+                    <HistorySection 
+                        journeyData={historyData || undefined} 
+                        cardData={cardData || undefined}
+                    />
                     <WhyUs />
                     <OurTeamSection teamMembers={teamMembers || undefined} />
                     <SpecialCard />

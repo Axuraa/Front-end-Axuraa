@@ -1,43 +1,56 @@
 {
   "hero": {
-    "title": "About Axuraa",
-    "subtitle": "Leading the way in project management excellence"
+    "badge": "WHO WE ARE",
+    "title1": "Architecting the Future of",
+    "title2": "Digital Business",
+    "subtitle": "At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
   },
-  "story": {
-    "title": "Our Story",
-    "description": "Founded with a vision to transform how businesses approach project management, Axuraa has grown into a trusted partner for organizations worldwide. Our journey began with a simple mission: to deliver exceptional results through innovative solutions and unwavering commitment to excellence."
+  "rating": {
+    "experience": "Years Experience",
+    "projects": "Projects Launched",
+    "experts": "Team Experts",
+    "retention": "Client Retention"
   },
   "mission": {
     "title": "Our Mission",
-    "description": "To empower businesses with cutting-edge project management solutions that drive growth, efficiency, and success in an ever-evolving digital landscape."
+    "description": "To empower organizations with scalable, intelligent software solutions that drive efficiency and unlock new growth opportunities. We strive to demystify technology and make enterprise-grade innovation accessible to ambitious businesses."
   },
   "vision": {
     "title": "Our Vision",
-    "description": "To be the global leader in project management innovation, setting new standards for excellence and helping businesses achieve their full potential."
+    "description": "To be the global benchmark for software engineering excellence, fostering a world where businesses of all sizes can seamlessly adapt to the digital evolution without technical barriers or complexity."
   },
-  "values": {
-    "title": "Our Values",
-    "items": [
-      {
-        "title": "Excellence",
-        "description": "We strive for perfection in everything we do, delivering outstanding results that exceed expectations."
-      },
-      {
-        "title": "Innovation",
-        "description": "We embrace creativity and cutting-edge technology to solve complex challenges."
-      },
-      {
-        "title": "Integrity",
-        "description": "We conduct business with honesty, transparency, and ethical principles."
-      },
-      {
-        "title": "Collaboration",
-        "description": "We believe in the power of teamwork and partnership to achieve extraordinary results."
-      }
-    ]
+  "whyUs": {
+    "badge": "AXURAA",
+    "title": "Why Axuraa?",
+    "subtitle": "Our culture is built on principles that ensure we deliver not just code, but tangible business value.",
+    "innovation": {
+      "title": "Innovation First",
+      "description": "We constantly explore new technologies to keep you ahead of the curve."
+    },
+    "integrity": {
+      "title": "Integrity",
+      "description": "Transparency in every step. No hidden costs or surprises, just honest work."
+    },
+    "partnership": {
+      "title": "Partnership",
+      "description": "We work with you, not just for you. Your business goals become our goals."
+    },
+    "agile": {
+      "title": "Agile Execution",
+      "description": "Rapid delivery and iterative improvement for faster, better results."
+    }
+  },
+  "history": {
+    "badge": "OUR HISTORY",
+    "title": "A Journey of Continuous Evolution",
+    "card": {
+      "title": "Writing History",
+      "subtitle": "One line of code at a time."
+    }
   },
   "team": {
-    "title": "Leadership Team",
+    "badge": "AXURAA",
+    "title": "Our Team",
     "subtitle": "Meet the experts behind our success"
   }
 }

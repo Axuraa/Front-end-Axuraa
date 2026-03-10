@@ -13,6 +13,7 @@ import SocialIcon from "@/components/UI/Atoms/SocialIcon/SocialIcon";
 import ContactForm from "@/components/UI/Atoms/ContactForm/ContactForm";
 import { ContactSectionProps } from "@/types/HomePage/contactTypes";
 import { getContactInformation, SocialLink } from "@/service/Contact/contactinformation";
+import useClientTranslation from "@/hooks/useClientTranslation";
 
 // Define SVG components directly
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -66,13 +67,14 @@ const ContactSection: React.FC<ContactSectionProps> = ({
   subtitle,
   showLinks = true,
 }) => {
+  const { t, locale } = useClientTranslation("contact");
   const [contactData, setContactData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchContactData = async () => {
       try {
-        const result = await getContactInformation();
+        const result = await getContactInformation(locale);
         if (result.success && result.data) {
           console.log('ContactSection - Contact data loaded:', result.data);
           setContactData(result.data);
@@ -85,7 +87,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
     };
 
     fetchContactData();
-  }, []);
+  }, [locale]);
 
   // Transform API data to social icons format with branding mapping
   const getSocialIcons = () => {
@@ -128,7 +130,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         {/* Contact Info - Title and Subtitle only */}
         <div className={styles.Contantinfo}>
           <StatusBadge
-            text="Contact Us"
+            text={badgeText || t('contactInfo.title', 'Contact Us')}
             style={{
               width: "130.2456px",
               height: "32.0175px",
@@ -163,7 +165,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 color: "#FFFFFF",
               }}
             >
-              Let's build something
+              {title1 || t('contact.title1', "Let's build something")}
             </span>
             <span
               style={{
@@ -176,7 +178,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 WebkitTextFillColor: "transparent",
               }}
             >
-              extraordinary.
+              {title2 || t('contact.title2', "extraordinary.")}
             </span>
           </Typography>
           
@@ -187,9 +189,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               component="p"
               className={styles.subtitle}
             >
-              Have a project in mind? We'd love to hear about it. Fill out the
-              form or reach out directly to discuss how Axuraa can help you
-              achieve your goals.
+              {subtitle || t('contact.subtitle', "Have a project in mind? We'd love to hear about it. Fill out the form or reach out directly to discuss how Axuraa can help you achieve your goals.")}
             </Typography>
           </div>
         </div>
@@ -203,7 +203,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
         <div className={styles.contactFormWrapper}>
           <ContactInfoCard
             icon="/assets/PhoneIcon.svg"
-            label="Phone"
+            label={t('contactInfo.phone.title', 'Phone')}
             value={contactData?.phone || "+1 (555) 123-4567"}
             onClick={() => {
               const phoneNumber = contactData?.phone || "+1 (555) 123-4567";
@@ -212,7 +212,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
           />
           <ContactInfoCard
             icon="/assets/EmailIcon.svg"
-            label="Email"
+            label={t('contactInfo.email.title', 'Email')}
             value={contactData?.emails?.[0]?.email || "contact@company.com"}
             onClick={() => {
               const emailAddress = contactData?.emails?.[0]?.email || "contact@company.com";

@@ -29,7 +29,6 @@ export const LanguageButton = ({ className = '' }: LanguageButtonProps) => {
 
   const toggleLanguage = () => {
     const newLanguage = selectedLanguage.code === 'en' ? languages[1] : languages[0];
-    setSelectedLanguage(newLanguage);
     
     // Update the URL with new language
     if (!pathname) return;
@@ -42,15 +41,10 @@ export const LanguageButton = ({ className = '' }: LanguageButtonProps) => {
       pathSegments.splice(1, 0, newLanguage.code); // Add locale if not present
     }
     
-    const newPath = pathSegments.join('/');
+    const newPath = pathSegments.join('/') || '/';
     
-    // Navigate to new path and reload the page
-    router.push(newPath);
-    
-    // Force page reload to ensure all components re-render with new language
-    setTimeout(() => {
-      window.location.reload();
-    }, 100);
+    // Use window.location.href for a full reload with the new path
+    window.location.href = newPath;
   };
 
   return (

@@ -1,1 +1,34 @@
-{}
+{
+  "breadcrumb": {
+    "home": "Home",
+    "portfolio": "Portfolio"
+  },
+  "sections": {
+    "overview": "OVERVIEW",
+    "keyFeatures": "Key Features",
+    "caseStudyResults": "Case Study Results",
+    "freeConsultation": "Free Project Consultation",
+    "testimonials": "Client Testimonials",
+    "projectDetails": "Project Details"
+  },
+  "details": {
+    "client": "Client:",
+    "projectManager": "Project Manager:",
+    "timeframe": "Timeframe:",
+    "team": "Team:",
+    "location": "Location:"
+  },
+  "buttons": {
+    "showPrototype": "Show prototype",
+    "scheduleAssessment": "Schedule Free Assessment"
+  },
+  "loading": {
+    "details": "Loading project details...",
+    "overview": "Loading overview...",
+    "features": "Loading features..."
+  },
+  "fallback": {
+    "featuresDescription": "A comprehensive suite of features designed to optimize the e-commerce experience for merchants and customers alike.",
+    "consultationText": "Get a comprehensive evaluation of your project goals and digital strategy with our complimentary assessment."
+  }
+}

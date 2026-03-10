@@ -1,7 +1,7 @@
 import { ENDPOINTS } from '../api/APIs';
 
 // API Base URL
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://back-end-axuraa.fly.dev';
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api/v1';
 
 // Team Member Role interface
 export interface TeamMemberRole {
@@ -41,9 +41,9 @@ export interface TeamMembersResponse {
 }
 
 // Get all team members
-export const getAllTeamMembers = async (): Promise<{ success: boolean; data?: TeamMember[]; error?: string }> => {
+export const getAllTeamMembers = async (lang: string = 'en'): Promise<{ success: boolean; data?: TeamMember[]; error?: string }> => {
   try {
-    const url = ENDPOINTS.TeamMembers.getAll;
+    const url = `${ENDPOINTS.TeamMembers.getAll}?lang=${lang}`;
     const response = await fetch(url, {
       method: 'GET',
     });
@@ -115,9 +115,9 @@ export const getTeamMemberById = async (id: string): Promise<{ success: boolean;
 };
 
 // Get active team members only
-export const getActiveTeamMembers = async (): Promise<{ success: boolean; data?: TeamMember[]; error?: string }> => {
+export const getActiveTeamMembers = async (locale: string = 'en'): Promise<{ success: boolean; data?: TeamMember[]; error?: string }> => {
   try {
-    const result = await getAllTeamMembers();
+    const result = await getAllTeamMembers(locale);
     
     if (result.success && result.data) {
       const activeMembers = result.data.filter(member => member.status === 'active');

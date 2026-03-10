@@ -127,27 +127,27 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
   const projectDetails = [
     { 
       icon: '/assets/ProjectDetailscard/client.svg',
-      label: locale === 'ar' ? 'العميل:' : 'Client:',
+      label: t('details.client', 'Client:'),
       value: caseStudy.client
     },
     { 
       icon: '/assets/ProjectDetailscard/client.svg',
-      label: locale === 'ar' ? 'مدير المشروع:' : 'Project Manager:',
+      label: t('details.projectManager', 'Project Manager:'),
       value: caseStudy.projectManager
     },
     { 
       icon: '/assets/ProjectDetailscard/time.svg',
-      label: locale === 'ar' ? 'الإطار الزمني:' : 'Timeframe:',
+      label: t('details.timeframe', 'Timeframe:'),
       value: caseStudy.timeframe
     },
     { 
       icon: '/assets/ProjectDetailscard/team.svg',
-      label: locale === 'ar' ? 'الفريق:' : 'Team:',
+      label: t('details.team', 'Team:'),
       value: caseStudy.team
     },
     { 
       icon: '/assets/ProjectDetailscard/location.svg',
-      label: locale === 'ar' ? 'الموقع:' : 'Location:',
+      label: t('details.location', 'Location:'),
       value: caseStudy.location
     }
   ];
@@ -156,9 +156,9 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
      {/* Breadcrumb */}
       <div className={styles.breadcrumb}>
         <div className={styles.breadcrumbContent}>
-          <a href={`/${locale}`} className={styles.breadcrumbLink}>{locale === 'ar' ? 'الرئيسية' : 'Home'}</a>
+          <a href={`/${locale}`} className={styles.breadcrumbLink}>{t('breadcrumb.home', 'Home')}</a>
           <span className={styles.breadcrumbDivider}>&gt;</span>
-          <a href={`/${locale}/portfolio`} className={styles.breadcrumbLink}>{locale === 'ar' ? 'الأعمال' : 'Portfolio'}</a>
+          <a href={`/${locale}/portfolio`} className={styles.breadcrumbLink}>{t('breadcrumb.portfolio', 'Portfolio')}</a>
           <span className={styles.breadcrumbDivider}>&gt;</span>
           <span className={styles.currentPage}>{caseStudy.title}</span>
         </div>
@@ -230,7 +230,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                         className={styles.overviewIcon}
                       />
                     </div>
-                    <h2 className={styles.sectionTitle}>{locale === 'ar' ? 'نظرة عامة' : 'OVERVIEW'}</h2>
+                    <h2 className={styles.sectionTitle}>{t('sections.overview', 'OVERVIEW')}</h2>
                   </div>
                   <p className={styles.sectionText}>
                     {project?.overview?.[locale as 'en' | 'ar'] || project?.overview?.en || '...'}
@@ -258,10 +258,10 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                         className={styles.overviewIcon}
                       />
                     </div>
-                    <h2 className={styles.sectionTitle2}>{locale === 'ar' ? 'الميزات الرئيسية' : 'Key Features'}</h2>
+                    <h2 className={styles.sectionTitle2}>{t('sections.keyFeatures', 'Key Features')}</h2>
                   </div>
                   <p className={styles.sectionText2}>
-                    {locale === 'ar' ? 'مجموعة شاملة من الميزات المصممة لتحسين تجربة التجارة الإلكترونية للتجار والعملاء على حد سواء.' : 'A comprehensive suite of features designed to optimize the e-commerce experience for merchants and customers alike.'}
+                    {t('fallback.featuresDescription', 'A comprehensive suite of features designed to optimize the e-commerce experience for merchants and customers alike.')}
                   </p>
                   <div className={styles.featuresGrid}>
                     {caseStudy.features.map((feature, idx) => (
@@ -293,7 +293,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
           <aside className={styles.sidebar}>
             {/* Results Card */}
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>{locale === 'ar' ? 'نتائج دراسة الحالة' : 'Case Study Results'}</h3>
+              <h3 className={styles.cardTitle}>{t('sections.caseStudyResults', 'Case Study Results')}</h3>
               <div className={styles.results}>
                 {caseStudy.results.map((result, idx) => (
                   <div key={idx} className={styles.resultItem}>
@@ -303,24 +303,24 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                 ))}
               </div>
               <button className={styles.button} onClick={handlePrototypeNavigation}>
-                {locale === 'ar' ? 'عرض النموذج الأولي' : 'Show prototype'} <ExternalLink className={styles.buttonIcon} />
+                {t('buttons.showPrototype', 'Show prototype')} <ExternalLink className={styles.buttonIcon} />
               </button>
             </div>
 
             {/* Consultation Card */}
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>{locale === 'ar' ? 'استشارة مجانية للمشروع' : 'Free Project Consultation'}</h3>
+              <h3 className={styles.cardTitle}>{t('sections.freeConsultation', 'Free Project Consultation')}</h3>
               <p className={styles.freeProjectText}>
-                {locale === 'ar' ? 'احصل على تقييم شامل لأهداف مشروعك واستراتيجيتك الرقمية من خلال تقييمنا المجاني.' : 'Get a comprehensive evaluation of your project goals and digital strategy with our complimentary assessment.'}
+                {t('fallback.consultationText', 'Get a comprehensive evaluation of your project goals and digital strategy with our complimentary assessment.')}
               </p>
               <button className={styles.button} onClick={handleConcactNavigation}>
-                {locale === 'ar' ? 'احجز تقييمك المجاني' : 'Schedule Free Assessment'} <ExternalLink className={styles.buttonIcon} />
+                {t('buttons.scheduleAssessment', 'Schedule Free Assessment')} <ExternalLink className={styles.buttonIcon} />
               </button>
             </div>
 
             {/* Testimonials */}
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>{locale === 'ar' ? 'آراء العملاء' : 'Client Testimonials'}</h3>
+              <h3 className={styles.cardTitle}>{t('sections.testimonials', 'Client Testimonials')}</h3>
               <div className={styles.testimonials}>
                 {caseStudy.testimonials.map((testimonial: TestimonialDisplay, idx: number) => (
                   <div key={idx} className={styles.testimonial}>
@@ -345,7 +345,7 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
 
             {/* Project Details */}
             <div className={styles.ProjectDetailscard}>
-              <h3 className={styles.cardTitle}>{locale === 'ar' ? 'تفاصيل المشروع' : 'Project Details'}</h3>
+              <h3 className={styles.cardTitle}>{t('sections.projectDetails', 'Project Details')}</h3>
               <div className={styles.details}>
                   {projectDetails.map((detail, index) => (
                     <div key={index} className={styles.detailItem}>

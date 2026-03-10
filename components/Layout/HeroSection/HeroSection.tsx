@@ -210,7 +210,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             className={mounted ? styles.fadeInUp : ""}
           >
             {showBadge && <Badge text={badgeText} show={true} />}
-            {showStatusBadge && <StatusBadge text="WHO WE ARE" />}
+            {showStatusBadge && <StatusBadge text={badgeText || "WHO WE ARE"} />}
           </div>
 
           {/* Title */}

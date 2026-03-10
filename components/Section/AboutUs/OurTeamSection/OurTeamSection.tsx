@@ -89,17 +89,20 @@ const staticTeamMembers: TeamMember[] = [
   }
 ];
 
+import useClientTranslation from "@/hooks/useClientTranslation";
+
 const TeamSection: React.FC<TeamSectionProps> = ({
-  teamMembers = staticTeamMembers,
+  teamMembers: passedTeamMembers,
 }) => {
-  const [displayedTeamMembers, setDisplayedTeamMembers] = useState<TeamMember[]>(teamMembers);
+  const { t, locale } = useClientTranslation('about');
+  const [displayedTeamMembers, setDisplayedTeamMembers] = useState<TeamMember[]>(passedTeamMembers || staticTeamMembers);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchTeamMembers = async () => {
       try {
         setLoading(true);
-        const result = await getActiveTeamMembers();
+        const result = await getActiveTeamMembers(locale);
         
         if (result.success && result.data) {
           console.log('Team members data loaded:', result.data);
@@ -124,28 +127,28 @@ const TeamSection: React.FC<TeamSectionProps> = ({
           console.log('Filtered team members for website display:', membersWithFounderHighlight);
         } else {
           console.error('Team members API error:', result.error);
-          setDisplayedTeamMembers(teamMembers);
+          setDisplayedTeamMembers(passedTeamMembers || staticTeamMembers);
         }
       } catch (error) {
         console.error('Error fetching team members:', error);
-        setDisplayedTeamMembers(teamMembers);
+        setDisplayedTeamMembers(passedTeamMembers || staticTeamMembers);
       } finally {
         setLoading(false);
       }
     };
 
     fetchTeamMembers();
-  }, [teamMembers]);
+  }, [locale, passedTeamMembers]);
 
   return (
     <section className={styles.teamSection}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <StatusBadge text="AXURAA" className={styles.badge} />
+          <StatusBadge text={t('team.badge', "AXURAA")} className={styles.badge} />
 
           <SectionHeader
             // title1="Meet"
-            title2="Our Team"
+            title2={t('team.title', "Our Team")}
             // subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
           />
         </div>

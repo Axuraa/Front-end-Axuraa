@@ -7,13 +7,24 @@
     "title": "Get in Touch",
     "subtitle": "We'd love to hear from you. Send us a message and we'll respond as soon as possible.",
     "fields": {
-      "name": "Your Name",
+      "name": "Full Name",
       "email": "Email Address",
       "phone": "Phone Number",
+      "preferredContact": "Preferred Contact Method",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "selectServices": "Select services",
+      "servicesSelected": "services selected",
       "company": "Company Name",
-      "service": "Service Interested In",
+      "service": "Services of Interest",
       "message": "Your Message",
       "services": {
+        "erp": "ERP",
+        "ecommerce": "E-commerce",
+        "website": "Website",
+        "mobileApp": "Mobile App",
+        "cloudMigration": "Cloud Migration",
+        "aiIntegration": "AI Integration",
         "webDevelopment": "Web Development",
         "mobileDevelopment": "Mobile Development",
         "uiuxDesign": "UI/UX Design",
@@ -22,15 +33,25 @@
       }
     },
     "validation": {
-      "nameRequired": "Name is required",
+      "nameRequired": "Full name is required",
       "emailRequired": "Email is required",
-      "emailInvalid": "Please enter a valid email",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneRequired": "Phone number is required",
+      "serviceRequired": "Please select at least one service",
       "messageRequired": "Message is required",
       "phoneInvalid": "Please enter a valid phone number"
     },
+    "placeholders": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+1 (555) 123-4567",
+      "message": "Tell us about your project..."
+    },
     "submit": "Send Message",
-    "success": "Message sent successfully! We'll get back to you soon.",
-    "error": "Failed to send message. Please try again."
+    "sending": "Sending...",
+    "success": "Thank you! Your message has been sent successfully.",
+    "error": "Failed to send message. Please try again.",
+    "unexpectedError": "An unexpected error occurred. Please try again later."
   },
   "contactInfo": {
     "title": "Contact Information",
@@ -77,5 +98,35 @@
         "answer": "Yes, we offer comprehensive support and maintenance packages to ensure your project continues to perform optimally after launch."
       }
     ]
+  },
+  "page": {
+    "hero": {
+      "badge": "WHO WE ARE",
+      "title1": "Architecting the Future of",
+      "title2": "Digital Business",
+      "subtitle": "At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
+    },
+    "loading": "Loading contact page...",
+    "emailSection": {
+      "title": "Contact via email",
+      "subtitle": "Choose the appropriate section for your inquiry"
+    },
+    "socialSection": {
+      "title": "Follow us on social media",
+      "subtitle": "Stay up to date with our latest news and projects",
+      "platforms": {
+        "facebook": "Facebook",
+        "instagram": "Instagram",
+        "linkedin": "LinkedIn",
+        "tiktok": "TikTok",
+        "twitter": "Twitter"
+      }
+    },
+    "bottomSection": {
+      "badge": "Our Team",
+      "title1": "How we help ",
+      "title2": "Businesses Grow?",
+      "subtitle": "Discover our comprehensive suite of services designed to elevate your digital presence"
+    }
   }
 }

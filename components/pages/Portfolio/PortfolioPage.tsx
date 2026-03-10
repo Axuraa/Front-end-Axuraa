@@ -175,7 +175,7 @@ const PortfolioPage = () => {
           {loading ? (
             <div className={styles.sectionLoading}>
               <div className={styles.loadingSpinner}></div>
-              <p>Loading projects...</p>
+              <p>{t('loading', 'Loading projects...')}</p>
             </div>
           ) : error ? (
             <div className={styles.sectionError}>{error}</div>

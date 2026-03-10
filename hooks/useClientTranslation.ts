@@ -53,7 +53,7 @@ const useClientTranslation = (namespace: string = 'common') => {
     };
   }, [namespace]);
 
-  const t = (key: string, fallback?: string): string => {
+  const t = (key: string, fallback?: any): any => {
     const keys = key.split('.');
     let value: any = translations;
     
@@ -61,7 +61,11 @@ const useClientTranslation = (namespace: string = 'common') => {
       value = value?.[k];
     }
     
-    return (typeof value === 'string' ? value : fallback || key) as string;
+    if (value === undefined || value === null) {
+      return fallback !== undefined ? fallback : key;
+    }
+
+    return value;
   };
 
   return { t, locale, loading };

@@ -36,12 +36,13 @@ export interface ContactInformationResponse {
 /**
  * Get contact information from API
  */
-export const getContactInformation = async (): Promise<ContactInformationResponse> => {
+export const getContactInformation = async (locale: string = 'en'): Promise<ContactInformationResponse> => {
   try {
     console.log('=== CONTACT INFORMATION API DEBUG ===');
-    console.log('Fetching contact information from:', ENDPOINTS.General.contactInformation);
+    const url = `${ENDPOINTS.General.contactInformation}?locale=${locale}`;
+    console.log('Fetching contact information from:', url);
     
-    const response = await fetch(ENDPOINTS.General.contactInformation, {
+    const response = await fetch(url, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

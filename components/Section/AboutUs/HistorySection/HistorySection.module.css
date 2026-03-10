@@ -45,6 +45,10 @@
   align-items: start;
 }
 
+:global([dir="rtl"]) .content_wrapper {
+  grid-template-columns: 30rem 1fr;
+}
+
 /* Timeline Container */
 .timeline_container {
   opacity: 0;

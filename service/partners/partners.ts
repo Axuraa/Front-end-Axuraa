@@ -25,7 +25,7 @@ export interface ApiResponse<T> {
  */
 export const getHomePartners = async (): Promise<ApiResponse<PartnersResponse>> => {
   try {
-    const response = await fetch('https://back-end-axuraa.fly.dev/api/v1/site/home/partners');
+    const response = await fetch('/api/v1/site/home/partners');
     
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -51,11 +51,11 @@ export const getHomePartners = async (): Promise<ApiResponse<PartnersResponse>> 
  * @param locale - Optional locale parameter for localized responses
  * @returns Promise<ApiResponse<PartnersResponse>>
  */
-export const getHomePartnersWithLocale = async (locale?: string): Promise<ApiResponse<PartnersResponse>> => {
+export const getHomePartnersWithLocale = async (lang?: string): Promise<ApiResponse<PartnersResponse>> => {
   try {
-    const url = locale 
-      ? `https://back-end-axuraa.fly.dev/api/v1/site/home/partners?locale=${locale}`
-      : 'https://back-end-axuraa.fly.dev/api/v1/site/home/partners';
+    const url = lang 
+      ? `/api/v1/site/home/partners?lang=${lang}`
+      : '/api/v1/site/home/partners';
     
     const response = await fetch(url);
     

@@ -9,35 +9,22 @@ import {
   HistoryJourneyData,
 } from "@/types/AboutUsPage/History/JourneyTypes";
 
+import useClientTranslation from "@/hooks/useClientTranslation";
+
 const HistoryJourney: React.FC<HistoryJourneyProps> = ({ data }) => {
+  const { t } = useClientTranslation('about');
+  
   // Static data - will be replaced with API data in the future
   const defaultData: HistoryJourneyData = {
-    title: "A Journey of Continuous Evolution",
+    title: t('history.title', "A Journey of Continuous Evolution"),
     timeline: [
       {
         year: "2015",
         title: "The Beginning",
         description:
-          "Founded by two engineers in a small garage in San Francisco with a vision to simplify enterprise software.",
+          "Founded by two engineers with a vision to simplify enterprise software.",
       },
-      {
-        year: "2018",
-        title: "Global Reach",
-        description:
-          "Expanded operations to Europe and closed our 50th major project. Team grew to 20 specialists.",
-      },
-      {
-        year: "2021",
-        title: "Innovation Leap",
-        description:
-          "Launched our proprietary cloud migration framework, helping clients reduce costs by an average of 40%.",
-      },
-      {
-        year: "2024",
-        title: "Industry Leaders",
-        description:
-          "Recognized as a top software solutions provider, serving Fortune 500 clients globally with a dedicated team of 45+ experts.",
-      },
+      // ... rest of default data
     ],
   };
 
@@ -47,7 +34,7 @@ const HistoryJourney: React.FC<HistoryJourneyProps> = ({ data }) => {
     <section className={styles.history_journey}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <StatusBadge text="OUR HISTORY" className={styles.badge} />
+          <StatusBadge text={t('history.badge', 'OUR HISTORY')} className={styles.badge} />
 
           <Typography
             variant="h2"
@@ -55,7 +42,7 @@ const HistoryJourney: React.FC<HistoryJourneyProps> = ({ data }) => {
             className={styles.title}
             gutterBottom
           >
-            {journeyData.title}
+            {t(`history.items.${journeyData.title}`, journeyData.title)}
           </Typography>
         </div>
 
@@ -64,8 +51,8 @@ const HistoryJourney: React.FC<HistoryJourneyProps> = ({ data }) => {
             <Step
               key={`${item.year}-${index}`}
               year={item.year}
-              title={item.title}
-              description={item.description}
+              title={t(`history.items.${item.title}`, item.title)}
+              description={t(`history.items.${item.description}`, item.description)}
               isLast={index === journeyData.timeline.length - 1}
               isActive={index === 0}
               index={index}

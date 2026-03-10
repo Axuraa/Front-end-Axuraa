@@ -122,7 +122,7 @@ const socialLinks = [
                 <h1 className={styles.brantlogo}>AXURAA</h1>
               </div>
               <p className={styles.description}>
-                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem
+                {t('footer.description', 'Leading the way in project management excellence with innovative solutions.')}
               </p>
             </div>
 
@@ -359,9 +359,9 @@ const socialLinks = [
                 Terms of Service
               </Typography> */}
 
-              <p className={styles.legalLink}> Privacy Policy </p>
+              <p className={styles.legalLink}> {t('footer.privacyPolicy', 'Privacy Policy')} </p>
               <p className={styles.separator}> | </p>
-              <p className={styles.legalLink}> Terms of Service </p>
+              <p className={styles.legalLink}> {t('footer.termsOfService', 'Terms of Service')} </p>
             </div>
           </div>
         </div>

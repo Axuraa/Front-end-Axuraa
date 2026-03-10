@@ -86,9 +86,7 @@ const ServicesPage: React.FC = () => {
                     title={title}
                     description={description}
                     features={features}
-                    buttonText={
-                    currentLang === 'ar' ? 'عرض التفاصيل' : 'Learn More'
-                    }
+                    buttonText={t('learnMore', currentLang === 'ar' ? 'تعرف على المزيد' : 'Learn More')}
                   />
                 );
               })}

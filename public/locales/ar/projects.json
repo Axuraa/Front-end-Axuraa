@@ -1,1 +1,34 @@
-{}
+{
+  "breadcrumb": {
+    "home": "الرئيسية",
+    "portfolio": "الأعمال"
+  },
+  "sections": {
+    "overview": "نظرة عامة",
+    "keyFeatures": "الميزات الرئيسية",
+    "caseStudyResults": "نتائج دراسة الحالة",
+    "freeConsultation": "استشارة مجانية للمشروع",
+    "testimonials": "آراء العملاء",
+    "projectDetails": "تفاصيل المشروع"
+  },
+  "details": {
+    "client": "العميل:",
+    "projectManager": "مدير المشروع:",
+    "timeframe": "الإطار الزمني:",
+    "team": "الفريق:",
+    "location": "الموقع:"
+  },
+  "buttons": {
+    "showPrototype": "عرض النموذج الأولي",
+    "scheduleAssessment": "احجز تقييمك المجاني"
+  },
+  "loading": {
+    "details": "جاري تحميل تفاصيل المشروع...",
+    "overview": "جاري تحميل النظرة العامة...",
+    "features": "جاري تحميل الميزات..."
+  },
+  "fallback": {
+    "featuresDescription": "مجموعة شاملة من الميزات المصممة لتحسين تجربة التجارة الإلكترونية للتجار والعملاء على حد سواء.",
+    "consultationText": "احصل على تقييم شامل لأهداف مشروعك واستراتيجيتك الرقمية من خلال تقييمنا المجاني."
+  }
+}

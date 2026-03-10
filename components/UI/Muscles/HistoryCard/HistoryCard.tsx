@@ -6,13 +6,19 @@ import Typography from '@/components/UI/Atoms/Typography/Typography';
 import Icon from '@/components/UI/Atoms/Icon/Icon';
 import { HistoryCardProps } from '@/types/AboutUsPage/History/JourneyTypes';
 
+import useClientTranslation from '@/hooks/useClientTranslation';
+
 const HistoryCard: React.FC<HistoryCardProps> = ({
-  title = "Writing History",
-  subtitle = "One line of code at a time.",
+  title: passedTitle,
+  subtitle: passedSubtitle,
   icon = "/assets/paper.svg",
   className = "",
   onClick
 }) => {
+  const { t } = useClientTranslation('about');
+  
+  const title = passedTitle || t('history.card.title', "Writing History");
+  const subtitle = passedSubtitle || t('history.card.subtitle', "One line of code at a time.");
   return (
     <div 
       className={`${styles.history_card} ${className}`}

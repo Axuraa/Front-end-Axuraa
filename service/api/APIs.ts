@@ -1,4 +1,4 @@
-const API_BASE = 'https://back-end-axuraa.fly.dev/api/v1';
+const API_BASE = '/api/v1';
 
 export const ENDPOINTS = {
     Home: {

@@ -1,7 +1,7 @@
 import { LocalizedField } from '@/service/serviceId/serviceId';
 
 // API Base URL
-const API_BASE_URL = 'https://back-end-axuraa.fly.dev/api/v1';
+const API_BASE_URL = '/api/v1';
 
 // Endpoints
 const ENDPOINTS = {
