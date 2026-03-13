@@ -7,14 +7,11 @@ import DirectionCard from '@/components/UI/Atoms/Card/DirectionCard';
 import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
 import useClientTranslation from '@/hooks/useClientTranslation';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 const ServicesSection = () => {
   const { t, locale } = useClientTranslation('services');
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0);
   
   const badgeText = "Our Services";
 
@@ -45,9 +42,10 @@ const ServicesSection = () => {
       try {
         const result = await getAllServices(locale as 'en' | 'ar');
         if (result.success && result.data) {
-          // Filter for active services with type "service" and take all for slider
+          // Filter for active services with type "service" and take only 3
           const filteredServices = result.data
-            .filter(service => service.type === 'service' && service.is_active === true);
+            .filter(service => service.type === 'service' && service.is_active === true)
+            .slice(0, 3);
           
           setServices(filteredServices);
         }
@@ -107,56 +105,34 @@ const ServicesSection = () => {
           <p className={styles.subtitle}>Discover our comprehensive suite of services designed to elevate your digital presence</p>
         </div> */}
 
-        <div className={styles.sliderContainer}>
-          <div className={styles.navigationButtons}>
-            <button 
-              className={styles.navButton} 
-              onClick={() => setCurrentIndex(prev => prev > 0 ? prev - 1 : servicesToShow.length - 1)}
-              aria-label="Previous service"
+        <div className={styles.servicesGrid}>
+          {servicesToShow.map((service, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                // Navigate to service detail page with service ID
+                const serviceId = service.serviceId;
+                if (serviceId) {
+                  window.location.href = `/${locale}/service/${serviceId}`;
+                }
+              }}
+              style={{ cursor: 'pointer' }}
             >
-              <ChevronLeft size={24} />
-            </button>
-            <button 
-              className={styles.navButton} 
-              onClick={() => setCurrentIndex(prev => prev < servicesToShow.length - 1 ? prev + 1 : 0)}
-              aria-label="Next service"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </div>
-
-          <div className={styles.sliderContent}>
-            <AnimatePresence mode="wait">
-              {servicesToShow.length > 0 && (
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -20 }}
-                  transition={{ duration: 0.3 }}
-                  className={styles.slideWrapper}
-                >
-                  <Card
-                    title={servicesToShow[currentIndex].title}
-                    description={servicesToShow[currentIndex].description}
-                    iconSrc={servicesToShow[currentIndex].icon}
-                    borderRadius="0 68.087px 0 0"
-                  />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
-          <div className={styles.pagingContainer}>
-            {servicesToShow.map((_, idx) => (
-              <button
-                key={idx}
-                className={`${styles.pagingDot} ${idx === currentIndex ? styles.activeDot : ''}`}
-                onClick={() => setCurrentIndex(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
+              <Card
+                title={service.title}
+                description={service.description}
+                iconSrc={service.icon}
+                borderRadius={index % 2 === 0 ? "0 0 68.087px 0" : "0 0 68.087px 0"}
               />
-            ))}
-          </div>
+            </div>
+          ))}
+          <DirectionCard
+            title="See All Services"
+            description="Explore our full catalog"
+            iconSrc="/assets/DirectionIcon.svg"
+            borderRadius="0  0 68.087px  0"
+            href={`/${locale}/services`}
+           />
         </div>
     </section>
   );
