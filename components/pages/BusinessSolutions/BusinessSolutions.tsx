@@ -65,7 +65,6 @@ const BusinessSolutions = () => {
               showStatusBadge={true}
               backgroundType='Circle'
             />
-
             {/* BusinessContainer with loading state */}
             <div className={styles.BusinessContainer}>
               {loading ? (
