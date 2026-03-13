@@ -53,10 +53,11 @@
 /* Cards Grid */
 .cardsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
+  grid-template-columns: 1fr 1fr !important; /* تثبيت كارتين كبار بجانب بعض مثل الإنجليزية */
   gap: 6%;
   margin: 0 6%;
   align-items: stretch;
+  direction: ltr !important; /* الكروت لا تتبدل أماكنها في العربي */
 }
 
 /* Staggered Animation for Cards */
