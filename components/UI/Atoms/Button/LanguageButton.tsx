@@ -26,19 +26,18 @@ export const LanguageButton = ({ className = '' }: LanguageButtonProps) => {
   };
 
   const [selectedLanguage, setSelectedLanguage] = useState(getCurrentLanguage());
+  const targetLanguage = selectedLanguage.code === 'en' ? languages[1] : languages[0];
 
   const toggleLanguage = () => {
-    const newLanguage = selectedLanguage.code === 'en' ? languages[1] : languages[0];
-    
-    // Update the URL with new language
+    // Update the URL with new language (targetLanguage)
     if (!pathname) return;
     const pathSegments = pathname.split('/');
     
     // Replace or add locale in the path
     if (languages.some(lang => lang.code === pathSegments[1])) {
-      pathSegments[1] = newLanguage.code; // Replace existing locale
+      pathSegments[1] = targetLanguage.code; // Replace existing locale
     } else {
-      pathSegments.splice(1, 0, newLanguage.code); // Add locale if not present
+      pathSegments.splice(1, 0, targetLanguage.code); // Add locale if not present
     }
     
     const newPath = pathSegments.join('/') || '/';
@@ -55,12 +54,12 @@ export const LanguageButton = ({ className = '' }: LanguageButtonProps) => {
       >
         <span className={styles.flag}>
           <img 
-            src={selectedLanguage.flag} 
-            alt={`${selectedLanguage.name} flag`} 
+            src={targetLanguage.flag} 
+            alt={`${targetLanguage.name} flag`} 
             className={styles.flagImage}
           />
         </span>
-        <span className={styles.languageName}>{selectedLanguage.name}</span>
+        <span className={styles.languageName}>{targetLanguage.name}</span>
       </button>
     </div>
   );

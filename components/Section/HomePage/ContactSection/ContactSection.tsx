@@ -172,7 +172,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({
                 color: "#D04A1D",
                 textAlign: "start",
                 marginTop: "0.5rem",
-                marginBottom: "0.5rem",
+                marginBottom: "0.0rem",
                 background: "linear-gradient(90deg, #D04A1D 0%, #902501 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
