@@ -6,7 +6,7 @@ import Homepage from '@/components/pages/Home/Homepage';
 import useClientTranslation from '@/hooks/useClientTranslation';
 
 export default function Home() {
-  const { t } = useClientTranslation('home');
+  const { t, locale } = useClientTranslation('home');
 
   return (
     <div className={styles.pageContainer}>
@@ -15,6 +15,10 @@ export default function Home() {
         title2={t('hero.title2', 'Building Digital Excellence')}
         subtitle1={t('hero.subtitle1', 'Transforming ideas into powerful digital experiences.')}
         badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
+        primaryButtonText={t('hero.cta', 'Start a Project')}
+        secondaryButtonText={t('hero.learnMore', 'View Our Work')}
+        primaryHref="#contact-section"
+        secondaryHref={`/${locale}/portfolio`}
         showBackgroundDots={true}
         showAnimatedCircles={true}
         showBadge={true}

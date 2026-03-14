@@ -3,11 +3,17 @@
     "badgeText": "INNOVATION IN PROGRESS"
   },
   "loading": "Loading service details...",
+  "serviceNotFound": "Service not found",
+  "descriptionNotFound": "Description not found",
+  "heroDescription": "Innovative web solutions tailored to elevate your business and drive digital success.",
   "fallbackUnit1": "Custom web application and platform development",
   "fallbackUnit2": "E-commerce solutions and online store development",
   "whatWeDo": "What We Do",
+  "whatWeDoDescription": "We specialize in delivering high-performance, scalable web applications and digital platforms.",
   "technologiesUsed": "Technologies Used",
   "featuresCapabilities": "Features & Capabilities",
+  "featuresDescription": "Comprehensive web services designed to design, build, and scale your digital presence from concept to launch.",
+  "storiesDescription": "Real results from our web development services across various industries, demonstrating measurable improvements in digital performance.",
   "development": {
     "title": "Our Development Process",
     "description": "A systematic approach to web development that ensures a high-quality product through discovery, design, implementation, and support.",

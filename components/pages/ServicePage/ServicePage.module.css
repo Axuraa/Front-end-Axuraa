@@ -165,7 +165,7 @@
 }
 
 :global([dir="rtl"]) .serviceList {
-  padding: 0 20.974px 3.18px 0;
+  padding: 0 0 3.18px 0;
   align-items: flex-start;
 }
 
@@ -290,18 +290,14 @@
 
 .FeaturesCapabilitiesDescription {
   /* background: green; */
-
   color: #e6e6e6;
-
   font-family: Roboto;
-
   font-size: 16px;
-
   font-style: normal;
-
   font-weight: 400;
-
-  line-height: 12.25px; /* 76.563% */
+  line-height: 1.5;
+  text-align: center;
+  max-width: 800px;
 }
 
 .OurDevelopmentProcess {
@@ -489,25 +485,17 @@
 }
 
 .SuccessStoriesDescription {
-  width: 992px;
-
-  height: 14px;
-
+  max-width: 992px;
+  width: 100%;
+  height: auto;
   margin-bottom: 41px;
-
   color: #fff;
-
   font-family: Roboto;
-
   font-size: 16px;
-
   font-style: normal;
-
   font-weight: 400;
-
-  line-height: 13.067px; /* 81.667% */
-
-  /* background-color: blue; */
+  line-height: 1.5;
+  text-align: center;
 }
 
 .SuccessStoriesContainer {
@@ -725,18 +713,13 @@
 
 .ServicePackagesDescription {
   color: #d9d9d9;
-
   font-family: Roboto;
-
   font-size: 16px;
-
   font-style: normal;
-
   font-weight: 400;
-
-  line-height: 17.254px; /* 107.835% */
-
-  /* background-color: blue; */
+  line-height: 1.5;
+  text-align: center;
+  max-width: 800px;
 }
 
 .ServicePackagesContainer {
@@ -935,12 +918,10 @@
   .SuccessStoriesContent,
   .ServicePackagesContent {
     width: 90%;
-
     max-width: 800px;
-
     /* background-color: #D04A1D; */
-
     margin: 0 auto;
+    padding: 0;
   }
 
   .OurDevelopmentProcessTitle {
@@ -976,8 +957,14 @@
   }
 
   .OurDevelopmentProcessDescription,
-  .SuccessStoriesDescription {
+  .SuccessStoriesDescription,
+  .FeaturesCapabilitiesDescription,
+  .ServicePackagesDescription {
     text-align: center;
+    width: 100%;
+    height: auto;
+    line-height: 1.6;
+    margin-bottom: 2rem;
   }
 
   .FeaturesCapabilitiesContainer {
