@@ -993,7 +993,7 @@
   }
 
   :global([dir="rtl"]) .hero {
-    align-items: flex-end; /* Align right in RTL */
+    align-items: flex-start; /* Correct for RTL too if we want it to start from right */
     text-align: right;
   }
 
@@ -1097,9 +1097,25 @@
 
     max-width: 357px;
 
-    margin-left: -20px;
+    margin-left: -40px;
 
     position: sticky;
+    padding:10px;
+
+    top: 100px;
+
+    /* background-color: antiquewhite; */
+  }
+
+  :global([dir="rtl"]) .sidebar {
+     width: 100%;
+
+    max-width: 357px;
+
+    margin-right: -40px;
+
+    position: sticky;
+    padding:10px;
 
     top: 100px;
 
