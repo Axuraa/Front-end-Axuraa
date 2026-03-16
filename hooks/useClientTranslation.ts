@@ -18,8 +18,8 @@ const useClientTranslation = (namespace: string = 'common') => {
         const pathLocale = window.location.pathname.split('/')[1] || 'en';
         setLocale(pathLocale);
         
-        // Load translation file
-        const response = await fetch(`/locales/${pathLocale}/${namespace}.json`);
+        // Load translation file with cache-busting parameter
+        const response = await fetch(`/locales/${pathLocale}/${namespace}.json?v=${Date.now()}`, { cache: 'no-store' });
         if (response.ok) {
           const data = await response.json();
           setTranslations(data);

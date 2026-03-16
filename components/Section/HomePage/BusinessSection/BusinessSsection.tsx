@@ -8,12 +8,26 @@ import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
 import useClientTranslation from '@/hooks/useClientTranslation';
 
-const BusinessSection = () => {
+interface BusinessSectionProps {
+  badgeText?: string;
+  title1?: string;
+  title2?: string;
+  subtitle?: string;
+  seeAllTitle?: string;
+  seeAllDesc?: string;
+}
+
+const BusinessSection: React.FC<BusinessSectionProps> = ({
+  badgeText = "Business solutions",
+  title1 = "How we help",
+  title2 = "Businesses Grow?",
+  subtitle = "Discover our comprehensive suite of services designed to elevate your digital presence",
+  seeAllTitle = "See All Services",
+  seeAllDesc = "Explore our full catalog"
+}) => {
   const { t, locale } = useClientTranslation('services');
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState(true);
-  
-  const badgeText = "Business solutions";
 
   // Default fallback services
   const defaultServices = [
@@ -95,9 +109,9 @@ const BusinessSection = () => {
     <section className={styles.servicesSection}>
         <Badge text={badgeText} show={true}  />
         <SectionHeader
-            title1="How we help"
-            title2="Businesses Grow?"
-            subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+            title1={title1}
+            title2={title2}
+            subtitle={subtitle}
         />
         <div className={styles.servicesGrid}>
           {servicesToShow.map((service, index) => (
@@ -121,8 +135,8 @@ const BusinessSection = () => {
             </div>
           ))}
           <DirectionCard
-            title="See All Services"
-            description="Explore our full catalog"
+            title={seeAllTitle}
+            description={seeAllDesc}
             iconSrc="/assets/DirectionIcon.svg"
             borderRadius="0   68.087px 0 0"
             href={`/${locale}/businessSolutions`}

@@ -98,8 +98,22 @@ const Homepage = () => {
 
   return (
     <div className={styles.homePage}>
-      <ServicesSection />
-      <BusinessSsection/>
+      <ServicesSection 
+        badgeText={t('services.badgeText', 'Our Services')}
+        title1={t('services.title1', 'How we help ')}
+        title2={t('services.title2', 'Businesses Grow?')}
+        subtitle={t('services.subtitle', 'Discover our comprehensive suite of services designed to elevate your digital presence')}
+        seeAllTitle={t('services.seeAllTitle', 'See All Services')}
+        seeAllDesc={t('services.seeAllDesc', 'Explore our full catalog')}
+      />
+      <BusinessSsection
+        badgeText={t('business.badgeText', 'Business solutions')}
+        title1={t('business.title1', 'How we help ')}
+        title2={t('business.title2', 'Businesses Grow?')}
+        subtitle={t('business.subtitle', 'Discover our comprehensive suite of services designed to elevate your digital presence')}
+        seeAllTitle={t('business.seeAllTitle', 'See All Services')}
+        seeAllDesc={t('business.seeAllDesc', 'Explore our full catalog')}
+      />
       <RatingSection
         badgeText={t('achievements.badgeText', 'Our Achievements')}
         title1={t('achievements.title1', 'How we help ')}

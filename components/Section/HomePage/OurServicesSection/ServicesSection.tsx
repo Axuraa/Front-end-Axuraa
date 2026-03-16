@@ -8,12 +8,26 @@ import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
 import useClientTranslation from '@/hooks/useClientTranslation';
 
-const ServicesSection = () => {
+interface ServicesSectionProps {
+  badgeText?: string;
+  title1?: string;
+  title2?: string;
+  subtitle?: string;
+  seeAllTitle?: string;
+  seeAllDesc?: string;
+}
+
+const ServicesSection: React.FC<ServicesSectionProps> = ({
+  badgeText = "Our Services",
+  title1 = "How we help",
+  title2 = "Businesses Grow?",
+  subtitle = "Discover our comprehensive suite of services designed to elevate your digital presence",
+  seeAllTitle = "See All Services",
+  seeAllDesc = "Explore our full catalog"
+}) => {
   const { t, locale } = useClientTranslation('services');
   const [services, setServices] = useState<ServiceItem[]>([]);
   const [loading, setLoading] = useState(true);
-  
-  const badgeText = "Our Services";
 
   // Default fallback services
   const defaultServices = [
@@ -95,9 +109,9 @@ const ServicesSection = () => {
     <section className={styles.servicesSection}>
         <Badge text={badgeText} show={true}  />
         <SectionHeader
-            title1="How we help"
-            title2="Businesses Grow?"
-            subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+            title1={title1}
+            title2={title2}
+            subtitle={subtitle}
         />
         {/* <div className={styles.header}>
           <h2 className={styles.title1}>How we help </h2>
@@ -127,8 +141,8 @@ const ServicesSection = () => {
             </div>
           ))}
           <DirectionCard
-            title="See All Services"
-            description="Explore our full catalog"
+            title={seeAllTitle}
+            description={seeAllDesc}
             iconSrc="/assets/DirectionIcon.svg"
             borderRadius="0  0 68.087px  0"
             href={`/${locale}/services`}

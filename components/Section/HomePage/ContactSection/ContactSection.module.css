@@ -83,8 +83,7 @@
   max-width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: -2rem;
-  /* background-color: #dd0f98ff; */
+  margin-top: 1rem;
 }
 
 .Contantform {
@@ -134,13 +133,6 @@
     position: absolute;
     top: 50%;
   }
-  .socialIconsContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-156%, 450%);
-    margin-top: -6rem;
-  }
 }
 
 /* Medium-Large screens (1024px to 1439px) - Keep centered, adjust if needed */
@@ -171,13 +163,7 @@
     position: absolute;
     top: 50%;
   }
-  .socialIconsContainer {
-    position: absolute;
-    top: 50%;
-    left: 52%;
-    margin-top: -5rem;
-    transform: translate(-140%, 440%);
-  }
+
 
   .mainTitle {
     font-size: 2.5rem; /* Reduced from 3.1678rem to fit better at 1024px */

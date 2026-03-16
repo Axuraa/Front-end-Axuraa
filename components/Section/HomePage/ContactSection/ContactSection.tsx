@@ -219,28 +219,27 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               window.open(`mailto:${emailAddress}`, '_blank');
             }}
           />
+          {/* Social Icons - Using API data */}
+          {showLinks && ( 
+            <div className={styles.socialIconsContainer}>
+              {socialIcons.map((social: any) => (
+                <a 
+                  key={social.id}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                >
+                  <SocialIcon
+                    icon={social.icon}
+                    showLabel={true}
+                    alt={social.label}
+                  />
+                </a>
+              ))}
+            </div>
+          )}
         </div>
-
-        {/* Social Icons - Using API data */}
-        {showLinks && ( 
-          <div className={styles.socialIconsContainer}>
-            {socialIcons.map((social: any) => (
-              <a 
-                key={social.id}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialLink}
-              >
-                <SocialIcon
-                  icon={social.icon}
-                  showLabel={true}
-                  alt={social.label}
-                />
-              </a>
-            ))}
-          </div>
-        )}
       </div>
     </section>
   );

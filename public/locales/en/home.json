@@ -11,7 +11,12 @@
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Comprehensive solutions tailored to your business needs",
+    "subtitle": "Discover our comprehensive suite of services designed to elevate your digital presence",
+    "badgeText": "Our Services",
+    "title1": "How we help ",
+    "title2": "Businesses Grow?",
+    "seeAllTitle": "See All Services",
+    "seeAllDesc": "Explore our full catalog",
     "items": {
       "webDevelopment": {
         "title": "Web Development",
@@ -33,7 +38,12 @@
   },
   "business": {
     "title": "How We Help Businesses Grow",
-    "subtitle": "Partner with us to unlock your full potential",
+    "subtitle": "Discover our comprehensive suite of services designed to elevate your digital presence",
+    "badgeText": "Business solutions",
+    "title1": "How we help ",
+    "title2": "Businesses Grow?",
+    "seeAllTitle": "See All Services",
+    "seeAllDesc": "Explore our full catalog",
     "features": [
       {
         "title": "Strategic Planning",
@@ -51,7 +61,10 @@
   },
   "achievements": {
     "title": "Our Achievements",
-    "subtitle": "Numbers that speak for themselves",
+    "subtitle": "Discover our comprehensive suite of services designed to elevate your digital presence",
+    "badgeText": "Our Achievements",
+    "title1": "How we help ",
+    "title2": "Businesses Grow?",
     "projectsCompleted": "Projects Completed",
     "happyClients": "Happy Clients",
     "teamMembers": "Team Members",
@@ -59,17 +72,26 @@
   },
   "projects": {
     "title": "Recent Projects",
-    "subtitle": "Explore our latest work and success stories",
+    "subtitle": "Discover our comprehensive suite of services designed to elevate your digital presence",
+    "badgeText": "Our Services",
+    "title1": "How we help ",
+    "title2": "Businesses Grow?",
     "viewAll": "View All Projects"
   },
   "team": {
     "title": "Meet Our Team",
-    "subtitle": "Talented professionals dedicated to your success",
+    "subtitle": "Dedicated professionals delivering exceptional results",
+    "badgeText": "Our Client",
+    "title1": "Meet Our ",
+    "title2": "Expert Team",
     "viewAll": "View All Team Members"
   },
   "contact": {
     "title": "Let's Work Together",
-    "subtitle": "Ready to start your next project? Get in touch with us today.",
+    "subtitle": "Discover our comprehensive suite of services designed to elevate your digital presence",
+    "badgeText": "Our Team",
+    "title1": "How we help ",
+    "title2": "Businesses Grow?",
     "form": {
       "name": "Your Name",
       "email": "Email Address",
