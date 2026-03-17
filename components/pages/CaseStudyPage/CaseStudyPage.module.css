@@ -415,7 +415,7 @@
 .featureIcon {
   width: 30px;
   height: 30px;
-  color:#d04a1d;
+  color: #d04a1d;
   /*background-color: yellow; */
 }
 
@@ -1100,7 +1100,7 @@
     margin-left: -40px;
 
     position: sticky;
-    padding:10px;
+    padding: 10px;
 
     top: 100px;
 
@@ -1108,14 +1108,14 @@
   }
 
   :global([dir="rtl"]) .sidebar {
-     width: 100%;
+    width: 100%;
 
     max-width: 357px;
 
     margin-right: -40px;
 
     position: sticky;
-    padding:10px;
+    padding: 10px;
 
     top: 100px;
 
