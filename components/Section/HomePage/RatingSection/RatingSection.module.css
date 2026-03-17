@@ -8,21 +8,25 @@
     align-self: stretch;
     background: #191B1F;
     overflow: hidden;
+    /* background-color: red; */
 }
 /* Tablet - 1024px */
 @media (max-width: 1024px) {
     .RatingSection {
         padding: 40px 30px;
         gap: 18px;
+        /* background-color: blue; */
     }
 }
 
 /* Tablet - 768px */
 @media (max-width: 768px) {
     .RatingSection {
-        padding: 30px 20px;
-        min-height: auto;
-        gap: 16px;
+        padding: 0px 20px;
+        /* min-height: auto; */
+        height:auto;
+        gap:0px;
+        /* background-color:  blue; */
     }
 }
 

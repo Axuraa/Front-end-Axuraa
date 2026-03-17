@@ -205,12 +205,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               flexDirection: "column",
               alignItems: "center",
               gap: "1rem",
-              marginBottom: "1.5rem",
             }}
             className={mounted ? styles.fadeInUp : ""}
           >
             {showBadge && <Badge text={badgeText} show={true} />}
-            {showStatusBadge && <StatusBadge text={badgeText || "WHO WE ARE"} />}
+            {showStatusBadge && <StatusBadge text="WHO WE ARE" />}
           </div>
 
           {/* Title */}
