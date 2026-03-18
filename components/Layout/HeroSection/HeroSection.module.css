@@ -1,4 +1,4 @@
-/* Hero Section */
+﻿/* Hero Section */
 .hero {
   width: 100vw;
   height: 100vh;
@@ -685,4 +685,9 @@
   .companyLogo {
     height: 0.875rem;
   }
+}
+
+/* RTL fix - use overflow:clip so both hexagons are visible (avoids RTL scroll-container clipping) */
+:global([dir="rtl"]) .hero {
+  overflow: clip;
 }
