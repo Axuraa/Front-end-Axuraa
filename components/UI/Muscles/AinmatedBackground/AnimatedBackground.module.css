@@ -77,6 +77,10 @@
   height: 100%;
 }
 
+:global([dir="rtl"]) .circleContainer {
+  /* background-color: red; */
+}
+
 .Circle_1,
 .Circle_2 {
   width: clamp(14rem, 30vw, 25rem);
@@ -93,6 +97,13 @@
     transform 2.5s ease-in-out,
     opacity 2.5s ease-in-out;
 }
+:global([dir="rtl"]) .Circle_1 {
+  position: absolute;
+  top: 5%;
+  left: 100%;
+  transform: translate(-170%, -15%);
+  /* background-color: red; */
+}
 
 /* Circle 2 - Top Right (Double size) */
 .Circle_2 {
@@ -103,6 +114,13 @@
   transition:
     transform 2.5s ease-in-out,
     opacity 2.5s ease-in-out;
+}
+:global([dir="rtl"]) .Circle_2 {
+  position: absolute;
+  top: 60%;
+  left: -10%;
+  transform: translate(-170%, -15%);
+  /* background-color: blue; */
 }
 
 /* Hover Effects - Vertical movement */
@@ -135,85 +153,32 @@
   opacity: 0.6;
 }
 
-/* Laptops and Large Tablets (Landscape) */
-@media (max-width: 64rem) {
-  .Hexa_1 {
-    top: 50%;
-    left: 50%;
-    transform: translate(55%, -125%) rotate(-180deg);
+@media (max-width: 90rem) {
+  :global([dir="rtl"]) .Circle_1 {
+    top: 5%;
+    left: 115%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
   }
-  .Hexa_2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-150%, -80%) rotate(-180deg);
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left:-70%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
   }
 
-  .animatedBackground.hovered .Hexa_1 {
-    transform: translate(55%, -125%) rotate(90deg) scale(1.05);
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_1 {
+    transform: translate(-130%, 100%) scale(1.5);
     opacity: 0.5;
   }
 
-  .animatedBackground.hovered .Hexa_2 {
-    transform: translate(-150%, -80%) rotate(-80deg) scale(1.08);
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_2 {
+    transform: translate(130%, -150%) scale(1.5);
     opacity: 0.6;
-  }
-  /* .Circle_1 {
-    top:50%;
-    left: 50%;
-    transform: translate(120%, -40%);
-  } */
-  .Circle_2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-160%, 50%);
-  }
-  .animatedBackground.hovered .Circle_1 {
-    transform: translate(70%, 170%) scale(1.5);
-  }
-  .animatedBackground.hovered .Circle_2 {
-    transform: translate(-160%, -130%) scale(1.5);
   }
 }
 
-/* Small Laptops and Medium Tablets */
-@media (max-width: 62rem) {
-  .Hexa_1 {
-    top: 50%;
-    left: 50%;
-    transform: translate(50%, -100%) rotate(-180deg);
-  }
-  .Hexa_2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-150%, -60%) rotate(-180deg);
-  }
 
-  .animatedBackground.hovered .Hexa_1 {
-    transform: translate(50%, -100%) rotate(90deg) scale(1.05);
-    opacity: 0.5;
-  }
-
-  .animatedBackground.hovered .Hexa_2 {
-    transform: translate(-150%, -60%) rotate(-80deg) scale(1.08);
-    opacity: 0.6;
-  }
-  .Circle_1 {
-    left: 50%;
-    top: 50%;
-    transform: translate(80%, 36%);
-  }
-  .Circle_2 {
-    left: 50%;
-    top: 50%;
-    transform: translate(-150%, 250%);
-  }
-  .animatedBackground.hovered .Circle_1 {
-    transform: translate(80%, 350%) scale(1.5);
-  }
-  .animatedBackground.hovered .Circle_2 {
-    transform: translate(-150%, -30%) scale(1.5);
-  }
-}
 
 /* Tablets (Portrait) and Large Phones */
 @media (max-width: 48rem) {
@@ -242,10 +207,22 @@
     top: 50%;
     transform: translate(75%, -10%);
   }
+  :global([dir="rtl"]) .Circle_1 {
+    top: 2%;
+    left: 140%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
+  }
   .Circle_2 {
     left: 50%;
     top: 50%;
     transform: translate(-150%, 130%);
+  }
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left: -140%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
   }
   .animatedBackground.hovered .Circle_1 {
     transform: translate(75%, 250%) scale(1.5);
@@ -321,7 +298,7 @@
     right: -80%;
     /* background-color: red; */
   }
-  :global([dir="rtl"])  .Hexa_2 {
+  :global([dir="rtl"]) .Hexa_2 {
     transform: translate(-155%, -125%) rotate(-180deg) scale(1);
     opacity: 0.5;
     top: 65%;
@@ -336,6 +313,29 @@
 
   :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
     transform: translate(-155%, -125%) rotate(90deg) scale(1.05);
+    opacity: 0.6;
+  }
+
+  :global([dir="rtl"]) .Circle_1 {
+    top: 0%;
+    left: 115%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
+  }
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left:-70%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_1 {
+    transform: translate(-130%, 100%) scale(1.5);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_2 {
+    transform: translate(130%, -150%) scale(1.5);
     opacity: 0.6;
   }
 }
@@ -389,6 +389,19 @@
     transform: translate(-140%, -100%) rotate(90deg) scale(1.05);
     opacity: 0.6;
   }
+
+  :global([dir="rtl"]) .Circle_1 {
+    top: 10%;
+    left: 115%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
+  }
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left:-70%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
+  }
 }
 
 /* RTL - Mobile Devices */
@@ -413,6 +426,31 @@
 
   :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
     transform: translate(-127%, -140%) rotate(90deg) scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 26.5625rem) {
+  :global([dir="rtl"]) .Circle_1 {
+    top: 5%;
+    left: 130%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
+  }
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left:-120%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_1 {
+    transform: translate(-120%, 180%) scale(1.5);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_2 {
+    transform: translate(130%, -190%) scale(1.5);
     opacity: 0.6;
   }
 }
