@@ -1869,6 +1869,13 @@
     /* background-color: blue; */
   }
 
+  :global([dir="rtl"]) .SuccessStoriesContent {
+    /* background-color: red; */
+    text-align: center;
+    /* margin-left: 0; */
+    margin-right: -60px;
+  }
+
   .testimonialSection {
     margin: 0 auto;
 
@@ -1941,6 +1948,20 @@
     font-weight: 600;
 
     line-height: 15px; /* 107.143% */
+  }
+
+  :global([dir="rtl"]) .testimonialSection {
+    margin-left: 0;
+    margin-right: -20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  :global([dir="rtl"]) .testimonialText {
+    margin-left: 0;
+    margin-right: -50px;
+    padding:2px;
   }
 
   .testimonialAuthor {
@@ -2276,6 +2297,237 @@
     line-height: 13.067px;  */
 
     /* background-color: blue; */
+  }
+}
+
+@media (width: 375px) {
+  .SuccessStoriesContent {
+    margin-left: -70px;
+
+    /* margin: 0 auto; */
+
+    /* width: 100%;
+
+  height: auto; */
+
+    width: 18.75rem;
+
+    height: 6.25rem;
+
+    display: flex;
+
+    /* padding: 0 280px; */
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    align-self: stretch;
+
+    text-align: center;
+
+    padding-bottom: 5px;
+
+    /* background-color: #7A4A1A; */
+
+    /* background-color: rgba(2, 104, 2, 0.979); */
+  }
+
+  .SuccessStoriesTitle {
+    margin-top: -30px;
+
+    display: flex;
+
+    width: 14.4375rem;
+
+    height: 1.625rem;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #fff;
+
+    text-align: center;
+
+    font-family: Roboto;
+
+    font-size: 32px;
+
+    font-style: normal;
+
+    font-weight: 600;
+
+    text-align: center;
+
+    line-height: 16.8px; /* 52.5% */
+
+    /* background-color: rgb(6, 98, 173); */
+  }
+
+  :global([dir="rtl"]) .SuccessStoriesTitle {
+    /* background-color: red; */
+    text-align: center;
+    /* margin-left: 0; */
+    margin-right: -50px;
+  }
+
+  .SuccessStoriesDescription {
+    color: #fff;
+
+    font-family: Roboto;
+
+    font-size: 16px;
+
+    font-style: normal;
+
+    font-weight: 400;
+
+    line-height: normal;
+
+    width: 329px;
+
+    /* width: 343px;
+
+   height: 53px;
+
+   color: #FFF;
+
+   text-align: center;
+
+   justify-content: center;
+
+    font-family: Roboto;
+
+    font-size: 16px;
+
+    font-style: normal;
+
+    font-weight: 400;
+
+    line-height: 13.067px;  */
+
+    /* background-color: blue; */
+  }
+
+  :global([dir="rtl"]) .SuccessStoriesDescription {
+    /* background-color: red; */
+    text-align: center;
+    /* margin-left: 0; */
+    margin-right: -50px;
+  }
+
+  .testimonialSection {
+    margin: 0 auto;
+
+    width: 343px;
+
+    height: 222.9916px;
+
+    display: flex;
+
+    padding: 22.4px 68.133px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14.933px;
+
+    align-self: stretch;
+
+    /* background-color: #D04A1D; */
+  }
+
+  .testimonialContent {
+    margin: 0 auto;
+
+    width: 343px;
+
+    height: 222.9916px;
+
+    display: flex;
+
+    /* padding: 22.4px 68.133px; */
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14.933px;
+
+    align-self: stretch;
+
+    margin-left: -70px;
+
+    /* background: #222; */
+
+    /* background-color: antiquewhite; */
+  }
+
+  .testimonialText {
+    margin-left: -55px;
+
+    width: 313px;
+
+    height: 90px;
+
+    color: #fff;
+
+    text-align: center;
+
+    font-family: Roboto;
+
+    font-size: 14px;
+
+    font-style: normal;
+
+    font-weight: 600;
+
+    line-height: 15px; /* 107.143% */
+  }
+
+  :global([dir="rtl"]) .testimonialSection {
+    margin-left: 0;
+    margin-right: -50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  :global([dir="rtl"]) .testimonialText {
+    margin-left: 0;
+    margin-right: -50px;
+    padding:2px;
+  }
+
+  .testimonialAuthor {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14.229px;
+
+    border: 0 solid #e5e7eb;
+  }
+
+  .authorIcon {
+    width: 28.458px;
+
+    height: 28.458px;
+
+    background: url("/assets/SuccessStories/Frame.png") lightgray 50% / cover
+      no-repeat;
   }
 }
 
