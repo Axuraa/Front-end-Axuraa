@@ -14,6 +14,7 @@ export default function Home() {
         title1={t('hero.title1', 'Welcome to Axuraa')}
         title2={t('hero.title2', 'Building Digital Excellence')}
         subtitle1={t('hero.subtitle1', 'Transforming ideas into powerful digital experiences.')}
+        subtitle2={t('hero.trustedSubtitle', 'TRUSTED BY FORWARD-THINKING COMPANIES')}
         badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
         primaryButtonText={t('hero.cta', 'Start a Project')}
         secondaryButtonText={t('hero.learnMore', 'View Our Work')}

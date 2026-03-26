@@ -69,6 +69,19 @@
   transform: translateX(4px);
 }
 
+:global([dir="rtl"]) .buttonContent {
+  flex-direction: row-reverse;
+}
+
+:global([dir="rtl"]) .startButton:hover .iconWrapper {
+  transform: translateX(-4px);
+}
+
+:global([dir="rtl"]) .buttonIcon {
+  transform: scaleX(-1);
+  display: block;
+}
+
 .buttonIcon {
   transition: transform 0.3s ease;
 }
