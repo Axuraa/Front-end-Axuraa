@@ -13,28 +13,32 @@ export interface HistoryResponse {
 
 /**
  * Get history data from the API
+ * @param locale Optional locale for localized data
  */
-export const getHistory = async (): Promise<HistoryResponse> => {
+export const getHistory = async (lang: string = 'en'): Promise<HistoryResponse> => {
   try {
-    const response = await fetch(ENDPOINTS.AboutUs.history, {
+    const url = `${ENDPOINTS.AboutUs.history}?lang=${lang}`;
+    const response = await fetch(url, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
-    const data = await response.json();
+    const json = (await response.json()) as any;
 
     if (!response.ok) {
       return {
         success: false,
-        error: data.message || 'Failed to fetch history data',
+        error: json.message || 'Failed to fetch history data',
       };
     }
 
+    const historyData = json?.data ?? json;
+
     return {
       success: true,
-      data,
+      data: historyData,
       message: 'History data fetched successfully',
     };
   } catch (error) {

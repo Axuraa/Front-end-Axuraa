@@ -13,7 +13,7 @@ export const askChatBot = async (question: string, lang: string = 'en'): Promise
   try {
     console.log('Sending request:', { question, lang });
     
-    const response = await fetch(`https://back-end-axuraa.fly.dev/api/v1/bot?lang=${lang}`, {
+    const response = await fetch(`/api/v1/bot?lang=${lang}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

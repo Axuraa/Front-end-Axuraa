@@ -2,18 +2,25 @@ import React from 'react';
 import Typography from '@/components/UI/Atoms/Typography/Typography';
 import styles from './SpecialCard.module.css';
 import Image from 'next/image';
-
 import { SpecialCardProps } from '@/types/Generals/cardTypes';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 const SpecialCard: React.FC<SpecialCardProps> = ({
-  title = 'Ready to Innovate?',
-  subtitle = 'Join the list of forward-thinking companies that trust Axuraa to deliver excellence.',
-  primaryButtonText = 'Contact Us',
-  secondaryButtonText = 'View Case Studies',
+  title: passedTitle,
+  subtitle: passedSubtitle,
+  primaryButtonText: passedPrimaryButtonText,
+  secondaryButtonText: passedSecondaryButtonText,
   onPrimaryClick,
   onSecondaryClick,
   className = '',
 }) => {
+  const { t, locale } = useClientTranslation('common');
+  
+  const title = passedTitle || t('cta.title', 'Ready to Innovate?');
+  const subtitle = passedSubtitle || t('cta.subtitle', 'Join the list of forward-thinking companies that trust Axuraa to deliver excellence.');
+  const primaryButtonText = passedPrimaryButtonText || t('cta.primaryButton', 'Contact Us');
+  const secondaryButtonText = passedSecondaryButtonText || t('cta.secondaryButton', 'View Case Studies');
+
   return (
     <div className={`${styles.specialCard} ${className}`}>
       {/* Animated blur circles background */}
@@ -59,13 +66,19 @@ const SpecialCard: React.FC<SpecialCardProps> = ({
         <div className={styles.buttonGroup}>
           <button
             className={`${styles.button} ${styles.primaryButton}`}
-            onClick={() => window.location.href = '/en/contact'}
+            onClick={() => {
+              if (onPrimaryClick) onPrimaryClick();
+              else window.location.href = `/${locale}/contact`;
+            }}
           >
             {primaryButtonText}
           </button>
           <button
             className={`${styles.button} ${styles.secondaryButton}`}
-            onClick={() => window.location.href = '/en/portfolio'}
+            onClick={() => {
+              if (onSecondaryClick) onSecondaryClick();
+              else window.location.href = `/${locale}/portfolio`;
+            }}
           >
             {secondaryButtonText}
           </button>

@@ -18,8 +18,8 @@ const useClientTranslation = (namespace: string = 'common') => {
         const pathLocale = window.location.pathname.split('/')[1] || 'en';
         setLocale(pathLocale);
         
-        // Load translation file
-        const response = await fetch(`/locales/${pathLocale}/${namespace}.json`);
+        // Load translation file with cache-busting parameter
+        const response = await fetch(`/locales/${pathLocale}/${namespace}.json?v=${Date.now()}`, { cache: 'no-store' });
         if (response.ok) {
           const data = await response.json();
           setTranslations(data);
@@ -53,7 +53,7 @@ const useClientTranslation = (namespace: string = 'common') => {
     };
   }, [namespace]);
 
-  const t = (key: string, fallback?: string): string => {
+  const t = (key: string, fallback?: any): any => {
     const keys = key.split('.');
     let value: any = translations;
     
@@ -61,7 +61,11 @@ const useClientTranslation = (namespace: string = 'common') => {
       value = value?.[k];
     }
     
-    return (typeof value === 'string' ? value : fallback || key) as string;
+    if (value === undefined || value === null) {
+      return fallback !== undefined ? fallback : key;
+    }
+
+    return value;
   };
 
   return { t, locale, loading };

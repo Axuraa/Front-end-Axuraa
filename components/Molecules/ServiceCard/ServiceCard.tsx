@@ -19,18 +19,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   description, 
   features,
   iconUrl = '/assets/safeicon.svg',
-  buttonText = 'Learn More',
+  buttonText,
   onButtonClick
 }) => {
   const router = useRouter();
   const pathname = usePathname();
+  const locale = pathname?.split('/')[1] || 'en';
+
+  const displayButtonText = buttonText || (locale === 'ar' ? 'تعرف على المزيد' : 'Learn More');
 
   const handleButtonClick = () => {
     if (onButtonClick) {
       onButtonClick();
     } else {
-      // Extract locale from current pathname
-      const locale = pathname?.split('/')[1] || 'en';
       router.push(`/${locale}/service/${id}`);
     }
   };
@@ -71,7 +72,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         className={styles.learnMoreButton}
         onClick={handleButtonClick}
       >
-        {buttonText}
+        {displayButtonText}
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>

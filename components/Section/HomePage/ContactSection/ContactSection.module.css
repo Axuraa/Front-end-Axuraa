@@ -47,7 +47,7 @@
 }
 
 .subtitle {
-  margin-top: 5%;
+  margin-top: 0%;
   color: var(--Gray-Chateau, #8a8a8a);
 }
 
@@ -61,10 +61,13 @@
   justify-content: flex-start;
   gap: 1.25rem; /* 20px / 16 = 1.25rem */
   flex-shrink: 0;
+  /* background-color: #dd0f98ff; */
 }
 
 .contactFormWrapper {
+  /* background-color: #0f54ddff; */
   width: 100%;
+  margin-top: -8rem;
   max-width: 34.125rem; /* 546px / 16 = 34.125rem */
   min-height: 18.2651rem; /* 292.2419px / 16 = 18.2651rem */
   display: flex;
@@ -80,7 +83,7 @@
   max-width: 100%;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 1.25rem;
+  margin-top: 1rem;
 }
 
 .Contantform {
@@ -93,6 +96,7 @@
   overflow: hidden;
   padding: 0;
   margin: 0;
+  /* background-color: #0f54ddff; */
 }
 
 .mainTitle {
@@ -129,12 +133,6 @@
     position: absolute;
     top: 50%;
   }
-  .socialIconsContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-156%, 450%);
-  }
 }
 
 /* Medium-Large screens (1024px to 1439px) - Keep centered, adjust if needed */
@@ -145,6 +143,9 @@
     position: relative;
   }
 
+  .subtitle {
+    margin-top: -2%;
+  }
   .ContactGrid {
     max-width: 60rem; /* 1000px / 16 = 62.5rem */
     /* background-color: rgb(214, 17, 17); */
@@ -162,11 +163,11 @@
     position: absolute;
     top: 50%;
   }
-  .socialIconsContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-140%, 440%);
+
+
+  .mainTitle {
+    font-size: 2.5rem; /* Reduced from 3.1678rem to fit better at 1024px */
+    width: 25rem; /* Increased width slightly to hold the text */
   }
 }
 

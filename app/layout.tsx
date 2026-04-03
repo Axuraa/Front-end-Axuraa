@@ -5,6 +5,7 @@ import styles from "./layout.module.css";
 import Header from "@/components/Layout/Header/Header";
 import Footer from "@/components/Layout/Footer/Footer";
 import ChatBot from "@/components/UI/Atoms/ChatBot/ChatBot";
+import LocaleSync from "@/components/UI/Atoms/LocaleSync/LocaleSync";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,8 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={styles.html}>
+    <html lang="en" className={styles.html} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable} ${styles.body}`} >
+        <LocaleSync />
         <div className={styles.wrapper}>
           <Header />
           <main className={styles.main}>

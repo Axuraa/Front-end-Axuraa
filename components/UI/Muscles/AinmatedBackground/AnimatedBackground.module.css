@@ -33,6 +33,13 @@
   opacity: 0.6;
 }
 
+:global([dir="rtl"]) .Hexa_1 {
+  transform: translate(35%, -120%) rotate(-180deg);
+  top: 50%;
+  right: -25%;
+  /* background-color: red; */
+}
+
 /* Hexagon 2 - Top Left (offset from first) */
 .Hexa_2 {
   position: absolute;
@@ -43,6 +50,13 @@
     transform 2s ease-in-out,
     opacity 2s ease-in-out;
   opacity: 0.7;
+}
+
+:global([dir="rtl"]) .Hexa_2 {
+  transform: translate(-160%, -90%) rotate(-180deg);
+  top: 50%;
+  right: 30%;
+  /* background-color: red; */
 }
 
 /* Hover Effects - Smooth rotation changes */
@@ -58,9 +72,13 @@
 
 /* Circle Container */
 .circleContainer {
-  position: relative;   
+  position: relative;
   width: 100%;
   height: 100%;
+}
+
+:global([dir="rtl"]) .circleContainer {
+  /* background-color: red; */
 }
 
 .Circle_1,
@@ -69,121 +87,123 @@
   aspect-ratio: 1 / 1;
 }
 
-
-
 /* Circle 1 - Bottom Left */
 .Circle_1 {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(70%, -15%);
   transition:
     transform 2.5s ease-in-out,
     opacity 2.5s ease-in-out;
+}
+:global([dir="rtl"]) .Circle_1 {
+  position: absolute;
+  top: 5%;
+  left: 100%;
+  transform: translate(-170%, -15%);
+  /* background-color: red; */
 }
 
 /* Circle 2 - Top Right (Double size) */
 .Circle_2 {
   position: absolute;
   top: 50%;
-  left:50%;
+  left: 50%;
   transform: translate(-160%, -5%);
   transition:
     transform 2.5s ease-in-out,
     opacity 2.5s ease-in-out;
 }
-
-
+:global([dir="rtl"]) .Circle_2 {
+  position: absolute;
+  top: 60%;
+  left: -10%;
+  transform: translate(-170%, -15%);
+  /* background-color: blue; */
+}
 
 /* Hover Effects - Vertical movement */
 .animatedBackground.hovered .Circle_1 {
-  transform: translate(70%,100%) scale(1.5);
+  transform: translate(70%, 100%) scale(1.5);
   opacity: 0.5;
 }
 
 .animatedBackground.hovered .Circle_2 {
-  transform: translate(-160%,-150%) scale(1.5);
+  transform: translate(-160%, -150%) scale(1.5);
   opacity: 0.6;
 }
 
-@media (max-width: 64rem) {
-  .Hexa_1 {
-    top: 50%;
-    left: 50%;
-    transform: translate(55%, -125%) rotate(-180deg);
+/* RTL overrides - mirror circle positions for Arabic */
+:global([dir="rtl"]) .Circle_1 {
+  transform: translate(-170%, -15%);
+}
+
+:global([dir="rtl"]) .Circle_2 {
+  transform: translate(60%, -5%);
+}
+
+:global([dir="rtl"]) .animatedBackground.hovered .Circle_1 {
+  transform: translate(-170%, 100%) scale(1.5);
+  opacity: 0.5;
+}
+
+:global([dir="rtl"]) .animatedBackground.hovered .Circle_2 {
+  transform: translate(60%, -150%) scale(1.5);
+  opacity: 0.6;
+}
+
+@media (max-width: 90rem) {
+   :global([dir="rtl"]) .Hexa_1 {
+    transform: translate(-155%, -125%) rotate(-180deg) scale(1);
+    right: -50%;
+    top: 60%;
+    /* background-color: red; */
   }
-  .Hexa_2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-150%, -80%) rotate(-180deg);
+  :global([dir="rtl"]) .Hexa_2 {
+    transform: translate(-155%, -125%) rotate(-180deg) scale(1);
+    opacity: 0.5;
+    top: 65%;
+    right: 10%;
+    /* background-color: blue; */
   }
 
-  .animatedBackground.hovered .Hexa_1 {
-    transform: translate(55%, -125%) rotate(90deg) scale(1.05);
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_1 {
+    transform: translate(35%, -120%) rotate(90deg) scale(1.05);
     opacity: 0.5;
   }
 
-  .animatedBackground.hovered .Hexa_2 {
-    transform: translate(-150%, -80%) rotate(-80deg) scale(1.08);
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
+    transform: translate(-160%, -90%) rotate(-80deg) scale(1.08);
     opacity: 0.6;
   }
-  /* .Circle_1 {
-    top:50%;
-    left: 50%;
-    transform: translate(120%, -40%);
-  } */
-   .Circle_2 {
-    top:50%;
-    left: 50%;
-    transform: translate(-160% , 50%);
+  :global([dir="rtl"]) .Circle_1 {
+    top: 5%;
+    left: 115%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
   }
-  .animatedBackground.hovered .Circle_1 {
-    transform: translate(70%,170%) scale(1.5);
-  }
-  .animatedBackground.hovered .Circle_2 {
-    transform: translate(-160% , -130%) scale(1.5);
-  }
-}
-
-@media (max-width: 62rem) {
-  .Hexa_1 {
-    top: 50%;
-    left: 50%;
-    transform: translate(50%, -100%) rotate(-180deg);
-  }
-  .Hexa_2 {
-    top: 50%;
-    left: 50%;
-    transform: translate(-150%, -60%) rotate(-180deg);
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left:-70%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
   }
 
-  .animatedBackground.hovered .Hexa_1 {
-    transform: translate(50%, -100%) rotate(90deg) scale(1.05);
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_1 {
+    transform: translate(-130%, 100%) scale(1.5);
     opacity: 0.5;
   }
 
-  .animatedBackground.hovered .Hexa_2 {
-    transform: translate(-150%, -60%) rotate(-80deg) scale(1.08);
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_2 {
+    transform: translate(130%, -150%) scale(1.5);
     opacity: 0.6;
-  }
-  .Circle_1 {
-    left: 50%;
-    top: 50%;
-    transform: translate(80% ,36%);
-  }
-  .Circle_2 {
-    left: 50%;
-    top: 50%;
-    transform: translate(-150% , 250%);
-  }
-  .animatedBackground.hovered .Circle_1 {
-    transform: translate(80%,350%) scale(1.5);
-  }
-  .animatedBackground.hovered .Circle_2 {
-    transform: translate(-150%, -30%) scale(1.5);
   }
 }
 
+
+
+/* Tablets (Portrait) and Large Phones */
 @media (max-width: 48rem) {
   .Hexa_1 {
     top: 50%;
@@ -208,12 +228,24 @@
   .Circle_1 {
     left: 50%;
     top: 50%;
-    transform: translate(75% ,-10%);
+    transform: translate(75%, -10%);
+  }
+  :global([dir="rtl"]) .Circle_1 {
+    top: 2%;
+    left: 140%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
   }
   .Circle_2 {
     left: 50%;
     top: 50%;
-    transform: translate(-150% , 130%);
+    transform: translate(-150%, 130%);
+  }
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left: -140%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
   }
   .animatedBackground.hovered .Circle_1 {
     transform: translate(75%, 250%) scale(1.5);
@@ -223,6 +255,7 @@
   }
 }
 
+/* Mobile Devices */
 @media (max-width: 30rem) {
   .Hexa_1 {
     top: 50%;
@@ -240,24 +273,232 @@
     opacity: 0.5;
   }
 
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_1 {
+    transform: translate(-127%, -40%) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+
   .animatedBackground.hovered .Hexa_2 {
     transform: translate(-127%, -40%) rotate(-80deg) scale(1.08);
+    opacity: 0.6;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
+    transform: translate(28%, -140%) rotate(-80deg) scale(1.08);
     opacity: 0.6;
   }
   .Circle_1 {
     left: 50%;
     top: 50%;
-    transform: translate(25% ,-20%);
+    transform: translate(25%, -20%);
   }
   .Circle_2 {
     left: 50%;
     top: 50%;
-    transform: translate(-125% , 130%);
+    transform: translate(-125%, 130%);
   }
   .animatedBackground.hovered .Circle_1 {
     transform: translate(25%, 250%) scale(1.5);
   }
   .animatedBackground.hovered .Circle_2 {
     transform: translate(-125%, -130%) scale(1.5);
+  }
+}
+/* RTL overrides - keep Hexa_1 on left side (right side is clipped by overflow:hidden in RTL) */
+:global([dir="rtl"]) .Hexa_1 {
+  transform: translate(-135%, -120%) rotate(-180deg);
+}
+
+:global([dir="rtl"]) .animatedBackground.hovered .Hexa_1 {
+  transform: translate(-135%, -120%) rotate(90deg) scale(1.05);
+  opacity: 0.5;
+}
+
+/* RTL - Laptops and Large Tablets (Landscape) */
+@media (max-width: 64rem) {
+  :global([dir="rtl"]) .Hexa_1 {
+    transform: translate(-155%, -125%) rotate(-180deg) scale(1);
+    right: -80%;
+    /* background-color: red; */
+  }
+  :global([dir="rtl"]) .Hexa_2 {
+    transform: translate(-155%, -125%) rotate(-180deg) scale(1);
+    opacity: 0.5;
+    top: 65%;
+    right: 10%;
+    /* background-color: blue; */
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_1 {
+    transform: translate(-155%, -125%) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
+    transform: translate(-155%, -125%) rotate(90deg) scale(1.05);
+    opacity: 0.6;
+  }
+
+  :global([dir="rtl"]) .Circle_1 {
+    top: 0%;
+    left: 115%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
+  }
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left:-70%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_1 {
+    transform: translate(-130%, 100%) scale(1.5);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_2 {
+    transform: translate(130%, -150%) scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+/* RTL - Small Laptops and Medium Tablets */
+@media (max-width: 62rem) {
+  :global([dir="rtl"]) .Hexa_1 {
+    transform: translate(-150%, -100%) rotate(-180deg) scale(1);
+    right: -80%;
+  }
+
+  :global([dir="rtl"]) .Hexa_2 {
+    transform: translate(-150%, -100%) rotate(-180deg) scale(1);
+    opacity: 0.5;
+    top: 65%;
+    right: 10%;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_1 {
+    transform: translate(-150%, -100%) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
+    transform: translate(-150%, -100%) rotate(90deg) scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+/* RTL - Tablets (Portrait) and Large Phones */
+@media (max-width: 48rem) {
+  :global([dir="rtl"]) .Hexa_1 {
+    transform: translate(-140%, -100%) rotate(-180deg) scale(1);
+    top: 70%;
+    right: -80%;
+  }
+
+  :global([dir="rtl"]) .Hexa_2 {
+    transform: translate(-140%, -100%) rotate(-180deg) scale(1);
+    opacity: 0.5;
+    top: 65%;
+    right: 10%;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_1 {
+    transform: translate(-140%, -160%) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
+    transform: translate(-140%, -100%) rotate(90deg) scale(1.05);
+    opacity: 0.6;
+  }
+
+  :global([dir="rtl"]) .Circle_1 {
+    top: 10%;
+    left: 115%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
+  }
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left:-70%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
+  }
+}
+
+/* RTL - Mobile Devices */
+@media (max-width: 30rem) {
+  :global([dir="rtl"]) .Hexa_1 {
+    transform: translate(-127%, -140%) rotate(-180deg) scale(1);
+    top: 45%;
+    right: -100%;
+  }
+
+  :global([dir="rtl"]) .Hexa_2 {
+    transform: translate(-127%, -140%) rotate(-180deg) scale(1);
+    opacity: 0.5;
+    top: 65%;
+    right: -6%;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_1 {
+    transform: translate(-127%, -140%) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
+    transform: translate(-127%, -140%) rotate(90deg) scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 26.5625rem) {
+  :global([dir="rtl"]) .Circle_1 {
+    top: 5%;
+    left: 130%;
+    transform: translate(-130%, -10%);
+    /* background-color: red; */
+  }
+  :global([dir="rtl"]) .Circle_2 {
+    top: 60%;
+    left:-120%;
+    transform: translate(130%, 5%);
+    /* background-color: blue; */
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_1 {
+    transform: translate(-120%, 180%) scale(1.5);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Circle_2 {
+    transform: translate(130%, -190%) scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 23.4375rem) {
+  :global([dir="rtl"]) .Hexa_1 {
+    transform: translate(-127%, -140%) rotate(-180deg) scale(1);
+    top: 45%;
+    right: -100%;
+  }
+
+  :global([dir="rtl"]) .Hexa_2 {
+    transform: translate(-127%, -140%) rotate(-180deg) scale(1);
+    opacity: 0.5;
+    top: 65%;
+    right: -20%;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_1 {
+    transform: translate(-127%, -140%) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+
+  :global([dir="rtl"]) .animatedBackground.hovered .Hexa_2 {
+    transform: translate(-127%, -140%) rotate(90deg) scale(1.05);
+    opacity: 0.6;
   }
 }

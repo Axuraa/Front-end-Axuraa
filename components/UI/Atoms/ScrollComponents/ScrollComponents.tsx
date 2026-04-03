@@ -62,25 +62,28 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
     const scrollWidth = scroller.scrollWidth;
     const clientWidth = scroller.clientWidth;
 
+    const isRtl = window.getComputedStyle(scroller).direction === 'rtl';
+
     // Calculate card width
     const totalGap = 22 * (items.length - 1);
     const totalCardWidth = scrollWidth - totalGap;
     const cardWidth = totalCardWidth / items.length;
 
-    // Current card index
-    const currentCardIndex = Math.round(scrollLeft / (cardWidth + 22));
+    // Current card index (use Math.abs to handle negative scrollLeft in RTL)
+    const distanceToScroll = Math.abs(scrollLeft);
+    const currentCardIndex = Math.round(distanceToScroll / (cardWidth + 22));
 
     // If we're in the first set, jump to equivalent position in the 3rd set
     if (currentCardIndex < childrenCount) {
       const equivalentIndex = currentCardIndex + (childrenCount * 2);
       const newScrollLeft = equivalentIndex * (cardWidth + 22);
-      scroller.scrollLeft = newScrollLeft;
+      scroller.scrollLeft = isRtl ? -newScrollLeft : newScrollLeft;
     }
     // If we're in the last set, jump to equivalent position in the 3rd set
     else if (currentCardIndex >= childrenCount * 4) {
       const equivalentIndex = currentCardIndex - (childrenCount * 2);
       const newScrollLeft = equivalentIndex * (cardWidth + 22);
-      scroller.scrollLeft = newScrollLeft;
+      scroller.scrollLeft = isRtl ? -newScrollLeft : newScrollLeft;
     }
   };
 
@@ -96,14 +99,19 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
       const childrenCount = items.length / 5;
       const scrollLeft = scroller.scrollLeft;
       
+      const isRtl = window.getComputedStyle(scroller).direction === 'rtl';
+      
       // Calculate card width
       const scrollWidth = scroller.scrollWidth;
       const totalGap = 22 * (items.length - 1);
       const totalCardWidth = scrollWidth - totalGap;
       const cardWidth = totalCardWidth / items.length;
 
-      // Scroll to next card
-      const nextScrollPosition = scrollLeft + cardWidth + 22;
+      // Distance to next card
+      const distance = cardWidth + 22;
+
+      // Scroll to next card (Reverse for RTL, Chrome/Edge RTL goes negative, Safari depends, standardizing scrollBy works best here, but we will calculate explicit left)
+      const nextScrollPosition = isRtl ? scrollLeft - distance : scrollLeft + distance;
       
       scroller.scrollTo({
         left: nextScrollPosition,
@@ -142,8 +150,10 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
     if (!isDragging.current || !scrollRef.current) return;
     
     const scroller = scrollRef.current;
+    const isRtl = window.getComputedStyle(scroller).direction === 'rtl';
     const x = e.pageX;
-    const walk = (startPos.current - x) * 2;
+    // Reverse drag direction mapping in RTL
+    const walk = isRtl ? (x - startPos.current) * 2 : (startPos.current - x) * 2;
     scroller.scrollLeft = scrollPos.current + walk;
   };
   
@@ -174,12 +184,16 @@ export const HorizontalScroll: React.FC<ScrollComponentProps> = ({
     const totalCardWidth = scrollWidth - totalGap;
     const cardWidth = totalCardWidth / items.length;
     
+    const isRtl = window.getComputedStyle(scroller).direction === 'rtl';
     const currentScrollLeft = scroller.scrollLeft;
-    const nearestIndex = Math.round(currentScrollLeft / (cardWidth + 22));
+    
+    // Calculate nearest card based on absolute scroll value
+    const distanceToScroll = Math.abs(currentScrollLeft);
+    const nearestIndex = Math.round(distanceToScroll / (cardWidth + 22));
     const targetScroll = nearestIndex * (cardWidth + 22);
     
     scroller.scrollTo({
-      left: targetScroll,
+      left: isRtl ? -targetScroll : targetScroll,
       behavior: 'smooth'
     });
 

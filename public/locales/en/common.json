@@ -27,10 +27,29 @@
   "footer": {
     "description": "We are a leading project management agency dedicated to delivering exceptional results for our clients.",
     "quickLinks": "Quick Links",
-    "services": "Services",
-    "contact": "Contact",
+    "services": {
+      "title": "Services",
+      "ecommerce": "Custom E-commerce",
+      "erp": "ERP Systems Integration",
+      "cloud": "Cloud Solutions",
+      "bi": "Business Intelligence",
+      "mobile": "Mobile Development",
+      "ai": "AI & Machine Learning"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "portfolio": "Portfolio",
+      "case-studies": "Case Studies",
+      "careers": "Careers",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "contact": {
+      "title": "Contact"
+    },
     "followUs": "Follow Us",
-    "allRightsReserved": "All rights reserved",
+    "rights": "All rights reserved",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },
@@ -38,5 +57,11 @@
     "title": "Axuraa - Project Management Agency",
     "description": "Leading project management agency delivering exceptional results for businesses worldwide.",
     "keywords": "project management, agency, business solutions, consulting"
+  },
+  "cta": {
+    "title": "Ready to Innovate?",
+    "subtitle": "Join the list of forward-thinking companies that trust Axuraa to deliver excellence.",
+    "primaryButton": "Contact Us",
+    "secondaryButton": "View Case Studies"
   }
 }

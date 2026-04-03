@@ -4,6 +4,12 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+  /* background-color: red; */
+}
+
+:global([dir="rtl"] .hexagonContainer) {
+  background-color: blue;
+  
 }
 
 .hexagon {

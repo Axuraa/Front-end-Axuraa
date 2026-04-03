@@ -69,6 +69,14 @@
   transform: translateX(-2px);
 }
 
+:global([dir="rtl"]) .buttonContent {
+  flex-direction: row-reverse;
+}
+
+:global([dir="rtl"]) .viewButton:hover .iconWrapper {
+  transform: translateX(2px);
+}
+
 .buttonIcon {
   transition: transform 0.3s ease;
 }

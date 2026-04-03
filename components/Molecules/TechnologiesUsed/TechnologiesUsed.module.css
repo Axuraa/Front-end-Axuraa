@@ -4,48 +4,47 @@
   margin: 0 auto;
   padding: 1.5rem;
   /* background-color: #1a1a1a; */
-  /* border-radius: 8px; */ 
-background: #222;
-    /* background-color: green; */
-    width: 547.9999px;
-    height: 140.0459px;
-    display: flex;
-    padding: 22.872px 0 22.162px 22.52px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 11.491px;
-    border-radius: 8.445px;
-    border: 0 solid #E5E7EB;
-
+  /* border-radius: 8px; */
+  background: #222;
+  /* background-color: green; */
+  width: 547.9999px;
+  height: 140.0459px;
+  display: flex;
+  padding: 22.872px 0 22.162px 22.52px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 11.491px;
+  border-radius: 8.445px;
+  border: 0 solid #e5e7eb;
 }
 
 .title {
-    /* background: red; */
-    width: 133px;
-    height: 23px;
-    top: 22.8718px;
-    left: 22.52px;
-    color: #FFF;
-    font-family: Roboto;
-    font-size: 15.482px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 22.52px; /* 145.455% */
+  /* background: red; */
+  width: 133px;
+  height: 23px;
+  top: 22.8718px;
+  left: 22.52px;
+  color: #fff;
+  font-family: Roboto;
+  font-size: 15.482px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22.52px; /* 145.455% */
 }
 
 .technologiesGrid {
-        /* background: yellowgreen; */
-        /* width: 525px; */
-        /* height: 60.5211px; */
-        top: 57.363px;
-        left: 23px;
-        display: flex;
-        align-items: flex-start;
-        align-content: flex-start;
-        gap: 11.26px;
-        flex-wrap: wrap;
-        border: 0 solid #E5E7EB;
+  /* background: yellowgreen; */
+  /* width: 525px; */
+  /* height: 60.5211px; */
+  top: 57.363px;
+  left: 23px;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 11.26px;
+  flex-wrap: wrap;
+  border: 0 solid #e5e7eb;
 }
 
 .techButton {
@@ -60,18 +59,18 @@ background: #222;
   justify-content: center;
   align-items: center; */
   display: flex;
-padding: 3.167px 9.247px 2.464px 11.26px;
-justify-content: center;
-align-items: center;
-border-radius: 14073.559px;
-border: 0 solid #E5E7EB;
-background: var(--Primary, #D04A1D);
-color: #E6E6E6;
-font-family: Roboto;
-font-size: 12.667px;
-font-style: normal;
-font-weight: 400;
-line-height: 18.297px; /* 144.444% */
+  padding: 3.167px 9.247px 2.464px 11.26px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14073.559px;
+  border: 0 solid #e5e7eb;
+  background: var(--Primary, #d04a1d);
+  color: #e6e6e6;
+  font-family: Roboto;
+  font-size: 12.667px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18.297px; /* 144.444% */
 }
 
 /* Mobile responsive styles */
@@ -89,7 +88,7 @@ line-height: 18.297px; /* 144.444% */
   }
   .title {
     align-self: stretch;
-    color: #FFF;
+    color: #fff;
     text-align: center;
     font-family: Roboto;
     font-size: 15.482px;
@@ -108,7 +107,7 @@ line-height: 18.297px; /* 144.444% */
     gap: 11px;
     align-self: stretch;
     flex-wrap: wrap;
-    border: 0 solid #E5E7EB;
+    border: 0 solid #e5e7eb;
     background: transparent;
     top: auto;
     left: auto;
@@ -119,13 +118,28 @@ line-height: 18.297px; /* 144.444% */
     justify-content: center;
     align-items: center;
     border-radius: 14073.559px;
-    border: 0 solid #E5E7EB;
-    background: var(--Primary, #D04A1D);
-    color: #FFF;
+    border: 0 solid #e5e7eb;
+    background: var(--Primary, #d04a1d);
+    color: #fff;
     font-family: Roboto;
     font-size: 12.667px;
     font-style: normal;
     font-weight: 400;
     line-height: 18.297px;
   }
+}
+
+:global([dir="rtl"]) .container {
+  padding: 22.872px 22.52px 22.162px 0;
+  align-items: flex-start;
+}
+
+:global([dir="rtl"]) .title {
+  text-align: right;
+  left: auto;
+  right: 22.52px;
+}
+
+:global([dir="rtl"]) .technologiesGrid {
+  justify-content: flex-start;
 }

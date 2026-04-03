@@ -60,6 +60,10 @@
   text-transform: capitalize;
 }
 
+:global([dir="rtl"]) .subtitle {
+  font-size: 18px;
+}
+
 
 /* Mobile Styles */
 @media (max-width: 768px) {
@@ -112,7 +116,11 @@
     letter-spacing: 0.423px;
     height: auto;
     padding: 0 12px;
-}
+  }
+  :global([dir="rtl"]) .subtitle {
+    font-size: 13px;
+    line-height: 1.4;
+  }
 }
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -132,6 +140,9 @@
     width: 631px;
     height: 25px;
     padding: 0;
+  }
+  :global([dir="rtl"]) .subtitle {
+    font-size: 16px;
   }
 }
 /* Desktop Styles */
@@ -154,5 +165,8 @@
     letter-spacing: 0.778px;
     height: 25px; 
     padding: 0; 
+  }
+  :global([dir="rtl"]) .subtitle {
+    font-size: 18px;
   }
 }

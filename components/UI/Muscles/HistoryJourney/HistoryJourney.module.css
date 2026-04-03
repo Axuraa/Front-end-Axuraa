@@ -14,7 +14,7 @@
 }
 
 .history_journey.standalone::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -29,7 +29,7 @@
 }
 
 .history_journey.standalone::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -57,8 +57,10 @@
   animation: fadeIn 0.8s ease forwards;
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start !important; /* دائماً جهة اليسار */
   justify-content: center;
+  text-align: left !important; /* دائماً محاذاة لليسار مثل الإنجليزية */
+  direction: ltr !important;
 }
 
 .badge {
@@ -68,17 +70,13 @@
 }
 
 .title {
-  color: #F9FAFB;
+  color: #f9fafb;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
   max-width: 43.75rem;
-  background: linear-gradient(
-    135deg,
-    #FFFFFF 0%,
-    #E5E7EB 100%
-  );
+  background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -107,7 +105,7 @@
   .title {
     font-size: 2.25rem;
   }
-  
+
   .header {
     margin-bottom: 3rem;
   }
@@ -120,15 +118,15 @@
     justify-self: center;
     align-self: center;
   }
-  
+
   .title {
     font-size: 2rem;
   }
-  
+
   .header {
     margin-bottom: 2.5rem;
   }
-  
+
   .timeline {
     margin-top: 2rem;
   }

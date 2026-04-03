@@ -3,12 +3,10 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-  padding: 4rem 16%; /* Match the parent container's 6% horizontal padding */
+  padding: 4rem 0;
   display: flex;
-  justify-self: center;
-  align-items: center;
   justify-content: center;
-  /* margin: 0 11%; */
+  align-items: center;
 }
 
 /* Decorative background elements */
@@ -31,9 +29,9 @@
 }
 
 .container {
-  max-width: 100%;
+  max-width: 80rem;
   width: 100%;
-  margin: 0;
+  margin: 0 auto;
   position: relative;
   z-index: 1;
 }
@@ -43,7 +41,10 @@
   grid-template-columns: 1fr 30rem;
   gap: 2rem;
   align-items: start;
+  margin: 0 6%; /* يmatch هوامش السيكشن اللي فوقه */
+  direction: ltr !important; /* يمنع انعكاس العناصر في العربي */
 }
+
 
 /* Timeline Container */
 .timeline_container {

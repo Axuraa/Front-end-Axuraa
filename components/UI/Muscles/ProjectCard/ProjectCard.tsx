@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './ProjectCart.module.css';
 
 import { ProjectCardProps } from '@/types/Generals/cardTypes';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
@@ -14,6 +15,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   imageUrl
 }) => {
+  const { locale } = useClientTranslation('projects');
+  
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
@@ -36,9 +39,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <p className={styles.description}>{description}</p>
         </div>
         
-        <a href={`/en/case-study/${id}`} className={styles.readMore}>
-          Read More
-          <span>→</span>
+        <a href={`/${locale}/case-study/${id}`} className={styles.readMore}>
+          {locale === 'ar' ? 'اقرأ المزيد' : 'Read More'}
+          <span style={{ transform: locale === 'ar' ? 'rotate(180deg)' : 'none', display: 'inline-block' }}>→</span>
         </a>
       </div>
     </div>

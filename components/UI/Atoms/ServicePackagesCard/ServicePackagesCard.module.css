@@ -7,35 +7,35 @@
   justify-content: space-between;
   align-items: flex-start;
   border-radius: 12.396px;
-  background: #2A2A2A;
+  background: #2a2a2a;
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
 }
 
 .card.withShadow {
-  box-shadow: 0 0 30px 0 #9A3C1E;
+  box-shadow: 0 0 30px 0 #9a3c1e;
 }
 
 .title {
-    width: 297.5px;
-    /* height: 25px; */
-    /* background-color: rgb(245, 146, 17); */
-    color: #D9D9D9;
-    font-family: Roboto;
-    font-size: 19.833px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24.792px; /* 125% */
-    align-self: stretch;
+  width: 297.5px;
+  /* height: 25px; */
+  /* background-color: rgb(245, 146, 17); */
+  color: #d9d9d9;
+  font-family: Roboto;
+  font-size: 19.833px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24.792px; /* 125% */
+  align-self: stretch;
 }
 
 .description {
-    width: 278.209px;
-    /* height: 60px; */
-    /* background-color: rgba(238, 139, 9, 0.945); */
+  width: 278.209px;
+  /* height: 60px; */
+  /* background-color: rgba(238, 139, 9, 0.945); */
   align-self: stretch;
-  color: #D9D9D9;
+  color: #d9d9d9;
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;
@@ -59,7 +59,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #D9D9D9;
+  color: #d9d9d9;
   font-family: Roboto;
   font-size: 14px;
   font-style: normal;
@@ -83,10 +83,10 @@
   /* border-radius: 14.167px;
   border: 1px solid #D04A1D; */
   border-radius: 14.167px;
- border: 1.24px solid #4A4A4A;
+  border: 1.24px solid #4a4a4a;
   transition: all 0.3s ease;
-  background: #D04A1D;
-  color: #D9D9D9;
+  background: #d04a1d;
+  color: #d9d9d9;
   font-family: Roboto;
   font-size: 14px;
   font-weight: 600;
@@ -96,16 +96,16 @@
 
 .button.noBackground {
   background: transparent;
-  color: #D04A1D;
-  border: 1.24px solid #4A4A4A;
+  color: #d04a1d;
+  border: 1.24px solid #4a4a4a;
 }
 .button:not(.noBackground) {
-  background: #D04A1D;
-  color: #D9D9D9;
+  background: #d04a1d;
+  color: #d9d9d9;
   border: none;
 }
 .button:not(.noBackground):hover {
-  background: #B5411A;
+  background: #b5411a;
 }
 
 /* .button:hover {
@@ -127,8 +127,8 @@
   padding: 2.479px 12.729px 2.354px 9.917px;
   justify-content: center;
   align-items: center;
-  background: #D04A1D;
-  color: #D9D9D9;
+  background: #d04a1d;
+  color: #d9d9d9;
   font-family: Roboto;
   font-size: 12px;
   font-style: normal;
@@ -140,6 +140,20 @@
 
 .isPopular .popularBadge {
   display: flex;
+}
+
+:global([dir="rtl"]) .popularBadge {
+  right: auto;
+  left: -40px;
+  transform: rotate(-45deg);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :global([dir="rtl"]) .popularBadge {
+    right: auto;
+    left: -45px;
+    transform: rotate(-45deg);
+  }
 }
 /* Responsive breakpoints */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -162,28 +176,26 @@
     font-size: 15px;
   }
   .popularBadge {
-  position: absolute;
-  top: 5px;
-  right: -60px;
-  transform: rotate(45deg);
-  display: none;
-  padding: 0 0 0 25px ;
-  /* padding: 5px 40px; */
-  justify-content: center;
-  align-items: center;
-  background: #D04A1D;
-  color: #D9D9D9;
-  font-family: Roboto;
-  font-size: 9px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 14.875px;
-  width: 180px;
-   height: 15px;
-  /* margin-left: -20px; */
-  text-align: start;
-}
-/* Popular badge adjustments for tablet */
+    position: absolute;
+    top: 15px;
+    right: -45px;
+    transform: rotate(45deg);
+    display: flex;
+    padding: 2px 0;
+    justify-content: center;
+    align-items: center;
+    background: #d04a1d;
+    color: #d9d9d9;
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.2;
+    width: 160px;
+    height: auto;
+    text-align: center;
+  }
+  /* Popular badge adjustments for tablet */
   /* .popularBadge {
     top: 15px;
     right: -50px;
@@ -214,17 +226,18 @@
     width: 90%;
     padding: 20px;
   }
-  
+
   .title {
     font-size: 18px;
     line-height: 22px;
+    /* background-color: red; */
   }
-  
+
   .description {
     font-size: 13px;
     line-height: 18px;
   }
-  
+
   .button {
     padding: 9.917px 40px;
   }

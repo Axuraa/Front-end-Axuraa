@@ -7,6 +7,7 @@ import { SocialMediaPlatform } from "@/types/Generals/socialTypes";
 import ContactSection from "@/components/Section/HomePage/ContactSection/ContactSection";
 import EmailSection from "@/components/Section/ContactUs/EmailSection/EmailSection";
 import { getContactInformation, ContactEmail, SocialLink } from "@/service/Contact/contactinformation";
+import useClientTranslation from "@/hooks/useClientTranslation";
 
 // Define icon components at the top level to ensure they're stable references
 const FacebookIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -81,6 +82,7 @@ const ICON_MAPPING: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
 };
 
 const Contact = () => {
+  const { t, locale } = useClientTranslation("contact");
   const [contactData, setContactData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -89,7 +91,7 @@ const Contact = () => {
     const fetchContactData = async () => {
       try {
         setLoading(true);
-        const result = await getContactInformation();
+        const result = await getContactInformation(locale);
         
         if (result.success && result.data) {
           console.log('Contact data loaded:', result.data);
@@ -107,7 +109,7 @@ const Contact = () => {
     };
 
     fetchContactData();
-  }, []);
+  }, [locale]);
 
   // Memoize social platforms to prevent unnecessary re-renders
   const socialPlatforms = useMemo((): SocialMediaPlatform[] => {
@@ -118,22 +120,22 @@ const Contact = () => {
     // Fallback data if API fails or returns empty
     const fallbackPlatforms: SocialMediaPlatform[] = [
       {
-        name: 'Facebook',
+        name: t('page.socialSection.platforms.facebook', 'Facebook'),
         link: '#',
         icon: FacebookIcon
       },
       {
-        name: 'Instagram',
+        name: t('page.socialSection.platforms.instagram', 'Instagram'),
         link: '#',
         icon: InstagramIcon
       },
       {
-        name: 'LinkedIn',
+        name: t('page.socialSection.platforms.linkedin', 'LinkedIn'),
         link: '#',
         icon: LinkedInIcon
       },
       {
-        name: 'TikTok',
+        name: t('page.socialSection.platforms.tiktok', 'TikTok'),
         link: '#',
         icon: TikTokIcon
       }
@@ -147,15 +149,12 @@ const Contact = () => {
     const platforms = contactData.socialLinks.map((link: SocialLink) => {
       console.log('Processing social link:', link);
       
-      // Get the icon component from the mapping, fallback to FacebookIcon
       const IconComponent = ICON_MAPPING[link.name] || FacebookIcon;
       
-      console.log('Mapped icon component for', link.name, ':', IconComponent.name);
-      
       return {
-        name: link.name,
+        name: t(`page.socialSection.platforms.${link.name.toLowerCase()}`, link.name),
         link: link.url,
-        icon: IconComponent, // This is the React component function
+        icon: IconComponent,
       };
     });
     
@@ -180,10 +179,10 @@ const Contact = () => {
   return (
     <div id="contact-section" className={styles.container}>
       <HeroSection
-        badgeText="WHO WE ARE"
-        title1="Architecting the Future of"
-        title2="Digital Business"
-        subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
+        badgeText={t('page.hero.badge', 'WHO WE ARE')}
+        title1={t('page.hero.title1', 'Architecting the Future of')}
+        title2={t('page.hero.title2', 'Digital Business')}
+        subtitle1={t('page.hero.subtitle', "At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies.")}
         subtitle2=""
         backgroundType="Circle"
         showTrustedSection={false}
@@ -195,21 +194,25 @@ const Contact = () => {
       {loading ? (
         <div className={styles.sectionLoading}>
           <div className={styles.loadingSpinner}></div>
-          <p>Loading contact page...</p>
+          <p>{t('page.loading', 'Loading contact page...')}</p>
         </div>
       ) : (
         <>
-          <SocialMediaSection platforms={socialPlatforms} />
+          <SocialMediaSection 
+            platforms={socialPlatforms} 
+            title={t('page.socialSection.title', 'Follow us on social media')}
+            subtitle={t('page.socialSection.subtitle', 'Stay up to date with our latest news and projects')}
+          />
           <EmailSection
-            title={contactData?.title || "Contact via email"}
-            subtitle="Choose the appropriate section for your inquiry"
+            title={contactData?.title || t('page.emailSection.title', 'Contact via email')}
+            subtitle={t('page.emailSection.subtitle', 'Choose the appropriate section for your inquiry')}
             contacts={contactsData}
           />
           <ContactSection
-            badgeText="Our Team"
-            title1="How we help "
-            title2="Businesses Grow?"
-            subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+            badgeText={t('page.bottomSection.badge', 'Our Team')}
+            title1={t('page.bottomSection.title1', 'How we help ')}
+            title2={t('page.bottomSection.title2', 'Businesses Grow?')}
+            subtitle={t('page.bottomSection.subtitle', 'Discover our comprehensive suite of services designed to elevate your digital presence')}
             showLinks={false}
           />
         </>

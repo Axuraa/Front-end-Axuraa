@@ -14,6 +14,7 @@ interface ServicePackagesCardProps {
   hasShadow?: boolean;
   showPopularBadge?: boolean;
   hasButtonBackground?: boolean;
+  mostPopularText?: string;
 }
 
 const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
@@ -26,6 +27,7 @@ const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
   hasShadow = true,
   showPopularBadge = true,
   hasButtonBackground = true,
+  mostPopularText = 'Most Popular',
 }) => {
   const router = useRouter();
 
@@ -37,12 +39,12 @@ const ServicePackagesCard: React.FC<ServicePackagesCardProps> = ({
   return (
     <div className={`${styles.card} ${hasShadow ? styles.withShadow : ''} ${isPopular ? styles.isPopular : ''}`}>
       {isPopular && showPopularBadge && (
-        <div className={styles.popularBadge}>Most Popular</div>
+        <div className={styles.popularBadge}>{mostPopularText}</div>
       )}
       <h3 className={styles.title}>{title}</h3>
       <p className={styles.description}>{description}</p>
       <ul className={styles.featureList}>
-        {features.map((feature, index) => (
+        {Array.isArray(features) && features.map((feature, index) => (
           <li key={index} className={styles.featureItem}>
             <Image 
               src={TrueIcon} 

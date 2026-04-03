@@ -3,6 +3,7 @@ import styles from "./ContactForm.module.css";
 import { ContactRequest } from "@/types/Generals/contactForm";
 import { create } from "@/service/Contact/contactServices";
 import Image from "next/image";
+import useClientTranslation from "@/hooks/useClientTranslation";
 
 //icons
 import fullNameIcon from "../../../../public/assets/fullname.svg";
@@ -12,14 +13,16 @@ import chooseIcon from "../../../../public/assets/chose.svg";
 import sendIcon from "../../../../public/assets/sendbuttom.svg";
 
 const ContactForm = () => {
+  const { t } = useClientTranslation("contact");
+  
   // Service options with proper backend values matching existing API data
   const serviceOptions = [
-    { value: "ERP", label: "ERP" },
-    { value: "E_commerce", label: "E-commerce" },
-    { value: "Website", label: "Website" },
-    { value: "Mobile_App", label: "Mobile App" },
-    { value: "Cloud_Migration", label: "Cloud Migration" },
-    { value: "AI_Integration", label: "AI Integration" },
+    { value: "ERP", label: t('contactForm.fields.services.erp', 'ERP') },
+    { value: "E_commerce", label: t('contactForm.fields.services.ecommerce', 'E-commerce') },
+    { value: "Website", label: t('contactForm.fields.services.website', 'Website') },
+    { value: "Mobile_App", label: t('contactForm.fields.services.mobileApp', 'Mobile App') },
+    { value: "Cloud_Migration", label: t('contactForm.fields.services.cloudMigration', 'Cloud Migration') },
+    { value: "AI_Integration", label: t('contactForm.fields.services.aiIntegration', 'AI Integration') },
   ];
 
   const [formData, setFormData] = useState<ContactRequest>({
@@ -63,29 +66,29 @@ const ContactForm = () => {
     const newErrors: Partial<ContactRequest> = {};
 
     if (!formData.full_name.trim()) {
-      newErrors.full_name = "Full name is required";
+      newErrors.full_name = t('contactForm.validation.nameRequired', 'Full name is required');
     }
 
     // Validate based on selected contact method
     if (contactMethod === 'email') {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!formData.email?.trim()) {
-        newErrors.email = "Email is required";
+        newErrors.email = t('contactForm.validation.emailRequired', 'Email is required');
       } else if (!emailRegex.test(formData.email)) {
-        newErrors.email = "Please enter a valid email address";
+        newErrors.email = t('contactForm.validation.emailInvalid', 'Please enter a valid email address');
       }
     } else {
       if (!formData.phone_number?.trim()) {
-        newErrors.phone_number = "Phone number is required";
+        newErrors.phone_number = t('contactForm.validation.phoneRequired', 'Phone number is required');
       }
     }
 
     if (formData.services_interest.length === 0) {
-      newErrors.services_interest = ["Please select at least one service"];
+      newErrors.services_interest = [t('contactForm.validation.serviceRequired', 'Please select at least one service')];
     }
 
     if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
+      newErrors.message = t('contactForm.validation.messageRequired', 'Message is required');
     }
 
     setErrors(newErrors);
@@ -166,7 +169,7 @@ const ContactForm = () => {
       if (response.success) {
         setSubmitStatus({
           type: "success",
-          message: "Thank you! Your message has been sent successfully.",
+          message: t('contactForm.success', "Thank you! Your message has been sent successfully."),
         });
         setFormData({
           full_name: "",
@@ -182,13 +185,13 @@ const ContactForm = () => {
         setSubmitStatus({
           type: "error",
           message:
-            response.error || "Failed to send message. Please try again.",
+            response.error || t('contactForm.error', "Failed to send message. Please try again."),
         });
       }
     } catch (error) {
       setSubmitStatus({
         type: "error",
-        message: "An unexpected error occurred. Please try again later.",
+        message: t('contactForm.unexpectedError', "An unexpected error occurred. Please try again later."),
       });
     } finally {
       setIsSubmitting(false);
@@ -197,7 +200,7 @@ const ContactForm = () => {
 
   const getDisplayText = () => {
     if (formData.services_interest.length === 0) {
-      return "Select services";
+      return t('contactForm.fields.selectServices', "Select services");
     }
     if (formData.services_interest.length === 1) {
       const service = serviceOptions.find(
@@ -205,7 +208,7 @@ const ContactForm = () => {
       );
       return service?.label || formData.services_interest[0];
     }
-    return `${formData.services_interest.length} services selected`;
+    return `${formData.services_interest.length} ${t('contactForm.fields.servicesSelected', 'services selected')}`;
   };
 
   return (
@@ -227,7 +230,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit} className={styles.form}>
         <div className={styles.formGroup}>
           <label htmlFor="full_name" className={styles.label}>
-            Full Name
+            {t('contactForm.fields.name', 'Full Name')}
           </label>
           <div className={styles.inputWithIcon}>
             <Image
@@ -244,7 +247,7 @@ const ContactForm = () => {
               value={formData.full_name}
               onChange={handleInputChange}
               className={`${styles.inputField} ${errors.full_name ? styles.inputError : ""}`}
-              placeholder="John Doe"
+              placeholder={t('contactForm.placeholders.name', 'John Doe')}
               disabled={isSubmitting}
             />
           </div>
@@ -255,7 +258,7 @@ const ContactForm = () => {
 
         <div className={styles.formGroup1}>
           <label className={styles.label}>
-            Preferred Contact Method 
+            {t('contactForm.fields.preferredContact', 'Preferred Contact Method')} 
           </label>
           <div className={styles.radio}>
             <label className={styles.radioGroup}>
@@ -268,7 +271,7 @@ const ContactForm = () => {
                 onChange={() => handleContactMethodChange('email')}
                 disabled={isSubmitting}
               />
-              <span className={styles.radioLabel}>Email</span>
+              <span className={styles.radioLabel}>{t('contactForm.fields.emailLabel', 'Email')}</span>
             </label>
             <label className={styles.radioGroup}>
               <input 
@@ -280,7 +283,7 @@ const ContactForm = () => {
                 onChange={() => handleContactMethodChange('phone')}
                 disabled={isSubmitting}
               />
-              <span className={styles.radioLabel}>Phone</span>
+              <span className={styles.radioLabel}>{t('contactForm.fields.phoneLabel', 'Phone')}</span>
             </label>
           </div>
           <div className={styles.inputWithIcon}>
@@ -299,7 +302,7 @@ const ContactForm = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 className={`${styles.inputField} ${errors.email ? styles.inputError : ""}`}
-                placeholder="john.doe@example.com"
+                placeholder={t('contactForm.placeholders.email', 'john.doe@example.com')}
                 disabled={isSubmitting}
               />
             ) : (
@@ -310,7 +313,7 @@ const ContactForm = () => {
                 value={formData.phone_number}
                 onChange={handleInputChange}
                 className={`${styles.inputField} ${errors.phone_number ? styles.inputError : ""}`}
-                placeholder="+1 (555) 123-4567"
+                placeholder={t('contactForm.placeholders.phone', '+1 (555) 123-4567')}
                 disabled={isSubmitting}
               />
             )}
@@ -325,7 +328,7 @@ const ContactForm = () => {
 
         <div className={styles.formGroup}>
           <label htmlFor="services" className={styles.label}>
-            Services of Interest 
+            {t('contactForm.fields.service', 'Services of Interest')} 
           </label>
           <div className={`${styles.inputWithIcon} ${styles.selectWrapper}`} ref={dropdownRef}>
             <Image 
@@ -387,7 +390,7 @@ const ContactForm = () => {
 
         <div className={styles.formGroup2}>
           <label htmlFor="message" className={styles.label}>
-            Message 
+            {t('contactForm.fields.message', 'Message')} 
           </label>
           <textarea
             id="message"
@@ -395,7 +398,7 @@ const ContactForm = () => {
             value={formData.message}
             onChange={handleInputChange}
             className={`${styles.inputField} ${styles.textarea} ${errors.message ? styles.inputError : ""}`}
-            placeholder="Tell us about your project..."
+            placeholder={t('contactForm.placeholders.message', 'Tell us about your project...')}
             rows={5}
             disabled={isSubmitting}
           />
@@ -409,7 +412,7 @@ const ContactForm = () => {
           className={styles.submitButton}
           disabled={isSubmitting}
         >
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {isSubmitting ? t('contactForm.sending', 'Sending...') : t('contactForm.submit', 'Send Message')}
           <Image 
             src={sendIcon} 
             alt="Send" 

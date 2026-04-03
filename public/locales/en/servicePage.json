@@ -1,0 +1,101 @@
+{
+  "hero": {
+    "badgeText": "INNOVATION IN PROGRESS"
+  },
+  "loading": "Loading service details...",
+  "serviceNotFound": "Service not found",
+  "descriptionNotFound": "Description not found",
+  "heroDescription": "Innovative web solutions tailored to elevate your business and drive digital success.",
+  "fallbackUnit1": "Custom web application and platform development",
+  "fallbackUnit2": "E-commerce solutions and online store development",
+  "whatWeDo": "What We Do",
+  "whatWeDoDescription": "We specialize in delivering high-performance, scalable web applications and digital platforms.",
+  "technologiesUsed": "Technologies Used",
+  "featuresCapabilities": "Features & Capabilities",
+  "featuresDescription": "Comprehensive web services designed to design, build, and scale your digital presence from concept to launch.",
+  "storiesDescription": "Real results from our web development services across various industries, demonstrating measurable improvements in digital performance.",
+  "development": {
+    "title": "Our Development Process",
+    "description": "A systematic approach to web development that ensures a high-quality product through discovery, design, implementation, and support.",
+    "steps": {
+      "discovery": {
+        "title": "Discovery",
+        "description": "We analyze your requirements and create a detailed project plan."
+      },
+      "design": {
+        "title": "Design",
+        "description": "Our designers create wireframes and UI/UX designs for your approval."
+      },
+      "development": {
+        "title": "Development",
+        "description": "Our developers bring the design to life with clean, efficient code."
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "We thoroughly test all features to ensure quality and performance."
+      },
+      "launch": {
+        "title": "Launch & Support",
+        "description": "We deploy your project and provide ongoing support and maintenance."
+      }
+    }
+  },
+  "successStories": {
+    "title": "Success Stories",
+    "testimonial": {
+      "text": "\"The team completely transformed our online presence. Their design sense is brilliant, and the development process was smooth and transparent. Our new website isn't just beautiful—it's a powerful tool that has doubled our inbound leads.\"",
+      "author": "Sarah Johnson",
+      "role": "CEO, TechStart Inc."
+    }
+  },
+  "packages": {
+    "title": "Service Packages",
+    "description": "Choose the web development solution that fits your business needs, from essential websites to enterprise-grade web applications.",
+    "getStarted": "Get Started",
+    "mostPopular": "Most Popular",
+    "starter": {
+      "title": "Starter Package",
+      "description": "Perfect for small businesses",
+      "features": [
+        "5 pages website",
+        "Mobile responsive",
+        "Basic SEO",
+        "Contact form",
+        "1 month support",
+        "E-commerce integration",
+        "Analytics dashboard"
+      ]
+    },
+    "professional": {
+      "title": "Professional Package",
+      "description": "Ideal for growing businesses",
+      "features": [
+        "10 pages website",
+        "Mobile responsive",
+        "Advanced SEO",
+        "Contact form",
+        "3 months support",
+        "E-commerce integration",
+        "Analytics dashboard"
+      ]
+    },
+    "enterprise": {
+      "title": "Enterprise Package",
+      "description": "For large scale businesses",
+      "features": [
+        "Unlimited pages",
+        "Mobile responsive",
+        "Premium SEO",
+        "Advanced forms",
+        "6 months support",
+        "E-commerce integration",
+        "Analytics dashboard"
+      ]
+    }
+  },
+  "cta": {
+    "title": "Free Project Consultation",
+    "description": "Get a comprehensive evaluation of your project goals and digital strategy with our complimentary assessment. No obligations, just expert insights.",
+    "button": "Schedule Free Assessment"
+  }
+}

@@ -1,17 +1,20 @@
 import React from 'react';
 import MVCard from '@/components/UI/Muscles/Mission&VisionCards/M&VCard';
 import styles from './Mission&VisionSection.module.css';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 const MissionVisionSection: React.FC = () => {
+  const { t } = useClientTranslation('about');
+  
   const missionData = {
-    title: 'Our Mission',
-    description: 'To empower organizations with scalable, intelligent software solutions that drive efficiency and unlock new growth opportunities. We strive to demystify technology and make enterprise-grade innovation accessible to ambitious businesses.',
+    title: t('mission.title', 'Our Mission'),
+    description: t('mission.description', 'To empower organizations with scalable, intelligent software solutions that drive efficiency and unlock new growth opportunities. We strive to demystify technology and make enterprise-grade innovation accessible to ambitious businesses.'),
     iconSrc: '/assets/flag.svg',
   };
 
   const visionData = {
-    title: 'Our Vision',
-    description: 'To be the global benchmark for software engineering excellence, fostering a world where businesses of all sizes can seamlessly adapt to the digital evolution without technical barriers or complexity.',
+    title: t('vision.title', 'Our Vision'),
+    description: t('vision.description', 'To be the global benchmark for software engineering excellence, fostering a world where businesses of all sizes can seamlessly adapt to the digital evolution without technical barriers or complexity.'),
     iconSrc: '/assets/eye.svg',
   };
 

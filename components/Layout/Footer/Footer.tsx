@@ -1,27 +1,30 @@
+"use client";
 import React from 'react';
 import styles from './Footer.module.css';
 import Typography from '@/components/UI/Atoms/Typography/Typography';
 import FooterColumnHeader from './FooterColumnHeader';
+import useClientTranslation from '@/hooks/useClientTranslation';
 
 const Footer = () => {
+  const { t } = useClientTranslation('common');
   const currentYear = new Date().getFullYear();
 
   const servicesLinks = [
-    'Custom E-commerce',
-    'ERP Systems Integration',
-    'Cloud Solutions',
-    'Business Intelligence',
-    'Mobile Development',
-    'AI & Machine Learning'
+    t('footer.services.ecommerce', 'Custom E-commerce'),
+    t('footer.services.erp', 'ERP Systems Integration'),
+    t('footer.services.cloud', 'Cloud Solutions'),
+    t('footer.services.bi', 'Business Intelligence'),
+    t('footer.services.mobile', 'Mobile Development'),
+    t('footer.services.ai', 'AI & Machine Learning')
   ];
 
   const companyLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Case Studies', href: '#case-studies' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' }
+    { name: t('footer.company.about', 'About Us'), href: '#about' },
+    { name: t('footer.company.portfolio', 'Portfolio'), href: '#portfolio' },
+    { name: t('footer.company.case-studies', 'Case Studies'), href: '#case-studies' },
+    { name: t('footer.company.careers', 'Careers'), href: '#careers' },
+    { name: t('footer.company.blog', 'Blog'), href: '#blog' },
+    { name: t('footer.company.contact', 'Contact'), href: '#contact' }
   ];
 
   // const socialLinks = [
@@ -119,7 +122,7 @@ const socialLinks = [
                 <h1 className={styles.brantlogo}>AXURAA</h1>
               </div>
               <p className={styles.description}>
-                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem
+                {t('footer.description', 'Leading the way in project management excellence with innovative solutions.')}
               </p>
             </div>
 
@@ -153,7 +156,7 @@ const socialLinks = [
                     }}
                   />
                 </Typography> */}
-                <FooterColumnHeader title="Services" />
+                <FooterColumnHeader title={t('footer.services.title', 'Services')} />
               </div>
               <ul className={styles.linkList}>
                 {servicesLinks.map((service, index) => (
@@ -169,7 +172,7 @@ const socialLinks = [
             {/* Company Column */}
             <div className={styles.footerColumn}>
               <div className={styles.columnTitle}>
-                <FooterColumnHeader title="Company" />
+                <FooterColumnHeader title={t('footer.company.title', 'Company')} />
               </div>
               <ul className={styles.linkList}>
                 {companyLinks.map((link, index) => (
@@ -185,7 +188,7 @@ const socialLinks = [
             {/* Contact Column */}
             <div className={styles.footerColumn}>
               <div className={styles.columnTitle  + " " + styles.columnTitle2}>
-                <FooterColumnHeader title="Contact" />
+                <FooterColumnHeader title={t('footer.contact.title', 'Contact')} />
               </div>
               {/* <ul className={styles.contactList}>
                 <li className={styles.contactItem}>
@@ -304,7 +307,7 @@ const socialLinks = [
             >
               © {currentYear} AXURAA. All rights reserved.
             </Typography> */}
-            <p className={styles.bottomContentTitle}>  © {currentYear} AXURAA. All rights reserved. </p>
+            <p className={styles.bottomContentTitle}>  © {currentYear} AXURAA. {t('footer.rights', 'All rights reserved.')} </p>
             <div className={styles.legalLinks}>
               {/* <Typography 
                 component="a" 
@@ -356,9 +359,9 @@ const socialLinks = [
                 Terms of Service
               </Typography> */}
 
-              <p className={styles.legalLink}> Privacy Policy </p>
+              <p className={styles.legalLink}> {t('footer.privacyPolicy', 'Privacy Policy')} </p>
               <p className={styles.separator}> | </p>
-              <p className={styles.legalLink}> Terms of Service </p>
+              <p className={styles.legalLink}> {t('footer.termsOfService', 'Terms of Service')} </p>
             </div>
           </div>
         </div>

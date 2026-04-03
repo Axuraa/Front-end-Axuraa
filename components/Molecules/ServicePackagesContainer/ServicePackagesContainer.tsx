@@ -14,9 +14,11 @@ interface ServicePackage {
 
 interface ServicePackagesContainerProps {
   packages: ServicePackage[];
+  buttonText?: string;
+  mostPopularText?: string;
 }
 
-const ServicePackagesContainer: React.FC<ServicePackagesContainerProps> = ({ packages }) => {
+const ServicePackagesContainer: React.FC<ServicePackagesContainerProps> = ({ packages, buttonText, mostPopularText }) => {
   return (
     <div className={styles.container}>
       {packages.map((pkg, index) => (
@@ -30,7 +32,8 @@ const ServicePackagesContainer: React.FC<ServicePackagesContainerProps> = ({ pac
           hasShadow={pkg.hasShadow || false}
           showPopularBadge={pkg.isPopular || false}
           hasButtonBackground={pkg.hasButtonBackground !== false}
-          buttonText="Get Started"
+          buttonText={buttonText || "Get Started"}
+          mostPopularText={mostPopularText}
         />
       ))}
     </div>
