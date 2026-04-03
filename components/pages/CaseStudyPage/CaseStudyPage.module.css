@@ -985,22 +985,10 @@
   }
 
   .title {
-<<<<<<< HEAD
-
-    margin: 12px auto;
-
-    font-size: 36px;
-
-    text-align: center;
-
-    /* background-color: #6B7280; */
-
-=======
     width: 100%;
     font-size: 32px;
     text-align: left;
     margin-bottom: 12px;
->>>>>>> Launguages
   }
 
   .subtitle {
