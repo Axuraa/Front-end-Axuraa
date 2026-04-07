@@ -61,7 +61,7 @@ const MainSection = () => {
         <div className={styles.mainSection}>
             <div className={styles.heroWrapper}>
                 <HeroSection
-                    badgeText={t('hero.badge', "WHO WE ARE")}
+                    statusBadgeText={t('hero.badge', "WHO WE ARE")}
                     title1={t('hero.title1', "Architecting the Future of")}
                     title2={t('hero.title2', "Digital Business")}
                     subtitle1={t('hero.subtitle', "At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies.")}

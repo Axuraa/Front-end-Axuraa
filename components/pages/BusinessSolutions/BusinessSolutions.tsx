@@ -50,6 +50,7 @@ const BusinessSolutions = () => {
   return (
     <div className={styles.BusinessPage}>
       <HeroSection 
+              statusBadgeText={t('hero.statusBadge', 'WHO WE ARE')}
               title1={t('hero.title1', 'Architecting Future of')}
               title2={t('hero.title2', 'Digital Business.')}
               subtitle1={t('hero.subtitle1', "At Axuraa, we don't just write code. We build digital infrastructure that powers world's most ambitious companies.")}

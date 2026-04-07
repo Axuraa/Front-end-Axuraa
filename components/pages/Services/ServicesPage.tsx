@@ -44,6 +44,7 @@ const ServicesPage: React.FC = () => {
   return (
     <div className={styles.servicesPage}>
       <HeroSection
+        statusBadgeText={t('hero.statusBadge', 'WHO WE ARE')}
         title1={t('hero.title1', 'Architecting the Future of')}
         title2={t('hero.title2', 'Digital Business.')}
         subtitle1={t('hero.subtitle1', "At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies.")}

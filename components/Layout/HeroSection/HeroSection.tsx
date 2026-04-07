@@ -17,6 +17,7 @@ interface HeroSectionProps {
   subtitle1?: string;
   subtitle2?: string;
   badgeText?: string;
+  statusBadgeText?: string;
   primaryButtonText?: string;
   secondaryButtonText?: string;
   primaryHref?: string;
@@ -74,6 +75,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   subtitle1 = "We transform complex business challenges into streamlined digital experiences.",
   subtitle2 = "TRUSTED BY FORWARD-THINKING COMPANIES",
   badgeText = "AVAILABLE FOR NEW PROJECTS",
+  statusBadgeText = "WHO WE ARE",
   primaryButtonText = "Start a Project",
   secondaryButtonText = "View Our Work",
   primaryHref = "#contact-section",
@@ -209,7 +211,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             className={mounted ? styles.fadeInUp : ""}
           >
             {showBadge && <Badge text={badgeText} show={true} />}
-            {showStatusBadge && <StatusBadge text="WHO WE ARE" />}
+            {showStatusBadge && <StatusBadge text={statusBadgeText} />}
           </div>
 
           {/* Title */}
