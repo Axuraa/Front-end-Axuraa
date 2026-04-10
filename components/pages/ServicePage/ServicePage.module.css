@@ -115,18 +115,13 @@
 
 .contentSection2Description {
   width: 548px;
-
   color: #e6e6e6;
-
   font-family: Roboto;
-
   font-size: 14px;
-
   font-style: normal;
-
   font-weight: 400;
-
-  line-height: 20px; /* 142.857% */
+  line-height: 20px;
+  padding-bottom: 5px;
 }
 
 .serviceList {
@@ -521,7 +516,7 @@
 
   justify-content: center;
 
-  margin-top: 40px;
+  margin-top: 100px;
 }
 
 .testimonialContent {
@@ -1879,6 +1874,7 @@
   .testimonialSection {
     margin: 0 auto;
 
+    margin-top: 50px;
     width: 343px;
 
     height: 222.9916px;
@@ -2426,6 +2422,7 @@
   .testimonialSection {
     margin: 0 auto;
 
+    margin-top: 50px;
     width: 343px;
 
     height: 222.9916px;

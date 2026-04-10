@@ -153,7 +153,7 @@ const PortfolioPage = () => {
         title2={t('hero.title2', 'Digital Business.')}
         subtitle1={t('hero.subtitle1', "At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies.")}
         badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
-        primaryButtonText={t('hero.cta', 'Start a Project')}
+        primaryButtonText={t('hero.cta', locale === 'ar' ? 'ابدأ مشروعاً' : 'Start a Project')}
         showBackgroundDots={false}
         showAnimatedCircles={true}
         showBadge={false}

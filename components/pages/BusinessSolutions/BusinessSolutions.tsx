@@ -55,6 +55,7 @@ const BusinessSolutions = () => {
               title2={t('hero.title2', 'Digital Business.')}
               subtitle1={t('hero.subtitle1', "At Axuraa, we don't just write code. We build digital infrastructure that powers world's most ambitious companies.")}
               badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
+              primaryButtonText={t('hero.cta', locale === 'ar' ? 'ابدأ مشروعاً' : 'Start a Project')}
               showBackgroundDots={false}
               showAnimatedCircles={true}
               showEllipseDecorations={true}

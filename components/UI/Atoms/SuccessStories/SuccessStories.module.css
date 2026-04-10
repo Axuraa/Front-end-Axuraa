@@ -99,32 +99,36 @@
 }
 
 .metricLabel {
-  /* width: 120px;
-    height: 12px;
-    background: green; */
   color: #999;
   font-family: Roboto;
   font-size: 16.057px;
   font-style: normal;
   font-weight: 400;
-  line-height: 11.24px;
-  /* 70% */
+  line-height: 1.4; /* Improved line-height */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex: 1; /* Allow label to take available space */
 }
 
 .metricValue {
-  /* background: red; */
-  width: 30px;
-  height: 12px;
+  width: auto; /* Removed fixed width */
+  min-width: fit-content;
   color: var(--Primary, #d04a1d);
   font-family: Roboto;
   font-size: 16.057px;
   font-style: normal;
   font-weight: 400;
-  line-height: 11.24px;
-  /* 70% */
+  line-height: 1.4; /* Improved line-height to prevent clipping */
+  padding-left: 1rem; /* Padding for LTR */
+  text-align: right;
+}
+
+/* RTL Specific padding */
+:global([dir="rtl"]) .metricValue {
+  padding-left: 0;
+  padding-right: 1rem;
+  text-align: left;
 }
 
 /* Responsive adjustments */
@@ -208,21 +212,22 @@
   }
 
   .metricValue {
-    /* font-size: 14px;
-        min-width: auto;
-        margin-left: auto;
-        margin-right: 15px; */
-    /* background-color: antiquewhite; */
-    /* margin: auto auto; */
     color: var(--Primary, #d04a1d);
     font-family: Roboto;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
-    line-height: 11.24px;
-    /* background-color: black; */
-    width: 20%;
-    /* 70% */
+    line-height: 1.4;
+    width: auto;
+    min-width: 25%; /* Ensure enough space on tablet */
+    padding-left: 10px;
+    text-align: right;
+  }
+
+  :global([dir="rtl"]) .metricValue {
+    padding-left: 0;
+    padding-right: 10px;
+    text-align: left;
   }
 }
 

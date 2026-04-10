@@ -155,7 +155,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
               title2={t('hero.title2', 'Intelligent Solutions.')}
               subtitle1={service.description?.[locale as 'en' | 'ar'] || service.description?.en || t('heroDescription')}
               badgeText={t('hero.badgeText', 'INNOVATION IN PROGRESS')}
-              primaryButtonText={t('hero.cta', 'Start a Project')}
+              primaryButtonText={t('hero.cta', locale === 'ar' ? 'ابدأ مشروعاً' : 'Start a Project')}
               showBackgroundDots={false}
               showAnimatedCircles={true}
               showBadge={false}
