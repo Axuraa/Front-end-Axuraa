@@ -7,13 +7,13 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;  
-  /* border-radius: 0 0 68.087px 0; */
-   border-radius: var(--card-border-radius, 0 0 68.087px 0);
-  background: #222429;
-  box-shadow: 2.27px 1.816px 22.696px 0 rgba(0, 0, 0, 0.50);
+  border-radius: var(--card-border-radius, 0 0 68.087px 0);
+  background: #22252f;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
-  overflow: hidden; /* This will clip any content that overflows the card */
+  overflow: hidden;
 }
 
 .card:hover {
@@ -175,40 +175,45 @@
 
 /* Link styles */
 .link {
-  /* background-color: aquamarine; */
-  width: 50%;
-  margin-left: -50%;
-  height: 30px;
+  width: auto;
+  margin-right: auto;
+  margin-left: 0;
+  height: auto;
   margin-top: 20px;
-  color: #999;
+  color: var(--Primary, #D04A1D);
   font-family: 'Roboto', sans-serif;
   font-size: 15.887px;
   font-style: normal;
+  font-weight: 700;
   line-height: normal;
   letter-spacing: -0.385px;
   text-decoration: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-  font-style: normal;
-  font-weight: 400;
-  display: block;
-   transition: opacity 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
   opacity: 0;
-  /* transform: translateY(10px); */
- 
+  transform: translateY(5px);
 }
 
- .card:hover .link {
+.arrowIcon {
+  transition: transform 0.2s ease;
+}
+
+.card:hover .link {
   opacity: 1;
-  /* transform: translateY(0); */
+  transform: translateY(0);
 }
 
-/* .link:hover {
-  color: #fff;
-  text-decoration: underline;
-}  */
+.link:hover {
+  color: #ff6b35;
+}
+
+.link:hover .arrowIcon {
+  transform: translateX(4px);
+}
 
 /* ===== Mobile Responsive Styles ===== */
 @media (max-width: 768px) {
@@ -243,28 +248,38 @@
   }
 
   .title {
-    width: 79px;
-    height: 15px;
+    width: 100%;
     color: #FFF;
     font-family: Roboto;
-    font-size: 12.835px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     letter-spacing: -0.128px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    text-align: center;
   }
 
   .description {
-    width: 145.7461px;
-    height: 36px;
-   align-self: stretch;
-   color: #FFF;
+    width: 100%;
+    height: auto;
+    max-height: 40px;
+    align-self: stretch;
+    color: #FFF;
     font-family: Roboto;
-    font-size: 9.983px;
+    font-size: 10px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
+    line-height: 1.2;
     letter-spacing: -0.1px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .link {

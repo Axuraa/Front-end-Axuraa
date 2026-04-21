@@ -125,6 +125,7 @@ text-underline-position: from-font;
   border-radius: 12px;
   overflow: hidden;
   height: auto;
+  margin: 0 auto;
 }
 .imageContainer {
   width: 100%;
@@ -203,7 +204,7 @@ text-underline-position: from-font;
 .readMore {
   color: var(--Primary, #d04a1d);
   text-align: right;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   text-decoration-line: underline;
   text-decoration-style: solid;
@@ -268,6 +269,7 @@ text-underline-position: from-font;
     height: auto;
     display: flex; /* Use flex to make content stretch */
     flex-direction: column; /* Stack children vertically */
+    margin: 0 auto;
   }
 
   .content {
@@ -285,14 +287,22 @@ text-underline-position: from-font;
   .title {
     font-size: 16.776px;
     line-height: 22.368px;
-    margin: 0 0 8px; /* Add some spacing below title */
+    margin: 0 0 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .badge {
     padding: 4.66px 9.32px;
-    font-size: 13.048px;
-    line-height: 18.64px;
-    margin-bottom: 8px; /* Add some spacing below badge */
+    font-size: 12px; /* Slightly smaller for mobile to fit better */
+    line-height: normal;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90%; /* Ensure it doesn't break the card layout */
   }
 
   .percentage {
@@ -303,10 +313,12 @@ text-underline-position: from-font;
 
   .description {
     font-size: 13.018px;
-    line-height: 18.64px;
-    /* margin: 0 0 12px; Add some spacing below description */
-    flex: 1; /* Allow description to grow and push read more to bottom */
-    /* min-height: 40px; Set a minimum height for the description */
+    line-height: normal;
+    margin: 0;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .readMore {

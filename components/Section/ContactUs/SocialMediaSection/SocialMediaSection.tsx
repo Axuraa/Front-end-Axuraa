@@ -1,13 +1,21 @@
 'use client';
 
 import React from 'react';
-import Typography from '@/components/UI/Atoms/Typography/Typography';
-import SocialMediaCard from '@/components/UI/Muscles/SocilaCard/SocialMediaCard';
+import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 import styles from './SocialMediaSection.module.css';
-import { SocialMediaSectionProps } from '@/types/Generals/socialTypes';
+import SocialMediaCard from '@/components/UI/Muscles/SocilaCard/SocialMediaCard';
+
+interface SocialMediaSectionProps {
+  title1?: string;
+  title2?: string;
+  subtitle?: string;
+  platforms?: any[];
+  className?: string;
+}
 
 const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({
-  title = 'Follow us on social media',
+  title1 = 'Follow us on',
+  title2 = 'social media',
   subtitle = 'Stay up to date with our latest news and projects',
   platforms = [],
   className = '',
@@ -16,24 +24,13 @@ const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({
     <section className={`${styles.section} ${className}`}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <Typography 
-            variant="h4"
-            component="h4"
-            className={styles.title}
-            >
-           <span>
-               {title}
-            </span>
-          </Typography>
-          
-          <Typography 
-            variant="body1" 
-            component="p" 
-            className={styles.subtitle}
-            align="center"
-          >
-            {subtitle}
-          </Typography>
+          <SectionHeader
+            title1={title1}
+            title2={title2}
+            subtitle={subtitle}
+            titleColor="#FFFFFF"
+            textAlign="center"
+          />
         </div>
 
         <div className={styles.cardsGrid}>

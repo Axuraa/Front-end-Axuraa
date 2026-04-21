@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: flex-start; /* Changed from center to flex-start */
     background: #191B1F;
-    padding: 2rem 1rem; /* Added padding for mobile */
+    /* padding: 2rem 1rem;  */
 }
 
 .BusinessContainer {

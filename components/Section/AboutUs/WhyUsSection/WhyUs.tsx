@@ -39,12 +39,9 @@ const WhyUs: React.FC = () => {
         <div className={styles.header}>
           <StatusBadge text="AXURAA" className={styles.badge} />
           <SectionHeader
-            // title1="Why"
-            // title2="Axuraa?"
-            // title1="Our"
-            title2="WhyAxuraa?"
-            subtitle=" Our culture is built on principles that ensure we deliver not just
-            code, but tangible business value."
+            title1="Why"
+            title2="Axuraa?"
+            subtitle="Our culture is built on principles that ensure we deliver not just code, but tangible business value."
           />
         </div>
 

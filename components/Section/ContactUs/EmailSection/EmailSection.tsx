@@ -1,7 +1,7 @@
 // components/EmailSection/EmailSection.tsx
 import React from 'react';
+import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
 import EmailCard from '@/components/UI/Muscles/EmailCard/EmailCard';
-import Typography from '@/components/UI/Atoms/Typography/Typography';
 import styles from './EmailSection.module.css';
 
 interface ContactData {
@@ -12,14 +12,16 @@ interface ContactData {
 }
 
 interface EmailSectionProps {
-  title?: string;
+  title1?: string;
+  title2?: string;
   subtitle?: string;
   contacts: ContactData[];
   className?: string;
 }
 
 const EmailSection: React.FC<EmailSectionProps> = ({
-  title = 'Contact via email',
+  title1 = 'Contact via',
+  title2 = 'email',
   subtitle = 'Choose the appropriate section for your inquiry',
   contacts,
   className = '',
@@ -27,23 +29,13 @@ const EmailSection: React.FC<EmailSectionProps> = ({
   return (
     <section className={`${styles.emailSection} ${className}`}>
       <div className={styles.header}>
-        <Typography
-          variant="h3"
-          component="h3"
-           className={styles.title}
-        >
-          <span>
-               {title}
-            </span>
-        </Typography>
-        <Typography
-          variant="body1"
-          className={styles.subtitle}
-          color="#a0a0a0"
-          align="center"
-        >
-          {subtitle}
-        </Typography>
+        <SectionHeader
+          title1={title1}
+          title2={title2}
+          subtitle={subtitle}
+          titleColor="#FFFFFF"
+          textAlign="center"
+        />
       </div>
 
       <div className={styles.cardsGrid}>

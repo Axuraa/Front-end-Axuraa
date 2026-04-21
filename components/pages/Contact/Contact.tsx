@@ -180,17 +180,17 @@ const Contact = () => {
   return (
     <div id="contact-section" className={styles.container}>
       <HeroSection
-        badgeText="WHO WE ARE"
-        title1="Architecting the Future of"
-        title2="Digital Business"
-        subtitle1="At Axuraa, we don't just write code. We build the digital infrastructure that powers the world's most ambitious companies."
+        badgeText="CONTACT US"
+        title1="Let's build something"
+        title2="extraordinary."
+        subtitle1="Have a project in mind? We'd love to hear about it. Fill out the form or reach out directly."
         subtitle2=""
         backgroundType="Circle"
         showTrustedSection={false}
         showPrimaryButton={false}
         showSecondaryButton={false}
         showBadge={false}
-        height="80vh"
+        height="70vh"
       />
       {loading ? (
         <div className={styles.sectionLoading}>
@@ -199,18 +199,23 @@ const Contact = () => {
         </div>
       ) : (
         <>
-          <SocialMediaSection platforms={socialPlatforms} />
+          <SocialMediaSection 
+            title1="Follow us on"
+            title2="social media"
+            platforms={socialPlatforms} 
+          />
           <EmailSection
-            title={contactData?.title || "Contact via email"}
+            title1="Contact via"
+            title2="email"
             subtitle="Choose the appropriate section for your inquiry"
             contacts={contactsData}
           />
           <ContactSection
-            badgeText="Our Team"
+            badgeText="GET IN TOUCH"
             title1="How we help "
             title2="Businesses Grow?"
             subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
-            showLinks={false}
+            showLinks={true}
           />
         </>
       )}

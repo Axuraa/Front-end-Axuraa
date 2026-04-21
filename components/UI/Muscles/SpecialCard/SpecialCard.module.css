@@ -139,6 +139,7 @@
   border: var(--stroke-weight-1, 0.0712rem) solid rgba(255, 255, 255, 0.20);
   background: rgba(144, 37, 1, 0.50);
   backdrop-filter: blur(0.1424rem);
+  color: #ffffff; /* Ensure text is white */
 }
 
 .secondaryButton:hover {

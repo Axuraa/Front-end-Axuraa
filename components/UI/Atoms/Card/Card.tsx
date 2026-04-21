@@ -10,6 +10,7 @@
  */
 
 import React, { useState } from 'react';
+import { FiArrowRight } from 'react-icons/fi';
 import styles from './Card.module.css';
 
 import { CardProps } from '@/types/Generals/cardTypes';
@@ -68,15 +69,15 @@ const Card: React.FC<CardProps> = ({
          <p className={styles.description}>{description}</p>
 
         {/* Optional link that appears on hover */}
-        {/* {link && (
+        {link && (
           <a 
             href="#" 
-            className={`${styles.link} ${isHovered ? styles.visible : ''}`}
+            className={styles.link}
             aria-label={`Learn more about ${title}`}
           >
-            {link}
+            {link} <FiArrowRight className={styles.arrowIcon} />
           </a>
-        )} */}
+        )}
       </div>
     </div>
   );

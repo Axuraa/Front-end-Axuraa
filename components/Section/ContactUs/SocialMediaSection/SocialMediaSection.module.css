@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  padding: 5rem 1.25rem; /* 80px 20px */
+  padding: 3rem 1.25rem; 
 }
 
 .container {
@@ -9,7 +9,7 @@
 }
 
 .header {
-  margin-bottom: 3.75rem; /* 60px / 16 = 3.75rem */
+  margin-bottom: 2.5rem; 
 }
 
 .title {
@@ -100,7 +100,13 @@
   }
   
   .cardsGrid {
-    gap: 1%;
-    grid-auto-columns: minmax(2.5rem, 1fr); /* 40px / 16 = 2.5rem */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 icons in a row */
+    grid-auto-flow: row;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 22rem; /* Ensure it stays centered and doesn't stretch too wide */
+    margin: 0 auto;
+    overflow: visible;
   }
 }
