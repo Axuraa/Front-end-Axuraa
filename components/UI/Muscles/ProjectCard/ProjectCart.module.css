@@ -203,10 +203,32 @@ text-underline-position: from-font;
 .readMore {
   color: var(--Primary, #d04a1d);
   text-align: right;
+  font-family: 'Roboto', sans-serif;
   font-size: 0.9rem;
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
   margin-top: 0.5rem;
   align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s ease;
+}
+
+.readMore:hover {
+  color: #ff6b35;
+}
+
+.arrowIcon {
+  transition: transform 0.2s ease;
+}
+
+.readMore:hover .arrowIcon {
+  transform: translateX(4px);
 }
 /* Tablet and Desktop (1024px and up) */
 @media (width: 1024px) {
