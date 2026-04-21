@@ -1,6 +1,6 @@
 .ProjectSection {
   width: 1200px;
-  height:850px;
+  height: 850px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,7 +52,7 @@
 
   .ProjectGrid {
     margin: 0 auto;
-    width: 90%;
+    width: 75%;
     height: auto;
     /* background-color: brown; */
     column-gap: 18px;
@@ -74,7 +74,7 @@
 
   .ProjectGrid {
     height: auto;
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
     /* background-color: #16e621; */
     flex-direction: row;
