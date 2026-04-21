@@ -145,25 +145,30 @@
     width: 100%;
     max-width: 37.5rem; /* 600px / 16 = 37.5rem */
     display: grid;
+    /* height: 100%; */
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 0.625rem; /* 10px / 16 = 0.625rem */
-    padding: 0.625rem 1.25rem; /* 10px 20px */
-    margin-top: -0.01%;
+    padding: 0rem 1.25rem; /* 10px 20px */
+    /* margin-top: 1rem; */
+    margin:auto;
+    /* background-color: blue; */
   }
 
   .card {
     width: 100%;
     height: auto;
-    max-height: 8.75rem; /* 140px / 16 = 8.75rem */
-    gap: 0.9375rem; /* 15px / 16 = 0.9375rem */
+    min-height: 160px; 
+    gap: 1rem; 
+    /* background-color: red; */
   }
 
   .iconBox {
-    width: 5.625rem; /* 90px / 16 = 5.625rem */
-    height: 5.625rem;
-    padding: 1.875rem; /* 30px / 16 = 1.875rem */
-    border-radius: 0.875rem; /* 14px / 16 = 0.875rem */
+    width: 5rem; 
+    height: 5rem;
+    padding: 0.5rem; 
+    border-radius: 0.875rem; 
+    /* background-color: green; */
   }
 
   .icon {
@@ -174,7 +179,7 @@
   .number {
     width: 100%;
     height: auto;
-    font-size: 2.375rem; /* 38px / 16 = 2.375rem */
+    font-size: 2rem; /* 38px / 16 = 2.375rem */
     line-height: 2.875rem; /* 46px / 16 = 2.875rem */
   }
 
