@@ -4,7 +4,8 @@
   align-items: center;
   width: 100%;
   height: auto;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.4rem;
+  /* background-color: #d04a1d; */
 }
 
 .badge {
@@ -22,6 +23,7 @@
   background: var(--color-white-5, rgba(255, 255, 255, 0.05));
   backdrop-filter: blur(2px);
   transition: all 0.3s ease;
+  /* background-color: #d04a1d; */
 }
 
 .badgeContent {
