@@ -69,7 +69,7 @@ const Card: React.FC<CardProps> = ({
          <p className={styles.description}>{description}</p>
 
         {/* Optional link that appears on hover */}
-        {link && (
+        {/* {link && (
           <a 
             href="#" 
             className={styles.link}
@@ -77,7 +77,7 @@ const Card: React.FC<CardProps> = ({
           >
             {link} <FiArrowRight className={styles.arrowIcon} />
           </a>
-        )}
+        )} */}
       </div>
     </div>
   );
