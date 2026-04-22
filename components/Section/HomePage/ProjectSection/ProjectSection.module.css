@@ -74,12 +74,12 @@
 
   .ProjectGrid {
     height: auto;
-    width: 70%;
+    width: 61%;
     margin: 0 auto;
     /* background-color: #16e621; */
     flex-direction: row;
     align-items: center;
-    gap: 16px;
+    gap: 5px;
   }
 }
 
