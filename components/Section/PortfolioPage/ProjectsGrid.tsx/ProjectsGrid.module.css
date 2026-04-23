@@ -59,7 +59,8 @@
 .gridItem {
   transition: transform 0.2s;
   /* background-color: yellow; */
-  
+  height: 100%;
+  display: flex;
 }
 
 .gridItem:hover {
@@ -99,8 +100,12 @@
   .projectsGrid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 800px;
-    padding: 0 1rem;
-    gap: 1rem;
+    /* padding: 0 1rem; */
+    /* gap: 1rem; */
+    /* background-color: yellow; */
+    justify-content: center;
+    align-content: center;
+    /* justify-items: center; */
   }
 }
 
@@ -110,11 +115,13 @@
     grid-template-columns: 1fr;
     gap: 1.25rem;
     padding: 0 0.75rem;
-    /* margin: 0 auto; */
+    margin: 0 auto;
+    
   }
 
   .projectsGridContainer {
     padding: 0.5rem 0;
+    /* background-color: brown; */
   }
 }
 
