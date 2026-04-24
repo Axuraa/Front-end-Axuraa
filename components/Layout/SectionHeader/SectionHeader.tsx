@@ -9,14 +9,13 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   subtitle,
   className = '',
   textAlign = 'center',
-  titleColor,
   titleLayout = 'row',
 }) => {
   return (
     <div 
       className={`${styles.header} ${className}`}
       style={{ 
-        textAlign: textAlign as any,
+        textAlign: textAlign,
         alignItems: textAlign === 'left' ? 'flex-start' : textAlign === 'right' ? 'flex-end' : 'center'
       }}
     >

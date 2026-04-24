@@ -79,14 +79,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   primaryHref = "#contact-section",
   secondaryHref = "/en/portfolio",
   height = "100vh",
-  showBackgroundDots = true,
   showAnimatedCircles = true,
   showBadge = true,
   showStatusBadge = true,
   showTrustedSection = true,
   showPrimaryButton = true,
   showSecondaryButton = true,
-  showEllipseDecorations = true,
   onPrimaryClick,
   onSecondaryClick,
   backgroundType = "Hexagon",
@@ -95,7 +93,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [mounted, setMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [partners, setPartners] = useState<PartnerItem[]>([]);
-  const [partnersLoading, setPartnersLoading] = useState(true);
 
   useEffect(() => {
     setMounted(true);
@@ -144,7 +141,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         setPartners(fallbackPartners);
         setCachedPartners(fallbackPartners);
       } finally {
-        setPartnersLoading(false);
+        // Partners loaded
       }
     };
 

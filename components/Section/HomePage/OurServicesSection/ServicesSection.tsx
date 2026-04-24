@@ -98,6 +98,7 @@ const ServicesSection = () => {
             title1="How we help"
             title2="Businesses Grow?"
             subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+            titleLayout="column"
         />
         {/* <div className={styles.header}>
           <h2 className={styles.title1}>How we help </h2>

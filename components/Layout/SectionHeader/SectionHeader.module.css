@@ -36,10 +36,7 @@
   display: inline-block;
 }
 .titlePart {
-  display: inline;
-  margin-right: 0.5rem;
-}
-.titlePart:last-child {
+  display: block;
   margin-right: 0;
 }
 /* Removed title1 and title2 in favor of unifiedTitle */
