@@ -125,11 +125,14 @@
   color: #F3F4F6;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .step_container:hover .step_title {
-  color: #F97316;
+  background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .step_description {

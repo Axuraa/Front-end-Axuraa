@@ -221,21 +221,31 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               align="center"
               style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
+                justifyContent: "center",
                 alignItems: "center",
-                gap: "0.5rem",
+                gap: "0.75rem",
+                flexWrap: "wrap",
               }}
             >
-              <span style={{ color: "#FFFFFF" }}>
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%)",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  display: "inline-block",
+                }}
+              >
                 {title1}
               </span>
               <span
                 style={{
-                  background: "linear-gradient(90deg, #D04A1D 0%, #902501 100%)",
+                  background: "linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%)",
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  display: "block",
+                  display: "inline-block",
                 }}
               >
                 {title2}

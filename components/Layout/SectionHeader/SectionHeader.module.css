@@ -7,52 +7,42 @@
   height: fit-content;
 
   /* width: 1120px; */
-  gap: 8px;
+  gap: 6px;
   /* align-self: stretch; */
   /* margin-top: -30px; */
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .titleGroup {
   display: flex;
-  flex-direction: column;
-  align-items: inherit;
+  flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
-  column-gap: 1.5rem;
+  column-gap: 0.5rem;
   row-gap: 0;
-  justify-content: inherit;
+  justify-content: center;
 }
-.title1 {
-  width: auto;
+.unifiedTitle {
   margin: 0;
-  /* background: #000; */
-  color: var(--white, #fff);
-  text-align: inherit;
+  background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: Roboto;
   font-size: var(--font-size-72, 72px);
   font-style: normal;
   font-weight: 900;
   line-height: 1.2;
   letter-spacing: var(--letter-spacing--1_8, -1.8px);
+  display: inline-block;
 }
-.title2 {
-  display: flex;
-  width: auto;
-  margin: 0;
-  flex-direction: column;
-  justify-content: center;
-  flex-shrink: 0;
-  text-align: inherit;
-  font-family: Roboto;
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 900;
-  line-height: 1.2;
-  letter-spacing: -1.8px;
-  background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.titlePart {
+  display: inline;
+  margin-right: 0.5rem;
 }
+.titlePart:last-child {
+  margin-right: 0;
+}
+/* Removed title1 and title2 in favor of unifiedTitle */
 .subtitle {
   /* background: green; */
   width: 100%;
@@ -84,36 +74,10 @@
     align-self: center;
     /* background-color: #D04A1D; */
   }
-  .title1 {
-    width: auto;
-    height: auto;
-    color: var(--white, #fff);
-    text-align: center;
-    font-family: Roboto;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 39.138px; /* 130.46% */
-    letter-spacing: -0.978px;
-  }
-  .title2 {
-    display: flex;
-    width: auto;
-    height: auto;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-family: Roboto;
+  .unifiedTitle {
     font-size: 32px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
     letter-spacing: -0.978px;
-    background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin: 0;
+    text-align: center;
   }
   .subtitle {
     width: 100%;
@@ -128,15 +92,9 @@
 }
 /* Tablet Styles */
 @media (min-width: 769px) and (max-width: 1024px) {
-  .title1 {
-    font-size: 48px;
-    line-height: 56px;
-  }
-  .title2 {
+  .unifiedTitle {
     font-size: 48px;
     line-height: 1.2;
-    height: auto;
-    padding: 0 24px;
   }
   .subtitle {
     font-size: 14px;
@@ -148,18 +106,10 @@
 }
 /* Desktop Styles */
 @media (min-width: 1025px) {
-  .title1 {
+  .unifiedTitle {
     font-size: 72px;
     line-height: 72px;
     letter-spacing: -1.8px;
-  }
-  .title2 {
-    width: auto;
-    height: auto;
-    font-size: 72px;
-    line-height: 72px;
-    letter-spacing: -1.8px;
-    padding: 0;
   }
   .subtitle {
     font-size: 14px;

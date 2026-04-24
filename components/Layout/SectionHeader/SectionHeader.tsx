@@ -10,7 +10,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   className = '',
   textAlign = 'center',
   titleColor,
-  titleLayout = 'column',
+  titleLayout = 'row',
 }) => {
   return (
     <div 
@@ -21,20 +21,17 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       }}
     >
       {(title1 || title2) && (
-        <div 
-          className={styles.titleGroup}
-          style={{ flexDirection: titleLayout }}
-        >
-          {title1 && (
-            <h1 className={styles.title1} style={{ color: titleColor }}>
-              {title1}
-            </h1>
-          )}
-          {title2 && (
-            <h2 className={styles.title2}>
-              {title2}
-            </h2>
-          )}
+        <div className={styles.titleGroup}>
+          <h2 
+            className={styles.unifiedTitle} 
+            style={{ 
+              flexDirection: titleLayout,
+              display: titleLayout === 'row' ? 'inline-block' : 'flex'
+            }}
+          >
+            {title1 && <span className={styles.titlePart}>{title1}</span>}
+            {title2 && <span className={styles.titlePart}>{title2}</span>}
+          </h2>
         </div>
       )}
       {subtitle && <p className={styles.subtitle}>{subtitle}</p>}

@@ -1,5 +1,5 @@
 .servicesSection {
- width: 1200px;
+    width: 1200px;
     height: 39.7rem;           /* 635px ≈ 39.6875 */
     display: flex;
     flex-direction: column;
