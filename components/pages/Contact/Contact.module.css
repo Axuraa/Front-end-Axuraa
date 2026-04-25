@@ -19,7 +19,6 @@
     min-height: 50vh;
     color: #fff;
     font-size: 18px;
-    font-family: 'Roboto', sans-serif;
 }
 
 .error {
@@ -29,7 +28,6 @@
     min-height: 50vh;
     color: #ff6b6b;
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
     text-align: center;
     padding: 20px;
 }

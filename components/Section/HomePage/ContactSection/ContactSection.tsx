@@ -140,7 +140,6 @@ const ContactSection: React.FC<ContactSectionProps> = ({
               background: "rgba(208, 74, 29, 0.10)",
               backdropFilter: "blur(2.403508424758911px)",
               color: "#D04A1D",
-              fontFamily: "Inter, sans-serif",
               fontSize: "14.421px",
               fontStyle: "normal",
               fontWeight: 700,

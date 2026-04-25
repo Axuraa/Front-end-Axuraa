@@ -38,7 +38,6 @@
     align-self: stretch;
     color: #FFF;
     text-align: center;
-    font-family: Roboto;
     font-size: 13.2px;
     font-style: normal;
     font-weight: 600;
@@ -48,7 +47,6 @@
 .description {
     color: #FFF;
     text-align: center;
-    font-family: Roboto;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -128,7 +126,6 @@
         /* height: 17px; */
         color: #FFF;
         text-align: center;
-        font-family: Roboto;
         font-size: 13.2px;
         font-style: normal;
         font-weight: 600;
@@ -143,7 +140,6 @@
         text-align: center;
         align-self: stretch;
         /* Regular 14 */
-        font-family: Roboto;
         font-size: 14px;
         font-style: normal;
         font-weight: 400;

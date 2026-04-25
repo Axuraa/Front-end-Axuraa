@@ -22,7 +22,6 @@
     /* height: 25px; */
     /* background-color: rgb(245, 146, 17); */
     color: #D9D9D9;
-    font-family: Roboto;
     font-size: 19.833px;
     font-style: normal;
     font-weight: 600;
@@ -36,7 +35,6 @@
     /* background-color: rgba(238, 139, 9, 0.945); */
   align-self: stretch;
   color: #D9D9D9;
-  font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -60,7 +58,6 @@
   align-items: center;
   gap: 8px;
   color: #D9D9D9;
-  font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -87,7 +84,6 @@
   transition: all 0.3s ease;
   background: #D04A1D;
   color: #D9D9D9;
-  font-family: Roboto;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
@@ -129,7 +125,6 @@
   align-items: center;
   background: #D04A1D;
   color: #D9D9D9;
-  font-family: Roboto;
   font-size: 12px;
   font-style: normal;
   font-weight: 600;
@@ -173,7 +168,6 @@
   align-items: center;
   background: #D04A1D;
   color: #D9D9D9;
-  font-family: Roboto;
   font-size: 9px;
   font-style: normal;
   font-weight: 600;

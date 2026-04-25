@@ -57,7 +57,6 @@
   align-self: stretch;
   color: #FFFFFF;
   text-align: center;
-  font-family: Roboto;
   font-size: 3.2291rem; /* 51.665px / 16 = 3.2291rem */
   font-style: normal;
   font-weight: 800;
@@ -68,7 +67,6 @@
   width: 16.5rem; /* 264px / 16 = 16.5rem */
   height: 2.75rem; /* 44px / 16 = 2.75rem */
   color: #7E7E7E;
-  font-family: Roboto, sans-serif;
   font-size: 1.4961rem; /* 23.937px / 16 = 1.4961rem */
   font-style: normal;
   font-weight: 400;

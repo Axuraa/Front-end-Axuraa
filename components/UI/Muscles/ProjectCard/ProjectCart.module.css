@@ -36,7 +36,6 @@
     height: 24px;
 align-self: stretch;
 color: #FFF;
-font-family: Roboto;
 font-size: 17.461px;
 font-style: normal;
 font-weight: 700;
@@ -72,7 +71,6 @@ letter-spacing: -0.175px;
     height: 33px;
     color: var(--Primary, #D04A1D);
     text-shadow: 0 4.158px 20.79px #902501;
-    font-family: Roboto;
     font-size: 27.161px;
     font-style: normal;
     font-weight: 800;
@@ -85,7 +83,6 @@ letter-spacing: -0.175px;
     height: 39px;
     flex: 1 0 0;
     color: #FFF;
-    font-family: Roboto;
     font-size: 13.549px;
     font-style: normal;
     font-weight: 400;
@@ -99,7 +96,6 @@ height: 20px;
 align-self: stretch;
 color: var(--Primary, #D04A1D);
 text-align: right;
-font-family: Roboto;
 font-size: 13.58px;
 font-style: normal;
 font-weight: 400;
@@ -154,7 +150,6 @@ text-underline-position: from-font;
 /* Keep the rest of your styles but remove fixed heights */
 .title {
   color: #fff;
-  font-family: Roboto;
   font-size: 17.461px;
   font-weight: 700;
   margin: 0;
@@ -206,7 +201,6 @@ text-underline-position: from-font;
 .readMore {
   color: var(--Primary, #d04a1d);
   text-align: right;
-  font-family: "Roboto", sans-serif;
   font-size: 0.9rem;
   text-decoration-line: underline;
   text-decoration-style: solid;

@@ -94,7 +94,6 @@
   width: 100%;
   max-width: 263px;
   color: rgba(255, 255, 255, 0.75);
-  font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -155,7 +154,6 @@
   width: auto;
   color: rgba(255, 255, 255, 0.75); 
   text-decoration: none;
-  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -216,7 +214,6 @@
   width: auto;
   /* background: blue; */
   color: var(--white-75, var(--color-white-75, rgba(255, 255, 255, 0.75)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 22.273px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -230,7 +227,6 @@
   width: auto;
   /* background: #bb1414; */
   color: var(--white-75, var(--color-white-75, rgba(255, 255, 255, 0.75)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 22.273px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -334,7 +330,6 @@
 .legalLink ,.bottomContentTitle {
   background-color: #161920;
   color: var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 26.25px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -349,7 +344,6 @@
 
 .separator {
   color: var(--white-35, var(--color-white-35, rgba(255, 255, 255, 0.35)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 26.25px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -494,7 +488,6 @@
 .legalLink ,.bottomContentTitle {
   background-color: #161920;
   color: var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -509,7 +502,6 @@
 
 .separator {
   color: var(--white-35, var(--color-white-35, rgba(255, 255, 255, 0.35)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -639,7 +631,6 @@
 .legalLink {
   background-color: #161920;
   color: var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -654,7 +645,6 @@
 
 .separator {
   color: var(--white-35, var(--color-white-35, rgba(255, 255, 255, 0.35)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -705,7 +695,6 @@
       height: auto;
       margin: 0 auto;
       /* background-color: red;  */
-      font-family: Roboto;
       font-weight: 400;
       font-style: Regular;
       font-size: 19px;
@@ -766,7 +755,6 @@
 .legalLink ,.bottomContentTitle {
   background-color: #161920;
   color: var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);
@@ -781,7 +769,6 @@
 
 .separator {
   color: var(--white-35, var(--color-white-35, rgba(255, 255, 255, 0.35)));
-  font-family: var(--font-family-Font-1, Roboto), sans-serif;
   font-size: 15px;
   font-style: normal;
   font-weight: var(--font-weight-400, 400);

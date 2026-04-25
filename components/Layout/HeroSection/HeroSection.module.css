@@ -86,7 +86,6 @@
 .badgeContant {
   text-align: start;
   color: var(--color-azure-84, #d1d5db);
-  font-family: var(--font-family-Font-1, Inter);
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;

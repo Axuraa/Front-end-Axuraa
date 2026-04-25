@@ -33,7 +33,6 @@
 
 .title {
   color: var(--Gray-Chateau, #ffffff);
-  font-family: Inter, sans-serif;
   font-size: 1.352rem; /* 21.632px / 16 = 1.352rem */
   font-style: normal;
   font-weight: 400;
@@ -99,7 +98,6 @@
   height: 10rem; /* 160px / 16 = 10rem */
   width: 34.25rem; /* 548px / 16 = 34.25rem */
   text-align: start;
-  font-family: Inter, sans-serif;
   font-size: 3.1678rem; /* 50.684px / 16 = 3.1678rem */
   font-style: normal;
   font-weight: 900;

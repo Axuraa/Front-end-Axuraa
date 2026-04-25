@@ -64,7 +64,6 @@ const socialLinks = [
                 variant="h1"
                 sx={{
                   color: 'var(--white-95, rgba(255, 255, 255, 0.95))',
-                  fontFamily: 'var(--font-family-Font-1, Roboto), sans-serif',
                   fontSize: {
                     xs: '14px',    // Mobile (0px and up)
                     sm: '16px',    // Small devices (600px and up)
@@ -106,7 +105,6 @@ const socialLinks = [
                     variant="h1"
                     color="rgba(255, 255, 255, 0.95)"
                     style={{
-                      fontFamily: 'Roboto, sans-serif',
                       fontSize: '44.007px',
                       fontWeight: 600,
                       lineHeight: '1',
@@ -130,7 +128,6 @@ const socialLinks = [
                   variant="h3"
                   style={{
                     color: 'rgba(255, 255, 255, 0.95)',
-                    fontFamily: 'Roboto',
                     fontSize: '24px',
                     fontStyle: 'normal',
                     fontWeight: 600,
@@ -293,7 +290,6 @@ const socialLinks = [
               variant="body1"
               style={{
                 color: 'var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)))',
-                fontFamily: 'var(--font-family-Font-1, Roboto), sans-serif',
                 fontSize: '26.25px',
                 fontStyle: 'normal',
                 fontWeight: 'var(--font-weight-400, 400)',
@@ -312,7 +308,6 @@ const socialLinks = [
                 className={styles.legalLink}
                 style={{
                   color: 'var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)))',
-                  fontFamily: 'var(--font-family-Font-1, Roboto), sans-serif',
                   fontSize: '26.25px',
                   fontStyle: 'normal',
                   fontWeight: 'var(--font-weight-400, 400)',
@@ -328,7 +323,6 @@ const socialLinks = [
                 className={styles.separator}
                 style={{
                   color: 'var(--white-35, var(--color-white-35, rgba(255, 255, 255, 0.35)))',
-                  fontFamily: 'var(--font-family-Font-1, Roboto), sans-serif',
                   fontSize: '26.25px',
                   fontStyle: 'normal',
                   fontWeight: 'var(--font-weight-400, 400)',
@@ -344,7 +338,6 @@ const socialLinks = [
                 className={styles.legalLink}
                 style={{
                   color: 'var(--white-55, var(--color-white-55, rgba(255, 255, 255, 0.55)))',
-                  fontFamily: 'var(--font-family-Font-1, Roboto), sans-serif',
                   fontSize: '26.25px',
                   fontStyle: 'normal',
                   fontWeight: 'var(--font-weight-400, 400)',

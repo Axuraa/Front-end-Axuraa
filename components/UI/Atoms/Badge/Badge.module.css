@@ -29,7 +29,6 @@
 .badgeContent {
   text-align: center;
   color: var(--color-azure-84, #D1D5DB);
-  font-family: var(--font-family-Font-1, Inter);
   font-size: 12px;
   font-style: normal;
   font-weight: 600;

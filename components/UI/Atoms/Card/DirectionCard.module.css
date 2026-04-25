@@ -96,7 +96,6 @@
 text-align: center;
 
 /* semiBold 25 */
-font-family: Roboto;
 font-size: 24px;
 font-style: normal;
 font-weight: 600;
@@ -110,7 +109,6 @@ line-height: normal;
 color: var(--Pale-Sky, var(--color-grey-46, #6B7280));
 text-align: center;
 /* Inter/Medium */
-font-family: var(--font-family-Font-3, Inter);
 font-size: var(--font-size-14, 14px);
 font-style: normal;
 font-weight: var(--font-weight-500, 500);
@@ -154,7 +152,6 @@ line-height: var(--line-height-20, 20px); /* 142.857% */
     height: 36px;
     color: var(--white, #FFF);
     text-align: center;
-    font-family: Roboto;
     font-size: 14.989px;
     font-style: normal;
     font-weight: 600;
@@ -166,7 +163,6 @@ line-height: var(--line-height-20, 20px); /* 142.857% */
     height: 25px;
     color: var(--Pale-Sky, var(--color-grey-46, #6B7280));
     text-align: center;
-    font-family: var(--font-family-Font-3, Inter);
     font-size: 8.743px;
     font-style: normal;
     font-weight: var(--font-weight-500, 500);
@@ -216,7 +212,6 @@ line-height: var(--line-height-20, 20px); /* 142.857% */
   .title {
     font-size: 18px;
     color: #FFF;
-    font-family: Roboto;
     font-weight: 700;
     letter-spacing: -0.18px;
     text-align: center;

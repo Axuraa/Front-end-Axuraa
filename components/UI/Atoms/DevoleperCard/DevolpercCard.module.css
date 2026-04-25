@@ -24,7 +24,6 @@
   width: 226px;
   height: 100px;
   color: #fff;
-  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -59,7 +58,6 @@
 .authorName {
   width: 155px;
   height: 28px;
-  font-family: Roboto;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -74,7 +72,6 @@
   width: 158px;
   height: 28px;
   color: #fff;
-  font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 200;
@@ -109,7 +106,6 @@
   width: 226px;
   height: 100px;
   color: #fff;
-  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -150,7 +146,6 @@
 .authorName {
   width: 155px;
   height: 28px;
-  font-family: Roboto;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -166,7 +161,6 @@
   width: 158px;
   height: 28px;
   color: #fff;
-  font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 200;
@@ -444,7 +438,6 @@
   .testimonialText {
     width: 138.861px;
     color: #fff;
-    font-family: Roboto;
     font-size: 12.289px;
     font-style: normal;
     font-weight: 400;
@@ -475,7 +468,6 @@
     width: 97px;
     height: 17px;
     color: #fff;
-    font-family: Roboto;
     font-size: 14.746px;
     font-style: normal;
     font-weight: 500;
@@ -486,7 +478,6 @@
     width: 97px;
     height: 17px;
     color: #fff;
-    font-family: Roboto;
     font-size: 10px;
     font-style: normal;
     font-weight: 200;

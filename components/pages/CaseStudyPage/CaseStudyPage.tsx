@@ -196,7 +196,6 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                           border: '0 solid #E5E7EB',
                           backgroundColor: '#D04A1D',
                           color: '#FFF',
-                          fontFamily: 'Roboto',
                           fontSize: '12.667px',
                           fontWeight: 400,
                           lineHeight: '18.297px',

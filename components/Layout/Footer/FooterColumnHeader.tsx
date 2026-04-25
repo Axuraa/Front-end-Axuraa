@@ -12,7 +12,6 @@ const FooterColumnHeader: React.FC<FooterColumnHeaderProps> = ({ title }) => {
       variant="h3"
       style={{
         color: 'rgba(255, 255, 255, 0.95)',
-        fontFamily: 'Roboto',
         fontSize: '24px',
         fontStyle: 'normal',
         fontWeight: 600,

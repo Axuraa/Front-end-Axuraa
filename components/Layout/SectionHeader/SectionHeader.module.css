@@ -23,7 +23,6 @@
 }
 .unifiedTitle {
   margin: 0;
-  font-family: Roboto;
   font-size: var(--font-size-72, 72px);
   font-style: normal;
   font-weight: 900;
@@ -57,7 +56,6 @@
   flex-shrink: 0;
   color: #6b7280;
   text-align: inherit;
-  font-family: Roboto;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
