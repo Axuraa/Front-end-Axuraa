@@ -47,10 +47,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, imageUrl, description }
             <Typography 
               variant="h6" 
               style={{
-                background: "linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%)",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
+                color: "#fffdfd"
               }}
             >
               {name}
@@ -64,10 +61,7 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, imageUrl, description }
             variant="h4" 
             className={styles.role}
             style={{
-              background: "linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%)",
-              backgroundClip: "text",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              color: "#fffdfd"
             }}
           >
             {role}

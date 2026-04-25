@@ -66,6 +66,7 @@ backdrop-filter: blur(2px);
   line-height: 16px;
   margin: 0;
   padding: 0;
+  white-space: nowrap;
 }
 
 
@@ -95,8 +96,7 @@ backdrop-filter: blur(2px);
     font-size: 10px;
     line-height: 14px;
   }
-  
-  .sectionBadge {
+  .statusBadge {
     padding: 3px 10px;
   }
 }

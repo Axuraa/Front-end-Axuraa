@@ -40,10 +40,11 @@
 
 /* Title */
 .title {
-  background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%); */
+  color: #fffdfd;
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
   font-family: 'Roboto', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;

@@ -7,10 +7,10 @@
   height: fit-content;
 
   /* width: 1120px; */
-  gap: 6px;
+  gap: 2px;
   /* align-self: stretch; */
   /* margin-top: -30px; */
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 .titleGroup {
   display: flex;
@@ -23,10 +23,6 @@
 }
 .unifiedTitle {
   margin: 0;
-  background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   font-family: Roboto;
   font-size: var(--font-size-72, 72px);
   font-style: normal;
@@ -39,7 +35,20 @@
   display: block;
   margin-right: 0;
 }
-/* Removed title1 and title2 in favor of unifiedTitle */
+.titlePartWhite {
+  display: block;
+  margin-right: 0;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+}
+.titlePartGradient {
+  display: block;
+  margin-right: 0;
+  background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .subtitle {
   /* background: green; */
   width: 100%;

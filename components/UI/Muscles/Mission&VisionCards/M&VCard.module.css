@@ -78,15 +78,16 @@
 }
 
 .title {
-  background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%); */
+  /* background-clip: text; */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
   font-weight: 600 !important;
   margin-bottom: 1.5rem !important;
   line-height: 1.3 !important;
   position: relative;
   z-index: 2;
+  color:white;
 }
 
 .description {

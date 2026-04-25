@@ -28,8 +28,8 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
               display: titleLayout === 'row' ? 'inline-block' : 'flex'
             }}
           >
-            {title1 && <span className={styles.titlePart}>{title1}</span>}
-            {title2 && <span className={styles.titlePart}>{title2}</span>}
+            {title1 && <span className={styles.titlePartWhite}>{title1}</span>}
+            {title2 && <span className={styles.titlePartGradient}>{title2}</span>}
           </h2>
         </div>
       )}
