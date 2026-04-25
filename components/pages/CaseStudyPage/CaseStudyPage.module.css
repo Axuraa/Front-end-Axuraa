@@ -92,7 +92,7 @@
   display: grid;
 
   grid-template-columns: 1fr;
-
+  /* background-color: red; */
   gap: 2rem;
 }
 
@@ -111,9 +111,18 @@
 
   /* background-color: yellowgreen; */
 }
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  /* background-color: red; */
+  /* padding-top: 10px; */
+}
 
 .title {
-  /* background-color: red; */
+  /* background-color: blue; */
 
   color: #fff;
 
@@ -128,16 +137,18 @@
   font-style: normal;
 
   font-weight: 800;
+  height: auto;
 
-  line-height: 29.171px; /* 91.16% */
+  
 
-  margin-bottom: 7px;
+  margin-top: 10px;
 }
 
 .subtitle {
   width: 446px;
 
-  height: 25px;
+  /* height: 25px; */
+  height: auto;
 
   color: #6b7280;
 
@@ -157,6 +168,7 @@
 
   text-transform: capitalize;
   align-self: center;
+  /* background-color: yellow; */
 }
 
 .tags {
@@ -169,6 +181,7 @@
   gap: 8px;
   border: 0 solid #e5e7eb;
   margin: 25px 0;
+  /* background-color: green; */
 }
 
 .preview {

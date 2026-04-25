@@ -177,8 +177,10 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                 </div>
               ) : (
                 <>
-                  <h1 className={styles.title}>{caseStudy.title}</h1>
-                  <p className={styles.subtitle}>{caseStudy.subtitle}</p>
+                  <div className={styles.text}>
+                    <h1 className={styles.title}>{caseStudy.title}</h1>
+                    <p className={styles.subtitle}>{caseStudy.subtitle}</p>
+                  </div>
                   
                   <div className={styles.tags}>
                     {caseStudy.tags.map((tag, idx) => (
