@@ -92,7 +92,7 @@
 
   grid-template-columns: 1fr;
 
-  gap: 2rem;
+  gap: 1rem;
 }
 
 /* Hero Section */
@@ -104,6 +104,8 @@
   justify-content: flex-start;
   width: 100%;
   max-width: 740px;
+  /* background-color: #640df0ff; */
+  /* padding-top: 2rem; */
 }
 
 .title {
@@ -114,9 +116,9 @@
   font-style: normal;
   font-weight: 800;
   line-height: 1.2;
-  margin-bottom: 12px;
   display: flex;
   justify-content: flex-start;
+  /* background-color: #18c7e6ff; */
 }
 
 .subtitle {
@@ -134,6 +136,7 @@
   letter-spacing: 0.778px;
   text-transform: capitalize;
   align-self: flex-start;
+  /* background-color: #9066da; */
 }
 
 .tags {
@@ -147,7 +150,7 @@
   height: auto;
   gap: 8px;
   border: 0 solid #e5e7eb;
-  margin: 25px 0;
+  /* background-color: #16710cff; */
 }
 
 .preview {
