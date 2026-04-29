@@ -279,6 +279,7 @@
   font-size: 16px;
   font-weight: 500;
   margin: 0;
+  padding-bottom: 10px;
 }
 
 :global([dir="rtl"]) .sectionText,
