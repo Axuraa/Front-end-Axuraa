@@ -200,13 +200,13 @@ const Contact = () => {
       ) : (
         <>
           <SocialMediaSection 
-            title1="Follow us on"
-            title2="social media"
+            title1=""
+            title2="Follow us on social media"
             platforms={socialPlatforms} 
           />
           <EmailSection
-            title1="Contact via"
-            title2="email"
+            title1=""
+            title2="Contact via email"
             subtitle="Choose the appropriate section for your inquiry"
             contacts={contactsData}
           />
