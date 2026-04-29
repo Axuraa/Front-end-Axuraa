@@ -202,6 +202,23 @@
   color: #FF8C42;
 }
 
+/* Mobile Drawer Elements (Hidden on Desktop) */
+.mobileOverlay {
+  display: none;
+}
+
+.mobileDrawerHeader {
+  display: none;
+}
+
+.mobileDrawerFooter {
+  display: none;
+}
+
+.navIcon {
+  display: none;
+}
+
 /* Animations */
 @keyframes fadeInDown {
   from {
@@ -304,49 +321,303 @@
 
   .nav {
     position: fixed;
-    top: 70px;
-    left: 0;
+    top: 0;
+    bottom: 0;
     right: 0;
-    background: rgba(25, 27, 31, 0.98);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(210, 105, 30, 0.2);
-    padding: 1rem 0;
-    transform: translateY(-100%);
-    opacity: 0;
+    left: auto;
+    width: 100%;
+    max-width: 100%;
+    background: #15171A;
+    border-left: 1px solid rgba(210, 105, 30, 0.2);
+    border-bottom: none;
+    padding: 0;
+    transform: translateX(100%);
+    opacity: 1;
     visibility: hidden;
-    transition: all 0.3s ease;
-    max-height: calc(100vh - 70px);
-    overflow-y: auto;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1005;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.5);
+  }
+
+  /* RTL Support for drawer */
+  [dir="rtl"] .nav {
+    right: auto;
+    left: 0;
+    border-left: none;
+    border-right: 1px solid rgba(210, 105, 30, 0.2);
+    transform: translateX(-100%);
+    box-shadow: 5px 0 25px rgba(0, 0, 0, 0.5);
   }
 
   .navOpen {
-    transform: translateY(0);
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  [dir="rtl"] .navOpen {
+    transform: translateX(0);
+  }
+
+  .mobileOverlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1004;
+  }
+
+  .mobileOverlayOpen {
     opacity: 1;
     visibility: visible;
   }
 
+  .mobileDrawerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(210, 105, 30, 0.1);
+    flex-shrink: 0;
+    width: 100%;
+  }
+
+  .closeToggle {
+    background: transparent;
+    border: 1px solid #D2691E;
+    color: #D2691E;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .closeToggle:hover {
+    background: rgba(210, 105, 30, 0.1);
+    border-color: #FF8C42;
+    color: #FF8C42;
+  }
+
   .navList {
     flex-direction: column;
-    gap: 0;
+    gap: 0.5rem;
     width: 100%;
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem 1rem;
+    justify-content: flex-start;
   }
 
   .navItem {
     width: 100%;
-    border-bottom: 1px solid rgba(210, 105, 30, 0.1);
+    border-bottom: none;
     animation: none;
     opacity: 1;
   }
 
   .navLink {
-    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1rem;
     width: 100%;
     font-size: 16px;
     height: auto;
+    color: #fff;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+  }
+
+  .navLink:hover {
+    background: rgba(210, 105, 30, 0.05);
+    transform: none;
+    text-shadow: none;
+  }
+
+  .navIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(210, 105, 30, 0.1);
+    color: #D04A1D;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  .navLink.active {
+    background: rgba(210, 105, 30, 0.08);
+    color: #D04A1D;
+    text-shadow: none;
+  }
+
+  .navLink.active .navIcon {
+    background: #D04A1D;
+    color: #fff;
   }
 
   .navLink::after {
     display: none;
+  }
+
+  .mobileDrawerFooter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    align-items: stretch;
+    border-top: 1px solid rgba(210, 105, 30, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+  }
+
+  .startProjectBtn {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #D04A1D 0%, #E85A2A 100%);
+    color: #fff;
+    border: none;
+    padding: 1.125rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(208, 74, 29, 0.3);
+  }
+
+  .startProjectBtn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.2),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  .startProjectBtn:hover::before {
+    left: 100%;
+  }
+
+  .btnIcon {
+    flex-shrink: 0;
+  }
+
+  .startProjectBtn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(208, 74, 29, 0.5);
+    background: linear-gradient(135deg, #E85A2A 0%, #FF6B35 100%);
+  }
+
+  .startProjectBtn:active {
+    transform: translateY(0);
+  }
+
+  .contactCards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .contactCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.125rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    width: 100%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .contactCard:hover {
+    background: rgba(210, 105, 30, 0.05);
+    border-color: rgba(210, 105, 30, 0.2);
+    transform: translateX(5px);
+  }
+
+  [dir="rtl"] .contactCard:hover {
+    transform: translateX(-5px);
+  }
+
+  .contactIcon {
+    color: #D04A1D;
+    display: flex;
+  }
+
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contactLabel {
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.25rem;
+  }
+
+  .contactValue {
+    font-size: 0.875rem;
+    color: #fff;
+    font-weight: 500;
+  }
+
+  .socialIcons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  .socialIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .socialIcon:hover {
+    background: #D04A1D;
+    color: #fff;
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(208, 74, 29, 0.3);
+    border-color: transparent;
   }
 
   .logoImage {
@@ -391,8 +662,7 @@
   }
 
   .nav {
-    top: 60px;
-    max-height: calc(100vh - 60px);
+    width: 100%;
   }
 
   .navLink {
@@ -433,8 +703,7 @@
 /* Landscape Mode for Mobile */
 @media (max-height: 500px) and (orientation: landscape) {
   .nav {
-    max-height: calc(100vh - 60px);
-    overflow-y: auto;
+    width: 100%;
   }
 
   .navLink {
