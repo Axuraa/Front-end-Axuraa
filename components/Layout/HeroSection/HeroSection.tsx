@@ -227,7 +227,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             >
               <span
                 style={{
-                  background: "linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%)",
+                  background: "#ffffff",
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
