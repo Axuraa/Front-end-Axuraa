@@ -5,7 +5,7 @@ import { LanguageButton } from "@/components/UI/Atoms/Button/LanguageButton";
 import styles from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import useClientTranslation from "@/hooks/useClientTranslation";
 
 const Header = () => {
@@ -16,6 +16,9 @@ const Header = () => {
   const [currentLocale, setCurrentLocale] = useState('en');
 
   const pathname = usePathname();
+  const router = useRouter();
+
+  const primaryHref = `#contact-section`;
 
   // Set locale based on pathname, but only on client side
   useEffect(() => {
@@ -115,10 +118,27 @@ const Header = () => {
 
           {/* Mobile Drawer Footer (Visible only on mobile) */}
           <div className={styles.mobileDrawerFooter}>
-            <button className={styles.startProjectBtn}>
+            <Link
+              href={`/${primaryHref}`}
+              className={styles.startProjectBtn}
+              onClick={(e) => {
+                setIsMenuOpen(false);
+                if (primaryHref.startsWith('#')) {
+                  const element = document.getElementById(primaryHref.substring(1));
+                  if (element) {
+                    e.preventDefault();
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    router.push(`/${primaryHref}`);
+                  }
+                } else {
+                  router.push(primaryHref);
+                }
+              }}
+            >
               <MessageSquare size={18} className={styles.btnIcon} />
               {t("start_project") !== "start_project" ? t("start_project") : "Start a Project"}
-            </button>
+            </Link>
 
             <div className={styles.contactCards}>
               <a href="tel:+971586651844" className={styles.contactCard}>

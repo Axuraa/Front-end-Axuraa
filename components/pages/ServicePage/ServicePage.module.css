@@ -484,6 +484,8 @@
   justify-content: center;
 
   margin-top: 40px;
+  /* background-color: green; */
+  
 }
 
 .testimonialContent {
@@ -521,6 +523,7 @@
   font-weight: 600;
 
   line-height: 15px; /* 107.143% */
+  /* background-color: green; */
 }
 
 .testimonialAuthor {

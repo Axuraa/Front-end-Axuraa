@@ -228,14 +228,16 @@
     }
 }
 
-/* @media (max-width: 480px) {
+@media (max-width: 480px) {
 
     .metricLabel,
     .metricValue {
-        font-size: 13px;
+        font-size: 12px;
+        padding-right: 10px;
+        /* background-color: red; */
     }
 
     .metricsContainer {
         gap: 10px;
     }
-} */
+}

@@ -212,6 +212,7 @@ text-underline-position: from-font;
   align-self: flex-end;
   display: inline-flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
   transition: color 0.2s ease;
 }
@@ -227,8 +228,8 @@ text-underline-position: from-font;
 .readMore:hover .arrowIcon {
   transform: translateX(4px);
 }
-/* Tablet and Desktop (1024px and up) */
-@media (width: 1024px) {
+/* Tablet Responsive (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
   .card {
     width: 100%;
     max-width: 356.552px;
@@ -319,7 +320,11 @@ text-underline-position: from-font;
     font-size: 13.048px;
     line-height: 18.64px;
     margin-top: auto; /* Push read more to bottom */
-    display: inline-block; /* Make it take only needed width */
+    display: inline-flex; /* Use flex to align text and icon */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
     width: fit-content; /* Fit content width */
+    align-self: flex-end;
   }
 }
