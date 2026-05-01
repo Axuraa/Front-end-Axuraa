@@ -9,7 +9,8 @@
   gap: 18.173px;
   border-radius: 11.184px;
   border: 0 solid #e5e7eb;
-  background: #2a2a2a;
+  /* background: #2a2a2a; */
+  background-color:#222429;
   color: #e6e6e6;
   box-sizing: border-box;
   transition:
