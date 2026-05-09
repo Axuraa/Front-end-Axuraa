@@ -81,7 +81,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
 
-
   font-size: 16.924px;
 
   font-style: normal;
@@ -97,7 +96,6 @@
   width: 548px;
 
   color: #e6e6e6;
-
 
   font-size: 14px;
 
@@ -166,7 +164,6 @@
 
 .serviceContent {
   color: #e6e6e6;
-
 
   font-size: 14px;
 
@@ -238,7 +235,6 @@
 
   text-align: center;
 
-
   font-size: 32px;
 
   font-style: normal;
@@ -255,7 +251,6 @@
   /* background: green; */
 
   color: #e6e6e6;
-
 
   font-size: 16px;
 
@@ -318,7 +313,6 @@
 
   text-align: center;
 
-
   font-size: 32px;
 
   font-style: normal;
@@ -341,7 +335,6 @@
   height: 14px;
 
   color: #fff;
-
 
   font-size: 16px;
 
@@ -422,7 +415,6 @@
 
   text-align: center;
 
-
   font-size: 32px;
 
   font-style: normal;
@@ -446,7 +438,6 @@
   margin-bottom: 41px;
 
   color: #fff;
-
 
   font-size: 16px;
 
@@ -485,7 +476,6 @@
 
   margin-top: 40px;
   /* background-color: green; */
-  
 }
 
 .testimonialContent {
@@ -514,7 +504,6 @@
   align-self: stretch;
 
   color: #fff;
-
 
   font-size: 14px;
 
@@ -588,7 +577,6 @@
 .authorName {
   color: #fff;
 
-
   font-size: 9.486px;
 
   font-style: normal;
@@ -602,7 +590,6 @@
 
 .authorRole {
   color: #999;
-
 
   font-size: 9.486px;
 
@@ -658,7 +645,6 @@
 }
 
 .ServicePackagesTitle {
-
   font-size: 32px;
 
   font-style: normal;
@@ -759,7 +745,6 @@
 
   text-align: center;
 
-
   font-size: 12.109px;
 
   font-style: normal;
@@ -778,7 +763,6 @@
   align-self: stretch;
 
   color: #d9d9d9;
-
 
   font-size: 10.898px;
 
@@ -808,7 +792,6 @@
 
   color: #d9d9d9;
 
-
   font-size: 10.898px;
 
   font-style: normal;
@@ -827,7 +810,6 @@
 .SuccessStories {
   padding: 4rem 3rem;
 }
-
 
 /* Tablet (768px - 1024px) */
 
@@ -877,7 +859,7 @@
 
     /* background: linear-gradient(0deg, #191B1F 0%, #191B1F 100%), #000; */
   }
- 
+
   .FeaturesCapabilitiesContent,
   .OurDevelopmentProcessContent,
   .SuccessStoriesContent,
@@ -989,7 +971,6 @@
 
     text-align: center;
 
-
     font-size: 12.109px;
 
     font-style: normal;
@@ -1003,7 +984,6 @@
     color: #d9d9d9;
 
     text-align: center;
-
 
     font-size: 10.898px;
 
@@ -1034,7 +1014,6 @@
     background: var(--Primary, #d04a1d);
 
     color: #d9d9d9;
-
 
     font-size: 10.898px;
 
@@ -1295,7 +1274,6 @@
 
     text-align: center;
 
-
     font-size: 12.109px;
 
     font-style: normal;
@@ -1309,7 +1287,6 @@
     color: #d9d9d9;
 
     text-align: center;
-
 
     font-size: 10.898px;
 
@@ -1340,7 +1317,6 @@
     background: var(--Primary, #d04a1d);
 
     color: #d9d9d9;
-
 
     font-size: 10.898px;
 
@@ -1402,7 +1378,6 @@
 
     text-align: start;
 
-
     font-size: 16.924px;
 
     font-style: normal;
@@ -1422,7 +1397,6 @@
     color: #e6e6e6;
 
     text-align: start;
-
 
     font-size: 14px;
 
@@ -1467,7 +1441,6 @@
 
   .serviceContent {
     color: #e6e6e6;
-
 
     font-size: 14px;
 
@@ -1531,7 +1504,6 @@
 
     text-align: center;
 
-
     font-size: 32px;
 
     font-style: normal;
@@ -1547,7 +1519,6 @@
     align-self: stretch;
 
     color: #e6e6e6;
-
 
     font-size: 16px;
 
@@ -1605,7 +1576,6 @@
 
     text-align: center;
 
-
     font-size: 32px;
 
     font-style: normal;
@@ -1625,7 +1595,6 @@
     text-align: center;
 
     color: #fff;
-
 
     font-size: 16px;
 
@@ -1745,7 +1714,6 @@
 
     text-align: center;
 
-
     font-size: 32px;
 
     font-style: normal;
@@ -1761,7 +1729,6 @@
 
   .SuccessStoriesDescription {
     color: #fff;
-
 
     font-size: 16px;
 
@@ -1858,7 +1825,6 @@
 
     text-align: center;
 
-
     font-size: 14px;
 
     font-style: normal;
@@ -1922,7 +1888,6 @@
   .ServicePackagesTitle {
     color: #d9d9d9;
 
-
     font-size: 32px;
 
     font-style: normal;
@@ -1942,7 +1907,6 @@
     margin: 0 auto;
 
     color: #d9d9d9;
-
 
     font-size: 16px;
 
@@ -2018,7 +1982,6 @@
 
     text-align: center;
 
-
     font-size: 12.109px;
 
     font-style: normal;
@@ -2032,7 +1995,6 @@
     color: #d9d9d9;
 
     text-align: center;
-
 
     font-size: 10.898px;
 
@@ -2063,7 +2025,6 @@
     background: var(--Primary, #d04a1d);
 
     color: #d9d9d9;
-
 
     font-size: 10.898px;
 
@@ -2118,7 +2079,7 @@
     /* background-color: rgba(2, 104, 2, 0.979); */
   }
 
-  .StoriesStatusBadge{
+  .StoriesStatusBadge {
     /* padding-bottom: 15px; */
     margin-bottom: 25px;
   }
@@ -2142,7 +2103,6 @@
 
   .SuccessStoriesDescription {
     color: #fff;
-
 
     font-size: 16px;
 
@@ -2177,7 +2137,19 @@
   }
 }
 
-@media (width: 375px) {
+@media (max-width: 375px) {
+  .SuccessStories {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 0;
+  border: 0 solid #e5e7eb;
+  /* background: #1e1e1e; */
+  /* background-color: rgb(2, 104, 2); */
+}
   .SuccessStoriesContent {
     margin-left: -90px;
 
@@ -2206,6 +2178,7 @@
     align-self: stretch;
 
     text-align: center;
+    /* background-color: #7a4a1a; */
 
     padding-bottom: 5px;
 
@@ -2214,14 +2187,17 @@
     /* background-color: rgba(2, 104, 2, 0.979); */
   }
 
-  .StoriesStatusBadge{
+  .StoriesStatusBadge {
     /* padding-bottom: 15px; */
     margin-bottom: 25px;
+
   }
   .SuccessStoriesTitle {
+    /* width: 100%; */
+    /* height: auto; */
     margin-top: -30px;
     display: flex;
-    width: 14.4375rem;
+    width: 18rem;
     height: 1.625rem;
     flex-direction: column;
     justify-content: center;
@@ -2233,12 +2209,11 @@
     font-weight: 600;
     text-align: center;
     line-height: 16.8px; /* 52.5% */
-    /* background-color: rgb(6, 98, 173); */
+    background-color: rgb(6, 98, 173);
   }
 
   .SuccessStoriesDescription {
     color: #fff;
-
 
     font-size: 16px;
 
