@@ -16,23 +16,23 @@ const FooterColumnHeader: React.FC<FooterColumnHeaderProps> = ({ title }) => {
         fontStyle: 'normal',
         fontWeight: 600,
         lineHeight: 'normal',
-        margin: '0 0 8px 0',
-        position: 'relative',
-        display: 'inline-block'
+        margin: '0 0 24px 0',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '12px'
       }}
     >
-      {title}
       <span 
         style={{
-          position: 'absolute',
-          width: '50.909px',
-          height: '3.182px',
-          left: '20%',
-          bottom: '-12.832px',
+          width: '8px',
+          height: '8px',
           backgroundColor: '#D75C37',
-          display: 'block'
+          borderRadius: '50%',
+          display: 'inline-block',
+          flexShrink: 0
         }}
       />
+      {title}
     </Typography>
   );
 };

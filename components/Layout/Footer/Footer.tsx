@@ -52,211 +52,19 @@ const socialLinks = [
       <div className={styles.footerMain}>
         <div className={styles.container}>
           <div className={styles.footerGrid}>
-            {/* Brand Column */}
-            <div className={styles.footerColumn}>
+            {/* Left Section: Brand & Social */}
+            <div className={styles.brandSection}>
               <div className={styles.brand}>
                 <img 
                   src="/assets/FooterLogo.png" 
                   alt="Axuraa Logo" 
                   className={styles.logo}
                 />
-                {/* <Typography 
-                variant="h1"
-                sx={{
-                  color: 'var(--white-95, rgba(255, 255, 255, 0.95))',
-                  fontSize: {
-                    xs: '14px',    // Mobile (0px and up)
-                    sm: '16px',    // Small devices (600px and up)
-                    md: '18px',    // Medium devices (900px and up)
-                    lg: '20px',    // Large devices (1200px and up)
-                    xl: '22px'     // Extra large devices (1536px and up)
-                  },
-                  fontStyle: 'normal',
-                  fontWeight: 600,
-                  lineHeight: {
-                    xs: '20px',
-                    sm: '22px',
-                    md: '24px',
-                    lg: '26.254px',
-                    xl: '28px'
-                  },
-                  width: {
-                    xs: '60px',
-                    sm: '65px',
-                    md: '71px',
-                    lg: '75px'
-                  },
-                  height: {
-                    xs: '22px',
-                    sm: '24px',
-                    md: '27px',
-                    lg: '28px'
-                  },
-                  margin: 0,
-                  padding: 0,
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis'
-                }}
-              >
-                AXURAA
-              </Typography> */}
-                {/* <Typography 
-                    variant="h1"
-                    color="rgba(255, 255, 255, 0.95)"
-                    style={{
-                      fontSize: '44.007px',
-                      fontWeight: 600,
-                      lineHeight: '1',
-                      margin: 0,
-                      padding: 0
-                    }}
-                  >
-                    AXURAA
-                </Typography> */}
                 <h1 className={styles.brantlogo}>AXURAA</h1>
               </div>
               <p className={styles.description}>
-                LoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLoremLorem
+                We transform your digital vision into reality through innovative web development, mobile apps, UI/UX design, and digital marketing solutions.
               </p>
-            </div>
-
-            {/* Services Column */}
-            <div className={styles.footerColumn}>
-              <div className={styles.columnTitle}>
-                {/* <Typography 
-                  variant="h3"
-                  style={{
-                    color: 'rgba(255, 255, 255, 0.95)',
-                    fontSize: '24px',
-                    fontStyle: 'normal',
-                    fontWeight: 600,
-                    lineHeight: 'normal',
-                    margin: '0 0 8px 0',
-                    position: 'relative',
-                    display: 'inline-block'
-                  }}
-                >
-                  Services
-                  <span 
-                    style={{
-                      position: 'absolute',
-                      width: '50.909px',
-                      height: '3.182px',
-                      left: '20%',
-                      bottom: '-12.832px',
-                      backgroundColor: '#D75C37',
-                      display: 'block'
-                    }}
-                  />
-                </Typography> */}
-                <FooterColumnHeader title="Services" />
-              </div>
-              <ul className={styles.linkList}>
-                {servicesLinks.map((service, index) => (
-                  <li key={index}>
-                    <a href="#" className={styles.link}>
-                      {service}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Company Column */}
-            <div className={styles.footerColumn}>
-              <div className={styles.columnTitle}>
-                <FooterColumnHeader title="Company" />
-              </div>
-              <ul className={styles.linkList}>
-                {companyLinks.map((link, index) => (
-                  <li key={index}>
-                    <a href={link.href} className={styles.link}>
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Contact Column */}
-            <div className={styles.footerColumn}>
-              <div className={styles.columnTitle  + " " + styles.columnTitle2}>
-                <FooterColumnHeader title="Contact" />
-              </div>
-              {/* <ul className={styles.contactList}>
-                <li className={styles.contactItem}>
-                  <Mail size={20} className={styles.contactIcon} />
-                  <a href="mailto:info@axuram.com" className={styles.contactLink}>
-                    info@axuram.com
-                  </a>
-                </li>
-                <li className={styles.contactItem}>
-                  <Phone size={20} className={styles.contactIcon} />
-                  <a href="tel:+15551234567" className={styles.contactLink}>
-                    +1 (555) 123-4567
-                  </a>
-                </li>
-                <li className={styles.contactItem}>
-                  <MapPin size={20} className={styles.contactIcon} />
-                  <span className={styles.contactText}>Los Angeles, CA</span>
-                </li>
-              </ul> */}
-
-              <ul className={styles.contactList}>
-                <li className={styles.contactItem}>
-                  <img 
-                    src="/assets/emailicon.svg" 
-                    alt="Email" 
-                    width={20} 
-                    height={20} 
-                    className={styles.contactIcon} 
-                  />
-                  <a href="mailto:info@axuram.com" className={styles.contactLink}>
-                    info@axuram.com
-                  </a>
-                </li>
-                <li className={styles.contactItem}>
-                  <img 
-                    src="/assets/telefonicon.svg" 
-                    alt="Phone" 
-                    width={20} 
-                    height={20} 
-                    className={styles.contactIcon} 
-                  />
-                  <a href="tel:+15551234567" className={styles.contactLink}>
-                    +1 (555) 123-4567
-                  </a>
-                </li>
-                <li className={styles.contactItem}>
-                  <img 
-                    src="/assets/Lcation icon.svg" 
-                    alt="Location" 
-                    width={20} 
-                    height={20} 
-                    className={styles.contactIcon} 
-                  />
-                  <span className={styles.contactText}>Los Angeles, CA</span>
-                </li>
-              </ul>
-
-              {/* Social Links */}
-              {/* <div className={styles.socialLinks}> 
-
-                {socialLinks.map((social, index) => {
-                  const Icon = social.icon;
-                  return (
-                    <a 
-                      key={index}
-                      href={social.href} 
-                      className={styles.socialLink}
-                      aria-label={social.label}
-                    >
-                      <Icon size={24} />
-                    </a>
-                  );
-                })}
-              </div>*/}
               <div className={styles.socialLinks}>
                 {socialLinks.map((social, index) => (
                   <a 
@@ -276,6 +84,49 @@ const socialLinks = [
                     />
                   </a>
                 ))}
+              </div>
+            </div>
+
+            {/* Right Section: Link Columns */}
+            <div className={styles.linksSection}>
+              {/* Company Column */}
+              <div className={styles.footerColumn}>
+                <FooterColumnHeader title="Company" />
+                <ul className={styles.linkList}>
+                  {companyLinks.map((link, index) => (
+                    <li key={index}>
+                      <a href={link.href} className={styles.link}>
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Services Column */}
+              <div className={styles.footerColumn}>
+                <FooterColumnHeader title="Services" />
+                <ul className={styles.linkList}>
+                  {servicesLinks.map((service, index) => (
+                    <li key={index}>
+                      <a href="#" className={styles.link}>
+                        {service}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Products Column (Repurposed from Contact) */}
+              <div className={styles.footerColumn}>
+                <FooterColumnHeader title="Products" />
+                <ul className={styles.linkList}>
+                  <li><a href="#" className={styles.link}>Event Ticketing App</a></li>
+                  <li><a href="#" className={styles.link}>E-Commerce Mobile App</a></li>
+                  <li><a href="#" className={styles.link}>Solevato</a></li>
+                  <li><a href="#" className={styles.link}>Congora</a></li>
+                  <li><a href="#" className={styles.link}>CMS Website</a></li>
+                </ul>
               </div>
             </div>
           </div>
