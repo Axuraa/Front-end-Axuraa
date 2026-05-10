@@ -1,19 +1,26 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import styles from './Footer.module.css';
 import Typography from '@/components/UI/Atoms/Typography/Typography';
 import FooterColumnHeader from './FooterColumnHeader';
+import { getAllServices, ServiceItem } from '@/service/Services/services';
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const servicesLinks = [
-    'Custom E-commerce',
-    'ERP Systems Integration',
-    'Cloud Solutions',
-    'Business Intelligence',
-    'Mobile Development',
-    'AI & Machine Learning'
-  ];
+  const [services, setServices] = useState<ServiceItem[]>([]);
+
+  useEffect(() => {
+    const fetchServices = async () => {
+      const result = await getAllServices('en');
+      if (result.success && result.data) {
+        setServices(result.data);
+      }
+    };
+    fetchServices();
+  }, []);
 
   const companyLinks = [
     { name: 'About Us', href: '#about' },
@@ -104,13 +111,15 @@ const socialLinks = [
               </div>
 
               {/* Services Column */}
-              <div className={styles.footerColumn}>
-                <FooterColumnHeader title="Services" />
-                <ul className={styles.linkList}>
-                  {servicesLinks.map((service, index) => (
-                    <li key={index}>
+              <div className={`${styles.footerColumn} ${styles.servicesColumn}`}>
+                <div className={styles.centeredHeader}>
+                  <FooterColumnHeader title="Services" />
+                </div>
+                <ul className={styles.servicesList}>
+                  {services.map((service) => (
+                    <li key={service._id}>
                       <a href="#" className={styles.link}>
-                        {service}
+                        {service.title.en}
                       </a>
                     </li>
                   ))}

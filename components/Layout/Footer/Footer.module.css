@@ -50,7 +50,7 @@
 .linksSection {
   flex: 2;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
   gap: 40px;
 }
 
@@ -140,6 +140,26 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 16px;
+}
+
+.servicesList {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 32px;
+}
+
+.servicesColumn {
+  width: 100%;
+}
+
+.centeredHeader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .linkList li {
@@ -359,6 +379,32 @@
     width: 100%;
     grid-template-columns: repeat(2, 1fr);
     gap: 48px 24px;
+    display: grid;
+  }
+
+  /* Rearrange columns: Company (1), Products (3) on row 1, Services (2) on row 2 */
+  .linksSection > div:nth-child(1) {
+    order: 1;
+  }
+
+  .linksSection > div:nth-child(3) {
+    order: 2;
+  }
+
+  .servicesColumn {
+    order: 3;
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .servicesList {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 16px 100px;
+    justify-content: center;
   }
 
   .footerColumn {
@@ -383,6 +429,20 @@
   .linksSection {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px 16px;
+  }
+
+  .servicesList {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 16px;
+    justify-content: center;
+  }
+
+  .servicesColumn {
+    align-items: center;
+  }
+
+  .centeredHeader {
+    justify-content: center;
   }
 
   .bottomContent {
