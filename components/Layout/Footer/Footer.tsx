@@ -111,12 +111,12 @@ const socialLinks = [
               </div>
 
               {/* Services Column */}
-              <div className={`${styles.footerColumn} ${styles.servicesColumn}`}>
-                <div className={styles.centeredHeader}>
-                  <FooterColumnHeader title="Services" />
-                </div>
-                <ul className={styles.servicesList}>
-                  {services.map((service) => (
+              <div className={styles.footerColumn}>
+                <FooterColumnHeader title="Services" />
+                <ul className={styles.linkList}>
+                  {services
+                    .filter((service) => service.type === 'service' && service.is_active)
+                    .map((service) => (
                     <li key={service._id}>
                       <a href="#" className={styles.link}>
                         {service.title.en}
@@ -130,11 +130,15 @@ const socialLinks = [
               <div className={styles.footerColumn}>
                 <FooterColumnHeader title="Products" />
                 <ul className={styles.linkList}>
-                  <li><a href="#" className={styles.link}>Event Ticketing App</a></li>
-                  <li><a href="#" className={styles.link}>E-Commerce Mobile App</a></li>
-                  <li><a href="#" className={styles.link}>Solevato</a></li>
-                  <li><a href="#" className={styles.link}>Congora</a></li>
-                  <li><a href="#" className={styles.link}>CMS Website</a></li>
+                  {services
+                    .filter((service) => service.type === 'solution' && service.is_active)
+                    .map((service) => (
+                    <li key={service._id}>
+                      <a href="#" className={styles.link} style={{ whiteSpace: 'nowrap' }}>
+                        {service.title.en}
+                      </a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
