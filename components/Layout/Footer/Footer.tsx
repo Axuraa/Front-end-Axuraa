@@ -5,10 +5,13 @@ import styles from './Footer.module.css';
 import Typography from '@/components/UI/Atoms/Typography/Typography';
 import FooterColumnHeader from './FooterColumnHeader';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
-
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const currentLocale = pathname ? (pathname.split('/')[1] || 'en') : 'en';
 
   const [services, setServices] = useState<ServiceItem[]>([]);
 
@@ -23,12 +26,12 @@ const Footer = () => {
   }, []);
 
   const companyLinks = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'About Us', href: 'aboutus' },
+    { name: 'Portfolio', href: 'portfolio' },
     { name: 'Case Studies', href: '#case-studies' },
-    { name: 'Careers', href: '#careers' },
+    { name: 'Services', href: 'services' },
     { name: 'Blog', href: '#blog' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Contact', href: 'contact' }
   ];
 
   // const socialLinks = [
@@ -118,9 +121,9 @@ const socialLinks = [
                     .filter((service) => service.type === 'service' && service.is_active)
                     .map((service) => (
                     <li key={service._id}>
-                      <a href="#" className={styles.link}>
+                      <Link href={`/${currentLocale}/service/${service._id}`} className={styles.link}>
                         {service.title.en}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -134,9 +137,9 @@ const socialLinks = [
                     .filter((service) => service.type === 'solution' && service.is_active)
                     .map((service) => (
                     <li key={service._id}>
-                      <a href="#" className={styles.link} style={{ whiteSpace: 'nowrap' }}>
+                      <Link href={`/${currentLocale}/service/${service._id}`} className={styles.link} style={{ whiteSpace: 'nowrap' }}>
                         {service.title.en}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -213,9 +216,9 @@ const socialLinks = [
                 Terms of Service
               </Typography> */}
 
-              <p className={styles.legalLink}> Privacy Policy </p>
+              <Link href={`/${currentLocale}/privacy-policy`} className={styles.legalLink}> Privacy Policy </Link>
               <p className={styles.separator}> | </p>
-              <p className={styles.legalLink}> Terms of Service </p>
+              <Link href={`/${currentLocale}/terms-of-service`} className={styles.legalLink}> Terms of Service </Link>
             </div>
           </div>
         </div>
