@@ -12,6 +12,7 @@ import ServicePackagesContainer from '@/components/Molecules/ServicePackagesCont
 import StatusBadge from '@/components/UI/Atoms/StatusBadge/StatusBadge';
 import { getServiceById, ServiceItem } from '@/service/serviceId/serviceId';
 import useClientTranslation from '@/hooks/useClientTranslation';
+import PerLoading from '@/components/UI/Muscles/PreLoading/PreLoading';
 
 interface ServicePageProps {
   serviceId: string;
@@ -160,15 +161,22 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
     }
   ];
 
-  if (error || !service) {
+  if (error && !loading) {
     return <div className={styles.error}>{error || 'Service not found'}</div>;
-  }
+  }else if (!service && loading) {
+    return (
+      <div className={styles.servicePage}>
+          <div className={styles.loadingSpinner}></div>
+          <PerLoading />
+      </div>
+    );
+  }else
   return (
     <div className={styles.servicePage}>
       <HeroSection 
-              title1={service.title?.en || "Service"}
-              title2={service.title?.ar || "خدمة"}
-              subtitle1={service.description?.en || "Service description"}
+              title1={service?.title?.en || "Service"}
+              title2={service?.title?.ar || "خدمة"}
+              subtitle1={service?.description?.en || "Service description"}
               badgeText="INNOVATION IN PROGRESS"
               showBackgroundDots={false}
               showAnimatedCircles={true}
@@ -185,7 +193,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
         {loading ? (
             <div className={styles.sectionLoading}>
                 <div className={styles.loadingSpinner}></div>
-                <p>Loading service details...</p>
+                <PerLoading />
             </div>
         ) : (
           <>
@@ -193,10 +201,10 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
                 <div className={styles.contentSection2}>
                     <h1 className={styles.contentSection2Title}>What We Do</h1>
                     <p className={styles.contentSection2Description}>
-                        {service.what_we_do?.description?.en || 'Our web development experts build exceptional digital experiences for your brand. We combine strategic design, cutting-edge development technologies, and proven methodologies to deliver high-performance, scalable web solutions that drive business growth.'}
+                        { service?.what_we_do?.description?.en || 'Our web development experts build exceptional digital experiences for your brand. We combine strategic design, cutting-edge development technologies, and proven methodologies to deliver high-performance, scalable web solutions that drive business growth.'}
                     </p>
                    <ul className={styles.serviceList}>
-                        {service.what_we_do?.units?.map((unit, index) => (
+                        {service?.what_we_do?.units?.map((unit, index) => (
                             <li key={index} className={styles.serviceItem}>
                                 <svg className={styles.serviceIcon} width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10 1.66675C5.4 1.66675 1.66666 5.40008 1.66666 10.0001C1.66666 14.6001 5.4 18.3334 10 18.3334C14.6 18.3334 18.3333 14.6001 18.3333 10.0001C18.3333 5.40008 14.6 1.66675 10 1.66675ZM8.33333 15L3.33333 10.0001L4.55 8.78341L8.33333 12.5584L15.45 5.44175L16.6667 6.66675L8.33333 15Z" fill="#D04A1D"/>
@@ -230,7 +238,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
                     <StatusBadge text="OUR FEATURES"  className={styles.FeaturesStatusBadge}/>
                     <h1 className={styles.FeaturesCapabilitiesTitle}>Features & Capabilities</h1>
                     <p className={styles.FeaturesCapabilitiesDescription}>
-                        {service.description_features?.en || 'Comprehensive web services designed to design, build, and scale your digital presence from concept to launch.'}
+                        {service?.description_features?.en || 'Comprehensive web services designed to design, build, and scale your digital presence from concept to launch.'}
                     </p>
                 </div>
                 <div className={styles.FeaturesCapabilitiesContainer}>
@@ -254,7 +262,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
                 <div className={styles.SuccessStoriesContent}>
                     <h1 className={styles.SuccessStoriesTitle}>Success Stories</h1>
                     <p className={styles.SuccessStoriesDescription}>
-                        {service.description_stories?.en || 'Real results from our web development services across various industries, demonstrating measurable improvements in digital performance.'}
+                        {service?.description_stories?.en || 'Real results from our web development services across various industries, demonstrating measurable improvements in digital performance.'}
                     </p>
                 </div>
                 <div className={styles.SuccessStoriesContainer}>
