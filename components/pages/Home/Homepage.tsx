@@ -12,15 +12,7 @@ import ProjectSection from '@/components/Section/HomePage/ProjectSection/Project
 import WorkerSection from '@/components/Section/HomePage/WorkerSection/WorkerSection';
 import { s } from 'framer-motion/client';
 
-// Dynamically import components with no SSR
-// const HeroSection = dynamic(() => import('@/Pages/Home/Sections/HeroSection'), { ssr: false });
-// const ServicesSection = dynamic(() => import('@/components/Section/HomePage/ServicesSection'), { ssr: false });
-// const AboutSection = dynamic(() => import('@/components/Section/HomePage/AboutSection'), { ssr: false });
-// const StatsSection = dynamic(() => import('@/components/Section/HomePage/StatsSection'), { ssr: false });
-// const ContactSection = dynamic(() => import('@/components/Section/HomePage/ContactSection'), { ssr: false });
-// const Footer = dynamic(() => import('@/components/Section/HomePage/Footer'), { ssr: false });
 
-// Rating items are now fetched from API with caching and managed inside the RatingSection component
 
 const workers = [
   {
@@ -107,6 +99,7 @@ const workers = [
 const Homepage = () => {
   return (
     <div className={styles.homePage}>
+      
       <ServicesSection />
       <BusinessSsection/>
       <RatingSection

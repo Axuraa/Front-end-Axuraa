@@ -7,6 +7,7 @@ import { SocialMediaPlatform } from "@/types/Generals/socialTypes";
 import ContactSection from "@/components/Section/HomePage/ContactSection/ContactSection";
 import EmailSection from "@/components/Section/ContactUs/EmailSection/EmailSection";
 import { getContactInformation, ContactEmail, SocialLink } from "@/service/Contact/contactinformation";
+import PerLoading from "@/components/UI/Muscles/PreLoading/PreLoading";
 
 // Define icon components at the top level to ensure they're stable references
 const FacebookIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -194,8 +195,7 @@ const Contact = () => {
       />
       {loading ? (
         <div className={styles.sectionLoading}>
-          <div className={styles.loadingSpinner}></div>
-          <p>Loading contact page...</p>
+          <PerLoading/>
         </div>
       ) : (
         <>

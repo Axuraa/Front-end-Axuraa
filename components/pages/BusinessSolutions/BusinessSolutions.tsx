@@ -5,6 +5,7 @@ import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import ServiceCard from '@/components/Molecules/ServiceCard/ServiceCard';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
 import useClientTranslation from '@/hooks/useClientTranslation';
+import PerLoading from '@/components/UI/Muscles/PreLoading/PreLoading';
 
 const BusinessSolutions = () => {
   const { locale } = useClientTranslation('businessSolutions');
@@ -70,8 +71,7 @@ const BusinessSolutions = () => {
             <div className={styles.BusinessContainer}>
               {loading ? (
                 <div className={styles.sectionLoading}>
-                  <div className={styles.loadingSpinner}></div>
-                  <p>Loading solutions...</p>
+                  <PerLoading />
                 </div>
               ) : error ? (
                 <div className={styles.sectionError}>{error}</div>
