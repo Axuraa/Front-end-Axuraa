@@ -5,6 +5,7 @@ import styles from './ServicesPage.module.css';
 import HeroSection from '@/components/Layout/HeroSection/HeroSection';
 import ServiceCard from '@/components/Molecules/ServiceCard/ServiceCard';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
+import PerLoading from '@/components/UI/Muscles/PreLoading/PreLoading';
 
 const ServicesPage: React.FC = () => {
   const [services, setServices] = useState<ServiceItem[]>([]);
@@ -60,7 +61,11 @@ const ServicesPage: React.FC = () => {
       />
 
       <div className={styles.servicesContainer}>
-        {loading && <p>Loading services...</p>}
+        {loading && 
+          <div className={styles.loadingSpinner}>
+          <PerLoading/>
+        </div>
+        }
 
         {error && !loading && <p>{error}</p>}
 

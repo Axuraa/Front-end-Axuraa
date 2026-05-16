@@ -19,6 +19,7 @@
     /* margin: 0 auto; */
     box-sizing: border-box;
     /* padding: 0 1rem; */
+    /* background-color: tomato; */
 }
 
 /* Small mobile devices (portrait) */
@@ -102,10 +103,11 @@
     }
 }
 
-/* Extra large desktop (1440px and up) - Still 2 COLUMNS
-@media (min-width: 1440px) {
-    .servicesContainer {
-        max-width: 1280px;
-        gap: 36px;
-    }
-} */
+.loadingSpinner {
+    grid-column: 1 / -1; 
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
