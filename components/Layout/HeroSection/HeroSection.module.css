@@ -10,7 +10,7 @@
   padding: 5% 1.5rem;
   overflow: hidden;
   /* background-color: #d04a1d; */
-  margin-top: 3%;
+  margin-top: 1.5%;
 }
 
 .heroDots {
@@ -86,7 +86,6 @@
 .badgeContant {
   text-align: start;
   color: var(--color-azure-84, #d1d5db);
-  font-family: var(--font-family-Font-1, Inter);
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 600;

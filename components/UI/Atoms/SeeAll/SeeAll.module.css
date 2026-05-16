@@ -5,7 +5,6 @@
   margin: 0 auto;
   align-self: stretch;
   text-align: right;
-  font-family: Roboto;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -102,7 +101,6 @@
   .link {
    color: var(--Primary, #D04A1D);
     text-align: right;
-    font-family: Roboto;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;

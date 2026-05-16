@@ -52,7 +52,6 @@
 
 .label {
   color: #9CA3AF;
-  font-family: Inter;
   font-size: 1.0477rem; /* 16.763px / 16 = 1.0477rem */
   font-weight: 500;
   line-height: 1.4967rem; /* 23.947px / 16 = 1.4967rem */
@@ -61,7 +60,6 @@
 
 .value {
   color: #FFF;
-  font-family: Inter;
   font-size: 1.4967rem; /* 23.947px / 16 = 1.4967rem */
   font-weight: 700;
   line-height: 2.0954rem; /* 33.526px / 16 = 2.0954rem */

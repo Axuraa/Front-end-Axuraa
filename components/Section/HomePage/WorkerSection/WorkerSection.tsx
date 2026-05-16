@@ -98,6 +98,7 @@ const WorkerSection: React.FC<WorkerSectionProps> = ({
         title1={title1}
         title2={title2}
         subtitle={subtitle}
+        titleLayout="column"
       />
       <HorizontalScroll 
         className={styles.WorkerGrid}

@@ -45,7 +45,6 @@
 .title {
  align-self: stretch;
  color: #E6E6E6;
-font-family: Roboto;
 font-size: 10.738px;
 font-style: normal;
 font-weight: 700;
@@ -58,7 +57,6 @@ line-height: 15.619px; /* 145.455% */
  color: #E6E6E6;
 
 /* Regular 14 */
-font-family: Roboto;
 font-size: 14px;
 font-style: normal;
 font-weight: 400;

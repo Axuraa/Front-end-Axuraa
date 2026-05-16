@@ -9,6 +9,7 @@ import OurDevelopmentContainer from '@/components/Molecules/OurDevelopmentContai
 import SuccessStoriesContainer from '@/components/Molecules/SuccessStoriesContainer/SuccessStoriesContainer';
 import Image from 'next/image';
 import ServicePackagesContainer from '@/components/Molecules/ServicePackagesContainer/ServicePackagesContainer';
+import StatusBadge from '@/components/UI/Atoms/StatusBadge/StatusBadge';
 import { getServiceById, ServiceItem } from '@/service/serviceId/serviceId';
 import useClientTranslation from '@/hooks/useClientTranslation';
 
@@ -226,6 +227,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
             {/* FeaturesCapabilities */}
             <div className={styles.FeaturesCapabilities}>
                 <div className={styles.FeaturesCapabilitiesContent}>
+                    <StatusBadge text="OUR FEATURES"  className={styles.FeaturesStatusBadge}/>
                     <h1 className={styles.FeaturesCapabilitiesTitle}>Features & Capabilities</h1>
                     <p className={styles.FeaturesCapabilitiesDescription}>
                         {service.description_features?.en || 'Comprehensive web services designed to design, build, and scale your digital presence from concept to launch.'}
@@ -238,6 +240,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
             {/* Our Development Process */}
             <div className={styles.OurDevelopmentProcess}>
                 <div className={styles.OurDevelopmentProcessContent}>
+                    <StatusBadge text="OUR PROCESS" className={styles.DevelopmentStatusBadge} />
                     <h1 className={styles.OurDevelopmentProcessTitle}>Our Development Process</h1>
                     <p className={styles.OurDevelopmentProcessDescription}>A systematic approach to web development that ensures a high-quality product through discovery, design, implementation, and support.</p>
                 </div>
@@ -247,6 +250,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
             </div>
             {/* Success Stories */}
             <div className={styles.SuccessStories}>
+              <StatusBadge text="OUR STORIES" className={styles.StoriesStatusBadge} />
                 <div className={styles.SuccessStoriesContent}>
                     <h1 className={styles.SuccessStoriesTitle}>Success Stories</h1>
                     <p className={styles.SuccessStoriesDescription}>
@@ -289,6 +293,7 @@ const ServicePage: React.FC<ServicePageProps> = ({ serviceId }) => {
             {/* Service Packages */}
             <div className={styles.ServicePackages}>
                  <div className={styles.ServicePackagesContent}>
+                    <StatusBadge text="OUR PACKAGES" />
                     <h1 className={styles.ServicePackagesTitle}>Service Packages</h1>
                     <p className={styles.ServicePackagesDescription}>Choose the web development solution that fits your business needs, from essential websites to enterprise-grade web applications.</p>
                 </div>

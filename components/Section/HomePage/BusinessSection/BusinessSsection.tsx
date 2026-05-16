@@ -98,6 +98,7 @@ const BusinessSection = () => {
             title1="How we help"
             title2="Businesses Grow?"
             subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+            titleLayout="column"
         />
         <div className={styles.servicesGrid}>
           {servicesToShow.map((service, index) => (

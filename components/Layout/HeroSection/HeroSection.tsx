@@ -79,14 +79,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   primaryHref = "#contact-section",
   secondaryHref = "/en/portfolio",
   height = "100vh",
-  showBackgroundDots = true,
   showAnimatedCircles = true,
   showBadge = true,
   showStatusBadge = true,
   showTrustedSection = true,
   showPrimaryButton = true,
   showSecondaryButton = true,
-  showEllipseDecorations = true,
   onPrimaryClick,
   onSecondaryClick,
   backgroundType = "Hexagon",
@@ -95,7 +93,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [mounted, setMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [partners, setPartners] = useState<PartnerItem[]>([]);
-  const [partnersLoading, setPartnersLoading] = useState(true);
 
   useEffect(() => {
     setMounted(true);
@@ -144,7 +141,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         setPartners(fallbackPartners);
         setCachedPartners(fallbackPartners);
       } finally {
-        setPartnersLoading(false);
+        // Partners loaded
       }
     };
 
@@ -221,21 +218,31 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               align="center"
               style={{
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
+                justifyContent: "center",
                 alignItems: "center",
-                gap: "0.5rem",
+                gap: "0.75rem",
+                flexWrap: "wrap",
               }}
             >
-              <span style={{ color: "#FFFFFF" }}>
+              <span
+                style={{
+                  background: "#ffffff",
+                  backgroundClip: "text",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  display: "inline-block",
+                }}
+              >
                 {title1}
               </span>
               <span
                 style={{
-                  background: "linear-gradient(90deg, #D04A1D 0%, #902501 100%)",
+                  background: "linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%)",
                   backgroundClip: "text",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
-                  display: "block",
+                  display: "inline-block",
                 }}
               >
                 {title2}

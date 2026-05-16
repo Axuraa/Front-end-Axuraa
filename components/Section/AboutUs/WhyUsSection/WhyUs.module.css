@@ -34,7 +34,6 @@
 }
 .heading {
   color: #fff;
-  font-family: 'Roboto', sans-serif;
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: 1.25rem;
@@ -43,7 +42,6 @@
 }
 .subtitle {
   color: #999;
-  font-family: 'Roboto', sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.6;
@@ -140,7 +138,7 @@
     padding: 3.75rem 6%;
   }
   .header {
-    margin-bottom: 0rem;
+    margin-bottom: 2.5rem;
   }
   .heading {
     font-size: 2rem;

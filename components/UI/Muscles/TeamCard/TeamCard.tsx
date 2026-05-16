@@ -44,15 +44,26 @@ const TeamCard: React.FC<TeamCardProps> = ({ name, role, imageUrl, description }
             unoptimized={imageUrl.includes('res.cloudinary.com')}
           />
           <div className={styles.nameOverlay}>
-            <Typography variant="h6" color="#ffffff">
+            <Typography 
+              variant="h6" 
+              style={{
+                color: "#fffdfd"
+              }}
+            >
               {name}
             </Typography>
           </div>
         </div>
         
       </div>
-      <div className={styles.roleSection}>
-          <Typography variant="h4" color="#ffffff" className={styles.role}>
+        <div className={styles.roleSection}>
+          <Typography 
+            variant="h4" 
+            className={styles.role}
+            style={{
+              color: "#fffdfd"
+            }}
+          >
             {role}
           </Typography>
         </div>

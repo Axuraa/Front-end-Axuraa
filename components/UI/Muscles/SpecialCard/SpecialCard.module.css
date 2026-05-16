@@ -81,7 +81,12 @@
 }
 
 .title {
-  color: #ffffff;
+  /* background: linear-gradient(90deg, #d04a1d 0%, #fffdfd 100%);
+   */
+   background: #fffdfd;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-weight: 700 !important;
   font-size: 3.5rem !important;
   margin-bottom: 1.5rem !important;
@@ -114,7 +119,6 @@
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: inherit;
   letter-spacing: 0.02em;
 }
 
@@ -139,6 +143,7 @@
   border: var(--stroke-weight-1, 0.0712rem) solid rgba(255, 255, 255, 0.20);
   background: rgba(144, 37, 1, 0.50);
   backdrop-filter: blur(0.1424rem);
+  color: #ffffff; /* Ensure text is white */
 }
 
 .secondaryButton:hover {

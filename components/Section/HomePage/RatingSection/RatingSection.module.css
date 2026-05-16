@@ -20,9 +20,10 @@
 /* Tablet - 768px */
 @media (max-width: 768px) {
     .RatingSection {
+        height: 700px;
         padding: 30px 20px;
-        min-height: auto;
         gap: 16px;
+        /* background-color: green; */
     }
 }
 

@@ -2,6 +2,7 @@
 'use client'
 import React from 'react';
 import Image from 'next/image';
+import { FiArrowRight } from 'react-icons/fi';
 import styles from './ProjectCart.module.css';
 
 import { ProjectCardProps } from '@/types/Generals/cardTypes';
@@ -38,7 +39,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         
         <a href={`/en/case-study/${id}`} className={styles.readMore}>
           Read More
-          <span>→</span>
+          <FiArrowRight className={styles.arrowIcon} />
         </a>
       </div>
     </div>

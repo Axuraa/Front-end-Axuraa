@@ -65,6 +65,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
         title1={title1}
         title2={title2}
         subtitle={subtitle}
+        titleLayout="column"
       />
       <SeeAll href={portfolioHref}>
         {seeAllText}

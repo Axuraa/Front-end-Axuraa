@@ -159,6 +159,7 @@ const RatingSection: React.FC<RatingSectionProps> = ({
         title1={title1}
         title2={title2}
         subtitle={subtitle}
+        titleLayout="column"
       />
       {apiRatingItems.length > 0 && (
         <Rating 

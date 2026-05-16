@@ -5,4 +5,7 @@ export interface SectionHeaderProps {
   title2?: string;
   subtitle?: string;
   className?: string;
+  textAlign?: 'left' | 'center' | 'right';
+  titleColor?: string;
+  titleLayout?: 'row' | 'column';
 }

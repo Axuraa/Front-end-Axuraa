@@ -13,7 +13,7 @@ const SocialMediaCard: React.FC<SocialMediaCardProps> = ({
   useEffect(() => {
     const updateIconSize = () => {
       if (window.innerWidth <= 480) {
-        setIconSize(28);
+        setIconSize(20);
       } else if (window.innerWidth <= 768) {
         setIconSize(52);
       } else {
