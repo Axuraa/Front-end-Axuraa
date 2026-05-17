@@ -28,9 +28,8 @@ const Footer = () => {
   const companyLinks = [
     { name: 'About Us', href: 'aboutus' },
     { name: 'Portfolio', href: 'portfolio' },
-    { name: 'Case Studies', href: '#case-studies' },
+{ name: 'Case Studies', href: 'portfolio' },
     { name: 'Services', href: 'services' },
-    { name: 'Blog', href: '#blog' },
     { name: 'Contact', href: 'contact' }
   ];
 
@@ -39,23 +38,23 @@ const Footer = () => {
   //   { icon: Twitter, href: '#', label: 'Twitter' },
   //   { icon: Github, href: '#', label: 'GitHub' }
   // ];
-const socialLinks = [
-  { 
-    icon: '/assets/linkeninicon.svg', 
-    href: '#', 
-    label: 'LinkedIn' 
-  },
-  { 
-    icon: '/assets/Xicon.svg', 
-    href: '#', 
-    label: 'Twitter' 
-  },
-  { 
-    icon: '/assets/githupicon.svg', 
-    href: '#', 
-    label: 'GitHub' 
-  }
-];
+  const socialLinks = [
+    {
+      icon: '/assets/linkeninicon.svg',
+      href: '#',
+      label: 'LinkedIn'
+    },
+    {
+      icon: '/assets/Xicon.svg',
+      href: '#',
+      label: 'Twitter'
+    },
+    {
+      icon: '/assets/githupicon.svg',
+      href: '#',
+      label: 'GitHub'
+    }
+  ];
   return (
     <footer className={styles.footer}>
       {/* Main Footer Content */}
@@ -65,9 +64,9 @@ const socialLinks = [
             {/* Left Section: Brand & Social */}
             <div className={styles.brandSection}>
               <div className={styles.brand}>
-                <img 
-                  src="/assets/FooterLogo.png" 
-                  alt="Axuraa Logo" 
+                <img
+                  src="/assets/FooterLogo.png"
+                  alt="Axuraa Logo"
                   className={styles.logo}
                 />
                 <h1 className={styles.brantlogo}>AXURAA</h1>
@@ -77,18 +76,18 @@ const socialLinks = [
               </p>
               <div className={styles.socialLinks}>
                 {socialLinks.map((social, index) => (
-                  <a 
-                    key={index} 
-                    href={social.href} 
+                  <a
+                    key={index}
+                    href={social.href}
                     className={styles.socialLink}
                     aria-label={social.label}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <img 
-                      src={social.icon} 
-                      alt={social.label} 
-                      width={24} 
+                    <img
+                      src={social.icon}
+                      alt={social.label}
+                      width={24}
                       height={24}
                       className={styles.socialIcon}
                     />
@@ -105,9 +104,9 @@ const socialLinks = [
                 <ul className={styles.linkList}>
                   {companyLinks.map((link, index) => (
                     <li key={index}>
-                      <a href={link.href} className={styles.link}>
+                      <Link href={`/${currentLocale}/${link.href}`} className={styles.link}>
                         {link.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -120,12 +119,12 @@ const socialLinks = [
                   {services
                     .filter((service) => service.type === 'service' && service.is_active)
                     .map((service) => (
-                    <li key={service._id}>
-                      <Link href={`/${currentLocale}/service/${service._id}`} className={styles.link}>
-                        {service.title.en}
-                      </Link>
-                    </li>
-                  ))}
+                      <li key={service._id}>
+                        <Link href={`/${currentLocale}/service/${service._id}`} className={styles.link}>
+                          {service.title.en}
+                        </Link>
+                      </li>
+                    ))}
                 </ul>
               </div>
 
@@ -136,12 +135,12 @@ const socialLinks = [
                   {services
                     .filter((service) => service.type === 'solution' && service.is_active)
                     .map((service) => (
-                    <li key={service._id}>
-                      <Link href={`/${currentLocale}/service/${service._id}`} className={styles.link} style={{ whiteSpace: 'nowrap' }}>
-                        {service.title.en}
-                      </Link>
-                    </li>
-                  ))}
+                      <li key={service._id}>
+                        <Link href={`/${currentLocale}/service/${service._id}`} className={styles.link} style={{ whiteSpace: 'nowrap' }}>
+                          {service.title.en}
+                        </Link>
+                      </li>
+                    ))}
                 </ul>
               </div>
             </div>
@@ -184,7 +183,7 @@ const socialLinks = [
                 }}
               >
                 Privacy Policy
-              </Typography> */}              
+              </Typography> */}
               {/* <Typography 
                 component="span" 
                 className={styles.separator}
