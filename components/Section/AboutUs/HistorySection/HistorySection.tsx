@@ -1,14 +1,14 @@
 // components/Sections/HistorySection/HistorySection.tsx
-import React from 'react';
-import styles from './HistorySection.module.css';
-import HistoryJourney from '@/components/UI/Muscles/HistoryJourney/HistoryJourney';
-import HistoryCard from '@/components/UI/Muscles/HistoryCard/HistoryCard';
-import { HistorySectionProps } from '@/types/AboutUsPage/History/JourneyTypes';
+import React from "react";
+import styles from "./HistorySection.module.css";
+import HistoryJourney from "@/components/UI/Muscles/HistoryJourney/HistoryJourney";
+import HistoryCard from "@/components/UI/Muscles/HistoryCard/HistoryCard";
+import { HistorySectionProps } from "@/types/AboutUsPage/History/JourneyTypes";
 
-const HistorySection: React.FC<HistorySectionProps> = ({ 
+const HistorySection: React.FC<HistorySectionProps> = ({
   journeyData,
   cardData,
-  className = ""
+  className = "",
 }) => {
   return (
     <section className={`${styles.history_section} ${className}`}>

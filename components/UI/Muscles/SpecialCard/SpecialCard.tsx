@@ -1,18 +1,18 @@
-import React from 'react';
-import Typography from '@/components/UI/Atoms/Typography/Typography';
-import styles from './SpecialCard.module.css';
-import Image from 'next/image';
+import React from "react";
+import Typography from "@/components/UI/Atoms/Typography/Typography";
+import styles from "./SpecialCard.module.css";
+import Image from "next/image";
 
-import { SpecialCardProps } from '@/types/Generals/cardTypes';
+import { SpecialCardProps } from "@/types/Generals/cardTypes";
 
 const SpecialCard: React.FC<SpecialCardProps> = ({
-  title = 'Ready to Innovate?',
-  subtitle = 'Join the list of forward-thinking companies that trust Axuraa to deliver excellence.',
-  primaryButtonText = 'Contact Us',
-  secondaryButtonText = 'View Case Studies',
+  title = "Ready to Innovate?",
+  subtitle = "Join the list of forward-thinking companies that trust Axuraa to deliver excellence.",
+  primaryButtonText = "Contact Us",
+  secondaryButtonText = "View Case Studies",
   onPrimaryClick,
   onSecondaryClick,
-  className = '',
+  className = "",
 }) => {
   return (
     <div className={`${styles.specialCard} ${className}`}>
@@ -23,14 +23,14 @@ const SpecialCard: React.FC<SpecialCardProps> = ({
           alt=""
           className={`${styles.blurCircle} ${styles.blurCircle1}`}
           width={80}
-            height={80}
+          height={80}
         />
         <Image
           src="/assets/Blur-circle-2.svg"
           alt=""
           className={`${styles.blurCircle} ${styles.blurCircle2}`}
-            width={100}
-            height={100}
+          width={100}
+          height={100}
         />
       </div>
 
@@ -59,13 +59,13 @@ const SpecialCard: React.FC<SpecialCardProps> = ({
         <div className={styles.buttonGroup}>
           <button
             className={`${styles.button} ${styles.primaryButton}`}
-            onClick={() => window.location.href = '/en/contact'}
+            onClick={() => (window.location.href = "/en/contact")}
           >
             {primaryButtonText}
           </button>
           <button
             className={`${styles.button} ${styles.secondaryButton}`}
-            onClick={() => window.location.href = '/en/portfolio'}
+            onClick={() => (window.location.href = "/en/portfolio")}
           >
             {secondaryButtonText}
           </button>
