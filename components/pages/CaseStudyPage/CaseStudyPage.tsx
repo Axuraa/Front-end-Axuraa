@@ -1,16 +1,16 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { ArrowLeft, ExternalLink, Zap, Star, CreditCard, BarChart3, User, Brain, Shield, Package } from 'lucide-react';
-import styles from './CaseStudyPage.module.css';
-import ProjectButton from '@/components/UI/Atoms/ProjectButton/ProjectButton';
-import Image from 'next/image';
-import { getProjectById } from '@/service/projectId/projectId';
-import { ProjectItem, Testimonial } from '@/service/Projects/projects';
-import useClientTranslation from '@/hooks/useClientTranslation';
+// components/pages/CaseStudyPage/CaseStudyPage.tsx
+"use client";
+
+import React from "react";
+import { ExternalLink, Package } from "lucide-react";
+import styles from "./CaseStudyPage.module.css";
+import ProjectButton from "@/components/UI/Atoms/ProjectButton/ProjectButton";
+import Image from "next/image";
+import { ProjectItem, Testimonial } from "@/service/Projects/projects";
 
 interface CaseStudyPageProps {
-  projectId: string;
+  project: ProjectItem;
+  locale: "en" | "ar";
 }
 
 interface TestimonialDisplay {
@@ -18,147 +18,116 @@ interface TestimonialDisplay {
   author: string;
 }
 
-const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
-  const { t, locale } = useClientTranslation('projects');
-  const [project, setProject] = useState<ProjectItem | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const router = useRouter();
+const preImage = "/assets/OverviewIcon.png";
 
-  useEffect(() => {
-    const fetchProject = async () => {
-      try {
-        console.log('Fetching project with ID:', projectId);
-        setLoading(true);
-        
-        // For testing, if it's the test ID, show a mock project
-        if (projectId === 'test-project-id') {
-          console.log('Using test project data');
-          setProject({
-            _id: 'test-project-id',
-            title: { en: 'Test Project', ar: 'مشروع تجريبي' },
-            subTitle: { en: 'Test Subtitle', ar: 'عنوان فرعي تجريبي' },
-            overview: { en: 'This is a test project for debugging', ar: 'هذا مشروع تجريبي للتصحيح' },
-            technology_stack: ['React', 'Node.js', 'TypeScript'],
-            case_study_results: [],
-            team_members: [],
-            client_id: { _id: '1', name: 'Test Client', image_url: '' },
-            features: [],
-            services: [],
-            status: 'Completed',
-            location: 'Test Location',
-            start_work: new Date().toISOString(),
-            project_manager: 'Test Manager'
-          });
-          setLoading(false);
-          return;
-        }
-        
-        const result = await getProjectById(projectId, locale as 'en' | 'ar');
-        console.log('Project API result:', result);
-        
-        if (result.success && result.data) {
-          console.log('Project data loaded:', result.data);
-          setProject(result.data);
-        } else {
-          console.log('Project API error:', result.error);
-          setError(result.error || 'Failed to load project');
-        }
-      } catch (err) {
-        console.log('Project fetch error:', err);
-        setError('An unexpected error occurred');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (projectId) {
-      fetchProject();
-    }
-  }, [projectId, locale]);
-
+const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ project, locale }) => {
+  // All data transformation happens here — no fetching, no loading states
   const caseStudy = {
-    title: project?.title?.[locale as 'en' | 'ar'] || project?.title?.en,
-    subtitle: project?.subTitle?.[locale as 'en' | 'ar'] || project?.subTitle?.en || '',
-    tags: project?.services?.map(service => service.services_id.title?.[locale as 'en' | 'ar'] || service.services_id.title?.en) || [],
-    client: project?.client_id?.name || 'Client',
-    projectManager: project?.project_manager || 'Project Manager',
-    timeframe: project?.start_work ? new Date(project.start_work).toLocaleDateString(locale === 'ar' ? 'ar-EG' : 'en-US') : 'Timeframe',
-    team: `${project?.team_members?.length || 0} team members`,
-    location: project?.location || 'Location',
-    url_deployment: project?.url_deployment || null,
-    results: project?.case_study_results?.map(result => ({
-      metric: result.description?.[locale as 'en' | 'ar'] || result.description?.en,
-      value: result.value
+    title:    typeof project.title === 'string'
+                ? project.title
+                : project.title?.[locale] || project.title?.en,
+
+    subtitle: typeof project.subTitle === 'string'
+                ? project.subTitle
+                : project.subTitle?.[locale] || project.subTitle?.en || '',
+
+    overview: typeof project.overview === 'string'
+                ? project.overview
+                : project.overview?.[locale] || project.overview?.en || '',
+
+    features: project.features?.map(f => ({
+        icon: f.icon || null,
+        title: typeof f.title === 'string'
+                ? f.title
+                : f.title?.[locale] || f.title?.en || '',
+        description: typeof f.description === 'string'
+                ? f.description
+                : f.description?.[locale] || f.description?.en || '',
     })) || [],
-    testimonials: project?.testimonials?.map((testimonial: Testimonial) => ({
-      text: typeof testimonial.message === 'string' ? testimonial.message : (testimonial.message?.[locale as 'en' | 'ar'] || testimonial.message?.en || ''),
-      author: testimonial.client_id?.name || 'Anonymous'
-    })) || [],
-    features: project?.features?.map(feature => ({
-      icon: feature.icon || <Package className={styles.featureIcon} />,
-      title: feature.title?.[locale as 'en' | 'ar'] || feature.title?.en,
-      description: feature.description?.[locale as 'en' | 'ar'] || feature.description?.en
-    })) || []
+
+    tags: project.services?.map(s => {
+        const t = s.services_id.title;
+        return typeof t === 'string' ? t : t?.[locale] || t?.en || '';
+    }) || [],
+
+    client: project.client_id?.name || "Client",
+    projectManager: project.project_manager || "Project Manager",
+    timeframe: project.start_work
+      ? new Date(project.start_work).toLocaleDateString(
+          locale === "ar" ? "ar-EG" : "en-US",
+        )
+      : "Timeframe",
+    team: `${project.team_members?.length || 0} team members`,
+    location: project.location || "Location",
+    url_deployment: project.url_deployment || null,
+
+    results:
+      project.case_study_results?.map((r) => ({
+        metric: r.description?.[locale] || r.description?.en,
+        value: r.value,
+      })) || [],
+    testimonials:
+      project.testimonials?.map((t: Testimonial) => ({
+        text:
+          typeof t.message === "string"
+            ? t.message
+            : t.message?.[locale] || t.message?.en || "",
+        author: t.client_id?.name || "Anonymous",
+      })) || [],
+
+    mainImage: project.main_image_url ?? null,
+    secondImage: project.second_image_url ?? null,
   };
 
-  const handleContactNavigation = () => {
-    // Navigate to Contact page
-    router.push(`/${locale}/contact`);
+  const projectDetails = [
+    {
+      icon: "/assets/ProjectDetailscard/client.svg",
+      label: "Client:",
+      value: caseStudy.client,
+    },
+    {
+      icon: "/assets/ProjectDetailscard/client.svg",
+      label: "Project Manager:",
+      value: caseStudy.projectManager,
+    },
+    {
+      icon: "/assets/ProjectDetailscard/time.svg",
+      label: "Timeframe:",
+      value: caseStudy.timeframe,
+    },
+    {
+      icon: "/assets/ProjectDetailscard/team.svg",
+      label: "Team:",
+      value: caseStudy.team,
+    },
+    {
+      icon: "/assets/ProjectDetailscard/location.svg",
+      label: "Location:",
+      value: caseStudy.location,
+    },
+  ];
+
+  const handlePrototype = () => {
+    if (caseStudy.url_deployment)
+      window.open(caseStudy.url_deployment, "_blank");
   };
 
-  const handlePrototypeNavigation = () => {
-    // Navigate to the deployed project URL
-    if (caseStudy.url_deployment) {
-      window.open(caseStudy.url_deployment, '_blank');
-    } else {
-      // Fallback to contact page if no deployment URL
-      // router.push('/en/contact');
-    }
-  };
-
-  const handleConcactNavigation = () => {
-    // Navigate to Contact page
+  const handleContact = () => {
     window.location.href = `/${locale}/#contact-section`;
   };
 
-  console.log(caseStudy.tags)
-  
-  const projectDetails = [
-    { 
-      icon: '/assets/ProjectDetailscard/client.svg',
-      label: t('details.client', 'Client:'),
-      value: caseStudy.client
-    },
-    { 
-      icon: '/assets/ProjectDetailscard/client.svg',
-      label: t('details.projectManager', 'Project Manager:'),
-      value: caseStudy.projectManager
-    },
-    { 
-      icon: '/assets/ProjectDetailscard/time.svg',
-      label: t('details.timeframe', 'Timeframe:'),
-      value: caseStudy.timeframe
-    },
-    { 
-      icon: '/assets/ProjectDetailscard/team.svg',
-      label: t('details.team', 'Team:'),
-      value: caseStudy.team
-    },
-    { 
-      icon: '/assets/ProjectDetailscard/location.svg',
-      label: t('details.location', 'Location:'),
-      value: caseStudy.location
-    }
-  ];
   return (
     <div className={styles.container}>
-     {/* Breadcrumb */}
+      {/* Breadcrumb */}
       <div className={styles.breadcrumb}>
         <div className={styles.breadcrumbContent}>
-          <a href={`/${locale}`} className={styles.breadcrumbLink}>{t('breadcrumb.home', 'Home')}</a>
+          <a href={`/${locale}`} className={styles.breadcrumbLink}>
+            Home
+          </a>
           <span className={styles.breadcrumbDivider}>&gt;</span>
-          <a href={`/${locale}/portfolio`} className={styles.breadcrumbLink}>{t('breadcrumb.portfolio', 'Portfolio')}</a>
+          <a href={`/${locale}/portfolio`} className={styles.breadcrumbLink}>
+            Portfolio
+          </a>
           <span className={styles.breadcrumbDivider}>&gt;</span>
           <span className={styles.currentPage}>{caseStudy.title}</span>
         </div>
@@ -168,133 +137,118 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
         <div className={styles.grid}>
           {/* Main Content */}
           <div>
-            {/* Hero Section */}
+            {/* Hero */}
             <section className={styles.hero}>
-              {loading ? (
-                <div className={styles.sectionLoading}>
-                  <div className={styles.loadingSpinner}></div>
-                  <p>Loading project details...</p>
+              <div className={styles.text}>
+                <h1 className={styles.title}>{caseStudy.title}</h1>
+                <p className={styles.subtitle}>{caseStudy.subtitle}</p>
+              </div>
+
+              {caseStudy.mainImage && (
+                <div className={styles.preview}>
+                  <Image
+                    src={caseStudy.mainImage}
+                    alt={caseStudy.title ?? "Project image"}
+                    width={1200}
+                    height={600}
+                    className={styles.previewImage}
+                    priority
+                  />
                 </div>
-              ) : (
-                <>
-                  <div className={styles.text}>
-                    <h1 className={styles.title}>{caseStudy.title}</h1>
-                    <p className={styles.subtitle}>{caseStudy.subtitle}</p>
-                  </div>
-                  
-                  <div className={styles.tags}>
-                    {caseStudy.tags.map((tag, idx) => (
-                      <ProjectButton 
-                        key={idx} 
-                        variant="outline"
-                        style={{ 
-                          display: 'flex',
-                          padding: '2.167px 8.247px 1.464px 10.26px',
-                          justifyContent: 'center',
-                          alignItems: 'center',
-                          borderRadius: '10px',
-                          border: '0 solid #E5E7EB',
-                          backgroundColor: '#D04A1D',
-                          color: '#FFF',
-                          fontSize: '12.667px',
-                          fontWeight: 400,
-                          lineHeight: '18.297px',
-                          margin: 0
-                        }}
-                      >
-                      {tag}
-                    </ProjectButton>
-                    ))}
-                  </div>
-                  <div className={styles.preview}>
-                  </div>
-                </>
               )}
+
+              <div className={styles.tags}>
+                {caseStudy.tags.map((tag, idx) => (
+                  <ProjectButton
+                    key={idx}
+                    variant="outline"
+                    style={{
+                      display: "flex",
+                      padding: "2.167px 8.247px 1.464px 10.26px",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      borderRadius: "10px",
+                      border: "0 solid #E5E7EB",
+                      backgroundColor: "#D04A1D",
+                      color: "#FFF",
+                      fontSize: "12.667px",
+                      fontWeight: 400,
+                      lineHeight: "18.297px",
+                      margin: 0,
+                    }}
+                  >
+                    {tag}
+                  </ProjectButton>
+                ))}
+              </div>
             </section>
 
-            {/* Overview Section */}
+            {/* Overview */}
             <section className={styles.section}>
-              {loading ? (
-                <div className={styles.sectionLoading}>
-                  <div className={styles.loadingSpinner}></div>
-                  <p>Loading overview...</p>
+              <div className={styles.sectionHeader}>
+                <div className={styles.overviewIconContainer}>
+                  <Image
+                    src="/assets/OverviewIcon.png"
+                    alt="Overview"
+                    width={30}
+                    height={30}
+                    className={styles.overviewIcon}
+                  />
                 </div>
-              ) : (
-                <>
-                  <div className={styles.sectionHeader}>
-                    <div className={styles.overviewIconContainer}>
-                      <Image
-                        src="/assets/OverviewIcon.png"
-                        alt="Overview"
-                        width={30}
-                        height={30}
-                        className={styles.overviewIcon}
-                      />
-                    </div>
-                    <h2 className={styles.sectionTitle}>{t('sections.overview', 'OVERVIEW')}</h2>
-                  </div>
-                  <p className={styles.sectionText}>
-                    {project?.overview?.[locale as 'en' | 'ar'] || project?.overview?.en || '...'}
-                  </p>
-                </>
-              )}
+                <h2 className={styles.sectionTitle}>OVERVIEW</h2>
+              </div>
+              <p className={styles.sectionText}>{caseStudy.overview}</p>
             </section>
 
             {/* Key Features */}
             <section className={styles.section2}>
-              {loading ? (
-                <div className={styles.sectionLoading}>
-                  <div className={styles.loadingSpinner}></div>
-                  <p>Loading features...</p>
+              <div className={styles.sectionHeader2}>
+                <div className={styles.overviewIconContainer}>
+                  <Image
+                    src="/assets/Sparkling.png"
+                    alt="Features"
+                    width={30}
+                    height={30}
+                    className={styles.overviewIcon}
+                  />
                 </div>
-              ) : (
-                <>
-                  <div className={styles.sectionHeader2}>
-                    <div className={styles.overviewIconContainer}>
-                      <Image
-                        src="/assets/Sparkling.png"
-                        alt="Overview"
-                        width={30}
-                        height={30}
-                        className={styles.overviewIcon}
-                      />
+                <h2 className={styles.sectionTitle2}>Key Features</h2>
+              </div>
+              <p className={styles.sectionText2}>
+                A comprehensive suite of features designed to optimize the
+                experience for merchants and customers alike.
+              </p>
+              <div className={styles.featuresGrid}>
+                {caseStudy.features.map((feature, idx) => (
+                  <div key={idx} className={styles.featureCard}>
+                    <div className={styles.featureIcon}>
+                      {feature.icon ? (
+                        <Image
+                          src={feature.icon}
+                          alt="Feature icon"
+                          width={30}
+                          height={30}
+                          className={styles.overviewIcon}
+                        />
+                      ) : (
+                        <Package className={styles.featureIcon} />
+                      )}
                     </div>
-                    <h2 className={styles.sectionTitle2}>{t('sections.keyFeatures', 'Key Features')}</h2>
+                    <h3 className={styles.featureTitle}>{feature.title}</h3>
+                    <p className={styles.featureDescription}>
+                      {feature.description}
+                    </p>
                   </div>
-                  <p className={styles.sectionText2}>
-                    {t('fallback.featuresDescription', 'A comprehensive suite of features designed to optimize the e-commerce experience for merchants and customers alike.')}
-                  </p>
-                  <div className={styles.featuresGrid}>
-                    {caseStudy.features.map((feature, idx) => (
-                      <div key={idx} className={styles.featureCard}>
-                        <div className={styles.featureIcon}>
-                          {typeof feature.icon === 'string' ? (
-                            <Image
-                              src={ feature.icon || "/assets/box copy.png" }
-                              alt="Feature icon"
-                              width={30}
-                              height={30}
-                              className={styles.overviewIcon}
-                            />
-                          ) : (
-                            feature.icon
-                          )}
-                        </div>
-                        <h3 className={styles.featureTitle}>{feature.title}</h3>
-                        <p className={styles.featureDescription}>{feature.description}</p>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
+                ))}
+              </div>
             </section>
           </div>
 
           {/* Sidebar */}
           <aside className={styles.sidebar}>
-            {/* Results Card */}
+            {/* Results */}
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>{t('sections.caseStudyResults', 'Case Study Results')}</h3>
+              <h3 className={styles.cardTitle}>Case Study Results</h3>
               <div className={styles.results}>
                 {caseStudy.results.map((result, idx) => (
                   <div key={idx} className={styles.resultItem}>
@@ -303,65 +257,72 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ projectId }) => {
                   </div>
                 ))}
               </div>
-              <button className={styles.button} onClick={handlePrototypeNavigation}>
-                {t('buttons.showPrototype', 'Show prototype')} <ExternalLink className={styles.buttonIcon} />
+              <button className={styles.button} onClick={handlePrototype}>
+                Show prototype <ExternalLink className={styles.buttonIcon} />
               </button>
             </div>
 
-            {/* Consultation Card */}
+            {/* Consultation */}
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>{t('sections.freeConsultation', 'Free Project Consultation')}</h3>
+              <h3 className={styles.cardTitle}>Free Project Consultation</h3>
               <p className={styles.freeProjectText}>
-                {t('fallback.consultationText', 'Get a comprehensive evaluation of your project goals and digital strategy with our complimentary assessment.')}
+                Get a comprehensive evaluation of your project goals and digital
+                strategy with our complimentary assessment.
               </p>
-              <button className={styles.button} onClick={handleConcactNavigation}>
-                {t('buttons.scheduleAssessment', 'Schedule Free Assessment')} <ExternalLink className={styles.buttonIcon} />
+              <button className={styles.button} onClick={handleContact}>
+                Schedule Free Assessment{" "}
+                <ExternalLink className={styles.buttonIcon} />
               </button>
             </div>
 
             {/* Testimonials */}
             <div className={styles.card}>
-              <h3 className={styles.cardTitle}>{t('sections.testimonials', 'Client Testimonials')}</h3>
+              <h3 className={styles.cardTitle}>Client Testimonials</h3>
               <div className={styles.testimonials}>
-                {caseStudy.testimonials.map((testimonial: TestimonialDisplay, idx: number) => (
-                  <div key={idx} className={styles.testimonial}>
-                    <div className={styles.testimonialAvatar}>
-                          <Image
-                            src="/assets/imsges.png"
-                            alt="Overview"
-                            width={40}
-                            height={40}
-                            className={styles.testimonialAvatar}
-                      />
+                {caseStudy.testimonials.map(
+                  (testimonial: TestimonialDisplay, idx: number) => (
+                    <div key={idx} className={styles.testimonial}>
+                      <div className={styles.testimonialAvatar}>
+                        <Image
+                          src="/assets/imsges.png"
+                          alt="Avatar"
+                          width={40}
+                          height={40}
+                          className={styles.testimonialAvatar}
+                        />
+                      </div>
+                      <div className={styles.testimonialContent}>
+                        <p className={styles.testimonialText}>
+                          "{testimonial.text}"
+                        </p>
+                        <p className={styles.testimonialAuthor}>
+                          {testimonial.author}
+                        </p>
+                      </div>
                     </div>
-                    
-                    <div className={styles.testimonialContent}>
-                      <p className={styles.testimonialText}>"{testimonial.text}"</p>
-                      <p className={styles.testimonialAuthor}>{testimonial.author}</p>
-                    </div>
-                  </div>
-                ))}
+                  ),
+                )}
               </div>
             </div>
 
             {/* Project Details */}
             <div className={styles.ProjectDetailscard}>
-              <h3 className={styles.cardTitle}>{t('sections.projectDetails', 'Project Details')}</h3>
+              <h3 className={styles.cardTitle}>Project Details</h3>
               <div className={styles.details}>
-                  {projectDetails.map((detail, index) => (
-                    <div key={index} className={styles.detailItem}>
-                      <Image
-                        src={detail.icon}
-                        alt=""
-                        width={8.488}
-                        height={9.701}
-                        className={styles.detailIcon}
-                      />
-                      <span className={styles.detailLabel}>{detail.label}</span>
-                      <span className={styles.detailValue}>{detail.value}</span>
-                    </div>
-                  ))}
-                </div>
+                {projectDetails.map((detail, index) => (
+                  <div key={index} className={styles.detailItem}>
+                    <Image
+                      src={detail.icon}
+                      alt=""
+                      width={8.488}
+                      height={9.701}
+                      className={styles.detailIcon}
+                    />
+                    <span className={styles.detailLabel}>{detail.label}</span>
+                    <span className={styles.detailValue}>{detail.value}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </aside>
         </div>

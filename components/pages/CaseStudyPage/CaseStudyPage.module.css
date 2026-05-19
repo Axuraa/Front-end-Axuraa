@@ -795,6 +795,34 @@
   margin-right: 8px;
 }
 
+/* Hero image */
+.preview {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--cs-radius-md);
+  overflow: hidden;
+  background-color: var(--cs-surface);
+  position: relative;
+}
+
+.previewImage {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--cs-radius-md);
+}
+
+.secondPreview {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--cs-radius-md);
+  overflow: hidden;
+  background-color: var(--cs-surface);
+  position: relative;
+  margin-top: 1rem;
+}
+
 /* Responsive */
 
 /* Mobile First - Base styles above are for mobile */
