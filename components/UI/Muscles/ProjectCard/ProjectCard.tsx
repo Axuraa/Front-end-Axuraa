@@ -1,11 +1,12 @@
 // components/UI/ProjectCard/ProjectCard.tsx
-'use client'
-import React from 'react';
-import Image from 'next/image';
-import { FiArrowRight } from 'react-icons/fi';
-import styles from './ProjectCart.module.css';
+"use client";
+import React from "react";
+import Image from "next/image";
+import { FiArrowRight } from "react-icons/fi";
+import styles from "./ProjectCart.module.css";
+import Link from "next/link";
 
-import { ProjectCardProps } from '@/types/Generals/cardTypes';
+import { ProjectCardProps } from "@/types/Generals/cardTypes";
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
@@ -13,34 +14,38 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   category,
   percentage,
   description,
-  imageUrl
+  imageUrl,
+  locale = "en",
 }) => {
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <Image 
-          src={imageUrl} 
-          alt={title} 
+        <Image
+          src={imageUrl}
+          alt={title}
           width={356}
           height={208}
           className={styles.projectImage}
           priority
         />
       </div>
-      
+
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
         <span className={styles.badge}>{category}</span>
-        
+
         <div className={styles.statsRow}>
           <div className={styles.percentage}>{percentage}</div>
           <p className={styles.description}>{description}</p>
         </div>
-        
-        <a href={`/en/case-study/${id}`} className={styles.readMore}>
+
+        <Link
+          href={`/${locale || "en"}/case-study/${id}`}
+          className={styles.readMore}
+        >
           Read More
           <FiArrowRight className={styles.arrowIcon} />
-        </a>
+        </Link>
       </div>
     </div>
   );

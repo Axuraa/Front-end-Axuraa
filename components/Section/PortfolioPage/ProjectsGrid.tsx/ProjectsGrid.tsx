@@ -1,8 +1,8 @@
-'use client';
-import { motion } from 'framer-motion';
-import styles from './ProjectsGrid.module.css';
-import ProjectCard from '@/components/UI/Muscles/ProjectCard/ProjectCard';
-import React from 'react';
+"use client";
+import { motion } from "framer-motion";
+import styles from "./ProjectsGrid.module.css";
+import ProjectCard from "@/components/UI/Muscles/ProjectCard/ProjectCard";
+import React from "react";
 
 interface Project {
   id: string;
@@ -15,30 +15,33 @@ interface Project {
 
 interface ProjectsGridProps {
   projects: Project[];
+  locale: "en" | "ar";
 }
 
 const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1
+    hidden: { opacity: 1 },
+    show: {
+        opacity: 1,
+        transition: { staggerChildren: 0.08 }
     }
-  }
 };
 
 const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 16 },
+    show:   { opacity: 1, y: 0, transition: { duration: 0.25 } }
 };
 
-const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
+const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, locale }) => {
   if (!projects.length) {
-    return <div className={styles.noProjects}>No projects found for this filter.</div>;
+    return (
+      <div className={styles.noProjects}>
+        No projects found for this filter.
+      </div>
+    );
   }
 
   return (
-    <motion.div 
+    <motion.div
       className={styles.projectsGridContainer}
       variants={container}
       initial="hidden"
@@ -46,18 +49,19 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
     >
       <div className={styles.projectsGrid}>
         {projects.map((project) => (
-          <motion.div 
+          <motion.div
             key={project.id}
             variants={item}
             className={styles.gridItem}
           >
-            <ProjectCard 
+            <ProjectCard
               id={project.id}
               title={project.title}
               category={project.category}
               percentage={project.percentage}
               description={project.description}
               imageUrl={project.imageUrl}
+              locale={locale} // ← pass down so card builds correct href
             />
           </motion.div>
         ))}

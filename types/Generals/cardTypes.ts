@@ -1,11 +1,11 @@
-/** Card component props interface  from path : 
- * @/components/UI/Atoms/Card/Card.tsx 
+/** Card component props interface  from path :
+ * @/components/UI/Atoms/Card/Card.tsx
  * @/components/UI/Atoms/Card/DirectionCard.tsx
  * */
 
 export interface CardProps {
   icon?: React.ReactNode;
-  iconSrc?: string;  
+  iconSrc?: string;
   title: string;
   description: string;
   link?: string;
@@ -13,7 +13,7 @@ export interface CardProps {
 }
 
 /** ContactInfoCard component props interface from path :
- * @/components/UI/Atoms/ContactForm/ContactInfoCard.tsx 
+ * @/components/UI/Atoms/ContactForm/ContactInfoCard.tsx
  * */
 
 export interface ContactInfoCardProps {
@@ -24,7 +24,7 @@ export interface ContactInfoCardProps {
 }
 
 /** ProjectCard component props interface from path :
- * @/components/UI/Muscles/ProjectCard/ProjectCard.tsx 
+ * @/components/UI/Muscles/ProjectCard/ProjectCard.tsx
  * */
 
 export interface ProjectCardProps {
@@ -34,10 +34,11 @@ export interface ProjectCardProps {
   percentage: string;
   description: string;
   imageUrl: string;
+  locale?: string;
 }
 
 /** DevolperCard component props interface from path :
- * @/components/UI/Atoms/DevoleperCard/DevolpercCard.tsx 
+ * @/components/UI/Atoms/DevoleperCard/DevolpercCard.tsx
  * */
 
 export interface DevolperCardProps {
@@ -47,9 +48,8 @@ export interface DevolperCardProps {
   avatarSrc: string;
 }
 
-
 /** SpecialCard component props interface from path :
- * @/components/UI/Muscles/SpecialCard/SpecialCard.tsx 
+ * @/components/UI/Muscles/SpecialCard/SpecialCard.tsx
  * */
 export interface SpecialCardProps {
   title?: string;
@@ -62,20 +62,20 @@ export interface SpecialCardProps {
 }
 
 /** ValueCard component props interface from path :
- * @/components/UI/Muscles/ValueCard/ValueCard.tsx 
+ * @/components/UI/Muscles/ValueCard/ValueCard.tsx
  * */
 export interface ValueCardProps {
   icon: string;
-//   iconSrc?: string;
+  //   iconSrc?: string;
   title: string;
   description: string;
   iconColor?: string;
 }
 
-/** SocialMediaCard component props interface from path : 
- * @/components/UI/Muscles/SocialMediaCard/SocialMediaCard.tsx 
+/** SocialMediaCard component props interface from path :
+ * @/components/UI/Muscles/SocialMediaCard/SocialMediaCard.tsx
  * */
-import { FC, SVGProps } from 'react';
+import { FC, SVGProps } from "react";
 
 export interface SocialMediaCardProps {
   Icon: FC<SVGProps<SVGSVGElement>> | string; // Support both React component and string path
