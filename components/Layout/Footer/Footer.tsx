@@ -121,7 +121,7 @@ const Footer = () => {
                     .map((service) => (
                       <li key={service._id}>
                         <Link href={`/${currentLocale}/service/${service._id}`} className={styles.link}>
-                          {service.title.en}
+                          {service.title}
                         </Link>
                       </li>
                     ))}
@@ -137,7 +137,7 @@ const Footer = () => {
                     .map((service) => (
                       <li key={service._id}>
                         <Link href={`/${currentLocale}/service/${service._id}`} className={styles.link} style={{ whiteSpace: 'nowrap' }}>
-                          {service.title.en}
+                          {service.title}
                         </Link>
                       </li>
                     ))}

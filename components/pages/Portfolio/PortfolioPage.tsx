@@ -8,6 +8,7 @@ import styles from "./PortfolioPage.module.css";
 import ProjectPageButtons from "@/components/Molecules/ProjectPageButtons/ProjectPageButtons";
 import { ProjectItem } from "@/service/Projects/projects";
 import { ServiceItem } from "@/service/Services/services";
+import { buildProjectsFromServices } from "@/lib/transformProjectsFormServices";
 
 interface Props {
   projects: ProjectItem[];
@@ -31,50 +32,16 @@ const PortfolioPage = ({ projects, services, locale }: Props) => {
     return ["All", ...Array.from(new Set(titles))];
   }, [services, locale]);
 
-  console.log("Filters:", filters);
-  console.log("Active Filter:", activeFilter);
-
-  // Filter projects by active filter
-  const filteredProjects = useMemo(() => {
-    if (activeFilter === "All") return projects;
-
-    return projects.filter(
-      (project) =>
-        project.technology_stack?.includes(activeFilter) ||
-        project.status === activeFilter ||
-        project.services?.some(
-          (s) =>
-            s.services_id.title.en === activeFilter ||
-            s.services_id.title.ar === activeFilter,
-        ),
-    );
-  }, [activeFilter, projects]);
-
-  // Transform to grid format
-  const transformedProjects = useMemo(
-    () =>
-      filteredProjects.map((project) => {
-        const getStr = (field: any) =>
-          typeof field === "string"
-            ? field
-            : field?.[locale] || field?.en || "";
-
-        return {
-          id: project._id,
-          title: getStr(project.title) || "Untitled",
-          category:
-            getStr(project.services?.[0]?.services_id?.title) ||
-            project.technology_stack?.[0] ||
-            "General",
-          percentage: project.case_study_results?.[0]?.value || "+50%",
-          description:
-            getStr(project.case_study_results?.[0]?.description) ||
-            "Project description",
-          imageUrl: project.main_image_url || "/assets/ProjectImage.png",
-        };
-      }),
-    [filteredProjects, locale],
+  const allProjects = useMemo(
+    () => buildProjectsFromServices(services),
+    [services]
   );
+
+  const filteredProjects = useMemo(() => {
+    if (activeFilter === "All") return allProjects;
+    return allProjects.filter((p) => p.category === activeFilter); // ✅ exact match
+  }, [activeFilter, allProjects]);
+
 
   return (
     <div className={styles.portfolioPage}>
@@ -102,10 +69,10 @@ const PortfolioPage = ({ projects, services, locale }: Props) => {
           filters={filters}
         />
         <div className={styles.container}>
-          {transformedProjects.length === 0 ? (
+          {filteredProjects.length === 0 ? (
             <div className={styles.sectionError}>No projects found.</div>
           ) : (
-            <ProjectsGrid projects={transformedProjects} locale={locale} />
+            <ProjectsGrid projects={filteredProjects} locale={locale} />
           )}
         </div>
       </div>
