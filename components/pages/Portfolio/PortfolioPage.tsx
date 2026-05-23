@@ -8,7 +8,7 @@ import styles from "./PortfolioPage.module.css";
 import ProjectPageButtons from "@/components/Molecules/ProjectPageButtons/ProjectPageButtons";
 import { ProjectItem } from "@/service/Projects/projects";
 import { ServiceItem } from "@/service/Services/services";
-import { buildProjectsFromServices } from "@/lib/transformProjectsFormServices";
+import { transformProjects } from "@/lib/transformProjectsFormServices";
 
 interface Props {
   projects: ProjectItem[];
@@ -33,7 +33,7 @@ const PortfolioPage = ({ projects, services, locale }: Props) => {
   }, [services, locale]);
 
   const allProjects = useMemo(
-    () => buildProjectsFromServices(services),
+    () => transformProjects(projects, services, locale),
     [services]
   );
 
