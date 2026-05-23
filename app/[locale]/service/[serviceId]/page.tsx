@@ -1,15 +1,19 @@
-// app/service/page.tsx
+// app/[locale]/service/[serviceId]/page.tsx
+import { getServiceById } from "@/service/serviceId/serviceId";
 import ServicePage from "@/components/pages/ServicePage/ServicePage";
-import { use } from "react";
+import { notFound } from "next/navigation";
 
 interface PageProps {
-  params: Promise<{
-    serviceId: string;
-    locale: string;
-  }>;
+  params: Promise<{ serviceId: string; locale: string }>;
 }
 
-export default function ServicePageWrapper({ params }: PageProps) {
-  const resolvedParams = use(params);
-  return <ServicePage serviceId={resolvedParams.serviceId} />;
+export default async function ServicePageWrapper({ params }: PageProps) {
+  const { serviceId, locale } = await params;
+  const typedLocale = locale as "en" | "ar";
+
+  const result = await getServiceById(serviceId, typedLocale);
+
+  if (!result.success || !result.data) notFound();
+
+  return <ServicePage service={result.data} locale={typedLocale} />;
 }
