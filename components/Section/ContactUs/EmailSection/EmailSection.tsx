@@ -1,8 +1,8 @@
 // components/EmailSection/EmailSection.tsx
-import React from 'react';
-import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
-import EmailCard from '@/components/UI/Muscles/EmailCard/EmailCard';
-import styles from './EmailSection.module.css';
+import React from "react";
+import SectionHeader from "@/components/Layout/SectionHeader/SectionHeader";
+import EmailCard from "@/components/UI/Muscles/EmailCard/EmailCard";
+import styles from "./EmailSection.module.css";
 
 interface ContactData {
   name: string;
@@ -20,11 +20,11 @@ interface EmailSectionProps {
 }
 
 const EmailSection: React.FC<EmailSectionProps> = ({
-  title1 = 'Contact via',
-  title2 = 'email',
-  subtitle = 'Choose the appropriate section for your inquiry',
+  title1 = "Contact via",
+  title2 = "email",
+  subtitle = "Choose the appropriate section for your inquiry",
   contacts,
-  className = '',
+  className = "",
 }) => {
   return (
     <section className={`${styles.emailSection} ${className}`}>

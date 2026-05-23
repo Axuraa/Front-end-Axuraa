@@ -1,18 +1,13 @@
-'use client';
+"use client";
 
-import React from 'react';
-import styles from './Homepage.module.css'; 
-// import ServicesSection from '@/components/Section/HomePage/OurServicesSection/ServicesSection';
-// import StatsSection from '@/components/Section/HomePage/StatsSection';
-import ContactSection from '@/components/Section/HomePage/ContactSection/ContactSection';
-import ServicesSection from '@/components/Section/HomePage/OurServicesSection/ServicesSection';
-import BusinessSsection from '@/components/Section/HomePage/BusinessSection/BusinessSsection';
-import RatingSection from '@/components/Section/HomePage/RatingSection/RatingSection';
-import ProjectSection from '@/components/Section/HomePage/ProjectSection/ProjectSection';
-import WorkerSection from '@/components/Section/HomePage/WorkerSection/WorkerSection';
-import { s } from 'framer-motion/client';
-
-
+import React from "react";
+import styles from "./Homepage.module.css";
+import ContactSection from "@/components/Section/HomePage/ContactSection/ContactSection";
+import ServicesSection from "@/components/Section/HomePage/OurServicesSection/ServicesSection";
+import BusinessSsection from "@/components/Section/HomePage/BusinessSection/BusinessSsection";
+import RatingSection from "@/components/Section/HomePage/RatingSection/RatingSection";
+import ProjectSection from "@/components/Section/HomePage/ProjectSection/ProjectSection";
+import WorkerSection from "@/components/Section/HomePage/WorkerSection/WorkerSection";
 
 const workers = [
   {
@@ -20,8 +15,9 @@ const workers = [
     title: "John Doe",
     category: "Frontend Developer",
     percentage: "+45%",
-    description: "Delivered exceptional UI components with great attention to detail.",
-    imageUrl: "/assets/ProfileCard.svg"
+    description:
+      "Delivered exceptional UI components with great attention to detail.",
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 2,
@@ -29,7 +25,7 @@ const workers = [
     category: "UX Designer",
     percentage: "+60%",
     description: "Transformed user experience with intuitive design solutions.",
-    imageUrl: "/assets/ProfileCard.svg"
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 3,
@@ -37,7 +33,7 @@ const workers = [
     category: "Backend Developer",
     percentage: "+55%",
     description: "Built scalable and efficient server-side applications.",
-    imageUrl: "/assets/ProfileCard.svg"
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 4,
@@ -45,7 +41,7 @@ const workers = [
     category: "UI/UX Designer",
     percentage: "+65%",
     description: "Creates beautiful and functional user interfaces.",
-    imageUrl: "/assets/ProfileCard.svg"
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 5,
@@ -53,7 +49,7 @@ const workers = [
     category: "Full Stack Developer",
     percentage: "+70%",
     description: "Expert in both frontend and backend development.",
-    imageUrl: "/assets/ProfileCard.svg"
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 6,
@@ -61,7 +57,7 @@ const workers = [
     category: "Product Manager",
     percentage: "+75%",
     description: "Leads product development with a user-focused approach.",
-    imageUrl: "/assets/ProfileCard.svg"
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 7,
@@ -69,7 +65,7 @@ const workers = [
     category: "DevOps Engineer",
     percentage: "+68%",
     description: "Ensures smooth deployment and operations.",
-    imageUrl: "/assets/ProfileCard.svg"
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 8,
@@ -77,7 +73,7 @@ const workers = [
     category: "QA Engineer",
     percentage: "+72%",
     description: "Ensures the highest quality in every release.",
-    imageUrl: "/assets/ProfileCard.svg"
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 9,
@@ -85,7 +81,7 @@ const workers = [
     category: "Mobile Developer",
     percentage: "+62%",
     description: "Creates amazing cross-platform mobile experiences.",
-    imageUrl: "/assets/ProfileCard.svg"
+    imageUrl: "/assets/ProfileCard.svg",
   },
   {
     id: 10,
@@ -93,15 +89,14 @@ const workers = [
     category: "UI/UX Designer",
     percentage: "+78%",
     description: "Designs intuitive and engaging user experiences.",
-    imageUrl: "/assets/ProfileCard.svg"
-  }
+    imageUrl: "/assets/ProfileCard.svg",
+  },
 ];
 const Homepage = () => {
   return (
     <div className={styles.homePage}>
-      
       <ServicesSection />
-      <BusinessSsection/>
+      <BusinessSsection />
       <RatingSection
         badgeText="Our Achievements"
         title1="How we help "
@@ -109,29 +104,28 @@ const Homepage = () => {
         subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
       />
       <ProjectSection
-         badgeText="Our Services"
-         title1="How we help"
-         title2="Businesses Grow?"
-         subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
-         seeAllHref="#projects"
-         seeAllText="View All Projects"
-       />
+        badgeText="Our Services"
+        title1="How we help"
+        title2="Businesses Grow?"
+        subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+        seeAllHref="#projects"
+        seeAllText="View All Projects"
+      />
 
-        <WorkerSection
-          badgeText="Our Client"
-          title1="Meet Our"
-          title2="Expert Team"
-          subtitle="Dedicated professionals delivering exceptional results"
-          Workers={workers}
-        />
+      <WorkerSection
+        badgeText="Our Client"
+        title1="Meet Our"
+        title2="Expert Team"
+        subtitle="Dedicated professionals delivering exceptional results"
+        Workers={workers}
+      />
 
-        <ContactSection badgeText="Our Team"
-          title1="How we help "
-          title2="Businesses Grow?"
-          subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
-          
-        />
-       
+      <ContactSection
+        badgeText="Our Team"
+        title1="How we help "
+        title2="Businesses Grow?"
+        subtitle="Discover our comprehensive suite of services designed to elevate your digital presence"
+      />
     </div>
   );
 };
