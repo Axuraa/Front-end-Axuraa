@@ -21,34 +21,42 @@ interface TestimonialDisplay {
 const preImage = "/assets/OverviewIcon.png";
 
 const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ project, locale }) => {
+  
   // All data transformation happens here — no fetching, no loading states
   const caseStudy = {
-    title:    typeof project.title === 'string'
-                ? project.title
-                : project.title?.[locale] || project.title?.en,
+    title:
+      typeof project.title === "string"
+        ? project.title
+        : project.title?.[locale] || project.title?.en,
 
-    subtitle: typeof project.subTitle === 'string'
-                ? project.subTitle
-                : project.subTitle?.[locale] || project.subTitle?.en || '',
+    subtitle:
+      typeof project.subTitle === "string"
+        ? project.subTitle
+        : project.subTitle?.[locale] || project.subTitle?.en || "",
 
-    overview: typeof project.overview === 'string'
-                ? project.overview
-                : project.overview?.[locale] || project.overview?.en || '',
+    overview:
+      typeof project.overview === "string"
+        ? project.overview
+        : project.overview?.[locale] || project.overview?.en || "",
 
-    features: project.features?.map(f => ({
+    features:
+      project.features?.map((f) => ({
         icon: f.icon || null,
-        title: typeof f.title === 'string'
-                ? f.title
-                : f.title?.[locale] || f.title?.en || '',
-        description: typeof f.description === 'string'
-                ? f.description
-                : f.description?.[locale] || f.description?.en || '',
-    })) || [],
+        title:
+          typeof f.title === "string"
+            ? f.title
+            : f.title?.[locale] || f.title?.en || "",
+        description:
+          typeof f.description === "string"
+            ? f.description
+            : f.description?.[locale] || f.description?.en || "",
+      })) || [],
 
-    tags: project.services?.map(s => {
+    tags:
+      project.services?.map((s) => {
         const t = s.services_id.title;
-        return typeof t === 'string' ? t : t?.[locale] || t?.en || '';
-    }) || [],
+        return typeof t === "string" ? t : t?.[locale] || t?.en || "";
+      }) || [],
 
     client: project.client_id?.name || "Client",
     projectManager: project.project_manager || "Project Manager",
@@ -61,9 +69,9 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ project, locale }) => {
     location: project.location || "Location",
     url_deployment: project.url_deployment || null,
 
-    results:
+    results: 
       project.case_study_results?.map((r) => ({
-        metric: r.description?.[locale] || r.description?.en,
+        metric: r.description ,
         value: r.value,
       })) || [],
     testimonials:
@@ -78,6 +86,9 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ project, locale }) => {
     mainImage: project.main_image_url ?? null,
     secondImage: project.second_image_url ?? null,
   };
+
+  // console.log("results:", caseStudy.results);
+  // console.log("project results:", project.case_study_results);
 
   const projectDetails = [
     {
@@ -116,6 +127,24 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ project, locale }) => {
     window.location.href = `/${locale}/#contact-section`;
   };
 
+  console.log("CaseStudyPage data:", {
+    title: caseStudy.title,
+    subtitle: caseStudy.subtitle,
+    overview: caseStudy.overview,
+    features: caseStudy.features,
+    tags: caseStudy.tags,
+    client: caseStudy.client,
+    projectManager: caseStudy.projectManager,
+    timeframe: caseStudy.timeframe,
+    team: caseStudy.team,
+    location: caseStudy.location,
+    url_deployment: caseStudy.url_deployment,
+    results: caseStudy.results,
+    testimonials: caseStudy.testimonials,
+    mainImage: caseStudy.mainImage,
+    secondImage: caseStudy.secondImage,
+  });
+
   return (
     <div className={styles.container}>
       {/* Breadcrumb */}
@@ -144,19 +173,6 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ project, locale }) => {
                 <p className={styles.subtitle}>{caseStudy.subtitle}</p>
               </div>
 
-              {caseStudy.mainImage && (
-                <div className={styles.preview}>
-                  <Image
-                    src={caseStudy.mainImage}
-                    alt={caseStudy.title ?? "Project image"}
-                    width={1200}
-                    height={600}
-                    className={styles.previewImage}
-                    priority
-                  />
-                </div>
-              )}
-
               <div className={styles.tags}>
                 {caseStudy.tags.map((tag, idx) => (
                   <ProjectButton
@@ -181,6 +197,19 @@ const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ project, locale }) => {
                   </ProjectButton>
                 ))}
               </div>
+
+              {caseStudy.mainImage && (
+                <div className={styles.preview}>
+                  <Image
+                    src={caseStudy.mainImage}
+                    alt={caseStudy.title ?? "Project image"}
+                    width={1200}
+                    height={600}
+                    className={styles.previewImage}
+                    priority
+                  />
+                </div>
+              )}
             </section>
 
             {/* Overview */}

@@ -15,6 +15,8 @@ export default async function CaseStudyPageWrapper({ params }: PageProps) {
     const typedLocale = locale as 'en' | 'ar';
     const result = await getProjectById(projectId, typedLocale);
 
+    console.log('Project API result:', result.data);
+
     // console.log('Project title:', result.data?.title);
 
     if (!result.success || !result.data) notFound();

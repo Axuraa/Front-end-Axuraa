@@ -5,6 +5,7 @@ import { ServiceItem } from "@/service/Services/services";
 export interface TransformedProject {
     id: string;
     title: string;
+    subTitle: string;
     category: string;
     percentage: string;
     description: string;
@@ -43,6 +44,7 @@ export function transformProjects(
         return {
             id:          project._id,
             title:       getString(project.title, locale) || 'Untitled',
+            subTitle:    getString(project.subTitle, locale) || '',
             category,
             percentage:  project.case_study_results?.[0]?.value || '+50%',
             description: getString(project.case_study_results?.[0]?.description, locale) || 'Project description',

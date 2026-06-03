@@ -24,9 +24,9 @@ const PortfolioPage = ({ projects, services, locale }: Props) => {
     const titles = services
       .map(
         (s) =>
-          typeof s.title === "string"
-            ? s.title // ← API returns plain string
-            : (s.title as any)[locale] || (s.title as any).en, // ← fallback if localized
+          typeof s.subtitle === "string"
+            ? s.subtitle // ← API returns plain string
+            : (s.subtitle as any)[locale] || (s.subtitle as any).en, // ← fallback if localized
       )
       .filter((t): t is string => typeof t === "string" && t.trim() !== "");
     return ["All", ...Array.from(new Set(titles))];

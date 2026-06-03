@@ -7,6 +7,7 @@ import React from "react";
 interface Project {
   id: string;
   title: string;
+  subTitle: string;
   description: string;
   category: string;
   percentage: string;
@@ -39,6 +40,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, locale }) => {
       </div>
     );
   }
+  console.log("Rendering ProjectsGrid with projects:", projects);
 
   return (
     <motion.div

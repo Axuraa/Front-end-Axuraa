@@ -38,7 +38,7 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
             title: project.title?.en || 'Untitled Project',
             category: project.services?.[0]?.services_id?.title?.en || project.technology_stack?.[0] || 'General',
             percentage: project.case_study_results?.[0]?.value || '+50%',
-            description: project.case_study_results?.[0]?.description?.en || 'Project description',
+            description: project.case_study_results?.[0]?.description|| 'Project description',
             imageUrl: project.main_image_url || '/assets/ProjectImage.png'
           }));
 

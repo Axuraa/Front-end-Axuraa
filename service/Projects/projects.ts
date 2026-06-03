@@ -36,7 +36,7 @@ export interface ProjectFeature {
 
 export interface CaseStudyResult {
   value: string;
-  description: LocalizedField;
+  description: string;
 }
 
 export interface ProjectService {

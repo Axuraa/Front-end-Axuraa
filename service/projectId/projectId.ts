@@ -32,15 +32,15 @@ export const getProjectById = async (
     console.log('Response status:', response.status, response.ok);
 
     const json = (await response.json()) as any;
-    console.log('=== PROJECT BY ID API DEBUG ===');
-    console.log('Raw response JSON:', JSON.stringify(json, null, 2));
-    console.log('Response data structure:', {
-      hasData: !!json?.data,
-      hasProject: !!json?.data?.project,
-      dataType: typeof json?.data,
-      dataKeys: json?.data ? Object.keys(json.data) : 'no data',
-      fullJson: json
-    });
+    // console.log('=== PROJECT BY ID API DEBUG ===');
+    // console.log('Raw response JSON:', JSON.stringify(json, null, 2));
+    // console.log('Response data structure:', {
+    //   hasData: !!json?.data,
+    //   hasProject: !!json?.data?.project,
+    //   dataType: typeof json?.data,
+    //   dataKeys: json?.data ? Object.keys(json.data) : 'no data',
+    //   fullJson: json
+    // });
 
     if (!response.ok) {
       return {
