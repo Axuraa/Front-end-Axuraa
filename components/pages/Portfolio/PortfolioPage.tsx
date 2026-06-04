@@ -22,29 +22,27 @@ const PortfolioPage = ({ projects, services, locale }: Props) => {
   // console.log("PortfolioPage received projects:", projects);
   // console.log("PortfolioPage received services:", services);
 
-
   // Build filter list from services
- const filters = useMemo(() => {
-  const titles = services
-    .map((s) =>
-      typeof s.subtitle === "string"
-        ? s.subtitle
-        : (s.subtitle as any)[locale] || (s.subtitle as any).en
-    )
-    .filter((t): t is string => typeof t === "string" && t.trim() !== "");
-  return ["All", ...Array.from(new Set(titles))];
-}, [services, locale]);
+  const filters = useMemo(() => {
+    const titles = services
+      .map((s) =>
+        typeof s.subtitle === "string"
+          ? s.subtitle
+          : (s.subtitle as any)[locale] || (s.subtitle as any).en,
+      )
+      .filter((t): t is string => typeof t === "string" && t.trim() !== "");
+    return ["All", ...Array.from(new Set(titles))];
+  }, [services, locale]);
 
- const allProjects = useMemo(
-  () => transformProjects(projects, services, locale),
-  [projects, services, locale]
-);
+  const allProjects = useMemo(
+    () => transformProjects(projects, services, locale),
+    [projects, services, locale],
+  );
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "All") return allProjects;
-    return allProjects.filter((p) => p.category === activeFilter); 
+    return allProjects.filter((p) => p.categories.includes(activeFilter));
   }, [activeFilter, allProjects]);
-
 
   return (
     <div className={styles.portfolioPage}>

@@ -30,6 +30,7 @@ export interface ContactInfoCardProps {
 export interface ProjectCardProps {
   id: string;
   title: string;
+  categories: string[];
   category: string;
   percentage: string;
   description: string;

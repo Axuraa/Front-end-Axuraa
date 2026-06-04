@@ -8,15 +8,20 @@ import Link from "next/link";
 
 import { ProjectCardProps } from "@/types/Generals/cardTypes";
 
+// ProjectCard.tsx// ProjectCard.tsx
 const ProjectCard: React.FC<ProjectCardProps> = ({
   id,
   title,
   category,
+  categories = [],  // ← add this prop
   percentage,
   description,
   imageUrl,
   locale = "en",
 }) => {
+  const displayCategories = categories.length > 0 ? categories : [category];
+  console.log("ProjectCard categories:", categories);
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
@@ -32,7 +37,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
-        <span className={styles.badge}>{category}</span>
+
+        {/* Replace single badge with mapped badges */}
+        <div className={styles.badgesRow}>
+          {displayCategories.map((cat) => (
+            <span key={cat} className={styles.badge}>{cat}</span>
+          ))}
+        </div>
 
         <div className={styles.statsRow}>
           <div className={styles.percentage}>{percentage}</div>
@@ -50,5 +61,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     </div>
   );
 };
-
-export default React.memo(ProjectCard);
+export default ProjectCard;

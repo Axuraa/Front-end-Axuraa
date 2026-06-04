@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import styles from './Footer.module.css';
-import Typography from '@/components/UI/Atoms/Typography/Typography';
+// import Typography from '@/components/UI/Atoms/Typography/Typography';
 import FooterColumnHeader from './FooterColumnHeader';
 import { getAllServices, ServiceItem } from '@/service/Services/services';
 import Link from 'next/link';
@@ -28,8 +28,8 @@ const Footer = () => {
   const companyLinks = [
     { name: 'About Us', href: 'aboutus' },
     { name: 'Portfolio', href: 'portfolio' },
-{ name: 'Case Studies', href: 'portfolio' },
-    { name: 'Services', href: 'services' },
+    { name: 'Case Studies', href: 'portfolio' },
+    { name: 'Services', href: 'service' },
     { name: 'Contact', href: 'contact' }
   ];
 

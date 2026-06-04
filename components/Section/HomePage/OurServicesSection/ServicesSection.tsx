@@ -132,7 +132,7 @@ const ServicesSection = () => {
             description="Explore our full catalog"
             iconSrc="/assets/DirectionIcon.svg"
             borderRadius="0  0 68.087px  0"
-            href={`/${locale}/services`}
+            href={`/${locale}/service`}
            />
         </div>
     </section>

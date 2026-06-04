@@ -10,6 +10,7 @@ interface Project {
   subTitle: string;
   description: string;
   category: string;
+  categories: string[];
   percentage: string;
   imageUrl: string;
 }
@@ -20,16 +21,13 @@ interface ProjectsGridProps {
 }
 
 const container = {
-    hidden: { opacity: 1 },
-    show: {
-        opacity: 1,
-        transition: { staggerChildren: 0.08 }
-    }
+  hidden: { opacity: 1 },
+  show: { opacity: 1, transition: { staggerChildren: 0.08 } },
 };
 
 const item = {
-    hidden: { opacity: 0, y: 16 },
-    show:   { opacity: 1, y: 0, transition: { duration: 0.25 } }
+  hidden: { opacity: 0, y: 16 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.25 } },
 };
 
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, locale }) => {
@@ -40,7 +38,6 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, locale }) => {
       </div>
     );
   }
-  // console.log("Rendering ProjectsGrid with projects:", projects);
 
   return (
     <motion.div
@@ -60,10 +57,11 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, locale }) => {
               id={project.id}
               title={project.title}
               category={project.category}
+              categories={project.categories} // ← add
               percentage={project.percentage}
               description={project.description}
               imageUrl={project.imageUrl}
-              locale={locale} // ← pass down so card builds correct href
+              locale={locale}
             />
           </motion.div>
         ))}
