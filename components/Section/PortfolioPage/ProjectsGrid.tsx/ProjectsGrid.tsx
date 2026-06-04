@@ -40,7 +40,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects, locale }) => {
       </div>
     );
   }
-  console.log("Rendering ProjectsGrid with projects:", projects);
+  // console.log("Rendering ProjectsGrid with projects:", projects);
 
   return (
     <motion.div

@@ -28,17 +28,16 @@ export function transformProjects(
     services: ServiceItem[],
     locale: 'en' | 'ar' = 'en'
 ): TransformedProject[] {
-    const serviceTitleMap = new Map<string, string>();
+    // Map service _id → subtitle
+    const serviceSubtitleMap = new Map<string, string>();
     for (const service of services) {
-        serviceTitleMap.set(service._id, getString(service.title, locale));
+        serviceSubtitleMap.set(service._id, service.subtitle || service.title || 'General');
     }
 
     return projects.map(project => {
-        const firstService = project.services?.[0]?.services_id;
-        const category = firstService
-            ? serviceTitleMap.get(getString(firstService._id, locale))
-              || getString(firstService.title, locale)
-              || 'General'
+        const firstServiceId = project.services?.[0]?.services_id?._id;
+        const category = firstServiceId
+            ? serviceSubtitleMap.get(firstServiceId) || 'General'
             : 'General';
 
         return {

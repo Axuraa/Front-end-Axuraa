@@ -19,27 +19,30 @@ interface Props {
 const PortfolioPage = ({ projects, services, locale }: Props) => {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  // Build filter list from services
-  const filters = useMemo(() => {
-    const titles = services
-      .map(
-        (s) =>
-          typeof s.subtitle === "string"
-            ? s.subtitle // ← API returns plain string
-            : (s.subtitle as any)[locale] || (s.subtitle as any).en, // ← fallback if localized
-      )
-      .filter((t): t is string => typeof t === "string" && t.trim() !== "");
-    return ["All", ...Array.from(new Set(titles))];
-  }, [services, locale]);
+  // console.log("PortfolioPage received projects:", projects);
+  // console.log("PortfolioPage received services:", services);
 
-  const allProjects = useMemo(
-    () => transformProjects(projects, services, locale),
-    [services]
-  );
+
+  // Build filter list from services
+ const filters = useMemo(() => {
+  const titles = services
+    .map((s) =>
+      typeof s.subtitle === "string"
+        ? s.subtitle
+        : (s.subtitle as any)[locale] || (s.subtitle as any).en
+    )
+    .filter((t): t is string => typeof t === "string" && t.trim() !== "");
+  return ["All", ...Array.from(new Set(titles))];
+}, [services, locale]);
+
+ const allProjects = useMemo(
+  () => transformProjects(projects, services, locale),
+  [projects, services, locale]
+);
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === "All") return allProjects;
-    return allProjects.filter((p) => p.category === activeFilter); // ✅ exact match
+    return allProjects.filter((p) => p.category === activeFilter); 
   }, [activeFilter, allProjects]);
 
 
