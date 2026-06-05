@@ -78,7 +78,7 @@ const ICON_MAP: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
 };
 
 // ── Types ──────────────────────────────────────────────────────────────────
-interface ContactData {
+export interface ContactData {
   phone?: string;
   emails?: ContactEmail[];
   socialLinks?: SocialLink[];

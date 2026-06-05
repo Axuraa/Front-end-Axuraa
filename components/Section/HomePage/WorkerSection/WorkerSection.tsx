@@ -15,42 +15,13 @@ const WorkerSection: React.FC<WorkerSectionProps> = ({
   title1,
   title2,
   subtitle,
-  Workers = [],  // Default to empty array
+  
 }) => {
   const { locale } = useClientTranslation('clients');
   const [clients, setClients] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Default fallback clients
-  const defaultClients = [
-    {
-      id: '1',
-      name: 'John Doe',
-      company_name: 'Tech Corp',
-      description: 'Outstanding work! The team delivered exactly what we needed and exceeded our expectations.',
-      image_url: '/assets/ClientAvatar.png',
-      country: 'USA',
-      testimonials: []
-    },
-    {
-      id: '2', 
-      name: 'Jane Smith',
-      company_name: 'Design Studio',
-      description: 'Professional service and excellent communication throughout the project. Highly recommend!',
-      image_url: '/assets/ClientAvatar.png',
-      country: 'UK',
-      testimonials: []
-    },
-    {
-      id: '3',
-      name: 'Mike Johnson',
-      company_name: 'Startup Inc',
-      description: 'The mobile app they developed is flawless. Great user experience and smooth performance.',
-      image_url: '/assets/ClientAvatar.png',
-      country: 'Canada',
-      testimonials: []
-    }
-  ];
+
 
   useEffect(() => {
     const fetchClients = async () => {
@@ -72,7 +43,7 @@ const WorkerSection: React.FC<WorkerSectionProps> = ({
               name: client.name,
               company_name: client.company_name,
               description: testimonial,
-              image_url: client.image_url || '/assets/ClientAvatar.png',
+              image_url: client.image_url || '/assets/axuraa.png',
               country: client.country,
               testimonials: client.testimonials
             };
@@ -90,7 +61,7 @@ const WorkerSection: React.FC<WorkerSectionProps> = ({
     fetchClients();
   }, [locale]);
 
-  const clientsToShow = clients.length > 0 ? clients : defaultClients;
+  const clientsToShow = clients.length > 0 ? clients : [];
   return (
     <section className={styles.WorkerSection}>
       <Badge text={badgeText} show={true} />
@@ -109,7 +80,7 @@ const WorkerSection: React.FC<WorkerSectionProps> = ({
             testimonial={client.description}
             authorName={client.name}
             authorRole={client.company_name || client.country}
-            avatarSrc={client.image_url && client.image_url !== null ? client.image_url : '/assets/ClientAvatar.png'}
+            avatarSrc={client.image_url && client.image_url !== null ? client.image_url : '/assets/axuraa.png'}
           />
         ))}
       </HorizontalScroll>
