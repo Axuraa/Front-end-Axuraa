@@ -1,7 +1,8 @@
-import React from 'react';
-import styles from './ServiceCard.module.css';
-import Image from 'next/image';
-import { useRouter, usePathname } from 'next/navigation';
+// components/Molecules/ServiceCard/ServiceCard.tsx
+import React from "react";
+import styles from "./ServiceCard.module.css";
+import Image from "next/image";
+import Link from "next/link";
 
 interface ServiceCardProps {
   id: string;
@@ -10,55 +11,56 @@ interface ServiceCardProps {
   features: string[];
   iconUrl?: string;
   buttonText?: string;
+  locale?: string;
   onButtonClick?: () => void;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ 
+const FALLBACK_ICON = "/assets/safeicon.svg";
+
+const ServiceCard: React.FC<ServiceCardProps> = ({
   id,
-  title, 
-  description, 
+  title,
+  description,
   features,
-  iconUrl = '/assets/safeicon.svg',
-  buttonText = 'Learn More',
-  onButtonClick
+  iconUrl,
+  buttonText = "Learn More",
+  locale = "en",
+  onButtonClick,
 }) => {
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const handleButtonClick = () => {
-    if (onButtonClick) {
-      onButtonClick();
-    } else {
-      // Extract locale from current pathname
-      const locale = pathname?.split('/')[1] || 'en';
-      router.push(`/${locale}/service/${id}`);
+  const safeIcon = (() => {
+    if (!iconUrl || iconUrl.trim() === "") return FALLBACK_ICON;
+    if (iconUrl.startsWith("/")) return iconUrl;
+    try {
+      new URL(iconUrl);
+      return iconUrl;
+    } catch {
+      return FALLBACK_ICON;
     }
-  };
-
+  })();
   return (
     <div className={styles.serviceCard}>
       <div className={styles.cardHeader}>
         <div className={styles.iconContainer}>
-          <Image 
-            src={iconUrl} 
-            alt={title} 
-            width={28} 
+          <Image
+            src={safeIcon}
+            alt={title}
+            width={28}
             height={28}
             className={styles.safeIcon}
           />
         </div>
         <h3 className={styles.title}>{title}</h3>
       </div>
-      
+
       <p className={styles.description}>{description}</p>
-      
+
       <ul className={styles.featuresList}>
         {features.map((feature, index) => (
           <li key={index} className={styles.featureItem}>
-            <Image 
-              src="/assets/trueicon.svg" 
-              alt="check" 
-              width={16} 
+            <Image
+              src="/assets/trueicon.svg"
+              alt="check"
+              width={16}
               height={16}
               className={styles.checkIcon}
             />
@@ -66,16 +68,37 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           </li>
         ))}
       </ul>
-      
-      <button 
-        className={styles.learnMoreButton}
-        onClick={handleButtonClick}
-      >
-        {buttonText}
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 4L10 8L6 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      </button>
+
+      {onButtonClick ? (
+        <button className={styles.learnMoreButton} onClick={onButtonClick}>
+          {buttonText}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M6 4L10 8L6 12"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      ) : (
+        <Link
+          href={`/${locale}/service/${id}`}
+          className={styles.learnMoreButton}
+        >
+          {buttonText}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path
+              d="M6 4L10 8L6 12"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </Link>
+      )}
     </div>
   );
 };

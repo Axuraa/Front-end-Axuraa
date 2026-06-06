@@ -19,10 +19,19 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
   seeAllText = "See All case studies"
 }) => {
   const { locale } = useClientTranslation('projects');
-  const [apiProjects, setApiProjects] = useState(projects);
+ const [apiProjects, setApiProjects] = useState<{
+  id: string;
+  title: string;
+  category: string;
+  categories: string[];
+  percentage: string;
+  description: string;
+  imageUrl: string;
+}[]>([]);
   const [loading, setLoading] = useState(false);
 
-  // Dynamic portfolio href based on locale
+  
+
   const portfolioHref = `/${locale}/portfolio`;
 
   useEffect(() => {
@@ -30,26 +39,29 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
       try {
         setLoading(true);
         const result = await getAllProjects(locale as 'en' | 'ar');
-        
-        if (result.success && result.data) {
-          // Transform API data to match Project interface
-          const transformedProjects = result.data.slice(0, 3).map(project => ({
-            id: project._id,
-            title: project.title?.en || 'Untitled Project',
-            category: project.services?.[0]?.services_id?.title?.en || project.technology_stack?.[0] || 'General',
-            percentage: project.case_study_results?.[0]?.value || '+50%',
-            description: project.case_study_results?.[0]?.description?.en || 'Project description',
-            imageUrl: project.main_image_url || '/assets/ProjectImage.png'
-          }));
 
-          
-          
+        if (result.success && result.data) {
+          const transformedProjects = result.data.slice(0, 3).map(project => {
+            // collect all service titles as categories
+            const categories = (project.services || [])
+              .map(s => s?.services_id?.title?.en || '')
+              .filter((c, i, arr) => c && arr.indexOf(c) === i); // dedupe & remove empty
+
+            return {
+              id:          project._id,
+              title:       project.title?.en || 'Untitled Project',
+              category:    categories[0] || project.technology_stack?.[0] || 'General',
+              categories:  categories.length > 0 ? categories : [project.technology_stack?.[0] || 'General'],
+              percentage:  project.case_study_results?.[0]?.value || '+50%',
+              description: project.case_study_results?.[0]?.description || 'Project description',
+              imageUrl:    project.main_image_url || '/assets/ProjectImage.png',
+            };
+          });
+
           setApiProjects(transformedProjects);
-          console.log('Loaded projects from API:', transformedProjects);
         }
       } catch (error) {
         console.error('Failed to fetch projects:', error);
-        // Keep using mock data if API fails
       } finally {
         setLoading(false);
       }
@@ -71,12 +83,13 @@ const ProjectSection: React.FC<ProjectSectionProps> = ({
         {seeAllText}
       </SeeAll>
       <div className={styles.ProjectGrid}>
-         {apiProjects?.map((project) => ( 
+        {apiProjects?.map((project) => (
           <ProjectCard
             key={project.id}
             id={project.id}
             title={project.title}
             category={project.category}
+            categories={project.categories}  // ← add
             percentage={project.percentage}
             description={project.description}
             imageUrl={project.imageUrl}

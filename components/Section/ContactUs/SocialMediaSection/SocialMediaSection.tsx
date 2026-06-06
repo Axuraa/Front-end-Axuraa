@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import SectionHeader from '@/components/Layout/SectionHeader/SectionHeader';
-import styles from './SocialMediaSection.module.css';
-import SocialMediaCard from '@/components/UI/Muscles/SocilaCard/SocialMediaCard';
+import React from "react";
+import SectionHeader from "@/components/Layout/SectionHeader/SectionHeader";
+import styles from "./SocialMediaSection.module.css";
+import SocialMediaCard from "@/components/UI/Muscles/SocilaCard/SocialMediaCard";
 
 interface SocialMediaSectionProps {
   title1?: string;
@@ -14,11 +14,11 @@ interface SocialMediaSectionProps {
 }
 
 const SocialMediaSection: React.FC<SocialMediaSectionProps> = ({
-  title1 = 'Follow us on',
-  title2 = 'social media',
-  subtitle = 'Stay up to date with our latest news and projects',
+  title1 = "Follow us on",
+  title2 = "social media",
+  subtitle = "Stay up to date with our latest news and projects",
   platforms = [],
-  className = '',
+  className = "",
 }) => {
   return (
     <section className={`${styles.section} ${className}`}>

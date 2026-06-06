@@ -1,46 +1,18 @@
-'use client';
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
-import styles from './ServicesPage.module.css';
-import HeroSection from '@/components/Layout/HeroSection/HeroSection';
-import ServiceCard from '@/components/Molecules/ServiceCard/ServiceCard';
-import { getAllServices, ServiceItem } from '@/service/Services/services';
-import PerLoading from '@/components/UI/Muscles/PreLoading/PreLoading';
+// components/pages/Services/ServicesPage.tsx
+"use client";
 
-const ServicesPage: React.FC = () => {
-  const [services, setServices] = useState<ServiceItem[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+import React from "react";
+import styles from "./ServicesPage.module.css";
+import HeroSection from "@/components/Layout/HeroSection/HeroSection";
+import ServiceCard from "@/components/Molecules/ServiceCard/ServiceCard";
+import { ServiceItem } from "@/service/Services/services";
 
-  const params = useParams() as { locale?: string };
-  const currentLang: 'en' | 'ar' = params.locale === 'ar' ? 'ar' : 'en';
+interface Props {
+  services: ServiceItem[];
+  locale: "en" | "ar";
+}
 
-  useEffect(() => {
-    const fetchServices = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-
-        const result = await getAllServices(currentLang);
-        const filteredServices = result.data?.filter((service: ServiceItem) => service.type === "service" && service.is_active) || [];
-
-        if (!result.success) {
-          throw new Error(result.error || 'Failed to load services');
-        }
-        console.log('SERVICES RESULT', result);
-        
-        setServices(filteredServices);
-
-      } catch (err: any) {
-        setError(err.message ?? 'Failed to load services');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchServices();
-  }, [currentLang]);
-
+const ServicesPage: React.FC<Props> = ({ services, locale }) => {
   return (
     <div className={styles.servicesPage}>
       <HeroSection
@@ -61,43 +33,45 @@ const ServicesPage: React.FC = () => {
       />
 
       <div className={styles.servicesContainer}>
-        {loading && 
-          <div className={styles.loadingSpinner}>
-          <PerLoading/>
-        </div>
-        }
+        {services.length === 0 && (
+          <p style={{ color: "#fff", textAlign: "center" }}>
+            No services available.
+          </p>
+        )}
 
-        {error && !loading && <p>{error}</p>}
+        {services.map((service) => {
+          // API returns plain strings — no locale extraction needed
+          const title =
+            typeof service.title === "string"
+              ? service.title
+              : service.title?.[locale] || service.title|| "";
 
-        {!loading &&
-          !error && (
-            <>
-              {console.log('SERVICES STATE', services, currentLang)}
-              {services.map((service) => {
-                const title = service.title?.[currentLang] ?? '';
-                const description = service.description?.[currentLang] ?? '';
+          const description =
+            typeof service.description === "string"
+              ? service.description
+              : service.description?.[locale] || service.description|| "";
 
-                const features = service.what_we_do?.units
-                  ? service.what_we_do.units
-                      .map((u) => u[currentLang])
-                      .filter(Boolean)
-                  : [];
+          const features = service.what_we_do?.units
+            ? service.what_we_do.units
+                .map((u) =>
+                  typeof u === "string" ? u : u[locale] || u || "",
+                )
+                .filter(Boolean)
+            : [];
 
-                return (
-                  <ServiceCard
-                    key={service._id}
-                    id={service._id}
-                    title={title}
-                    description={description}
-                    features={features}
-                    buttonText={
-                    currentLang === 'ar' ? 'عرض التفاصيل' : 'Learn More'
-                    }
-                  />
-                );
-              })}
-            </>
-          )}
+          return (
+            <ServiceCard
+              key={service._id}
+              id={service._id}
+              title={title}
+              description={description}
+              features={features}
+              iconUrl={service.icon}
+              locale={locale}
+              buttonText={locale === "ar" ? "عرض التفاصيل" : "Learn More"}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -1,24 +1,23 @@
-import React from 'react';
-import ProjectButton from '@/components/UI/Atoms/ProjectButton/ProjectButton';
-import styles from './ProjectPageButtons.module.css';
+// components/Molecules/ProjectPageButtons/ProjectPageButtons.tsx
+"use client";
+import React from "react";
+import ProjectButton from "@/components/UI/Atoms/ProjectButton/ProjectButton";
+import styles from "./ProjectPageButtons.module.css";
 
 interface ProjectPageButtonsProps {
   activeFilter: string;
   onFilterChange: (filter: string) => void;
   className?: string;
-  filters: string[]; // Made required since it's essential
+  filters: string[];
 }
 
 const ProjectPageButtons: React.FC<ProjectPageButtonsProps> = ({
   activeFilter,
   onFilterChange,
-  className = '',
-  filters = [], 
+  className = "",
+  filters = [],
 }) => {
-  if (!filters.length) {
-    console.warn('No filters provided to ProjectPageButtons');
-    return null; 
-  }
+  if (!filters.length) return null;
 
   return (
     <div className={`${styles.container} ${className}`}>
@@ -26,12 +25,11 @@ const ProjectPageButtons: React.FC<ProjectPageButtonsProps> = ({
         {filters.map((filter) => (
           <ProjectButton
             key={filter}
-            variant={activeFilter === filter ? 'primary' : 'outline'}
+            variant={activeFilter === filter ? "primary" : "outline"}
             onClick={() => onFilterChange(filter)}
             className={`${styles.filterButton} ${
-              activeFilter === filter ? styles.active : ''
+              activeFilter === filter ? styles.active : ""
             }`}
-            aria-pressed={activeFilter === filter}
           >
             {filter}
           </ProjectButton>

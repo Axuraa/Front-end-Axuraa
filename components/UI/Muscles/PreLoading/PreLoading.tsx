@@ -66,9 +66,9 @@ const ARROW_PATHS: { d: string; stroke?: boolean }[] = [
 export default function PerLoading({
   size = "lg",
   color = "#D04A1D",
-  totalMs = 1800,
+  totalMs = 3000,
   stepPx = 60,
-  pulseDurationMs = 500,
+  pulseDurationMs = 300,
   count = 8,
   hubGap = 30,
   className = "",
@@ -98,16 +98,13 @@ export default function PerLoading({
    * Peak is exactly halfway through the pulse window.
    * Everything returns cleanly to 0 before the next arrow fires.
    */
-  const slotPct  = 100 / count;
-  const pulsePct = Math.min(
-    (pulseDurationMs / totalMs) * 100,
-    slotPct * 0.8,
-  );
+  const slotPct = 100 / count;
+  const pulsePct = Math.min((pulseDurationMs / totalMs) * 100, slotPct * 0.8);
 
   const keyframes = Array.from({ length: count }, (_, i) => {
     const fireAt = i * slotPct;
     const peakAt = fireAt + pulsePct / 2;
-    const endAt  = fireAt + pulsePct;
+    const endAt = fireAt + pulsePct;
 
     return `
 @keyframes ${uid}_p${i} {

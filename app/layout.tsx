@@ -5,9 +5,11 @@ import styles from "./layout.module.css";
 import Header from "@/components/Layout/Header/Header";
 import Footer from "@/components/Layout/Footer/Footer";
 import ChatBot from "@/components/UI/Atoms/ChatBot/ChatBot";
+import { Suspense } from "react";
+import PerLoading from "@/components/UI/Muscles/PreLoading/PreLoading";
 
 const roboto = Roboto({
-  weight: ['100', '300', '400', '500', '700', '900'],
+  weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
   variable: "--font-roboto",
 });
@@ -17,19 +19,15 @@ export const metadata: Metadata = {
   description: "project management agency",
   keywords: ["Axuraa", "project management agency", "Axuraa Agency"],
   // favicon: "/assets/favicon.ico",
-
-  
 };
 export const dynamic = "force-dynamic";
-
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,
   minimumScale: 1,
-}
-
+};
 
 export default function RootLayout({
   children,
@@ -38,13 +36,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={styles.html}>
-      <body className={`${roboto.variable} ${styles.body}`} >
+      <body className={`${roboto.variable} ${styles.body}`}>
         <div className={styles.wrapper}>
           <Header />
-          <main className={styles.main}>
-            {children}
-          </main>
-          <Footer />
+          <Suspense
+            fallback={<PerLoading />}
+          >
+            <main className={styles.main}>{children}</main>
+            <Footer />
+          </Suspense>
         </div>
         <ChatBot />
       </body>
