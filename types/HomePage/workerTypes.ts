@@ -16,5 +16,5 @@ export interface WorkerSectionProps {
   title1: string;
   title2: string;
   subtitle: string;
-  Workers?: Worker[];  // Make Workers optional
+
 }

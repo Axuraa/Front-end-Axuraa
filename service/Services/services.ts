@@ -12,18 +12,34 @@ export interface ServiceUnit {
 
 export interface ServiceItem {
   _id: string;
+  id: string;
   icon?: string;
-  title: LocalizedField;
-  subtitle?: LocalizedField;
-  description: LocalizedField;
+  title: string;           // ← plain string, NOT LocalizedField
+  subtitle?: string;       // ← plain string
+  description: string;     // ← plain string
   what_we_do?: {
-    description?: LocalizedField;
-    units?: ServiceUnit[];
+    description?: string;  // ← plain string
+    units?: string[];      // ← array of strings, not ServiceUnit[]
   };
-  description_features?: LocalizedField;
-  description_stories?: LocalizedField;
+  technologies_used?: { name: string }[];
   type?: string;
   is_active?: boolean;
+  projects?: {
+    projects_id: {
+      title: string;
+      overview?: string;
+      subTitle?: string;
+      main_image_url?: string;
+      case_study_results?: {
+        description?: string;
+        value?: string;
+      }[];
+    };
+  }[];
+  features?: {
+    title: string;
+    description: string;
+  }[];
 }
 
 export interface ServicesApiResult {

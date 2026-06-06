@@ -81,8 +81,8 @@ const BusinessSection = () => {
       }
       
       return {
-        title: service.title[locale as 'en' | 'ar'],
-        description: service.description[locale as 'en' | 'ar'],
+        title: service.title,
+        description: service.description,
         icon: iconSrc,
         serviceId: service._id // Store service ID for click handling
       };
